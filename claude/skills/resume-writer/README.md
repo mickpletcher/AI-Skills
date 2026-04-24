@@ -10,7 +10,7 @@ Use [SKILL.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills
 
 This skill has two main modes:
 
-1. `Enhance` mode for rewriting, auditing, and scoring a resume
+1. `Enhance` mode for rewriting, auditing, and scoring a resume. When a job description is provided, it also auto-generates a matching cover letter.
 2. `Add Insight` mode for extracting new principles from recruiter or hiring guidance and adding them to the local library
 
 It supports human-readable audit output plus structured JSON output for automation.
@@ -31,12 +31,13 @@ resume-writer/
 |-- SKILL.md
 |-- scoring-model.md
 |-- json-output-spec.md
+|-- upgrades.md
+|-- future-upgrades.md
 |-- insights/
 |   `-- principles.md
 |-- references/
 |   `-- common-patterns.md
 `-- resume-writer.skill
-|-- upgrades.md
 ```
 
 ## Upgrade Log

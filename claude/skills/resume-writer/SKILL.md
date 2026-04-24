@@ -1,6 +1,6 @@
 ---
 name: resume-writer
-description: Rewrite and enhance resumes using a persistent library of principles harvested from real recruiters, hiring managers, and HR professionals. Always trigger immediately when the user's message starts with "rw". Also trigger on "resume writer", "rewrite my resume", "enhance my resume", "fix my resume", "review my resume", or any request to improve, audit, or critique a resume. Also trigger when the user pastes a recruiter or hiring manager post (LinkedIn, blog, Reddit) and says "add to my library", "add insight", "rw add", or indicates they want to capture it as a resume principle. Handles paste, .docx, .pdf, and screenshot inputs. Produces a full rewrite plus a condensed audit by default, with full forensic line by line audit only when requested. General-purpose skill that works for any user's resume, not just the skill owner.
+description: Rewrite and enhance resumes using a persistent library of principles harvested from real recruiters, hiring managers, and HR professionals. Always trigger immediately when the user's message starts with "rw". Also trigger on "resume writer", "rewrite my resume", "enhance my resume", "fix my resume", "review my resume", or any request to improve, audit, or critique a resume. Also trigger when the user pastes a recruiter or hiring manager post (LinkedIn, blog, Reddit) and says "add to my library", "add insight", "rw add", or indicates they want to capture it as a resume principle. Also trigger on "two page", "two-page", "trim to two pages", "fit on two pages", "two page audit", or "page trim" to run the two-page audit mode. Handles paste, .docx, .pdf, and screenshot inputs. Produces a full rewrite plus a condensed audit by default, with full forensic line by line audit only when requested. General-purpose skill that works for any user's resume, not just the skill owner.
 ---
 
 # Resume Writer
@@ -112,6 +112,45 @@ When both a resume and a job description or explicit target role are present, ru
 - Highlight directly relevant evidence first in each recent role.
 - Do not fabricate experience, achievements, or keywords not supported by the original resume.
 
+### Step 4b: Two-page audit mode (when explicitly requested)
+
+Activate when the user says "two page", "two-page", "trim to two pages", "fit on two pages", "two page audit", or "page trim". Two-page mode runs inside Enhance mode — the full audit and rewrite still execute, but a strict trimming phase is added after the rewrite.
+
+**Estimate current length** before trimming. Use these proxies:
+
+- Pasted text or Markdown: 55 lines per page, ~650 words per page
+- DOCX: use word count if available; otherwise estimate from line count
+- If the resume is already two pages or under, state that and skip trimming. Still run the full audit.
+
+**Section priority rules** — apply in order until the resume fits two pages:
+
+Pass 1 — trim without removing content:
+- Cap the summary at 3 sentences. Cut the rest.
+- Collapse the skills section: remove any skill already demonstrated in a bullet point elsewhere. Merge overlapping categories into fewer lines.
+- Remove soft-skill filler ("results-driven", "team player", "passionate about") from all sections.
+
+Pass 2 — reduce bullet counts per role:
+- Roles held more than 5 years ago: reduce to 3 bullets maximum. Keep only bullets with unique evidence not covered by more recent roles.
+- Roles held more than 10 years ago: reduce to 1-2 bullets or collapse to a single line (Title, Company, Date range). Remove the section entirely only if all content is redundant.
+- Roles held more than 15 years ago: remove unless they contain a credential or achievement not available anywhere else in the resume (e.g., founding a company, a marquee client, a rare certification).
+
+Pass 3 — cut low-value sections:
+- Objective statements: remove entirely.
+- Interests or hobbies sections: remove unless directly relevant to the target role.
+- References available on request lines: remove.
+- GPA: remove unless the user is early-career and GPA is 3.7 or higher.
+- High school education: remove if any post-secondary credential exists.
+
+**After each pass**, re-estimate length. Stop as soon as the resume fits. Do not over-trim.
+
+**Trimming report**: After trimming, output a brief itemized list of what was cut and which pass removed it. The user may override any individual cut — flag this explicitly.
+
+**Two-page mode must not**:
+- Remove the two most recent roles or any of their primary bullets
+- Remove education, degrees, or active certifications
+- Remove contact information or target headline
+- Fabricate condensed content — if a bullet is cut, it is gone, not reworded into a shorter version that implies something different
+
 ### Step 5: Audit the resume
 
 For every bullet, section, and structural element, check it against each principle in the library and each pattern in common-patterns. Build an internal list of violations in this format:
@@ -136,6 +175,75 @@ Capture scoring inputs while auditing:
 - Category (from `scoring-model.md`)
 - Principle weight (from `scoring-model.md`)
 - Missing data flag (if present)
+
+**Gap analysis** (run as part of every audit):
+
+Parse all employment dates. Flag any gap greater than 2 months between consecutive roles, and any gap between the most recent role's end date and today greater than 3 months.
+
+For each gap found, record:
+
+- Gap period (start and end date)
+- Duration in months
+- The roles immediately before and after the gap
+- Whether any context clue exists in the resume (parenthetical, "Career Break" entry, freelance role, overlapping dates)
+
+Classify each gap:
+
+- **Explained**: The resume already addresses it. No action needed beyond noting it.
+- **Unexplained**: No context exists in the resume. Flag as MAJOR, cite `common-patterns § Red flags` (unexplained gaps), and set `MISSING_TIMELINE_CONTEXT`.
+- **Overlap**: Two roles share overlapping dates. Flag for the user to verify — may indicate concurrent employment or a title inflation risk.
+
+For each unexplained gap, generate 2-3 framing options based on duration and surrounding context. Present these as options for the user to select and adapt — never insert them into the rewrite without user confirmation.
+
+Framing by duration:
+
+- 2-4 months: "Career transition period", "Targeted job search following [prior role]", "Short-term contract or consulting work"
+- 4-9 months: "Career break for personal development", "Caregiver leave", "Relocation and resettlement", "Freelance or contract period"
+- 9+ months: "Extended career break (caregiving, health, or relocation)", "Entrepreneurial venture", "Full-time certification or academic study"
+- Gaps in early 2020: Note pandemic context — "Career pause during COVID-19 industry disruption"
+- Post-layoff context: If the preceding role ended at a known mass-layoff event, note "Consider adding: position eliminated in reduction-in-force, if applicable"
+
+Surface gap findings in the output:
+
+- Unexplained gaps appear as MAJOR issues in Issues by Severity
+- `MISSING_TIMELINE_CONTEXT` appears in Missing Data
+- Framing options appear in Top Fixes, labeled clearly as options not insertions
+
+**Skills taxonomy validation** (run as part of every audit):
+
+Scan the entire resume — skills sections, bullet points, summaries, and certifications — for tool names, product names, and technology terms that are outdated, deprecated, or renamed. Flag each one with the current preferred name and the reason for the change.
+
+Known substitutions to check (non-exhaustive — apply judgment for any tool that has been renamed, rebranded, or superseded):
+
+- SCCM → Microsoft Configuration Manager (or ConfigMgr)
+- SCOM → Microsoft System Center Operations Manager (abbreviated SCOM is still acceptable; flag if the long form is used inconsistently)
+- Azure Active Directory / Azure AD → Microsoft Entra ID
+- AAD → Microsoft Entra ID
+- Office 365 → Microsoft 365
+- Exchange Online / EXO → acceptable; flag if "Exchange Server" is listed when the org clearly uses cloud
+- Skype for Business → Microsoft Teams (flag if still listed as a current skill)
+- Windows 10 Management → flag if listed without also noting Windows 11 readiness for roles dated 2022 or later
+- Intune → Microsoft Intune (acceptable abbreviation, but flag if listed as "MDM" generically when Intune is the actual platform)
+- PowerBI → Power BI (two words is the current brand style)
+- PowerApps → Power Apps (two words)
+- PowerAutomate → Power Automate (two words)
+- SharePoint Online vs SharePoint Server → flag if version context is ambiguous for a cloud-focused role
+- Kubernetes → acceptable; flag if "K8s" is used without spelling it out at least once
+- Docker Swarm → flag if listed as a primary orchestration skill without noting Kubernetes, for roles dated 2021 or later where Swarm is largely superseded
+
+For each flagged term:
+
+- Record the outdated term, the preferred term, and the location in the resume
+- Classify severity: MINOR if cosmetic, MAJOR if the outdated name signals a skills gap or misalignment with a modern job description
+- When a job description is present and uses the current name, escalate to MAJOR if the resume uses the old name
+
+Do not flag abbreviations that are still widely used and unambiguous in context (e.g., "SQL", "VM", "SaaS"). Only flag when the full renamed brand or deprecated product name is the actual issue.
+
+Surface taxonomy findings in the output:
+
+- Each flagged term appears in Audit Findings with current preferred name and severity
+- MAJOR taxonomy issues appear in Issues by Severity
+- Corrections are applied in the rewritten resume — use the current preferred name everywhere
 
 ### Step 6: Produce the rewrite
 
@@ -169,11 +277,44 @@ For each section of the rewrite, check:
 
 If the re-audit surfaces issues, fix them silently before presenting. Do not show the user the self-validation pass — it is an internal checkpoint, not part of the deliverable.
 
-### Step 8: Produce the output
+### Step 8: Generate cover letter
+
+Generate a cover letter when either condition is true:
+
+- A job description is present (auto-generate alongside the rewrite — do not ask)
+- The user explicitly requests a cover letter, even without a job description
+
+**When a job description is present**, the cover letter must:
+
+- Address the specific role and company named in the job description
+- Open without a generic opener — "I am writing to apply for..." is prohibited
+- Select 2-3 achievements from the rewritten resume that most directly answer the job's stated requirements
+- Mirror language from the job description naturally — same words, not keyword stuffing
+- Stay under 400 words and 4 paragraphs
+- Close with a direct call to action, not filler phrases ("I look forward to hearing from you" is prohibited)
+
+Cover letter structure:
+
+- **Paragraph 1 (Hook)**: Why this role at this company, stated specifically. Reference something concrete from the job description or the company.
+- **Paragraph 2 (Proof 1)**: The single strongest achievement from the rewritten resume that maps directly to the role's top stated need.
+- **Paragraph 3 (Proof 2)**: A second achievement or area of fit, with a brief connecting sentence explaining relevance to the role.
+- **Paragraph 4 (Close)**: Restate fit in one sentence. Name a specific next step — request for interview, offer to share examples, or similar.
+
+Hard rules:
+
+- Do not repeat resume bullets verbatim. Reframe them as narrative.
+- Do not fabricate company details, role details, or achievements not present in the resume.
+- Do not add soft skill walls ("I am a passionate, results-driven professional...").
+
+**When no job description is present but a cover letter is explicitly requested**, generate a generic version targeting the most likely role based on resume content. Prepend this label to the output: `Generic version — personalize the hook and company-specific references before sending.`
+
+**Self-validate the cover letter**: Before presenting, confirm the hook references something specific from the JD (or resume target role), both proof paragraphs cite real resume evidence, and the close names a concrete next step.
+
+### Step 9: Produce the output
 
 Apply Output Mode Handling before final response assembly.
 
-Deliver seven sections, in this order:
+Deliver eight sections in the standard order, plus a ninth when two-page mode ran:
 
 1. **Final Score Summary**
    - Final Score
@@ -221,13 +362,26 @@ Deliver seven sections, in this order:
    - Include any "Not-in-library observations".
    - If any Not-in-library observation recurs, offer to add it as a principle.
 
+8. **Cover Letter** (when generated per Step 8)
+   - Include the full cover letter text.
+   - If generated from a job description, no label is needed.
+   - If generated without a job description, prepend the generic-version label.
+   - In JSON output, map this content to `cover_letter`. Set to `null` if no cover letter was generated.
+
+9. **Two-Page Trimming Report** (when two-page mode ran)
+   - State the estimated pre-trim length and post-trim length.
+   - List every item cut, which pass removed it, and the reason.
+   - Explicitly note that any cut can be overridden — the user should reply with the item to restore.
+   - If no trimming was needed, state "Resume already fits two pages — no content removed."
+   - In JSON output, map this content to `two_page_trim_report`. Set to `null` if two-page mode was not active.
+
 If source is not pasted text, always state extraction confidence (High, Medium, or Low) and parsing limitations.
 
 Output mode assembly rules:
 
-- `human`: return only the seven human-readable sections.
+- `human`: return only the applicable human-readable sections.
 - `json`: return only the JSON object defined by `json-output-spec.md`.
-- `both`: return the seven human-readable sections first, then append a fully conforming JSON object.
+- `both`: return the human-readable sections first, then append a fully conforming JSON object.
 
 ## Scoring Workflow
 
@@ -303,6 +457,8 @@ Every resume audit in Enhance mode MUST run this scoring workflow.
    - `system_flags`
    - `top_fixes`
    - `rewritten_resume`
+   - `cover_letter`
+   - `two_page_trim_report`
    - `notes`
 
 11. Bind rewrite output to scoring records:
@@ -311,6 +467,8 @@ Every resume audit in Enhance mode MUST run this scoring workflow.
    - In `json` and `both` modes, populate `principle_scores[].fix` whenever possible.
    - If rewrite output is included, place full rewritten resume in `rewritten_resume`.
    - If no rewrite was requested, set `rewritten_resume` to `null`.
+   - If a cover letter was generated, place it in `cover_letter`.
+   - If no cover letter was generated, set `cover_letter` to `null`.
 
 12. System flags:
    - `BULLET_QUALITY_LOW`

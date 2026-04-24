@@ -1,45 +1,36 @@
 # Claude Skill Template
 
-Template for creating Claude-specific skills with the proper structure and metadata.
+This file is a Claude-oriented wrapper template. Define the portable skill first in the shared standard, then adapt it here only where Claude requires specific packaging.
+
+## Skill Reference
+
+- Portable source: `shared or canonical path here`
+- Skill name: `skill-name`
 
 ## Metadata
 
 ```yaml
 ---
-name: Skill Name
-description: Brief description of what this skill does
+name: skill-name
+description: Brief description of the skill
 version: 1.0.0
-author: Your Name
 ---
 ```
 
-## Overview
+## Claude-Specific Notes
 
-Provide a clear overview of what this skill accomplishes and when to use it.
+- Note any Claude packaging requirements.
+- Keep shared workflow and constraints aligned with the portable source.
+- Document only Claude-specific differences.
 
-## Usage
-
-Describe how to invoke and use this skill.
-
-## Examples
-
-Provide concrete examples of usage:
+## Adapted Instructions
 
 ```text
-Example input: ...
-Expected output: ...
+Insert the Claude wrapper instructions here.
 ```
 
-## Best Practices
+## Validation
 
-- List any Claude-specific best practices
-- Include performance considerations
-- Note any limitations
-
-## Integration
-
-How to integrate this skill with other Claude tools and features.
-
-## See Also
-
-- Related skills or documentation
+- Verified against the portable examples
+- Verified against the portable test cases
+- Claude-only differences documented

@@ -25,7 +25,7 @@ Describe how to invoke and use this skill.
 
 Provide concrete examples of usage:
 
-```
+```text
 Example input: ...
 Expected output: ...
 ```

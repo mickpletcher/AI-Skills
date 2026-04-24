@@ -9,7 +9,7 @@ Guides Claude to work within the current mixed Python and PowerShell `Trading` r
 ## Trigger Phrases
 
 | Phrase | Action |
-|--------|--------|
+| --- | --- |
 | `alpaca script for...` | Create or update a script in the existing Trading repo structure |
 | `backtesting script` | Work in the `Backtesting/` area |
 | `paper trading...` | Prefer the paper-trading-safe path |
@@ -64,9 +64,21 @@ Follow the existing repo conventions for PowerShell and Python rather than inven
 Alpaca Trading/
 |-- README.md
 |-- skill.md
+|-- upgrades.md
 `-- alpaca-trading.skill
 ```
 
 ## Installation
 
 Run the repo packer against this folder to rebuild `alpaca-trading.skill`, then install it with your normal Claude skill workflow.
+
+## Upgrade Log
+
+See [upgrades.md](upgrades.md) for a record of implemented upgrades.
+
+## Implement In Claude
+
+1. Update the checked-in source files for this skill first.
+2. Rebuild `alpaca-trading.skill` from the current source files. Include any supporting runtime files the package depends on.
+3. Import the `.skill` package into Claude using your normal Claude skills workflow, or place it in your local Claude skills directory if you manage skills manually.
+4. Start a new Claude chat or refresh available skills, then test with one of the trigger phrases or example requests from this README.

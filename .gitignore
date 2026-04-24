@@ -1,0 +1,34 @@
+# Claude Code local project settings
+.claude/
+
+# Skill planning files (local only, not for repo)
+claude/skills/*/future-upgrades.md
+future-skills.md
+
+# Windows OS artifacts
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# macOS artifacts
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor artifacts
+*.code-workspace
+.vscode/
+*.swp
+*.swo
+*~
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+.venv/
+
+# Logs
+*.log

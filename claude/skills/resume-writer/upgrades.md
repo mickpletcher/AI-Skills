@@ -3,7 +3,7 @@
 Tracks implemented upgrades to this skill. Future upgrade ideas are in [future-upgrades.md](future-upgrades.md) (local only, not tracked in git).
 
 | Date | Upgrade | Notes |
-|------|---------|-------|
+| ---- | ------- | ----- |
 | 2026-04-24 | Cover letter generation | Auto-generates a targeted cover letter alongside the resume rewrite when a job description is provided. Uses the same JD input to align the hook, proof paragraphs, and close to the specific role. A generic version is produced when no JD is present, labeled for manual personalization before sending. Cover letter maps to `cover_letter` in JSON output. |
 | 2026-04-24 | Gap analyzer | Detects employment gaps greater than 2 months as part of every audit. Classifies each gap as explained, unexplained, or overlapping. Generates 2-3 framing options per unexplained gap based on duration and context (including pandemic-era and post-layoff patterns). Unexplained gaps surface as MAJOR issues. Framing options appear in Top Fixes as user-selectable options, never inserted into the rewrite without confirmation. |
 | 2026-04-24 | Skills taxonomy validator | Scans every resume section for outdated, deprecated, or renamed tool names and flags each with the current preferred term. Covers Microsoft stack renames (SCCM→ConfigMgr, Azure AD→Entra ID, Office 365→Microsoft 365, Power BI/Apps/Automate spacing), legacy products superseded by modern equivalents, and brand style issues. Severity escalates to MAJOR when a job description uses the current name and the resume uses the old one. Corrections are applied directly in the rewrite. |

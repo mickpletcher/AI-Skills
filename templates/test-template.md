@@ -3,7 +3,7 @@
 ## Skill Under Test
 
 - Name:
-- Portable source:
+- Platform folder source:
 - Variant under test:
 - Date:
 
@@ -35,6 +35,6 @@
 
 ## Drift Check
 
-- Does the variant still match the portable workflow?
+- Does the skill still match the real workflow it depends on?
 - Are any platform-only rules documented?
-- Should the portable source be updated?
+- Should the source skill file be updated?

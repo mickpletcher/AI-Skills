@@ -1,48 +1,46 @@
-# Portable Skill Standard
+# Skill Authoring Standard
 
-This document defines the minimum standard for a skill that should be adaptable across Claude, ChatGPT, and GitHub Copilot.
+This document defines the minimum standard for writing a skill in this repository.
+
+Skills should be authored inside the platform folder they belong to. A Claude skill belongs in `claude/`, a ChatGPT skill belongs in `chatgpt/`, and a Copilot skill belongs in `copilot/`.
 
 ## Purpose
 
-A portable skill should describe a repeatable capability in a way that is:
+A skill should describe a repeatable capability in a way that is:
 
 - clear to a human editor
-- easy to adapt for multiple AI products
+- usable by the target platform
 - testable with example inputs
-- stable enough to evolve without rewriting from scratch per platform
+- maintainable as the platform-specific source of truth
 
-## Canonical Source
+## Source Of Truth
 
-Every skill should have one platform-neutral source of truth before tool-specific variants are created.
+Each skill should have one primary editable source in its platform folder.
 
-The canonical source should capture:
+That source should capture:
 
 - the skill name
 - the problem it solves
 - when to use it
-- required inputs and assumptions
-- expected outputs
-- workflow or execution steps
-- constraints and safety boundaries
+- when not to use it
+- the expected workflow
+- important constraints and safety boundaries
 - examples
-- test cases
+- validation or review checks
 
-## Required Sections
+## Recommended Sections
 
-Each portable skill should include these sections in this order:
+Most skills in this repo should include these sections:
 
-1. `Name`
+1. `Name` or platform metadata header
 2. `Intent`
-3. `Use When`
+3. `Trigger When` or `Use When`
 4. `Do Not Use When`
-5. `Inputs`
-6. `Outputs`
-7. `Workflow`
-8. `Constraints`
-9. `Platform Notes`
-10. `Examples`
-11. `Test Cases`
-12. `Maintenance Notes`
+5. `Workflow`
+6. `Constraints`
+7. `References`
+8. `Examples`
+9. `Validation Checklist` or `Test Cases`
 
 ## Section Guidance
 
@@ -54,45 +52,33 @@ Use a short, stable name that describes the capability rather than the implement
 
 Describe the user problem the skill solves in 2-4 sentences.
 
-### Use When
+### Trigger When Or Use When
 
 List the situations where the skill is appropriate.
 
 ### Do Not Use When
 
-Call out nearby scenarios that should use a different skill or a manual workflow.
-
-### Inputs
-
-List the minimum information the skill needs to work well.
-
-### Outputs
-
-Describe the expected shape of the result. Focus on user-visible outcomes, not internal reasoning.
+Call out nearby scenarios that should use another skill or manual handling.
 
 ### Workflow
 
-Document the repeatable process the skill should follow. Keep this procedural and platform-neutral.
+Document the repeatable process the skill should follow.
 
 ### Constraints
 
 Capture important limits, safety boundaries, formatting rules, and things the skill must avoid.
 
-### Platform Notes
+### References
 
-Document only the differences that matter for Claude, ChatGPT, or Copilot. Avoid copying the whole skill into three separate notes when the core behavior is the same.
+Link the repo docs, files, or external references that the skill depends on.
 
 ### Examples
 
-Provide realistic examples of prompts and expected behavior.
+Provide realistic prompts and expected behavior.
 
-### Test Cases
+### Validation Checklist Or Test Cases
 
-List checks that confirm the skill works as intended across platforms.
-
-### Maintenance Notes
-
-Note owners, drift risks, linked docs, or review triggers.
+List the checks that confirm the skill still matches the real platform workflow and any live repo dependencies.
 
 ## Minimum Quality Bar
 
@@ -101,14 +87,9 @@ A skill is ready to reuse when:
 - its intent is specific
 - its workflow is concrete
 - its constraints are explicit
-- it includes at least 2 examples
-- it includes at least 3 test cases
-- platform differences are documented without forking the core logic
-
-## Versioning Guidance
-
-Increase the skill version when behavior changes in a user-visible way. Do not bump versions for minor wording cleanup unless the wording changes expected outcomes.
+- it includes at least 2 examples or equivalent usage guidance
+- it includes at least 3 validation checks or test cases
 
 ## Design Principle
 
-Write once at the portable layer. Specialize only where a platform forces you to.
+Keep shared guidance in `shared/`, but keep the actual skill definition in the platform folder that owns it.

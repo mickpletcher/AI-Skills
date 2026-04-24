@@ -1,4 +1,8 @@
-# Name
+# Skill Template
+
+Use this as a starting point for a new skill inside the platform folder that owns it.
+
+## Name
 
 `skill-name`
 
@@ -6,7 +10,7 @@
 
 Describe the user problem this skill solves and the result it should produce.
 
-## Use When
+## Trigger When
 
 - Situation 1
 - Situation 2
@@ -16,17 +20,6 @@ Describe the user problem this skill solves and the result it should produce.
 
 - Nearby case that should use a different skill
 - Case where manual handling is better
-
-## Inputs
-
-- Required input 1
-- Required input 2
-- Optional input 3
-
-## Outputs
-
-- Expected result format
-- Important success characteristics
 
 ## Workflow
 
@@ -38,22 +31,13 @@ Describe the user problem this skill solves and the result it should produce.
 ## Constraints
 
 - Do not fabricate missing facts.
-- Keep the workflow aligned with the actual task.
-- Avoid platform-specific assumptions unless documented below.
+- Keep the workflow aligned with the real task.
+- Follow the rules of the platform that owns this skill.
 
-## Platform Notes
+## References
 
-### Claude
-
-List only Claude-specific packaging or behavior differences.
-
-### ChatGPT
-
-List only ChatGPT-specific packaging or behavior differences.
-
-### GitHub Copilot
-
-List only Copilot-specific packaging or behavior differences.
+- Related repo path or docs
+- Related standards or installation notes
 
 ## Examples
 
@@ -83,14 +67,8 @@ Expected behavior:
 - Outcome 1
 - Outcome 2
 
-## Test Cases
+## Validation Checklist
 
-- The skill succeeds with a standard request.
-- The skill handles missing optional context safely.
+- The skill matches the real files and workflow it depends on.
+- The skill handles a standard request correctly.
 - The skill refuses or redirects an out-of-scope request.
-
-## Maintenance Notes
-
-- Owner:
-- Review trigger:
-- Related docs:

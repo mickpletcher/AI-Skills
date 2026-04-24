@@ -1,36 +1,36 @@
 # AI Skills
 
-This repository is a shared home for reusable AI skills that can be adapted for Claude, ChatGPT, and VS Code GitHub Copilot.
+This repository is a shared home for AI skills organized by platform.
 
-The goal is to keep each skill portable at its core, then add tool-specific wrappers only where a platform genuinely needs them.
+Skills in this repo should live under the platform they are written for, such as `claude/`, `chatgpt/`, or `copilot/`. Shared docs are for conventions and repo guidance, not as a cross-platform source of truth for every skill.
 
 ## Repository Structure
 
-- `shared/`: cross-platform standards, naming rules, and portability guidance
-- `templates/`: starter templates for portable skills and platform-specific variants
-- `claude/`: Claude-oriented skill implementations and examples
-- `chatgpt/`: ChatGPT-oriented skill implementations and support material
-- `copilot/`: GitHub Copilot-oriented instructions and prompts
+- `shared/`: repo-wide guidance, standards, naming rules, and organization notes
+- `templates/`: starter templates for new skills and validation notes
+- `claude/`: Claude-specific skills, wrappers, metadata, and packaged exports
+- `chatgpt/`: ChatGPT-specific instructions, prompts, schemas, and support material
+- `copilot/`: GitHub Copilot-specific instructions and prompts
 - `docs/`: supporting documentation and future process docs
 
 ## Working Model
 
-Create skills in this order:
+Create skills directly inside the platform folder where they belong:
 
-1. Define the portable intent of the skill.
-2. Capture the shared contract in a platform-neutral format.
-3. Add Claude, ChatGPT, and Copilot variants only where behavior or packaging differs.
-4. Test the skill against representative prompts before treating it as reusable.
+1. Pick the target platform first.
+2. Write the skill in that platform's folder as the source of truth.
+3. Use `shared/` for naming, structure, and repo-level guidance only.
+4. Record checks with [templates/test-template.md](./templates/test-template.md).
 
 ## Start Here
 
 - Read [shared/skill-standard.md](./shared/skill-standard.md) before creating a new skill.
-- Use [templates/portable-skill-template.md](./templates/portable-skill-template.md) for the canonical source.
-- Use the platform templates in `templates/` only after the portable version is clear.
-- Record checks with [templates/test-template.md](./templates/test-template.md).
+- Read [shared/platform-organization.md](./shared/platform-organization.md) for folder intent.
+- Use [templates/skill-template.md](./templates/skill-template.md) as the base template.
+- Use platform-specific templates in `templates/` when needed.
 
 ## Current Recommendation
 
-This repo does not need GitHub Spec yet.
+This repo still does not need GitHub Spec yet.
 
-The better first step is to stabilize the portable skill standard and keep new skills consistent. If the standard becomes complex, gains automation, or needs strict change control, GitHub Spec will start making sense.
+The higher-value step is to establish clean platform-specific skill conventions and keep each platform folder organized. If the repo later gains automation, schema validation, packaging pipelines, or a formal contribution workflow, GitHub Spec may become useful.

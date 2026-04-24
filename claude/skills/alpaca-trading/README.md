@@ -15,10 +15,9 @@ claude/skills/alpaca-trading/
 
 ## Source Of Truth
 
-- Portable canonical skill: [`Skills/alpaca-trading.md`](../../../Skills/alpaca-trading.md)
 - Claude runtime source: [`SKILL.md`](./SKILL.md)
 
-Update the portable source first when the workflow changes. Then update `SKILL.md` only where Claude packaging or behavior requires it. Rebuild `alpaca-trading.skill` after source changes.
+Update `SKILL.md` when the workflow changes, then rebuild `alpaca-trading.skill` so the packaged export stays in sync.
 
 ## What This Skill Covers
 

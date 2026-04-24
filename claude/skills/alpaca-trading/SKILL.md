@@ -1,12 +1,11 @@
 ---
 name: alpaca-trading
 description: Work safely in the Trading repository for Alpaca helpers, backtesting, journaling, scheduling, and related PowerShell modules. Prefer additive changes, preserve existing trading logic unless the user asks otherwise, and default to paper-trading-safe guidance.
-version: 1.0.0
 ---
 
 # Alpaca Trading
 
-Use this skill when the user is working in the `Trading` repository on Alpaca-connected scripts, backtesting workflows, journaling, scheduling, or the reusable PowerShell Alpaca modules.
+Use this skill when the user is working in the `Trading` repository on Alpaca-connected scripts, backtesting workflows, journaling, scheduling, or reusable PowerShell Alpaca modules.
 
 ## Trigger When
 

@@ -8,10 +8,11 @@ Use [SKILL.md](SKILL.md) as the canonical source for this skill. The packaged [r
 
 ## Overview
 
-This skill has two main modes:
+This skill has three main modes:
 
 1. `Enhance` mode for rewriting, auditing, and scoring a resume. When a job description is provided, it also auto-generates a matching cover letter.
 2. `Add Insight` mode for extracting new principles from recruiter or hiring guidance and adding them to the local library
+3. `Refresh Tips` mode for maintaining a weekly staging area of fresh recruiter, HR, and hiring-manager advice before promoting anything into the durable library
 
 It supports human-readable audit output plus structured JSON output for automation.
 
@@ -78,7 +79,19 @@ Example:
 rw audit this resume in json mode
 ```
 
-### 5. What You Get Back
+### 5. Refresh Tips Mode
+
+Use when you want to keep a `tips/` subdirectory current with new post suggestions from recruiters, HR influencers, and hiring managers.
+
+Example prompts:
+
+```text
+rw refresh my resume tips library
+rw review the latest items in tips/inbox
+rw promote the best reviewed tips into the principles library
+```
+
+### 6. What You Get Back
 
 Depending on prompt and mode, output can include:
 
@@ -97,6 +110,10 @@ Depending on prompt and mode, output can include:
 - [json-output-spec.md](json-output-spec.md): machine-readable output contract
 - [insights/principles.md](insights/principles.md): persistent recruiter-principle library
 - [references/common-patterns.md](references/common-patterns.md): fallback structural patterns and red flags
+- [tips/README.md](tips/README.md): staging workflow for fresh recruiter and hiring guidance
+- [tips/sources.json](tips/sources.json): curated weekly source roster
+- [scripts/Invoke-ResumeTipsRefresh.ps1](scripts/Invoke-ResumeTipsRefresh.ps1): local helper for weekly refresh packets and candidate tip imports
+- [scripts/Register-ResumeTipsRefreshTask.ps1](scripts/Register-ResumeTipsRefreshTask.ps1): helper to register the weekly Windows scheduled task
 
 ## File Structure
 
@@ -106,6 +123,16 @@ resume-writer/
 |-- SKILL.md
 |-- scoring-model.md
 |-- json-output-spec.md
+|-- scripts/
+|   |-- Invoke-ResumeTipsRefresh.ps1
+|   |-- Register-ResumeTipsRefreshTask.ps1
+|   `-- resume-tip-submissions-template.csv
+|-- tips/
+|   |-- README.md
+|   |-- sources.json
+|   |-- inbox/
+|   |-- reviewed/
+|   `-- archive/
 |-- upgrades.md
 |-- future-upgrades.md
 |-- insights/
@@ -118,6 +145,113 @@ resume-writer/
 ## Upgrade Log
 
 See [upgrades.md](upgrades.md) for a record of implemented upgrades.
+
+## Weekly Tips Workflow
+
+This skill now supports a two-layer knowledge model:
+
+- `insights/principles.md` is the authoritative source used for normal audits
+- `tips/` is a staging area for fresh post suggestions that still need review
+
+That separation matters. Social posts can be useful, but they are often anecdotal, trend-driven, or contradictory. The weekly process keeps the skill current without polluting the main principles library.
+
+### What the weekly task does
+
+`[scripts/Invoke-ResumeTipsRefresh.ps1](scripts/Invoke-ResumeTipsRefresh.ps1)` creates a dated weekly review packet and can optionally import post candidates from a CSV into `tips/inbox/`.
+
+It does not try to do brittle authenticated scraping of social feeds. Instead, it gives you a repeatable workflow:
+
+1. Review the curated sources in [tips/sources.json](tips/sources.json)
+2. Capture promising posts or articles
+3. Drop them into `tips/inbox/`
+4. Review and promote only the strongest patterns
+
+### Option 1: Run it manually
+
+From the `resume-writer` folder:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\Invoke-ResumeTipsRefresh.ps1
+```
+
+That creates a file like `tips/weekly-review-2026-04-24.md`.
+
+If you have already collected candidate posts into CSV form, use the included template and import them in the same run:
+
+```powershell
+Copy-Item .\scripts\resume-tip-submissions-template.csv .\tips\my-weekly-submissions.csv
+powershell -ExecutionPolicy Bypass -File .\scripts\Invoke-ResumeTipsRefresh.ps1 -SubmissionCsvPath .\tips\my-weekly-submissions.csv
+```
+
+### Option 2: Register a local weekly Windows task
+
+You can create the scheduled task automatically with the included helper:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\Register-ResumeTipsRefreshTask.ps1
+```
+
+That creates a task named `Resume Writer Weekly Tips Refresh` for Mondays at `09:00`.
+
+To customize the schedule:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\Register-ResumeTipsRefreshTask.ps1 -DayOfWeek Friday -StartTime 07:30
+```
+
+If you prefer to create the task manually, use Windows Task Scheduler:
+
+1. Open `Task Scheduler`
+2. Choose `Create Task...`
+3. Name it something like `Resume Writer Weekly Tips Refresh`
+4. On `Triggers`, add a weekly trigger for the day and time you want
+5. On `Actions`, add:
+   Program/script:
+   `powershell.exe`
+   Add arguments:
+   `-ExecutionPolicy Bypass -File "C:\Users\mick0\OneDrive\Documents\Code & Dev\GitHub\AI-Skills\claude\skills\resume-writer\scripts\Invoke-ResumeTipsRefresh.ps1"`
+   Start in:
+   `C:\Users\mick0\OneDrive\Documents\Code & Dev\GitHub\AI-Skills\claude\skills\resume-writer`
+6. Save the task and run it once manually to confirm it creates the weekly review file
+
+### Option 3: Use the repo-driven GitHub Action
+
+The repo now includes [resume-writer-tips-refresh.yml](../../../.github/workflows/resume-writer-tips-refresh.yml), which runs on:
+
+1. a weekly schedule
+2. manual `workflow_dispatch`
+
+What it does:
+
+1. checks out the repo on `windows-latest`
+2. runs `scripts/Invoke-ResumeTipsRefresh.ps1`
+3. uploads the generated `weekly-review-*.md` file as a workflow artifact
+
+How to use it:
+
+1. Push this repo to GitHub
+2. Open `Actions` in GitHub
+3. Run `Resume Writer Tips Refresh` manually, or let the Monday schedule run automatically
+4. Download the `resume-writer-weekly-review` artifact from the workflow run
+
+This GitHub Action does not attempt authenticated social scraping. It is meant to keep the weekly review cadence repo-driven and reproducible, while you still decide which sources and posts deserve promotion.
+
+### After any option runs
+
+1. Open the new `tips/weekly-review-<date>.md` packet
+2. Visit the listed discovery URLs
+3. Capture strong posts into `tips/inbox/`
+4. Move good keepers into `tips/reviewed/`
+5. Promote only durable ideas into `insights/principles.md`
+
+### Recommended promotion rule
+
+Promote a tip into `insights/principles.md` only when it is:
+
+1. Specific enough to change a resume audit
+2. Actionable beyond one niche situation
+3. Consistent with other trusted recruiter or hiring-manager guidance
+4. Worth citing repeatedly in future resume reviews
 
 ## Implement In Claude
 

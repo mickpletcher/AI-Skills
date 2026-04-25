@@ -7,9 +7,11 @@ description: Rewrite and enhance resumes using a persistent library of principle
 
 Rewrites resumes using a persistent, user-curated library of principles harvested from recruiters, hiring managers, and HR professionals. Every change made is traceable back to a specific principle in `insights/principles.md` or a pattern in `references/common-patterns.md`.
 
-## Two modes
+`tips/` is the staging area for newly collected posts, weekly review packets, and candidate advice that has not yet been promoted into the authoritative library. Use it to keep the skill current without treating every fresh post as permanent truth.
 
-This skill operates in one of two modes. Detect which one before proceeding.
+## Three modes
+
+This skill operates in one of three modes. Detect which one before proceeding.
 
 ### Mode 1: Enhance a resume (default)
 
@@ -23,10 +25,17 @@ Triggered when the user pastes or uploads a recruiter/HR post and says something
 
 Go to the **Add Insight Workflow** section.
 
+### Mode 3: Refresh tips staging area
+
+Triggered when the user asks to refresh, review, triage, summarize, or organize recruiter/HR posts for future resume guidance, or refers to the weekly `tips/` update.
+
+Go to the **Refresh Tips Workflow** section.
+
 ### Mode detection rules
 
 - If a resume-shaped input is present (text with experience/education sections, or a .docx/.pdf/image file that looks like a resume), default to Enhance mode. Do not ask.
 - If only a recruiter/HR post is present with no resume, default to Add Insight mode. Do not ask.
+- If the user is asking to maintain the source pipeline, weekly refresh process, source roster, or `tips/` contents, use Refresh Tips mode.
 - Only ask "enhance or add to library?" when the input is genuinely ambiguous (e.g., a LinkedIn profile export that could be either).
 
 ## Output Mode Handling
@@ -85,6 +94,8 @@ If the source is not pasted text, include extraction confidence in the final out
 ### Step 2: Load the insights library and common patterns
 
 Read `insights/principles.md` and `references/common-patterns.md` in full. Both are authoritative sources for the audit.
+
+Treat `tips/` as optional context only. Never cite a raw `tips/inbox/` item as an authoritative principle unless the user explicitly asks for emerging or experimental guidance. Prefer `tips/reviewed/` over `tips/inbox/` when both exist.
 
 If either file cannot be read, continue in degraded mode and state exactly what is missing and how that limits the audit.
 
@@ -541,10 +552,76 @@ Skipped (already covered): [Name]
 
 ---
 
+## Refresh Tips Workflow
+
+### Step 1: Load the tips workspace
+
+Read these files when present:
+
+- `tips/README.md`
+- `tips/sources.json`
+- `tips/inbox/`
+- `tips/reviewed/`
+- `tips/archive/`
+
+Treat this workspace as a staging system:
+
+- `tips/inbox/`: newly captured posts and candidate suggestions
+- `tips/reviewed/`: reviewed notes worth keeping as reusable context
+- `tips/archive/`: stale, duplicate, or superseded items
+
+### Step 2: Classify the request
+
+Choose the smallest matching action:
+
+- **Refresh run**: create or update a dated weekly review packet, summarize new material, and prepare candidate tip files
+- **Review run**: dedupe inbox items, score confidence, and move clear keepers to `reviewed/`
+- **Promotion run**: convert reviewed tips into durable principles in `insights/principles.md`
+
+### Step 3: Normalize each candidate tip
+
+Each tip file should capture:
+
+- source name
+- source role or source type
+- source URL
+- published date when known
+- fetched or reviewed date
+- topic tags
+- why it matters
+- extracted resume advice
+- promotion recommendation
+
+Do not store a long verbatim copy of the full post when a concise summary is enough. Keep enough detail to recover the idea and source.
+
+### Step 4: Evaluate trust level
+
+For each candidate item, label it conceptually as one of:
+
+- **Promote candidate**: specific, actionable, resume-relevant, and consistent with known recruiter behavior
+- **Review later**: plausible but needs comparison against other sources
+- **Archive**: weak, generic, contradictory, or not resume-focused
+
+Fresh social posts are not automatically principles. If the advice is anecdotal, trendy, or overly specific to one recruiter's workflow, keep it in `tips/` instead of promoting it.
+
+### Step 5: Produce the weekly result
+
+For refresh and review runs, return:
+
+- how many new candidates were added
+- how many were moved to `reviewed/`
+- how many were archived
+- which items look strongest for promotion into `insights/principles.md`
+
+If no new high-value advice was found, say so plainly and keep the workspace unchanged except for the dated review packet if one was requested.
+
+---
+
 ## Principles of using this skill
 
 - **Every audit finding must map to a library principle, a pattern in `common-patterns.md`, or be clearly flagged as "Not-in-library observations".** Do not invent principles.
 - **Library principles win over patterns** when both apply. Library entries have attribution and specific framing; patterns are the fallback.
+- **`tips/` is a staging layer, not the source of truth.** Raw or newly reviewed tips can inform future library growth, but only `insights/principles.md` and `references/common-patterns.md` are authoritative for normal audits.
 - **Never fabricate metrics.** If a bullet needs a number the user did not supply, flag it in the "Missing data" section and rewrite with the strongest truthful framing available.
 - **Preserve facts, rewrite framing.** Employers, titles, dates, certifications, and education details are never changed. Everything else is fair game.
 - **The library grows over time.** If during a rewrite you notice the user would benefit from a principle not yet captured, mention it in "Next steps": "This weakness maps to a common recruiter complaint I do not have in your library yet. Want to add it?"
@@ -557,3 +634,4 @@ Skipped (already covered): [Name]
 - If the resume is multi column, table heavy, or visually complex, proceed but warn that parsing fidelity may be reduced.
 - If a job description, target role, or target company is provided, prioritize alignment to that target over generic optimization.
 - If the environment cannot write to `insights/principles.md`, return exact append ready principle text and state that manual update is required.
+- If `tips/` files cannot be read, continue without them. Do not pretend fresh-source review was performed when the staging files were unavailable.

@@ -32,3 +32,7 @@ venv/
 
 # Logs
 *.log
+
+# resume-writer generated weekly refresh artifacts
+claude/skills/resume-writer/tips/weekly-review-*.md
+claude/skills/resume-writer/tips/*.csv

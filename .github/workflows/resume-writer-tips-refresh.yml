@@ -1,0 +1,33 @@
+name: Resume Writer Tips Refresh
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 14 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: windows-latest
+
+    defaults:
+      run:
+        shell: pwsh
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run weekly refresh helper
+        working-directory: claude/skills/resume-writer
+        run: |
+          ./scripts/Invoke-ResumeTipsRefresh.ps1
+
+      - name: Upload weekly review packet
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-writer-weekly-review
+          path: claude/skills/resume-writer/tips/weekly-review-*.md
+          if-no-files-found: error

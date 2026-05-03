@@ -1,0 +1,39 @@
+{
+  "colors": {
+    "bg_start": "#0d1117",
+    "bg_end": "#161b22",
+    "accent": "#58a6ff",
+    "text_primary": "#e6edf3",
+    "text_secondary": "#8b949e",
+    "tag_bg": "#21262d",
+    "tag_border": "#30363d",
+    "tag_text": "#58a6ff",
+    "mark_color": "#30363d"
+  },
+  "fonts": {
+    "font_path": null,
+    "title_size": 72,
+    "subtitle_size": 36,
+    "tag_size": 28
+  },
+  "layout": {
+    "canvas_width": 1280,
+    "canvas_height": 640,
+    "padding": 80,
+    "mark_size": 48,
+    "tag_corner_radius_ratio": 0.35,
+    "tag_gap": 12,
+    "accent_line_height": 4,
+    "max_title_lines": 2,
+    "max_subtitle_lines": 2,
+    "max_tags": 5
+  },
+  "notes": {
+    "font_path": "Set to an absolute path of a .ttf or .ttc file to override system font detection. Leave null to use auto-detection.",
+    "mark_color": "GitHub Octocat mark rendered as a low-opacity watermark in the top-left corner.",
+    "accent": "Top accent line color. Matches GitHub's blue highlight (#58a6ff).",
+    "bg_start": "Left edge background color. GitHub dark base (#0d1117).",
+    "bg_end": "Right edge background color. GitHub dark surface (#161b22).",
+    "tag_text": "Tag pill text color. GitHub accent blue."
+  }
+}

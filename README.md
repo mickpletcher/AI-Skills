@@ -2,6 +2,8 @@
 
 A shared home for AI skills organized by platform. Skills live under the platform they are written for. Shared docs cover conventions and repo guidance only.
 
+See [changelog.md](./changelog.md) for the repo change history.
+
 ## Claude Skills
 
 | Skill | Description |
@@ -59,3 +61,4 @@ A shared home for AI skills organized by platform. Skills live under the platfor
 - [shared/skill-standard.md](./shared/skill-standard.md) before creating a new skill
 - [shared/platform-organization.md](./shared/platform-organization.md) for folder intent
 - [templates/skill-template.md](./templates/skill-template.md) as the base template
+- [claude/scripts/Update-FutureUpgrades.ps1](./claude/scripts/Update-FutureUpgrades.ps1) to create or refresh skill `future-upgrades.md` files from `upgrades.md`

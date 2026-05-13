@@ -17,11 +17,22 @@ idea [raw idea, rough concept, or messy note]
 
 Other triggers: `ideaforge`, `analyze this idea`, `expand this concept`, `assess this invention`, `explore this thought`, `develop this further`, `evaluate feasibility`
 
+Delivery target modifiers:
+
+- `save to apple notes`
+- `send to apple notes`
+- `save this analysis to apple notes folder [folder name]`
+- `save to obsidian`
+- `send to obsidian`
+- `save this analysis to obsidian ideas folder`
+
 ## Do Not Use When
 
 - The user wants to capture a note without analysis — use a notes tool instead.
 - The user wants a resume, blog post, or content piece — use the appropriate skill.
 - The user is asking a general knowledge question — answer directly without running the pipeline.
+
+If the user explicitly asks for the final analysis to be saved after the pipeline runs, keep using IdeaForge and treat persistence as a delivery step after Stage 5.
 
 ## Modes
 
@@ -34,6 +45,13 @@ Default is **Full Pipeline**. Detect intent and run the smallest mode that fits.
 | Score Only | `idea score [idea]` | Stages 1 and 4 only — scoring table |
 | Expand Only | `idea expand [idea]` | Stages 1 and 3 only — expansion without scoring |
 | Commercialize | `idea commercialize [idea]` | Stages 1, 3 (business models only), and 5 (monetization output only) |
+
+Delivery targets:
+
+- Default: return the analysis in chat only
+- Apple Notes on macOS: after Stage 5, save the final analysis into the requested Apple Notes folder if the runtime can access the local Notes app
+- Apple Notes on iOS: prepare the final analysis for Apple Notes, then hand it off through an iOS Shortcut or share action because the skill runtime does not get direct Notes app write access on iOS
+- Obsidian Ideas folder: after Stage 5, save the final analysis as a Markdown note in the `Ideas` folder of the user's Obsidian vault when the runtime can access the vault path or an Obsidian URL handoff
 
 ---
 
@@ -201,6 +219,34 @@ For Score Only mode, return only the scoring table.
 For Expand Only mode, return sections 6-16.
 For Commercialize mode, return sections 1, 11, 12, 13, 17.
 
+If the user requests Apple Notes delivery, add this post output step:
+
+1. Build the final analysis first.
+2. Use the title format `IdeaForge - YYYY-MM-DD - [short idea name]`.
+3. Save the analysis to the requested Apple Notes folder.
+4. If no folder name is supplied, ask for one or use `IdeaForge` if the user has already implied a default folder.
+5. Preserve the full analysis body. Do not save only the score unless the user asked for Score Only mode.
+
+Platform handling:
+
+- macOS: write directly only when the local runtime can call the Notes app, typically through AppleScript or Shortcuts.
+- iOS: do not claim direct note creation from the skill itself. Instead, return a Shortcut ready payload or a clearly delimited note body that can be passed into Apple Notes by the calling app or Shortcut.
+- Non Apple platforms: return the analysis in chat and state that Apple Notes delivery requires macOS or an iOS Shortcut handoff.
+
+If the user requests Obsidian delivery, add this post output step:
+
+1. Build the final analysis first.
+2. Use the title format `IdeaForge - YYYY-MM-DD - [short idea name]`.
+3. Save the analysis as Markdown in the `Ideas` folder of the target Obsidian vault.
+4. If the vault path or vault name is not known, ask for it unless the user already established a default vault.
+5. Preserve the full analysis body. Do not reduce it to a summary unless the user asked for that.
+
+Obsidian platform handling:
+
+- macOS: write directly to the vault folder when the local filesystem path is available, or use an Obsidian URL or Shortcut handoff if that is the established local path.
+- iOS: do not claim raw filesystem access from the skill itself. Instead, return a Shortcut ready payload or Obsidian ready Markdown body and title for handoff into the `Ideas` folder.
+- If the user only says "output to Obsidian" and gives no vault details, assume the destination folder name is `Ideas` but do not guess the vault name.
+
 ---
 
 ## Principles
@@ -210,6 +256,8 @@ For Commercialize mode, return sections 1, 11, 12, 13, 17.
 - **Do not invent patent claims.** Only assert patent potential when there is a clear novel mechanism or process to describe.
 - **Generate specific outputs.** "Consider APIs" is not useful. "Integrates with the Alpaca Markets API for paper trading" is.
 - **Keep MVP scope honest.** A Phase 1 that requires three engineers and six months is not an MVP. Push toward the smallest thing that demonstrates value.
+- **Keep platform claims honest.** Apple Notes write back is native on macOS when the runtime has local automation access. On iOS it requires a Shortcut or app level handoff.
+- **Keep vault assumptions honest.** Obsidian folder name can default to `Ideas` only when the user asked for that. Vault name or path still needs to be known or requested.
 
 ## Operational Constraints
 

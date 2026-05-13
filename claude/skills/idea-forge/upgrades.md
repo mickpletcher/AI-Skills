@@ -4,3 +4,5 @@ Tracks implemented upgrades to this skill. Future upgrade ideas are in [future-u
 
 | Date | Upgrade | Notes |
 | ---- | ------- | ----- |
+| 2026-05-13 | Apple Notes delivery target | Added Apple Notes output guidance for macOS direct save and iOS Shortcut handoff paths. |
+| 2026-05-13 | Obsidian Ideas delivery target | Added Obsidian `Ideas` folder output guidance for macOS direct write and iOS handoff paths. |

@@ -157,3 +157,38 @@ Top three risks. For each:
 
 ### 18. Long-Term Strategic Value
 What this becomes if it works at scale. One paragraph. Be honest about ceiling — not everything becomes a platform. Some ideas are excellent utilities with a low ceiling, and that is fine.
+
+---
+
+## Optional Delivery Wrapper
+
+Only include this when the user asked to save the final analysis somewhere after generation.
+
+### Apple Notes Delivery
+Use this block when the requested destination is Apple Notes.
+
+```
+Delivery target: Apple Notes
+Requested folder: [folder name]
+Suggested note title: IdeaForge - YYYY-MM-DD - [short idea name]
+Platform path:
+- macOS: direct Notes save if local automation access is available
+- iOS: Shortcut or share action handoff using the note title and full body below
+```
+
+After this wrapper, include the full analysis body exactly once.
+
+### Obsidian Delivery
+Use this block when the requested destination is Obsidian.
+
+```text
+Delivery target: Obsidian
+Requested folder: Ideas
+Vault: [vault name or path]
+Suggested note title: IdeaForge - YYYY-MM-DD - [short idea name]
+Platform path:
+macOS: direct Markdown write to the vault when the path is available, or Obsidian URL or Shortcut handoff
+iOS: Shortcut or share action handoff using the note title and full Markdown body below
+```
+
+After this wrapper, include the full analysis body exactly once.

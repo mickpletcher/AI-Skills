@@ -1,6 +1,6 @@
 ---
 name: idea-forge
-description: Run any raw idea through a multi-stage R&D pipeline that interprets, expands, scores, and converts it into an actionable engineering plan. Always trigger immediately when the user's message starts with "forge". Also trigger on "ideaforge", "analyze this idea", "expand this concept", "assess this invention", "explore this thought", "develop this further", "turn this into a project", "evaluate feasibility", "forge this idea", or any request to analyze, expand, score, or develop a rough concept or invention into a structured plan.
+description: Run any raw idea through a multi-stage R&D pipeline that interprets, expands, scores, and converts it into an actionable engineering plan. Always trigger immediately when the user's message starts with "idea". Also trigger on "ideaforge", "analyze this idea", "expand this concept", "assess this invention", "explore this thought", "develop this further", "turn this into a project", "evaluate feasibility", "forge this idea", or any request to analyze, expand, score, or develop a rough concept or invention into a structured plan.
 ---
 
 # IdeaForge
@@ -9,10 +9,10 @@ Runs raw ideas through a five-stage R&D pipeline — capture, interpret, expand,
 
 ## Trigger
 
-Start any message with `forge` to activate immediately.
+Start any message with `idea` to activate immediately.
 
 ```text
-forge [raw idea, rough concept, or messy note]
+idea [raw idea, rough concept, or messy note]
 ```
 
 Other triggers: `ideaforge`, `analyze this idea`, `expand this concept`, `assess this invention`, `explore this thought`, `develop this further`, `evaluate feasibility`
@@ -29,11 +29,11 @@ Default is **Full Pipeline**. Detect intent and run the smallest mode that fits.
 
 | Mode | Trigger phrase | What runs |
 | --- | --- | --- |
-| Full Pipeline (default) | `forge [idea]` | All five stages |
-| Quick Assess | `forge quick [idea]` | Stages 1-2 only — categorize and feasibility check |
-| Score Only | `forge score [idea]` | Stages 1 and 4 only — scoring table |
-| Expand Only | `forge expand [idea]` | Stages 1 and 3 only — expansion without scoring |
-| Commercialize | `forge commercialize [idea]` | Stages 1, 3 (business models only), and 5 (monetization output only) |
+| Full Pipeline (default) | `idea [idea]` | All five stages |
+| Quick Assess | `idea quick [idea]` | Stages 1-2 only — categorize and feasibility check |
+| Score Only | `idea score [idea]` | Stages 1 and 4 only — scoring table |
+| Expand Only | `idea expand [idea]` | Stages 1 and 3 only — expansion without scoring |
+| Commercialize | `idea commercialize [idea]` | Stages 1, 3 (business models only), and 5 (monetization output only) |
 
 ---
 

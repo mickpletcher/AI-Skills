@@ -20,10 +20,10 @@ The pipeline has five stages:
 
 ## How To Use
 
-Start any message with `forge` to activate immediately.
+Start any message with `idea` to activate immediately.
 
 ```text
-forge [raw idea, rough concept, or messy note]
+idea [raw idea, rough concept, or messy note]
 ```
 
 Messy input is fine. Part of the value is finding the real idea inside incomplete input.
@@ -34,26 +34,26 @@ Messy input is fine. Part of the value is finding the real idea inside incomplet
 
 | Mode | Trigger | What runs |
 | --- | --- | --- |
-| Full Pipeline | `forge [idea]` | All five stages — full output document |
-| Quick Assess | `forge quick [idea]` | Stages 1-2 — category, feasibility, commercial check |
-| Score Only | `forge score [idea]` | Stages 1 and 4 — scoring table only |
-| Expand Only | `forge expand [idea]` | Stages 1 and 3 — expansion without scoring |
-| Commercialize | `forge commercialize [idea]` | Business models, monetization paths, and MVP |
+| Full Pipeline | `idea [idea]` | All five stages — full output document |
+| Quick Assess | `idea quick [idea]` | Stages 1-2 — category, feasibility, commercial check |
+| Score Only | `idea score [idea]` | Stages 1 and 4 — scoring table only |
+| Expand Only | `idea expand [idea]` | Stages 1 and 3 — expansion without scoring |
+| Commercialize | `idea commercialize [idea]` | Business models, monetization paths, and MVP |
 
 ---
 
 ### Example Prompts
 
 ```text
-forge What if Home Assistant could detect behavioral fatigue from inactivity patterns and suggest wellness interventions automatically
+idea What if Home Assistant could detect behavioral fatigue from inactivity patterns and suggest wellness interventions automatically
 
-forge quick Is there a market for a self-hosted AI writing coach that stores style preferences locally
+idea quick Is there a market for a self-hosted AI writing coach that stores style preferences locally
 
-forge score A PowerShell module that audits Intune device compliance and generates executive-ready PDF reports
+idea score A PowerShell module that audits Intune device compliance and generates executive-ready PDF reports
 
-forge expand An n8n workflow that monitors recruiter posts on LinkedIn and stages the best ones for review
+idea expand An n8n workflow that monitors recruiter posts on LinkedIn and stages the best ones for review
 
-forge commercialize A Claude skill that turns rough project ideas into complete GitHub repo architectures
+idea commercialize A Claude skill that turns rough project ideas into complete GitHub repo architectures
 ```
 
 ---
@@ -120,4 +120,4 @@ See [upgrades.md](upgrades.md) for a record of implemented upgrades.
 1. Update the checked-in source files for this skill first.
 2. Rebuild `idea-forge.skill` from the current source files.
 3. Import the `.skill` package into Claude using your normal Claude skills workflow, or place it in your local Claude skills directory if you manage skills manually.
-4. Start a new Claude chat or refresh available skills, then test with `forge [any rough idea]`.
+4. Start a new Claude chat or refresh available skills, then test with `idea [any rough idea]`.

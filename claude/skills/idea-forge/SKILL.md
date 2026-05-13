@@ -49,9 +49,9 @@ Default is **Full Pipeline**. Detect intent and run the smallest mode that fits.
 Delivery targets:
 
 - Default: return the analysis in chat only
-- Apple Notes on macOS: after Stage 5, save the final analysis into the requested Apple Notes folder if the runtime can access the local Notes app
+- Apple Notes on macOS: after Stage 5, save the final analysis into the requested Apple Notes folder by running `scripts/save_to_apple_notes.py` when the runtime can access the local Notes app
 - Apple Notes on iOS: prepare the final analysis for Apple Notes, then hand it off through an iOS Shortcut or share action because the skill runtime does not get direct Notes app write access on iOS
-- Obsidian Ideas folder: after Stage 5, save the final analysis as a Markdown note in the `Ideas` folder of the user's Obsidian vault when the runtime can access the vault path or an Obsidian URL handoff
+- Obsidian Ideas folder: after Stage 5, save the final analysis as a Markdown note in the `Ideas` folder of the user's Obsidian vault by running `scripts/save_to_obsidian.py` when the runtime can access the vault path or an Obsidian URL handoff
 
 ---
 
@@ -229,7 +229,7 @@ If the user requests Apple Notes delivery, add this post output step:
 
 Platform handling:
 
-- macOS: write directly only when the local runtime can call the Notes app, typically through AppleScript or Shortcuts.
+- macOS: write directly by running `scripts/save_to_apple_notes.py --folder "Ideas" --title "<title>" --body-file "<file>"` when the helper script is available.
 - iOS: do not claim direct note creation from the skill itself. Instead, return a Shortcut ready payload or a clearly delimited note body that can be passed into Apple Notes by the calling app or Shortcut.
 - Non Apple platforms: return the analysis in chat and state that Apple Notes delivery requires macOS or an iOS Shortcut handoff.
 
@@ -243,7 +243,7 @@ If the user requests Obsidian delivery, add this post output step:
 
 Obsidian platform handling:
 
-- macOS: write directly to the vault folder when the local filesystem path is available, or use an Obsidian URL or Shortcut handoff if that is the established local path.
+- macOS: write directly to the vault folder by running `scripts/save_to_obsidian.py --vault-path "<vault path>" --folder "Ideas" --title "<title>" --body-file "<file>"` when the helper script is available, or use an Obsidian URL or Shortcut handoff if that is the established local path.
 - iOS: do not claim raw filesystem access from the skill itself. Instead, return a Shortcut ready payload or Obsidian ready Markdown body and title for handoff into the `Ideas` folder.
 - If the user only says "output to Obsidian" and gives no vault details, assume the destination folder name is `Ideas` but do not guess the vault name.
 
@@ -261,6 +261,7 @@ Obsidian platform handling:
 
 ## Operational Constraints
 
+- If the helper scripts under `scripts/` are available, use them for direct macOS Apple Notes or Obsidian saves instead of describing a save abstractly.
 - If `scoring-model.md` cannot be read, use the weights and scales documented inline in Stage 4 and note that the file was unavailable.
 - If `evaluation-framework.md` cannot be read, continue using the inline criteria in Stages 2-3.
 - If `output-template.md` cannot be read, use the section list in Stage 5 directly.

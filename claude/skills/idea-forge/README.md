@@ -52,8 +52,8 @@ This skill can now target Apple Notes for the final analysis.
 `macOS`
 
 - Best path for direct save
-- Expected flow is generate the analysis, then save it into a specified Apple Notes folder
-- Typical implementation uses AppleScript or a Shortcut that the local runtime can call
+- Expected flow is generate the analysis, then run `scripts/save_to_apple_notes.py`
+- The packaged skill now includes a macOS Apple Notes helper script
 
 `iOS`
 
@@ -79,6 +79,7 @@ This skill can also target an Obsidian `Ideas` folder for the final analysis.
 `macOS`
 
 - Best path is direct Markdown write into the vault when the vault path is known
+- Expected flow is generate the analysis, then run `scripts/save_to_obsidian.py`
 - Alternate path is an Obsidian URL or Shortcut handoff
 
 `iOS`
@@ -163,6 +164,8 @@ Commercialize returns sections 1, 11, 12, 13, 17.
 - [scoring-model.md](scoring-model.md): metric definitions, weights, formula, and verdict bands
 - [evaluation-framework.md](evaluation-framework.md): interpretation criteria for Stages 2 and 3
 - [output-template.md](output-template.md): section definitions and formatting rules for Stage 5
+- [scripts/save_to_apple_notes.py](scripts/save_to_apple_notes.py): macOS helper to create a note in Apple Notes
+- [scripts/save_to_obsidian.py](scripts/save_to_obsidian.py): helper to write a Markdown note into an Obsidian vault
 - Apple Notes delivery is a post-output step, not a replacement for the analysis itself
 - Obsidian delivery is a post-output step, not a replacement for the analysis itself
 
@@ -175,6 +178,9 @@ idea-forge/
 |-- scoring-model.md
 |-- evaluation-framework.md
 |-- output-template.md
+|-- scripts/
+|   |-- save_to_apple_notes.py
+|   `-- save_to_obsidian.py
 |-- upgrades.md
 |-- future-upgrades.md
 `-- idea-forge.skill

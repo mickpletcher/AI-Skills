@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Invention Disclosure",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "invention_title",
+    "inventor_names",
+    "date_captured",
+    "confidentiality_level",
+    "problem_statement",
+    "technical_field",
+    "background",
+    "summary",
+    "components",
+    "workflow",
+    "embodiments",
+    "alternatives",
+    "advantages",
+    "known_prior_art",
+    "drawings_needed",
+    "open_questions"
+  ],
+  "properties": {
+    "invention_title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "inventor_names": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "date_captured": {
+      "type": "string",
+      "description": "ISO 8601 date or human readable capture date"
+    },
+    "confidentiality_level": {
+      "type": "string"
+    },
+    "problem_statement": {
+      "type": "string",
+      "minLength": 1
+    },
+    "technical_field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_field",
+        "secondary_fields"
+      ],
+      "properties": {
+        "primary_field": {
+          "type": "string",
+          "minLength": 1
+        },
+        "secondary_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "background": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "existing_approaches",
+        "known_limitations"
+      ],
+      "properties": {
+        "existing_approaches": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "known_limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "components": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "type",
+          "function"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "function": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "workflow": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "embodiments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preferred_embodiment",
+        "alternative_embodiments"
+      ],
+      "properties": {
+        "preferred_embodiment": {
+          "type": "string"
+        },
+        "alternative_embodiments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "advantages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "known_prior_art": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "reference",
+          "similarity",
+          "difference"
+        ],
+        "properties": {
+          "reference": {
+            "type": "string"
+          },
+          "similarity": {
+            "type": "string"
+          },
+          "difference": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "drawings_needed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

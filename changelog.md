@@ -4,6 +4,7 @@ Compiled from repo history and the current working tree.
 
 ## 2026-05-13
 
+- Added `claude/skills/patentforge-provisional-skill` with source files, templates, schemas, docs, examples, and a packaged `.skill` export for provisional drafting support with legal safety boundaries
 - Updated every skill `future-upgrades.md` file across `claude/skills` and `chatgpt/skills`
 - Created the missing `chatgpt/skills/food-analyzer/future-upgrades.md`
 - Improved `claude/scripts/Update-FutureUpgrades.ps1` so it can populate skill specific tier ideas, preserve existing tier content, and handle single skill roots

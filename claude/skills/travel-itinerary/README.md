@@ -26,6 +26,10 @@ This skill builds a usable first draft without unnecessary questions when enough
 
 - extracts trip logistics, dates, destinations, and anchor events from the conversation
 - builds a single Markdown itinerary document
+- applies an itinerary template for city trips, road trips, active travel, or mixed work plus leisure trips
+- checks daily structure so transit time, meals, and pacing are more realistic
+- rolls up packing and reservation summaries for faster trip review
+- adds route notes, daily budget visibility, and contingency planning where useful
 - validates date math, routing, and budget assumptions
 - produces an Obsidian-friendly output structure
 
@@ -42,6 +46,29 @@ Full itinerary requests can include:
 7. Packing List
 8. Key Contacts and Info
 9. Open Items / To-Do
+10. Reservation Summary
+11. Daily Budget View
+12. Map and Route Notes
+13. Packing Summary
+
+## Supported Templates
+
+- `city trip`
+- `road trip`
+- `active travel`
+- `mixed work and leisure`
+
+## Example Prompts
+
+```text
+trip build a road trip itinerary from Nashville to Colorado with nightly stop planning
+
+itinerary format this mixed work and leisure Tokyo trip for Obsidian
+
+trip build an active travel itinerary around a triathlon weekend
+
+itinerary add route notes, daily budgets, and backup plans to this Europe trip
+```
 
 ## File Structure
 

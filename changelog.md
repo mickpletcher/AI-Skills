@@ -4,6 +4,7 @@ Compiled from repo history and the current working tree.
 
 ## 2026-05-13
 
+- Upgraded `claude/skills/travel-itinerary` with itinerary templates, daily pacing checks, packing and reservation summaries, route notes, budget visibility, and contingency planning
 - Upgraded `claude/skills/resume-writer` with job fit before and after scoring, recruiter skim views, stronger bullet quantification guidance, and role family presets
 - Upgraded `claude/skills/resume-writer` with LinkedIn alignment checks, interview prep handoff, career timeline consistency checks, and longitudinal revision tracking
 - Upgraded `claude/skills/linkedin-post` with post modes, LinkedIn tuned hook styles, and stronger credibility checks

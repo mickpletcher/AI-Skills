@@ -19,6 +19,7 @@ It combines:
 2. EXIF GPS metadata
 3. reverse geocoding
 4. web research when needed
+5. batch review for consistent naming across a set
 
 ## Trigger
 
@@ -28,9 +29,18 @@ Start the request with `rp`, or ask to rename, identify, or label uploaded photo
 
 - Use `snake_case`
 - Prefer specific names over generic ones
+- Keep filename segment ordering consistent for date, location, event, and subject
 - Keep names under 50 characters when practical
 - Preserve the original file extension
 - Add sequence suffixes such as `_01` when names would collide
+
+## Added Behavior
+
+- Confidence handling for partial or uncertain place and subject identification
+- Collision-safe rename output so duplicate names get stable suffixes without manual cleanup
+- Batch review mode that groups similar photos and applies more consistent naming patterns
+- Fallback behavior for missing or obviously wrong GPS metadata
+- Export-style reports that show old names, new names, and confidence reasons
 
 ## File Structure
 
@@ -38,13 +48,14 @@ Start the request with `rp`, or ask to rename, identify, or label uploaded photo
 photo-rename/
 |-- README.md
 |-- SKILL.md
+|-- completedchanges.md
 |-- upgrades.md
 `-- photo-rename.skill
 ```
 
 ## Upgrade Log
 
-See [upgrades.md](upgrades.md) for a record of implemented upgrades.
+See [upgrades.md](upgrades.md) for the structured upgrade log and [completedchanges.md](completedchanges.md) for tracked completed changes.
 
 ## Implement In Claude
 
@@ -52,3 +63,4 @@ See [upgrades.md](upgrades.md) for a record of implemented upgrades.
 2. Rebuild `photo-rename.skill` from the current source files. Include any supporting runtime files the package depends on.
 3. Import the `.skill` package into Claude using your normal Claude skills workflow, or place it in your local Claude skills directory if you manage skills manually.
 4. Start a new Claude chat or refresh available skills, then test with one of the trigger phrases or example requests from this README.
+

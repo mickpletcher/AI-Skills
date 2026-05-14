@@ -115,3 +115,23 @@ When you finish, confirm:
 - If weight is missing for an exercise, note it as `bodyweight` or `unlogged` when appropriate.
 - Keep the output factual. It is a data record, not a journal entry.
 - Tables should stay Dataview-compatible for Obsidian use.
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A workout log and the destination note style or vault context if relevant.
+
+Example prompts:
+
+- `Use obsidian-workout-export to turn this workout log into an Obsidian ready Markdown note.`
+- `Export these strength and cycling notes into a clean workout entry for my Obsidian vault.`
+- `Show me an example prompt for using this skill with a pasted workout session.`
+

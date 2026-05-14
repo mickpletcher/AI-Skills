@@ -113,3 +113,23 @@ Treat Mick as an experienced builder. Do not hand-hold. Give direct, technical a
 - [ ] Reflects the owner-builder and mostly solo construction model
 - [ ] Preserves the off-grid and retirement-planning context
 - [ ] Avoids em dashes in final Facebook post output
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- The build problem, decision, or next phase you want to work through.
+
+Example prompts:
+
+- `Use container-home to help me plan the next phase of my off grid build in Stewart County, TN.`
+- `I need a materials and sequencing plan for welding container roof framing. Use the container-home skill.`
+- `Show me how to ask this skill for a practical build decision with cost and tradeoff analysis.`
+

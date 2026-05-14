@@ -209,3 +209,23 @@ When you finish, briefly confirm:
 - the repo name
 - the repo type you used
 - any major sections you intentionally included or omitted
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A repo path, repo summary, or the specific README problem to fix.
+
+Example prompts:
+
+- `Use github-readme to draft a beginner friendly README for my PowerShell automation repo.`
+- `Rewrite this README so it matches the actual repo structure and setup steps.`
+- `Show me a sample prompt for asking this skill to create a practical README from a repo scan.`
+

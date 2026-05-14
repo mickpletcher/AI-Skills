@@ -121,3 +121,23 @@ Produce one evaluation block per source, then a summary table at the end showing
 ## Reference Files
 
 - `pihole-blocklist-sources.md` — local index of the current curated sources organized by category
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A blocklist source, URL, or candidate list to evaluate.
+
+Example prompts:
+
+- `Use pihole-blocklist to review this candidate blocklist and tell me if it belongs in my setup.`
+- `Evaluate these new Pi-hole sources for quality, overlap, and risk.`
+- `Show me a sample prompt for asking this skill to document and classify a blocklist source.`
+

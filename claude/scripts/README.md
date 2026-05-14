@@ -7,6 +7,7 @@ PowerShell scripts for managing Claude skill installations and validating skill 
 | Script | Purpose |
 | ------ | ------- |
 | [Initialize-ClaudeSkills.ps1](#initialize-claudeskillsps1) | Install, update, remove, and list skills in the Claude Desktop library |
+| [Update-FutureUpgrades.ps1](#update-futureupgradesps1) | Create or refresh local `future-upgrades.md` files while preserving future planning tiers |
 | [Validate-SkillFolders.ps1](#validate-skillfoldersps1) | Audit skill folders for missing required files |
 
 ---
@@ -84,6 +85,38 @@ $env:USERPROFILE\OneDrive\Documents\Claude\Skills\
 Each `.skill` file is a zip archive extracted into its own subdirectory under `user\`.
 
 After running, restart Claude Desktop to load any newly installed or updated skills.
+
+---
+
+## Update-FutureUpgrades.ps1
+
+Creates or refreshes `future-upgrades.md` files under `claude/skills`. The script preserves any existing Tier 1, Tier 2, and Tier 3 planning bullets already present in the local file and keeps the `Recent Completed Work` section pointed at tracked `completedchanges.md` history instead of rebuilding shipped changes into the local planning file.
+
+This is intended for local maintenance. The repo `.gitignore` already excludes `claude/skills/*/future-upgrades.md`.
+
+### Update-FutureUpgrades Parameters
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `-SkillsRoot` | String | Root skill folder to scan. Defaults to `.\claude\skills` from the current repo root |
+| `-WhatIf` | Switch | Show which files would be refreshed without writing changes |
+
+### Update-FutureUpgrades Examples
+
+```powershell
+# Refresh every skill future-upgrades file
+.\Update-FutureUpgrades.ps1
+
+# Preview changes only
+.\Update-FutureUpgrades.ps1 -WhatIf
+
+# Target a specific skill root
+.\Update-FutureUpgrades.ps1 -SkillsRoot "C:\Repos\AI-Skills\claude\skills"
+```
+
+### Update-FutureUpgrades Output
+
+Prints the number of processed skill folders and the number of `future-upgrades.md` files that were written.
 
 ---
 

@@ -16,6 +16,8 @@ This skill has three main modes:
 
 It supports human-readable audit output plus structured JSON output for automation.
 
+It now also supports job fit before and after scoring, recruiter skim views, stronger bullet quantification guidance, role family presets, LinkedIn alignment checks, interview prep handoff, career timeline consistency checks, and longitudinal revision tracking when prior versions are available.
+
 ## How To Use
 
 Use this skill by starting your message with `rw` or by asking for resume rewrite, audit, or scoring directly.
@@ -39,6 +41,14 @@ Example:
 ```text
 rw rewrite this resume for this job description: [paste JD]
 ```
+
+The enhance flow can now also:
+
+1. score job fit before and after the rewrite
+2. produce a recruiter skim view for the first 30 seconds
+3. apply role family presets such as infrastructure, endpoint engineering, cloud, support escalation, or leadership
+4. check LinkedIn and cover letter alignment when that context is provided
+5. generate interview prep handoff material when asked or when the targeted rewrite clearly benefits from it
 
 ### 2. Two Page Mode
 
@@ -115,6 +125,20 @@ Depending on prompt and mode, output can include:
 - [scripts/Invoke-ResumeTipsRefresh.ps1](scripts/Invoke-ResumeTipsRefresh.ps1): local helper for weekly refresh packets and candidate tip imports
 - [scripts/Register-ResumeTipsRefreshTask.ps1](scripts/Register-ResumeTipsRefreshTask.ps1): helper to register the weekly Windows scheduled task
 
+## Example Enhancement Prompts
+
+```text
+rw rewrite this resume for an endpoint engineering role and show job fit before and after
+
+rw review this resume and give me the recruiter skim view first
+
+rw rewrite this for a cloud role and add interview prep handoff
+
+rw compare this revised resume against the last version and show what improved
+
+rw review this resume against my LinkedIn profile and flag any drift
+```
+
 ## File Structure
 
 ```text
@@ -144,7 +168,7 @@ resume-writer/
 
 ## Upgrade Log
 
-See [upgrades.md](upgrades.md) for a record of implemented upgrades.
+See [upgrades.md](upgrades.md) for the structured upgrade log and [completedchanges.md](completedchanges.md) for tracked completed changes.
 
 ## Weekly Tips Workflow
 
@@ -259,3 +283,4 @@ Promote a tip into `insights/principles.md` only when it is:
 2. Rebuild `resume-writer.skill` from the current source files. Include any supporting runtime files the package depends on.
 3. Import the `.skill` package into Claude using your normal Claude skills workflow, or place it in your local Claude skills directory if you manage skills manually.
 4. Start a new Claude chat or refresh available skills, then test with one of the trigger phrases or example requests from this README.
+

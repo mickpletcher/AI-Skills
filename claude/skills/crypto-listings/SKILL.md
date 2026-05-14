@@ -120,3 +120,23 @@ Keep detail mode factual and avoid hype language.
 - [ ] Missing data is marked honestly
 - [ ] Binance listings are clearly flagged when present
 - [ ] Output stays informational and avoids trading advice
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A token, exchange list, or time window to check.
+
+Example prompts:
+
+- `Use crypto-listings to summarize recent Binance, Coinbase, and Kraken listings that matter most.`
+- `Track upcoming exchange listings for this token and tell me what to watch next.`
+- `Show me a sample prompt for using this skill to monitor exchange listing activity.`
+

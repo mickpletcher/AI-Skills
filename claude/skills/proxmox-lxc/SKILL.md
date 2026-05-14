@@ -181,3 +181,23 @@ pct rollback {CT_ID} pre-update-YYYYMMDD
 - Service starts cleanly
 - Cloudflare Tunnel config updated and restarted
 - External URL responds correctly
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- The service you want to host plus any network, storage, or security constraints.
+
+Example prompts:
+
+- `Use proxmox-lxc to plan a new LXC container for an internal automation service.`
+- `Help me deploy and harden an LXC on Proxmox for self hosted tooling.`
+- `Show me the best example prompt for asking this skill for an LXC setup plan.`
+

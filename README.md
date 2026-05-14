@@ -15,26 +15,28 @@ See [changelog.md](./changelog.md) for the repo change history.
 | [container-home](./claude/skills/container-home/) | Off-grid shipping container lake home project in Dover, Tennessee |
 | [crypto-listings](./claude/skills/crypto-listings/) | Track recent and upcoming cryptocurrency listings across major exchanges |
 | [crypto-research](./claude/skills/crypto-research/) | Structured due diligence on a specific cryptocurrency |
-| [facebook-post](./claude/skills/facebook-post/) | Write and polish Facebook posts in Mick's voice |
-| [facebook-reply](./claude/skills/facebook-reply/) | Write replies to Facebook comments in Mick's voice |
-| [fitness-log](./claude/skills/fitness-log/) | Track workouts, log progress, adjust training, and generate fitness Facebook posts |
+<<<<<<< HEAD
+| [facebook-post](./claude/skills/facebook-post/) | Write and polish Facebook posts in Mick's voice with audience control, media aware captions, and X repurpose support |
+| [facebook-reply](./claude/skills/facebook-reply/) | Write Facebook replies with tone control, context awareness, and batch thread handling |
+| [fitness-log](./claude/skills/fitness-log/) | Track workouts, analyze training trends, plan progression blocks, and generate fitness Facebook posts |
 | [fitness-programming](./claude/skills/fitness-programming/) | Build structured training blocks with presets, recovery adjustments, benchmark reviews, and season planning |
-| [food-analyzer](./claude/skills/food-analyzer/) | Analyze food photos and nutrition labels with glycemic, processing, and timing context |
+| [food-analyzer](./claude/skills/food-analyzer/) | Analyze foods, compare meals, and score nutrition fit with confidence, timing, and goal aware context |
 | [github-readme](./claude/skills/github-readme/) | Write polished README.md files in a direct, technical, practitioner-focused voice |
 | [github-repo-architect](./claude/skills/github-repo-architect/) | Turn a rough project idea into a complete GitHub repository architecture |
 | [github-social-preview](./claude/skills/github-social-preview/) | Generate branded GitHub social previews with themes, smarter fitting, and optional visual assets |
 | [idea-forge](./claude/skills/idea-forge/) | Run any raw idea through a five-stage R&D pipeline and produce a scored invention plan with architecture, monetization paths, and an MVP roadmap |
-| [linkedin-post](./claude/skills/linkedin-post/) | Write LinkedIn posts in Mick's professional voice |
+| [linkedin-post](./claude/skills/linkedin-post/) | Write LinkedIn posts with mode control, credibility checks, CTA styles, and audience variants |
 | [n8n-workflow](./claude/skills/n8n-workflow/) | Design, build, and troubleshoot n8n workflows on a self-hosted Proxmox stack |
 | [obsidian-workout-export](./claude/skills/obsidian-workout-export/) | Export logged workout sessions into Obsidian-ready Markdown files |
 | [patentforge-provisional-skill](./claude/skills/patentforge-provisional-skill/) | Turn an invention idea into a structured disclosure, prior art search plan, claim candidates, and provisional draft package |
-| [photo-rename](./claude/skills/photo-rename/) | Rename photos to descriptive names using image understanding and GPS metadata |
+<<<<<<< HEAD
+| [photo-rename](./claude/skills/photo-rename/) | Rename photos with consistent filename rules, confidence handling, batch review, and GPS-aware fallback logic |
 | [pihole-blocklist](./claude/skills/pihole-blocklist/) | Evaluate, categorize, and document new Pi-hole blocklist sources |
 | [pihole-csv-analyzer](./claude/skills/pihole-csv-analyzer/) | Analyze Pi-hole CSV exports and generate practical cleanup recommendations |
 | [proxmox-lxc](./claude/skills/proxmox-lxc/) | Deploy and configure Proxmox LXC containers on a self-hosted homelab stack |
-| [resume-writer](./claude/skills/resume-writer/) | Rewrite, audit, and score resumes using recruiter and hiring-manager principles |
-| [travel-itinerary](./claude/skills/travel-itinerary/) | Plan, format, and export travel itineraries as Obsidian-ready Markdown files |
-| [travel-planning](./claude/skills/travel-planning/) | Plan solo travel with personal preferences, constraints, and active-trip context |
+| [resume-writer](./claude/skills/resume-writer/) | Rewrite, audit, score, and target resumes with fit scoring, recruiter skim views, and interview handoff |
+| [travel-itinerary](./claude/skills/travel-itinerary/) | Plan and export travel itineraries with templates, route notes, realistic pacing, and budget visibility |
+| [travel-planning](./claude/skills/travel-planning/) | Plan solo travel with destination scoring, style presets, booking triage, and itinerary handoff |
 | [website-content](./claude/skills/website-content/) | Write and update content for mickpletcher.com |
 | [x-post](./claude/skills/x-post/) | Write X posts on tech, PowerShell, IT automation, and fitness topics |
 | [x-reply](./claude/skills/x-reply/) | Write replies to replies on X |
@@ -60,8 +62,18 @@ See [changelog.md](./changelog.md) for the repo change history.
 3. Use `shared/` for naming, structure, and repo-level guidance only.
 4. Record checks with [templates/test-template.md](./templates/test-template.md).
 
+For Claude skills, keep tracked shipped history in `completedchanges.md` and keep local `future-upgrades.md` files focused on future planning only.
+
+## Spec Workflow
+
+Use [`specs/`](./specs/) for non-trivial repo work such as shared conventions, packaging rules, cross-skill changes, or shared script updates.
+
+Skip it for small single-skill wording edits or minor doc cleanup.
+
 ## Start Here
 
 - [shared/skill-standard.md](./shared/skill-standard.md) before creating a new skill
 - [shared/platform-organization.md](./shared/platform-organization.md) for folder intent
 - [templates/skill-template.md](./templates/skill-template.md) as the base template
+- [specs/001-skill-repo-workflow/](./specs/001-skill-repo-workflow/) for the repo-level spec baseline
+- [claude/scripts/Update-FutureUpgrades.ps1](./claude/scripts/Update-FutureUpgrades.ps1) to create or refresh skill `future-upgrades.md` files from `upgrades.md`

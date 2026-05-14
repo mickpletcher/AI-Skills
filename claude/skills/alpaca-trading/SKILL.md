@@ -112,3 +112,23 @@ If AI analysis is added, keep it advisory:
 - [ ] Secrets are sourced from environment variables or existing config flows
 - [ ] Changes preserve existing trading logic unless requested otherwise
 - [ ] Docs and tests are updated when behavior changes
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A trading goal, repo context, or strategy question plus any symbols, timeframes, or risk rules that matter.
+
+Example prompts:
+
+- `Use alpaca-trading to review my Trading repo and tell me the safest way to add bracket orders.`
+- `Help me build an Alpaca paper trading workflow for SPY with clear entry, exit, and risk rules.`
+- `Show me how to use this skill for a repo level trading automation plan.`
+

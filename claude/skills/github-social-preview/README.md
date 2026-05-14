@@ -10,7 +10,7 @@ Use [SKILL.md](SKILL.md) as the canonical source for this skill.
 
 GitHub lets you set a custom social preview image (1280x640 px) on every repository. That image shows up when the repo link is shared on Twitter, LinkedIn, Slack, and anywhere else that renders Open Graph metadata. Most repos skip it and get a generic GitHub placeholder.
 
-This skill generates a clean, GitHub-dark-themed preview image from a repository URL in seconds. It fetches the repo name, description, topics, and primary language, then renders a properly sized JPEG ready to upload directly to GitHub's repository settings.
+This skill generates a clean social preview image from a repository URL in seconds. It fetches the repo name, description, topics, and primary language, then renders a properly sized JPEG ready to upload directly to GitHub's repository settings.
 
 ## How To Use
 
@@ -21,6 +21,7 @@ gsp https://github.com/user/repo
 gsp https://github.com/org/project
 generate github social preview https://github.com/user/repo
 create repo preview image https://github.com/user/repo
+gsp https://github.com/user/repo use the docs-blue theme with a logo
 ```
 
 ### What you get back
@@ -28,6 +29,7 @@ create repo preview image https://github.com/user/repo
 - `github-social-preview.jpg` — 1280x640 JPEG, under 1 MB
 - A confirmation with final file size and JPEG quality used
 - Notes on any fallbacks applied (missing description, missing topics, etc.)
+- A local preview checklist for contrast, crop safety, and file size
 
 ### Uploading to GitHub
 
@@ -68,15 +70,14 @@ github-social-preview/
 
 ## Design
 
-The generated image uses GitHub's dark theme palette:
+The generated image supports multiple theme presets:
 
-- Background: dark gradient matching GitHub's `#0d1117` to `#161b22`
-- Title: white bold text, large
-- Subtitle: muted gray (`#8b949e`), smaller
-- Tag pills: rounded, GitHub accent blue (`#58a6ff`)
-- Language badge: colored dot + label, bottom-right corner
-- GitHub Octocat mark: top-left watermark at low opacity
-- No gradients on text, no drop shadows, no decorative clutter
+- `github-dark`
+- `docs-blue`
+- `builder-green`
+- `launch-warm`
+
+It can also take optional logo, screenshot, or custom background art assets when they improve the final layout.
 
 ## Constraints
 
@@ -87,6 +88,21 @@ The generated image uses GitHub's dark theme palette:
 | Maximum file size | 1 MB |
 | Auto-compression | Yes, down to quality 55 before canvas scaling |
 
+## Smarter Fitting
+
+- Long repo names are wrapped and then truncated only when needed
+- Long descriptions are fitted to the available width
+- Long topic sets are shortened cleanly instead of overflowing
+
+## Local Preview Checks
+
+Before final output the generator now reports:
+
+- title contrast check
+- subtitle contrast check
+- crop safety check
+- file size check
+
 ## Fallback Behavior
 
 The skill degrades gracefully when metadata is missing:
@@ -96,6 +112,12 @@ The skill degrades gracefully when metadata is missing:
 - No topics: extracts keywords from README headings
 - No language: omits language badge
 - No metadata at all: renders title-only design
+- Long text: fits to width first, then truncates with ellipsis if needed
+- Missing assets: skips logo, screenshot, or background art cleanly
+
+## Upgrade Log
+
+See [upgrades.md](upgrades.md) for the structured upgrade log and [completedchanges.md](completedchanges.md) for tracked completed changes.
 
 ## Implement In Claude
 

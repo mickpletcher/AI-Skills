@@ -127,3 +127,23 @@ Use the scorecard to summarize quality and risk, not to imply a trading signal.
 - [ ] Red flags are explicit and not omitted
 - [ ] Sources are included for all major populated sections
 - [ ] Output stays research-only and avoids financial advice
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A coin or token name and the kind of due diligence you want.
+
+Example prompts:
+
+- `Use crypto-research to do due diligence on Solana with risks, catalysts, and red flags.`
+- `Research this coin and tell me whether the tokenomics and adoption story actually hold up.`
+- `Show me an example prompt for a full crypto research brief.`
+

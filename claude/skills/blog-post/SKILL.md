@@ -91,3 +91,23 @@ Only ask for missing information that is necessary to write a useful draft.
 - [ ] Uses fenced code blocks for multi-line code
 - [ ] Includes a GitHub link when relevant
 - [ ] Avoids em dashes and emojis in the final post
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A topic plus rough notes, bullets, or source material.
+
+Example prompts:
+
+- `Use blog-post to turn these notes into a post for mickitblog about my Intune reporting script.`
+- `Write a blog post in my style about fixing a PowerShell CI issue in one of my repos.`
+- `Show me the fastest prompt to use when I have rough bullets and want a finished blog draft.`
+

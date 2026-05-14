@@ -32,7 +32,7 @@ See [changelog.md](./changelog.md) for the repo change history.
 | [proxmox-lxc](./claude/skills/proxmox-lxc/) | Deploy and configure Proxmox LXC containers on a self-hosted homelab stack |
 | [resume-writer](./claude/skills/resume-writer/) | Rewrite, audit, score, and target resumes with fit scoring, recruiter skim views, and interview handoff |
 | [travel-itinerary](./claude/skills/travel-itinerary/) | Plan and export travel itineraries with templates, route notes, realistic pacing, and budget visibility |
-| [travel-planning](./claude/skills/travel-planning/) | Plan solo travel with personal preferences, constraints, and active-trip context |
+| [travel-planning](./claude/skills/travel-planning/) | Plan solo travel with destination scoring, style presets, booking triage, and itinerary handoff |
 | [website-content](./claude/skills/website-content/) | Write and update content for mickpletcher.com |
 | [x-post](./claude/skills/x-post/) | Write X posts on tech, PowerShell, IT automation, and fitness topics |
 | [x-reply](./claude/skills/x-reply/) | Write replies to replies on X |

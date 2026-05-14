@@ -14,6 +14,11 @@ This skill handles broader trip research and planning, not just itinerary format
 - estimate budgets
 - surface logistics flags
 - compare destinations and travel options
+- score destination options against budget, training goals, climate, and interests
+- separate must-book-now decisions from lower urgency research
+- apply trip style presets for endurance travel, sightseeing, remote work, and minimalist carry-only travel
+- add seasonal, risk, and gear guidance before itinerary lock-in
+- flow directly into a day-by-day itinerary when the plan is ready
 - use active-trip research files when relevant
 
 All planning defaults to solo travel unless a specific trip is noted otherwise.
@@ -34,6 +39,25 @@ Use the local reference files when the trip matches them:
 
 - [references/europe-2026.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/travel-planning/references/europe-2026.md)
 - [references/colorado-2026.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/travel-planning/references/colorado-2026.md)
+
+## Planning Modes
+
+The skill now supports these planning patterns:
+
+- destination comparison with scoring across budget, training fit, climate, interests, and trip friction
+- trip style presets for endurance travel, sightseeing, remote work, and minimalist carry-only travel
+- booking triage that separates what needs to be reserved now from what can be researched later
+- seasonal planning notes for value, crowding, and bad-fit windows
+- risk notes for transit complexity, safety, visa friction, and overpacked trip structure
+- packing and gear suggestions tied to the trip type
+- direct handoff into day-by-day itinerary output when planning is far enough along
+
+## Example Requests
+
+- `Compare Girona, Mallorca, and Madeira for a spring cycling trip on a moderate budget`
+- `Plan a remote work plus training month in Portugal and separate what I need to book now from what can wait`
+- `Which destination is the best fit for minimalist carry-only travel with good hiking and mild weather in October`
+- `Turn this travel plan into a day-by-day itinerary once the destination is chosen`
 
 ## File Structure
 

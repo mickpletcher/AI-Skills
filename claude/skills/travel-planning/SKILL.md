@@ -1,5 +1,6 @@
 ---
 name: travel-planning
+version: 1.1.0
 description: Plan trips, build itineraries, research destinations, estimate budgets, and organize logistics for Mick's travel. Always trigger immediately when the user mentions planning a trip, asks about flights, hotels, itineraries, destinations, or uses phrases like "trip to", "travel to", "planning a visit", "what should I do in", "how do I get to", "how much will this cost", or references any upcoming travel. Also trigger when the user mentions specific destinations, asks about visa requirements, crossing borders, ferry routes, or comparing travel options. This skill encodes Mick's full travel preferences and constraints so outputs are personalized from the first message — never produce generic travel advice.
 ---
 
@@ -53,6 +54,13 @@ Determine whether this is:
 - **Event-anchored** (Tour de France, Running of the Bulls, a race, a summit attempt) — build the itinerary around the event dates, work outward
 - **Destination-driven** (exploring a country or region) — anchor around an endurance activity if one fits
 - **Logistics query** (flights, visas, border crossings, ferries) — answer precisely and completely
+- **Comparison query** (choosing between destinations or trip styles) — score options against budget, training goals, climate, interests, and trip friction
+
+Also infer the best trip style preset when the user does not name one:
+- **Endurance travel** — training camps, races, mountain routes, trail access, recovery support
+- **Sightseeing** — landmark density, walkability, culture, food, and easy logistics
+- **Remote work** — Wi-Fi reliability, workspace fit, quiet lodging, time-zone practicality
+- **Minimalist carry-only** — light packing, laundry access, transit simplicity, compact gear needs
 
 ### 2. Build the itinerary structure
 
@@ -63,6 +71,12 @@ For multi-city trips, produce a day-by-day breakdown:
 - Meals worth noting
 - Transport between cities with method, duration, and cost
 - Any booking lead time warnings (events, permits, popular routes)
+
+When the request is still in the planning phase, separate what should be locked in now from what can wait:
+- **Book now** — flights, event entries, permits, high-demand lodging, rental cars, or transit that sells out
+- **Research later** — restaurants, optional excursions, backup stops, and lower-risk local details
+
+If the user asks for a finished itinerary or is ready to move from planning into execution, hand off into a day-by-day itinerary structure directly instead of repeating abstract planning notes.
 
 ### 3. Budget estimate
 
@@ -76,6 +90,14 @@ Always produce a trip total with a per-day breakdown:
 
 Flag when a destination has strong USD purchasing power.
 
+For destination comparison requests, also provide a simple scorecard that covers:
+- Budget fit
+- Training fit
+- Climate fit
+- Interest fit
+- Transit simplicity
+- Overall recommendation
+
 ### 4. Logistics flags
 
 Proactively surface:
@@ -85,6 +107,21 @@ Proactively surface:
 - Ferry or border crossing logistics
 - Phone/SIM recommendations
 - Currency situation
+
+Also include planning risk notes when relevant:
+- Transit complexity
+- Safety or scam pressure
+- Visa friction
+- Overpacked itinerary risk
+- Seasonal crowd or pricing pressure
+
+Add seasonal guidance that states when the destination is:
+- Great value
+- Crowded
+- Expensive
+- Poor value for Mick's stated goals
+
+Add packing and gear suggestions tied to the trip style. Focus on what changes because of the trip, not a generic packing list.
 
 ---
 
@@ -105,7 +142,14 @@ For any new destination not covered by a reference file, proceed using the hard 
 ### For full itinerary requests:
 ```
 TRIP: [Name / Dates]
+TRIP STYLE: [Endurance / Sightseeing / Remote Work / Minimalist Carry-Only / Mixed]
 TOTAL BUDGET ESTIMATE: $X,XXX
+
+BOOK NOW:
+- [critical reservations]
+
+RESEARCH LATER:
+- [lower urgency items]
 
 DAY-BY-DAY:
 Day 1 – [City]: ...
@@ -122,6 +166,12 @@ TOTAL: $
 
 LOGISTICS FLAGS:
 - [Visa / booking windows / warnings]
+
+RISK NOTES:
+- [Transit / safety / visa / pacing / crowd notes]
+
+PACKING AND GEAR:
+- [Trip specific gear, clothing, or carry strategy]
 ```
 
 ### For single-destination or activity queries:
@@ -129,6 +179,33 @@ Answer directly and concisely. No need for full itinerary format unless asked.
 
 ### For budget comparisons:
 Side-by-side table with per-day costs and totals.
+
+### For destination comparison requests:
+Use this structure:
+```
+DESTINATION COMPARISON
+
+OPTIONS:
+- [Destination A]
+- [Destination B]
+
+SCORECARD:
+| Destination | Budget | Training | Climate | Interests | Transit | Overall |
+|---|---:|---:|---:|---:|---:|---:|
+
+SEASONAL NOTES:
+- [Best window, crowd risk, value window]
+
+BOOK NOW VS RESEARCH LATER:
+- [Urgent items]
+- [Deferred items]
+
+RECOMMENDATION:
+- [Best fit and why]
+
+NEXT STEP:
+- [Move into day-by-day itinerary planning or deeper research]
+```
 
 ---
 
@@ -138,3 +215,13 @@ Side-by-side table with per-day costs and totals.
 - `references/colorado-2026.md` — Summit profiles, trailhead logistics, permit info
 
 Load the relevant reference file when working on a specific trip. For new destinations not covered, research inline.
+
+## Quality Checks
+
+Before finalizing a planning response:
+- Make sure trip style guidance actually matches the user goal instead of defaulting to generic travel advice.
+- Check whether the destination is being judged against budget, training goals, climate, and interests when options are compared.
+- Separate urgent booking actions from lower urgency research when the trip is not fully locked in yet.
+- Call out seasonal value, crowd pressure, and obvious trip friction instead of leaving them implicit.
+- Add trip-specific packing or gear notes only when they materially affect the plan.
+- If enough planning detail exists, offer or produce a day-by-day itinerary next so the workflow can move directly into `travel-itinerary`.

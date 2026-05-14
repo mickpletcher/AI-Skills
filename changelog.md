@@ -4,6 +4,13 @@ Compiled from repo history and the current working tree.
 
 ## 2026-05-13
 
+- Upgraded `claude/skills/facebook-post` with audience mode switching for friends and family, technical peers, and mixed audience drafts
+- Upgraded `claude/skills/facebook-post` with caption guidance for build photos, screenshots, and workout images
+- Upgraded `claude/skills/facebook-post` with engagement guardrails so questions stay natural instead of turning into comment bait
+- Upgraded `claude/skills/facebook-post` with inferred post modes for personal updates, technical lessons, project progress, and opinion posts
+- Upgraded `claude/skills/facebook-post` with inferred length presets for short update, standard, and story driven drafts
+- Upgraded `claude/skills/facebook-post` with stronger hook selection so the first sentence lands without sounding promotional
+- Updated the `facebook-post` skill README and root `README.md` to document the new behavior
 - Added `claude/skills/patentforge-provisional-skill` with source files, templates, schemas, docs, examples, and a packaged `.skill` export for provisional drafting support with legal safety boundaries
 - Updated every skill `future-upgrades.md` file across `claude/skills` and `chatgpt/skills`
 - Created the missing `chatgpt/skills/food-analyzer/future-upgrades.md`

@@ -4,6 +4,9 @@ Compiled from repo history and the current working tree.
 
 ## 2026-05-13
 
+- Upgraded `claude/skills/food-analyzer` with confidence labeled analysis, goal aware modes, and quick summary output
+- Upgraded `claude/skills/food-analyzer` with comparison mode, timing specific guidance, and cleaner ingredient risk grouping
+- Upgraded `claude/skills/food-analyzer` with meal history review and user preference memory within the conversation
 - Upgraded `claude/skills/fitness-log` with trend summaries for strength, endurance, consistency, and recovery across logged workouts
 - Upgraded `claude/skills/fitness-log` with goal based program checks for pull ups, cycling, triathlon, and similar training targets
 - Upgraded `claude/skills/fitness-log` with weekly review output, nutrition timing prompts, and cleaner exercise normalization

@@ -2,6 +2,11 @@
 
 Compiled from repo history and the current working tree.
 
+## 2026-05-14
+
+- Upgraded `claude/skills/fitness-programming` with goal presets, fatigue adjustment prompts, safer substitutions, phased nutrition guidance, benchmark reviews, annual season planning, fitness-log handoff, and event countdown planning
+- Added `claude/skills/fitness-programming` with source files, tracked change history, and a packaged `.skill` export for structured training plans and season programming
+
 ## 2026-05-13
 
 - Upgraded `claude/skills/photo-rename` with stronger filename ordering, confidence handling, collision-safe rename output, batch review, GPS fallback logic, and export-style rename reports

@@ -17,6 +17,7 @@ See [changelog.md](./changelog.md) for the repo change history.
 | [facebook-post](./claude/skills/facebook-post/) | Write and polish Facebook posts in Mick's voice with audience control, media aware captions, and X repurpose support |
 | [facebook-reply](./claude/skills/facebook-reply/) | Write Facebook replies with tone control, context awareness, and batch thread handling |
 | [fitness-log](./claude/skills/fitness-log/) | Track workouts, analyze training trends, plan progression blocks, and generate fitness Facebook posts |
+| [fitness-programming](./claude/skills/fitness-programming/) | Build structured training blocks with presets, recovery adjustments, benchmark reviews, and season planning |
 | [food-analyzer](./claude/skills/food-analyzer/) | Analyze foods, compare meals, and score nutrition fit with confidence, timing, and goal aware context |
 | [github-social-preview](./claude/skills/github-social-preview/) | Generate branded GitHub social previews with themes, smarter fitting, and optional visual assets |
 | [github-readme](./claude/skills/github-readme/) | Write polished README.md files in a direct, technical, practitioner-focused voice |

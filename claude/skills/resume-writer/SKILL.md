@@ -709,3 +709,23 @@ If no new high-value advice was found, say so plainly and keep the workspace unc
 - If a job description, target role, or target company is provided, prioritize alignment to that target over generic optimization.
 - If the environment cannot write to `insights/principles.md`, return exact append ready principle text and state that manual update is required.
 - If `tips/` files cannot be read, continue without them. Do not pretend fresh-source review was performed when the staging files were unavailable.
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A current resume, target role, or job posting.
+
+Example prompts:
+
+- `Use resume-writer to rewrite my resume for a PowerShell automation engineer role.`
+- `Score this resume against the job posting and tell me what needs to change first.`
+- `Show me an example prompt for using this skill with a resume and target job description.`
+

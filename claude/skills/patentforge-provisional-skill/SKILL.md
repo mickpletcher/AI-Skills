@@ -169,3 +169,23 @@ Every final output must include language equivalent to all of the following:
 - Claim candidates are drafting aids only.
 - A registered patent attorney should review before filing.
 - The user is responsible for final Patent Center submission.
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- An invention summary with the problem, approach, and what seems novel.
+
+Example prompts:
+
+- `Use patentforge-provisional-skill to turn this invention idea into an invention disclosure and prior art plan.`
+- `Help me draft a provisional package for this automation concept with claim candidates and open risks.`
+- `Show me the fastest example prompt for using this skill with a rough invention summary.`
+

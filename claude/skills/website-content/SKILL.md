@@ -111,3 +111,23 @@ For page titles:
 ## Reference File
 
 - `reference/copy-library.md` contains reusable copy blocks for site sections
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- The page, audience, and what the content needs to accomplish.
+
+Example prompts:
+
+- `Use website-content to rewrite the homepage copy for mickpletcher.com in my voice.`
+- `Draft service page content for my site that explains what I build without sounding salesy.`
+- `Show me an example prompt for using this skill to update a specific page.`
+

@@ -239,3 +239,23 @@ Output only the reply text, ready to paste into Facebook. No labels, no explanat
 - [ ] Batch replies stay distinct when multiple comments are provided
 - [ ] Repeated questions can be collapsed into one pinned clarification when needed
 - [ ] Output is paste-ready without extra framing
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- The comment or thread context plus the tone you want back.
+
+Example prompts:
+
+- `Use facebook-reply to answer this comment in a friendly but direct way.`
+- `Write three reply options to this Facebook comment, one warm, one short, and one more technical.`
+- `Show me how to use this skill when I have a full thread and need several replies.`
+

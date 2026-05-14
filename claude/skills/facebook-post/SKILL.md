@@ -230,3 +230,23 @@ If the user does not provide prior examples or signals, skip feedback learning a
 - [ ] Uses only relevant hashtags
 - [ ] Produces a tight matching X version when repurpose mode is requested
 - [ ] Uses prior feedback patterns only when they genuinely improve the new draft
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A rough draft, a few facts, or the core point you want the post to make.
+
+Example prompts:
+
+- `fbp cleaned up a PowerShell script that was failing in CI and finally got the analyzer warnings to zero`
+- `Use facebook-post to rewrite this update so it sounds more natural and still keeps the technical details.`
+- `Show me a sample prompt for turning a project progress note into a Facebook post.`
+

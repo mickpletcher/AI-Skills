@@ -4,6 +4,9 @@ Compiled from repo history and the current working tree.
 
 ## 2026-05-14
 
+- Added explicit `Help And Examples` sections to every Claude skill `SKILL.md` so Claude can explain usage, state minimum input, and show example prompts when the user is unsure how to use a skill
+- Updated the shared skill standard and Claude skill templates so future skills keep the same help and examples behavior by default
+- Rebuilt the packaged Claude `.skill` exports so installed skills match the updated source files
 - Upgraded `claude/skills/fitness-programming` with goal presets, fatigue adjustment prompts, safer substitutions, phased nutrition guidance, benchmark reviews, annual season planning, fitness-log handoff, and event countdown planning
 - Added `claude/skills/fitness-programming` with source files, tracked change history, and a packaged `.skill` export for structured training plans and season programming
 

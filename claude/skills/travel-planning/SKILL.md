@@ -225,3 +225,23 @@ Before finalizing a planning response:
 - Call out seasonal value, crowd pressure, and obvious trip friction instead of leaving them implicit.
 - Add trip-specific packing or gear notes only when they materially affect the plan.
 - If enough planning detail exists, offer or produce a day-by-day itinerary next so the workflow can move directly into `travel-itinerary`.
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A destination idea, date range, and the kind of trip you want.
+
+Example prompts:
+
+- `Use travel-planning to compare two solo trip options for budget, logistics, and training value.`
+- `Plan a trip to Morocco from BNA with an active itinerary and realistic budget.`
+- `Show me the fastest example prompt for using this skill to start trip planning.`
+

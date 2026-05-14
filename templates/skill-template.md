@@ -34,6 +34,15 @@ Describe the user problem this skill solves and the result it should produce.
 - Keep the workflow aligned with the real task.
 - Follow the rules of the platform that owns this skill.
 
+## Help Response
+
+If the user is not sure how to use this skill or asks for examples:
+
+- explain what the skill can do in plain language
+- state the minimum useful input
+- show at least 2 realistic example prompts
+- offer the fastest next prompt the user can send
+
 ## References
 
 - Related repo path or docs

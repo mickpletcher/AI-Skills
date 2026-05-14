@@ -12,6 +12,7 @@ Use this for a Claude-specific skill.
 - Note required Claude metadata or packaging.
 - Keep the workflow aligned with the real task or repo context.
 - Document the rules that are specific to Claude.
+- Include a help response path for users who ask how to use the skill.
 
 ## Metadata
 
@@ -29,6 +30,13 @@ version: 1.0.0
 Insert the Claude-specific wrapper here.
 Keep the intent, workflow, constraints, and examples aligned with the real task this skill supports.
 ```
+
+## Help Response
+
+- Explain what the Claude skill can do in plain language.
+- State the minimum useful input.
+- Show realistic example prompts.
+- Offer the fastest next prompt the user can send.
 
 ## Validation
 

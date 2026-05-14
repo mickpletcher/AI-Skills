@@ -238,3 +238,23 @@ program use my recent fitness-log trends to adjust the next 4 weeks and tell me 
 - [ ] Safety constraints are enforced
 - [ ] Recovery demands are acknowledged
 - [ ] Hybrid plans call out tradeoffs instead of hiding them
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- Your goal, schedule, constraints, and training level.
+
+Example prompts:
+
+- `Use fitness-programming to build me a 4 week pull up focused strength block around triathlon training.`
+- `Create a cycling and strength program that fits 6 training days with one lighter recovery day.`
+- `Show me the best example prompt for asking this skill for a structured training block.`
+

@@ -173,3 +173,23 @@ Next phase is integrating live Alpaca portfolio data so the brief includes overn
 - Post mode matches the kind of story being told
 - Tone control fits the intended audience
 - CTA style is intentional when one is used
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A topic, draft, or concrete win you want to post about.
+
+Example prompts:
+
+- `Use linkedin-post to turn this project update into a LinkedIn post for technical peers.`
+- `Write a LinkedIn post about automating endpoint reporting without sounding like a marketer.`
+- `Show me an example prompt for a credibility focused LinkedIn post.`
+

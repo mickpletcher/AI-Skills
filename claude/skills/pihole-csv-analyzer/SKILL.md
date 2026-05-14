@@ -153,3 +153,23 @@ When string-style status values appear instead of integers, use cautious text ma
 - Do not invent recommendations
 - Be explicit when confidence is low
 - Treat generated blocklist and allowlist entries as review queues, not final policy
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A Pi-hole CSV export or a summary of what you want analyzed.
+
+Example prompts:
+
+- `Use pihole-csv-analyzer to review this Pi-hole export and tell me what cleanup actions make sense.`
+- `Analyze this Pi-hole CSV and surface the top noisy domains, trends, and practical next steps.`
+- `Show me an example prompt for using this skill with a pasted CSV summary.`
+

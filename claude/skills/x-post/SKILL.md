@@ -137,3 +137,23 @@ So excited to share that I've been absolutely crushing my fitness goals lately! 
 ## Output Format
 
 Output the post text first, then the character count on the next line. After that, ask whether anything should be adjusted.
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A draft, a result, or the main point you want in the post.
+
+Example prompts:
+
+- `Use x-post to turn this PowerShell win into a tight post for X.`
+- `Write three X post options about this training milestone with a direct tone.`
+- `Show me an example prompt for using this skill with a rough draft.`
+

@@ -122,3 +122,23 @@ After all three posts, add a one-line note for anything that should be verified 
 - [ ] X stays within 280 characters
 - [ ] Facebook and LinkedIn include the actual blog URL
 - [ ] Final copy avoids emojis and em dashes
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A finished or mostly finished blog post, plus any preferred platform emphasis.
+
+Example prompts:
+
+- `Use blog-to-social to turn this finished blog post into Facebook, X, and LinkedIn drafts.`
+- `Convert my latest post about Azure automation into short social posts for each platform.`
+- `Show me an example prompt for repurposing a technical blog post into social content.`
+

@@ -266,3 +266,23 @@ Obsidian platform handling:
 - If `evaluation-framework.md` cannot be read, continue using the inline criteria in Stages 2-3.
 - If `output-template.md` cannot be read, use the section list in Stage 5 directly.
 - Accept messy, incomplete, or poorly articulated input. Part of the value is finding the idea inside the noise.
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A raw idea, product concept, or problem statement.
+
+Example prompts:
+
+- `Use idea-forge to evaluate this automation idea and score whether it is worth building.`
+- `Run this raw product concept through the full idea-forge pipeline and give me the MVP path.`
+- `Show me a sample prompt for using this skill when I only have a rough idea paragraph.`
+

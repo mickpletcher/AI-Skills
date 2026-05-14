@@ -151,3 +151,23 @@ Noted.
 ## Output Format
 
 Output the reply text first, then the character count on the next line. After that, ask whether anything should be adjusted.
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- The post or reply context and the tone you want.
+
+Example prompts:
+
+- `Use x-reply to answer this reply on X without sounding defensive.`
+- `Write two short reply options to this comment on my post.`
+- `Show me how to use this skill when I need a quick reply to a thread.`
+

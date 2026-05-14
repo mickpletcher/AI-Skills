@@ -277,3 +277,23 @@ When you finish, confirm:
 - Use placeholders when essential trip details are missing
 - Preserve user supplied naming, destination order, and travel style
 - Keep the output neutral and reusable so it works for solo, couple, family, or group travel
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- Trip dates, destinations, and the rough plan you want turned into an itinerary.
+
+Example prompts:
+
+- `Use travel-itinerary to turn this rough trip plan into a day by day itinerary.`
+- `Build me a realistic itinerary for Spain and Portugal with train transfers and daily pacing.`
+- `Show me an example prompt for asking this skill to format and tighten an itinerary.`
+

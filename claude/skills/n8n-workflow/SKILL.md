@@ -159,3 +159,23 @@ pct exec 104 -- npm update -g n8n
 - Claude API node extracts `content[0].text`
 - Webhook endpoints use secret header validation
 - Cloudflare Tunnel config updated when external access is needed
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- The workflow goal, trigger, inputs, and output or failure point.
+
+Example prompts:
+
+- `Use n8n-workflow to design an n8n flow that ingests a JSON file and sends a Teams alert.`
+- `Help me troubleshoot this n8n workflow that is failing after the HTTP request node.`
+- `Show me a sample prompt for asking this skill to build a workflow step by step.`
+

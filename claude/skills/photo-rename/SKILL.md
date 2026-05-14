@@ -155,3 +155,23 @@ For batch requests, also include:
 - If GPS looks obviously wrong, say so and do not anchor the filename to it
 - When the subject is only partly identifiable, choose the most defensible generic subject instead of overclaiming specificity
 - The final deliverable is the rename report unless the user explicitly asks for a script or file operation
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- The photo set context and the naming pattern or outcome you want.
+
+Example prompts:
+
+- `Use photo-rename to propose clean filenames for this folder of build progress photos.`
+- `Help me rename these travel photos with date, place, and subject in a consistent format.`
+- `Show me an example prompt for using this skill on a batch of mixed photos.`
+

@@ -220,3 +220,23 @@ Use those preferences to refine later recommendations, but say when a conclusion
 - [ ] Blood sugar impact is explained, not just labeled
 - [ ] Medication and supplement warnings stay factual and include a disclaimer
 - [ ] Healthier swaps appear only when the food scores poorly
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A food photo, label, meal description, or two items to compare.
+
+Example prompts:
+
+- `Use food-analyzer to compare these two lunches for protein, calories, and satiety.`
+- `Analyze this meal and tell me whether it fits a lean mass gain day.`
+- `Show me an example prompt for using this skill with a food photo or nutrition label.`
+

@@ -25,6 +25,7 @@ That source should capture:
 - when not to use it
 - the expected workflow
 - important constraints and safety boundaries
+- what to do when the user asks for help
 - examples
 - validation or review checks
 
@@ -38,9 +39,10 @@ Most skills in this repo should include these sections:
 4. `Do Not Use When`
 5. `Workflow`
 6. `Constraints`
-7. `References`
-8. `Examples`
-9. `Validation Checklist` or `Test Cases`
+7. `Help Response`
+8. `References`
+9. `Examples`
+10. `Validation Checklist` or `Test Cases`
 
 ## Section Guidance
 
@@ -68,6 +70,17 @@ Document the repeatable process the skill should follow.
 
 Capture important limits, safety boundaries, formatting rules, and things the skill must avoid.
 
+### Help Response
+
+Define the fallback behavior when the user says they do not know how to use the skill or asks for examples.
+
+At minimum, the skill should:
+
+- explain what it can do in plain language
+- state the minimum useful input
+- show realistic example prompts
+- offer the fastest next prompt the user can send
+
 ### References
 
 Link the repo docs, files, or external references that the skill depends on.
@@ -87,6 +100,7 @@ A skill is ready to reuse when:
 - its intent is specific
 - its workflow is concrete
 - its constraints are explicit
+- it contains an explicit help path for unsure users
 - it includes at least 2 examples or equivalent usage guidance
 - it includes at least 3 validation checks or test cases
 

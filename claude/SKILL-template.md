@@ -21,12 +21,20 @@ version: 1.0.0
 - Note any Claude packaging requirements.
 - Keep the workflow aligned with the real repo or task context.
 - Document Claude-specific requirements clearly.
+- Include a help response path for users who ask how to use the skill.
 
 ## Adapted Instructions
 
 ```text
 Insert the Claude wrapper instructions here.
 ```
+
+## Help Response
+
+- Explain what the skill can do in plain language.
+- State the minimum useful input.
+- Show realistic example prompts.
+- Offer the fastest next prompt the user can send.
 
 ## Validation
 

@@ -247,3 +247,23 @@ When logging or summarizing, be direct and data-focused. No motivational fluff. 
 - [ ] Safety rules are enforced
 - [ ] Program adjustments respect back and shoulder constraints
 - [ ] Final Facebook post output avoids emojis and em dashes
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- Workout notes, training data, or a time period to summarize.
+
+Example prompts:
+
+- `Use fitness-log to summarize this week of training and tell me what trends you see.`
+- `Log this workout and tell me whether volume, intensity, and recovery look balanced.`
+- `Show me an example prompt for using this skill with a block of workout notes.`
+

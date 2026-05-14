@@ -154,3 +154,23 @@ scripts/generate_preview.py   — Main image generation and compression script
 templates/design_config.json  — Color, font, and layout configuration
 examples/example_usage.md     — Worked examples with sample outputs described
 ```
+
+## Help And Examples
+
+If the user is not sure how to use this skill, asks what it needs, or asks for examples:
+
+- Explain in plain language what this skill can do.
+- Tell the user the minimum input needed for a useful first pass.
+- Show the example prompts below.
+- Offer the fastest next prompt the user can send.
+
+Minimum useful input:
+
+- A GitHub repository URL. Theme or tagline is optional.
+
+Example prompts:
+
+- `gsp https://github.com/microsoft/winget-cli`
+- `Use github-social-preview to create a social preview image for this repo with a builder-green theme.`
+- `Show me an example prompt for generating an OG image from a GitHub repository URL.`
+

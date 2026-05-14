@@ -2,6 +2,8 @@
 
 A shared home for AI skills organized by platform. Skills live under the platform they are written for. Shared docs cover conventions and repo guidance only.
 
+See [changelog.md](./changelog.md) for the repo change history.
+
 ## Claude Skills
 
 | Skill | Description |
@@ -15,13 +17,16 @@ A shared home for AI skills organized by platform. Skills live under the platfor
 | [facebook-post](./claude/skills/facebook-post/) | Write and polish Facebook posts in Mick's voice |
 | [facebook-reply](./claude/skills/facebook-reply/) | Write replies to Facebook comments in Mick's voice |
 | [fitness-log](./claude/skills/fitness-log/) | Track workouts, log progress, adjust training, and generate fitness Facebook posts |
+| [fitness-programming](./claude/skills/fitness-programming/) | Build structured training blocks with presets, recovery adjustments, benchmark reviews, and season planning |
 | [food-analyzer](./claude/skills/food-analyzer/) | Analyze food photos and nutrition labels with glycemic, processing, and timing context |
 | [github-readme](./claude/skills/github-readme/) | Write polished README.md files in a direct, technical, practitioner-focused voice |
 | [github-repo-architect](./claude/skills/github-repo-architect/) | Turn a rough project idea into a complete GitHub repository architecture |
+| [github-social-preview](./claude/skills/github-social-preview/) | Generate branded GitHub social previews with themes, smarter fitting, and optional visual assets |
 | [idea-forge](./claude/skills/idea-forge/) | Run any raw idea through a five-stage R&D pipeline and produce a scored invention plan with architecture, monetization paths, and an MVP roadmap |
 | [linkedin-post](./claude/skills/linkedin-post/) | Write LinkedIn posts in Mick's professional voice |
 | [n8n-workflow](./claude/skills/n8n-workflow/) | Design, build, and troubleshoot n8n workflows on a self-hosted Proxmox stack |
 | [obsidian-workout-export](./claude/skills/obsidian-workout-export/) | Export logged workout sessions into Obsidian-ready Markdown files |
+| [patentforge-provisional-skill](./claude/skills/patentforge-provisional-skill/) | Turn an invention idea into a structured disclosure, prior art search plan, claim candidates, and provisional draft package |
 | [photo-rename](./claude/skills/photo-rename/) | Rename photos to descriptive names using image understanding and GPS metadata |
 | [pihole-blocklist](./claude/skills/pihole-blocklist/) | Evaluate, categorize, and document new Pi-hole blocklist sources |
 | [pihole-csv-analyzer](./claude/skills/pihole-csv-analyzer/) | Analyze Pi-hole CSV exports and generate practical cleanup recommendations |

@@ -26,7 +26,7 @@ See [changelog.md](./changelog.md) for the repo change history.
 | [n8n-workflow](./claude/skills/n8n-workflow/) | Design, build, and troubleshoot n8n workflows on a self-hosted Proxmox stack |
 | [obsidian-workout-export](./claude/skills/obsidian-workout-export/) | Export logged workout sessions into Obsidian-ready Markdown files |
 | [patentforge-provisional-skill](./claude/skills/patentforge-provisional-skill/) | Turn an invention idea into a structured disclosure, prior art search plan, claim candidates, and provisional draft package |
-| [photo-rename](./claude/skills/photo-rename/) | Rename photos to descriptive names using image understanding and GPS metadata |
+| [photo-rename](./claude/skills/photo-rename/) | Rename photos with consistent filename rules, confidence handling, batch review, and GPS-aware fallback logic |
 | [pihole-blocklist](./claude/skills/pihole-blocklist/) | Evaluate, categorize, and document new Pi-hole blocklist sources |
 | [pihole-csv-analyzer](./claude/skills/pihole-csv-analyzer/) | Analyze Pi-hole CSV exports and generate practical cleanup recommendations |
 | [proxmox-lxc](./claude/skills/proxmox-lxc/) | Deploy and configure Proxmox LXC containers on a self-hosted homelab stack |

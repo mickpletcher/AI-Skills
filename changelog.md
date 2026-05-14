@@ -4,6 +4,7 @@ Compiled from repo history and the current working tree.
 
 ## 2026-05-13
 
+- Upgraded `claude/skills/photo-rename` with stronger filename ordering, confidence handling, collision-safe rename output, batch review, GPS fallback logic, and export-style rename reports
 - Added `specs/002-completed-changes-rollup` for the repo-wide completed history migration
 - Moved Claude skill completed history into tracked `completedchanges.md` files and updated skill READMEs to link them
 - Updated the future-upgrades maintenance workflow so local planning files point to tracked completed history instead of regenerating shipped changes

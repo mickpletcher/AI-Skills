@@ -18,6 +18,9 @@ The Claude side already has the broadest and most mature set of skills in the re
 3. Fitness programming
 `claude/skills/fitness-programming` now exists for structured training blocks and season planning.
 
+4. PowerShell refactor
+`claude/skills/powershell-refactor` now exists for simplifying, tightening, and standardizing existing PowerShell scripts.
+
 ## GitHub Skills Completed
 
 1. Platform rule exists

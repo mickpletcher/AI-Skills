@@ -153,25 +153,22 @@ Could help compare AI tooling, app stacks, or automation choices in a structured
 1. `claude/skills/azure-ad-automation`
 Strong fit for tenant automation, group workflows, and identity cleanup tasks.
 
-2. `claude/skills/powershell-refactor`
-A focused code improvement skill for simplifying, tightening, and standardizing existing PowerShell scripts.
-
-3. `claude/skills/m365-admin-automation`
+2. `claude/skills/m365-admin-automation`
 Useful for broader Microsoft 365 tenant automation that is not tied to Intune device management.
 
-4. `claude/skills/intune-policy-writer`
+3. `claude/skills/intune-policy-writer`
 High fit for practical compliance, configuration, and deployment planning inside the Windows endpoint stack.
 
-5. `claude/skills/configmgr-task-sequence`
+4. `claude/skills/configmgr-task-sequence`
 Strong match for task sequence design, cleanup, and troubleshooting in ConfigMgr.
 
-6. `claude/skills/powershell-script-review`
+5. `claude/skills/powershell-script-review`
 Useful for audit, simplification, naming cleanup, and maintainability checks in real scripts.
 
-7. `claude/skills/repo-assessment`
+6. `claude/skills/repo-assessment`
 High value meta skill for creating durable repo handoff and source of truth documents.
 
-8. `claude/skills/spec-writer`
+7. `claude/skills/spec-writer`
 Strong repo utility for generating numbered spec folders with requirements, plan, and tasks.
 
 ### Tier 2

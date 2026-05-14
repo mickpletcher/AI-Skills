@@ -11,6 +11,7 @@ Compiled from repo history and the current working tree.
 - Added the root `completed-projects.md` file and moved completed additions out of `future-projects.md` so future work and completed work are tracked separately
 - Updated the root `README.md` so the Claude skill catalog matches the actual skill folders, including `fitness-programming`, `github-social-preview`, and `patentforge-provisional-skill`
 - Updated the root `README.md` to link to `completed-projects.md` and restored the root changelog link for repo discoverability
+- Added the new Claude skill `claude/skills/powershell-refactor/` with a focused source `SKILL.md`, wrapper `README.md`, upgrade log, and packaged `.skill` export for simplifying and standardizing existing PowerShell scripts
 - Upgraded `claude/skills/fitness-programming` with goal presets, fatigue adjustment prompts, safer substitutions, phased nutrition guidance, benchmark reviews, annual season planning, fitness-log handoff, and event countdown planning
 - Added `claude/skills/fitness-programming` with source files, tracked change history, and a packaged `.skill` export for structured training plans and season programming
 

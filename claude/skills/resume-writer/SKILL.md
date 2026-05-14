@@ -1,6 +1,7 @@
 ---
 name: resume-writer
 description: Rewrite and enhance resumes using a persistent library of principles harvested from real recruiters, hiring managers, and HR professionals. Always trigger immediately when the user's message starts with "rw". Also trigger on "resume writer", "rewrite my resume", "enhance my resume", "fix my resume", "review my resume", or any request to improve, audit, or critique a resume. Also trigger when the user pastes a recruiter or hiring manager post (LinkedIn, blog, Reddit) and says "add to my library", "add insight", "rw add", or indicates they want to capture it as a resume principle. Also trigger on "two page", "two-page", "trim to two pages", "fit on two pages", "two page audit", or "page trim" to run the two-page audit mode. Handles paste, .docx, .pdf, and screenshot inputs. Produces a full rewrite plus a condensed audit by default, with full forensic line by line audit only when requested. General-purpose skill that works for any user's resume, not just the skill owner.
+version: 1.1.0
 ---
 
 # Resume Writer
@@ -123,6 +124,16 @@ When both a resume and a job description or explicit target role are present, ru
 - Highlight directly relevant evidence first in each recent role.
 - Do not fabricate experience, achievements, or keywords not supported by the original resume.
 
+Apply a role family preset when the target clearly fits one of these:
+
+- infrastructure
+- endpoint engineering
+- cloud
+- support escalation
+- leadership
+
+Role family presets should shift emphasis, skills ordering, and proof selection without changing facts.
+
 ### Step 4b: Two-page audit mode (when explicitly requested)
 
 Activate when the user says "two page", "two-page", "trim to two pages", "fit on two pages", "two page audit", or "page trim". Two-page mode runs inside Enhance mode — the full audit and rewrite still execute, but a strict trimming phase is added after the rewrite.
@@ -186,6 +197,17 @@ Capture scoring inputs while auditing:
 - Category (from `scoring-model.md`)
 - Principle weight (from `scoring-model.md`)
 - Missing data flag (if present)
+
+**Recruiter skim view** (run as part of every audit):
+
+Build a first-30-seconds summary that surfaces the top proof points a recruiter should notice immediately. Prefer:
+
+- target headline or likely role fit
+- 3 to 5 strongest quantified achievements
+- the most relevant tools, domains, or platform depth
+- any unusual credibility signal such as leadership scope, rare certification, or major migration or transformation outcome
+
+Keep this view tight and evidence based.
 
 **Gap analysis** (run as part of every audit):
 
@@ -256,6 +278,23 @@ Surface taxonomy findings in the output:
 - MAJOR taxonomy issues appear in Issues by Severity
 - Corrections are applied in the rewritten resume — use the current preferred name everywhere
 
+**LinkedIn and artifact alignment check** (run as part of every audit when enough data is present):
+
+When the user provides LinkedIn profile text, a LinkedIn export, or references profile wording, check whether the resume and LinkedIn drift on:
+
+- current title or headline
+- date ranges
+- core platform or technology claims
+- seniority framing
+- major achievement emphasis
+
+If a cover letter is generated, also check that the role story, dates, and seniority framing stay consistent across resume, LinkedIn, and cover letter artifacts.
+
+Flag:
+
+- `LINKEDIN_ALIGNMENT_GAP` when the profile and resume tell materially different stories
+- `ARTIFACT_TIMELINE_MISMATCH` when dates or sequence conflict across resume, LinkedIn, and cover letter context
+
 ### Step 6: Produce the rewrite
 
 Rewrite the full resume applying all recommended fixes. Preserve:
@@ -273,6 +312,14 @@ Rewrite freely:
 - Section ordering within the resume
 
 Do not invent facts. If a bullet lacks a number and the user did not provide one, rewrite using the strongest truthful framing available — do not fabricate metrics. Flag in the audit that a number is needed and ask the user to supply it.
+
+When bullets are too vague, push harder on quantified framing:
+
+- scope: team size, endpoint count, user base, region, budget, or system count
+- action: what was actually changed, automated, stabilized, deployed, migrated, or reduced
+- outcome: time saved, risk reduced, incidents prevented, SLA improved, cost avoided, or adoption increased
+
+If numbers are unavailable, prefer stronger concrete nouns and outcome language over filler.
 
 ### Step 7: Self-validate the rewrite
 
@@ -321,11 +368,22 @@ Hard rules:
 
 **Self-validate the cover letter**: Before presenting, confirm the hook references something specific from the JD (or resume target role), both proof paragraphs cite real resume evidence, and the close names a concrete next step.
 
+### Step 8b: Interview prep handoff
+
+When the user asks for interview prep, or when a targeted rewrite has enough target-role context to justify it, generate a short interview prep handoff:
+
+- likely questions based on the rewritten resume
+- proof points the user should be ready to explain
+- talking points for ambiguous or weak areas
+- one short story angle for each major target-role requirement when possible
+
+Keep it tied to the actual rewritten resume and target role. Do not fabricate scenarios.
+
 ### Step 9: Produce the output
 
 Apply Output Mode Handling before final response assembly.
 
-Deliver eight sections in the standard order, plus a ninth when two-page mode ran:
+Deliver the sections below in the standard order, plus the two-page report when two-page mode ran:
 
 1. **Final Score Summary**
    - Final Score
@@ -334,6 +392,8 @@ Deliver eight sections in the standard order, plus a ninth when two-page mode ra
    - Confidence
    - Audit Mode
    - Review Context
+   - Job Fit Before Rewrite
+   - Job Fit After Rewrite (when a rewrite was requested)
 
 2. **Category Breakdown**
    - Positioning and Narrative
@@ -360,26 +420,34 @@ Deliver eight sections in the standard order, plus a ninth when two-page mode ra
    - Full forensic only when explicitly requested.
    - Source field must hold either a library principle name or `common-patterns § <section>`.
 
-6. **Rewritten Resume (if requested)**
+6. **Recruiter Skim View**
+   - Top proof points for the first 30 seconds
+   - Short target-role fit framing when enough context exists
+
+7. **Rewritten Resume (if requested)**
    - Include this section when the request is in rewrite mode or the user explicitly requests a rewrite.
    - If input was .docx, produce .docx using the available document tooling when the environment supports it, preserving any letterhead or formatting when possible.
    - If input was .pdf, produce .docx by default.
    - If input was paste or image, produce Markdown unless the user asks for .docx.
    - In JSON output, map this content to `rewritten_resume`.
 
-7. **Top Fixes / Next Steps**
+8. **Top Fixes / Next Steps**
    - List highest impact improvements first.
    - Include missing metrics and follow up items.
    - Include any "Not-in-library observations".
    - If any Not-in-library observation recurs, offer to add it as a principle.
 
-8. **Cover Letter** (when generated per Step 8)
+9. **Cover Letter** (when generated per Step 8)
    - Include the full cover letter text.
    - If generated from a job description, no label is needed.
    - If generated without a job description, prepend the generic-version label.
    - In JSON output, map this content to `cover_letter`. Set to `null` if no cover letter was generated.
 
-9. **Two-Page Trimming Report** (when two-page mode ran)
+10. **Interview Prep Handoff** (when generated per Step 8b)
+   - Include likely questions and talking points.
+   - In JSON output, map this content to `interview_prep_handoff`. Set to `null` if not generated.
+
+11. **Two-Page Trimming Report** (when two-page mode ran)
    - State the estimated pre-trim length and post-trim length.
    - List every item cut, which pass removed it, and the reason.
    - Explicitly note that any cut can be overridden — the user should reply with the item to restore.
@@ -469,8 +537,14 @@ Every resume audit in Enhance mode MUST run this scoring workflow.
    - `top_fixes`
    - `rewritten_resume`
    - `cover_letter`
+   - `interview_prep_handoff`
    - `two_page_trim_report`
    - `notes`
+
+10a. Longitudinal tracking:
+   - When the user provides an earlier resume version, prior score, or prior audit output, compare the current revision against that baseline.
+   - Summarize improvement or regression in fit, evidence quality, targeting, and clarity.
+   - In `json` and `both` modes, include this under `notes` when no dedicated schema field exists.
 
 11. Bind rewrite output to scoring records:
    - Every CRITICAL or MAJOR issue MUST include a fix recommendation.

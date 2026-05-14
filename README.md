@@ -30,7 +30,7 @@ See [changelog.md](./changelog.md) for the repo change history.
 | [pihole-blocklist](./claude/skills/pihole-blocklist/) | Evaluate, categorize, and document new Pi-hole blocklist sources |
 | [pihole-csv-analyzer](./claude/skills/pihole-csv-analyzer/) | Analyze Pi-hole CSV exports and generate practical cleanup recommendations |
 | [proxmox-lxc](./claude/skills/proxmox-lxc/) | Deploy and configure Proxmox LXC containers on a self-hosted homelab stack |
-| [resume-writer](./claude/skills/resume-writer/) | Rewrite, audit, and score resumes using recruiter and hiring-manager principles |
+| [resume-writer](./claude/skills/resume-writer/) | Rewrite, audit, score, and target resumes with fit scoring, recruiter skim views, and interview handoff |
 | [travel-itinerary](./claude/skills/travel-itinerary/) | Plan, format, and export travel itineraries as Obsidian-ready Markdown files |
 | [travel-planning](./claude/skills/travel-planning/) | Plan solo travel with personal preferences, constraints, and active-trip context |
 | [website-content](./claude/skills/website-content/) | Write and update content for mickpletcher.com |

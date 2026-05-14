@@ -58,9 +58,16 @@ See [changelog.md](./changelog.md) for the repo change history.
 3. Use `shared/` for naming, structure, and repo-level guidance only.
 4. Record checks with [templates/test-template.md](./templates/test-template.md).
 
+## Spec Workflow
+
+Use [`specs/`](./specs/) for non-trivial repo work such as shared conventions, packaging rules, cross-skill changes, or shared script updates.
+
+Skip it for small single-skill wording edits or minor doc cleanup.
+
 ## Start Here
 
 - [shared/skill-standard.md](./shared/skill-standard.md) before creating a new skill
 - [shared/platform-organization.md](./shared/platform-organization.md) for folder intent
 - [templates/skill-template.md](./templates/skill-template.md) as the base template
+- [specs/001-skill-repo-workflow/](./specs/001-skill-repo-workflow/) for the repo-level spec baseline
 - [claude/scripts/Update-FutureUpgrades.ps1](./claude/scripts/Update-FutureUpgrades.ps1) to create or refresh skill `future-upgrades.md` files from `upgrades.md`

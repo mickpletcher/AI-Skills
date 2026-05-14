@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## 2026-05-13
 
+- Added `specs/001-skill-repo-workflow` as the baseline GitHub spec workflow for non-trivial repo changes
+- Updated the root `README.md` to point contributors to the new `specs/` workflow
 - Upgraded `claude/skills/travel-planning` with destination comparison scoring, trip style presets, booking triage, seasonal guidance, risk notes, packing suggestions, and itinerary handoff
 - Upgraded `claude/skills/travel-itinerary` with itinerary templates, daily pacing checks, packing and reservation summaries, route notes, budget visibility, and contingency planning
 - Upgraded `claude/skills/resume-writer` with job fit before and after scoring, recruiter skim views, stronger bullet quantification guidance, and role family presets

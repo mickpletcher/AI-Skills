@@ -1,6 +1,7 @@
 ---
 name: linkedin-post
 description: Write LinkedIn posts for Mick Pletcher's professional audience. Always trigger immediately when Mick says "linkedin post", "lnp", or asks to write something for LinkedIn. LinkedIn audience is professional IT, AI, and automation peers. Tone is more polished than Facebook but still first-person and direct. No emojis. Avoid em dashes in final LinkedIn post output. 2 to 3 hashtags max. Focus on home AI infrastructure, algorithmic trading, enterprise automation, career insights, and tech commentary.
+version: 1.1.0
 ---
 
 # LinkedIn Post Skill
@@ -12,6 +13,8 @@ Write LinkedIn posts for Mick Pletcher's professional audience in a voice that i
 - `lnp` for immediate triggering
 - `linkedin post about...`
 - `write something for LinkedIn`
+
+Treat `lnp` as an immediate trigger. Do not ask clarifying questions first unless the source material is missing a critical fact that would change the post.
 
 ## Audience and Tone
 
@@ -34,6 +37,59 @@ Write LinkedIn posts for Mick Pletcher's professional audience in a voice that i
 4. **Career and community**: Nashville PowerShell User Group, personal milestones, early retirement path
 5. **Tech commentary**: GTC keynotes, new model releases, tooling observations
 
+## Post Modes
+
+Infer one of these modes unless the user explicitly asks for a different one:
+
+- `career update`
+- `technical lesson`
+- `project breakdown`
+- `opinion`
+
+### Mode Guidance
+
+- `career update`: center the milestone, what changed, and why it matters professionally
+- `technical lesson`: lead with the lesson or result, then show how it was learned or built
+- `project breakdown`: explain the problem, approach, tools, and outcome with enough structure to feel credible
+- `opinion`: make the viewpoint clear early and support it with concrete reasoning instead of hot air
+
+## Tone Controls
+
+Infer one of these audience tones unless the user specifies one:
+
+- `practitioner`
+- `leadership`
+- `builder`
+
+### Tone Guidance
+
+- `practitioner`: technical, grounded, tool aware, and peer level
+- `leadership`: strategic, outcome oriented, and broader in framing without turning corporate
+- `builder`: hands on, iterative, and focused on what was actually made or solved
+
+## Hook Styles
+
+The first two lines should create interest without sounding inflated.
+
+Prefer hook styles such as:
+
+- the concrete result
+- the problem solved
+- the lesson earned
+- the tension or tradeoff
+
+Avoid inflated hooks that sound like generic personal branding.
+
+## Credibility Checks
+
+Before finalizing the post, push for:
+
+- proof: what was actually built, changed, or observed
+- outcome: what improved, shipped, or became possible
+- context: where this fits and why it matters
+
+If the draft only makes vague claims, rewrite it toward specifics instead of amplifying the vagueness.
+
 ## Post Structure
 
 **Hook line**
@@ -46,7 +102,7 @@ Use 2 to 4 short paragraphs. Explain what it is, why it matters, and how it work
 
 **Closing line**
 
-Optional. Use it for what comes next or a short observation. Do not end with a call to action such as asking for comments.
+Optional. Use it for what comes next, a short observation, or a fitted CTA when the post would benefit from one.
 
 **Hashtags**
 
@@ -61,6 +117,33 @@ Use 2 to 3 hashtags on their own line at the end.
 - Leave line breaks between paragraphs
 - Put hashtags at the bottom, not in the middle of the post
 - Do not wrap the post in quotes
+
+## CTA Styles
+
+Use a CTA only when it fits the post. Infer the best one unless the user specifies it:
+
+- `hiring`
+- `networking`
+- `repo traffic`
+- `discussion`
+- `none`
+
+### CTA Guidance
+
+- `hiring`: brief note for people who may want to connect or collaborate professionally
+- `networking`: useful when the post is about shared interests or adjacent work
+- `repo traffic`: point to the repo or writeup without sounding thirsty
+- `discussion`: one grounded prompt that invites real input
+- `none`: default when the post stands best on its own
+
+## Audience Testing Variants
+
+When the user asks for variants, produce:
+
+- one more technical practitioner draft
+- one broader professional draft
+
+Keep the core point the same while changing the framing, jargon level, and emphasis.
 
 ## Example Post Pattern
 
@@ -79,9 +162,14 @@ Next phase is integrating live Alpaca portfolio data so the brief includes overn
 ## Quality Checklist
 
 - Hook line earns attention in the first 1 to 2 sentences
+- Hook style creates interest without sounding inflated
 - Specific tools or outcomes are mentioned
+- Proof, outcome, and context are present
 - No emojis and no em dashes in final output
 - 2 to 3 hashtags at the bottom only
 - Reads as professional but not corporate
 - No filler phrases or AI-sounding language
 - Written in first person as Mick
+- Post mode matches the kind of story being told
+- Tone control fits the intended audience
+- CTA style is intentional when one is used

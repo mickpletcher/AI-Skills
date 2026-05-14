@@ -10,6 +10,8 @@ Use [SKILL.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills
 
 Generates ready-to-post LinkedIn content for Mick's professional audience: IT peers, automation engineers, AI practitioners, and enterprise tech contacts. It should be more polished than Facebook, less casual than X, and always first-person and direct without corporate-speak.
 
+It now supports explicit post modes, LinkedIn tuned hook styles, credibility checks, CTA styles, tone controls, and audience testing variants.
+
 ## Trigger Phrases
 
 | Phrase | Action |
@@ -26,6 +28,27 @@ Generates ready-to-post LinkedIn content for Mick's professional audience: IT pe
 4. Career and community
 5. Tech commentary
 
+## Supported Post Modes
+
+- `career update`
+- `technical lesson`
+- `project breakdown`
+- `opinion`
+
+## Supported Tone Controls
+
+- `practitioner`
+- `leadership`
+- `builder`
+
+## Supported CTA Styles
+
+- `hiring`
+- `networking`
+- `repo traffic`
+- `discussion`
+- `none`
+
 ## Format Rules
 
 - No emojis
@@ -35,6 +58,28 @@ Generates ready-to-post LinkedIn content for Mick's professional audience: IT pe
 - Short paragraphs, 2 to 3 sentences each
 - 2 to 3 hashtags at the bottom only
 - No filler phrases or AI-sounding language
+
+## Behavior
+
+- `lnp` triggers the skill immediately
+- The skill infers a post mode unless you specify one
+- The skill checks for proof, outcome, and context before finalizing the draft
+- The skill can apply a CTA style when it fits
+- The skill can produce a more technical variant and a broader professional variant when asked
+
+## Example Prompts
+
+```text
+lnp turn this into a technical lesson for practitioner audience
+
+lnp write this as a project breakdown with a repo traffic CTA
+
+lnp make this a leadership tone career update
+
+lnp give me one technical version and one broader professional version
+
+lnp rewrite this opinion post with a stronger LinkedIn hook and better proof
+```
 
 ## File Structure
 

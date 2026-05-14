@@ -22,7 +22,7 @@ See [changelog.md](./changelog.md) for the repo change history.
 | [github-readme](./claude/skills/github-readme/) | Write polished README.md files in a direct, technical, practitioner-focused voice |
 | [github-repo-architect](./claude/skills/github-repo-architect/) | Turn a rough project idea into a complete GitHub repository architecture |
 | [idea-forge](./claude/skills/idea-forge/) | Run any raw idea through a five-stage R&D pipeline and produce a scored invention plan with architecture, monetization paths, and an MVP roadmap |
-| [linkedin-post](./claude/skills/linkedin-post/) | Write LinkedIn posts in Mick's professional voice |
+| [linkedin-post](./claude/skills/linkedin-post/) | Write LinkedIn posts with mode control, credibility checks, CTA styles, and audience variants |
 | [n8n-workflow](./claude/skills/n8n-workflow/) | Design, build, and troubleshoot n8n workflows on a self-hosted Proxmox stack |
 | [obsidian-workout-export](./claude/skills/obsidian-workout-export/) | Export logged workout sessions into Obsidian-ready Markdown files |
 | [patentforge-provisional-skill](./claude/skills/patentforge-provisional-skill/) | Turn an invention idea into a structured disclosure, prior art search plan, claim candidates, and provisional draft package |

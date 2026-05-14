@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## 2026-05-13
 
+- Upgraded `claude/skills/linkedin-post` with post modes, LinkedIn tuned hook styles, and stronger credibility checks
+- Upgraded `claude/skills/linkedin-post` with CTA styles, tone controls, and audience testing variants
 - Upgraded `claude/skills/github-social-preview` with theme presets, smarter text fitting, preview QA checks, and optional logo or screenshot or background assets
 - Upgraded `claude/skills/food-analyzer` with confidence labeled analysis, goal aware modes, and quick summary output
 - Upgraded `claude/skills/food-analyzer` with comparison mode, timing specific guidance, and cleaner ingredient risk grouping

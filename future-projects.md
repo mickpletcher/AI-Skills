@@ -146,11 +146,6 @@ Useful, but lower priority than `resume-writer` and broader repo planning skills
 8. `chatgpt/skills/tool-comparison`
 Could help compare AI tooling, app stacks, or automation choices in a structured way.
 
-### Completed
-
-1. `chatgpt/skills/food-analyzer`
-Already built.
-
 ## Claude Skills
 
 ### Tier 1
@@ -262,17 +257,6 @@ Helpful for reviewing quotes, scopes, and missing work items on property or buil
 
 6. `claude/skills/notes-to-project-plan`
 Could convert raw notes into a clean sequence of work, dependencies, and next actions.
-
-### Completed
-
-1. Core Claude skill library
-The Claude side already has the broadest and most mature set of skills in the repo.
-
-2. GitHub focused Claude skills
-`claude/skills/github-readme`, `claude/skills/github-repo-architect`, and `claude/skills/github-social-preview` already exist.
-
-3. Fitness programming
-`claude/skills/fitness-programming` now exists for structured training blocks and season planning.
 
 ## GitHub Skills
 
@@ -465,19 +449,3 @@ Would catch missing names, versions, or descriptions before packages are rebuilt
 
 5. Add a cross skill dependency map
 Useful for skills like travel planning to itinerary, or blog post to blog to social, where one skill naturally hands off to another.
-
-### Completed
-
-1. Platform rule exists
-The repo already defines GitHub Copilot work as a separate platform area under `copilot/`.
-
-2. GitHub workflows already support repo maintenance
-The repo already uses `.github/` for workflow driven maintenance such as the `resume-writer` refresh flow.
-
-## Repo Wide Completed
-
-1. Root repo docs
-`README.md` and `changelog.md` now exist at the repo root.
-
-2. Skill planning maintenance script
-`claude/scripts/Update-FutureUpgrades.ps1` already handles per skill future upgrade file generation from `upgrades.md`.

@@ -16,7 +16,7 @@ See [changelog.md](./changelog.md) for the repo change history.
 | [crypto-research](./claude/skills/crypto-research/) | Structured due diligence on a specific cryptocurrency |
 | [facebook-post](./claude/skills/facebook-post/) | Write and polish Facebook posts in Mick's voice with audience control, media aware captions, and X repurpose support |
 | [facebook-reply](./claude/skills/facebook-reply/) | Write Facebook replies with tone control, context awareness, and batch thread handling |
-| [fitness-log](./claude/skills/fitness-log/) | Track workouts, log progress, adjust training, and generate fitness Facebook posts |
+| [fitness-log](./claude/skills/fitness-log/) | Track workouts, analyze training trends, plan progression blocks, and generate fitness Facebook posts |
 | [food-analyzer](./claude/skills/food-analyzer/) | Analyze food photos and nutrition labels with glycemic, processing, and timing context |
 | [github-readme](./claude/skills/github-readme/) | Write polished README.md files in a direct, technical, practitioner-focused voice |
 | [github-repo-architect](./claude/skills/github-repo-architect/) | Turn a rough project idea into a complete GitHub repository architecture |

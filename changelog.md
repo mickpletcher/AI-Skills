@@ -4,6 +4,10 @@ Compiled from repo history and the current working tree.
 
 ## 2026-05-13
 
+- Upgraded `claude/skills/fitness-log` with trend summaries for strength, endurance, consistency, and recovery across logged workouts
+- Upgraded `claude/skills/fitness-log` with goal based program checks for pull ups, cycling, triathlon, and similar training targets
+- Upgraded `claude/skills/fitness-log` with weekly review output, nutrition timing prompts, and cleaner exercise normalization
+- Upgraded `claude/skills/fitness-log` with long horizon progression planning and export friendly structured output for dashboards or Obsidian
 - Upgraded `claude/skills/facebook-reply` with tone modes for appreciative, clarifying, humorous, and boundary setting responses
 - Upgraded `claude/skills/facebook-reply` with original post context handling and commenter aware replies
 - Upgraded `claude/skills/facebook-reply` with concise versus fuller reply depth control

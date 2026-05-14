@@ -31,6 +31,8 @@ Update `SKILL.md` when the Facebook post workflow changes, then rebuild `faceboo
 - Adjusting the wording for friends and family, technical peers, or mixed audiences
 - Matching the caption to build photos, screenshots, or workout images when that context is present
 - Avoiding forced engagement bait when a question would weaken the post
+- Repurposing a finished Facebook post into a matching X post
+- Learning from prior high performing post patterns when you provide them
 - Adding relevant hashtags without turning the post into spam
 
 ## Behavior
@@ -42,6 +44,8 @@ Update `SKILL.md` when the Facebook post workflow changes, then rebuild `faceboo
 - The skill generates a few hook approaches internally, then returns the strongest final draft
 - The skill keeps engagement prompts natural and skips them when they would feel forced
 - The skill adjusts captions when the draft is tied to a photo, screenshot, or workout image
+- The skill can also produce a matching X version when you ask for repurpose mode
+- The skill can use prior post performance signals to improve the next draft when you provide examples or notes
 - It returns one finished Facebook post by default rather than a menu of options
 
 ## Supported Modes
@@ -50,6 +54,8 @@ Update `SKILL.md` when the Facebook post workflow changes, then rebuild `faceboo
 - `technical lesson`
 - `project progress`
 - `opinion`
+- `repurpose to X`
+- `feedback guided`
 
 ## Supported Length Presets
 
@@ -77,6 +83,10 @@ fbp rewrite this as an opinion post about why simple PowerShell automation still
 fbp make this fit a screenshot post for technical peers without adding a forced question at the end
 
 fbp turn this into a friends and family update that matches a workout photo
+
+fbp repurpose this Facebook post into a matching X post
+
+fbp use the hook style from my prior high comment project posts and rewrite this update
 ```
 
 ## Installation

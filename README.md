@@ -14,7 +14,7 @@ See [changelog.md](./changelog.md) for the repo change history.
 | [container-home](./claude/skills/container-home/) | Off-grid shipping container lake home project in Dover, Tennessee |
 | [crypto-listings](./claude/skills/crypto-listings/) | Track recent and upcoming cryptocurrency listings across major exchanges |
 | [crypto-research](./claude/skills/crypto-research/) | Structured due diligence on a specific cryptocurrency |
-| [facebook-post](./claude/skills/facebook-post/) | Write and polish Facebook posts in Mick's voice with mode aware structure, audience control, and media aware captions |
+| [facebook-post](./claude/skills/facebook-post/) | Write and polish Facebook posts in Mick's voice with audience control, media aware captions, and X repurpose support |
 | [facebook-reply](./claude/skills/facebook-reply/) | Write replies to Facebook comments in Mick's voice |
 | [fitness-log](./claude/skills/fitness-log/) | Track workouts, log progress, adjust training, and generate fitness Facebook posts |
 | [food-analyzer](./claude/skills/food-analyzer/) | Analyze food photos and nutrition labels with glycemic, processing, and timing context |

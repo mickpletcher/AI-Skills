@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## 2026-05-13
 
+- Upgraded `claude/skills/facebook-post` with feedback guided mode so new drafts can borrow patterns from prior high interaction posts
+- Upgraded `claude/skills/facebook-post` with repurpose mode to turn a Facebook post into a matching X post
 - Upgraded `claude/skills/facebook-post` with audience mode switching for friends and family, technical peers, and mixed audience drafts
 - Upgraded `claude/skills/facebook-post` with caption guidance for build photos, screenshots, and workout images
 - Upgraded `claude/skills/facebook-post` with engagement guardrails so questions stay natural instead of turning into comment bait

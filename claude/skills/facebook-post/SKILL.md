@@ -1,7 +1,7 @@
 ---
 name: facebook-post
 description: Write and polish Facebook posts on any topic. Trigger on requests to draft, rewrite, polish, or improve a Facebook post, especially when the user starts with `fbp`.
-version: 1.2.0
+version: 1.4.0
 ---
 
 # Facebook Post
@@ -13,6 +13,8 @@ Write and polish Facebook posts for Mick in a direct, casual, first-person voice
 - The user starts with `fbp`
 - The user asks to write, draft, create, rewrite, or polish a Facebook post
 - The user wants social copy that is clearly intended for Facebook
+- The user wants an existing Facebook post turned into a matching X post
+- The user wants a new post based on what previously performed best
 
 Treat `fbp` as an immediate trigger. Do not ask clarifying questions first unless the draft is missing a critical fact that would change the post.
 
@@ -28,6 +30,8 @@ Treat `fbp` as an immediate trigger. Do not ask clarifying questions first unles
 8. Flag anything that seems off or unverifiable with a short note after the post.
 9. Add relevant hashtags when they genuinely fit.
 10. Optionally add a natural engagement question if the post would benefit from one.
+11. If the user asks for X repurpose mode, also produce a matching X post that keeps the same core point in tighter platform native form.
+12. If the user provides prior post performance signals, use them to shape the hook, structure, tone, and length of the new draft.
 
 ## Non-Negotiable Rules
 
@@ -58,6 +62,8 @@ Infer one of these modes unless the user explicitly asks for a different one:
 - `technical lesson`: something built, learned, fixed, or automated with a practical takeaway
 - `project progress`: container home, build work, DIY, or ongoing long term effort
 - `opinion`: clear point of view, reaction, or lesson learned
+- `repurpose to X`: convert an existing Facebook post into a matching X post without flattening it into generic promo copy
+- `feedback guided`: use prior post performance patterns to improve the next draft
 
 ### Mode Guidance
 
@@ -65,6 +71,8 @@ Infer one of these modes unless the user explicitly asks for a different one:
 - `technical lesson`: lead with the result or problem solved, then explain what mattered.
 - `project progress`: make clear what changed today and how it fits the larger build or plan.
 - `opinion`: state the point plainly. Back it with one or two concrete reasons.
+- `repurpose to X`: keep the same point, strongest detail, and voice, then compress it into one post that reads natively on X
+- `feedback guided`: preserve the new message while borrowing what worked from earlier high interaction posts
 
 ## Length Presets
 
@@ -169,6 +177,32 @@ Use this structure unless the draft clearly calls for a small variation:
 - Do not expose the inferred audience mode unless the user asks
 - If the draft is thin, strengthen the wording but do not invent facts
 - If the user asks for choices, provide up to 3 hook options before the final full post
+- If the user asks for X repurpose mode, return the X version after the Facebook post
+- If the user asks for feedback guided mode, briefly apply the stated winning patterns without exposing internal chain of thought
+
+## X Repurpose Rules
+
+When repurposing a Facebook post into X:
+
+- keep the same main point and strongest proof detail
+- compress it into a single X post
+- keep it under 280 characters including hashtags
+- use 2 to 3 hashtags maximum
+- do not reuse the Facebook wording line for line
+- keep the tone direct, specific, and first person
+- drop filler setup and keep only what survives the character budget
+
+## Feedback Learning Rules
+
+When the user provides examples of prior Facebook posts, performance notes, or says which types drew the best interaction:
+
+- identify what likely worked such as hook style, post length, topic framing, question style, or specificity
+- reuse the winning pattern only when it fits the new topic
+- prefer concrete signals such as comments, shares, saves, direct replies, or strong reach over vague guesses
+- do not copy old wording line for line
+- do not force the new post into the wrong structure just because an older pattern performed well
+
+If the user does not provide prior examples or signals, skip feedback learning and write normally.
 
 ## Constraints
 
@@ -178,6 +212,8 @@ Use this structure unless the draft clearly calls for a small variation:
 - Do not force a question or hashtags if they clearly hurt the post
 - Do not add empty engagement bait just to manufacture comments
 - Do not write captions that clash with the attached or implied image context
+- Do not turn a specific Facebook post into vague generic X promo copy
+- Do not overfit to old posts when the new topic clearly needs a different structure
 
 ## Validation Checklist
 
@@ -192,3 +228,5 @@ Use this structure unless the draft clearly calls for a small variation:
 - [ ] Fits the photo or screenshot context when one is implied
 - [ ] Avoids forced engagement bait
 - [ ] Uses only relevant hashtags
+- [ ] Produces a tight matching X version when repurpose mode is requested
+- [ ] Uses prior feedback patterns only when they genuinely improve the new draft

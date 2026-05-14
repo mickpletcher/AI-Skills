@@ -1,7 +1,7 @@
 ---
 name: github-social-preview
 description: Generates a professional GitHub repository social preview image sized 1280x640 pixels as a JPG under 1 MB. Always trigger immediately when the user's message starts with "gsp". Also trigger on "generate github social preview", "create repo preview image", or any request to generate a social preview or OG image for a GitHub repository.
-version: 1.0.0
+version: 1.1.0
 ---
 
 # GitHub Social Preview Skill
@@ -23,7 +23,7 @@ og image for <repo_url>
 ## Expected Inputs
 
 - A GitHub repository URL (required)
-- Optionally: a custom tagline, color scheme, or layout hint
+- Optionally: a custom tagline, theme preset, accent color, layout hint, logo, screenshot, or background art
 
 ## Expected Outputs
 
@@ -65,12 +65,15 @@ If no description, README, or topics exist, generate a minimal clean design with
 Run `scripts/generate_preview.py` with the derived content as arguments. The script:
 
 1. Creates a 1280x640 canvas with the configured background gradient
-2. Renders the GitHub-style Octicon logo mark in the top-left corner
-3. Renders the title as the dominant H1 text
-4. Renders the subtitle as a smaller H2 line below the title
-5. Renders tag pills at the bottom
-6. Renders the language badge bottom-right if known
-7. Exports as JPEG at quality 92
+2. Applies a theme preset or accent override when requested
+3. Optionally places a repo logo, screenshot, or background art when the assets are available
+4. Renders the GitHub-style Octicon logo mark in the top-left corner
+5. Fits or truncates long title, subtitle, and tag text cleanly
+6. Renders the title as the dominant H1 text
+7. Renders the subtitle as a smaller H2 line below the title
+8. Renders tag pills at the bottom
+9. Renders the language badge bottom-right if known
+10. Exports as JPEG at quality 92
 
 ### Step 4 — Enforce size constraint
 
@@ -88,6 +91,18 @@ Report back:
 - Final file size
 - JPEG quality used
 - Any fallbacks applied (missing description, missing topics, etc.)
+- Preview checklist results for contrast, crop safety, and file size
+
+### Step 6 — Local preview checklist
+
+Before finalizing the output, verify:
+
+- title contrast is strong enough against the background
+- subtitle contrast is still readable
+- key content stays inside a safe crop zone
+- final file size is under 1 MB
+
+If one of these fails, adjust theme, accent, text length, or asset placement and regenerate.
 
 ## Design Specification
 
@@ -103,6 +118,13 @@ Summary:
 - GitHub mark: top-left, low-opacity white watermark
 - No decorative clutter, no gradients on text, no drop shadows
 
+Theme presets now include:
+
+- `github-dark`
+- `docs-blue`
+- `builder-green`
+- `launch-warm`
+
 ## Fallback Behavior
 
 | Condition | Behavior |
@@ -113,6 +135,8 @@ Summary:
 | No language detected | Omit language badge entirely |
 | No metadata at all | Render title-only design with GitHub mark |
 | Image over 1 MB after quality 55 | Scale canvas to 90% and retry |
+| Long repo or tag text | Fit to width first, then truncate with ellipsis only if needed |
+| Logo or screenshot available | Add them only if they improve the layout without crowding the text |
 
 ## Limitations
 

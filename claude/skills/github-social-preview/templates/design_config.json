@@ -28,6 +28,60 @@
     "max_subtitle_lines": 2,
     "max_tags": 5
   },
+  "theme_presets": {
+    "github-dark": {
+      "colors": {
+        "bg_start": "#0d1117",
+        "bg_end": "#161b22",
+        "accent": "#58a6ff",
+        "text_primary": "#e6edf3",
+        "text_secondary": "#8b949e",
+        "tag_bg": "#21262d",
+        "tag_border": "#30363d",
+        "tag_text": "#58a6ff",
+        "mark_color": "#30363d"
+      }
+    },
+    "docs-blue": {
+      "colors": {
+        "bg_start": "#0b1f33",
+        "bg_end": "#133a5e",
+        "accent": "#7dd3fc",
+        "text_primary": "#f8fafc",
+        "text_secondary": "#cbd5e1",
+        "tag_bg": "#10263b",
+        "tag_border": "#1e425f",
+        "tag_text": "#7dd3fc",
+        "mark_color": "#1e425f"
+      }
+    },
+    "builder-green": {
+      "colors": {
+        "bg_start": "#0f1f17",
+        "bg_end": "#1d3a2b",
+        "accent": "#34d399",
+        "text_primary": "#f0fdf4",
+        "text_secondary": "#bbf7d0",
+        "tag_bg": "#173323",
+        "tag_border": "#24543a",
+        "tag_text": "#6ee7b7",
+        "mark_color": "#24543a"
+      }
+    },
+    "launch-warm": {
+      "colors": {
+        "bg_start": "#27130f",
+        "bg_end": "#4a1f15",
+        "accent": "#fb923c",
+        "text_primary": "#fff7ed",
+        "text_secondary": "#fed7aa",
+        "tag_bg": "#3a1e17",
+        "tag_border": "#6b2d20",
+        "tag_text": "#fdba74",
+        "mark_color": "#6b2d20"
+      }
+    }
+  },
   "notes": {
     "font_path": "Set to an absolute path of a .ttf or .ttc file to override system font detection. Leave null to use auto-detection.",
     "mark_color": "GitHub Octocat mark rendered as a low-opacity watermark in the top-left corner.",

@@ -4,6 +4,12 @@ Compiled from repo history and the current working tree.
 
 ## 2026-05-13
 
+- Upgraded `claude/skills/facebook-reply` with tone modes for appreciative, clarifying, humorous, and boundary setting responses
+- Upgraded `claude/skills/facebook-reply` with original post context handling and commenter aware replies
+- Upgraded `claude/skills/facebook-reply` with concise versus fuller reply depth control
+- Upgraded `claude/skills/facebook-reply` with difficult comment handling for skepticism, criticism, hostility, and off-topic comments
+- Upgraded `claude/skills/facebook-reply` with batch reply mode and thread summarization for repeated questions
+- Upgraded `claude/skills/facebook-reply` with sentiment tagging so supportive, neutral, skeptical, critical, off-topic, and hostile comments get different treatment
 - Upgraded `claude/skills/facebook-post` with feedback guided mode so new drafts can borrow patterns from prior high interaction posts
 - Upgraded `claude/skills/facebook-post` with repurpose mode to turn a Facebook post into a matching X post
 - Upgraded `claude/skills/facebook-post` with audience mode switching for friends and family, technical peers, and mixed audience drafts

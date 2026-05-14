@@ -88,6 +88,10 @@ This skill is a drafting and organization aid only. It is not legal advice. Prio
 - Add optional export formats for attorney intake packets
 - Add stronger internal validation against the included JSON schemas
 
+## Upgrade Log
+
+See [upgrades.md](upgrades.md) for the structured upgrade log and [completedchanges.md](completedchanges.md) for tracked completed changes.
+
 ## Implement In Claude
 
 1. Update the checked in source files for this skill first.

@@ -4,6 +4,9 @@ Compiled from repo history and the current working tree.
 
 ## 2026-05-13
 
+- Added `specs/002-completed-changes-rollup` for the repo-wide completed history migration
+- Moved Claude skill completed history into tracked `completedchanges.md` files and updated skill READMEs to link them
+- Updated the future-upgrades maintenance workflow so local planning files point to tracked completed history instead of regenerating shipped changes
 - Added `specs/001-skill-repo-workflow` as the baseline GitHub spec workflow for non-trivial repo changes
 - Updated the root `README.md` to point contributors to the new `specs/` workflow
 - Upgraded `claude/skills/travel-planning` with destination comparison scoring, trip style presets, booking triage, seasonal guidance, risk notes, packing suggestions, and itinerary handoff

@@ -115,6 +115,10 @@ The skill degrades gracefully when metadata is missing:
 - Long text: fits to width first, then truncates with ellipsis if needed
 - Missing assets: skips logo, screenshot, or background art cleanly
 
+## Upgrade Log
+
+See [upgrades.md](upgrades.md) for the structured upgrade log and [completedchanges.md](completedchanges.md) for tracked completed changes.
+
 ## Implement In Claude
 
 1. Place this skill folder in your local Claude skills directory.

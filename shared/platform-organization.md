@@ -49,6 +49,7 @@ claude/
     `-- skill-name/
         |-- README.md
         |-- SKILL.md
+        |-- completedchanges.md
         `-- skill-name.skill
 ```
 

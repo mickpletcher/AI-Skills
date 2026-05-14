@@ -58,6 +58,8 @@ See [changelog.md](./changelog.md) for the repo change history.
 3. Use `shared/` for naming, structure, and repo-level guidance only.
 4. Record checks with [templates/test-template.md](./templates/test-template.md).
 
+For Claude skills, keep tracked shipped history in `completedchanges.md` and keep local `future-upgrades.md` files focused on future planning only.
+
 ## Spec Workflow
 
 Use [`specs/`](./specs/) for non-trivial repo work such as shared conventions, packaging rules, cross-skill changes, or shared script updates.

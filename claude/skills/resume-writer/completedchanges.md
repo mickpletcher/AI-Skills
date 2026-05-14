@@ -1,0 +1,20 @@
+# Completed Changes: resume-writer
+
+This tracked file records shipped changes for this skill.
+
+## Completed Changes
+
+- 2026-04-24: Tips staging and weekly refresh workflow. Added a `tips/` staging area with `inbox/`, `reviewed/`, and `archive/` folders plus a curated `tips/sources.json` roster. Extended `SKILL.md` with a Refresh Tips workflow so fresh recruiter and hiring-manager posts can be triaged separately from the authoritative principles library. Added `scripts/Invoke-ResumeTipsRefresh.ps1`, `scripts/Register-ResumeTipsRefreshTask.ps1`, a scheduled GitHub Actions workflow, and README instructions for all three refresh options: manual run, local Windows task, and repo-driven action.
+- 2026-04-24: Cover letter generation. Auto-generates a targeted cover letter alongside the resume rewrite when a job description is provided. Uses the same JD input to align the hook, proof paragraphs, and close to the specific role. A generic version is produced when no JD is present, labeled for manual personalization before sending. Cover letter maps to `cover_letter` in JSON output.
+- 2026-04-24: Gap analyzer. Detects employment gaps greater than 2 months as part of every audit. Classifies each gap as explained, unexplained, or overlapping. Generates 2-3 framing options per unexplained gap based on duration and context (including pandemic-era and post-layoff patterns). Unexplained gaps surface as MAJOR issues. Framing options appear in Top Fixes as user-selectable options, never inserted into the rewrite without confirmation.
+- 2026-04-24: Skills taxonomy validator. Scans every resume section for outdated, deprecated, or renamed tool names and flags each with the current preferred term. Covers Microsoft stack renames (SCCM→ConfigMgr, Azure AD→Entra ID, Office 365→Microsoft 365, Power BI/Apps/Automate spacing), legacy products superseded by modern equivalents, and brand style issues. Severity escalates to MAJOR when a job description uses the current name and the resume uses the old one. Corrections are applied directly in the rewrite.
+- 2026-04-24: Two-page audit mode. Activated by explicit trigger phrases ("two page", "trim to two pages", etc.). Runs a three-pass trimming phase after the rewrite: Pass 1 trims without removing content (summary cap, skills deduplication, filler removal); Pass 2 reduces bullet counts on older roles; Pass 3 cuts low-value sections (objectives, hobbies, references lines, GPA, high school). Stops as soon as the resume fits. Produces a trimming report listing every cut and its pass. All cuts are user-overridable. Never removes the two most recent roles, education, certifications, or contact info. Maps to `two_page_trim_report` in JSON output.
+- 2026-05-13: Job fit scoring summary. Added job fit before and after rewrite tracking so targeted audits can show alignment improvement against the target role.
+- 2026-05-13: Stronger bullet quantification guidance. Added more explicit rewrite pressure around scope, action, and outcome when original bullets are too vague.
+- 2026-05-13: Recruiter skim view. Added a first-30-seconds summary of top proof points and target fit signals.
+- 2026-05-13: Role family presets. Added targeted rewrite presets for infrastructure, endpoint engineering, cloud, support escalation, and leadership tracks.
+- 2026-05-13: LinkedIn and artifact alignment checks. Added drift checks across resume, LinkedIn profile context, and cover letter or related artifacts when present.
+- 2026-05-13: Interview prep handoff. Added likely questions and talking point handoff from the rewritten resume into interview prep.
+- 2026-05-13: Career timeline consistency checks. Added explicit mismatch flags for conflicting dates or sequencing across resume, LinkedIn, and cover letter context.
+- 2026-05-13: Longitudinal revision tracking. Added support for comparing current revisions against prior resume versions or audit baselines when available.
+

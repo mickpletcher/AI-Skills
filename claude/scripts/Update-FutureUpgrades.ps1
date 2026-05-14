@@ -582,12 +582,10 @@ function Get-DefaultTierSuggestions {
 function New-FutureUpgradesContent {
     param(
         [string]$SkillName,
-        [string[]]$CompletedWork,
         [hashtable]$PreservedContent
     )
 
     $today = Get-Date -Format 'yyyy-MM-dd'
-    $recentBlock = ($CompletedWork -join [Environment]::NewLine).Trim()
     $defaultSuggestions = Get-DefaultTierSuggestions -SkillName $SkillName
     $tier1 = Get-TierBody -Lines $PreservedContent['## Tier 1: High Value'] -Placeholder ($defaultSuggestions.Tier1 -join [Environment]::NewLine)
     $tier2 = Get-TierBody -Lines $PreservedContent['## Tier 2: Medium Value'] -Placeholder ($defaultSuggestions.Tier2 -join [Environment]::NewLine)
@@ -602,7 +600,7 @@ Last auto update: $today
 
 ## Recent Completed Work
 
-$recentBlock
+- See [completedchanges.md](completedchanges.md) for tracked completed history.
 
 ## Tier 1: High Value
 
@@ -624,10 +622,8 @@ $updatedCount = 0
 
 foreach ($directory in $skillDirectories) {
     $futurePath = Join-Path $directory.FullName 'future-upgrades.md'
-    $upgradePath = Join-Path $directory.FullName 'upgrades.md'
-    $completedWork = Get-RecentCompletedWork -UpgradePath $upgradePath
     $preservedContent = Get-PreservedTierContent -FuturePath $futurePath
-    $newContent = New-FutureUpgradesContent -SkillName $directory.Name -CompletedWork $completedWork -PreservedContent $preservedContent
+    $newContent = New-FutureUpgradesContent -SkillName $directory.Name -PreservedContent $preservedContent
     $currentContent = if (Test-Path -LiteralPath $futurePath) { Get-Content -LiteralPath $futurePath -Raw } else { '' }
 
     if ($currentContent -ceq $newContent) {

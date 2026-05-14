@@ -7,7 +7,7 @@ PowerShell scripts for managing Claude skill installations and validating skill 
 | Script | Purpose |
 | ------ | ------- |
 | [Initialize-ClaudeSkills.ps1](#initialize-claudeskillsps1) | Install, update, remove, and list skills in the Claude Desktop library |
-| [Update-FutureUpgrades.ps1](#update-futureupgradesps1) | Create or refresh local `future-upgrades.md` files from each skill's `upgrades.md` |
+| [Update-FutureUpgrades.ps1](#update-futureupgradesps1) | Create or refresh local `future-upgrades.md` files while preserving future planning tiers |
 | [Validate-SkillFolders.ps1](#validate-skillfoldersps1) | Audit skill folders for missing required files |
 
 ---
@@ -90,7 +90,7 @@ After running, restart Claude Desktop to load any newly installed or updated ski
 
 ## Update-FutureUpgrades.ps1
 
-Creates or refreshes `future-upgrades.md` files under `claude/skills`. The script reads each skill's `upgrades.md`, rebuilds the `Recent Completed Work` section, and preserves any existing Tier 1, Tier 2, and Tier 3 planning bullets already present in the local file.
+Creates or refreshes `future-upgrades.md` files under `claude/skills`. The script preserves any existing Tier 1, Tier 2, and Tier 3 planning bullets already present in the local file and keeps the `Recent Completed Work` section pointed at tracked `completedchanges.md` history instead of rebuilding shipped changes into the local planning file.
 
 This is intended for local maintenance. The repo `.gitignore` already excludes `claude/skills/*/future-upgrades.md`.
 

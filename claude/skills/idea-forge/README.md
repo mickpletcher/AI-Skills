@@ -188,7 +188,7 @@ idea-forge/
 
 ## Upgrade Log
 
-See [upgrades.md](upgrades.md) for a record of implemented upgrades.
+See [upgrades.md](upgrades.md) for the structured upgrade log and [completedchanges.md](completedchanges.md) for tracked completed changes.
 
 ## Implement In Claude
 
@@ -196,3 +196,4 @@ See [upgrades.md](upgrades.md) for a record of implemented upgrades.
 2. Rebuild `idea-forge.skill` from the current source files.
 3. Import the `.skill` package into Claude using your normal Claude skills workflow, or place it in your local Claude skills directory if you manage skills manually.
 4. Start a new Claude chat or refresh available skills, then test with `idea [any rough idea]`.
+

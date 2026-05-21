@@ -94,6 +94,12 @@ General productivity skill that could convert unstructured notes into a clear ex
 8. `chatgpt/skills/automation-idea-screen`
 Could provide a fast lightweight version of `idea-forge` for smaller ideas that do not need the full pipeline.
 
+9. `chatgpt/skills/food-analyzer`
+Useful for personal nutrition checks, ingredient comparisons, and quick meal guidance on the ChatGPT side.
+
+10. `chatgpt/skills/med-vault`
+Could support medication, supplement, and health note organization with a guided prompt workflow.
+
 ### Tier 4
 
 1. `chatgpt/skills/pihole-blocklist`
@@ -168,9 +174,6 @@ Useful for audit, simplification, naming cleanup, and maintainability checks in 
 6. `claude/skills/repo-assessment`
 High value meta skill for creating durable repo handoff and source of truth documents.
 
-7. `claude/skills/spec-writer`
-Strong repo utility for generating numbered spec folders with requirements, plan, and tasks.
-
 ### Tier 2
 
 1. `claude/skills/graph-query-builder`
@@ -211,28 +214,31 @@ Strong fit for the container home project and off grid decision work.
 2. `claude/skills/container-home-budget`
 Useful for scope, purchase, and build phase cost planning.
 
-3. `claude/skills/travel-research`
-Could complement the current travel planning skills with deeper destination comparison workflows.
+3. `claude/skills/food-analyzer`
+Useful for meal analysis, ingredient comparisons, and nutrition guidance in a personal planning context.
 
-4. `claude/skills/property-project-planner`
+4. `claude/skills/med-vault`
+Could help organize medication, supplement, and health tracking notes.
+
+5. `claude/skills/property-project-planner`
 A practical planning skill for land, shop, utility, and build sequencing decisions.
 
-5. `claude/skills/off-grid-water-planning`
+6. `claude/skills/off-grid-water-planning`
 Useful for water storage, filtration, pumping, and freeze protection decisions.
 
-6. `claude/skills/battery-bank-planning`
+7. `claude/skills/battery-bank-planning`
 Could cover sizing, chemistry tradeoffs, inverter pairing, and phased expansion.
 
-7. `claude/skills/shop-buildout`
+8. `claude/skills/shop-buildout`
 Good fit for tool, layout, wiring, and phased workspace planning on the property.
 
-8. `claude/skills/triathlon-season-planner`
+9. `claude/skills/triathlon-season-planner`
 Useful personal planning skill that complements fitness programming with race sequencing.
 
-9. `claude/skills/event-trip-planner`
+10. `claude/skills/event-trip-planner`
 Could join travel planning and athletic event logistics into one workflow.
 
-10. `claude/skills/homelab-service-planner`
+11. `claude/skills/homelab-service-planner`
 Good fit for self hosted service choices, container placement, backup, and maintenance planning.
 
 ### Tier 4
@@ -261,28 +267,25 @@ This section is GitHub focused work that should likely live under `copilot/` bas
 
 ### Tier 1
 
-1. `copilot/skills/pr-review`
-A focused review skill for finding regressions, risk, and missing tests in pull requests.
-
-2. `copilot/skills/workflow-debugger`
+1. `copilot/skills/workflow-debugger`
 High value for GitHub Actions failures, local repro steps, and targeted fix guidance.
 
-3. `copilot/skills/issue-to-spec`
+2. `copilot/skills/issue-to-spec`
 Useful for turning a GitHub issue into requirements, plan, tasks, and implementation scaffolding.
 
-4. `copilot/skills/release-notes`
+3. `copilot/skills/release-notes`
 Good fit for changelog generation, release summaries, and version cut checklists.
 
-5. `copilot/skills/repo-bootstrap`
+4. `copilot/skills/repo-bootstrap`
 A GitHub centered starter skill for initializing standards, labels, templates, and automation on a new repo.
 
-6. `copilot/skills/pr-checklist`
+5. `copilot/skills/pr-checklist`
 Useful for generating a concise pre merge review checklist based on the files changed.
 
-7. `copilot/skills/test-failure-triage`
+6. `copilot/skills/test-failure-triage`
 Strong fit for turning failing test output into probable causes and next fixes.
 
-8. `copilot/skills/changelog-writer`
+7. `copilot/skills/changelog-writer`
 Useful for producing repo rooted change summaries in the style already used across your repos.
 
 ### Tier 2
@@ -336,6 +339,108 @@ Could group open issues by risk, effort, and likely next milestone.
 
 8. `copilot/skills/docs-to-tests`
 Interesting longer term skill for turning documented examples into test case candidates.
+
+## Gemini Skills
+
+This section is for Gemini specific skill wrappers and reusable Gems style instructions.
+
+### Tier 1
+
+1. `gemini/skills/repo-assessment`
+Good fit for repo scanning, durable handoff docs, and next step planning in a hosted assistant workflow.
+
+2. `gemini/skills/spec-writer`
+Strong candidate for requirements, plan, and task generation in a Gem friendly format.
+
+3. `gemini/skills/docs-audit`
+Useful for README accuracy review, broken setup steps, and stale documentation checks.
+
+4. `gemini/skills/travel-planning`
+Good personal fit and likely easy to port from the existing Claude travel planning workflow.
+
+5. `gemini/skills/idea-forge`
+High value if you want a Gemini path for deeper idea screening and MVP planning.
+
+### Tier 2
+
+1. `gemini/skills/commit-message-writer`
+Small but consistently useful reusable writing skill.
+
+2. `gemini/skills/github-readme`
+Good fit for structured README drafting and beginner setup coverage.
+
+3. `gemini/skills/fitness-programming`
+Useful personal planning skill once the first platform utility skills exist.
+
+4. `gemini/skills/content-calendar`
+Could unify blog and social planning in a hosted assistant workflow.
+
+5. `gemini/skills/tool-comparison`
+Good match for structured option scoring and recommendation output.
+
+## Perplexity Skills
+
+This section is for Perplexity specific skills, especially ones that benefit from the platform's skill style workflow and research orientation.
+
+### Tier 1
+
+1. `perplexity/skills/travel-research`
+Very strong fit because destination comparison and research are central to the platform.
+
+2. `perplexity/skills/docs-audit`
+Useful for checking setup docs against current repo reality while keeping the output concise and actionable.
+
+3. `perplexity/skills/repo-assessment`
+Could produce strong repo summaries, risks, and next actions with a research oriented workflow.
+
+4. `perplexity/skills/tool-comparison`
+Good fit for structured tradeoff analysis across services, tools, or implementation paths.
+
+5. `perplexity/skills/market-research-brief`
+Natural fit for structured research and comparison output.
+
+### Tier 2
+
+1. `perplexity/skills/spec-writer`
+Could generate numbered spec folders after the research phase is complete.
+
+2. `perplexity/skills/github-readme`
+Useful when you want README help informed by current source and usage context.
+
+3. `perplexity/skills/travel-planning`
+Worth adding after `travel-research` so the two skills can hand off cleanly.
+
+4. `perplexity/skills/idea-forge`
+Could work well if the research heavy parts are kept strong and the output format stays disciplined.
+
+5. `perplexity/skills/automation-idea-screen`
+Lightweight version of idea triage that fits the platform well.
+
+## Cursor Skills
+
+This section is for Cursor specific reusable rules and coding workflow instructions.
+
+### Tier 1
+
+1. `cursor/skills/powershell-script-review`
+Natural fit for code focused script review and cleanup guidance.
+
+### Tier 2
+
+1. `cursor/skills/docs-audit`
+Useful for reconciling README claims with real files, commands, and outputs.
+
+2. `cursor/skills/readme-sync`
+Focused variant of docs review with direct fix guidance.
+
+3. `cursor/skills/test-gap-review`
+Good fit for changed file review tied to missing or weak coverage.
+
+4. `cursor/skills/commit-message-writer`
+Small but useful coding workflow helper.
+
+5. `cursor/skills/project-handoff`
+Could produce strong repo analysis docs after substantial coding sessions.
 
 ## Shared Platform Ideas
 

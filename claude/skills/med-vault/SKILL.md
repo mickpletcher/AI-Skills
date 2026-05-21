@@ -44,6 +44,8 @@ The disclaimer must state that MedVault is not medical advice, that mistakes can
 | `mv history [name]` | Show history for a specific medication |
 | `mv search [term]` | Search inventory by name or doctor |
 | `mv export` | Export inventory as structured JSON or PDF summary |
+| `mv travel [country]` | Build a travel medication review with country restrictions and timing guidance |
+| `mv card print` | Generate an emergency card in print ready format |
 | `mv delete [name]` | Permanently remove a medication |
 | `mv help` | Show command reference and example prompts |
 
@@ -64,19 +66,21 @@ The disclaimer must state that MedVault is not medical advice, that mistakes can
 
 ### Workflow 2: Label Image OCR (mv scan)
 
-1. User uploads an image of a prescription label, supplement label, or medication packaging.
+1. User uploads an image of a prescription label, supplement label, handwritten prescription, faxed prescription page, or medication packaging.
 2. Parse the image for: medication name, brand name, generic name, dosage, strength, frequency, prescribing doctor, pharmacy, Rx number, refill date, expiration date, patient name (note: do not store unless user confirms), and instructions.
 3. Present extracted fields in a structured confirmation table. Flag any field with low OCR confidence using a `[?]` marker.
 4. Ask the user to confirm or correct flagged fields before saving.
 5. Store the image reference path alongside the record.
 6. Run interaction check on the full inventory after saving.
 7. Output interaction report and schedule suggestion.
+8. If the source is handwritten or faxed and any medication critical field remains uncertain, require explicit user confirmation before any save.
 
 **OCR confidence rules:**
 - High confidence (clean, well-lit label): save all fields, prompt for confirmation of the full block.
 - Medium confidence (partial blur or shadow): flag individual uncertain fields with `[?]`, ask for correction.
 - Low confidence (heavily damaged, poor angle): present best guess for all fields, ask user to verify each one individually.
 - If medication name cannot be parsed with any confidence: ask user to type it manually.
+- Handwritten or faxed source: default any uncertain medication name, dosage, or frequency field to medium or low confidence even if the OCR engine offers a stronger guess.
 
 **Common OCR corrections to apply:**
 - `0` vs `O` in dosage numbers
@@ -175,6 +179,47 @@ The disclaimer must state that MedVault is not medical advice, that mistakes can
 4. For Emergency Medication Card: generate a compact card with active medications, dosages, allergies (if recorded), and prescribing doctors. Designed for wallet printing or phone screenshot.
 5. Include the export timestamp.
 6. Remind the user to keep this data secure.
+7. End the response with the required safety disclaimer.
+
+---
+
+### Workflow 8: Travel Medication Mode (mv travel [country])
+
+1. Ask the user for the destination country if it was not provided.
+2. Load the full active medication inventory.
+3. Review each active medication for likely travel issues:
+   controlled substance risk
+   import restriction risk
+   refrigeration or temperature sensitivity
+   liquid or injectable travel handling
+   narrow timing window concerns during time zone changes
+4. Output a travel review by medication with:
+   medication name and dosage
+   travel risk level
+   what to verify before departure
+   recommended documents to carry
+   any timing adjustment notes for time zone travel
+5. If the skill cannot verify a country specific rule from a trustworthy source in session, clearly say the restriction is unverified and instruct the user to check the destination embassy, customs authority, airline, or pharmacist.
+6. Offer a travel packet export that includes the active medication list and doctor fields already stored in the vault.
+7. End the response with the required safety disclaimer.
+
+---
+
+### Workflow 9: Emergency Card Auto Print (mv card print)
+
+1. Load the active medication inventory.
+2. Generate a compact emergency medication card that is optimized for wallet print and phone screenshot use.
+3. Include only high value fields:
+   medication name
+   dosage
+   frequency
+   key timing notes
+   prescribing doctor
+   allergy field if present
+   emergency contact guidance
+4. Format the output in a print ready block with minimal wrapping.
+5. Offer both a plain text version and a print oriented export version.
+6. If any required field is missing or uncertain, flag it before generating the final card.
 7. End the response with the required safety disclaimer.
 
 ---
@@ -302,6 +347,8 @@ The interaction engine queries the following sources when network access is avai
 - Emergency situations must always go to 911 or poison control (1-800-222-1222 in the US). The skill will display this information whenever a Critical interaction is detected.
 - The skill does not access external servers without user permission. Offline analysis uses Claude's pharmacological training data only.
 - Family profile support is a planned feature. The current version handles one user profile per storage directory.
+- Travel restriction guidance can be incomplete or outdated. Users must verify country specific rules with official travel, customs, embassy, airline, pharmacy, or physician sources before departure.
+- Handwritten and faxed prescription OCR is lower confidence than printed bottle label OCR and requires stricter user confirmation before saving.
 
 ---
 
@@ -327,6 +374,9 @@ This skill must include the following disclaimer on every response:
 - [ ] Every MedVault response ends with the required safety disclaimer
 - [ ] OCR does not save patient name without explicit user confirmation
 - [ ] Offline mode is clearly indicated when API sources are not available
+- [ ] Travel medication mode clearly marks unverified country restriction guidance
+- [ ] Emergency card print workflow flags missing or uncertain fields before final output
+- [ ] Handwritten and faxed prescription OCR requires stricter confirmation before saving
 
 ---
 
@@ -367,6 +417,14 @@ mv edit Lisinopril — change to 20mg once daily
 
 ```
 mv export emergency card
+```
+
+```
+mv travel Japan
+```
+
+```
+mv card print
 ```
 
 ```

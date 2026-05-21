@@ -2,7 +2,7 @@
 
 ## Overview
 
-The OCR workflow processes uploaded medication label images and extracts structured medication data. It is designed to handle real-world label conditions: partial occlusion, glare, shadows, curved bottle surfaces, and degraded print quality.
+The OCR workflow processes uploaded medication label images and extracts structured medication data. It is designed to handle real-world label conditions: partial occlusion, glare, shadows, curved bottle surfaces, degraded print quality, handwriting variation, and fax artifacts.
 
 ---
 
@@ -15,6 +15,8 @@ The OCR workflow processes uploaded medication label images and extracts structu
 | Blister pack label | Medication name, dosage, lot number, expiration |
 | Pharmacy bag label | Medication name, patient name (do not store), instructions, pickup date |
 | Medication insert | Ingredient list, dosage table (partial support — table parsing is best-effort) |
+| Handwritten prescription | Medication name, dosage, quantity, directions, prescriber name |
+| Faxed prescription page | Medication name, dosage, directions, refill count, prescriber details |
 
 ---
 
@@ -47,6 +49,9 @@ Common Error Correction Pass
 Normalization Pass (dates, units, drug names)
     │
     ▼
+Handwriting and Fax Review Pass
+    │
+    ▼
 Confirmation Table Presented to User
     │
     ├── User confirms ──► Save to medications.json
@@ -71,6 +76,8 @@ Each extracted field receives a confidence score:
 | Medium | 1-2 ambiguous characters, partial occlusion of field, unusual abbreviation | Flag with `[?]`, ask for confirmation |
 | Low | Multiple ambiguous characters, significant blur or shadow, no pattern match | Flag with `[?]`, show best guess, require user input |
 | Unreadable | Cannot extract any interpretable text from region | Ask user to type manually |
+
+Handwritten and faxed inputs should use a stricter threshold. Medication name, dosage, frequency, and directions should not be auto accepted unless the text is unusually clear and consistent across the source.
 
 ---
 
@@ -102,6 +109,7 @@ Each extracted field receives a confidence score:
 2. Check against RxNorm name list when available.
 3. Apply Levenshtein distance matching for close matches (distance <= 2 for names > 8 characters, distance <= 1 for shorter names).
 4. Flag matches with distance > 0 as medium confidence even if a match is found.
+5. For handwritten or faxed sources, require manual confirmation for any corrected drug name.
 
 ### Date Normalization
 
@@ -166,6 +174,8 @@ Patient name was detected but will NOT be saved unless you request it.
 | No text detected | "No readable text was found. This may not be a medication label, or the image quality is too low." |
 | Only partial label visible | Extract what is visible. Mark all missing fields as unreadable. Ask user to fill in manually. |
 | Multiple labels in one image | "Multiple labels detected. Please photograph one label at a time." |
+| Handwriting too ambiguous | "The handwritten prescription is too ambiguous to save safely. Please type the medication name, dosage, and directions manually." |
+| Fax artifact blocking key fields | "Fax noise or page distortion is blocking key fields. Please verify the medication name, dosage, and directions before saving." |
 
 ---
 
@@ -175,5 +185,6 @@ Patient name was detected but will NOT be saved unless you request it.
 - PNG
 - HEIC (iPhone native — convert to JPEG before processing if conversion tools are available)
 - PDF single-page (pharmacy printouts)
+- PDF single-page or image export from faxed prescription material
 
 Minimum recommended resolution: 1200 x 900 pixels at the label region.

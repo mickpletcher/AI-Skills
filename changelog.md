@@ -2,6 +2,28 @@
 
 Compiled from repo history and the current working tree.
 
+## 2026-05-21
+
+- Moved the repository social preview asset to `.github/github-social-preview.jpg` for stable future reference inside the repo
+- Refreshed `.github/github-social-preview.jpg` so the repository social preview now reflects the expanded platform set including Gemini, Perplexity, and Cursor
+- Added the first Cursor skill set with `cursor/skills/pr-review/`, `cursor/skills/workflow-debugger/`, `cursor/skills/repo-assessment/`, and `cursor/skills/spec-writer/`, each with source instructions and beginner friendly setup READMEs
+- Updated the root `README.md`, Cursor platform docs, and completed projects tracking so Cursor now has live skill examples instead of a placeholder section
+- Moved the shipped Cursor skills out of the Cursor future backlog
+- Added first class platform docs for `gemini/`, `perplexity/`, and `cursor/` with root folder READMEs and beginner notes for future skills
+- Updated the root `README.md`, shared platform guidance, and local future backlog so Gemini, Perplexity, and Cursor are treated as real platform areas in the repo
+- Added the first GitHub Copilot skill `copilot/skills/pr-review/` with a source `instructions.md` file and beginner friendly setup README for risk focused pull request review
+- Updated the root `README.md` so the GitHub skills catalog includes `pr-review` and the Copilot setup guide now points to a live example
+- Moved `copilot/skills/pr-review` out of the GitHub future backlog and into `completed-projects.md`
+- Expanded the root `README.md` with beginner friendly instructions for implementing skills in Claude, ChatGPT, and GitHub Copilot style workflows
+- Updated shared repo standards so each skill README is expected to include plain language implementation steps for novice users
+- Expanded `future-projects.md` with a few additional ChatGPT and Claude skill ideas and fixed the affected numbering
+- Added the new Claude skill `claude/skills/travel-research/` with a source `SKILL.md`, wrapper `README.md`, tracked change history, and packaged `.skill` export for deeper destination comparison before full trip planning
+- Updated the root `README.md` so the Claude skill catalog includes `travel-research`
+- Moved `claude/skills/travel-research` out of the Claude future backlog and into `completed-projects.md`
+- Added the new Claude skill `claude/skills/spec-writer/` with a source `SKILL.md`, wrapper `README.md`, tracked change history, and packaged `.skill` export for generating numbered repo spec folders with requirements, plan, and tasks
+- Updated the root `README.md` so the Claude skill catalog includes `spec-writer`
+- Moved `claude/skills/spec-writer` out of the Claude future backlog and into `completed-projects.md`
+
 ## 2026-05-14
 
 - Added explicit `Help And Examples` sections to every Claude skill `SKILL.md` so Claude can explain usage, state minimum input, and show example prompts when the user is unsure how to use a skill

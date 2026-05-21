@@ -4,6 +4,8 @@ This document defines the minimum standard for writing a skill in this repositor
 
 Skills should be authored inside the platform folder they belong to. A Claude skill belongs in `claude/`, a ChatGPT skill belongs in `chatgpt/`, and a Copilot skill belongs in `copilot/`.
 
+Additional supported platform areas in this repo include `gemini/`, `perplexity/`, and `cursor/`.
+
 ## Purpose
 
 A skill should describe a repeatable capability in a way that is:
@@ -28,6 +30,8 @@ That source should capture:
 - what to do when the user asks for help
 - examples
 - validation or review checks
+
+Each skill should also include a beginner friendly implementation path in its platform `README.md`.
 
 ## Recommended Sections
 
@@ -103,6 +107,27 @@ A skill is ready to reuse when:
 - it contains an explicit help path for unsure users
 - it includes at least 2 examples or equivalent usage guidance
 - it includes at least 3 validation checks or test cases
+- a novice user can tell where to paste, import, or install it
+- the setup steps are written plainly enough to follow without prior repo knowledge
+
+## README Requirement
+
+Each platform skill folder should include a `README.md` that explains:
+
+1. which file is the editable source of truth
+2. how to implement the skill in the target ecosystem
+3. how to test the setup with one or more simple prompts
+
+If the target ecosystem has more than one reasonable setup path, document the common options directly.
+
+Examples:
+
+- Claude: import the `.skill` file or install the local files manually
+- ChatGPT: use a custom GPT or ChatGPT Custom Instructions
+- Copilot: place the instruction content into the intended Copilot instruction surface
+- Gemini: place the instruction content into a Gemini Gem or equivalent Gemini setup surface
+- Perplexity: paste Markdown directly or upload the skill file, depending on the platform workflow
+- Cursor: place the instruction content into project rules, user rules, or chat context
 
 ## Design Principle
 

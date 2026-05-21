@@ -16,3 +16,7 @@
 1. Replaced the earlier ad hoc upgrade tracking files with the repo standard naming pattern.
 2. Updated `README.md` so it points to the packaged skill artifact and the new tracking files.
 3. Updated the safety rules so every MedVault response must show the medical disclaimer and tell the user that mistakes can be made and all data must be checked.
+4. Added travel medication mode with country restriction guidance.
+5. Added an emergency card auto print workflow.
+6. Expanded OCR support for handwritten and faxed prescription material.
+7. Updated the supporting docs and rebuilt `med-vault.skill`.

@@ -7,10 +7,13 @@ Track medications, supplements, interactions, and dosing schedules. Supports man
 ## What It Does
 
 - Adds medications manually or by scanning prescription/supplement label photos via OCR
+- Supports expanded OCR review for handwritten and faxed prescription material
 - Maintains a local structured medication inventory with full edit history
 - Runs drug-drug, drug-supplement, drug-food, and drug-drink interaction analysis
 - Generates optimized daily dosing schedules with timing explanations
 - Exports data as JSON, Markdown summaries, or Emergency Medication Cards
+- Adds travel medication reviews with country restriction guidance
+- Generates a print ready emergency card workflow
 - Keeps all data local by default — no cloud transmission without explicit consent
 
 ---
@@ -65,6 +68,14 @@ mv schedule
 mv help
 ```
 
+```
+mv travel Canada
+```
+
+```
+mv card print
+```
+
 ---
 
 ## Commands
@@ -81,6 +92,8 @@ mv help
 | `mv history [name]` | View change history for one medication |
 | `mv search [term]` | Search by name, doctor, or pharmacy |
 | `mv export` | Export as JSON, Markdown, or Emergency Card |
+| `mv travel [country]` | Review travel issues, country restrictions, and time zone notes |
+| `mv card print` | Generate a print ready emergency card |
 | `mv delete [name]` | Permanently delete a medication record |
 | `mv help` | Show command reference |
 
@@ -88,7 +101,7 @@ mv help
 
 ## OCR Label Scanning
 
-Supports prescription bottles, supplement labels, blister packs, and pharmacy bag labels.
+Supports prescription bottles, supplement labels, blister packs, pharmacy bag labels, handwritten prescriptions, and faxed prescription pages.
 
 Low-confidence fields are marked `[?]` and require user confirmation before saving. Patient name is detected but never saved without explicit user request.
 
@@ -118,9 +131,23 @@ All data is local. Audit log is append-only. Images are renamed to UUIDs on impo
 
 ---
 
+## Travel Medication Mode
+
+`mv travel [country]` reviews the active medication list for likely travel issues such as controlled substance concerns, import restrictions, refrigeration needs, injectable handling, and time zone timing changes.
+
+If a country specific rule cannot be verified in session, the skill should say that clearly and tell the user to verify it with official sources before travel.
+
+---
+
+## Emergency Card Print
+
+`mv card print` generates a compact emergency medication card for wallet print and phone screenshot use. Missing or uncertain fields should be flagged before the final card is produced.
+
+---
+
 ## Safety Notice
 
-MedVault is not medical advice. Mistakes can be made in OCR, interpretation, scheduling, and interaction review. Always check medications, dosages, schedules, and interaction details with a licensed pharmacist or physician.
+MedVault is not medical advice. Mistakes can be made in OCR, interpretation, scheduling, interaction review, travel guidance, and export formatting. Always check medications, dosages, schedules, interaction details, and travel restrictions with a licensed pharmacist, physician, or official source.
 
 For emergencies: **911**
 Poison Control: **1-800-222-1222**

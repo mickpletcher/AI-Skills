@@ -158,6 +158,14 @@ Initial skill release. Covers the core medication tracking workflow: manual entr
 
 ---
 
+## Completed In v1.1.0
+
+The following features were pulled forward and are now part of the current skill behavior:
+
+- Travel medication mode with country restriction guidance
+- Emergency card auto print workflow
+- Expanded OCR support for handwritten and faxed prescription material
+
 ## Long-Term Exploration
 
 These features are not scheduled but are worth designing for:

@@ -185,7 +185,7 @@ Minimum useful input:
 
 Example prompts:
 
-- `Use patentforge-provisional-skill to turn this invention idea into an invention disclosure and prior art plan.`
+- `Use patentforge-provisional to turn this invention idea into an invention disclosure and prior art plan.`
 - `Help me draft a provisional package for this automation concept with claim candidates and open risks.`
 - `Show me the fastest example prompt for using this skill with a rough invention summary.`
 

@@ -162,8 +162,8 @@ Every MedVault response should display this safety notice.
 |---|---|
 | `SKILL.md` | Full skill definition, workflows, schemas, validation |
 | `med-vault.skill` | Packaged Claude import artifact |
-| `changelog.md` | Dated log of changes made to this skill |
-| `completed-upgrades.md` | Upgrades that have been completed and shipped |
+| `upgrades.md` | Upgrade log of changes made to this skill |
+| `completedchanges.md` | Changes that have been completed and shipped |
 | `future-upgrades.md` | Local only list of planned upgrades |
 | `docs/ocr-workflow.md` | OCR pipeline, confidence scoring, error correction |
 | `docs/interaction-engine.md` | Interaction categories, severity, report structure |

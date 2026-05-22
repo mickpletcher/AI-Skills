@@ -241,19 +241,20 @@ Current examples:
 | [github-social-preview](./claude/skills/github-social-preview/) | Generate branded GitHub social previews with themes, smarter fitting, and optional visual assets |
 | [idea-forge](./claude/skills/idea-forge/) | Run any raw idea through a five-stage R&D pipeline and produce a scored invention plan with architecture, monetization paths, and an MVP roadmap |
 | [linkedin-post](./claude/skills/linkedin-post/) | Write LinkedIn posts with mode control, credibility checks, CTA styles, and audience variants |
+| [med-vault](./claude/skills/med-vault/) | Track medications, review interactions, generate schedules, and run OCR-assisted intake under strict medical safety boundaries |
 | [n8n-workflow](./claude/skills/n8n-workflow/) | Design, build, and troubleshoot n8n workflows on a self-hosted Proxmox stack |
 | [obsidian-workout-export](./claude/skills/obsidian-workout-export/) | Export logged workout sessions into Obsidian-ready Markdown files |
-| [patentforge-provisional-skill](./claude/skills/patentforge-provisional-skill/) | Turn an invention idea into a structured disclosure, prior art search plan, claim candidates, and provisional draft package |
+| [patentforge-provisional](./claude/skills/patentforge-provisional/) | Turn an invention idea into a structured disclosure, prior art search plan, claim candidates, and provisional draft package |
 | [photo-rename](./claude/skills/photo-rename/) | Rename photos with consistent filename rules, confidence handling, batch review, and GPS-aware fallback logic |
 | [pihole-blocklist](./claude/skills/pihole-blocklist/) | Evaluate, categorize, and document new Pi-hole blocklist sources |
 | [pihole-csv-analyzer](./claude/skills/pihole-csv-analyzer/) | Analyze Pi-hole CSV exports and generate practical cleanup recommendations |
 | [powershell-refactor](./claude/skills/powershell-refactor/) | Simplify, tighten, and standardize existing PowerShell scripts without changing the intended behavior |
 | [proxmox-lxc](./claude/skills/proxmox-lxc/) | Deploy and configure Proxmox LXC containers on a self-hosted homelab stack |
 | [resume-writer](./claude/skills/resume-writer/) | Rewrite, audit, score, and target resumes with fit scoring, recruiter skim views, and interview handoff |
-| [travel-research](./claude/skills/travel-research/) | Compare destinations with deeper scoring across budget, climate, logistics, activity fit, and seasonal tradeoffs |
 | [spec-writer](./claude/skills/spec-writer/) | Generate numbered repo spec folders with clear requirements, implementation plans, and task lists |
 | [travel-itinerary](./claude/skills/travel-itinerary/) | Plan and export travel itineraries with templates, route notes, realistic pacing, and budget visibility |
 | [travel-planning](./claude/skills/travel-planning/) | Plan solo travel with destination scoring, style presets, booking triage, and itinerary handoff |
+| [travel-research](./claude/skills/travel-research/) | Compare destinations with deeper scoring across budget, climate, logistics, activity fit, and seasonal tradeoffs |
 | [website-content](./claude/skills/website-content/) | Write and update content for mickpletcher.com |
 | [x-post](./claude/skills/x-post/) | Write X posts on tech, PowerShell, IT automation, and fitness topics |
 | [x-reply](./claude/skills/x-reply/) | Write replies to replies on X |

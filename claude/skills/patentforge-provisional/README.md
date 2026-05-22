@@ -28,10 +28,13 @@ Claude skills are triggered by the `name` and `description` metadata in [`SKILL.
 ## Files
 
 ```text
-claude/skills/patentforge-provisional-skill/
+claude/skills/patentforge-provisional/
 |-- LICENSE
 |-- README.md
 |-- SKILL.md
+|-- upgrades.md
+|-- future-upgrades.md
+|-- completedchanges.md
 |-- patentforge-provisional.skill
 |-- docs/
 |   |-- patent-center-upload-guide.md
@@ -58,8 +61,8 @@ claude/skills/patentforge-provisional-skill/
 
 Use either of these locations depending on how you manage Claude skills:
 
-- Repo source location: `C:\Users\mick0\OneDrive\Documents\Code & Dev\GitHub\AI-Skills\claude\skills\patentforge-provisional-skill`
-- Local Claude skills directory example: `C:\Users\mick0\OneDrive\Documents\Codex\Skills\patentforge-provisional-skill`
+- Repo source location: `C:\Users\mick0\OneDrive\Documents\Code & Dev\GitHub\AI-Skills\claude\skills\patentforge-provisional`
+- Local Claude skills directory example: `C:\Users\mick0\OneDrive\Documents\Codex\Skills\patentforge-provisional`
 
 If you use packaged imports, import [`patentforge-provisional.skill`](./patentforge-provisional.skill). If you manage skills manually, place the folder where your Claude setup reads local skills from.
 

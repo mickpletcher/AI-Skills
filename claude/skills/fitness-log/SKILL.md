@@ -6,6 +6,24 @@ version: 1.1.0
 
 # Fitness Log
 
+## Intent
+
+Log workouts, summarize training progress, identify trends, and create fitness updates from actual performance data.
+
+## Do Not Use When
+
+- Do not use for medical diagnosis, injury treatment, unsupported performance claims, or plans that ignore user-provided limitations.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
+## Workflow
+
+1. Identify the exact task and available source material.
+2. Apply the domain rules and output format in this skill.
+3. State assumptions, uncertainty, and missing inputs clearly.
+4. Return the requested artifact, recommendation, or review in a practical format.
+5. Check the result against the validation checklist before finishing.
+
 Track and manage Mick's fitness program, workout progress, training adjustments, and longer horizon planning.
 
 ## Trigger When

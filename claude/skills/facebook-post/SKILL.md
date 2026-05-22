@@ -6,6 +6,16 @@ version: 1.4.0
 
 # Facebook Post
 
+## Intent
+
+Write Facebook posts in Mick's voice with clear audience control, photo awareness, and optional X repurpose output.
+
+## Do Not Use When
+
+- Do not use for replies, LinkedIn posts, blog posts, or content that needs facts not provided or verified.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
 Write and polish Facebook posts for Mick in a direct, casual, first-person voice.
 
 ## Trigger When

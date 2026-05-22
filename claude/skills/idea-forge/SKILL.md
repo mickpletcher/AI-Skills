@@ -5,6 +5,33 @@ description: Run any raw idea through a multi-stage R&D pipeline that interprets
 
 # IdeaForge
 
+## Intent
+
+Run raw ideas through a structured R&D pipeline that clarifies the concept, expands it, scores it, and produces an MVP direction.
+
+## Workflow
+
+1. Identify the exact task and available source material.
+2. Apply the domain rules and output format in this skill.
+3. State assumptions, uncertainty, and missing inputs clearly.
+4. Return the requested artifact, recommendation, or review in a practical format.
+5. Check the result against the validation checklist before finishing.
+
+## Constraints
+
+- Do not fabricate missing facts, measurements, dates, sources, or user context.
+- Keep output aligned with Mick's direct, practical communication style unless the skill says otherwise.
+- Preserve safety, legal, medical, financial, and operational boundaries stated in this file.
+- Prefer concise, usable output over broad explanation.
+
+## Validation Checklist
+
+- [ ] The output matches the skill's intended task and platform.
+- [ ] Required inputs, assumptions, and uncertainty are explicit.
+- [ ] Safety, scope, and source limits are respected.
+- [ ] The response follows the requested format or the skill's default output format.
+- [ ] The result is practical enough to use without another cleanup pass.
+
 Runs raw ideas through a five-stage R&D pipeline — capture, interpret, expand, score, output. Turns a rough thought into a structured invention plan with scoring, architecture suggestions, monetization paths, and a working MVP roadmap.
 
 ## Trigger

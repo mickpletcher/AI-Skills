@@ -6,6 +6,16 @@ version: 1.1.0
 
 # Facebook Reply
 
+## Intent
+
+Write practical Facebook replies that match Mick's tone and respond to the actual comment context.
+
+## Do Not Use When
+
+- Do not use for standalone Facebook posts, private messages, moderation decisions, or arguments that should be ignored.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
 Write replies to Facebook comments in Mick's direct, casual voice. Adjust the tone based on the comment type, sentiment, reply goal, and the context of the original post.
 
 ## Trigger When

@@ -6,6 +6,30 @@ description: Plan trips, build itineraries, research destinations, estimate budg
 
 # Travel Planning Skill
 
+## Intent
+
+Plan solo travel with destination fit, logistics, budget, preferences, booking triage, and itinerary handoff.
+
+## Use When
+
+- The user explicitly asks for `travel-planning`.
+- The request matches the triggers or workflow described below.
+- The task benefits from a reusable, structured output instead of a one-off answer.
+
+## Do Not Use When
+
+- Do not use for live booking, legal visa advice, medical travel advice, or broad research better handled by travel-research.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
+## Workflow
+
+1. Identify the exact task and available source material.
+2. Apply the domain rules and output format in this skill.
+3. State assumptions, uncertainty, and missing inputs clearly.
+4. Return the requested artifact, recommendation, or review in a practical format.
+5. Check the result against the validation checklist before finishing.
+
 Produces personalized, opinionated travel plans for Mick Pletcher. Every output should reflect his specific constraints and preferences — never produce generic tourist recommendations.
 
 ---

@@ -2,6 +2,15 @@
 
 Compiled from repo history and the current working tree.
 
+## 2026-05-22
+
+- Added `skill-improvement-assessment.md` with a skill-by-skill improvement review across Claude, ChatGPT, Copilot, and Cursor skills
+- Linked the assessment from `README.md`
+- Added `claude/scripts/Validate-SkillQuality.ps1` for standard section coverage and stale Claude package checks
+- Normalized missing standard sections across Claude, ChatGPT, Copilot, and Cursor skills
+- Converted ChatGPT `food-analyzer` from wrapper format into a standalone instruction skill
+- Rebuilt Claude `.skill` packages after source updates
+
 ## 2026-05-21
 
 - Moved the repository social preview asset to `.github/github-social-preview.jpg` for stable future reference inside the repo

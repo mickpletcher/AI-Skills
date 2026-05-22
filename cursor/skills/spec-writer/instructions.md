@@ -1,5 +1,17 @@
 # Cursor Skill: spec-writer
 
+## Intent
+
+Turn rough repository work into numbered specs with requirements, plan, and task files.
+
+## Validation Checklist
+
+- [ ] The output matches the skill's intended task and platform.
+- [ ] Required inputs, assumptions, and uncertainty are explicit.
+- [ ] Safety, scope, and source limits are respected.
+- [ ] The response follows the requested format or the skill's default output format.
+- [ ] The result is practical enough to use without another cleanup pass.
+
 Use this skill when rough repo work needs to become a numbered spec before coding starts. The goal is to turn a change idea into a practical spec folder with requirements, plan, and tasks that another engineer can execute.
 
 ## Use When

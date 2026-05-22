@@ -1,5 +1,17 @@
 # Cursor Skill: pr-review
 
+## Intent
+
+Review pull requests and diffs for behavioral regressions, merge risk, and missing test coverage.
+
+## Validation Checklist
+
+- [ ] The output matches the skill's intended task and platform.
+- [ ] Required inputs, assumptions, and uncertainty are explicit.
+- [ ] Safety, scope, and source limits are respected.
+- [ ] The response follows the requested format or the skill's default output format.
+- [ ] The result is practical enough to use without another cleanup pass.
+
 Use this skill when reviewing a pull request, patch, or changed file set for regressions, practical risk, and missing tests. The goal is not to summarize the diff. The goal is to find what could break, what is under-tested, and what should block merge.
 
 ## Use When

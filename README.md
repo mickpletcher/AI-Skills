@@ -3,7 +3,9 @@
 A shared home for AI skills organized by platform. Skills live under the platform they are written for. Shared docs cover conventions and repo guidance only.
 
 See [completed-projects.md](./completed-projects.md) for completed repo additions.
+See [completed-upgrades.md](./completed-upgrades.md) for completed repo upgrades.
 See [changelog.md](./changelog.md) for the repo change history.
+See [skill-improvement-assessment.md](./skill-improvement-assessment.md) for the current skill quality review.
 
 Current repo social preview asset:
 

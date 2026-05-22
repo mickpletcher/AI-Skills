@@ -6,6 +6,45 @@ version: 1.1.0
 
 # Resume Writer
 
+## Intent
+
+Rewrite, audit, score, and target resumes with measurable impact, recruiter skim value, and role-specific positioning.
+
+## Use When
+
+- The user explicitly asks for `resume-writer`.
+- The request matches the triggers or workflow described below.
+- The task benefits from a reusable, structured output instead of a one-off answer.
+
+## Do Not Use When
+
+- Do not use to fabricate credentials, invent employment history, write unrelated bios, or submit applications directly.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
+## Workflow
+
+1. Identify the exact task and available source material.
+2. Apply the domain rules and output format in this skill.
+3. State assumptions, uncertainty, and missing inputs clearly.
+4. Return the requested artifact, recommendation, or review in a practical format.
+5. Check the result against the validation checklist before finishing.
+
+## Constraints
+
+- Do not fabricate missing facts, measurements, dates, sources, or user context.
+- Keep output aligned with Mick's direct, practical communication style unless the skill says otherwise.
+- Preserve safety, legal, medical, financial, and operational boundaries stated in this file.
+- Prefer concise, usable output over broad explanation.
+
+## Validation Checklist
+
+- [ ] The output matches the skill's intended task and platform.
+- [ ] Required inputs, assumptions, and uncertainty are explicit.
+- [ ] Safety, scope, and source limits are respected.
+- [ ] The response follows the requested format or the skill's default output format.
+- [ ] The result is practical enough to use without another cleanup pass.
+
 Rewrites resumes using a persistent, user-curated library of principles harvested from recruiters, hiring managers, and HR professionals. Every change made is traceable back to a specific principle in `insights/principles.md` or a pattern in `references/common-patterns.md`.
 
 `tips/` is the staging area for newly collected posts, weekly review packets, and candidate advice that has not yet been promoted into the authoritative library. Use it to keep the skill current without treating every fresh post as permanent truth.

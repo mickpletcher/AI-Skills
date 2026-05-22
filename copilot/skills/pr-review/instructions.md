@@ -1,5 +1,9 @@
 # Copilot Skill: pr-review
 
+## Intent
+
+Review pull requests and diffs for behavioral regressions, merge risk, and missing test coverage.
+
 Use this skill when reviewing a pull request for regressions, practical risk, and missing test coverage. The goal is not to praise the change or restate the diff. The goal is to find what could break, what is weakly validated, and what should be checked before merge.
 
 ## Use When

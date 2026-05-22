@@ -5,6 +5,14 @@ description: Use this skill when the user wants to turn an invention idea into a
 
 # PatentForge Provisional
 
+## Validation Checklist
+
+- [ ] The output matches the skill's intended task and platform.
+- [ ] Required inputs, assumptions, and uncertainty are explicit.
+- [ ] Safety, scope, and source limits are respected.
+- [ ] The response follows the requested format or the skill's default output format.
+- [ ] The result is practical enough to use without another cleanup pass.
+
 ## Purpose
 
 Turn a raw invention idea into a structured draft package that helps the user organize facts, frame novelty, prepare prior art search directions, draft claim candidates, and assemble a provisional patent working draft for attorney review.

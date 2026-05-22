@@ -6,6 +6,12 @@ version: 1.0.0
 
 # MedVault
 
+## Do Not Use When
+
+- Do not use for emergencies, diagnosis, prescribing, dose changes, stopping medication, or replacing clinician or pharmacist advice.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
 ## Trigger When
 
 - User says "medvault", "med vault", "mv add", "mv list", "mv check", "mv scan", "mv schedule", "mv edit", "mv stop", "mv export", "mv help"

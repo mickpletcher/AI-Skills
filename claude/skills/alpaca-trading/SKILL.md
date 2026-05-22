@@ -5,6 +5,16 @@ description: Work safely in the Trading repository for Alpaca helpers, backtesti
 
 # Alpaca Trading
 
+## Intent
+
+Support safe paper trading, Alpaca automation, broker workflow analysis, and Trading repo changes without increasing live trading risk.
+
+## Do Not Use When
+
+- Do not use for financial advice, guaranteed performance claims, live order execution without explicit user instruction, or unrelated trading platforms.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
 Use this skill when the user is working in the `Trading` repository on Alpaca-connected scripts, backtesting workflows, journaling, scheduling, or reusable PowerShell Alpaca modules.
 
 ## Trigger When

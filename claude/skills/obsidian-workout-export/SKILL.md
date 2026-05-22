@@ -5,6 +5,30 @@ description: Export workout data to an Obsidian-formatted Markdown file. Always 
 
 # Obsidian Workout Export Skill
 
+## Intent
+
+Convert workout session data into clean Obsidian-ready Markdown logs with body stats, session details, PRs, and notes.
+
+## Use When
+
+- The user explicitly asks for `obsidian-workout-export`.
+- The request matches the triggers or workflow described below.
+- The task benefits from a reusable, structured output instead of a one-off answer.
+
+## Do Not Use When
+
+- Do not use for programming future training blocks, diagnosing injuries, or inventing workout details missing from the source.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
+## Validation Checklist
+
+- [ ] The output matches the skill's intended task and platform.
+- [ ] Required inputs, assumptions, and uncertainty are explicit.
+- [ ] Safety, scope, and source limits are respected.
+- [ ] The response follows the requested format or the skill's default output format.
+- [ ] The result is practical enough to use without another cleanup pass.
+
 Export logged workout sessions into Markdown files for an Obsidian `WorkoutData/` folder.
 
 ## Primary Trigger

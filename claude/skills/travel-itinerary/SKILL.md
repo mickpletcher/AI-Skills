@@ -6,6 +6,24 @@ version: 1.1.0
 
 # Travel Itinerary Skill
 
+## Intent
+
+Build practical travel itineraries with route notes, lodging context, pacing, budget visibility, and export-ready structure.
+
+## Do Not Use When
+
+- Do not use for broad destination comparison, live booking, visa/legal advice, or unsafe assumptions about current availability.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
+## Validation Checklist
+
+- [ ] The output matches the skill's intended task and platform.
+- [ ] Required inputs, assumptions, and uncertainty are explicit.
+- [ ] Safety, scope, and source limits are respected.
+- [ ] The response follows the requested format or the skill's default output format.
+- [ ] The result is practical enough to use without another cleanup pass.
+
 Build Obsidian-formatted trip files from user supplied details. This skill is a reusable template for organizing travel plans into a clean Markdown itinerary.
 
 ## Primary Triggers

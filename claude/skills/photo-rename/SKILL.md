@@ -6,6 +6,31 @@ description: Rename photos using image analysis, GPS metadata, and web research 
 
 # Photo Rename Skill
 
+## Intent
+
+Rename photo batches with consistent descriptive filenames based on EXIF data, visual content, confidence, and review-safe output.
+
+## Do Not Use When
+
+- Do not use when the user wants irreversible file moves without review, face identification, or guesses from unclear images.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
+## Constraints
+
+- Do not fabricate missing facts, measurements, dates, sources, or user context.
+- Keep output aligned with Mick's direct, practical communication style unless the skill says otherwise.
+- Preserve safety, legal, medical, financial, and operational boundaries stated in this file.
+- Prefer concise, usable output over broad explanation.
+
+## Validation Checklist
+
+- [ ] The output matches the skill's intended task and platform.
+- [ ] Required inputs, assumptions, and uncertainty are explicit.
+- [ ] Safety, scope, and source limits are respected.
+- [ ] The response follows the requested format or the skill's default output format.
+- [ ] The result is practical enough to use without another cleanup pass.
+
 Rename photos to descriptive real-world names using a combination of image analysis, EXIF metadata, reverse geocoding, and web research.
 
 ## Trigger

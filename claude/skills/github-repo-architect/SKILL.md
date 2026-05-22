@@ -5,6 +5,25 @@ description: Convert a repository idea into a complete GitHub repository archite
 
 # GitHub Repo Architect Skill
 
+## Intent
+
+Turn rough software ideas into practical GitHub repository structures with files, workflows, prompts, and setup direction.
+
+## Workflow
+
+1. Identify the exact task and available source material.
+2. Apply the domain rules and output format in this skill.
+3. State assumptions, uncertainty, and missing inputs clearly.
+4. Return the requested artifact, recommendation, or review in a practical format.
+5. Check the result against the validation checklist before finishing.
+
+## Constraints
+
+- Do not fabricate missing facts, measurements, dates, sources, or user context.
+- Keep output aligned with Mick's direct, practical communication style unless the skill says otherwise.
+- Preserve safety, legal, medical, financial, and operational boundaries stated in this file.
+- Prefer concise, usable output over broad explanation.
+
 Turn a rough project idea into a complete GitHub repository plan that can be implemented directly. Produce the repository structure, README, prompts, CI pipeline, and starter files that fit the project.
 
 ## Primary Triggers

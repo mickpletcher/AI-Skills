@@ -6,6 +6,16 @@ version: 1.0.0
 
 # Crypto Research
 
+## Intent
+
+Produce structured cryptocurrency due diligence with source-aware research, risks, tokenomics, listings, and practical caveats.
+
+## Do Not Use When
+
+- Do not use for investment advice, guaranteed returns, trade signals, or unsourced project claims.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
 Generate a structured due diligence report on a specific cryptocurrency. This is a research tool for project quality and risk review, not a buy or sell recommendation engine.
 
 ## Trigger When

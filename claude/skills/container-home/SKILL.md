@@ -6,6 +6,20 @@ version: 1.0.0
 
 # Container Home
 
+## Do Not Use When
+
+- Do not use as a substitute for licensed engineering, permitting, electrical, structural, septic, or legal signoff.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
+## Workflow
+
+1. Identify the exact task and available source material.
+2. Apply the domain rules and output format in this skill.
+3. State assumptions, uncertainty, and missing inputs clearly.
+4. Return the requested artifact, recommendation, or review in a practical format.
+5. Check the result against the validation checklist before finishing.
+
 Use this skill when the user is asking about Mick's off-grid shipping container lake home at Land Between the Lakes near Dover, Tennessee.
 
 ## Trigger When

@@ -1,5 +1,17 @@
 # Cursor Skill: workflow-debugger
 
+## Intent
+
+Debug CI, local workflow, and automation failures by reproducing the issue, finding root cause, and making targeted fixes.
+
+## Validation Checklist
+
+- [ ] The output matches the skill's intended task and platform.
+- [ ] Required inputs, assumptions, and uncertainty are explicit.
+- [ ] Safety, scope, and source limits are respected.
+- [ ] The response follows the requested format or the skill's default output format.
+- [ ] The result is practical enough to use without another cleanup pass.
+
 Use this skill when a CI workflow, automation pipeline, script run, or local repro path is failing and the goal is to isolate the real blocker quickly. Focus on evidence, local reproduction, and the smallest fix that resolves the failure.
 
 ## Use When

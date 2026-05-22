@@ -9,6 +9,31 @@ version: 1.1.0
 
 # Food Analyzer
 
+## Intent
+
+Analyze food photos, labels, meals, and ingredient lists with nutrition, fitness, glycemic, processing, and interaction context.
+
+## Do Not Use When
+
+- Do not use for diagnosis, treatment, allergy clearance, medication changes, or exact nutrition claims from unclear images.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
+## Workflow
+
+1. Identify the exact task and available source material.
+2. Apply the domain rules and output format in this skill.
+3. State assumptions, uncertainty, and missing inputs clearly.
+4. Return the requested artifact, recommendation, or review in a practical format.
+5. Check the result against the validation checklist before finishing.
+
+## Constraints
+
+- Do not fabricate missing facts, measurements, dates, sources, or user context.
+- Keep output aligned with Mick's direct, practical communication style unless the skill says otherwise.
+- Preserve safety, legal, medical, financial, and operational boundaries stated in this file.
+- Prefer concise, usable output over broad explanation.
+
 Analyze images of food, plated meals, nutrition labels, or ingredient lists and return a
 structured nutritional breakdown with fitness, glycemic, processing, and interaction context.
 

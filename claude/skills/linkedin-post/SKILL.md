@@ -6,6 +6,31 @@ version: 1.1.0
 
 # LinkedIn Post Skill
 
+## Intent
+
+Write LinkedIn posts in a credible practitioner voice with clear mode, audience, and call-to-action control.
+
+## Do Not Use When
+
+- Do not use for Facebook posts, X posts, resumes, or claims that require proof the user did not provide.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
+## Workflow
+
+1. Identify the exact task and available source material.
+2. Apply the domain rules and output format in this skill.
+3. State assumptions, uncertainty, and missing inputs clearly.
+4. Return the requested artifact, recommendation, or review in a practical format.
+5. Check the result against the validation checklist before finishing.
+
+## Constraints
+
+- Do not fabricate missing facts, measurements, dates, sources, or user context.
+- Keep output aligned with Mick's direct, practical communication style unless the skill says otherwise.
+- Preserve safety, legal, medical, financial, and operational boundaries stated in this file.
+- Prefer concise, usable output over broad explanation.
+
 Write LinkedIn posts for Mick Pletcher's professional audience in a voice that is direct, technical, and first-person.
 
 ## Trigger

@@ -6,6 +6,12 @@ version: 1.0.0
 
 # Blog To Social
 
+## Do Not Use When
+
+- Do not use to write the source blog post from scratch, invent missing claims, or publish directly.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
 Use this skill when the user wants one finished blog post converted into Facebook, X, and LinkedIn posts in a single pass.
 
 ## Trigger When

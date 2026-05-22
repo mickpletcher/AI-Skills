@@ -9,6 +9,7 @@ PowerShell scripts for managing Claude skill installations and validating skill 
 | [Initialize-ClaudeSkills.ps1](#initialize-claudeskillsps1) | Install, update, remove, and list skills in the Claude Desktop library |
 | [Update-FutureUpgrades.ps1](#update-futureupgradesps1) | Create or refresh local `future-upgrades.md` files while preserving future planning tiers |
 | [Validate-SkillFolders.ps1](#validate-skillfoldersps1) | Audit skill folders for missing required files |
+| [Validate-SkillQuality.ps1](#validate-skillqualityps1) | Audit skill source sections and stale Claude packages |
 
 ---
 
@@ -153,3 +154,30 @@ A folder is treated as a skill candidate if it contains a `skill.md` or `skill.z
 ### Validate-SkillFolders Output
 
 Prints a pass/fail summary with counts. On failure, outputs a table of affected folders and missing files. With `-RepairHints`, prints ready-to-run `git mv` commands for any fixable casing issues.
+
+---
+
+## Validate-SkillQuality.ps1
+
+Audits skill source files across supported platform folders for the standard sections defined in `shared/skill-standard.md`. Also checks whether Claude `.skill` packages are older than their `SKILL.md` source files.
+
+### Validate-SkillQuality Parameters
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `-Root` | String | Repo root path to scan. Defaults to current directory |
+| `-FailOnIssues` | Switch | Exit with code 1 if any issues are found |
+
+### Validate-SkillQuality Examples
+
+```powershell
+# Validate all platform skills from the repo root
+.\claude\scripts\Validate-SkillQuality.ps1
+
+# Fail with exit code 1 for CI use
+.\claude\scripts\Validate-SkillQuality.ps1 -FailOnIssues
+```
+
+### Validate-SkillQuality Output
+
+Prints a pass/fail summary with counts. On failure, outputs the platform, skill, issue, and affected file.

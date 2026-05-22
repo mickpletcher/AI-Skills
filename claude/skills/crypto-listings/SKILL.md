@@ -6,6 +6,16 @@ version: 1.0.0
 
 # Crypto Listings
 
+## Intent
+
+Summarize recent and upcoming crypto exchange listings with clear source freshness and practical risk framing.
+
+## Do Not Use When
+
+- Do not use for investment advice, price predictions, unverified rumors, or stale listing data.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
 Retrieve and format new and upcoming cryptocurrency listings across major exchanges. This skill covers coins listed in the last 7 days and coins officially scheduled to list in the next 7 days.
 
 ## Trigger When

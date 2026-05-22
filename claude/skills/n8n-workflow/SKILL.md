@@ -5,6 +5,29 @@ description: Design, build, or troubleshoot n8n automation workflows. Always tri
 
 # n8n Workflow Builder
 
+## Intent
+
+Design, build, and troubleshoot n8n workflows for Mick's self-hosted automation stack with practical node and deployment guidance.
+
+## Use When
+
+- The user explicitly asks for `n8n-workflow`.
+- The request matches the triggers or workflow described below.
+- The task benefits from a reusable, structured output instead of a one-off answer.
+
+## Do Not Use When
+
+- Do not use for unrelated automation tools, production changes without context, credential handling in plain text, or unsafe destructive workflow edits.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
+## Constraints
+
+- Do not fabricate missing facts, measurements, dates, sources, or user context.
+- Keep output aligned with Mick's direct, practical communication style unless the skill says otherwise.
+- Preserve safety, legal, medical, financial, and operational boundaries stated in this file.
+- Prefer concise, usable output over broad explanation.
+
 Design, build, or troubleshoot n8n automation workflows for Mick's self-hosted Proxmox environment.
 
 ## Mick's n8n Stack

@@ -5,6 +5,45 @@ description: Analyze CSV exports from Pi-hole such as query logs, top domains, t
 
 # Pi-hole CSV Analyzer
 
+## Intent
+
+Analyze Pi-hole CSV exports to identify query patterns, noisy clients, allowlist candidates, blocklist candidates, and cleanup actions.
+
+## Use When
+
+- The user explicitly asks for `pihole-csv-analyzer`.
+- The request matches the triggers or workflow described below.
+- The task benefits from a reusable, structured output instead of a one-off answer.
+
+## Do Not Use When
+
+- Do not use without CSV or equivalent query data, for generic Pi-hole setup, or for changes that cannot be traced to export evidence.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
+## Workflow
+
+1. Identify the exact task and available source material.
+2. Apply the domain rules and output format in this skill.
+3. State assumptions, uncertainty, and missing inputs clearly.
+4. Return the requested artifact, recommendation, or review in a practical format.
+5. Check the result against the validation checklist before finishing.
+
+## Constraints
+
+- Do not fabricate missing facts, measurements, dates, sources, or user context.
+- Keep output aligned with Mick's direct, practical communication style unless the skill says otherwise.
+- Preserve safety, legal, medical, financial, and operational boundaries stated in this file.
+- Prefer concise, usable output over broad explanation.
+
+## Validation Checklist
+
+- [ ] The output matches the skill's intended task and platform.
+- [ ] Required inputs, assumptions, and uncertainty are explicit.
+- [ ] Safety, scope, and source limits are respected.
+- [ ] The response follows the requested format or the skill's default output format.
+- [ ] The result is practical enough to use without another cleanup pass.
+
 Analyze Pi-hole CSV exports and turn them into practical, reviewable cleanup actions.
 
 ## Supported Inputs

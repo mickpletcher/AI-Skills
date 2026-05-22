@@ -1,5 +1,17 @@
 # Cursor Skill: repo-assessment
 
+## Intent
+
+Assess an active repository and produce a durable handoff document with current state, risks, and the next real work item.
+
+## Validation Checklist
+
+- [ ] The output matches the skill's intended task and platform.
+- [ ] Required inputs, assumptions, and uncertainty are explicit.
+- [ ] Safety, scope, and source limits are respected.
+- [ ] The response follows the requested format or the skill's default output format.
+- [ ] The result is practical enough to use without another cleanup pass.
+
 Use this skill to assess an active repository and produce a durable handoff document that explains the current state, main risks, and the real next implementation step. The goal is to leave behind something another engineer can pick up without rescanning the whole repo.
 
 ## Use When

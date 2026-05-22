@@ -5,6 +5,37 @@ description: Write or update content for Mick Pletcher's personal website. Trigg
 
 # Website Content
 
+## Intent
+
+Write and refine content for mickpletcher.com using the established site voice, section structure, and project positioning.
+
+## Use When
+
+- The user explicitly asks for `website-content`.
+- The request matches the triggers or workflow described below.
+- The task benefits from a reusable, structured output instead of a one-off answer.
+
+## Do Not Use When
+
+- Do not use for code implementation, unrelated websites, blog posts, or content that requires invented project facts.
+- Required context is missing and cannot be reasonably inferred.
+- A more specific skill in this repo is a better match.
+
+## Workflow
+
+1. Identify the exact task and available source material.
+2. Apply the domain rules and output format in this skill.
+3. State assumptions, uncertainty, and missing inputs clearly.
+4. Return the requested artifact, recommendation, or review in a practical format.
+5. Check the result against the validation checklist before finishing.
+
+## Constraints
+
+- Do not fabricate missing facts, measurements, dates, sources, or user context.
+- Keep output aligned with Mick's direct, practical communication style unless the skill says otherwise.
+- Preserve safety, legal, medical, financial, and operational boundaries stated in this file.
+- Prefer concise, usable output over broad explanation.
+
 Write polished, first-person website copy for Mick Pletcher's personal site.
 
 ## Site Sections

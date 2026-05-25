@@ -1,6 +1,13 @@
 ---
 name: travel-itinerary
-description: Plan, format, and export travel itineraries as Obsidian-formatted Markdown files. Always trigger immediately when the user's message starts with "trip" or "itinerary". Also trigger when the user says "plan my trip", "build my itinerary", "travel plan", "export my trip", "format this itinerary", or describes an upcoming trip and asks Claude to organize it. Produces a day-by-day breakdown, logistics summary, packing list, and budget tracker in a single Obsidian-ready .md file.
+description: >
+  Plan, format, and export travel itineraries as Obsidian-formatted Markdown files.
+  Always trigger immediately when the user's message starts with "trip" or
+  "itinerary". Also trigger when the user says "plan my trip", "build my
+  itinerary", "travel plan", "export my trip", "format this itinerary", or
+  describes an upcoming trip and asks Claude to organize it. Produces a
+  day-by-day breakdown, logistics summary, packing list, and budget tracker in a
+  single Obsidian-ready .md file.
 version: 1.2.0
 ---
 

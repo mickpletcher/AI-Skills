@@ -28,6 +28,9 @@ This skill builds a usable first draft without unnecessary questions when enough
 - builds a single Markdown itinerary document
 - applies an itinerary template for city trips, road trips, active travel, or mixed work plus leisure trips
 - checks daily structure so transit time, meals, and pacing are more realistic
+- adds visa and border crossing checkpoints for multi-country trips
+- compares lodging location, price, and transit convenience in accommodation notes
+- uses arrival and departure day templates for red-eye flights, late check-ins, early departures, and overnight transit
 - rolls up packing and reservation summaries for faster trip review
 - adds route notes, daily budget visibility, and contingency planning where useful
 - validates date math, routing, and budget assumptions
@@ -42,14 +45,15 @@ Full itinerary requests can include:
 3. Anchor Events
 4. Day-by-Day Plan
 5. Accommodation Summary
-6. Budget Tracker
-7. Packing List
-8. Key Contacts and Info
-9. Open Items / To-Do
-10. Reservation Summary
-11. Daily Budget View
-12. Map and Route Notes
-13. Packing Summary
+6. Visa and Border Checkpoints
+7. Budget Tracker
+8. Packing List
+9. Key Contacts and Info
+10. Open Items / To-Do
+11. Reservation Summary
+12. Daily Budget View
+13. Map and Route Notes
+14. Packing Summary
 
 ## Supported Templates
 
@@ -68,6 +72,10 @@ itinerary format this mixed work and leisure Tokyo trip for Obsidian
 trip build an active travel itinerary around a triathlon weekend
 
 itinerary add route notes, daily budgets, and backup plans to this Europe trip
+
+trip build a Spain, Morocco, and Portugal itinerary with border checkpoints and lodging tradeoffs
+
+itinerary tighten this red-eye arrival and late check-in day so it is realistic
 ```
 
 ## File Structure

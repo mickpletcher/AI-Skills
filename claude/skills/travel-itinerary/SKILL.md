@@ -1,7 +1,7 @@
 ---
 name: travel-itinerary
 description: Plan, format, and export travel itineraries as Obsidian-formatted Markdown files. Always trigger immediately when the user's message starts with "trip" or "itinerary". Also trigger when the user says "plan my trip", "build my itinerary", "travel plan", "export my trip", "format this itinerary", or describes an upcoming trip and asks Claude to organize it. Produces a day-by-day breakdown, logistics summary, packing list, and budget tracker in a single Obsidian-ready .md file.
-version: 1.1.0
+version: 1.2.0
 ---
 
 # Travel Itinerary Skill
@@ -51,8 +51,10 @@ Pull everything available from the conversation. Do not ask clarifying questions
 - **Dates** — departure, return, any fixed anchor events
 - **Anchor events** — concerts, races, festivals, sporting events with fixed dates (e.g., Tour de France Grand Départ, Running of the Bulls)
 - **Accommodation type** — hotel, hostel private room, Airbnb, resort, camping, or user specified preference
+- **Lodging constraints** — preferred neighborhoods, price ceiling, transit needs, late check-in needs, luggage storage needs, and location tradeoffs
 - **Departure airport or origin** — if provided
 - **Transport** — flights, trains, ferries, buses
+- **Border crossings** — countries entered, entry method, visa or ETA needs, passport validity, onward ticket needs, and likely checkpoint dates
 - **Budget target** — total or daily
 - **Known activities** or goals per destination
 - **Trip purpose** — adventure, event-based, exploration, endurance event, etc.
@@ -87,6 +89,16 @@ Use this template structure, omitting any section with no data:
 
 ---
 
+## Visa And Border Checkpoints
+
+| Date | Countries / Border | Mode | Visa / ETA Check | Documents | Action |
+|---|---|---|---|---|---|
+| [Date] | [Country A → Country B] | [Flight / Train / Ferry / Land] | [Required / Not required / Verify] | [Passport, visa, onward ticket, proof of lodging] | [Apply / Verify / Carry printout] |
+
+**Border Notes:** [Entry rule uncertainty, passport validity concern, Schengen day count, customs issue, or TBD]
+
+---
+
 ## Anchor Events
 
 | Event | Location | Dates | Status |
@@ -118,9 +130,12 @@ Use this template structure, omitting any section with no data:
 
 ## Accommodation Summary
 
-| City | Property | Type | Nights | Est. Cost | Booked? |
-|---|---|---|---|---|---|
-| [City] | [Name or TBD] | [Type] | X | $XXX | Yes / No |
+| City | Property | Type | Nights | Est. Cost | Location | Transit Convenience | Decision Note | Booked? |
+|---|---|---|---|---|---|---|---|---|
+| [City] | [Name or TBD] | [Type] | X | $XXX | [Central / outer neighborhood / near station] | [High / Medium / Low] | [Location vs price vs transit tradeoff] | Yes / No |
+
+**Lodging Decision Notes:**
+- [City]: [Why this lodging area makes sense or what tradeoff still needs review]
 
 ---
 
@@ -233,7 +248,7 @@ Tailor to destination type (urban, trekking, beach, mixed). Always include the t
 - [ ] [Book flight or transport from origin to first destination]
 - [ ] [Book accommodation in X for nights Y-Z]
 - [ ] [Purchase travel insurance]
-- [ ] [Apply for visa if required]
+- [ ] [Verify visa, ETA, border crossing, passport validity, onward ticket, and customs rules for each country]
 - [ ] [Exchange currency or set up travel card]
 - [ ] [Other flagged gaps from the data]
 
@@ -251,6 +266,29 @@ Adjust emphasis by template:
 - `active travel`: training or event anchors, recovery windows, gear, nutrition, and weather contingency emphasis
 - `mixed work and leisure`: protected work blocks, quieter lodging needs, Wi-Fi or workspace notes, lighter sightseeing pacing on work days
 
+### Arrival And Departure Day Templates
+
+Use these patterns when the trip includes red-eye flights, late check-in, early departure, overnight trains, long drives, or major time zone changes.
+
+**Red-eye arrival day:**
+- Keep the first day light.
+- Add early bag drop or luggage storage.
+- Put only one anchor activity after hotel check-in unless the user already has a fixed event.
+- Add a nap or recovery block when arrival is before normal check-in.
+- Note shower, meal, and transit logistics before sightseeing.
+
+**Late check-in arrival day:**
+- Prioritize airport or station transfer, food availability, and check-in cutoff.
+- Add backup lodging contact details or after-hours instructions.
+- Avoid nonessential activities after arrival.
+- Flag if the arrival time risks missing the property's check-in window.
+
+**Departure day:**
+- Work backward from flight, train, ferry, or drive departure time.
+- Include checkout, luggage storage, final meal, transfer time, security or border buffer, and backup transport.
+- Keep activities near lodging or the departure station.
+- Flag early departures that require a pre-booked taxi, airport hotel, or previous-night repositioning.
+
 ### Step 3 — Validate Before Exporting
 
 Before writing the file, check for:
@@ -258,8 +296,10 @@ Before writing the file, check for:
 - **Date math** — day count, transit days, anchor event alignment
 - **Logic gaps** — overnight transit without accommodation, missing arrival day
 - **Budget realism** — flag if estimated total is significantly over or under the stated target
-- **Accommodation alignment** — keep lodging recommendations consistent with the user's stated preference
+- **Accommodation alignment** — keep lodging recommendations consistent with the user's stated preference and compare location, price, and transit convenience
 - **Routing assumptions** — note when a connection or transfer is likely required
+- **Visa and border checkpoints** — flag every multi-country entry, likely visa or ETA requirement, passport validity issue, onward ticket issue, and unverified border rule
+- **Arrival and departure day realism** — add red-eye, late check-in, early checkout, luggage storage, and airport or station buffer notes when relevant
 - **Daily structure realism** — do not overload a day beyond likely transit, meal, and pacing limits
 - **Meal spacing** — note when long activity or transit blocks should have a real meal or snack plan
 - **Contingency coverage** — add backup notes for weather, delays, or a failed booking dependency when relevant
@@ -281,7 +321,10 @@ When you finish, confirm:
 ## Rules
 
 - **No fabricated bookings.** If it's not confirmed, mark it TBD.
+- **No visa or border guarantees.** Treat visa, ETA, passport validity, customs, and border guidance as a checklist for verification, not legal advice.
 - **Budget columns stay separate.** Estimated vs. Actual — never merge them. Actual fills in as the itinerary is updated.
+- **Lodging notes must explain tradeoffs.** Compare location, price, and transit convenience when suggesting or summarizing accommodation.
+- **Arrival and departure days need buffer.** Red-eye arrivals, late check-ins, early departures, and overnight transit require lighter plans and explicit logistics notes.
 - **Packing list is trip-specific.** Add or remove items based on destination, climate, and activities.
 - **Packing and reservation rollups should stay concise.** They are quick-reference sections, not duplicates of the full itinerary.
 - **Anchor events are fixed.** Build the day-by-day around confirmed event dates — never shift them to fit travel convenience.

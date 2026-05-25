@@ -27,10 +27,13 @@ Update `SKILL.md` when the training profile or workflow changes, then rebuild `f
 - Summarizing strength, endurance, consistency, and recovery trends across logged sessions
 - Checking whether recent training matches stated goals such as pull ups, cycling, or triathlon
 - Producing weekly reviews with wins, missed sessions, and next block focus
+- Flagging fatigue and overload when recent sessions suggest under recovery
 - Providing nutrition and timing prompts tied to workout type, duration, and recovery need
 - Normalizing similar exercise names so progress reviews stay cleaner
 - Building longer progression plans for race prep, strength cycles, and hybrid seasons
-- Producing export friendly structured data for dashboards or Obsidian tracking
+- Tracking personal benchmark history so recurring tests can be compared across blocks and seasons
+- Producing structured export variants for dashboards, notes, and weekly reports
+- Adding mobility and prehab prompts tied to recurring shoulder, back, or Achilles signals
 - Adjusting the training plan within safety constraints
 - Writing Facebook posts from workout data in Mick's voice
 
@@ -39,7 +42,8 @@ Update `SKILL.md` when the training profile or workflow changes, then rebuild `f
 - `fit` and `workout` trigger the skill immediately
 - The skill can log sessions, summarize trends, and compare training against goals
 - The skill can produce weekly review output for planning the next block
-- The skill can add a compact structured data section for dashboard or note reuse
+- The skill can add structured export sections for dashboard, note, or weekly report reuse
+- The skill can call out fatigue, overload, benchmark, and prehab signals when the log supports it
 
 ## Example Prompts
 
@@ -55,6 +59,10 @@ fit normalize these exercise names and show a cleaner progress summary
 fit build a 12 week hybrid season plan for strength plus triathlon work
 
 fit export this week in a dashboard friendly structure
+
+fit compare my pull-up benchmark across seasons and flag any fatigue or prehab issues
+
+fit export this week as a weekly report with benchmark updates and recovery flags
 ```
 
 ## Installation
@@ -63,7 +71,7 @@ Package `SKILL.md` into `fitness-log.skill`, then install it with your normal Cl
 
 ## Upgrade Log
 
-See [upgrades.md](upgrades.md) for the structured upgrade log and [completedchanges.md](completedchanges.md) for tracked completed changes.
+See [upgrades.md](upgrades.md) for the structured upgrade log and [completed-changes.md](completed-changes.md) for tracked completed changes.
 
 ## Implement In Claude
 

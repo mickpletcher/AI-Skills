@@ -1,7 +1,7 @@
 ---
 name: fitness-log
 description: Track workouts, log fitness progress, adjust the training program, and generate Facebook posts from workout data. Trigger on workout logging, PR updates, program questions, and fitness progress summaries.
-version: 1.1.0
+version: 1.2.0
 ---
 
 # Fitness Log
@@ -36,6 +36,8 @@ Track and manage Mick's fitness program, workout progress, training adjustments,
 - The user wants a weekly review or trend summary
 - The user wants the training checked against a goal such as pull ups, cycling, or triathlon
 - The user wants export friendly workout summary data
+- The user wants recurring benchmark tests compared across seasons
+- The user mentions shoulder, back, Achilles, mobility, prehab, fatigue, overload, or under recovery signals
 
 ## Athlete Profile
 
@@ -149,8 +151,36 @@ When the user wants a progress summary across multiple logged workouts:
 - summarize endurance trends across cycling, triathlon, conditioning, or longer sessions when present
 - summarize consistency by training frequency, missed sessions, and pattern adherence
 - summarize recovery by session density, soreness notes, low energy notes, or performance drop offs when provided
+- flag fatigue and overload patterns when recent sessions suggest under recovery
 
 Use plain language and keep the summary tied to the actual log evidence.
+
+### Fatigue And Overload Flags
+
+When reviewing recent sessions, call out fatigue or overload only when the log gives evidence.
+
+Watch for:
+
+- repeated performance drops on the same movement
+- unusual soreness lasting into the next similar session
+- low energy, poor sleep, elevated stress, or missed recovery notes
+- high session density with no rest or deload
+- repeated hard lower body work plus endurance volume
+- calf or Achilles volume stacking
+- shoulder, back, or elbow irritation that appears across multiple sessions
+- multiple PR attempts or high intensity sessions close together
+
+Use this format when relevant:
+
+```text
+Fatigue / Overload Flag
+- Signal: [specific log evidence]
+- Risk: [under recovery, tendon irritation, stalled progress, form breakdown, or endurance interference]
+- Adjustment: [smallest practical change for the next session or week]
+- Confidence: [high, medium, low]
+```
+
+Do not diagnose injury. Frame the output as training load management.
 
 ### Program Check
 
@@ -177,6 +207,8 @@ Weekly Review
 Wins: [short summary]
 Missed or limited: [short summary]
 Next block focus: [short summary]
+Fatigue flags: [none or specific evidence]
+Mobility / prehab: [short prompt if relevant]
 ```
 
 ### Nutrition And Timing Prompts
@@ -209,15 +241,55 @@ When the user asks for a longer progression plan:
 - account for the current schedule, equipment, and safety limits
 - keep the horizon realistic rather than pretending every goal should progress at once
 
+### Personal Benchmark History
+
+When the user logs or asks about recurring benchmark tests, track them as benchmark events instead of normal workout noise.
+
+Supported benchmark types include:
+
+- pull-up max reps
+- timed mile, 5K, ride, swim, or row tests
+- max safe machine lift or rep max tests
+- body composition checkpoints
+- endurance field tests such as FTP, threshold pace, or long ride repeat routes
+- mobility or pain-free range checks when the user tracks them consistently
+
+Compare benchmarks across:
+
+- current block
+- prior block
+- current season
+- prior season
+- all-time best
+
+Use this format when relevant:
+
+```text
+Benchmark History
+| Benchmark | Current | Prior Test | Prior Season | All-Time Best | Trend |
+|---|---:|---:|---:|---:|---|
+| [Test] | [Result] | [Result/date] | [Result/date] | [Result/date] | [up/flat/down] |
+
+Season Note: [what changed across seasons and what it means for training]
+```
+
+If past benchmark data is missing, record the current result as the new baseline and say what should be retested later.
+
 ### Structured Export
 
-When the user wants export friendly data for dashboards or Obsidian:
+When the user wants export friendly data for dashboards, notes, Obsidian, or weekly reports:
 
-- provide a compact structured block after the narrative summary
+- provide the export variant the user asked for, or choose the most useful variant from context
 - include canonical exercise names, key metrics, trend direction, and the current focus
-- keep the structure easy to reuse in JSON like or note friendly formats
+- keep the structure easy to reuse in JSON like, note friendly, or report friendly formats
 
-Use a structure like:
+Supported export variants:
+
+- `dashboard`: compact keys, metrics, trends, flags, and next focus
+- `notes`: Markdown summary with headings and bullet points
+- `weekly report`: wins, missed or limited work, benchmark changes, fatigue flags, prehab prompts, and next block focus
+
+Dashboard format:
 
 ```text
 structured_data:
@@ -229,7 +301,62 @@ structured_data:
   consistency:
     completed_sessions: [count]
     planned_sessions: [count]
+  fatigue_flags:
+    - signal: [short evidence]
+      adjustment: [short adjustment]
+  benchmark_updates:
+    - test: [name]
+      result: [value]
+      comparison: [prior or baseline]
+  mobility_prehab:
+    - area: [shoulder/back/Achilles]
+      prompt: [short action]
   next_focus: [short line]
+```
+
+Notes format:
+
+```text
+## Training Notes: [period]
+
+- Main progress:
+- Recovery:
+- Benchmark:
+- Mobility / prehab:
+- Next focus:
+```
+
+Weekly report format:
+
+```text
+Weekly Training Report
+Wins:
+Missed or limited:
+Benchmark changes:
+Fatigue / overload flags:
+Mobility / prehab prompts:
+Next block focus:
+```
+
+### Mobility And Prehab Prompts
+
+When the user mentions recurring shoulder, back, Achilles, calf, or mobility signals, include a short prehab prompt tied to the pattern.
+
+Use practical prompts, not injury diagnosis:
+
+- shoulder: reduce aggravating pressing or raise volume, add warm-up sets, emphasize scapular control, face pulls, external rotation, or pain-free range
+- back: avoid axial loading, check hinge volume, use machine-supported alternatives, add trunk bracing or unloaded mobility prompts
+- Achilles or calf: flag calf volume, hard hills, speed work, jumps, or back-to-back lower body plus run days; suggest calf isometrics, gradual loading, or spacing stressors
+- general mobility: add a small warm-up, cool-down, or between-session mobility note only when it connects to a logged issue
+
+Use this format when relevant:
+
+```text
+Mobility / Prehab Prompt
+- Signal: [recurring issue or log note]
+- Area: [shoulder, back, Achilles, calf, or other]
+- Prompt: [small practical action]
+- Training adjustment: [what to avoid or reduce next]
 ```
 
 ## Safety Rules
@@ -238,6 +365,8 @@ structured_data:
 - No barbell squats, barbell lunges, or overhead barbell press
 - Flag calf volume above 5 sets for Achilles protection
 - Note shoulder pain when mentioned and suggest safer substitutions
+- Add mobility or prehab prompts when recurring shoulder, back, or Achilles signals appear
+- Flag fatigue and overload when recent session evidence suggests under recovery
 - Never recommend anything that contradicts back safety
 - Be careful about endurance volume guidance if recovery signals are poor
 
@@ -259,9 +388,12 @@ When logging or summarizing, be direct and data-focused. No motivational fluff. 
 - [ ] Trend summaries distinguish strength, endurance, consistency, and recovery
 - [ ] Program checks compare recent training against the stated goal
 - [ ] Weekly review output includes wins, misses, and next focus
+- [ ] Fatigue and overload flags are tied to actual recent session evidence
 - [ ] Exercise names are normalized cleanly when trend summaries need grouping
 - [ ] Long horizon plans respect the current schedule and safety limits
-- [ ] Structured export blocks are compact and reusable
+- [ ] Personal benchmark history compares recurring tests across blocks or seasons when data exists
+- [ ] Structured export variants support dashboard, notes, and weekly report use cases
+- [ ] Mobility and prehab prompts are tied to recurring shoulder, back, or Achilles signals
 - [ ] Safety rules are enforced
 - [ ] Program adjustments respect back and shoulder constraints
 - [ ] Final Facebook post output avoids emojis and em dashes

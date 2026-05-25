@@ -2,6 +2,10 @@
 
 Compiled from repo history and the current working tree.
 
+## 2026-05-25
+
+- Upgraded `claude/skills/fitness-log` with personal benchmark history, dashboard/notes/weekly report exports, mobility and prehab prompts, and fatigue or overload flags
+
 ## 2026-05-24
 
 - Updated `claude/skills/med-vault` to explicitly block git and GitHub publishing behavior for MedVault runtime data and exports

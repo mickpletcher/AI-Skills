@@ -13,9 +13,11 @@ This skill is for the decision stage before detailed planning:
 1. compares destinations with a direct scorecard
 2. surfaces seasonal and budget tradeoffs
 3. checks travel friction from BNA
-4. weighs activity fit, climate fit, and value
-5. recommends the best option and a fallback
-6. hands off cleanly into `travel-planning` once a winner is chosen
+4. adds live or current data for flight pricing, weather normals, and crowd levels when available
+5. scores visa effort, flight routing, and in-country transport difficulty as a travel friction score
+6. weighs activity fit, climate fit, and value
+7. recommends the best option and a fallback
+8. hands off cleanly into `travel-planning` once a winner is chosen
 
 ## Use When
 
@@ -23,6 +25,7 @@ This skill is for the decision stage before detailed planning:
 - The trip needs stronger research before booking or itinerary work
 - The user wants destination comparison instead of a fixed plan
 - Budget, climate, or logistics tradeoffs are the real decision point
+- Flight pricing, seasonal weather, crowd levels, or travel friction need to be compared before picking a destination
 
 ## Related Skills
 
@@ -35,7 +38,7 @@ This skill is for the decision stage before detailed planning:
 travel-research/
 |-- README.md
 |-- SKILL.md
-|-- completedchanges.md
+|-- completed-changes.md
 |-- upgrades.md
 `-- travel-research.skill
 ```
@@ -46,7 +49,7 @@ See [upgrades.md](upgrades.md) for implemented changes to this skill.
 
 ## Completed Changes
 
-See [completedchanges.md](completedchanges.md) for the tracked shipped history of this skill.
+See [completed-changes.md](completed-changes.md) for the tracked shipped history of this skill.
 
 ## Implement In Claude
 

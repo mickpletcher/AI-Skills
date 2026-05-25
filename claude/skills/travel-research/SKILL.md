@@ -1,6 +1,7 @@
 ---
 name: travel-research
 description: Research and compare destinations with deeper scoring across budget, climate, logistics, activity fit, and seasonal tradeoffs before moving into full trip planning.
+version: 1.1.0
 ---
 
 # Travel Research Skill
@@ -37,8 +38,10 @@ Focus on what materially separates one option from another:
 
 - total trip cost and daily spend
 - weather and season fit
+- live or current flight pricing, weather normals, and crowd levels when available
 - event or activity alignment
 - transit complexity
+- travel friction score across visa effort, flight routing, and in-country transport difficulty
 - crowd pressure
 - safety and scam friction
 - visa or border hassle
@@ -52,16 +55,26 @@ Focus on what materially separates one option from another:
    - a region shortlist
    - best fit suggestions if the user only gives goals and constraints
 3. Build a direct scorecard for each option.
-4. Explain the tradeoffs in plain language, not tourism fluff.
-5. Call out strong and weak fit areas:
+4. Pull live or current data when the request depends on timing-sensitive facts:
+   - flight pricing from available public search results or user-provided fare data
+   - weather normals from reliable climate or weather sources
+   - crowd levels from seasonality, event calendars, booking pressure, or current travel sources
+5. If live data is unavailable, label estimates clearly and explain what source or assumption was used.
+6. Calculate a travel friction score for each destination from:
+   - visa or entry effort
+   - flight routing difficulty from BNA unless another origin is stated
+   - in-country transport difficulty
+7. Explain the tradeoffs in plain language, not tourism fluff.
+8. Call out strong and weak fit areas:
    - budget fit
    - climate fit
    - activity fit
    - logistics fit
+   - travel friction fit
    - pace fit
    - value for the stated season
-6. Recommend the best option and at least one fallback.
-7. State the next practical move:
+9. Recommend the best option and at least one fallback.
+10. State the next practical move:
    - deeper research
    - move into `travel-planning`
    - move into `travel-itinerary`
@@ -72,8 +85,13 @@ For each destination, check:
 
 - best travel window for the stated goal
 - worst travel window and why
+- current flight price range or clearly labeled estimate
+- weather normals for the target month or season
+- crowd level for the target month or season
 - likely flight friction from BNA
 - local transport simplicity
+- visa or entry effort
+- travel friction score
 - private room lodging value
 - food cost and quality
 - training or adventure opportunities
@@ -106,6 +124,18 @@ SCORECARD:
 | Destination | Budget | Climate | Activity | Logistics | Value | Overall |
 |---|---:|---:|---:|---:|---:|---:|
 
+LIVE DATA SNAPSHOT:
+| Destination | Flight Pricing | Weather Normals | Crowd Level | Source / Confidence |
+|---|---|---|---|---|
+| [Destination A] | [Current range or estimate] | [Temp / rain / season note] | [Low / Medium / High] | [Source or assumption] |
+| [Destination B] | [Current range or estimate] | [Temp / rain / season note] | [Low / Medium / High] | [Source or assumption] |
+
+TRAVEL FRICTION:
+| Destination | Visa / Entry | Flight Routing | In-Country Transport | Friction Score | Notes |
+|---|---:|---:|---:|---:|---|
+| [Destination A] | [1-5] | [1-5] | [1-5] | [Avg or weighted score] | [Main friction point] |
+| [Destination B] | [1-5] | [1-5] | [1-5] | [Avg or weighted score] | [Main friction point] |
+
 DESTINATION NOTES:
 [Destination A]
 - Best for:
@@ -113,6 +143,8 @@ DESTINATION NOTES:
 - Best season:
 - Poor season:
 - Estimated daily spend:
+- Live data confidence:
+- Travel friction:
 
 [Destination B]
 - Best for:
@@ -136,6 +168,9 @@ NEXT STEP:
 - Do not give generic top ten destination lists
 - Make comparisons explicit and decision oriented
 - Prefer practical travel friction over postcard descriptions
+- Use current sources for flight pricing, weather normals, and crowd levels when the user asks for a live decision or a dated trip window
+- Clearly label live data, estimates, assumptions, and stale or unavailable data
+- Score travel friction separately from overall appeal so a beautiful destination with hard routing does not look easier than it is
 - If the user gives weak input, propose a short relevant comparison set instead of pretending certainty
 - Hand off to `travel-planning` once a destination is chosen
 
@@ -174,4 +209,6 @@ Compare Japan and Portugal for a two week active trip with good food, easy logis
 - The comparison focuses on real tradeoffs instead of generic destination blurbs
 - The output reflects Mick's travel constraints and preferences
 - The recommendation is clear and justified
+- Live data is included or missing live data is clearly labeled
+- Travel friction includes visa effort, flight routing, and in-country transport difficulty
 - The next step points to planning or itinerary work, not more vague brainstorming

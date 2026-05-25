@@ -1,7 +1,7 @@
 ---
 name: med-vault
 description: Securely track medications, supplements, interactions, and schedules using manual entry or uploaded prescription label images.
-version: 1.0.0
+version: 1.1.1
 ---
 
 # MedVault
@@ -32,7 +32,7 @@ The skill prioritizes privacy-first design, OCR accuracy with low-confidence con
 
 Every MedVault response must end with the required safety disclaimer.
 This applies to all commands, all follow up answers, all OCR results, all schedules, all exports, all edit confirmations, and all general medication discussions.
-The disclaimer must state that MedVault is not medical advice, that mistakes can be made, and that the user must always check the data with a licensed pharmacist or physician.
+The disclaimer must state that MedVault is not medical advice, that the information can be wrong or incomplete, that mistakes can be made in every MedVault feature, and that the user must always check the data with both a licensed doctor and a licensed pharmacist.
 
 ## Workflow
 
@@ -346,9 +346,10 @@ The interaction engine queries the following sources when network access is avai
 
 ## Constraints
 
-- This skill is not a substitute for medical advice. Always verify medication information and interaction warnings with a licensed pharmacist or physician.
-- Interaction confidence varies. Rare or emerging drug interactions may not be detected. The absence of a warning does not mean a combination is safe.
-- OCR extraction is best-effort. Always confirm extracted data before saving, especially dosage and frequency fields.
+- This skill is not a substitute for medical advice from a doctor or pharmacist. Always verify medication information, dosages, schedules, travel guidance, and interaction warnings with both a licensed doctor and a licensed pharmacist.
+- MedVault information is prone to errors and can be incomplete, outdated, misread, or misinterpreted. Treat every result as a draft for review, not a decision source.
+- Interaction confidence varies. Rare, emerging, or patient-specific drug interactions may not be detected. The absence of a warning does not mean a combination is safe.
+- OCR extraction is best-effort and error-prone. Always confirm extracted data before saving, especially medication name, dosage, strength, frequency, and route.
 - The skill cannot submit prescriptions, contact pharmacies, or make appointments.
 - Emergency situations must always go to 911 or poison control (1-800-222-1222 in the US). The skill will display this information whenever a Critical interaction is detected.
 - The skill does not access external servers without user permission. Offline analysis uses Claude's pharmacological training data only.
@@ -362,7 +363,7 @@ The interaction engine queries the following sources when network access is avai
 
 This skill must include the following disclaimer on every response:
 
-> **MedVault is not medical advice.** This information is provided for organizational and informational purposes only. Mistakes can be made in OCR, interpretation, scheduling, and interaction review. Always check all medication data, dosages, schedules, and interaction details with a licensed pharmacist or physician before making any changes to your medication regimen. If you are experiencing a medical emergency, call 911. For poison control questions, call 1-800-222-1222 (US).
+> **MedVault is not medical advice.** This information is for organization and general reference only. It is prone to errors and may be incomplete, outdated, misread, or misinterpreted. Mistakes can be made in OCR, manual entry, interpretation, scheduling, interaction review, travel guidance, exports, and emergency cards. Always check all medication data, dosages, schedules, interaction details, warnings, and travel restrictions with both a licensed doctor and a licensed pharmacist before making any medication decision or change. If you are experiencing a medical emergency, call 911. For poison control questions, call 1-800-222-1222 (US).
 
 ---
 
@@ -462,6 +463,6 @@ Contact your doctor if: You notice significant blood pressure changes or signs o
 Confidence: High
 
 ---
-MedVault is not medical advice. Always verify with a licensed pharmacist or physician.
+MedVault is not medical advice. Information can be wrong or incomplete. Always verify with both a licensed doctor and a licensed pharmacist.
 For emergencies: 911. Poison Control: 1-800-222-1222.
 ```

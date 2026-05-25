@@ -153,7 +153,7 @@ Notes:
   - Avoid alcohol with metformin (lactic acidosis risk)
 
 ---
-MedVault is not medical advice. Verify this schedule with your pharmacist.
+MedVault is not medical advice. This schedule can be wrong or incomplete. Verify it with both your doctor and pharmacist.
 ```
 
 ---

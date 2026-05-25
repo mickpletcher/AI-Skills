@@ -269,6 +269,6 @@ The full JSON export wraps all storage files into a single export document:
   "medications": { ...medications.json content... },
   "interactions": { ...interactions.json content... },
   "schedule": { ...schedule.json content... },
-  "disclaimer": "This export contains personal health information. Keep it secure. This is not medical advice."
+  "disclaimer": "This export contains personal health information. Keep it secure. This is not medical advice. It can contain errors. Verify with both a doctor and pharmacist."
 }
 ```

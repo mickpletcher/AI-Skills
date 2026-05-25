@@ -147,12 +147,12 @@ If a country specific rule cannot be verified in session, the skill should say t
 
 ## Safety Notice
 
-MedVault is not medical advice. Mistakes can be made in OCR, interpretation, scheduling, interaction review, travel guidance, and export formatting. Always check medications, dosages, schedules, interaction details, and travel restrictions with a licensed pharmacist, physician, or official source.
+MedVault is not medical advice. This information is for organization and general reference only. It is prone to errors and may be incomplete, outdated, misread, or misinterpreted. Mistakes can be made in OCR, manual entry, interpretation, scheduling, interaction review, travel guidance, exports, and emergency cards. Always check medications, dosages, schedules, interaction details, warnings, and travel restrictions with both a licensed doctor and a licensed pharmacist before making any medication decision or change.
 
 For emergencies: **911**
 Poison Control: **1-800-222-1222**
 
-Every MedVault response should display this safety notice.
+Every MedVault response must display this safety notice.
 
 ---
 
@@ -180,4 +180,4 @@ Every MedVault response should display this safety notice.
 
 ## Version
 
-1.0.0 — 2026-05-15
+1.1.1 - 2026-05-24

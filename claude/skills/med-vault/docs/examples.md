@@ -149,7 +149,7 @@ Food and drink notes:
   - Magnesium glycinate: take with food or without food; evening timing may support sleep
 
 ---
-MedVault is not medical advice. Verify with your pharmacist.
+MedVault is not medical advice. Information can be wrong or incomplete. Verify with both your doctor and pharmacist.
 For emergencies: 911. Poison Control: 1-800-222-1222.
 ```
 

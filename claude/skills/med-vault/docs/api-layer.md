@@ -172,7 +172,7 @@ When no network is available:
 3. Built-in supplement and food interaction tables remain fully functional
 4. All results are labeled `[Offline — Claude knowledge base only]`
 5. Confidence is capped at `medium` for all offline results
-6. A banner is shown at the top of every interaction report: "Network unavailable. Results are based on Claude's training data. Verify with your pharmacist."
+6. A banner is shown at the top of every interaction report: "Network unavailable. Results are based on Claude's training data and may be wrong or incomplete. Verify with both your doctor and pharmacist."
 
 ---
 

@@ -8,3 +8,4 @@ Tracks implemented upgrades to this skill. Future upgrade ideas are in [future-u
 | 2026-05-15 | Travel medication mode | Added travel medication mode with country restriction guidance. |
 | 2026-05-15 | Emergency card auto print | Added an emergency card auto print workflow. |
 | 2026-05-15 | Expanded OCR support | Expanded OCR support for handwritten and faxed prescription material, updated supporting docs, and rebuilt `med-vault.skill`. |
+| 2026-05-24 | Stronger medical warning language | Tightened every-response disclaimer language so users are told MedVault can be wrong or incomplete and must verify results with both a doctor and pharmacist. |

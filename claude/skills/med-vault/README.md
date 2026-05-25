@@ -128,6 +128,7 @@ MedVault/
 ```
 
 All data is local. Audit log is append-only. Images are renamed to UUIDs on import.
+Do not push MedVault runtime data or exports to any GitHub repository.
 
 ---
 

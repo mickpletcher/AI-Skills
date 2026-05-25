@@ -4,6 +4,7 @@ Compiled from repo history and the current working tree.
 
 ## 2026-05-24
 
+- Updated `claude/skills/med-vault` to explicitly block git and GitHub publishing behavior for MedVault runtime data and exports
 - Strengthened `claude/skills/med-vault` warnings and disclaimers so every response states that MedVault is not medical advice, can be wrong or incomplete, and must be checked with both a doctor and pharmacist
 - Rebuilt `claude/skills/med-vault/med-vault.skill` so the packaged Claude import matches the updated safety language
 - Upgraded `claude/skills/travel-itinerary` with visa and border crossing checkpoints, lodging decision notes, and smarter arrival and departure day templates

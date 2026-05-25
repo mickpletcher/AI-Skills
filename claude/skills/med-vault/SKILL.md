@@ -34,6 +34,12 @@ Every MedVault response must end with the required safety disclaimer.
 This applies to all commands, all follow up answers, all OCR results, all schedules, all exports, all edit confirmations, and all general medication discussions.
 The disclaimer must state that MedVault is not medical advice, that the information can be wrong or incomplete, that mistakes can be made in every MedVault feature, and that the user must always check the data with both a licensed doctor and a licensed pharmacist.
 
+## Repository Safety Rule
+
+- MedVault data is local only.
+- Do not run, suggest, or automate any git or GitHub publishing step for MedVault runtime data, exports, images, logs, or user medication records.
+- If the user asks to sync MedVault data, keep it local and offer local export options only.
+
 ## Workflow
 
 ### Command Reference

@@ -36,6 +36,7 @@ Update `SKILL.md` when the analysis workflow changes, then rebuild `food-analyze
 - Meal history review across repeated analyses
 - User preference memory for favorite foods, sensitivities, and recurring supplement interactions
 - Medication and supplement interaction warnings
+- Supplement stacking cautions when a stated meal and supplement combination creates practical issues
 - NOVA ultra-processed food scoring
 - Healthier swap suggestions when warranted
 
@@ -69,6 +70,8 @@ fa scan this label and tell me whether the confidence is high or low
 fa review these 5 repeated breakfasts and find the pattern
 
 fa analyze this meal as a pre workout option
+
+fa check this breakfast with my pre-workout and magnesium for supplement stacking issues
 ```
 
 ## Installation

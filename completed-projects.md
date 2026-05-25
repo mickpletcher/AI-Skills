@@ -35,7 +35,22 @@ The repo already defines GitHub Copilot work as a separate platform area under `
 2. PR review
 `copilot/skills/pr-review` now exists for risk focused pull request review that looks for regressions and missing tests.
 
-3. GitHub workflows already support repo maintenance
+3. Repo cleanup audit
+`copilot/skills/repo-cleanup-audit` now exists for classifying stale files, historical artifacts, generated outputs, and current source of truth files before cleanup.
+
+4. Commit message writer
+`copilot/skills/commit-message-writer` now exists for consistent, ready to paste commit messages from diffs, changed files, or work summaries.
+
+5. Spec scaffold
+`copilot/skills/spec-scaffold` now exists for generating numbered spec folders with requirements, plan, and task files.
+
+6. README sync
+`copilot/skills/readme-sync` now exists for reconciling README claims with actual code, scripts, commands, tests, and outputs.
+
+7. Project handoff
+`copilot/skills/project-handoff` now exists for creating durable handoff docs such as `assessment.md`, `project-analysis.md`, or `handoff.md`.
+
+8. GitHub workflows already support repo maintenance
 The repo already uses `.github/` for workflow driven maintenance such as the `resume-writer` refresh flow.
 
 ## Cursor Skills Completed

@@ -271,7 +271,12 @@ Current examples:
 
 | Skill | Description |
 | ----- | ----------- |
+| [commit-message-writer](./copilot/skills/commit-message-writer/) | Write consistent, ready to paste commit messages from diffs or work summaries |
 | [pr-review](./copilot/skills/pr-review/) | Review pull requests for regressions, practical risk, and missing tests |
+| [project-handoff](./copilot/skills/project-handoff/) | Create durable handoff docs such as assessment, project analysis, or session context files |
+| [readme-sync](./copilot/skills/readme-sync/) | Reconcile README claims with actual code, scripts, commands, tests, and outputs |
+| [repo-cleanup-audit](./copilot/skills/repo-cleanup-audit/) | Classify stale files, generated artifacts, historical records, and source of truth files before cleanup |
+| [spec-scaffold](./copilot/skills/spec-scaffold/) | Generate numbered spec folders with requirements, plan, and task files |
 
 ## Gemini Skills
 

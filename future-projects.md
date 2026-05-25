@@ -299,21 +299,6 @@ Good fit for stale README detection, broken link review, and missing setup cover
 3. `copilot/skills/test-gap-review`
 A focused skill for checking changed files against missing or weak test coverage.
 
-4. `copilot/skills/commit-message-writer`
-Useful for repo work where you want consistent, ready to paste commit messages.
-
-5. `copilot/skills/spec-scaffold`
-A skill for generating numbered spec folders and the supporting requirements, plan, and task files.
-
-6. `copilot/skills/repo-cleanup-audit`
-Would help classify stale files, historical artifacts, and current source of truth files before cleanup.
-
-7. `copilot/skills/readme-sync`
-Focused on reconciling README claims with actual code, scripts, commands, and outputs.
-
-8. `copilot/skills/project-handoff`
-Useful for creating `assessment.md`, `project-analysis.md`, or similar handoff docs after substantial work.
-
 ### Tier 3
 
 1. `copilot/skills/security-review`

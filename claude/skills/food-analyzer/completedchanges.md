@@ -12,4 +12,5 @@ This tracked file records shipped changes for this skill.
 - 2026-05-13: Added ingredient risk grouping. The skill now groups additives, sweeteners, seed oils, and ultra-processed signals more cleanly.
 - 2026-05-13: Added meal history review. The skill can now look across repeated analyses and find meal patterns.
 - 2026-05-13: Added user preference memory. The skill can now carry favorite foods, sensitivities, and recurring supplement interactions within the conversation.
+- 2026-05-25: Added supplement stacking cautions. The skill now flags practical issues when a stated meal and supplement combination affects stimulant load, absorption, timing, sodium, GI tolerance, redundancy, blood sugar, or sleep.
 

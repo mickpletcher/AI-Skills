@@ -9,6 +9,9 @@ Compiled from repo history and the current working tree.
 - Upgraded `claude/skills/travel-itinerary` with visa and border crossing checkpoints, lodging decision notes, and smarter arrival and departure day templates
 - Upgraded `claude/skills/travel-research` with live data checks for flight pricing, weather normals, and crowd levels plus travel friction scoring
 - Upgraded `claude/skills/facebook-post` with cross-platform output bundles for Facebook, X, and LinkedIn versions from one source draft
+- Upgraded `food-analyzer` with supplement stacking cautions for meal and supplement combinations that create practical timing, absorption, stimulant, sodium, GI, blood sugar, redundancy, or sleep issues
+- Added the Copilot skill `copilot/skills/repo-cleanup-audit/` for classifying stale files, historical artifacts, generated outputs, and source of truth files before cleanup
+- Added Copilot skills for commit message writing, spec scaffolding, README sync audits, and project handoff docs
 
 ## 2026-05-22
 

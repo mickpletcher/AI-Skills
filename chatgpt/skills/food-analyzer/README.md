@@ -74,6 +74,7 @@ It produces structured nutritional guidance with:
 - blood sugar impact
 - meal timing guidance
 - medication and supplement interaction notes
+- supplement stacking cautions for stated meal and supplement combinations
 - healthier alternatives when needed
 
 ## File Structure

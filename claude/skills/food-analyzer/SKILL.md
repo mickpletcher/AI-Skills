@@ -4,7 +4,7 @@ description: >
   Analyze food photos, nutrition labels, and ingredient lists. Trigger on food images,
   nutrition label scans, macro questions, glycemic questions, medication interaction checks,
   and similar food-analysis requests.
-version: 1.1.0
+version: 1.2.0
 ---
 
 # Food Analyzer
@@ -112,6 +112,7 @@ The analysis should be structured, readable, and practical. It should cover:
 - glycemic index or load estimates when relevant
 - timing fit for pre-workout, post-workout, before bed, with medication, or general use
 - clinically significant medication or supplement interactions
+- practical supplement stacking cautions when the meal plus supplement combination could create issues
 - quantified healthier swaps when needed
 
 Start with a short quick summary that is easy to scan before the deeper analysis.
@@ -209,6 +210,35 @@ Adjust meal timing guidance based on likely use:
 
 If timing is not stated, infer the most relevant use case and say so briefly.
 
+## Supplement Stacking Cautions
+
+When the user mentions supplements, pre-workout, vitamins, minerals, protein powders, energy drinks, or fortified foods, check whether the meal plus supplement combination raises practical issues.
+
+Flag only realistic cautions. Do not invent supplement use that was not shown or stated.
+
+Common stacking issues to check:
+
+- caffeine stacking from coffee, energy drinks, pre-workout, fat burners, or highly caffeinated foods
+- stimulant plus high sugar combinations that may worsen jitters, reflux, appetite swings, or blood sugar swings
+- calcium, magnesium, iron, zinc, or high fiber meals that can interfere with absorption when taken together
+- fat-soluble supplements such as vitamins A, D, E, K, or fish oil that may fit better with a meal containing fat
+- high sodium meals plus electrolyte supplements when total sodium may be excessive
+- protein powder plus a high protein meal when the result is redundant rather than useful
+- creatine, pre-workout, or electrolyte timing around training when the meal timing makes the stack less practical
+- alcohol plus sedating supplements, sleep aids, or blood sugar sensitive supplements
+
+Use a concise output when relevant:
+
+```text
+Supplement Stacking Caution
+- Issue: [meal + supplement combination]
+- Practical concern: [absorption, stimulant load, GI tolerance, redundancy, sodium load, blood sugar, or sleep]
+- Better timing: [short adjustment]
+- Confidence: [high, medium, low]
+```
+
+End this section with the same pharmacist and physician disclaimer used for medication and supplement interaction notes.
+
 ## Meal History Review
 
 When the user provides repeated meals or multiple prior analyses:
@@ -244,6 +274,7 @@ Use those preferences to refine later recommendations, but say when a conclusion
 - [ ] NOVA classification includes rationale
 - [ ] Blood sugar impact is explained, not just labeled
 - [ ] Medication and supplement warnings stay factual and include a disclaimer
+- [ ] Supplement stacking cautions are included when a stated meal and supplement combination creates a practical issue
 - [ ] Healthier swaps appear only when the food scores poorly
 
 ## Help And Examples

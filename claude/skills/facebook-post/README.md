@@ -32,6 +32,7 @@ Update `SKILL.md` when the Facebook post workflow changes, then rebuild `faceboo
 - Matching the caption to build photos, screenshots, or workout images when that context is present
 - Avoiding forced engagement bait when a question would weaken the post
 - Repurposing a finished Facebook post into a matching X post
+- Producing Facebook, X, and LinkedIn versions from one source draft
 - Learning from prior high performing post patterns when you provide them
 - Adding relevant hashtags without turning the post into spam
 
@@ -45,6 +46,7 @@ Update `SKILL.md` when the Facebook post workflow changes, then rebuild `faceboo
 - The skill keeps engagement prompts natural and skips them when they would feel forced
 - The skill adjusts captions when the draft is tied to a photo, screenshot, or workout image
 - The skill can also produce a matching X version when you ask for repurpose mode
+- The skill can produce a labeled Facebook, X, and LinkedIn bundle when you ask for cross-platform output
 - The skill can use prior post performance signals to improve the next draft when you provide examples or notes
 - It returns one finished Facebook post by default rather than a menu of options
 
@@ -55,6 +57,7 @@ Update `SKILL.md` when the Facebook post workflow changes, then rebuild `faceboo
 - `project progress`
 - `opinion`
 - `repurpose to X`
+- `cross-platform bundle`
 - `feedback guided`
 
 ## Supported Length Presets
@@ -86,6 +89,8 @@ fbp turn this into a friends and family update that matches a workout photo
 
 fbp repurpose this Facebook post into a matching X post
 
+fbp make this one source draft into Facebook, X, and LinkedIn versions
+
 fbp use the hook style from my prior high comment project posts and rewrite this update
 ```
 
@@ -95,7 +100,7 @@ Package `SKILL.md` into `facebook-post.skill`, then install it with your normal 
 
 ## Upgrade Log
 
-See [upgrades.md](upgrades.md) for the structured upgrade log and [completedchanges.md](completedchanges.md) for tracked completed changes.
+See [upgrades.md](upgrades.md) for the structured upgrade log and [completed-changes.md](completed-changes.md) for tracked completed changes.
 
 ## Implement In Claude
 

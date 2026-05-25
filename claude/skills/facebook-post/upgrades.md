@@ -12,3 +12,4 @@ Tracks implemented upgrades to this skill. Future upgrade ideas are in [future-u
 | 2026-05-13 | Added audience mode support | The skill now infers friends and family, technical peers, or mixed audience framing based on the draft. |
 | 2026-05-13 | Added X repurpose mode | The skill can now turn a Facebook post into a matching X post while preserving the core point in a tighter format. |
 | 2026-05-13 | Added feedback guided mode | The skill can now use prior post performance patterns to improve the next Facebook draft when the user provides examples or results. |
+| 2026-05-25 | Added cross-platform output bundles | The skill can now produce aligned Facebook, X, and LinkedIn versions from one source draft. |

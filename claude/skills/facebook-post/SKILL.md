@@ -1,18 +1,18 @@
 ---
 name: facebook-post
-description: Write and polish Facebook posts on any topic. Trigger on requests to draft, rewrite, polish, or improve a Facebook post, especially when the user starts with `fbp`.
-version: 1.4.0
+description: Write and polish Facebook posts on any topic. Trigger on requests to draft, rewrite, polish, improve a Facebook post, or create cross-platform Facebook, X, and LinkedIn bundles, especially when the user starts with `fbp`.
+version: 1.5.0
 ---
 
 # Facebook Post
 
 ## Intent
 
-Write Facebook posts in Mick's voice with clear audience control, photo awareness, and optional X repurpose output.
+Write Facebook posts in Mick's voice with clear audience control, photo awareness, optional X repurpose output, and cross-platform Facebook, X, and LinkedIn bundles.
 
 ## Do Not Use When
 
-- Do not use for replies, LinkedIn posts, blog posts, or content that needs facts not provided or verified.
+- Do not use for replies, blog posts, or content that needs facts not provided or verified.
 - Required context is missing and cannot be reasonably inferred.
 - A more specific skill in this repo is a better match.
 
@@ -24,6 +24,7 @@ Write and polish Facebook posts for Mick in a direct, casual, first-person voice
 - The user asks to write, draft, create, rewrite, or polish a Facebook post
 - The user wants social copy that is clearly intended for Facebook
 - The user wants an existing Facebook post turned into a matching X post
+- The user wants one source draft turned into Facebook, X, and LinkedIn versions
 - The user wants a new post based on what previously performed best
 
 Treat `fbp` as an immediate trigger. Do not ask clarifying questions first unless the draft is missing a critical fact that would change the post.
@@ -41,7 +42,8 @@ Treat `fbp` as an immediate trigger. Do not ask clarifying questions first unles
 9. Add relevant hashtags when they genuinely fit.
 10. Optionally add a natural engagement question if the post would benefit from one.
 11. If the user asks for X repurpose mode, also produce a matching X post that keeps the same core point in tighter platform native form.
-12. If the user provides prior post performance signals, use them to shape the hook, structure, tone, and length of the new draft.
+12. If the user asks for a cross-platform bundle, produce Facebook, X, and LinkedIn versions from the same source draft.
+13. If the user provides prior post performance signals, use them to shape the hook, structure, tone, and length of the new draft.
 
 ## Non-Negotiable Rules
 
@@ -73,6 +75,7 @@ Infer one of these modes unless the user explicitly asks for a different one:
 - `project progress`: container home, build work, DIY, or ongoing long term effort
 - `opinion`: clear point of view, reaction, or lesson learned
 - `repurpose to X`: convert an existing Facebook post into a matching X post without flattening it into generic promo copy
+- `cross-platform bundle`: produce Facebook, X, and LinkedIn versions from one source draft while preserving the same facts and core point
 - `feedback guided`: use prior post performance patterns to improve the next draft
 
 ### Mode Guidance
@@ -82,6 +85,7 @@ Infer one of these modes unless the user explicitly asks for a different one:
 - `project progress`: make clear what changed today and how it fits the larger build or plan.
 - `opinion`: state the point plainly. Back it with one or two concrete reasons.
 - `repurpose to X`: keep the same point, strongest detail, and voice, then compress it into one post that reads natively on X
+- `cross-platform bundle`: write a natural Facebook version, a tight X version, and a more professional LinkedIn version without making the source sound corporate
 - `feedback guided`: preserve the new message while borrowing what worked from earlier high interaction posts
 
 ## Length Presets
@@ -188,6 +192,7 @@ Use this structure unless the draft clearly calls for a small variation:
 - If the draft is thin, strengthen the wording but do not invent facts
 - If the user asks for choices, provide up to 3 hook options before the final full post
 - If the user asks for X repurpose mode, return the X version after the Facebook post
+- If the user asks for a cross-platform bundle, return labeled Facebook, X, and LinkedIn sections in that order
 - If the user asks for feedback guided mode, briefly apply the stated winning patterns without exposing internal chain of thought
 
 ## X Repurpose Rules
@@ -201,6 +206,20 @@ When repurposing a Facebook post into X:
 - do not reuse the Facebook wording line for line
 - keep the tone direct, specific, and first person
 - drop filler setup and keep only what survives the character budget
+
+## Cross-Platform Bundle Rules
+
+When creating Facebook, X, and LinkedIn versions from one source draft:
+
+- preserve the same core point, facts, numbers, and claim boundaries across all three outputs
+- make the Facebook version sound like a natural personal or project update
+- make the X version fit under 280 characters including hashtags
+- make the LinkedIn version more professional and outcome focused without using corporate filler
+- avoid copying the same first sentence across all three platforms
+- keep hashtags platform appropriate: up to 6 for Facebook, 2 to 3 for X, and 3 to 5 for LinkedIn
+- use labels exactly: `Facebook`, `X`, and `LinkedIn`
+- do not add a blog version unless the user asks for one
+- if the source facts are thin, keep all three versions short instead of padding them
 
 ## Feedback Learning Rules
 
@@ -223,6 +242,8 @@ If the user does not provide prior examples or signals, skip feedback learning a
 - Do not add empty engagement bait just to manufacture comments
 - Do not write captions that clash with the attached or implied image context
 - Do not turn a specific Facebook post into vague generic X promo copy
+- Do not make LinkedIn copy sound like a press release or resume bullet list
+- Do not let cross-platform bundles drift into three different messages
 - Do not overfit to old posts when the new topic clearly needs a different structure
 
 ## Validation Checklist
@@ -239,6 +260,7 @@ If the user does not provide prior examples or signals, skip feedback learning a
 - [ ] Avoids forced engagement bait
 - [ ] Uses only relevant hashtags
 - [ ] Produces a tight matching X version when repurpose mode is requested
+- [ ] Produces aligned Facebook, X, and LinkedIn versions when cross-platform bundle mode is requested
 - [ ] Uses prior feedback patterns only when they genuinely improve the new draft
 
 ## Help And Examples
@@ -258,5 +280,6 @@ Example prompts:
 
 - `fbp cleaned up a PowerShell script that was failing in CI and finally got the analyzer warnings to zero`
 - `Use facebook-post to rewrite this update so it sounds more natural and still keeps the technical details.`
+- `fbp make this one source draft into Facebook, X, and LinkedIn versions.`
 - `Show me a sample prompt for turning a project progress note into a Facebook post.`
 

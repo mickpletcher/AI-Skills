@@ -8,6 +8,7 @@ Compiled from repo history and the current working tree.
 - Rebuilt `claude/skills/med-vault/med-vault.skill` so the packaged Claude import matches the updated safety language
 - Upgraded `claude/skills/travel-itinerary` with visa and border crossing checkpoints, lodging decision notes, and smarter arrival and departure day templates
 - Upgraded `claude/skills/travel-research` with live data checks for flight pricing, weather normals, and crowd levels plus travel friction scoring
+- Upgraded `claude/skills/facebook-post` with cross-platform output bundles for Facebook, X, and LinkedIn versions from one source draft
 
 ## 2026-05-22
 

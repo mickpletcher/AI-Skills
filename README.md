@@ -316,7 +316,7 @@ Platform folder:
 3. Use `shared/` for naming, structure, and repo-level guidance only.
 4. Record checks with [templates/test-template.md](./templates/test-template.md).
 
-For Claude skills, keep tracked shipped history in `completedchanges.md` and keep local `future-upgrades.md` files focused on future planning only.
+For Claude skills, keep tracked shipped history in `completed-changes.md` and keep local `future-upgrades.md` files focused on future planning only.
 
 ## Spec Workflow
 

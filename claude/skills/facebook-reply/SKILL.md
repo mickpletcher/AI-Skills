@@ -1,7 +1,7 @@
 ---
 name: facebook-reply
 description: Write replies to Facebook comments on Mick's posts. Trigger on requests to reply to a Facebook comment, especially when the user starts with `fbr`.
-version: 1.1.0
+version: 1.2.0
 ---
 
 # Facebook Reply
@@ -176,6 +176,28 @@ If several comments are repeating the same question or misunderstanding:
 - detect the repeated theme
 - draft one short pinned clarification reply
 - make it broad enough to cover the repeated question without sounding canned
+
+## CTA Aware Replies
+
+When the conversation should move somewhere more useful than the comment thread:
+
+- `move to DM`: when the answer needs personal detail, back and forth, or anything not worth airing publicly. Close with a natural invitation such as offering to message them directly, not a canned "DM me".
+- `point to the blog`: when a post already answers the question in depth. Give the one-line answer first, then mention the writeup exists. Never reply with only a link.
+- `tease a follow-up post`: when the question deserves a full post. Answer briefly and note that a longer update is coming. Only do this when the user actually plans one.
+
+Default to answering in place. Use a CTA only when staying in the thread would shortchange the answer.
+
+## Reply Choices Mode
+
+When the comment is high stakes (public criticism, a sensitive topic, a person who matters to Mick) or the user asks for options, return 2 to 3 distinct replies that take genuinely different approaches, such as direct answer, brief boundary, or warm redirect. Label them simply and note in one short line when one option carries more risk. Otherwise return a single reply as usual.
+
+## Follow-Up Chaining
+
+If Mick has already replied once in the thread and the commenter responded again:
+
+- treat the prior reply as established context and do not repeat its points
+- decide whether a second reply adds value; recommend ending the exchange when it would just loop
+- when a second reply is worth it, make it shorter than the first and aim it at closing the loop, not reopening the debate
 
 ## Output Rules
 

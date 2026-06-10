@@ -4,6 +4,9 @@ Tracks implemented upgrades to this skill. Future upgrade ideas are in [future-u
 
 | Date | Upgrade | Notes |
 |------|---------|-------|
+| 2026-06-10 | Added event clustering | Time and location clusters share one event naming pattern so whole trips name consistently. |
+| 2026-06-10 | Added subject category rules | People, pets, landscapes, tools, and project progress photos each get matched subject naming. |
+| 2026-06-10 | Added rename preview summaries | Large batches open with event counts and outliers so review focuses on exceptions. |
 | 2026-05-13 | Added stronger filename ordering rules | Keeps date, location, event, and subject ordering more consistent |
 | 2026-05-13 | Added confidence handling | Separates clear identifications from partial or low-confidence guesses |
 | 2026-05-13 | Added collision-safe rename behavior | Appends stable suffixes when duplicate names would otherwise collide |

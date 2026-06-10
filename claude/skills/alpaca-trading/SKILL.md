@@ -1,6 +1,7 @@
 ---
 name: alpaca-trading
 description: Work safely in the Trading repository for Alpaca helpers, backtesting, journaling, scheduling, and related PowerShell modules. Prefer additive changes, preserve existing trading logic unless the user asks otherwise, and default to paper-trading-safe guidance.
+version: 1.1.0
 ---
 
 # Alpaca Trading
@@ -100,6 +101,47 @@ If AI analysis is added, keep it advisory:
 - AI returns a labeled assessment such as `BULLISH`, `BEARISH`, or `NEUTRAL`
 - deterministic code applies risk checks and order rules
 - model output alone must not place an order
+
+### Alpaca Capability Profile
+
+Tailor repo advice to how Alpaca actually behaves rather than generic broker assumptions:
+
+- Paper and live use the same API shape but different endpoints; paper fills are simulated and optimistic, so backtest and paper results overstate live fill quality, especially for market orders in thin symbols.
+- Fractional shares trade market-only and have order type restrictions; do not propose fractional limit logic.
+- Bracket and OCO orders are supported but legs cannot be amended freely; cancel and replace is the realistic pattern.
+- Crypto trading has different fee, precision, and minimum rules than equities; do not reuse equity assumptions in `btc-signal-executor/`.
+- Equity market data on the free tier is IEX-only and delayed for some uses; flag when a strategy assumes SIP-quality data the account may not have.
+- PDT rules apply to margin equity accounts under $25k; day trading logic should check account status instead of assuming.
+
+When a proposal depends on an Alpaca behavior not listed here, verify it against current Alpaca docs instead of assuming.
+
+### Order Lifecycle Checklist
+
+Before proposing or reviewing a change that touches order placement, walk the full lifecycle:
+
+- **Entry**: validated symbol, side, quantity, and order type; idempotency or duplicate-submit protection; behavior when the market is closed
+- **Open order**: what happens to unfilled limit orders at end of day; time-in-force is explicit, not defaulted silently
+- **Partial fills**: position sizing, journaling, and exit logic handle a partially filled entry without double-ordering
+- **Exits**: stop and target exist before or at entry (bracket or managed); exit logic survives a restart with positions already open
+- **Cancel/replace**: replaces are atomic from the strategy's view; stale order IDs are not reused
+- **Failure paths**: rejected orders, API errors, and timeouts are logged to the journal and do not leave untracked positions
+
+A change is incomplete if it improves one lifecycle stage and silently breaks another.
+
+## Regression Test Matrix
+
+Map the kind of change to the test passes that must run before it ships:
+
+| Change touches | Run |
+| --- | --- |
+| `src/` PowerShell modules | Pester tests in `Tests/`, plus a paper-endpoint smoke call for the touched module |
+| `Alpaca/` helpers | Python tests in `Tests/`, paper-endpoint smoke test |
+| Order or risk logic anywhere | Full `Tests/` suite plus a paper trade round trip: place, verify, cancel |
+| `Backtesting/` | Backtest determinism check: same data in, same results out, before and after |
+| `Scheduler/` | Dry-run the scheduled job manually and verify journal output |
+| `rsi_macd_bot/` or `btc-signal-executor/` | That bot's own tests plus a paper session observed end to end |
+
+If a needed test does not exist, write it as part of the change rather than noting it as a gap.
 
 ## Constraints
 

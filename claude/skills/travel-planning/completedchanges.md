@@ -11,4 +11,6 @@ This tracked file records shipped changes for this skill.
 - 2026-05-13: Added risk notes. Covers transit complexity, safety, visa friction, and overpacked itineraries
 - 2026-05-13: Added packing and gear suggestions. Ties packing guidance to the chosen trip type
 - 2026-05-13: Added itinerary handoff guidance. Lets planning flow directly into day-by-day itinerary output
-
+- 2026-06-10: Book-now versus watch calls with booking windows and trigger fares.
+- 2026-06-10: Flexible trips align to training blocks, races, and destination seasons.
+- 2026-06-10: Neighborhoods rank on transit, training, and workability before hotels are suggested.

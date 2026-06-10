@@ -1,6 +1,7 @@
 ---
 name: proxmox-lxc
 description: Deploy and configure Proxmox LXC containers for self-hosted services. Always trigger immediately when Mick asks to deploy, set up, or configure a new service on Proxmox, mentions spinning up a container, or needs a systemd service, Cloudflare Tunnel entry, or UniFi static IP assignment. Generate the full stack including the pct create command, container config, apt setup, systemd unit file, and Cloudflare Tunnel config entry from a service name and IP.
+version: 1.1.0
 ---
 
 # Proxmox LXC Deployment
@@ -56,6 +57,40 @@ Deploy and configure Proxmox LXC containers for self-hosted services on Mick's h
 | Existing containers | `CT 104` = `n8n` at `192.168.0.81` |
 | Template | Ubuntu 22.04 standard |
 | Next available CT ID | Ask Mick or check with `pvesh get /nodes/{node}/lxc` |
+
+## Pre-Deployment Checks
+
+Resolve these before generating the `pct create` command, and state any assumption made:
+
+- **CT ID and IP**: confirm both are unused (`pct list`, ping or UniFi client list); never reuse an IP from the reference table
+- **Resources**: check host headroom (`pvesh get /nodes/{node}/status` or the dashboard) before assigning memory and cores; size from the workload table, not habit
+- **Disk**: estimate data growth, not just install size; databases and media services should not sit on an 8GB rootfs
+- **Privilege**: default unprivileged; flag the specific reason if a service genuinely needs a privileged container or device passthrough (NFS mounts, GPU, tun device for VPN) and name the exact feature flags instead of falling back to privileged mode
+- **Network**: confirm the bridge and whether the service belongs on the main LAN or a separate VLAN; anything exposed through Cloudflare Tunnel should not also need inbound LAN ports opened
+
+## Service Recipes
+
+Common services deviate from the generic sequence in known ways. Apply these adjustments on top of the full deployment sequence:
+
+| Service | Memory | Disk | Notes |
+| --- | --- | --- | --- |
+| Pi-hole | 512MB | 8GB | Port 53 TCP/UDP plus web UI; set the container as DNS only after verifying it resolves |
+| Home Assistant | 2048MB | 16GB | Privileged or device passthrough for USB radios; prefer HAOS VM if heavy add-on use is planned |
+| Ollama / local LLM | 4096MB+ | 32GB+ | Models dominate disk; GPU passthrough needs the host driver plus cgroup device entries |
+| PostgreSQL / MariaDB | 2048MB | 16GB+ | Put data on a dedicated mount point; schedule dumps, not just snapshots |
+| Grafana / monitoring | 1024MB | 8GB | Pair with a metrics store; do not point it at production databases without a read-only user |
+| FastAPI / MCP server | 512MB | 8GB | The generic sequence as written |
+
+For services not listed, follow the generic sequence and say which recipe assumptions were borrowed.
+
+## Backup And Rollback
+
+Make changes testable before they are permanent:
+
+- snapshot before any in-container upgrade or config change: `pct snapshot {CT_ID} pre-{change}-$(date +%Y%m%d)`
+- snapshots are not backups; schedule `vzdump` to storage that is not the same disk as the containers, and verify a restore once rather than assuming
+- for stateful services, back up the application data path (database dumps, `/opt/{service}` config) separately from the container image so data can restore into a rebuilt container
+- write the rollback step next to the change step in any plan this skill outputs; a change without a rollback line is incomplete
 
 ## Full Deployment Sequence
 

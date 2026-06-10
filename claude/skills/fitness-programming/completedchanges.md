@@ -13,3 +13,6 @@ This tracked file records shipped changes for this skill.
 - 2026-05-14: Added annual season architecture. The skill now supports rotating strength, endurance, and hybrid emphasis blocks across a longer horizon.
 - 2026-05-14: Added fitness-log integration guidance. Logged sessions can now feed the next programming adjustment more directly.
 - 2026-05-14: Added event countdown planning. The skill now anchors race prep and milestone plans to a target timeline.
+- 2026-06-10: Gym strength, endurance support, brick day, and recovery week sessions are defined concretely per block.
+- 2026-06-10: Stalls are attributed to recovery, progression design, or exercise choice before changes are made.
+- 2026-06-10: Every session is marked YMCA, home, or either with home fallbacks.

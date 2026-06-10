@@ -10,4 +10,6 @@ This tracked file records shipped changes for this skill.
 - 2026-05-13: Added CTA styles. The skill now supports hiring, networking, repo traffic, discussion, or no CTA based on fit.
 - 2026-05-13: Added tone controls. The skill now supports practitioner, leadership, and builder focused audience tones.
 - 2026-05-13: Added audience testing variants. The skill can now compare a more technical draft with a broader professional draft.
-
+- 2026-06-10: Posts that benefit from screenshots, sketches, or carousels get an attach note with slide headlines when relevant.
+- 2026-06-10: Multi-post project writeups get 3 to 5 ordered topics with hooks and continuity.
+- 2026-06-10: Strong short posts can be expanded into LinkedIn article drafts in the same voice.

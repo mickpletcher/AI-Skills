@@ -7,7 +7,7 @@ description: >
   or other travelers. Trigger when the user asks to turn trip emails into an
   HTML itinerary, travel handoff page, shareable trip page, family trip summary,
   booking-reference page, or offline travel document.
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Trip Email HTML Itinerary
@@ -96,6 +96,13 @@ Produce a complete HTML document with these sections, omitting only sections wit
 8. Event notes for schedule-sensitive activities and warnings.
 9. Travel admin with passport/visa notes, trusted traveler notes, insurance, pending bookings, and canceled items.
 
+## Constraints
+
+- Do not fabricate addresses, phone numbers, confirmation codes, or times; use `TBD` or `Pending`.
+- Never include PINs, access codes, passwords, payment card details, or sensitive login URLs; redact as `[redacted]`.
+- The output must work fully offline with no remote dependencies of any kind.
+- Treat visa, entry, and customs notes as verification checklists, not legal advice.
+
 ## HTML Output Rules
 
 - Return only the full HTML document in one fenced `html` code block unless the user explicitly asks for explanation or files.
@@ -135,7 +142,33 @@ Avoid:
 - dense tables that overflow on phones
 - tiny low-contrast text
 
-## Required Validation
+## Companion Emergency Contact Sheet
+
+When the user asks for an emergency sheet, or the trip involves international travel or travelers separating, offer a companion plain-text contact sheet after the HTML block. It exists for the moment a phone is dead or a screen will not load, so it must survive being printed or read aloud:
+
+```text
+TRIP EMERGENCY SHEET - [Trip title] - [Date range]
+Travelers: [names]
+
+LODGING (in date order)
+[Dates] [Property] | [Address] | [Phone] | Booking: [code]
+
+FLIGHTS
+[Date] [Airline + flight] [Route] | Conf: [code] | Airline phone: [number]
+
+GROUND TRANSPORT
+[Rental company] | Pickup: [location/date] | Conf: [code] | Phone: [number]
+
+KEY CONTACTS
+Travel insurance: [provider, policy, emergency line]
+Embassy: [city, phone] (per country visited)
+Emergency number in-country: [911 equivalent]
+Home contact: [name, phone]
+```
+
+Plain text only, no markup, same redaction rules as the HTML. Include only verified data; mark gaps as `TBD` so the user fills them before departure.
+
+## Validation Checklist
 
 Before finalizing, check the HTML mentally against this list:
 

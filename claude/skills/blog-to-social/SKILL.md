@@ -1,7 +1,7 @@
 ---
 name: blog-to-social
-description: Convert a finished blog post into three ready-to-post social media versions in one pass for Facebook, X, and LinkedIn. Trigger when the user pastes or links a blog post and asks to share it, promote it, or turn it into social content.
-version: 1.0.0
+description: Convert a finished blog post into three ready-to-post social media versions in one pass for Facebook, X, and LinkedIn. Always trigger immediately when the user's message starts with "bts". Also trigger on "blog to social", "social posts for this", "promote this post", or when the user pastes or links a blog post and asks to share it, promote it, or turn it into social content.
+version: 1.1.0
 ---
 
 # Blog To Social
@@ -87,6 +87,30 @@ LinkedIn should follow this order:
 5. Call to read or a real question for comments
 
 Avoid opening with `I` as the first word. Avoid phrases like `excited to share`, `game-changer`, or `diving deep`.
+
+## Length Controls
+
+Default lengths follow the platform rules above. Adjust when the user asks or when the source clearly calls for it:
+
+- `short`: one tight paragraph for Facebook and LinkedIn, the leanest X version
+- `medium`: the platform defaults
+- `thread`: for X only, when the post has 3 or more distinct takeaways worth separate posts; write a strong standalone opener plus numbered follow-up posts, each under 280 characters
+
+The user can mix, such as `bts short facebook, thread x`.
+
+## CTA Selection
+
+Pick one CTA intent per platform based on what the blog post actually offers:
+
+- `click through`: the post is a teaser and the value lives in the blog; end on the gap the link fills
+- `discussion`: the post takes a position or shares a tradeoff; end with one grounded question
+- `save for later`: the post is reference material such as a script or checklist; say plainly what the reader will come back for
+
+Do not stack CTAs, and skip the CTA entirely when the post stands alone.
+
+## Hook Quality Pass
+
+Before writing the three posts, pull the 2 to 3 strongest hook candidates from the blog post: the best number, the sharpest result, the most surprising finding. Pick a different lead for each platform when the material supports it, so the three posts read as siblings rather than copies. If the blog post buries its best detail in the middle, that detail is the hook.
 
 ## Output Format
 

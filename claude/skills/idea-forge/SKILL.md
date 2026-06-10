@@ -72,6 +72,9 @@ Default is **Full Pipeline**. Detect intent and run the smallest mode that fits.
 | Score Only | `idea score [idea]` | Stages 1 and 4 only — scoring table |
 | Expand Only | `idea expand [idea]` | Stages 1 and 3 only — expansion without scoring |
 | Commercialize | `idea commercialize [idea]` | Stages 1, 3 (business models only), and 5 (monetization output only) |
+| Compare | `idea compare [idea A] vs [idea B]` | Full scoring on both, side-by-side verdict |
+| Revisit | `idea revisit [idea]` | Re-run scoring on a previously forged idea against the current landscape |
+| Status | `idea status [idea]` | Check what changed since the idea was forged: new competitors, APIs, feasibility signals |
 
 Delivery targets:
 
@@ -275,6 +278,41 @@ Obsidian platform handling:
 - If the user only says "output to Obsidian" and gives no vault details, assume the destination folder name is `Ideas` but do not guess the vault name.
 
 ---
+
+## Idea Library
+
+Persisted analyses form a reusable library. The library is the set of `IdeaForge - YYYY-MM-DD - [name]` notes saved through the Apple Notes or Obsidian delivery steps; no separate database is needed.
+
+- When the user references a past idea by name, ask for or load its saved analysis as the baseline instead of re-deriving it from scratch.
+- When forging a new idea, mention an obviously related library entry if the user has referenced one this session; related ideas often share an MVP path.
+- When a library note is provided, treat its scores and assumptions as the prior state for Revisit and Status modes.
+
+## Compare Mode
+
+For `idea compare [A] vs [B]`:
+
+1. Run Stages 1, 2, and 4 on both ideas with the same conservative rules.
+2. Present both score tables side by side in one combined table with a delta column.
+3. Compare on the dimensions where they genuinely differ; note shared weaknesses once.
+4. End with a verdict: which to build first and why, or whether they combine into one stronger idea.
+
+## Revisit Mode
+
+For `idea revisit [idea]`:
+
+1. Load the prior analysis from the library, or ask the user to paste it if unavailable.
+2. Re-run Stage 2 and Stage 4 explicitly accounting for what has changed in the AI, API, and hardware landscape since the prior date.
+3. Output the new score table with a column showing prior score, new score, and what moved each changed metric.
+4. State plainly whether the verdict band changed and what single factor matters most now.
+
+## Status Mode
+
+For `idea status [idea]`:
+
+1. Take the previously forged idea and check what has changed: new competitors shipped, relevant APIs launched or died, costs dropped, the problem got solved elsewhere.
+2. Verify current facts rather than answering from memory when the landscape question is checkable.
+3. Output a short delta report: still open, partially closed, or overtaken, with the evidence for each claim.
+4. Recommend forge again, build now, or archive.
 
 ## Principles
 

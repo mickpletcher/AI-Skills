@@ -96,6 +96,23 @@ Return a complete blueprint in this order:
 
 For code or automation repos, include starter file contents when the user asks for a scaffold or when the idea is specific enough to generate useful files. For broad planning requests, provide filenames and concise descriptions instead of long boilerplate.
 
+## Stack Scaffolding Presets
+
+For Mick's common stacks, start from these opinionated presets instead of deriving the layout from scratch:
+
+- **PowerShell-first automation repo**: `src/` module folder with one `.psm1` plus a `.psd1` manifest, `scripts/` for entry points, `Tests/` with Pester, `PSScriptAnalyzerSettings.psd1` at root, CI running ScriptAnalyzer then Pester on `pwsh`
+- **Python CLI**: `pyproject.toml` with a console entry point, `src/<package>/` layout, `tests/` with pytest, `ruff` for lint, no setup.py
+- **Hybrid PowerShell and Python repo**: split by language at the top level like the Trading repo, shared `docs/` and `Tests/`, CI with one job per stack so a failure points at the right half
+- **Static site**: content separated from layout, local preview command documented, deploy workflow only when the host is known
+
+## Repo Documentation Plan
+
+Plan which planning docs are tracked versus local-only, following the pattern Mick's repos already use:
+
+- tracked: `README.md`, `changelog.md`, completed-work logs, specs
+- local-only (gitignored): future-upgrade backlogs, scratch assessments, personal notes
+- name the gitignore entries explicitly in the blueprint so local planning files never land in commits
+
 ## Folder Layout Rules
 
 Use an annotated tree. Keep the structure lean and useful.
@@ -176,6 +193,8 @@ Use conservative defaults:
 | Claude skill | package validation, archive creation, markdown checks |
 
 If no stack is clear, create a placeholder CI with markdown checks and TODO comments.
+
+Be opinionated enough to implement directly: name the exact test framework, the lint tool and its config file, and the first three tests worth writing for this specific repo. "Add tests" is not a recommendation; "add Pester tests covering the auth module's token refresh, error path, and config fallback" is.
 
 ## Issue And PR Templates
 

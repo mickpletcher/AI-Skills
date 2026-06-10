@@ -1,6 +1,7 @@
 ---
 name: n8n-workflow
 description: Design, build, or troubleshoot n8n automation workflows. Always trigger immediately when Mick mentions n8n, workflow nodes, automating a pipeline, or connecting services via n8n. Covers node selection, webhook patterns, Claude API integration, credential setup, Cloudflare Tunnel exposure, and Proxmox LXC deployment. Mick runs n8n on Proxmox CT 104 at 192.168.0.81:5678 with Cloudflare Tunnel for HTTPS.
+version: 1.1.0
 ---
 
 # n8n Workflow Builder
@@ -114,6 +115,41 @@ Schedule Trigger
     -> True branch: HTTP Request to Slack, Teams, or Discord webhook
        Body: "Workflow failed: {{ $workflow.name }} | Error: {{ $json.error.message }}"
 ```
+
+## Workflow Review Mode
+
+When the user shares an existing workflow (exported JSON, screenshot, or description) and asks whether it is solid, review it against these questions before suggesting changes:
+
+- **Trigger choice**: is the trigger right for the job? Polling schedules where a webhook exists waste runs; webhooks without secret validation are exposed.
+- **Idempotency**: if the workflow fires twice with the same input, does anything double: duplicate emails, double orders, repeated rows? Add a dedupe key check or upsert pattern where it matters.
+- **Retries**: do external calls retry transient failures, and is anything retried that must not be (payments, order placement)?
+- **Failure visibility**: when a node fails at 3am, does anyone find out? Every production workflow needs an error path that notifies.
+- **Data normalization**: are downstream nodes coupled to raw API shapes that will break on the next API change?
+
+Report findings in priority order with the smallest fix for each, and say plainly when a workflow is fine as-is.
+
+## Node-By-Node Build Template
+
+When the user wants exact wiring steps rather than a pattern sketch, deliver the build in this format, one entry per node:
+
+```text
+Node N: [Node type] - [name to give it]
+  Purpose: [one line]
+  Key settings: [the non-default fields and their values]
+  Connects from: [previous node and output branch]
+  Test: [what to pin or run to verify before moving on]
+```
+
+End with the order to activate things: build with pinned data, unpin, run once manually, then enable the trigger.
+
+## Self-Hosted Operations
+
+For Mick's CT 104 instance, treat these as part of any deployment-affecting change:
+
+- **Secrets**: keep the n8n encryption key (`N8N_ENCRYPTION_KEY`) backed up separately from the database backup; credentials are unrecoverable without it
+- **Backups**: back up `~/.n8n/` (SQLite database plus config) before n8n version updates; a `vzdump` of CT 104 before major upgrades is the cheap rollback
+- **Versioning**: export workflow JSON for anything important and keep it in a git repo; the n8n database is not a version control system
+- **Promotion**: test risky changes as a duplicated workflow with a manual trigger before swapping it into the scheduled or webhook slot, since this instance has no separate staging environment
 
 ## Morning Briefing Pipeline Pattern
 

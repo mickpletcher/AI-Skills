@@ -1,7 +1,7 @@
 ---
 name: github-social-preview
 description: Generates a professional GitHub repository social preview image sized 1280x640 pixels as a JPG under 1 MB. Always trigger immediately when the user's message starts with "gsp". Also trigger on "generate github social preview", "create repo preview image", or any request to generate a social preview or OG image for a GitHub repository.
-version: 1.1.0
+version: 1.2.0
 ---
 
 # GitHub Social Preview Skill
@@ -149,6 +149,41 @@ Theme presets now include:
 - `docs-blue`
 - `builder-green`
 - `launch-warm`
+
+## Accent Color Selection
+
+When the user does not specify a theme or accent, derive the accent from the repo's primary language so previews are recognizable at a glance:
+
+| Language | Accent |
+| --- | --- |
+| PowerShell | #012456 deep blue |
+| Python | #3776ab blue |
+| JavaScript / TypeScript | #f1e05a yellow / #3178c6 blue |
+| C# / .NET | #512bd4 purple |
+| Go | #00add8 cyan |
+| Rust | #dea584 amber |
+| Shell | #89e051 green |
+
+A user-provided accent or theme always wins over the language mapping. When the user mentions a brand color or pastes a hex value, use it directly and check title contrast against it.
+
+## Layout Variants
+
+Pick the layout emphasis from what the repo is:
+
+- `library or toolkit` (default): title dominant, subtitle, tag pills, language badge
+- `docs repo`: subtitle gets more weight since the description is the value; fewer tags, no language badge
+- `app or product`: screenshot placement preferred when one is available, title moves to the left column
+
+Infer the variant from topics and README signals, and say which variant was used in the confirmation output.
+
+## Batch Mode
+
+When the user provides multiple repo URLs (`gsp url1 url2 ...` or a pasted list):
+
+- process each repo through the full workflow, reusing one theme across the set unless told otherwise so the previews look like a family
+- name outputs `github-social-preview-<repo>.jpg` instead of overwriting the default filename
+- report one summary table at the end: repo, file, size, quality, fallbacks applied
+- if one repo fails to fetch, continue the batch and report the failure rather than stopping
 
 ## Fallback Behavior
 

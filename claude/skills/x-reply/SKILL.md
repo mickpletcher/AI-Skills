@@ -1,6 +1,7 @@
 ---
 name: x-reply
 description: Write replies to replies on X. Always trigger immediately when the user's message starts with "xr". Take the original post and the reply being responded to, generate a single response within 280 characters, use no emojis, avoid em dashes in final X reply output, and only use hashtags when they fit naturally.
+version: 1.1.0
 ---
 
 # X Reply Skill
@@ -85,6 +86,22 @@ Do not get defensive. Respond with one specific fact or reason, then move on.
 ### Troll or Bad Faith
 
 Keep it short, calm, and slightly dismissive. The goal is to close the thread, not win an argument.
+
+### Respectful Disagreement
+
+State the disagreement plainly in the first sentence, give one concrete reason, and leave room for the other person to be right about part of it. No hedging filler and no pile-on.
+
+### Quick Thank You
+
+One short sentence, specific to what they said. Skip banned gratitude phrases. If there is nothing to add, a brief specific acknowledgment beats a generic thanks.
+
+## Quote Tweet or Direct Reply
+
+Default to a direct reply. Recommend a quote tweet instead when the response stands on its own as a post for Mick's audience, when correcting something publicly matters more than continuing the thread, or when the reply would be a strong take that deserves reach. When recommending a quote tweet, say so explicitly and write the copy for that format.
+
+## Brevity Controls
+
+When the conversation is moving fast or the reply is one of several in a thread, bias hard toward shortness: one sentence, no setup, no restating their point. If the user says `xr quick` or asks for fast options, return the tightest version first and skip alternatives unless asked.
 
 ## Length and Character Budget
 

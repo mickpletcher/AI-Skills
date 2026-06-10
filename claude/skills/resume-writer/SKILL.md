@@ -1,7 +1,7 @@
 ---
 name: resume-writer
 description: Rewrite and enhance resumes using a persistent library of principles harvested from real recruiters, hiring managers, and HR professionals. Always trigger immediately when the user's message starts with "rw". Also trigger on "resume writer", "rewrite my resume", "enhance my resume", "fix my resume", "review my resume", or any request to improve, audit, or critique a resume. Also trigger when the user pastes a recruiter or hiring manager post (LinkedIn, blog, Reddit) and says "add to my library", "add insight", "rw add", or indicates they want to capture it as a resume principle. Also trigger on "two page", "two-page", "trim to two pages", "fit on two pages", "two page audit", or "page trim" to run the two-page audit mode. Handles paste, .docx, .pdf, and screenshot inputs. Produces a full rewrite plus a condensed audit by default, with full forensic line by line audit only when requested. General-purpose skill that works for any user's resume, not just the skill owner.
-version: 1.1.0
+version: 1.2.0
 ---
 
 # Resume Writer
@@ -374,6 +374,15 @@ For each section of the rewrite, check:
 
 If the re-audit surfaces issues, fix them silently before presenting. Do not show the user the self-validation pass — it is an internal checkpoint, not part of the deliverable.
 
+**ATS keyword balance check** (when a job description or target role is present): extract the 8 to 12 highest-signal terms from the job description — named tools, certifications, methodologies, and role-specific nouns — and verify each appears in the rewrite where the resume genuinely supports it. Two failure directions, both checked:
+
+- **Missing**: a term the candidate's history supports but the rewrite never uses; work it into the relevant bullet or skills entry naturally
+- **Stuffed**: a term appearing more than two or three times, in bullets that do not evidence it, or in an unsupported skills-section pile; cut to the supported instances
+
+Terms the history does not support get listed in Top Fixes as honest gaps, never inserted. The resume should read the same to a human after this check as before it; only placement and coverage change.
+
+**Reference project mapping** (when the user has repos, a portfolio, or public work): for each major bullet, note when a concrete artifact backs it — a GitHub repo, blog writeup, or portfolio piece. Include a short mapping in Top Fixes, such as which repo to link from LinkedIn or mention in an interview for which claim. Do not put raw URLs in the resume body unless the user asks; the map is for the user's preparation, not the page.
+
 ### Step 8: Generate cover letter
 
 Generate a cover letter when either condition is true:
@@ -402,6 +411,13 @@ Hard rules:
 - Do not repeat resume bullets verbatim. Reframe them as narrative.
 - Do not fabricate company details, role details, or achievements not present in the resume.
 - Do not add soft skill walls ("I am a passionate, results-driven professional...").
+
+**Company-type variants**: when the job description or user context signals the company type, tune the letter accordingly; when it is ambiguous, default to the enterprise register:
+
+- **Enterprise**: slightly more formal register, emphasize scale, compliance, process maturity, and cross-team coordination; certifications and platform names carry weight
+- **Startup or fast-moving team**: tighter and more direct, emphasize shipping speed, breadth, ownership, and tolerance for ambiguity; one concrete built-it-myself proof point beats a process narrative
+
+If the user asks for both, produce both variants with the same facts and clearly labeled.
 
 **When no job description is present but a cover letter is explicitly requested**, generate a generic version targeting the most likely role based on resume content. Prepend this label to the output: `Generic version — personalize the hook and company-specific references before sending.`
 

@@ -1,6 +1,7 @@
 ---
 name: pihole-blocklist
 description: Evaluate, categorize, and document new Pi-hole blocklist sources for the curated blocklist repository. Always trigger immediately when the user asks about adding, evaluating, or researching a new Pi-hole blocklist source, or uses phrases like "should I add this list", "evaluate this blocklist", "add to pihole", "new blocklist", "is this a good list", or pastes a raw blocklist URL. Also trigger when the user wants to review existing sources, update the repo README, check for list overlap, or document a new category. Pre-loaded with the full category taxonomy and evaluation criteria so every new addition is consistent with the existing curation standard.
+version: 1.1.0
 ---
 
 # Pi-hole Blocklist Skill
@@ -106,6 +107,31 @@ When asked to evaluate a new source, assess all of the following:
 - Is the list known to be aggressive (high false positive rate) or conservative?
 - Has the list been flagged in the Pi-hole community for issues?
 
+### Quick Reject Checklist
+
+Run this before the full evaluation. Any hit means Skip without further analysis, which keeps low-quality lists from consuming a full review:
+
+- no update in over 12 months and no statement that the list is intentionally static
+- URL is an HTML page, paywalled, or changes between releases
+- anonymous maintainer with no methodology and no community footprint
+- near-total overlap with an existing source in the same category (a strict subset adds nothing)
+- list mixes block domains with allowlist or comment formats Pi-hole would misparse
+
+State which check failed in one line. Only proceed to scoring when all five pass.
+
+### Scoring Rubric
+
+Score each dimension 0 to 5 and weight them into a single source score so evaluations stay comparable:
+
+| Dimension | Weight | 5 looks like |
+| --- | --- | --- |
+| Trust | 30% | Named maintainer, public methodology, strong community footprint |
+| Maintenance | 25% | Updates at a stated cadence within the last month |
+| Unique coverage | 25% | Meaningfully new domains versus existing sources in its category |
+| False positive risk (inverted) | 20% | Conservative inclusion policy, no known breakage reports |
+
+Score 4.0+ supports Add, 3.0 to 3.9 supports Add with caution, below 3.0 supports Skip. The rubric informs the recommendation; documented exceptions are allowed when stated.
+
 ### 5. Recommendation
 - **Add**: Meets quality bar, fills a gap, compatible format, stable URL
 - **Add with caution**: Useful but aggressive — note false positive risk in documentation
@@ -128,9 +154,13 @@ DOMAIN COUNT: [approximate if known]
 FORMAT: [hosts / plain domain list / mixed]
 OVERLAP RISK: [low / medium / high — with which existing category]
 FALSE POSITIVE RISK: [low / medium / high — brief reason]
+SCORE: [weighted rubric score, e.g. 4.2/5]
 RECOMMENDATION: [Add / Add with caution / Skip / Whitelist candidate]
+REPO PLACEMENT: [exact category section and position in the repo README where the new row belongs]
 NOTES: [Any caveats, known issues, or context]
 ```
+
+The `REPO PLACEMENT` line should name the exact README section heading so the commit is mechanical, such as "Tracking section, alphabetical after EasyPrivacy".
 
 ### For a README table entry (when adding a new source):
 

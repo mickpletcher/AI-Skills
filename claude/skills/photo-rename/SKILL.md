@@ -1,6 +1,6 @@
 ---
 name: photo-rename
-version: 1.1.0
+version: 1.2.0
 description: Rename photos using image analysis, GPS metadata, and web research to generate descriptive real-world filenames such as "grand_canyon_phantom_ranch.jpg" or "eiffel_tower_paris.jpg". Trigger immediately when the user's message starts with "rp", or when they upload photos and ask to rename, identify, or label them by location or content. Supports batch processing.
 ---
 
@@ -88,6 +88,16 @@ When multiple images are provided, review them as a set before finalizing names:
 
 If the user provides only one image, skip the grouping logic.
 
+**Event clustering**: when timestamps and locations cluster (same day, same area), treat the cluster as one event and settle its naming pattern once. Every photo in the cluster inherits the event segment, such as `road_to_hana` or `container_home_weld_day`, and only the subject segment varies between files. This keeps a 40-photo hike from producing 40 unrelated names. Photos that fall outside every cluster are named individually.
+
+**Subject category rules**: pick the subject segment by what dominates the frame:
+
+- **people**: describe the activity or setting, not identities, such as `summit_group_photo`; never guess names from faces
+- **pets**: use the animal plus activity, such as `dog_lake_swim`; use the pet's name only when the user provides it
+- **landscapes**: lead with the named feature when known, otherwise the feature type such as `ridge_view` or `sunset_overlook`
+- **tools and equipment**: name the tool and what it is doing, such as `mig_welder_corner_joint`
+- **project progress**: name the build phase and visible state, such as `solar_rack_mounting`, so files sort into a build timeline
+
 ### 4. Generate the new filename
 
 Rules:
@@ -170,6 +180,18 @@ For batch requests, also include:
 - the confidence level
 - the short reason for the chosen name
 - any batch grouping note when similar files were named together
+
+For large batches, open the report with a preview summary so the user reviews exceptions instead of every row:
+
+```text
+PREVIEW: 38 photos | 2 events detected (road_to_hana: 24, kipahulu_coast: 9)
+Outliers needing review: 5
+  - IMG_4901.jpg: GPS contradicts the cluster (300 miles away)
+  - IMG_4907.jpg: low confidence, subject unclear
+  ...
+```
+
+Outliers are anything low or no confidence, GPS that contradicts its cluster, or a name that broke the batch pattern. The user should be able to approve the batch by checking only the outliers.
 
 ## Notes
 

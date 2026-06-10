@@ -4,6 +4,8 @@ Tracks implemented upgrades to this skill. Future upgrade ideas are in [future-u
 
 | Date | Upgrade | Notes |
 |------|---------|-------|
+| 2026-06-10 | Added series mode | Recurring project update posts keep consistent structure and continuity across installments. |
+| 2026-06-10 | Added blog repurpose mode | A strong Facebook post can become a blog draft outline that hands off to the blog-post skill. |
 | 2026-05-13 | Added post mode support | The skill now infers personal update, technical lesson, project progress, or opinion mode so the structure matches the goal. |
 | 2026-05-13 | Added hook generation workflow | The skill now builds internal hook options and chooses the strongest natural opening by default. |
 | 2026-05-13 | Added length presets | The skill now infers short update, standard, or story length based on the source draft. |

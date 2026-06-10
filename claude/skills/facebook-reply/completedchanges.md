@@ -11,4 +11,6 @@ This tracked file records shipped changes for this skill.
 - 2026-05-13: Added batch reply mode. The skill can now produce distinct replies for multiple comments on the same post.
 - 2026-05-13: Added thread summarization mode. The skill can now detect repeated questions and draft one pinned clarification reply.
 - 2026-05-13: Added sentiment tagging. The skill now tags supportive, neutral, skeptical, critical, off-topic, and hostile comments before replying.
-
+- 2026-06-10: Replies can intentionally move someone to DM, point to a blog post, or tease a follow-up post.
+- 2026-06-10: High stakes comments get 2 to 3 distinct reply options with a risk note.
+- 2026-06-10: Second replies build on the first answer and aim to close the loop.

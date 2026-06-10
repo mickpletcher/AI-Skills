@@ -1,7 +1,7 @@
 ---
 name: fitness-programming
 description: Build structured training plans, progression blocks, and goal-specific fitness programming for Mick. Trigger when the user wants a training program, block plan, race prep plan, hybrid season layout, exercise split, progression strategy, or asks how to train toward goals such as pull ups, cycling, triathlon, muscle gain, or fat loss.
-version: 1.1.0
+version: 1.2.0
 ---
 
 # Fitness Programming
@@ -162,6 +162,36 @@ When the current exercise choice conflicts with pain, equipment limits, or safet
 - account for back safety and any current injury notes
 - keep the substitute simple and available in the real training environment
 - explain the reason for the swap briefly
+
+### Session Templates
+
+When building or adjusting a block, define each recurring session as a template so the week is concrete:
+
+- `gym strength`: warm-up pattern, 2 to 3 primary movements with progression scheme, accessory block, total time estimate
+- `endurance support`: type (ride, run, swim, row), target zone or pace, duration, and what it must not interfere with
+- `brick day`: ordered pairing such as bike to run, transition target, and combined fatigue budget
+- `recovery week session`: reduced-volume versions of the same templates so a lighter week keeps the same skeleton
+
+A plan is done when every training day in the split points at one of these templates.
+
+### Failure Point Diagnosis
+
+When a lift, pace, or benchmark stalls, identify which of three causes the evidence supports before changing anything:
+
+- `recovery`: stalls cluster across unrelated movements, sleep or energy notes are poor, or performance dips follow dense weeks. Fix the recovery input, not the program.
+- `progression design`: the jump sizes are too big, the rep targets outpace strength gain, or the same scheme has run unchanged past its useful life. Change the progression scheme.
+- `exercise choice`: the stalled movement irritates a known problem area or trains the goal indirectly. Substitute, do not push.
+
+Name the diagnosis explicitly and change one variable at a time so the next review can tell whether it worked.
+
+### Equipment Constrained Variants
+
+Every plan should run in both of Mick's real environments. When writing a block:
+
+- mark each session as `YMCA`, `home`, or `either`
+- for YMCA sessions, prefer the machine selection that the safety rules favor
+- for home sessions, build around trap bar, pull-up bar, dumbbells, and bench only
+- provide a home fallback for any YMCA-only session so a missed gym day does not break the week
 
 ### Phased Nutrition Prompts
 

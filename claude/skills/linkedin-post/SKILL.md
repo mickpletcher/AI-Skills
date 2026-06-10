@@ -1,7 +1,7 @@
 ---
 name: linkedin-post
 description: Write LinkedIn posts for Mick Pletcher's professional audience. Always trigger immediately when Mick says "linkedin post", "lnp", or asks to write something for LinkedIn. LinkedIn audience is professional IT, AI, and automation peers. Tone is more polished than Facebook but still first-person and direct. No emojis. Avoid em dashes in final LinkedIn post output. 2 to 3 hashtags max. Focus on home AI infrastructure, algorithmic trading, enterprise automation, career insights, and tech commentary.
-version: 1.1.0
+version: 1.2.0
 ---
 
 # LinkedIn Post Skill
@@ -169,6 +169,34 @@ When the user asks for variants, produce:
 - one broader professional draft
 
 Keep the core point the same while changing the framing, jargon level, and emphasis.
+
+## Media Companion Suggestions
+
+When the post would clearly land better with supporting media, add a short note after the post (not inside it) suggesting what to attach:
+
+- screenshots for dashboards, reports, n8n flows, or terminal output that prove the result
+- a simple architecture sketch when the post describes a multi-part pipeline
+- a carousel only when the content is genuinely sequential, such as before and after steps; if suggesting one, list the 3 to 5 slide headlines
+
+Never invent what an image shows. If no media would help, say nothing.
+
+## Series Planning
+
+When the user wants a multi-post series (project writeup, learning log, build diary):
+
+- propose 3 to 5 post topics that each stand alone but build a through line
+- give each a working hook line and the mode it should use
+- order them so the strongest standalone post goes first, since later posts inherit its audience
+- keep one continuity element across the series, such as a project name or running metric
+
+## Post To Article Expansion
+
+When a short post performed well or the user asks to go longer, expand it into a LinkedIn article draft:
+
+- working title, opening that restates the hook with more context, and 3 to 5 sections with headers
+- move the technical depth the post had to compress into the body, with specifics and code or config references where Mick can paste real material
+- end with what is next rather than a motivational wrap-up
+- keep the same first-person practitioner voice; an article is a longer post, not a whitepaper
 
 ## Example Post Pattern
 

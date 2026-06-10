@@ -4,7 +4,7 @@ description: >
   Analyze food photos, nutrition labels, and ingredient lists. Trigger on food images,
   nutrition label scans, macro questions, glycemic questions, medication interaction checks,
   and similar food-analysis requests.
-version: 1.2.0
+version: 1.3.0
 ---
 
 # Food Analyzer
@@ -238,6 +238,41 @@ Supplement Stacking Caution
 ```
 
 End this section with the same pharmacist and physician disclaimer used for medication and supplement interaction notes.
+
+## Portion Scaling
+
+When the user asks for a different serving size, or the analysis is for meal prep:
+
+- scale calories and macros linearly for half, double, or N-serving batches and show the per-serving and total lines
+- do not scale glycemic load advice linearly without comment; portion size changes the practical impact, so note when a doubled portion moves the meal into a different GI burden category
+- for meal prep batches, give the per-container numbers and a note on how many containers the batch yields
+
+## Logging Export
+
+When the user wants the analysis saved to notes or a tracker, output a compact log entry after the analysis:
+
+```text
+food_log:
+  date: [date]
+  meal: [name]
+  serving: [size]
+  calories: [kcal]
+  protein_g: / carbs_g: / fat_g: / fiber_g: / sugar_g: / sodium_mg:
+  nova: [1-4]
+  goal_fit: [short line]
+  confidence: [high/medium/low]
+```
+
+Use Markdown bullets instead when the user mentions Obsidian or notes. Keep field names stable across exports so entries can be aggregated later.
+
+## Restaurant Ordering Guidance
+
+When the user is choosing from a menu or describes a restaurant meal with no label:
+
+- treat all estimates as medium confidence at best and say so
+- give category-level guidance: grilled protein plus a vegetable side beats fried or sauced defaults in most fat loss and blood sugar contexts; pasta and rice bowls are the usual hidden-calorie leaders; dressings and sauces on the side cut the largest unknown
+- when the user names the cuisine, give the 2 to 3 best-fit orders for their goal mode and the one trap order to avoid
+- skip moralizing; the output is which order fits the goal, not whether eating out is good
 
 ## Meal History Review
 

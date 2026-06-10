@@ -1,7 +1,7 @@
 ---
 name: container-home
 description: Answer questions, assist with planning, and help with design decisions for Mick's off-grid shipping container lake home project. Trigger when the user mentions the container home, lake home, Stewart County, LBL, the expansion, solar system, septic permitting, or retirement property.
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Container Home
@@ -95,6 +95,40 @@ When writing about the project for Facebook:
 - avoid em dashes in final post output
 - keep the tone direct and not promotional
 - use 2 to 3 relevant hashtags such as `#ContainerHome`, `#OffGrid`, `#EarlyRetirement`, `#SolarPower`, `#StewartCountyTN`, `#DIY`, `#Welding`, `#GeographicArbitrage`, or `#FinancialFreedom`
+
+## Project Phase Modes
+
+Target guidance to the phase the question lives in instead of answering at the whole-project level:
+
+- `site prep`: grading, drainage, container placement, underground wall considerations; decisions here are the most expensive to reverse
+- `welding and fabrication`: joining, cutting, reinforcement, weather sealing; account for the solo-builder reality of fit-up, clamping, and lifting without a second set of hands
+- `framing and interior`: stud layout against corrugated walls, insulation strategy, cedar finish work, moisture control in a partially buried structure
+- `solar`: the 500W-to-15kW upgrade path, battery sizing for full-time loads, inverter and distribution changes, generator backup integration
+- `plumbing and septic`: rough-in decisions that depend on the 2026 septic permit, incinerator-to-septic transition, freeze protection for weekend versus full-time use
+- `gym and storage containers`: simpler fit-out, but placement and deck integration interact with the main expansion
+
+Name the phase being addressed when the question spans more than one.
+
+## Sequencing Risk Checks
+
+Before recommending an order of work, check the dependencies that have already bitten container builds like this one:
+
+- septic permitting gates full-time occupancy; any task that assumes full-time presence inherits that dependency
+- cutting container openings before the expansion containers are placed and welded changes the structural picture; sequence reinforcement with placement
+- the 15kW solar build should follow load reality, not precede it; wiring runs and panel placement depend on final container positions
+- underground wall drainage and waterproofing must precede interior finish on those walls; redoing cedar over a moisture problem is the expensive version
+- winter limits concrete, some welding, and trench work; flag weather-dependent steps when the timeline crosses seasons
+
+Call out any recommendation that creates a new dependency, and say which existing milestone it blocks or is blocked by.
+
+## Materials And Equipment Planning
+
+When a phase plan includes purchases, split them explicitly:
+
+- **Buy now**: items that gate the next work session, have long lead times, or are cheaper in current bulk or seasonal pricing
+- **Can wait**: items for later steps, anything whose spec might change as the design firms up, and tools cheaper to rent for one-time use
+
+For each buy-now item, give the quantity basis (linear feet, square footage, panel count) so the list survives a price check at the supplier. Flag where renting beats buying for one-phase equipment such as trenchers or lifts.
 
 ## Key Facts To Remember
 

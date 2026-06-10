@@ -2,6 +2,21 @@
 
 Compiled from repo history and the current working tree.
 
+## 2026-06-10
+
+- Completed a Tier 1 upgrade pass across all 34 Claude skills, applying each skill's recorded high value backlog items as instruction-level improvements
+- Social and writing skills gained mode, hook, length, series, and repurpose controls (`facebook-post`, `facebook-reply`, `x-post`, `x-reply`, `linkedin-post`, `blog-post`, `blog-to-social`, `website-content`)
+- Fitness and health skills gained block comparison, race readiness, deload logic, session templates, template variants, portion scaling, refill prediction, adherence tracking, and a side effect journal (`fitness-log`, `fitness-programming`, `obsidian-workout-export`, `food-analyzer`, `med-vault`)
+- Trading and crypto skills gained an Alpaca capability profile, order lifecycle checklist, regression test matrix, exchange tiers, catalyst grading, a due diligence rubric, red flag screen, and compare mode (`alpaca-trading`, `crypto-listings`, `crypto-research`)
+- Dev and GitHub skills gained archetype presets, live repo verification, repair mode, scaffolding presets, scope presets, analyzer alignment, spec status and sizing, compare/revisit/status modes, and patent intake/interview/scrub/narrowing/figure modes (`github-readme`, `github-repo-architect`, `github-social-preview`, `powershell-refactor`, `spec-writer`, `idea-forge`, `patentforge-provisional`)
+- Homelab skills gained workflow review mode, build templates, operations guidance, pre-deployment checks, service recipes, scoring rubrics, reject checklists, prioritization, client grouping, event clustering, and preview summaries (`n8n-workflow`, `proxmox-lxc`, `pihole-blocklist`, `pihole-csv-analyzer`, `photo-rename`)
+- Travel and home skills gained airfare timing, calendar matching, neighborhood ranking, weighted scoring presets, shortlist handoffs, multi-traveler coordination, handoff formats, post-trip review, an emergency contact sheet, phase modes, sequencing risk checks, and materials planning (`travel-planning`, `travel-research`, `travel-itinerary`, `trip-email-html-itinerary`, `container-home`)
+- `resume-writer` gained ATS keyword balance checks, cover letter company-type variants, and reference project mapping
+- Restored trigger shortcut phrases to frontmatter descriptions (`bts`, `cl`, `cr`) and added version fields to skills missing them
+- Renamed `completed-changes.md` to `completedchanges.md` in `facebook-post`, `fitness-log`, `travel-itinerary`, and `travel-research` for consistency
+- Added missing `Constraints` and `Validation Checklist` sections to `trip-email-html-itinerary`
+- Rebuilt all 34 Claude `.skill` packages and passed both repo validators
+
 ## 2026-05-25
 
 - Upgraded `claude/skills/fitness-log` with personal benchmark history, dashboard/notes/weekly report exports, mobility and prehab prompts, and fatigue or overload flags

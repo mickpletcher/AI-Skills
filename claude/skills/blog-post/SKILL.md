@@ -1,7 +1,7 @@
 ---
 name: blog-post
 description: Write or draft a blog post for Mick's IT blog at mickitblog.blogspot.com. Trigger when Mick asks for a blog post or wants to document a technical solution, project, or finding in post format. Match Mick's writing style with plain first-person prose, practical focus, honest status notes, code blocks where relevant, and GitHub links when applicable.
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Blog Post
@@ -51,6 +51,30 @@ Write ready-to-publish blog posts that sound like Mick wrote them: direct, first
 - Do not use emojis
 - Avoid em dashes in the final post
 - Keep punctuation and phrasing plain instead of promotional
+
+## Post Type Modes
+
+Infer the post type from the source material unless the user names one. Each type shifts the structure slightly:
+
+- `how to`: numbered or clearly ordered steps, prerequisites stated up front, expected result at each checkpoint
+- `project update`: what changed since the last post, why, and what is next; assume some readers missed earlier installments
+- `troubleshooting writeup`: symptom first, then the dead ends worth mentioning, then the actual cause and fix; the failed attempts are often the most useful part
+- `opinion`: the position stated in the first paragraph, supported by direct experience rather than abstractions
+
+## Technical Proof Checklist
+
+Implementation posts need evidence, not claims. Before finishing a `how to`, `project update`, or `troubleshooting writeup`, check that the draft includes:
+
+- the actual commands or code in fenced blocks, not paraphrases of them
+- markers for where a screenshot belongs when output is visual, written as a bracketed placeholder
+- the repo link when the code lives on GitHub
+- what was verified versus what is assumed, stated plainly
+
+If the source material lacks these, ask for them or mark the gaps honestly rather than writing around them.
+
+## Title And Intro Variants
+
+After the draft, offer 2 to 3 title options and matching first sentences in Mick's voice: one plain and descriptive, one that leads with the result or number, and optionally one that leads with the problem. No clickbait. Keep the body unchanged; the user picks the opener.
 
 ## Post Structure
 

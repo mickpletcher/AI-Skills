@@ -11,4 +11,6 @@ This tracked file records shipped changes for this skill.
 - 2026-05-13: Added budget visibility. The skill now includes budget visibility per day and by category.
 - 2026-05-13: Added contingency notes. The skill now includes weather, delay, and backup activity notes when relevant.
 - 2026-05-24: Added v1.2.0 itinerary planning checks. The skill now includes visa and border crossing checkpoints, lodging decision notes that compare location, price, and transit convenience, and smarter arrival and departure templates for red-eye, late check-in, early departure, and overnight transit travel.
-
+- 2026-06-10: Shared trips get traveler responsibility tables, cost splits, and solo block planning.
+- 2026-06-10: Print sheets and mobile summaries derive from the master Obsidian file with identical facts.
+- 2026-06-10: Estimated versus actual comparison and lessons feed a Post-Trip Notes section for future trips.

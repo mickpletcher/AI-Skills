@@ -1,6 +1,7 @@
 ---
 name: spec-writer
 description: Generate numbered repo spec folders with clear requirements, implementation plans, and task lists for non-trivial project work.
+version: 1.1.0
 ---
 
 # Spec Writer Skill
@@ -40,6 +41,27 @@ Use this skill to turn a rough repo change, feature idea, cleanup effort, or mig
 7. Make assumptions explicit. Do not pretend unknown details are settled facts.
 8. Recheck that the spec matches the live repo, existing conventions, and the user's real goal.
 
+## Spec Status
+
+Give every spec a visible state so a folder listing tells the truth about the work. Put a status line at the top of `requirements.md`:
+
+```text
+Status: draft | in progress | done | abandoned
+Last updated: YYYY-MM-DD
+```
+
+When asked to update or review specs, update the status line as part of the change. When creating a new spec, check whether an existing spec already covers the work and is merely stale; updating its status beats creating a duplicate.
+
+## Template Variants
+
+Shape the documents to the work type instead of using one generic skeleton:
+
+- `feature`: requirements emphasize user-facing behavior and acceptance criteria; plan covers integration points and new surface area
+- `refactor`: requirements define behavior that must not change and how that is verified; plan emphasizes sequencing and safe checkpoints; tasks alternate change and verify steps
+- `migration`: requirements define the end state and cutover criteria; plan covers dual-running, rollback, and data integrity; tasks include a rehearsal step before the real cutover
+
+Name the variant in `requirements.md` so the reader knows which lens the spec uses.
+
 ## Requirements Guidance
 
 - State the problem in plain language
@@ -61,6 +83,7 @@ Use this skill to turn a rough repo change, feature idea, cleanup effort, or mig
 - Prefer tasks that map to real deliverables, not vague activity labels
 - Separate implementation, validation, and documentation work when that helps execution
 - Keep tasks small enough to complete and review, but not so small that the list becomes noise
+- Give each task a rough size of `S` (under an hour), `M` (half a day), or `L` (a day or more) so the spec communicates effort, not just steps; an `L` task is usually a sign it should be split
 
 ## Constraints
 

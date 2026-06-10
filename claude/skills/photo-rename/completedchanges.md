@@ -10,4 +10,6 @@ This tracked file records shipped changes for this skill.
 - 2026-05-13: Added batch review mode. The skill now groups similar photos and applies more consistent naming across a set.
 - 2026-05-13: Added better GPS fallback behavior. The skill now treats missing or obviously wrong GPS metadata more cautiously.
 - 2026-05-13: Added export report guidance. Reports now emphasize old names, new names, and confidence reasons.
-
+- 2026-06-10: Time and location clusters share one event naming pattern so whole trips name consistently.
+- 2026-06-10: People, pets, landscapes, tools, and project progress photos each get matched subject naming.
+- 2026-06-10: Large batches open with event counts and outliers so review focuses on exceptions.

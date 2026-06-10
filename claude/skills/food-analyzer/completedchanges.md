@@ -13,4 +13,6 @@ This tracked file records shipped changes for this skill.
 - 2026-05-13: Added meal history review. The skill can now look across repeated analyses and find meal patterns.
 - 2026-05-13: Added user preference memory. The skill can now carry favorite foods, sensitivities, and recurring supplement interactions within the conversation.
 - 2026-05-25: Added supplement stacking cautions. The skill now flags practical issues when a stated meal and supplement combination affects stimulant load, absorption, timing, sodium, GI tolerance, redundancy, blood sugar, or sleep.
-
+- 2026-06-10: Half, double, and meal prep batch estimates with per-serving and total numbers.
+- 2026-06-10: Analyses can output a stable-format log entry for trackers or Obsidian notes.
+- 2026-06-10: Menu choices get goal-fit recommendations and trap orders when no label exists.

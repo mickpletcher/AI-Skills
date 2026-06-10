@@ -1,7 +1,7 @@
 ---
 name: travel-research
 description: Research and compare destinations with deeper scoring across budget, climate, logistics, activity fit, and seasonal tradeoffs before moving into full trip planning.
-version: 1.1.0
+version: 1.2.0
 ---
 
 # Travel Research Skill
@@ -78,6 +78,41 @@ Focus on what materially separates one option from another:
    - deeper research
    - move into `travel-planning`
    - move into `travel-itinerary`
+
+## Scoring Weight Presets
+
+Different trip types should not weight the scorecard the same way. Apply the preset that matches the trip goal and say which one was used:
+
+| Dimension | Endurance training | Sightseeing | Remote work | Budget recharge |
+|---|---:|---:|---:|---:|
+| Activity fit | 35% | 15% | 10% | 10% |
+| Climate | 25% | 15% | 10% | 20% |
+| Budget | 15% | 20% | 20% | 35% |
+| Logistics / friction | 15% | 25% | 25% | 20% |
+| Value for season | 10% | 25% | 35% | 15% |
+
+For mixed-goal trips, blend the two closest presets and note the blend. The weighted score feeds the Overall column; never let a destination win on vibe while losing on every weighted dimension.
+
+## Comparison History
+
+Treat prior research as reusable instead of rebuilding it:
+
+- when the user references an earlier comparison, ask for or reuse that output as the baseline and only refresh the timing-sensitive columns: flights, crowds, seasonal value
+- when producing a substantial comparison, note at the end that the scorecard can be saved to Obsidian or notes for reuse, and offer a compact save format on request
+- if a saved comparison is more than a season old, refresh live data before standing behind its recommendation
+
+## Shortlist Handoff
+
+When research concludes, end with a handoff block that `travel-planning` or `travel-itinerary` can consume directly without re-deriving anything:
+
+```text
+SHORTLIST HANDOFF
+Pick: [destination] | Window: [dates or month] | Style: [trip style preset]
+Why it won: [one line]
+Locked assumptions: [origin airport, budget band, solo, private rooms]
+Carry-forward facts: [flight range found, daily spend estimate, friction score, must-book items]
+Next skill: travel-planning [or travel-itinerary if dates and route are already firm]
+```
 
 ## Comparison Framework
 

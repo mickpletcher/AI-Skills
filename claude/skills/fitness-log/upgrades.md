@@ -4,6 +4,9 @@ Tracks implemented upgrades to this skill. Future upgrade ideas are in [future-u
 
 | Date | Upgrade | Notes |
 |------|---------|-------|
+| 2026-06-10 | Added block comparison output | Two training phases can be compared side by side on shared movements and benchmarks. |
+| 2026-06-10 | Added race readiness checks | Endurance event builds get readiness gaps, taper status, and remaining-week fixes from logged data. |
+| 2026-06-10 | Added deload recommendation logic | Deloads are recommended from fatigue, stall, and missed-session patterns with concrete parameters. |
 | 2026-05-13 | Added training trend summaries | The skill now summarizes strength, endurance, consistency, and recovery trends across logged workouts. |
 | 2026-05-13 | Added goal based program checks | The skill now compares recent training against stated goals such as pull ups, cycling, or triathlon. |
 | 2026-05-13 | Added weekly review output | The skill now produces weekly wins, missed sessions, and next block focus summaries. |

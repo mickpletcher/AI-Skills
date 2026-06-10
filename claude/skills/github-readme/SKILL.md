@@ -59,6 +59,10 @@ Choose the closest repo type before writing anything. That choice determines the
 | Single script or utility | PowerShell automation scripts | Overview, what it does, prerequisites, usage, parameters, examples, license |
 | MCP server | homeassistant-mcp, pihole-mcp | Overview, what it does, tools table, install and config, usage, notes, license |
 | API integration or webhook | SafeSend webhooks | Overview, what it does, endpoint table, auth, payload schemas, setup, examples, license |
+| Python application or CLI | Trading bots, analyzers | Overview, what it does, prerequisites, install with venv and requirements, usage, config, errors, license |
+| Hybrid PowerShell and Python repo | Trading | Overview, what it does, structure split by language, setup per stack, usage by module, tests, license |
+| Static site or website | mickpletcher.com | Overview, local preview, structure, deployment, content editing notes, license |
+| Template or starter repo | repo scaffolds | Overview, what you get, how to use the template, customization points, license |
 
 If the repo does not fit neatly, pick the closest type and drop irrelevant sections.
 
@@ -75,9 +79,29 @@ Extract the repo purpose, languages, major folders and scripts, dependencies, se
 
 When current details matter and a URL is provided, verify them before writing.
 
-### 3. Write the README
+### 3. Verify against the live repo
+
+A README that documents commands that do not run is worse than no README. When the repo is locally available or a URL was provided, verify before writing:
+
+- every command in Installation and Usage matches a real script, entry point, or documented invocation in the repo
+- every file and folder named in the structure tree actually exists with that exact casing
+- environment variable names match what the code actually reads
+- the license section matches the actual LICENSE file
+
+When the repo is not available and the user only gave a description, mark unverified specifics plainly, for example `<!-- verify: entry point name -->`, instead of inventing plausible-looking commands.
+
+### 4. Write the README
 
 Build a complete `README.md` that fits the repo instead of filling a fixed template.
+
+## Repair Mode
+
+When the repo already has a README and the user wants it fixed rather than replaced:
+
+- diff the existing README against the actual repo state and list what is stale: dead paths, renamed scripts, removed features, missing new modules
+- propose targeted section updates and keep the parts that are still accurate, preserving the author's structure and voice where it works
+- only recommend a full rewrite when more than roughly half the document is stale, and say why
+- output either the corrected sections with clear placement notes or the full updated file, whichever is less churn
 
 ## Universal Rules
 

@@ -4,6 +4,9 @@ Tracks implemented upgrades to this skill. Future upgrade ideas are in [future-u
 
 | Date | Upgrade | Notes |
 |------|---------|-------|
+| 2026-06-10 | Added portion scaling | Half, double, and meal prep batch estimates with per-serving and total numbers. |
+| 2026-06-10 | Added logging export | Analyses can output a stable-format log entry for trackers or Obsidian notes. |
+| 2026-06-10 | Added restaurant ordering guidance | Menu choices get goal-fit recommendations and trap orders when no label exists. |
 | 2026-05-13 | Added confidence labeled analysis | The skill now separates direct observations from lower confidence guesses when the image or label is incomplete. |
 | 2026-05-13 | Added goal aware modes | The skill now adjusts the analysis for fat loss, endurance fueling, muscle gain, and blood sugar control. |
 | 2026-05-13 | Added quick summary output | The skill now starts with a cleaner quick summary before the deeper analysis. |

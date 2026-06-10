@@ -1,6 +1,7 @@
 ---
 name: website-content
 description: Write or update content for Mick Pletcher's personal website. Trigger when Mick asks to write, rewrite, or update any section of his personal site including About, Projects, Skills, Blog integration, AI and homelab showcase, health and sports, contact copy, landing page sections, SEO descriptions, or project writeups. Tone is polished and professional, closer to LinkedIn than the blog, but still first-person and direct. Avoid corporate-speak. No emojis. Avoid em dashes in final website copy.
+version: 1.1.0
 ---
 
 # Website Content
@@ -114,6 +115,28 @@ The default featured projects are:
 - Container home build
 - Trading systems and automation stack
 - Proxmox homelab and n8n workflows
+
+## Page Type Modes
+
+Infer the page type from the request and shape the copy accordingly:
+
+- `home page`: lead with who Mick is and the one or two strongest proof points; every sentence has to earn its spot above the fold
+- `about page`: fuller arc across professional, builder, and athlete identities, still selective rather than exhaustive
+- `service page`: what Mick builds, who it helps, and evidence it works; concrete deliverables over capability adjectives
+- `project page`: follow the three-part project writeup structure with current status stated honestly
+- `contact page`: short, direct, and clear about what kinds of contact are welcome
+
+## Proof And Specificity Checks
+
+Before finishing any section, replace unbacked claims with evidence:
+
+- every capability claim should point to a project, repo, number, or outcome from the source material
+- prefer "automated reporting across 4,000+ endpoints" over "extensive automation experience"
+- if a claim has no available proof, cut it or scope it down rather than leaving it vague
+
+## Copy Length Variants
+
+When layout constraints are unknown or the user asks, provide the same section in two lengths: a `concise` version (1 to 2 sentences per block, suitable for cards and hero sections) and a `detailed` version (full paragraphs for dedicated pages). Both must carry the same facts; the concise version cuts context, not specifics.
 
 ## SEO Patterns
 

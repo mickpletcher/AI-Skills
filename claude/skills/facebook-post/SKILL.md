@@ -1,7 +1,7 @@
 ---
 name: facebook-post
 description: Write and polish Facebook posts on any topic. Trigger on requests to draft, rewrite, polish, improve a Facebook post, or create cross-platform Facebook, X, and LinkedIn bundles, especially when the user starts with `fbp`.
-version: 1.5.0
+version: 1.6.0
 ---
 
 # Facebook Post
@@ -77,6 +77,8 @@ Infer one of these modes unless the user explicitly asks for a different one:
 - `repurpose to X`: convert an existing Facebook post into a matching X post without flattening it into generic promo copy
 - `cross-platform bundle`: produce Facebook, X, and LinkedIn versions from one source draft while preserving the same facts and core point
 - `feedback guided`: use prior post performance patterns to improve the next draft
+- `series`: a recurring update in an ongoing series such as build progress, training blocks, or a project log
+- `repurpose to blog`: turn a strong Facebook post into a blog draft outline that matches Mick's blog voice
 
 ### Mode Guidance
 
@@ -87,6 +89,24 @@ Infer one of these modes unless the user explicitly asks for a different one:
 - `repurpose to X`: keep the same point, strongest detail, and voice, then compress it into one post that reads natively on X
 - `cross-platform bundle`: write a natural Facebook version, a tight X version, and a more professional LinkedIn version without making the source sound corporate
 - `feedback guided`: preserve the new message while borrowing what worked from earlier high interaction posts
+
+## Series Mode Rules
+
+When the post is part of a recurring series (container home updates, training blocks, trading milestones):
+
+- keep a consistent opening pattern across installments so readers recognize the series, but vary the hook detail each time
+- anchor each post to what changed since the last update rather than re-explaining the whole project
+- include one running thread of continuity such as a day count, phase name, or cumulative number when the user has established one
+- if the user pastes a previous installment, match its structure without copying its wording
+
+## Blog Repurpose Rules
+
+When the user asks to turn a Facebook post into a blog draft:
+
+- expand the post into a working title, a short intro that states the problem or result, and section stubs for the details the post compressed away
+- flag where code blocks, screenshots, or links belong rather than inventing them
+- keep Mick's blog voice: plain first person, practical, honest about what is unfinished
+- hand off to the `blog-post` skill conventions rather than producing finished long-form copy unless asked
 
 ## Length Presets
 

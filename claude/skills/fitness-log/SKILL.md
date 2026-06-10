@@ -1,7 +1,7 @@
 ---
 name: fitness-log
 description: Track workouts, log fitness progress, adjust the training program, and generate Facebook posts from workout data. Trigger on workout logging, PR updates, program questions, and fitness progress summaries.
-version: 1.2.0
+version: 1.3.0
 ---
 
 # Fitness Log
@@ -274,6 +274,51 @@ Season Note: [what changed across seasons and what it means for training]
 ```
 
 If past benchmark data is missing, record the current result as the new baseline and say what should be retested later.
+
+### Block Comparison
+
+When the user wants two training phases compared:
+
+- align the comparison on canonical movements and benchmarks both blocks share
+- compare volume, top sets, benchmark results, consistency, and fatigue flags side by side
+- state what actually drove the difference when the evidence shows it, such as frequency, exercise selection, or recovery quality
+
+```text
+Block Comparison: [Block A] vs [Block B]
+| Metric | [Block A] | [Block B] | Change |
+|---|---:|---:|---|
+| [movement or benchmark] | [value] | [value] | [up/flat/down + amount] |
+
+What changed: [drivers backed by log evidence]
+Carry forward: [what the next block should keep or drop]
+```
+
+### Race Readiness Check
+
+During a triathlon or endurance event build, when the user asks how ready they are:
+
+- compare recent endurance volume, longest sessions, and brick work against what the event demands
+- check that taper timing and intensity reduction are on track relative to race date
+- flag the biggest readiness gap first, such as missing open water work, low run volume, or no race pace practice
+- keep it grounded in logged sessions; do not project fitness from sessions that did not happen
+
+```text
+Race Readiness: [event, date]
+Ready: [what the log supports]
+Gaps: [biggest gaps in priority order]
+Remaining weeks plan: [smallest practical fixes]
+Taper note: [on track / adjust]
+```
+
+### Deload Recommendation
+
+Recommend a deload week when the log shows the pattern, not on a fixed calendar:
+
+- two or more fatigue/overload flags within a rolling two-week window
+- stalls or regressions on multiple movements in the same period
+- missed sessions clustering with low energy or poor sleep notes
+
+When recommending one, specify it concretely: roughly 40 to 50% volume reduction, keep movement patterns, no PR attempts, and name the date range. If the user is mid-build for a race, prefer a lighter reduction timed with the plan rather than a full deload.
 
 ### Structured Export
 

@@ -1,6 +1,6 @@
 ---
 name: travel-planning
-version: 1.1.0
+version: 1.2.0
 description: Plan trips, build itineraries, research destinations, estimate budgets, and organize logistics for Mick's travel. Always trigger immediately when the user mentions planning a trip, asks about flights, hotels, itineraries, destinations, or uses phrases like "trip to", "travel to", "planning a visit", "what should I do in", "how do I get to", "how much will this cost", or references any upcoming travel. Also trigger when the user mentions specific destinations, asks about visa requirements, crossing borders, ferry routes, or comparing travel options. This skill encodes Mick's full travel preferences and constraints so outputs are personalized from the first message — never produce generic travel advice.
 ---
 
@@ -121,6 +121,36 @@ For destination comparison requests, also provide a simple scorecard that covers
 - Interest fit
 - Transit simplicity
 - Overall recommendation
+
+### Airfare timing guidance
+
+When flights are part of the plan, say whether to book now or watch, and why:
+
+- international flights from BNA: typically best 2 to 5 months out; book sooner for peak season or event-anchored dates that will not move
+- domestic flights: typically best 1 to 3 months out
+- event-anchored trips: book as soon as dates are fixed; fare risk outweighs the chance of a dip when an event drives demand
+- flexible destination-driven trips: watching for 2 to 3 weeks is reasonable; name the fare level that should trigger booking, such as "under $750 round trip, take it"
+
+Keep the advice directional and dated; do not present fare predictions as certainties.
+
+### Calendar matching
+
+When the trip window is flexible, align the destination to Mick's training and event calendar instead of treating dates as fixed:
+
+- check whether the destination has a race, gran fondo, climbing season, or cycling window that overlaps the candidate dates and could anchor the trip
+- avoid scheduling hard adventure trips inside the final build weeks before a target race back home; flag the conflict instead of silently planning around it
+- when two destinations score similarly, the one whose best season matches an open block in the calendar wins
+- state which calendar assumption was used so Mick can correct it
+
+### Accommodation placement
+
+When recommending where to stay in a city, rank neighborhoods rather than just naming hotels:
+
+- **transit access**: walkable to a rail or metro stop that reaches the airport and the day-trip launch points
+- **training access**: runnable streets or waterfront, ride routes out of town without 30 minutes of traffic, or gym access on recovery days
+- **workability**: reliable Wi-Fi and quiet at night when the trip includes remote work days
+
+Name 2 to 3 candidate neighborhoods with a one-line tradeoff each, then suggest lodging inside the winner consistent with the boutique, private-room constraints.
 
 ### 4. Logistics flags
 

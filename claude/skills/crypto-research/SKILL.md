@@ -1,7 +1,7 @@
 ---
 name: crypto-research
-description: Deep-dive research report on a specific cryptocurrency before trading or investing. Trigger on requests for a structured breakdown of a specific coin or token and verify current market, team, tokenomics, and project facts before responding.
-version: 1.0.0
+description: Deep-dive research report on a specific cryptocurrency before trading or investing. Always trigger immediately when the user's message starts with "cr" followed by a coin name or ticker. Also trigger on "research [coin]", "due diligence [coin]", "is [coin] worth buying", or any request for a structured breakdown of a specific crypto asset. Always verify current market, team, tokenomics, and project facts before responding; never answer from memory.
+version: 1.1.0
 ---
 
 # Crypto Research
@@ -118,16 +118,39 @@ Use this structure:
 
 ## Scoring Guidance
 
-Score these areas qualitatively:
+Use this fixed rubric so every report scores the same way and reports stay comparable over time. Score each area 1 to 5 with a one-line justification tied to a sourced fact:
 
-- project fundamentals
-- tokenomics
-- team credibility
-- exchange liquidity
-- development activity
-- overall risk level
+| Area | 5 looks like | 1 looks like |
+| --- | --- | --- |
+| Fundamentals | Working product with real usage | Whitepaper-only or vaporware |
+| Tokenomics | High float, modest emissions, aligned vesting | Low float, heavy unlocks ahead, insider-skewed allocation |
+| Team | Public, credible track record, relevant backers | Anonymous or unverifiable, no notable backers |
+| Liquidity | Tier 1 exchange listings, deep books | DEX-only or thin Tier 3 books |
+| Development | Active repos and shipped milestones | Stale repos, slipped roadmap |
+| Risk (inverted) | Few open risks | Multiple red flags below |
 
-Use the scorecard to summarize quality and risk, not to imply a trading signal.
+The scorecard summarizes quality and risk; it is never a trading signal. Do not output an overall buy-strength number.
+
+## Red Flag Screen
+
+Run these checks explicitly every time and report findings, including clean results:
+
+- **Unlock risk**: cliff or large vesting events in the next 6 months; insider share above ~40%
+- **Centralization**: admin keys or upgradeable contracts without timelock, top-10 wallets holding an outsized supply share, single-sequencer or single-validator dependence
+- **Suspicious emissions**: rewards funded mostly by new token issuance, APYs that only work while price rises
+- **Governance theater**: a DAO where the team or foundation controls quorum, or governance that has never overturned a team proposal
+- **Classic scam markers**: forked code with renamed branding, fake or unverifiable audit claims, paid-influencer-heavy promotion, team that has rugged before
+
+A clean screen is a Green Flag entry; a partial screen (data unavailable) must be stated, not skipped.
+
+## Compare Mode
+
+When the user gives two assets (`cr ONDO vs CFG` or similar):
+
+- run the same rubric on both and present the scorecards side by side in one table
+- compare on the dimensions that actually differ; skip near-identical rows with a one-line note
+- state which asset the evidence favors for the user's stated context, while keeping the research-only framing
+- if one asset is far less documented, say the comparison is asymmetric rather than padding the weaker side
 
 ## Validation Checklist
 

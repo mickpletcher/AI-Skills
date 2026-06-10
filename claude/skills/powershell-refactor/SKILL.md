@@ -1,6 +1,7 @@
 ---
 name: powershell-refactor
 description: Refactor existing PowerShell scripts to simplify flow, reduce duplication, standardize naming and structure, and tighten behavior without changing the intended outcome.
+version: 1.1.0
 ---
 
 # PowerShell Refactor Skill
@@ -42,6 +43,34 @@ Use this skill to improve an existing PowerShell script that already works or mo
    - `Write-Verbose`, `Write-Warning`, and structured output instead of ad hoc console noise
 5. Keep function boundaries practical. Split code only when it improves readability or reuse in a clear way.
 6. Recheck for behavior drift, naming consistency, and obvious lint or test issues before finishing.
+
+## Scope Presets
+
+Let the user control how aggressive the pass is. Default to `full cleanup` when no preset is named:
+
+- `naming only`: rename functions to approved verbs, standardize parameter and variable casing, touch nothing else
+- `deduplication only`: collapse repeated logic into shared functions or loops, keep all names and structure otherwise
+- `full cleanup`: the complete workflow above
+
+When the user names a preset, stay inside it even when other cleanup targets are visible; list the out-of-scope findings at the end instead of fixing them.
+
+## PSScriptAnalyzer Alignment
+
+Run `Invoke-ScriptAnalyzer` on the script before and after when it is available, honoring any `PSScriptAnalyzerSettings.psd1` in the repo. Fix the violations that fall inside the chosen scope preset, and list any remaining ones with a one-line reason they were left, such as a deliberate `Write-Host` for interactive output. The refactor should never introduce new violations.
+
+## Change Summary
+
+End every refactor with a before-and-after summary so the user can review the pass at a glance:
+
+```text
+Refactor Summary
+- Behavior preserved: [yes / exceptions explicitly listed]
+- Lines: [before] -> [after]
+- Changes:
+  - [each behavior-preserving change in one line, e.g. "merged 3 duplicate retry blocks into Invoke-WithRetry"]
+- Analyzer: [violations fixed] fixed, [count] remaining (listed above)
+- Out of scope findings: [anything noticed but not touched]
+```
 
 ## Constraints
 

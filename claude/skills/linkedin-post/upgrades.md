@@ -4,6 +4,9 @@ Tracks implemented upgrades to this skill. Future upgrade ideas are in [future-u
 
 | Date | Upgrade | Notes |
 |------|---------|-------|
+| 2026-06-10 | Added media companion suggestions | Posts that benefit from screenshots, sketches, or carousels get an attach note with slide headlines when relevant. |
+| 2026-06-10 | Added series planning | Multi-post project writeups get 3 to 5 ordered topics with hooks and continuity. |
+| 2026-06-10 | Added post to article expansion | Strong short posts can be expanded into LinkedIn article drafts in the same voice. |
 | 2026-05-13 | Added post mode support | The skill now supports career update, technical lesson, project breakdown, and opinion post modes. |
 | 2026-05-13 | Added LinkedIn tuned hook styles | The skill now uses first line hook styles that create interest without sounding inflated. |
 | 2026-05-13 | Added credibility checks | The skill now pushes for proof, outcome, and context instead of amplifying vague claims. |

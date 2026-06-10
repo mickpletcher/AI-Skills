@@ -1,6 +1,7 @@
 ---
 name: patentforge-provisional
 description: Use this skill when the user wants to turn an invention idea into a structured invention disclosure, prior art search strategy, claim candidates, and provisional patent draft package. This skill is for patent drafting assistance only and must not provide legal advice or guarantee patentability.
+version: 1.1.0
 ---
 
 # PatentForge Provisional
@@ -78,6 +79,34 @@ Read these support files when needed:
 
 Use [templates/invention-disclosure.md](templates/invention-disclosure.md) and [schemas/invention-disclosure.schema.json](schemas/invention-disclosure.schema.json) when drafting or validating the disclosure.
 
+### Intake Modes By Invention Type
+
+Adapt the follow-up questions to what is being invented instead of asking the same list every time:
+
+- **Hardware**: materials, tolerances, assembly order, physical interfaces, what the drawings must show at component level
+- **Software**: data flow, algorithm steps, system architecture, what runs where, and which steps are more than abstract ideas implemented on a computer
+- **Process**: ordered steps, required conditions, inputs and outputs at each step, and which step ordering or condition is the candidate novelty
+- **Mixed**: split the questions by aspect and keep the hardware and software novelty candidates separately identified, since they may support different claims
+
+### Inventor Interview Mode
+
+When the user starts with a very rough idea or says they do not know where to begin, switch to one-question-at-a-time intake:
+
+1. Ask the single most clarifying question first, usually the problem or the mechanism.
+2. Reflect the answer back into the growing disclosure so the user sees it take shape.
+3. Continue until the required intake questions are covered, skipping any the user already answered implicitly.
+4. Offer to switch to full-package drafting once the disclosure has a problem, mechanism, components, and at least one novelty candidate.
+
+### Confidentiality Scrub
+
+Before the final package is assembled, scan the disclosure and draft for material that should not leave the user's hands:
+
+- customer, supplier, and partner names
+- internal project codenames, pricing, or business metrics
+- trade secrets that are not needed to enable the invention, such as tuning values or process recipes beyond the preferred embodiment
+
+List each flagged item with a suggested generic replacement, such as "a logistics customer" for a named company. Let the user decide; do not silently remove technical content, because the provisional must still enable the invention.
+
 ## Prior Art Workflow
 
 1. Extract the key technical components and their interactions.
@@ -108,6 +137,25 @@ Use [templates/prior-art-report.md](templates/prior-art-report.md) and [schemas/
 6. Label all claims as drafting aids only.
 
 Use [templates/claim-candidates.md](templates/claim-candidates.md) and [schemas/claim-set.schema.json](schemas/claim-set.schema.json).
+
+### Claim Narrowing Mode
+
+When the user wants fallback positions, produce narrowing candidates grouped by what does the narrowing so the fallback ladder is visible:
+
+- **Structure**: added or more specific components and their connections
+- **Workflow**: added steps, step ordering, or conditions
+- **Material or parameter choice**: specific materials, ranges, or thresholds, flagged as the narrowest tier
+- **Optional feature set**: features from alternative embodiments that could rescue a claim if the core is found in prior art
+
+Order each group from broadest to narrowest and note which dependent candidates pair naturally with which independent claim. Label everything as drafting aids only.
+
+### Figure Prompt Generator
+
+When the user wants drawings prepared, convert the disclosure into figure prompts a sketch artist, CAD tool, or diagram generator can act on:
+
+- one prompt per figure in the figure list: concept overview, component or exploded views, and flow diagrams for processes
+- each prompt names the components to show, their spatial or logical relationships, and the reference numerals to label
+- keep prompts factual descriptions of the disclosed invention; do not introduce elements the disclosure does not support
 
 ## Provisional Draft Workflow
 

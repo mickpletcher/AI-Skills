@@ -1,6 +1,7 @@
 ---
 name: x-post
 description: Write posts for X on tech, PowerShell, IT automation, and fitness topics. Always trigger immediately when the user's message starts with "xp". Produce a single post within 280 characters, no emojis, avoid em dashes in final X post output, and use 2 to 3 hashtags maximum.
+version: 1.1.0
 ---
 
 # X Post Skill
@@ -122,6 +123,26 @@ Always use 2 to 3 hashtags and place them at the end.
 `#StrengthTraining #MuscleBuilding #FitnessProgress #Lifting #NaturalStrength`
 
 For topics not listed, choose 2 to 3 specific hashtags that fit real X communities.
+
+## Length Presets
+
+Infer the right preset from the draft. Default to a single post.
+
+- **Single post** (default): full 280-character budget, hook plus optional support line.
+- **One-liner**: under 140 characters, one sharp claim or number, 1 to 2 hashtags. Use when the draft is a single punchy fact or opinion.
+- **Thread opener**: when the topic clearly needs more than one post, write the strongest standalone first post and note that a thread would follow. Do not write the rest of the thread unless asked.
+
+## Hook Generation
+
+Before writing the final post, internally draft 2 to 3 candidate opening clauses and keep the one that lands fastest. The first clause has to earn the read on its own. Prefer the most specific number, contrast, or opinion in the source material. Never open with setup phrases like "I recently" or "Today I".
+
+## Topic Modes
+
+Adjust emphasis by topic. Do not announce the mode.
+
+- **PowerShell / endpoint management**: lead with scale (device counts, time saved), name the tool stack, use tech hashtags.
+- **Fitness**: lead with the number and the timeframe, keep it factual rather than motivational, use fitness hashtags.
+- **Build / project updates** (container home, homelab, trading): lead with what changed since the last update and one concrete detail that shows real progress.
 
 ## Post Structure
 

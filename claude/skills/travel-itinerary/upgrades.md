@@ -4,6 +4,9 @@ Tracks implemented upgrades to this skill. Future upgrade ideas are in [future-u
 
 | Date | Upgrade | Notes |
 |------|---------|-------|
+| 2026-06-10 | Added multi-traveler coordination | Shared trips get traveler responsibility tables, cost splits, and solo block planning. |
+| 2026-06-10 | Added handoff formats | Print sheets and mobile summaries derive from the master Obsidian file with identical facts. |
+| 2026-06-10 | Added post-trip review | Estimated versus actual comparison and lessons feed a Post-Trip Notes section for future trips. |
 | 2026-05-13 | Added itinerary templates | The skill now supports city trip, road trip, active travel, and mixed work plus leisure itinerary templates. |
 | 2026-05-13 | Added daily structure checks | The skill now checks transit time, meals, and activity pacing so day plans are more realistic. |
 | 2026-05-24 | Added border, lodging, and arrival/departure checks | Added visa and border checkpoints for multi-country itineraries, lodging decision notes for location versus price versus transit, and smarter red-eye, late check-in, and departure day templates. |

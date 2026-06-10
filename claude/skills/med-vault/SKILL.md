@@ -1,7 +1,7 @@
 ---
 name: med-vault
 description: Securely track medications, supplements, interactions, and schedules using manual entry or uploaded prescription label images.
-version: 1.1.1
+version: 1.2.0
 ---
 
 # MedVault
@@ -59,6 +59,11 @@ The disclaimer must state that MedVault is not medical advice, that the informat
 | `mv travel [country]` | Build a travel medication review with country restrictions and timing guidance |
 | `mv card print` | Generate an emergency card in print ready format |
 | `mv delete [name]` | Permanently remove a medication |
+| `mv refill` | Predict days remaining and flag upcoming run-outs |
+| `mv take [name]` | Confirm a dose was taken; supports `mv take all [time block]` |
+| `mv adherence` | Show adherence summary with streaks and missed dose patterns |
+| `mv journal [note]` | Log a side effect or symptom observation with timestamp |
+| `mv journal review` | Show the side effect timeline correlated with active medications |
 | `mv help` | Show command reference and example prompts |
 
 ---
@@ -236,6 +241,41 @@ The disclaimer must state that MedVault is not medical advice, that the informat
 
 ---
 
+### Workflow 10: Refill Prediction (mv refill)
+
+1. Load the active medication inventory.
+2. For each medication with a known quantity or refill date plus a known dosing frequency, estimate days of supply remaining.
+3. If quantity is unknown, ask once for pills on hand and persist it; otherwise mark the medication as `cannot predict` rather than guessing.
+4. Output a run-out table sorted by soonest run-out: medication, estimated days remaining, projected run-out date, refills remaining, and pharmacy.
+5. Flag anything under 7 days as `REFILL NOW`, under 14 days as `refill soon`, and call out medications with zero refills remaining that will need a prescriber contact.
+6. Adjust estimates whenever doses are confirmed through `mv take` or schedules change.
+7. End the response with the required safety disclaimer.
+
+---
+
+### Workflow 11: Adherence Tracking (mv take, mv adherence)
+
+1. `mv take [name]` records a confirmed dose with a timestamp; `mv take all morning` confirms every medication in that time block.
+2. A dose with no confirmation by the end of its time block counts as unconfirmed, not as missed. Only count a dose as missed when the user says so or confirms a day review.
+3. `mv adherence` outputs per medication: confirmation rate over the last 7 and 30 days, current streak, longest streak, and the time blocks where misses cluster.
+4. Surface patterns plainly, such as evening doses being missed twice as often, and suggest practical fixes like moving a dose to an existing routine anchor. Do not lecture.
+5. Decrement estimated supply on each confirmed dose so refill prediction improves over time.
+6. End the response with the required safety disclaimer.
+
+---
+
+### Workflow 12: Side Effect Journal (mv journal)
+
+1. `mv journal [note]` records a timestamped observation, such as `mv journal dizzy about an hour after morning doses`.
+2. Tag each entry with the active medications and any started, stopped, or dose-changed medication within the prior 14 days.
+3. `mv journal review` outputs a timeline of entries aligned against medication start, stop, and change dates, highlighting correlations such as symptoms beginning within days of a new medication.
+4. Present correlations as observations to discuss with a doctor or pharmacist, never as causation findings.
+5. If an entry describes a severe symptom (chest pain, trouble breathing, swelling of face or throat, severe rash), instruct the user to seek immediate medical care before anything else.
+6. Include the journal in `mv export` so the user can hand the timeline to their clinician.
+7. End the response with the required safety disclaimer.
+
+---
+
 ## Data Schema
 
 ### Medication Record
@@ -312,9 +352,35 @@ medvault/
   medications.json          # Active and historical medication records
   interactions.json         # Cached interaction analysis results
   schedule.json             # Generated dosing schedule
+  doses.json                # Confirmed dose log for adherence and supply tracking
+  journal.json              # Side effect journal entries
   audit.log                 # Append-only audit log
   images/                   # Uploaded label image references
   exports/                  # Generated export files
+```
+
+### Dose Confirmation Record
+
+```json
+{
+  "medicationId": "uuid-v4",
+  "takenAt": "ISO8601",
+  "timeBlock": "morning | midday | evening | bedtime",
+  "source": "mv take | day review"
+}
+```
+
+### Journal Entry Record
+
+```json
+{
+  "id": "uuid-v4",
+  "loggedAt": "ISO8601",
+  "note": "string",
+  "activeMedications": "string[]",
+  "recentChanges": "string[]",
+  "severityFlag": "routine | severe"
+}
 ```
 
 ---
@@ -390,6 +456,10 @@ This skill must include the following disclaimer on every response:
 - [ ] Travel medication mode clearly marks unverified country restriction guidance
 - [ ] Emergency card print workflow flags missing or uncertain fields before final output
 - [ ] Handwritten and faxed prescription OCR requires stricter confirmation before saving
+- [ ] Refill prediction marks unknown quantities as cannot predict instead of guessing
+- [ ] Adherence tracking counts unconfirmed doses separately from missed doses
+- [ ] Side effect journal presents correlations as observations, never causation
+- [ ] Severe journal symptoms trigger an immediate care instruction before any other output
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 name: obsidian-workout-export
 description: Export workout data to an Obsidian-formatted Markdown file. Always trigger immediately when the user types "owd". Also trigger on "export workout", "obsidian workout", "save workout to obsidian", or related requests to export workout data into Obsidian. Read the current conversation first before searching prior conversation history. Name the file after the date of the chat that contains the workout data.
+version: 1.1.0
 ---
 
 # Obsidian Workout Export Skill
@@ -121,6 +122,43 @@ Recommended structure:
 ```
 
 Omit sections with no data. If there are no PRs, either omit the section or state `None this session`.
+
+### Template variants
+
+Match the template to the session type instead of forcing everything into the strength table:
+
+- **Strength session**: the default structure above.
+- **Ride**: replace the exercise table with distance, duration, average and max speed or power, elevation, and route name when logged.
+- **Run**: distance, duration, pace, and surface or route when logged.
+- **Combined day**: one section per activity in the order trained, sharing the same body stats block.
+
+Keep column names consistent across files of the same type so Dataview queries work across the whole `WorkoutData/` folder.
+
+### Frontmatter metadata
+
+Add YAML frontmatter so notes are queryable:
+
+```yaml
+---
+date: YYYY-MM-DD
+type: strength | ride | run | combined
+focus: [day focus, e.g. Lower A]
+duration: [minutes, if logged]
+effort: [easy | moderate | hard, only if stated or clearly implied]
+tags: [workout, plus activity tags like strength or cycling]
+prs: [count, 0 if none]
+---
+```
+
+Only include fields the log supports. Add a one-line progression note at the end of the file when the session data shows a clear change from the last comparable session, and skip it otherwise.
+
+### Duplicate protection
+
+Before producing the file, check whether this session was already exported in the current conversation. If the same date and session were exported before:
+
+- ask whether to overwrite or skip, unless the user explicitly asked for a re-export
+- when re-exporting with corrections, produce one complete replacement file rather than a partial patch
+- if two different sessions genuinely share a date, suffix the filename with the focus, such as `2026-06-10-lower-a.md`
 
 ### 4. Output expectations
 

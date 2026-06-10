@@ -1,6 +1,7 @@
 ---
 name: pihole-csv-analyzer
 description: Analyze CSV exports from Pi-hole such as query logs, top domains, top clients, or adlist exports and produce actionable recommendations. Trigger immediately when the user uploads or mentions a Pi-hole CSV file, types "pihole" or "ph analyze", or asks to analyze DNS query data, blocklist hits, or Pi-hole exports. Produce an in-chat analysis plus candidate blocklist and allowlist outputs for review.
+version: 1.1.0
 ---
 
 # Pi-hole CSV Analyzer
@@ -146,7 +147,34 @@ Flag blocked domains that may be legitimate when they:
 - appear frequently among blocked queries
 - clearly belong to major legitimate platforms
 
-### 4. Output
+### 4. Prioritize findings
+
+Not every finding deserves equal attention. Rank what gets surfaced first by leverage:
+
+1. **High leverage**: a single domain or client responsible for a large share of total queries; fixing one thing changes the whole picture
+2. **Likely false positives**: blocked domains that are breaking real functionality, since these cost the user daily
+3. **Noisy but harmless**: high-volume telemetry that is already blocked; mention it once, no action needed
+4. **Long tail**: everything else, summarized in counts rather than itemized
+
+### 5. Client grouping
+
+Group findings by client so problem traffic traces to a device, not just a domain:
+
+- identify each noisy client's likely device type from hostname, MAC vendor hints, or query patterns (a TV queries TV telemetry, an IoT sensor beacons one domain)
+- for each problem client, list its top domains and what they suggest the device is doing
+- call out clients whose volume is wildly out of proportion to their device type, such as a thermostat making thousands of queries per hour
+- recommend per-client fixes when they beat global ones, such as a group assignment in Pi-hole rather than a global block
+
+### 6. Recommended actions
+
+Separate every recommendation into one of four explicit paths so nothing reads as a vague suggestion:
+
+- **Block**: add to denylist or a blocklist; evidence is strong and breakage risk is low
+- **Allow**: add to allowlist; the block is causing real functionality loss
+- **Investigate**: evidence is suggestive but not conclusive; state exactly what to check, such as watching whether a domain spikes when a specific app runs
+- **Ignore**: looks alarming but is normal, and why
+
+### 7. Output
 
 Always provide an in-chat summary with:
 

@@ -8,7 +8,7 @@ description: >
   describes an upcoming trip and asks Claude to organize it. Produces a
   day-by-day breakdown, logistics summary, packing list, and budget tracker in a
   single Obsidian-ready .md file.
-version: 1.2.0
+version: 1.3.0
 ---
 
 # Travel Itinerary Skill
@@ -295,6 +295,39 @@ Use these patterns when the trip includes red-eye flights, late check-in, early 
 - Include checkout, luggage storage, final meal, transfer time, security or border buffer, and backup transport.
 - Keep activities near lodging or the departure station.
 - Flag early departures that require a pre-booked taxi, airport hotel, or previous-night repositioning.
+
+### Multi-Traveler Coordination
+
+When the trip involves more than one traveler, add a coordination section after the Logistics Overview:
+
+```markdown
+## Travelers And Responsibilities
+
+| Traveler | Arrives | Departs | Books | Carries |
+|---|---|---|---|---|
+| [Name] | [Date/flight] | [Date/flight] | [What they reserve] | [Shared items they pack] |
+
+**Split costs:** [shared lodging or car split note]
+**Solo blocks:** [days or activities where travelers separate, with regroup time and place]
+```
+
+Mark which reservations cover the group versus per person, and never assume every traveler shares every leg; mismatched arrival days are the most common multi-traveler planning failure.
+
+### Handoff Formats
+
+Default output is the full Obsidian file. When asked for an alternate format, derive it from the same data instead of rebuilding:
+
+- `print sheet`: a one-to-two page condensation with the logistics table, accommodation summary, confirmation codes, key contacts, and day-by-day reduced to one line per day; no checklists, no budget tracker
+- `mobile summary`: a short plain-text block per day (date, city, lodging plus address, the one fixed commitment, transit detail) that pastes cleanly into phone notes or a messaging app
+- both formats must carry identical facts to the master file; if a fact changes, regenerate from the master rather than patching the copy
+
+### Post-Trip Review
+
+When the user returns from a trip or fills in the Actual budget column, offer a short review pass:
+
+- compare estimated versus actual by category and call out the biggest miss with a likely cause
+- ask which days were overpacked or underpacked, and which lodging or transit choices they would repeat
+- record the answers in a `## Post-Trip Notes` section at the bottom of the file so the next itinerary inherits real numbers, such as actual daily food spend by country
 
 ### Step 3 — Validate Before Exporting
 

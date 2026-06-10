@@ -4,6 +4,9 @@ Tracks implemented upgrades to this skill. Future upgrade ideas are in [future-u
 
 | Date | Upgrade | Notes |
 |------|---------|-------|
+| 2026-06-10 | Added refill prediction | mv refill estimates days remaining, projects run-out dates, and flags refills needed now or soon. |
+| 2026-06-10 | Added adherence tracking | mv take confirms doses and mv adherence reports rates, streaks, and missed dose patterns. |
+| 2026-06-10 | Added side effect journal | mv journal logs timestamped observations and correlates them with medication timeline changes. |
 | 2026-05-15 | Initial packaged release | Created the first packaged Claude import file `med-vault.skill`, added `assessment.md` with the current repo assessment, and added the repo standard tracking files. |
 | 2026-05-15 | Travel medication mode | Added travel medication mode with country restriction guidance. |
 | 2026-05-15 | Emergency card auto print | Added an emergency card auto print workflow. |

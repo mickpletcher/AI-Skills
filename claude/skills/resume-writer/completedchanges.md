@@ -17,4 +17,6 @@ This tracked file records shipped changes for this skill.
 - 2026-05-13: Interview prep handoff. Added likely questions and talking point handoff from the rewritten resume into interview prep.
 - 2026-05-13: Career timeline consistency checks. Added explicit mismatch flags for conflicting dates or sequencing across resume, LinkedIn, and cover letter context.
 - 2026-05-13: Longitudinal revision tracking. Added support for comparing current revisions against prior resume versions or audit baselines when available.
-
+- 2026-06-10: Job description terms are verified for coverage without stuffing, with honest gaps listed instead of inserted.
+- 2026-06-10: Enterprise and startup letters tune register and proof emphasis from the same facts.
+- 2026-06-10: Major bullets map to repos and portfolio evidence for interview and LinkedIn preparation.

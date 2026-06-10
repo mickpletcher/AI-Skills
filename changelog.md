@@ -4,6 +4,10 @@ Compiled from repo history and the current working tree.
 
 ## 2026-06-10
 
+- Added the Claude `market-brief` skill for current morning market briefs across Mick's default equity, macro, and crypto watchlist
+- Added `mb`, ticker append, `only:` override, and `+depth` handling to the market brief workflow
+- Added live-data verification rules, market session labeling, source listing, missing-data handling, and no-trade-advice constraints
+- Packaged `claude/skills/market-brief/market-brief.skill` for Claude import
 - Completed a Tier 1 upgrade pass across all 34 Claude skills, applying each skill's recorded high value backlog items as instruction-level improvements
 - Social and writing skills gained mode, hook, length, series, and repurpose controls (`facebook-post`, `facebook-reply`, `x-post`, `x-reply`, `linkedin-post`, `blog-post`, `blog-to-social`, `website-content`)
 - Fitness and health skills gained block comparison, race readiness, deload logic, session templates, template variants, portion scaling, refill prediction, adherence tracking, and a side effect journal (`fitness-log`, `fitness-programming`, `obsidian-workout-export`, `food-analyzer`, `med-vault`)

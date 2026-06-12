@@ -1,12 +1,12 @@
 ---
 name: market-brief
 description: >
-  Generate a current morning market brief for Mick's equity, macro, and crypto
-  watchlist. Trigger immediately when the user starts with "mb" or asks for a
-  market brief, morning brief, market update, pre-market summary, market open
-  summary, or asks what the market is doing. Always verify live prices, market
-  session context, and news before answering. Never use memory for prices,
-  levels, market status, or headlines.
+  Generate a current morning market brief for Mick's indices, commodities,
+  currencies, macro, and expanded crypto watchlist. Trigger immediately when the
+  user starts with "mb" or asks for a market brief, morning brief, market update,
+  pre-market summary, market open summary, or asks what the market is doing.
+  Always verify live prices, market session context, and news before answering.
+  Never use memory for prices, levels, market status, or headlines.
 version: 1.0.0
 ---
 
@@ -14,7 +14,7 @@ version: 1.0.0
 
 ## Intent
 
-Generate a fast, structured market brief for Mick before or during the trading day. The brief covers index direction, watchlist prices, crypto, macro instruments, market-moving headlines, and only the flags that matter.
+Generate a fast, structured market brief for Mick before or during the trading day. The brief covers index direction, commodities, currencies, expanded crypto, macro context, market-moving headlines, and only the flags that matter.
 
 This is a situational awareness tool. It is not financial advice, trade execution guidance, or a signal service.
 
@@ -22,6 +22,7 @@ This is a situational awareness tool. It is not financial advice, trade executio
 
 - Do not use for buy, sell, hold, price target, or guaranteed performance advice.
 - Do not use for a deep single-stock or single-crypto research report when a research skill is a better match.
+- Do not include an individual stock quote table unless the user explicitly asks for one outside the normal market brief.
 - Do not answer from memory when current prices, market session state, economic events, or headlines are requested.
 - Do not invent prices, changes, 52-week ranges, market hours, headlines, or sources.
 
@@ -42,26 +43,28 @@ Also trigger on:
 - `market open summary`
 - `what is the market doing`
 
-Ticker modifiers:
+Instrument modifiers:
 
-- `mb + PLTR SOFI` means append those tickers to the default watchlist for this brief only.
-- `mb only: NVDA TSLA BTC` means use only those tickers for this brief.
+- `mb + SOL XRP COPPER` means append those instruments to the relevant non-stock section for this brief only.
+- `mb only: BTC ETH DXY GOLD` means use only those instruments for this brief.
 - `mb +depth` means add the optional depth sections after Headlines.
 
 ## Workflow
 
-1. Parse the request for `+` tickers, `only:` override tickers, and `+depth`.
+1. Parse the request for `+` instruments, `only:` override instruments, and `+depth`.
 2. Determine the current market session: pre-market, regular session, after-hours, closed, weekend, or holiday if available.
 3. Verify current data before writing. Use reliable finance, exchange, brokerage, or market data pages where available.
-4. Gather price, dollar change, percent change, and 52-week range where available for equities and ETFs.
-5. Gather BTC/USD and ETH/USD current price and 24-hour change.
-6. Gather 3 to 5 market-moving headlines from current sources.
-7. Populate only confirmed values. Use `--` for unavailable values.
-8. Build the brief in the required markdown format.
-9. Add Flags only when something is actually notable.
-10. End with the required one-line follow-up.
+4. Gather current index levels and broad risk tone without adding individual stock quotes.
+5. Gather commodity prices and explain the inflation, growth, energy, or industrial demand read.
+6. Gather currency and rate-sensitive macro data, including DXY and major FX pairs.
+7. Gather expanded crypto data, including price, 24-hour change, 7-day change where available, market cap rank or dominance where relevant, and the main catalyst or risk.
+8. Gather 3 to 5 market-moving headlines from current sources.
+9. Populate only confirmed values. Use `--` for unavailable values.
+10. Build the brief in the required markdown format.
+11. Add Flags only when something is actually notable.
+12. End with the required one-line follow-up.
 
-## Default Watchlist
+## Default Instruments
 
 Use these by default unless the user gives `only:`.
 
@@ -72,23 +75,34 @@ Use these by default unless the user gives `only:`.
 - IWM
 - VIX
 
-### Equities
+### Commodities
 
-- AAPL
-- MSFT
-- NVDA
-- TSLA
-- AMZN
+- WTI crude oil
+- Brent crude oil
+- Natural gas
+- Gold
+- Silver
+- Copper
 
 ### Crypto
 
 - BTC/USD
 - ETH/USD
+- SOL/USD
+- XRP/USD
+- BNB/USD
+- Total crypto market cap
+- BTC dominance
 
-### Macro
+### Currencies And Macro
 
 - TLT
 - DXY
+- EUR/USD
+- USD/JPY
+- GBP/USD
+- USD/CAD
+- USD/CNH
 
 ## Source Priority
 
@@ -105,20 +119,33 @@ For economic calendar items, verify against a current economic calendar or offic
 
 ## Data Requirements
 
-For each index, equity, ETF, and macro instrument, try to capture:
+For indices and macro instruments, try to capture:
 
 - current or most recent price
-- dollar change
 - percent change
 - session label if relevant
-- 52-week high and low for watchlist equities if easily available
+- short risk-tone note
+
+For commodities, capture:
+
+- current price
+- percent change
+- contract or spot basis where available
+- short analytic read: inflation, energy supply, growth, industrial demand, or safe-haven pressure
+
+For currencies, capture:
+
+- current level
+- percent change
+- short analytic read: dollar strength, yen risk, risk-on/risk-off pressure, commodity currency pressure, or China sensitivity
 
 For crypto, capture:
 
 - current price
-- dollar change
-- percent change
-- 24-hour basis where available
+- 24-hour percent change
+- 7-day percent change where available
+- market cap rank, dominance, ETF flow, funding, liquidation, or volume context where available
+- short catalyst or risk note
 
 For headlines, capture:
 
@@ -135,33 +162,51 @@ Use this exact structure. Keep tables compact. Do not add commentary outside the
 
 ## Indices
 
-| Ticker | Price | Change | % Change | Note |
-| --- | ---: | ---: | ---: | --- |
-| SPY | $XXX.XX | +$X.XX | +X.XX% | [Pre-market / Open / After-hours / Closed] |
-| QQQ | $XXX.XX | +$X.XX | +X.XX% | |
-| IWM | $XXX.XX | +$X.XX | +X.XX% | |
-| VIX | XX.XX | +X.XX | +X.XX% | [Low <15 / Elevated 20-30 / High >30] |
+| Instrument | Level | % Change | Read |
+| --- | ---: | ---: | --- |
+| SPY | $XXX.XX | +X.XX% | [Pre-market / Open / After-hours / Closed] |
+| QQQ | $XXX.XX | +X.XX% | [Tech risk tone] |
+| IWM | $XXX.XX | +X.XX% | [Small-cap risk tone] |
+| VIX | XX.XX | +X.XX% | [Low <15 / Elevated 20-30 / High >30] |
 
-## Watchlist
+## Commodities
 
-| Ticker | Price | Change | % Change | 52W High | 52W Low |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| AAPL | $XXX.XX | +$X.XX | +X.XX% | $XXX.XX | $XXX.XX |
-| MSFT | -- | -- | -- | -- | -- |
+| Instrument | Level | % Change | Read |
+| --- | ---: | ---: | --- |
+| WTI crude | $XX.XX | +X.XX% | [Energy inflation / supply / demand read] |
+| Brent crude | $XX.XX | +X.XX% | [Global oil read] |
+| Natural gas | $X.XX | +X.XX% | [Weather / storage / demand read] |
+| Gold | $X,XXX.XX | +X.XX% | [Rates / dollar / safe-haven read] |
+| Copper | $X.XX | +X.XX% | [Growth / China / industrial demand read] |
+
+## Currencies
+
+| Instrument | Level | % Change | Read |
+| --- | ---: | ---: | --- |
+| DXY | XXX.XX | +X.XX% | [Dollar strength read] |
+| EUR/USD | X.XXXX | +X.XX% | [Euro / dollar read] |
+| USD/JPY | XXX.XX | +X.XX% | [Yen / rates / intervention read] |
+| GBP/USD | X.XXXX | +X.XX% | [Sterling / dollar read] |
+| USD/CAD | X.XXXX | +X.XX% | [Oil / dollar / Canada read] |
 
 ## Crypto
 
-| Pair | Price | Change | % Change |
-| --- | ---: | ---: | ---: |
-| BTC/USD | $XX,XXX | +$XXX | +X.XX% |
-| ETH/USD | $X,XXX | +$XX | +X.XX% |
+| Asset | Price | 24H | 7D | Context |
+| --- | ---: | ---: | ---: | --- |
+| BTC | $XX,XXX | +X.XX% | +X.XX% | [Dominance / ETF flows / risk tone] |
+| ETH | $X,XXX | +X.XX% | +X.XX% | [ETH/BTC / ETF / network read] |
+| SOL | $XXX.XX | +X.XX% | +X.XX% | [Layer 1 risk appetite / ecosystem note] |
+| XRP | $X.XX | +X.XX% | +X.XX% | [Legal / payments / listing catalyst] |
+| BNB | $XXX.XX | +X.XX% | +X.XX% | [Exchange-token / ecosystem read] |
+| Total crypto market cap | $X.XXT | +X.XX% | +X.XX% | [Broad crypto risk tone] |
+| BTC dominance | XX.X% | +X.X pts | -- | [Rotation read] |
 
-## Macro
+## Macro Rates
 
-| Instrument | Price | Change | % Change |
-| --- | ---: | ---: | ---: |
-| TLT | $XXX.XX | +$X.XX | +X.XX% |
-| DXY | XXX.XX | +X.XX | +X.XX% |
+| Instrument | Level | % Change | Read |
+| --- | ---: | ---: | --- |
+| TLT | $XXX.XX | +X.XX% | [Long-duration Treasury read] |
+| 10Y Treasury yield | X.XX% | +X bps | [Rates pressure read] |
 
 ## Headlines
 
@@ -179,7 +224,7 @@ Use this exact structure. Keep tables compact. Do not add commentary outside the
 
 *Data pulled [HH:MM timezone]. Verify before trading.*
 
-Add tickers or pull a specific chart level?
+Add instruments or pull a specific chart level?
 ```
 
 ## Optional Depth Sections
@@ -204,11 +249,11 @@ Use a compact table for the 11 S&P 500 sector ETFs:
 
 Columns: Sector ETF, Price, % Change, Note.
 
-### Earnings This Week
+### Equity Catalysts
 
-Show notable earnings that could move the broader market or the watchlist.
+Show notable earnings or mega-cap headlines only when they could move the broader market. Do not add a stock quote table.
 
-Columns: Company, Ticker, Report Date, Estimate if available.
+Columns: Company, Ticker, Event, Date, Why It Matters.
 
 ### Economic Calendar
 
@@ -223,12 +268,13 @@ Columns: Date, Event, Prior, Estimate.
 - State the session context clearly when markets are not in regular trading.
 - Keep the brief factual and compact.
 - Do not use green or red formatting.
+- Do not include an individual stock quote table in the default brief.
 - Do not include placeholder text in Flags.
 - Do not output a buy, sell, hold, entry, stop, target, or position sizing recommendation.
 - Do not describe a headline as market-moving unless it plausibly affects indices, rates, mega-cap tech, energy, crypto, the Fed, inflation, jobs, or broad risk appetite.
 - Keep headlines to 3 to 5 items.
 - Include a Sources section with the data source names or links used.
-- End with exactly: `Add tickers or pull a specific chart level?`
+- End with exactly: `Add instruments or pull a specific chart level?`
 
 ## Flag Rules
 
@@ -236,8 +282,10 @@ Include Flags only for meaningful conditions such as:
 
 - VIX above 25.
 - SPY, QQQ, IWM, TLT, or DXY move above roughly 1% intraday.
+- WTI, Brent, gold, copper, or a major FX pair moves enough to affect inflation, rates, or risk appetite.
 - BTC moves more than 3% in 24 hours.
-- Any watchlist ticker is near or at a 52-week high or low.
+- ETH, SOL, XRP, or BNB moves more than 5% in 24 hours.
+- BTC dominance shifts enough to show rotation between BTC and altcoins.
 - A major Fed, CPI, PPI, jobs, or earnings event is due today or this week.
 - Data conflict or stale quote risk could materially affect the brief.
 
@@ -245,8 +293,10 @@ Include Flags only for meaningful conditions such as:
 
 - [ ] Current prices were verified during this run.
 - [ ] Market session context is labeled.
-- [ ] Default, appended, or override tickers were parsed correctly.
+- [ ] Default, appended, or override instruments were parsed correctly.
 - [ ] Missing values are marked `--` instead of guessed.
+- [ ] No default individual stock quote table is included.
+- [ ] Commodities, currencies, and expanded crypto context are included.
 - [ ] Headlines are current and limited to 3 to 5.
 - [ ] Flags are omitted when nothing notable is found.
 - [ ] Sources are listed.

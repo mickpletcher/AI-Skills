@@ -28,7 +28,7 @@ The Claude side already has the broadest and most mature set of skills in the re
 `claude/skills/travel-research` now exists for deeper destination comparison before a trip moves into full planning.
 
 7. Market brief
-`claude/skills/market-brief` now exists for current morning market briefs across Mick's equity, macro, and crypto watchlist.
+`claude/skills/market-brief` now exists for current morning market briefs across Mick's indices, commodities, currencies, macro, and expanded crypto watchlist.
 
 ## GitHub Skills Completed
 

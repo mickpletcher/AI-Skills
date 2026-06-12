@@ -2,10 +2,14 @@
 
 Compiled from repo history and the current working tree.
 
+## 2026-06-11
+
+- Updated the Claude `market-brief` skill to remove the default individual stock quote table and expand commodities, currencies, macro rates, and crypto coverage
+
 ## 2026-06-10
 
-- Added the Claude `market-brief` skill for current morning market briefs across Mick's default equity, macro, and crypto watchlist
-- Added `mb`, ticker append, `only:` override, and `+depth` handling to the market brief workflow
+- Added the Claude `market-brief` skill for current morning market briefs across Mick's default indices, commodities, currencies, macro, and expanded crypto watchlist
+- Added `mb`, instrument append, `only:` override, and `+depth` handling to the market brief workflow
 - Added live-data verification rules, market session labeling, source listing, missing-data handling, and no-trade-advice constraints
 - Packaged `claude/skills/market-brief/market-brief.skill` for Claude import
 - Completed a Tier 1 upgrade pass across all 34 Claude skills, applying each skill's recorded high value backlog items as instruction-level improvements

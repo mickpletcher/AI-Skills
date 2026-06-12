@@ -22,11 +22,11 @@ Update `SKILL.md` when the briefing workflow changes, then rebuild `market-brief
 
 ## What This Skill Covers
 
-- Morning market briefs for Mick's default equity, macro, and crypto watchlist
+- Morning market briefs for Mick's default indices, commodities, currencies, macro, and expanded crypto watchlist
 - `mb` shortcut handling
-- Temporary ticker appends and `only:` overrides
-- Current prices, session labels, headlines, sources, and flags
-- Optional `+depth` sections for sector performance, earnings, and economic calendar events
+- Temporary instrument appends and `only:` overrides
+- Current levels, session labels, commodities analysis, currency analysis, crypto context, headlines, sources, and flags
+- Optional `+depth` sections for sector performance, equity catalysts, and economic calendar events
 
 ## Installation
 

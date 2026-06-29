@@ -2,6 +2,10 @@
 
 Compiled from repo history and the current working tree.
 
+## 2026-06-29
+
+- Replaced the Claude `trip-email-html-itinerary` skill with the v2.0.0 canonical dark-theme HTML itinerary design system and rebuilt its `.skill` package
+
 ## 2026-06-11
 
 - Updated the Claude `market-brief` skill to remove the default individual stock quote table and expand commodities, currencies, macro rates, and crypto coverage

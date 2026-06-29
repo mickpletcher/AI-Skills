@@ -1,6 +1,6 @@
 # trip-email-html-itinerary
 
-A Claude skill for turning travel emails and booking confirmations into one polished, shareable offline HTML itinerary.
+A Claude skill for turning travel emails and booking confirmations into one polished, shareable HTML itinerary.
 
 ## Source of Truth
 
@@ -25,29 +25,31 @@ Build a full HTML trip document from these booking emails. Include contacts, day
 - Extracts flights, lodging, rental cars, events, travel admin, and pending items from email text.
 - Reconciles confirmations, cancellations, updates, conflicts, and missing details.
 - Redacts sensitive PINs, access codes, passwords, and payment details.
-- Produces one complete offline HTML document with inline CSS and no external dependencies.
+- Produces one complete HTML document using the established dark-theme itinerary design system.
+- Uses the canonical destination timeline, alert strips, flights panel, day-by-day grid, booking references, checklist, admin grid, and footer sections.
 - Structures the itinerary for both the traveler and family members who need quick reference information.
 
 ## Output Structure
 
 The generated HTML includes:
 
-1. Hero / masthead
-2. Key trip cards
-3. Route overview
-4. Contact quick reference
-5. Day-by-day itinerary
-6. Where I'm Staying
-7. Booking reference
-8. Event notes
+1. Hero with trip title, date range, route, badges, and destination palette
+2. Destination timeline cards
+3. Action items
+4. Flights
+5. Destination sections
+6. Day-by-day itinerary
+7. Booking references
+8. Booking checklist
 9. Travel admin
+10. Footer
 
 ## Implement In Claude
 
 1. Update `SKILL.md` first.
 2. Rebuild `trip-email-html-itinerary.skill` from the current source files.
 3. Import the `.skill` package into Claude using your normal Claude skills workflow.
-4. Test with pasted booking emails and confirm the output is a single self-contained HTML document.
+4. Test with pasted booking emails and confirm the output is a single complete HTML document using the canonical design system.
 
 ## Upgrade Log
 

@@ -16,12 +16,16 @@ version: 2.0.0
 
 Turn a batch of travel-related emails into a complete, shareable HTML trip document. The final file should help the traveler and a spouse, family member, or travel companion quickly understand flights, lodging, rental cars, events, booking references, contact details, open issues, and day-by-day logistics.
 
+Primary viewing target is Apple Notes on iPhone while traveling. Assume the user will drop the `.html` file into Apple Notes for quick access. Favor clarity and larger section labels over dense desktop styling when there is a tradeoff.
+
 Use this skill for email-derived travel organization and offline HTML output. If the user wants a planning Markdown file instead, use the travel-itinerary skill.
 
 ## Trigger When
 
 - The user asks to create an HTML itinerary from emails, confirmations, or forwarded trip details.
 - The user asks for a shareable trip page, family travel handoff, offline travel document, or complete travel summary from bookings.
+- The user asks for an itinerary they can save into Apple Notes for quick mobile retrieval.
+- The user says they will drop the HTML file into Apple Notes for quick travel access.
 - The input includes travel emails for flights, hotels, car rentals, tours, events, restaurants, insurance, visas, or logistics.
 - The user wants a single `.html` file that works locally without a server or internet access.
 
@@ -290,26 +294,26 @@ body { background: var(--dark); color: var(--white); font-family: 'DM Sans', san
 .hero-stars { position: absolute; inset: 0; background-image: radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.6) 0%, transparent 100%), radial-gradient(1px 1px at 30% 8%, rgba(255,255,255,0.4) 0%, transparent 100%), radial-gradient(1.5px 1.5px at 65% 15%, rgba(255,255,255,0.7) 0%, transparent 100%), radial-gradient(1px 1px at 80% 30%, rgba(255,255,255,0.3) 0%, transparent 100%), radial-gradient(1px 1px at 45% 5%, rgba(255,255,255,0.5) 0%, transparent 100%); }
 .hero-wave { position: absolute; bottom: -2px; left: 0; right: 0; height: 64px; background: var(--dark); clip-path: ellipse(55% 100% at 50% 100%); }
 .hero-inner { position: relative; max-width: 960px; margin: 0 auto; }
-.hero-tag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3.5px; color: var(--gold); text-transform: uppercase; margin-bottom: 18px; opacity: 0.9; }
+.hero-tag { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 2.5px; color: var(--gold); text-transform: uppercase; margin-bottom: 18px; opacity: 0.9; }
 .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(42px, 7.5vw, 76px); font-weight: 700; line-height: 1.0; color: var(--white); margin-bottom: 6px; }
 .hero h1 em { font-style: italic; color: var(--em-color); }
-.hero-sub { font-family: 'DM Mono', monospace; font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 1.5px; margin-top: 14px; }
+.hero-sub { font-family: 'DM Mono', monospace; font-size: 13px; color: rgba(255,255,255,0.58); letter-spacing: 1.2px; margin-top: 14px; }
 .hero-badges { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
-.hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 7px 14px; font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.55); letter-spacing: 1px; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 7px 14px; font-family: 'DM Mono', monospace; font-size: 12px; color: rgba(255,255,255,0.62); letter-spacing: 0.8px; }
 .hero-badge .val { color: var(--gold); }
 .hero-badge.warn-badge { border-color: rgba(232,96,60,0.38); background: rgba(232,96,60,0.1); }
 .hero-badge.warn-badge .val { color: var(--coral); }
 .hero-badge .dot-green { width: 6px; height: 6px; border-radius: 50%; background: var(--green-ok); box-shadow: 0 0 5px var(--green-ok); flex-shrink: 0; }
 .hero-badge .dot-red { width: 6px; height: 6px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 5px var(--coral); flex-shrink: 0; }
 .main { max-width: 980px; margin: 0 auto; padding: 44px 24px 80px; }
-.section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3px; color: var(--c1-mid); text-transform: uppercase; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid rgba(26,143,160,0.2); }
+.section-label { font-family: 'DM Mono', monospace; font-size: 14px; letter-spacing: 1.8px; font-weight: 500; color: var(--c1-mid); text-transform: uppercase; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid rgba(26,143,160,0.2); }
 .timeline { margin-bottom: 52px; }
 .timeline-track { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
 .dest-card { border-radius: 10px; padding: 16px 14px 14px; position: relative; border: 1px solid transparent; transition: transform 0.2s; }
 .dest-card:hover { transform: translateY(-3px); }
-.dest-name { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; margin-bottom: 2px; }
-.dest-country { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; color: rgba(255,255,255,0.45); text-transform: uppercase; margin-bottom: 2px; }
-.dest-dates { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(255,255,255,0.6); }
+.dest-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; margin-bottom: 2px; }
+.dest-country { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.8px; color: rgba(255,255,255,0.52); text-transform: uppercase; margin-bottom: 2px; }
+.dest-dates { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.68); }
 .dest-nights { margin-top: 10px; font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.75); }
 .dest-nights strong { font-size: 24px; font-weight: 400; display: block; line-height: 1; }
 .dest-hotel { margin-top: 8px; font-size: 10px; color: rgba(255,255,255,0.5); font-style: italic; line-height: 1.3; }
@@ -321,19 +325,19 @@ body { background: var(--dark); color: var(--white); font-family: 'DM Sans', san
 .flights-panel { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 22px 24px; margin-bottom: 14px; }
 .flight-row { display: flex; align-items: center; gap: 14px; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
 .flight-row:last-child { border-bottom: none; padding-bottom: 0; }
-.flight-dir { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--gold); width: 82px; flex-shrink: 0; }
+.flight-dir { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.6px; color: var(--gold); width: 92px; flex-shrink: 0; }
 .flight-route { display: flex; align-items: center; gap: 8px; flex: 1; flex-wrap: wrap; }
 .airport { font-family: 'DM Mono', monospace; font-size: 17px; font-weight: 500; color: var(--white); }
 .flight-arrow { color: rgba(255,255,255,0.22); font-size: 11px; }
-.flight-via { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(255,255,255,0.3); }
-.flight-time { font-family: 'DM Mono', monospace; font-size: 10.5px; color: rgba(255,255,255,0.45); text-align: right; line-height: 1.5; }
+.flight-via { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.42); }
+.flight-time { font-family: 'DM Mono', monospace; font-size: 12px; color: rgba(255,255,255,0.55); text-align: right; line-height: 1.5; }
 .badge-confirmed { background: rgba(76,175,80,0.12); border: 1px solid rgba(76,175,80,0.28); border-radius: 4px; padding: 2px 8px; font-family: 'DM Mono', monospace; font-size: 8.5px; color: #81c784; letter-spacing: 1px; white-space: nowrap; }
 .badge-book   { background: rgba(232,96,60,0.12); border: 1px solid rgba(232,96,60,0.3); border-radius: 4px; padding: 2px 8px; font-family: 'DM Mono', monospace; font-size: 8.5px; color: #f08060; letter-spacing: 1px; white-space: nowrap; }
 .badge-verify { background: rgba(224,160,32,0.12); border: 1px solid rgba(224,160,32,0.3); border-radius: 4px; padding: 2px 8px; font-family: 'DM Mono', monospace; font-size: 8.5px; color: #e8c050; letter-spacing: 1px; white-space: nowrap; }
 .dest-section { margin-bottom: 52px; }
 .dest-header { display: flex; align-items: baseline; gap: 14px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.07); }
 .dest-header-name { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; }
-.dest-header-dates { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 1px; }
+.dest-header-dates { font-family: 'DM Mono', monospace; font-size: 12px; color: rgba(255,255,255,0.45); letter-spacing: 1px; }
 .dest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
 .dest-grid.three { grid-template-columns: 1fr 1fr 1fr; }
 .info-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 18px 20px; }
@@ -341,7 +345,7 @@ body { background: var(--dark); color: var(--white); font-family: 'DM Sans', san
 .info-card.warn-card { border-color: rgba(232,96,60,0.3); background: linear-gradient(135deg, rgba(232,96,60,0.07) 0%, rgba(255,255,255,0.02) 100%); }
 .info-card.highlight { border-color: rgba(212,168,67,0.3); background: linear-gradient(135deg, rgba(212,168,67,0.07) 0%, rgba(255,255,255,0.02) 100%); }
 .info-card.accent { border-color: rgba(124,92,191,0.3); background: linear-gradient(135deg, rgba(124,92,191,0.08) 0%, rgba(255,255,255,0.02) 100%); }
-.info-card-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 10px; }
+.info-card-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.8px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
 .info-card-label.warn { color: #f08060; }
 .info-card-label.gold { color: #e8c060; }
 .info-card-label.purple { color: #b09ae0; }
@@ -365,11 +369,11 @@ body { background: var(--dark); color: var(--white); font-family: 'DM Sans', san
 .alert-strip.purple .txt strong { color: #c0a8f0; }
 .days-grid { margin-bottom: 52px; }
 .day-row { display: grid; grid-template-columns: 100px 1fr; gap: 12px; margin-bottom: 8px; align-items: start; }
-.day-label { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(255,255,255,0.3); letter-spacing: 1px; padding-top: 12px; text-align: right; }
+.day-label { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.42); letter-spacing: 0.8px; padding-top: 12px; text-align: right; }
 .day-label strong { display: block; font-size: 22px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1; margin-bottom: 3px; }
 .day-content { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 12px 16px; }
 .day-content.alert-day { border-color: rgba(232,96,60,0.25); background: rgba(232,96,60,0.04); }
-.day-country-tag { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; padding: 2px 8px; border-radius: 3px; display: inline-block; }
+.day-country-tag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase; margin-bottom: 8px; padding: 3px 9px; border-radius: 3px; display: inline-block; }
 .day-activities { font-size: 12.5px; color: rgba(255,255,255,0.55); line-height: 1.75; }
 .day-activities li { list-style: none; padding-left: 14px; position: relative; }
 .day-activities li::before { content: '·'; position: absolute; left: 2px; color: rgba(255,255,255,0.2); }
@@ -380,15 +384,15 @@ body { background: var(--dark); color: var(--white); font-family: 'DM Sans', san
 .day-activities .tour   { color: #f0a858; font-weight: 500; }
 .day-activities .event  { color: #c0a8f0; font-weight: 500; }
 .refs-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-bottom: 48px; }
-.refs-table th { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.3); padding: 8px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.refs-table th { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; color: rgba(255,255,255,0.45); padding: 8px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.07); }
 .refs-table td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.04); color: rgba(255,255,255,0.55); vertical-align: top; line-height: 1.5; }
 .refs-table td:first-child { color: var(--white); font-weight: 400; }
 .refs-table .ref-code { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); }
 .refs-table .ref-canceled { color: var(--coral); text-decoration: line-through; }
 .refs-table tr.canceled-row td { opacity: 0.55; }
-.status-confirmed { color: #81c784; font-family: 'DM Mono', monospace; font-size: 9px; }
-.status-verify    { color: #e8c050; font-family: 'DM Mono', monospace; font-size: 9px; }
-.status-needed    { color: var(--coral); font-family: 'DM Mono', monospace; font-size: 9px; }
+.status-confirmed { color: #81c784; font-family: 'DM Mono', monospace; font-size: 11px; }
+.status-verify    { color: #e8c050; font-family: 'DM Mono', monospace; font-size: 11px; }
+.status-needed    { color: var(--coral); font-family: 'DM Mono', monospace; font-size: 11px; }
 .checklist-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 52px; }
 .check-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 18px; }
 .check-card-title { font-size: 13px; font-weight: 500; margin-bottom: 12px; }
@@ -402,17 +406,43 @@ body { background: var(--dark); color: var(--white); font-family: 'DM Sans', san
 .check-item.canceled::before { content: '✕'; color: var(--coral); }
 .admin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 48px; }
 .admin-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 18px 20px; }
-.admin-card-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 10px; }
+.admin-card-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.8px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
 .admin-card-title { font-size: 13px; font-weight: 500; margin-bottom: 6px; color: var(--white); }
 .admin-card-body { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.7; }
 .admin-card-body strong { color: rgba(255,255,255,0.72); font-weight: 500; }
-footer { text-align: center; padding: 24px; font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.12); letter-spacing: 1.5px; }
+footer { text-align: center; padding: 24px; font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.2); letter-spacing: 1px; }
 @media (max-width: 700px) {
   .timeline-track { grid-template-columns: repeat(3, 1fr); }
+  .hero-tag { font-size: 13px; letter-spacing: 2px; }
+  .hero-sub { font-size: 14px; letter-spacing: 1px; }
+  .hero-badge { font-size: 13px; }
+  .section-label { font-size: 15px; letter-spacing: 1.5px; margin-bottom: 14px; }
+  .dest-name { font-size: 18px; }
+  .dest-country { font-size: 10.5px; letter-spacing: 1.6px; }
+  .dest-dates { font-size: 11px; }
+  .dest-header-name { font-size: 30px; }
+  .dest-header-dates { font-size: 13px; }
+  .flight-dir { font-size: 12px; }
+  .flight-via { font-size: 11.5px; }
+  .flight-time { font-size: 12.5px; }
+  .info-card-label { font-size: 11.5px; }
+  .day-label { font-size: 11.5px; }
+  .day-country-tag { font-size: 10.5px; }
+  .refs-table th { font-size: 11.5px; }
+  .status-confirmed, .status-verify, .status-needed { font-size: 11.5px; }
+  .admin-card-label { font-size: 11.5px; }
+  footer { font-size: 11.5px; }
   .dest-grid, .dest-grid.three { grid-template-columns: 1fr; }
   .checklist-grid { grid-template-columns: 1fr; }
   .admin-grid { grid-template-columns: 1fr; }
   .day-row { grid-template-columns: 64px 1fr; }
+}
+@media (max-width: 430px) {
+  .main { padding: 32px 16px 64px; }
+  .section-label { font-size: 16px; letter-spacing: 1.3px; }
+  .hero-badge { width: 100%; justify-content: flex-start; }
+  .timeline-track { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .flight-row { gap: 10px; }
 }
 @media print {
   .hero { padding: 32px 24px 40px; }
@@ -444,6 +474,7 @@ Define destination-specific tag classes inline per trip. Pattern:
 - Do not fabricate addresses, phone numbers, confirmation codes, or times; use `TBD` or `Pending`.
 - Never include PINs, access codes, passwords, payment card details, or sensitive login URLs; redact as `[redacted]`.
 - Treat visa, entry, and customs notes as verification checklists, not legal advice.
+- Keep the output self-contained and Apple Notes friendly: avoid JavaScript dependencies, external script tags, iframes, and interaction patterns that require a browser runtime beyond static HTML/CSS.
 - Google Fonts link requires internet on first load; note this if strict offline is required.
 
 ## Validation Checklist
@@ -453,6 +484,7 @@ Before finalizing, check the HTML mentally against this list:
 - `<!DOCTYPE html>` is present.
 - Viewport meta tag is present.
 - Google Fonts `<link>` is in `<head>`.
+- HTML remains usable when opened from Apple Notes on iPhone with no JavaScript required.
 - CSS variables declared in `:root` with destination palette tuned to the trip.
 - Hero gradient and radial overlays reflect the destination character.
 - Destination timeline cards have correct status dots and card gradients.

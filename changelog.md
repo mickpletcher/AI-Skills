@@ -2,6 +2,13 @@
 
 Compiled from repo history and the current working tree.
 
+## 2026-07-14
+
+- Updated `claude/skills/trip-email-html-itinerary/SKILL.md` headline typography so section labels like Destination Sequence are more readable on iPhone sized screens, including stronger mobile specific font scaling for timeline and destination headers
+- Updated `claude/skills/trip-email-html-itinerary/SKILL.md` to explicitly prioritize Apple Notes on iPhone as the primary viewing target and raised mono label sizes across hero badges, section labels, flight metadata, table headers, status text, and admin labels for faster in transit scanning
+- Updated `claude/skills/trip-email-html-itinerary/SKILL.md` constraints and validation checklist to explicitly support the Apple Notes drop-in workflow with self-contained static HTML and no JavaScript dependency
+- Updated `claude/skills/trip-email-html-itinerary/future-upgrades.md`, `claude/skills/trip-email-html-itinerary/completedchanges.md`, and `claude/skills/trip-email-html-itinerary/README.md` with Apple Notes first documentation, new roadmap options, and a 2026-07-14 completed changes entry
+
 ## 2026-06-29
 
 - Replaced the Claude `trip-email-html-itinerary` skill with the v2.0.0 canonical dark-theme HTML itinerary design system and rebuilt its `.skill` package

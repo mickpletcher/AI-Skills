@@ -1,6 +1,6 @@
 # trip-email-html-itinerary
 
-A Claude skill for turning travel emails and booking confirmations into one polished, shareable HTML itinerary.
+A Claude skill for turning travel emails and booking confirmations into one polished, shareable HTML itinerary with Apple Notes on iPhone as the primary retrieval workflow.
 
 ## Source of Truth
 
@@ -9,6 +9,8 @@ Use [SKILL.md](SKILL.md) as the canonical source for this skill. The packaged [t
 ## Trigger
 
 Use this skill when a user wants travel emails, booking confirmations, or reservation notes converted into a complete HTML itinerary.
+
+Primary usage pattern: the generated `.html` file is dropped into Apple Notes for quick access while traveling.
 
 Example prompts:
 
@@ -26,8 +28,10 @@ Build a full HTML trip document from these booking emails. Include contacts, day
 - Reconciles confirmations, cancellations, updates, conflicts, and missing details.
 - Redacts sensitive PINs, access codes, passwords, and payment details.
 - Produces one complete HTML document using the established dark-theme itinerary design system.
+- Prioritizes Apple Notes mobile readability with larger section and metadata labels for in-transit scanning.
 - Uses the canonical destination timeline, alert strips, flights panel, day-by-day grid, booking references, checklist, admin grid, and footer sections.
 - Structures the itinerary for both the traveler and family members who need quick reference information.
+- Keeps output self-contained and Apple Notes friendly with static HTML/CSS and no JavaScript dependency.
 
 ## Output Structure
 

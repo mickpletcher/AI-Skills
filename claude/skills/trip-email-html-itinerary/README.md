@@ -44,18 +44,19 @@ Generate a fictional public demo itinerary that shows the complete format withou
 - Includes emergency replacement guidance for passports, driver's licenses, Global Entry cards, and payment cards without embedding identity-document images.
 - Produces a separate printable offline emergency contacts sheet.
 - Includes `scripts/Test-ItineraryHtml.ps1` to reject unsafe, incomplete, or incompatible generated files.
-- Includes `scripts/New-PublicDemoItinerary.ps1` and a validated example for producing a clearly labeled fictional public demonstration without personal data.
+- Includes `scripts/New-PublicDemoItinerary.ps1`, `scripts/Export-PublicDemoJpegs.ps1`, and a validated ten-image example carousel for producing a clearly labeled fictional public demonstration without personal data.
 
 ## Public Demo
 
-Generate and validate the bundled fictional example:
+Generate the bundled fictional social-media carousel:
 
 ```powershell
-./scripts/New-PublicDemoItinerary.ps1 -OutputPath ./public-demo-itinerary.html
-./scripts/Test-ItineraryHtml.ps1 -Path ./public-demo-itinerary.html -PublicDemo -FailOnWarnings
+./scripts/New-PublicDemoItinerary.ps1 `
+  -OutputDirectory ./public-demo-social `
+  -BrowserChannel msedge
 ```
 
-The result is labeled `PUBLIC DEMO`, `FICTIONAL DATA`, and `NOT VALID FOR TRAVEL OR BOOKING` at the top and bottom. It must never be used as booking evidence or proof of travel.
+The result is ten numbered 1080 x 1350 JPG files ready for a 4:5 social-media carousel. The temporary HTML render source is deleted by default. Every image is labeled `PUBLIC DEMO`, `FICTIONAL DATA`, and `NOT VALID FOR TRAVEL OR BOOKING`. It must never be used as booking evidence or proof of travel.
 - Reconciles confirmations, cancellations, updates, conflicts, and missing details.
 - Redacts sensitive PINs, access codes, passwords, and payment details.
 - Produces one complete HTML document using the established dark-theme itinerary design system.

@@ -4,6 +4,7 @@ Tracks implemented upgrades to this skill. Future upgrade ideas are in [future-u
 
 | Date | Upgrade | Notes |
 | --- | --- | --- |
+| 2026-07-21 | Replaced public demo HTML with a social JPG carousel | The demo generator now renders ten numbered 1080 x 1350 JPEGs through Edge and Playwright, validates each file, removes its temporary HTML by default, and keeps the fictional-data warning visible on every slide. |
 | 2026-07-21 | Added fictional public demo mode | Added deterministic public-example generation, required fictional and non-validity labeling, a bundled example, and dedicated validation rules. |
 | 2026-07-21 | Added accessibility, validator, replacement guidance, and emergency sheet | Added larger text and stronger contrast, automated HTML safety checks, lost-document/card response guidance, and a separate offline contact-sheet asset. |
 | 2026-07-21 | Added offline locations and map links | Added plain-text verified addresses and operational meeting or pickup points throughout the template, with Apple Maps and Google Maps links for connected use. |

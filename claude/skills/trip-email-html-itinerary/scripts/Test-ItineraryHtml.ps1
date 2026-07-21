@@ -92,6 +92,7 @@ if ($PublicDemo) {
     }
 
     if ($html -notmatch '(?is)<title>[^<]*PUBLIC DEMO[^<]*</title>') { Add-Error 'Public demo title is not clearly labeled.' }
+    if ($html -notmatch '(?is)class=["''][^"'']*demo-watermark[^"'']*["'']') { Add-Error 'Public demo is missing the persistent screenshot watermark.' }
     if ($EmergencyContactsPath) { Add-Error 'Public demos must not include an emergency contacts sheet.' }
 
     $allowedDemoHosts = @(

@@ -2,6 +2,7 @@
 
 | Date | Change | Notes |
 | --- | --- | --- |
+| 2026-07-21 | Added public demo social carousel | Replaced the single public-demo HTML deliverable with ten ordered 1080 x 1350 JPG files, automatic JPEG checks, section-based slide framing, and a fixed fictional-data watermark on every image. |
 | 2026-07-21 | Added safe public demo generation | Added a deterministic fictional-itinerary generator, a ready-made validated public example, prominent non-validity labels, and validator enforcement that prevents personal data or deceptive booking use. |
 | 2026-07-21 | Added accessibility, validation, and emergency outputs | Increased readability and contrast, added accessible interaction rules, bundled a deterministic PowerShell validator, added emergency replacement guidance, and shipped a real offline emergency contacts template. |
 | 2026-07-21 | Added offline addresses and connected map links | Added verified plain-text addresses for lodging, recommendations, attractions, transport points, and tour meeting locations, plus Apple Maps and Google Maps links for connected use and explicit pending warnings when an address cannot be confirmed. |

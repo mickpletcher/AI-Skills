@@ -4,6 +4,7 @@ Compiled from repo history and the current working tree.
 
 ## 2026-07-21
 
+- Replaced the `trip-email-html-itinerary` public demo HTML deliverable with a ten-image 1080 x 1350 JPG carousel for social sharing, including automated rendering, validation, and a fictional-data watermark on every slide
 - Added a deterministic, clearly labeled fictional public-demo generator and validated example itinerary to `trip-email-html-itinerary`
 - Added accessibility improvements, a deterministic PowerShell HTML validator, emergency replacement guidance, and a bundled offline emergency contacts sheet to `trip-email-html-itinerary`
 - Added verified plain-text offline addresses plus Apple Maps and Google Maps links for lodging, restaurants, activities, transport points, and tour meeting locations to `trip-email-html-itinerary`

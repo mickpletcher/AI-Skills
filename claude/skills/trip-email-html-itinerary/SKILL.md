@@ -9,7 +9,7 @@ description: >
   HTML itinerary, travel handoff page, shareable trip page, family trip summary,
   booking-reference page, destination recommendation page, or offline travel
   document.
-version: 2.9.0
+version: 2.10.0
 ---
 
 # Trip Email HTML Itinerary
@@ -30,7 +30,7 @@ Use this skill for email-derived travel organization and offline HTML output. If
 - The user says they will drop the HTML file into Apple Notes for quick travel access.
 - The input includes travel emails for flights, hotels, car rentals, tours, events, restaurants, insurance, visas, or logistics.
 - The user wants restaurant or activity ideas added to an email-derived itinerary.
-- The user asks for a fake, sample, synthetic, portfolio, or public demonstration itinerary that shows what the skill can produce.
+- The user asks for a fake, sample, synthetic, portfolio, or public demonstration itinerary that can be shared as social-media images.
 - The user wants a single `.html` file that works locally without a server or internet access.
 
 ## Do Not Use When
@@ -168,16 +168,22 @@ Read `assets/itinerary-template.html` before generating the itinerary. Use it as
 
 ### Public Demo Mode
 
-When the user requests an example that can be shown publicly, generate it with `scripts/New-PublicDemoItinerary.ps1` or follow the same deterministic rules. A ready-made validated example is bundled at `examples/public-demo-itinerary.html`.
+When the user requests an example that can be shown publicly, generate the social-media carousel with `scripts/New-PublicDemoItinerary.ps1` or follow the same deterministic rules. A ready-made validated example is bundled at `examples/public-demo-social/`.
 
 ```powershell
-./scripts/New-PublicDemoItinerary.ps1 -OutputPath ./public-demo-itinerary.html
-./scripts/Test-ItineraryHtml.ps1 -Path ./public-demo-itinerary.html -PublicDemo -FailOnWarnings
+./scripts/New-PublicDemoItinerary.ps1 `
+  -OutputDirectory ./public-demo-social `
+  -BrowserChannel msedge
 ```
+
+- Produce ten numbered 1080 x 1350 JPEG files in deterministic carousel order: cover, trip overview, flights, hotels and transport, restaurants, activities, day plan, bookings, travel admin, and emergency replacement.
+- Treat the generated HTML as a temporary render source. Delete it after a successful export unless `-KeepHtml` is explicitly requested for debugging.
+- Require Microsoft Edge and `npx` with Playwright available on the generation computer. The exported JPG files are standalone and need no browser or internet connection.
+- Display `PUBLIC DEMO · FICTIONAL DATA · NOT VALID FOR TRAVEL OR BOOKING` in a fixed bottom watermark on every JPG.
 
 - Use synthetic travelers, destinations, countries, airlines, hotels, venues, addresses, routes, schedules, prices, and booking references.
 - Make fictional names unmistakable with labels such as `(Fictional)`, `Example`, `Sample`, or `Demo`.
-- Display `PUBLIC DEMO · FICTIONAL DATA · NOT VALID FOR TRAVEL OR BOOKING` prominently at the top and in the footer.
+- Display `PUBLIC DEMO · FICTIONAL DATA · NOT VALID FOR TRAVEL OR BOOKING` prominently at the top, in the footer, and in the fixed JPG watermark.
 - Include `PUBLIC DEMO` in the HTML `<title>`.
 - Do not derive demo data from user emails, an existing itinerary, memory, downloaded files, or prior generated output.
 - Do not include real names, contact details, confirmation codes, loyalty numbers, policy numbers, document numbers, payment details, identity images, private addresses, or personal travel dates.
@@ -550,7 +556,8 @@ Before finalizing, run the bundled validator and then review the output visually
 - Footer includes trip name · traveler · dates · route.
 - Mobile CSS collapses grids to single column.
 - Print CSS present.
-- Public demos pass `Test-ItineraryHtml.ps1 -PublicDemo -FailOnWarnings`, contain the required warning labels at least twice, and contain no personal or real booking data.
+- Public demos pass `Test-ItineraryHtml.ps1 -PublicDemo -FailOnWarnings` before rendering, contain no personal or real booking data, and leave no HTML file unless `-KeepHtml` was requested.
+- Public demos produce exactly ten ordered JPG files. Each is a valid 1080 x 1350 JPEG, has a distinct section label where applicable, and keeps the fictional-data warning visible at the bottom.
 
 ## Help Response
 

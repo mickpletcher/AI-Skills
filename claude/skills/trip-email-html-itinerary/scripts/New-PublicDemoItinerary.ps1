@@ -1,5 +1,9 @@
 param(
-    [string]$OutputPath = (Join-Path (Get-Location) 'trip-email-html-itinerary-public-demo.html')
+    [string]$OutputDirectory = (Join-Path (Get-Location) 'trip-email-html-itinerary-public-demo'),
+
+    [string]$BrowserChannel = 'msedge',
+
+    [switch]$KeepHtml
 )
 
 $templatePath = Join-Path $PSScriptRoot '..\assets\itinerary-template.html'
@@ -64,7 +68,7 @@ $values = @{
     FLIGHT_TIMES = '08:00 → 10:00 sample time'
     HOTELS_CONFIRMED = '2 fictional'
     HOTELS_TOTAL = '2 fictional'
-    MONTH_YEAR = 'Public Demo'
+    MONTH_YEAR = 'Sample Edition'
     NEAREST_EMBASSY_CONTACT = 'Not applicable to fictional destinations'
     OPEN_DINING_ITEM = 'Select a real restaurant when building a personal itinerary'
     OPEN_FLIGHT_ITEM = 'Replace fictional segments with verified bookings'
@@ -126,13 +130,20 @@ function Get-DemoValue([string]$Name) {
 }
 
 $html = [regex]::Replace($template, '\{\{([A-Z0-9_]+)\}\}', { param($match) Get-DemoValue $match.Groups[1].Value })
-$demoCss = '.demo-banner{background:#ffd54f;color:#111;text-align:center;padding:12px 16px;font-family:DM Mono,monospace;font-size:15px;font-weight:700;letter-spacing:1px;border-bottom:3px solid #111}'
+$demoCss = '.demo-banner{background:#ffd54f;color:#111;text-align:center;padding:12px 16px;font-family:DM Mono,monospace;font-size:15px;font-weight:700;letter-spacing:1px;border-bottom:3px solid #111}.demo-watermark{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:rgba(255,213,79,.96);color:#111;text-align:center;padding:8px 12px;font-family:DM Mono,monospace;font-size:13px;font-weight:700;letter-spacing:.8px;border-top:2px solid #111}body:has(:target)::before{position:fixed;left:0;right:0;top:0;z-index:9998;background:rgba(8,28,37,.97);color:#56d9ed;text-align:center;padding:12px;font-family:DM Mono,monospace;font-size:18px;font-weight:700;letter-spacing:2px;border-bottom:2px solid #1c7587}body:has(#main-content:target)::before{content:"TRIP OVERVIEW"}body:has(#flights:target)::before{content:"FLIGHTS"}body:has(#destinations:target)::before{content:"HOTELS & TRANSPORT"}body:has(#restaurants:target)::before{content:"RESTAURANTS"}body:has(#activities:target)::before{content:"ACTIVITIES"}body:has(#day-plan:target)::before{content:"DAY PLAN"}body:has(#bookings:target)::before{content:"BOOKINGS"}body:has(#admin:target)::before{content:"TRAVEL ADMIN"}body:has(#emergency-replacement:target)::before{content:"EMERGENCY REPLACEMENT"}section,[id]{scroll-margin-top:72px}body::after{content:"";display:block;height:1350px}'
 $html = $html.Replace('</style>', "$demoCss`r`n</style>")
 $banner = '<div class="demo-banner" role="note">PUBLIC DEMO · FICTIONAL DATA · NOT VALID FOR TRAVEL OR BOOKING</div>'
-$html = $html.Replace('<body>', "<body>`r`n$banner")
+$watermark = '<div class="demo-watermark" role="note">PUBLIC DEMO · FICTIONAL DATA · NOT VALID FOR TRAVEL OR BOOKING</div>'
+$html = $html.Replace('<body>', "<body>`r`n$banner`r`n$watermark")
 $html = $html.Replace('</footer>', ' · PUBLIC DEMO · FICTIONAL DATA · NOT VALID FOR TRAVEL OR BOOKING</footer>')
 
-$parent = Split-Path -Parent $OutputPath
-if ($parent -and -not (Test-Path -LiteralPath $parent)) { New-Item -ItemType Directory -Path $parent -Force | Out-Null }
-[IO.File]::WriteAllText($OutputPath, $html, [Text.UTF8Encoding]::new($false))
-Write-Output (Resolve-Path -LiteralPath $OutputPath).Path
+if (-not (Test-Path -LiteralPath $OutputDirectory)) { New-Item -ItemType Directory -Path $OutputDirectory -Force | Out-Null }
+$resolvedOutput = (Resolve-Path -LiteralPath $OutputDirectory).Path
+$htmlPath = Join-Path $resolvedOutput 'public-demo-render-source.html'
+[IO.File]::WriteAllText($htmlPath, $html, [Text.UTF8Encoding]::new($false))
+
+$exporter = Join-Path $PSScriptRoot 'Export-PublicDemoJpegs.ps1'
+& $exporter -HtmlPath $htmlPath -OutputDirectory $resolvedOutput -BrowserChannel $BrowserChannel
+if ($LASTEXITCODE -ne 0) { throw 'Public demo JPG export failed.' }
+
+if (-not $KeepHtml) { Remove-Item -LiteralPath $htmlPath -Force }

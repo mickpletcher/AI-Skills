@@ -2,6 +2,13 @@
 
 Tracked summary of major completed repo upgrades and additions.
 
+## 2026-07-21
+
+- Added a current/next travel-day briefing panel and travel-time feasibility checks to `trip-email-html-itinerary`.
+- Added a sanitized reusable HTML reference template to `trip-email-html-itinerary` and made it the required source layout for future generated itineraries.
+- Increased major `trip-email-html-itinerary` section titles to 18–20px for clearer desktop and iPhone readability.
+- Added current restaurant and activity research to `claude/skills/trip-email-html-itinerary`, with itinerary-fit rules, source links, clear separation between suggestions and confirmed reservations, and preservation of the established Europe & Morocco HTML format.
+
 ## 2026-06-29
 
 - Replaced `claude/skills/trip-email-html-itinerary` with the v2.0.0 source skill and rebuilt the Claude import package.

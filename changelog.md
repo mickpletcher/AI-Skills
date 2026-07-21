@@ -2,6 +2,14 @@
 
 Compiled from repo history and the current working tree.
 
+## 2026-07-21
+
+- Added a generation-stamped Today's Critical Details panel and door-to-door travel-time feasibility checks with practical buffers and warnings
+- Added a sanitized reusable `assets/itinerary-template.html` to `trip-email-html-itinerary` and made it the required starting point for consistent future output
+- Increased all major itinerary section titles from 14–16px to 18–20px for clearer desktop and iPhone recognition while preserving the existing format
+- Updated `claude/skills/trip-email-html-itinerary` to research and add current restaurant and activity suggestions for each overnight destination, fit them to the itinerary, distinguish them from confirmed bookings, and include practical details and source links while preserving the established Europe & Morocco HTML format
+- Rebuilt the Claude `.skill` package and synchronized the skill README and change tracking files
+
 ## 2026-07-14
 
 - Updated `claude/skills/trip-email-html-itinerary/SKILL.md` headline typography so section labels like Destination Sequence are more readable on iPhone sized screens, including stronger mobile specific font scaling for timeline and destination headers

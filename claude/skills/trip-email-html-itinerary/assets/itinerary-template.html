@@ -14,7 +14,10 @@
   --coral: #e8603c; --purple: #7c5cbf; --purple-dim: rgba(124,92,191,0.12);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: var(--dark); color: var(--white); font-family: 'DM Sans', sans-serif; font-weight: 300; min-height: 100vh; overflow-x: hidden; }
+body { background: var(--dark); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 400; line-height: 1.55; min-height: 100vh; overflow-x: hidden; }
+.skip-link { position: absolute; left: 16px; top: -80px; z-index: 1000; padding: 12px 16px; background: var(--white); color: var(--dark); border-radius: 6px; font-weight: 500; }
+.skip-link:focus { top: 12px; }
+a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .hero { position: relative; background: linear-gradient(155deg, #061218 0%, #08364f 35%, #0e6a82 60%, #1a8a60 85%, #1d6e44 100%); padding: 64px 40px 72px; overflow: hidden; }
 .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 75% 20%, rgba(26,143,160,0.35) 0%, transparent 55%), radial-gradient(ellipse at 15% 85%, rgba(212,168,67,0.18) 0%, transparent 50%), radial-gradient(ellipse at 50% 60%, rgba(45,106,79,0.25) 0%, transparent 60%); }
 .hero-stars { position: absolute; inset: 0; background-image: radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.6) 0%, transparent 100%), radial-gradient(1px 1px at 30% 8%, rgba(255,255,255,0.4) 0%, transparent 100%), radial-gradient(1.5px 1.5px at 65% 15%, rgba(255,255,255,0.7) 0%, transparent 100%), radial-gradient(1px 1px at 80% 30%, rgba(255,255,255,0.3) 0%, transparent 100%), radial-gradient(1px 1px at 45% 5%, rgba(255,255,255,0.5) 0%, transparent 100%); }
@@ -31,6 +34,9 @@ body { background: var(--dark); color: var(--white); font-family: 'DM Sans', san
 .hero-badge.warn-badge .val { color: var(--coral); }
 .hero-badge .dot-green { width: 6px; height: 6px; border-radius: 50%; background: var(--green-ok); box-shadow: 0 0 5px var(--green-ok); flex-shrink: 0; }
 .hero-badge .dot-red { width: 6px; height: 6px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 5px var(--coral); flex-shrink: 0; }
+.quick-nav { max-width: 980px; margin: 0 auto; padding: 18px 24px 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.quick-nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 9px 13px; border: 1px solid rgba(255,255,255,0.28); border-radius: 5px; background: rgba(255,255,255,0.07); color: #68c7e0; font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.5px; text-decoration: underline; text-underline-offset: 3px; }
+.quick-nav a:focus, .quick-nav a:hover { border-color: rgba(26,143,160,0.45); background: rgba(26,143,160,0.1); color: var(--white); }
 .main { max-width: 980px; margin: 0 auto; padding: 44px 24px 80px; }
 .section-label { font-family: 'DM Mono', monospace; font-size: 18px; letter-spacing: 1.5px; font-weight: 500; line-height: 1.35; color: var(--c1-mid); text-transform: uppercase; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(26,143,160,0.2); }
 .timeline { margin-bottom: 52px; }
@@ -78,9 +84,14 @@ body { background: var(--dark); color: var(--white); font-family: 'DM Sans', san
 .info-card-title { font-size: 15px; font-weight: 500; margin-bottom: 4px; color: var(--white); }
 .info-card-sub { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.5; margin-bottom: 8px; }
 .info-card-note { font-size: 11px; color: rgba(255,255,255,0.3); font-style: italic; line-height: 1.4; }
+.info-card-address { margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 10.5px; color: rgba(255,255,255,0.58); line-height: 1.5; }
+.info-card-address strong { color: var(--gold); font-weight: 500; }
+.info-card-map-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 7px; }
+.info-card-map-links .info-card-link { display: inline-flex; align-items: center; min-height: 44px; margin: 0; padding: 8px 10px; font-size: 12px; }
 .info-card-price { display: inline-block; margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); background: rgba(212,168,67,0.1); border: 1px solid rgba(212,168,67,0.2); border-radius: 4px; padding: 2px 8px; }
 .info-card-ref { display: inline-block; margin-top: 8px; margin-left: 6px; font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 2px 8px; }
-.info-card-link { display: inline-block; margin-top: 8px; margin-left: 6px; font-family: 'DM Mono', monospace; font-size: 10px; color: var(--c1-mid); text-decoration: none; border-bottom: 1px solid rgba(26,143,160,0.3); }
+.info-card-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 8px; margin-left: 6px; padding: 8px 10px; font-family: 'DM Mono', monospace; font-size: 12px; color: #68c7e0; text-decoration: underline; text-underline-offset: 3px; border-bottom: 1px solid rgba(26,143,160,0.3); }
+a.info-card-ref { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 10px; color: #68c7e0; text-decoration: underline; text-underline-offset: 3px; }
 .alert-strip { display: flex; gap: 12px; align-items: flex-start; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 8px; font-size: 12px; line-height: 1.5; }
 .alert-strip.red    { background: rgba(232,96,60,0.07); border-left: 3px solid var(--coral); }
 .alert-strip.gold   { background: rgba(212,168,67,0.07); border-left: 3px solid var(--gold); }
@@ -137,6 +148,25 @@ body { background: var(--dark); color: var(--white); font-family: 'DM Sans', san
 .admin-card-body { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.7; }
 .admin-card-body strong { color: rgba(255,255,255,0.72); font-weight: 500; }
 footer { text-align: center; padding: 24px; font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.2); letter-spacing: 1px; }
+.info-card-label { font-size: 12px; color: rgba(255,255,255,0.68); }
+.info-card-sub { font-size: 14px; color: rgba(255,255,255,0.72); }
+.info-card-note { font-size: 13px; color: rgba(255,255,255,0.62); }
+.info-card-address { font-size: 12.5px; color: rgba(255,255,255,0.78); }
+.info-card-ref, .info-card-link { font-size: 12px; color: #68c7e0; }
+.alert-strip { font-size: 14px; }
+.alert-strip .txt { color: rgba(255,255,255,0.82); }
+.day-activities { font-size: 14px; color: rgba(255,255,255,0.78); }
+.day-activities .opt { color: rgba(255,255,255,0.62); }
+.day-label { font-size: 12.5px; color: rgba(255,255,255,0.68); }
+.refs-table { font-size: 14px; }
+.refs-table th { font-size: 12px; color: rgba(255,255,255,0.68); }
+.refs-table td { color: rgba(255,255,255,0.76); }
+.check-item { font-size: 13px; color: rgba(255,255,255,0.76); }
+.admin-card-label { font-size: 12px; color: rgba(255,255,255,0.68); }
+.admin-card-title { font-size: 15px; }
+.admin-card-body { font-size: 14px; color: rgba(255,255,255,0.76); }
+.status-confirmed, .status-verify, .status-needed { font-size: 12.5px; font-weight: 500; }
+.badge-confirmed, .badge-book, .badge-verify { font-size: 11px; font-weight: 500; padding: 5px 9px; }
 @media (max-width: 700px) {
   .timeline-track { grid-template-columns: repeat(3, 1fr); }
   .hero-tag { font-size: 13px; letter-spacing: 2px; }
@@ -166,6 +196,8 @@ footer { text-align: center; padding: 24px; font-family: 'DM Mono', monospace; f
 @media (max-width: 430px) {
   .main { padding: 32px 16px 64px; }
   .section-label { font-size: 20px; letter-spacing: 1.1px; }
+  .quick-nav { padding: 16px 16px 0; gap: 7px; }
+  .quick-nav a { flex: 1 1 calc(50% - 7px); text-align: center; font-size: 13px; }
   .hero-badge { width: 100%; justify-content: flex-start; }
   .timeline-track { grid-template-columns: 1fr 1fr; gap: 10px; }
   .flight-row { gap: 10px; }
@@ -176,12 +208,22 @@ footer { text-align: center; padding: 24px; font-family: 'DM Mono', monospace; f
   body { background: #fff; color: #111; }
   .main { padding: 16px; }
 }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+  .dest-card:hover { transform: none; }
+}
+@media (prefers-contrast: more) {
+  .info-card, .day-content, .check-card, .admin-card, .flights-panel { border-color: rgba(255,255,255,0.42); }
+  .info-card-sub, .info-card-note, .admin-card-body, .day-activities, .refs-table td { color: var(--white); }
+}
 .dest-card.destination-one { background: linear-gradient(140deg, var(--c1), var(--c1-mid)); }
 .dest-card.destination-two { background: linear-gradient(140deg, var(--c2), var(--c3)); }
 .day-country-tag.destination-one { background: rgba(10,79,110,0.5); color: var(--em-color); }
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main-content">Skip to itinerary</a>
 
 <div class="hero">
   <div class="hero-stars"></div>
@@ -198,7 +240,17 @@ footer { text-align: center; padding: 24px; font-family: 'DM Mono', monospace; f
   <div class="hero-wave"></div>
 </div>
 
-<div class="main">
+<nav class="quick-nav" aria-label="Itinerary sections">
+  <a href="#flights">Flights</a>
+  <a href="#destinations">Hotels</a>
+  <a href="#day-plan">Day Plan</a>
+  <a href="#restaurants">Restaurants</a>
+  <a href="#activities">Activities</a>
+  <a href="#bookings">Bookings</a>
+  <a href="#admin">Admin</a>
+</nav>
+
+<main id="main-content" class="main">
   <div class="timeline">
     <div class="section-label">Destination Sequence</div>
     <div class="timeline-track">
@@ -246,6 +298,8 @@ footer { text-align: center; padding: 24px; font-family: 'DM Mono', monospace; f
         <div class="info-card-label">🏨 Lodging &amp; Transport</div>
         <div class="info-card-title">{{TODAY_LODGING_OR_TRANSPORT_TITLE}}</div>
         <div class="info-card-sub">{{TODAY_LODGING_OR_TRANSPORT_DETAILS}}</div>
+        <div class="info-card-address"><strong>ADDRESS</strong> · {{TODAY_CRITICAL_ADDRESS}}</div>
+        <div class="info-card-map-links"><a class="info-card-link" href="{{TODAY_CRITICAL_APPLE_MAPS_URL}}">Apple Maps</a><a class="info-card-link" href="{{TODAY_CRITICAL_GOOGLE_MAPS_URL}}">Google Maps</a></div>
         <div class="info-card-note">{{TODAY_LODGING_OR_TRANSPORT_NOTE}}</div>
       </div>
       <div class="info-card">
@@ -261,7 +315,7 @@ footer { text-align: center; padding: 24px; font-family: 'DM Mono', monospace; f
     </div>
   </div>
 
-  <div style="margin-bottom:52px">
+  <div id="flights" style="margin-bottom:52px">
     <div class="section-label">Flights</div>
     <div class="flights-panel">
       <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.3);margin-bottom:14px">OUTBOUND — CONFIRMED · {{AIRLINE}} · CONF: {{CONFIRMATION_CODE}}</div>
@@ -277,7 +331,7 @@ footer { text-align: center; padding: 24px; font-family: 'DM Mono', monospace; f
     </div>
   </div>
 
-  <div class="dest-section">
+  <div id="destinations" class="dest-section">
     <div class="dest-header">
       <div class="dest-header-name">{{DESTINATION_1}}</div>
       <div class="dest-header-dates">{{DESTINATION_1_DATES}}</div>
@@ -287,6 +341,8 @@ footer { text-align: center; padding: 24px; font-family: 'DM Mono', monospace; f
         <div class="info-card-label ok-label">🏨 Hotel — Confirmed ✓</div>
         <div class="info-card-title">{{DESTINATION_1_HOTEL}}</div>
         <div class="info-card-sub">{{DESTINATION_1_HOTEL_DETAILS}}</div>
+        <div class="info-card-address"><strong>ADDRESS</strong> · {{DESTINATION_1_HOTEL_ADDRESS}}</div>
+        <div class="info-card-map-links"><a class="info-card-link" href="{{DESTINATION_1_HOTEL_APPLE_MAPS_URL}}">Apple Maps</a><a class="info-card-link" href="{{DESTINATION_1_HOTEL_GOOGLE_MAPS_URL}}">Google Maps</a></div>
         <div class="info-card-note">{{DESTINATION_1_HOTEL_NOTE}}</div>
         <span class="info-card-ref">{{DESTINATION_1_HOTEL_REFERENCE}}</span>
       </div>
@@ -294,21 +350,89 @@ footer { text-align: center; padding: 24px; font-family: 'DM Mono', monospace; f
         <div class="info-card-label">🚶 Transport</div>
         <div class="info-card-title">{{DESTINATION_1_TRANSPORT_TITLE}}</div>
         <div class="info-card-sub">{{DESTINATION_1_TRANSPORT_DETAILS}}</div>
+        <div class="info-card-address"><strong>PICKUP / DROP-OFF</strong> · {{DESTINATION_1_TRANSPORT_ADDRESS}}</div>
+        <div class="info-card-map-links"><a class="info-card-link" href="{{DESTINATION_1_TRANSPORT_APPLE_MAPS_URL}}">Apple Maps</a><a class="info-card-link" href="{{DESTINATION_1_TRANSPORT_GOOGLE_MAPS_URL}}">Google Maps</a></div>
         <div class="info-card-note">{{DESTINATION_1_TRANSPORT_NOTE}}</div>
       </div>
-      <div class="info-card">
-        <div class="info-card-label">🍽 Dining — Suggested · {{PRICE_LEVEL}}</div>
-        <div class="info-card-title">{{RESTAURANT_1_NAME}}</div>
-        <div class="info-card-sub">{{RESTAURANT_1_CUISINE}} · {{RESTAURANT_1_AREA}} · {{RESTAURANT_1_WINDOW}}</div>
-        <div class="info-card-note">{{RESTAURANT_1_FIT}} · {{RESTAURANT_1_RESERVATION_GUIDANCE}} · Verify hours and availability</div>
-        <a class="info-card-ref" href="{{RESTAURANT_1_SOURCE_URL}}">Official details</a>
+      <div id="restaurants" class="info-card">
+        <div class="info-card-label">🍽 Quick Meal — Suggested · {{RESTAURANT_QUICK_PRICE}}</div>
+        <div class="info-card-title">{{RESTAURANT_QUICK_NAME}}</div>
+        <div class="info-card-sub">{{RESTAURANT_QUICK_CUISINE}} · {{RESTAURANT_QUICK_AREA}} · {{RESTAURANT_QUICK_WINDOW}}</div>
+        <div class="info-card-address"><strong>ADDRESS</strong> · {{RESTAURANT_QUICK_ADDRESS}}</div>
+        <div class="info-card-map-links"><a class="info-card-link" href="{{RESTAURANT_QUICK_APPLE_MAPS_URL}}">Apple Maps</a><a class="info-card-link" href="{{RESTAURANT_QUICK_GOOGLE_MAPS_URL}}">Google Maps</a></div>
+        <div class="info-card-note">{{RESTAURANT_QUICK_FIT}} · {{RESTAURANT_QUICK_GUIDANCE}} · Verify hours and availability</div>
+        <span class="{{RESTAURANT_QUICK_URGENCY_CLASS}}">{{RESTAURANT_QUICK_URGENCY}}</span>
+        <a class="info-card-ref" href="{{RESTAURANT_QUICK_SOURCE_URL}}">Official details</a>
       </div>
       <div class="info-card">
-        <div class="info-card-label">🏛 Activity — Suggested</div>
-        <div class="info-card-title">{{ACTIVITY_1_NAME}}</div>
-        <div class="info-card-sub">{{ACTIVITY_1_TYPE}} · {{ACTIVITY_1_AREA}} · {{ACTIVITY_1_WINDOW}}</div>
-        <div class="info-card-note">{{ACTIVITY_1_FIT}} · {{ACTIVITY_1_TICKET_GUIDANCE}} · Verify hours and availability</div>
-        <a class="info-card-ref" href="{{ACTIVITY_1_SOURCE_URL}}">Official details</a>
+        <div class="info-card-label">🍴 Local Specialty — Suggested · {{RESTAURANT_LOCAL_PRICE}}</div>
+        <div class="info-card-title">{{RESTAURANT_LOCAL_NAME}}</div>
+        <div class="info-card-sub">{{RESTAURANT_LOCAL_CUISINE}} · {{RESTAURANT_LOCAL_AREA}} · {{RESTAURANT_LOCAL_WINDOW}}</div>
+        <div class="info-card-address"><strong>ADDRESS</strong> · {{RESTAURANT_LOCAL_ADDRESS}}</div>
+        <div class="info-card-map-links"><a class="info-card-link" href="{{RESTAURANT_LOCAL_APPLE_MAPS_URL}}">Apple Maps</a><a class="info-card-link" href="{{RESTAURANT_LOCAL_GOOGLE_MAPS_URL}}">Google Maps</a></div>
+        <div class="info-card-note">{{RESTAURANT_LOCAL_FIT}} · {{RESTAURANT_LOCAL_GUIDANCE}} · Verify hours and availability</div>
+        <span class="{{RESTAURANT_LOCAL_URGENCY_CLASS}}">{{RESTAURANT_LOCAL_URGENCY}}</span>
+        <a class="info-card-ref" href="{{RESTAURANT_LOCAL_SOURCE_URL}}">Official details</a>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">⭐ Nice Dinner — Suggested · {{RESTAURANT_DINNER_PRICE}}</div>
+        <div class="info-card-title">{{RESTAURANT_DINNER_NAME}}</div>
+        <div class="info-card-sub">{{RESTAURANT_DINNER_CUISINE}} · {{RESTAURANT_DINNER_AREA}} · {{RESTAURANT_DINNER_WINDOW}}</div>
+        <div class="info-card-address"><strong>ADDRESS</strong> · {{RESTAURANT_DINNER_ADDRESS}}</div>
+        <div class="info-card-map-links"><a class="info-card-link" href="{{RESTAURANT_DINNER_APPLE_MAPS_URL}}">Apple Maps</a><a class="info-card-link" href="{{RESTAURANT_DINNER_GOOGLE_MAPS_URL}}">Google Maps</a></div>
+        <div class="info-card-note">{{RESTAURANT_DINNER_FIT}} · {{RESTAURANT_DINNER_GUIDANCE}} · Verify hours and availability</div>
+        <span class="{{RESTAURANT_DINNER_URGENCY_CLASS}}">{{RESTAURANT_DINNER_URGENCY}}</span>
+        <a class="info-card-ref" href="{{RESTAURANT_DINNER_SOURCE_URL}}">Official details</a>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">📍 Near Hotel — Suggested · {{RESTAURANT_NEARBY_PRICE}}</div>
+        <div class="info-card-title">{{RESTAURANT_NEARBY_NAME}}</div>
+        <div class="info-card-sub">{{RESTAURANT_NEARBY_CUISINE}} · {{RESTAURANT_NEARBY_AREA}} · {{RESTAURANT_NEARBY_WINDOW}}</div>
+        <div class="info-card-address"><strong>ADDRESS</strong> · {{RESTAURANT_NEARBY_ADDRESS}}</div>
+        <div class="info-card-map-links"><a class="info-card-link" href="{{RESTAURANT_NEARBY_APPLE_MAPS_URL}}">Apple Maps</a><a class="info-card-link" href="{{RESTAURANT_NEARBY_GOOGLE_MAPS_URL}}">Google Maps</a></div>
+        <div class="info-card-note">{{RESTAURANT_NEARBY_FIT}} · {{RESTAURANT_NEARBY_GUIDANCE}} · Verify hours and availability</div>
+        <span class="{{RESTAURANT_NEARBY_URGENCY_CLASS}}">{{RESTAURANT_NEARBY_URGENCY}}</span>
+        <a class="info-card-ref" href="{{RESTAURANT_NEARBY_SOURCE_URL}}">Official details</a>
+      </div>
+      <div id="activities" class="info-card">
+        <div class="info-card-label">🏛 Main Attraction — Suggested</div>
+        <div class="info-card-title">{{ACTIVITY_MAIN_NAME}}</div>
+        <div class="info-card-sub">{{ACTIVITY_MAIN_TYPE}} · {{ACTIVITY_MAIN_AREA}} · {{ACTIVITY_MAIN_DURATION}} · {{ACTIVITY_MAIN_WINDOW}}</div>
+        <div class="info-card-address"><strong>ADDRESS / ENTRANCE</strong> · {{ACTIVITY_MAIN_ADDRESS}}</div>
+        <div class="info-card-map-links"><a class="info-card-link" href="{{ACTIVITY_MAIN_APPLE_MAPS_URL}}">Apple Maps</a><a class="info-card-link" href="{{ACTIVITY_MAIN_GOOGLE_MAPS_URL}}">Google Maps</a></div>
+        <div class="info-card-note">{{ACTIVITY_MAIN_FIT}} · {{ACTIVITY_MAIN_GUIDANCE}} · Verify hours and availability</div>
+        <span class="{{ACTIVITY_MAIN_URGENCY_CLASS}}">{{ACTIVITY_MAIN_URGENCY}}</span>
+        <a class="info-card-ref" href="{{ACTIVITY_MAIN_SOURCE_URL}}">Official details</a>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">🥾 Outdoor Activity — Suggested</div>
+        <div class="info-card-title">{{ACTIVITY_OUTDOOR_NAME}}</div>
+        <div class="info-card-sub">{{ACTIVITY_OUTDOOR_TYPE}} · {{ACTIVITY_OUTDOOR_AREA}} · {{ACTIVITY_OUTDOOR_DURATION}} · {{ACTIVITY_OUTDOOR_WINDOW}}</div>
+        <div class="info-card-address"><strong>TRAILHEAD / MEETING POINT</strong> · {{ACTIVITY_OUTDOOR_ADDRESS}}</div>
+        <div class="info-card-map-links"><a class="info-card-link" href="{{ACTIVITY_OUTDOOR_APPLE_MAPS_URL}}">Apple Maps</a><a class="info-card-link" href="{{ACTIVITY_OUTDOOR_GOOGLE_MAPS_URL}}">Google Maps</a></div>
+        <div class="info-card-note">{{ACTIVITY_OUTDOOR_FIT}} · {{ACTIVITY_OUTDOOR_WEATHER_NOTE}} · {{ACTIVITY_OUTDOOR_GUIDANCE}}</div>
+        <span class="{{ACTIVITY_OUTDOOR_URGENCY_CLASS}}">{{ACTIVITY_OUTDOOR_URGENCY}}</span>
+        <a class="info-card-ref" href="{{ACTIVITY_OUTDOOR_SOURCE_URL}}">Official details</a>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">🏺 Cultural Activity — Suggested</div>
+        <div class="info-card-title">{{ACTIVITY_CULTURAL_NAME}}</div>
+        <div class="info-card-sub">{{ACTIVITY_CULTURAL_TYPE}} · {{ACTIVITY_CULTURAL_AREA}} · {{ACTIVITY_CULTURAL_DURATION}} · {{ACTIVITY_CULTURAL_WINDOW}}</div>
+        <div class="info-card-address"><strong>ADDRESS / ENTRANCE</strong> · {{ACTIVITY_CULTURAL_ADDRESS}}</div>
+        <div class="info-card-map-links"><a class="info-card-link" href="{{ACTIVITY_CULTURAL_APPLE_MAPS_URL}}">Apple Maps</a><a class="info-card-link" href="{{ACTIVITY_CULTURAL_GOOGLE_MAPS_URL}}">Google Maps</a></div>
+        <div class="info-card-note">{{ACTIVITY_CULTURAL_FIT}} · {{ACTIVITY_CULTURAL_GUIDANCE}} · Verify hours and availability</div>
+        <span class="{{ACTIVITY_CULTURAL_URGENCY_CLASS}}">{{ACTIVITY_CULTURAL_URGENCY}}</span>
+        <a class="info-card-ref" href="{{ACTIVITY_CULTURAL_SOURCE_URL}}">Official details</a>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">☂ Bad-Weather Backup — Suggested</div>
+        <div class="info-card-title">{{ACTIVITY_BACKUP_NAME}}</div>
+        <div class="info-card-sub">{{ACTIVITY_BACKUP_TYPE}} · {{ACTIVITY_BACKUP_AREA}} · {{ACTIVITY_BACKUP_DURATION}} · {{ACTIVITY_BACKUP_WINDOW}}</div>
+        <div class="info-card-address"><strong>ADDRESS</strong> · {{ACTIVITY_BACKUP_ADDRESS}}</div>
+        <div class="info-card-map-links"><a class="info-card-link" href="{{ACTIVITY_BACKUP_APPLE_MAPS_URL}}">Apple Maps</a><a class="info-card-link" href="{{ACTIVITY_BACKUP_GOOGLE_MAPS_URL}}">Google Maps</a></div>
+        <div class="info-card-note">{{ACTIVITY_BACKUP_FIT}} · {{ACTIVITY_BACKUP_GUIDANCE}} · Verify hours and availability</div>
+        <span class="{{ACTIVITY_BACKUP_URGENCY_CLASS}}">{{ACTIVITY_BACKUP_URGENCY}}</span>
+        <a class="info-card-ref" href="{{ACTIVITY_BACKUP_SOURCE_URL}}">Official details</a>
       </div>
     </div>
     <div class="alert-strip purple">
@@ -319,25 +443,27 @@ footer { text-align: center; padding: 24px; font-family: 'DM Mono', monospace; f
 
   <!-- Duplicate the destination section above for every overnight stop. -->
 
-  <div class="days-grid">
+  <div id="day-plan" class="days-grid">
     <div class="section-label">Day-by-Day Itinerary</div>
     <div class="day-row">
       <div class="day-label"><strong>{{DAY_1_DATE}}</strong>{{DAY_1_WEEKDAY}}</div>
       <div class="day-content">
         <span class="day-country-tag destination-one">{{DAY_1_COUNTRY}}</span>
+        <span class="{{DAY_1_PACING_CLASS}}">PACE: {{DAY_1_PACING}}</span>
         <ul class="day-activities">
           <li class="anchor">{{DAY_1_CONFIRMED_ANCHOR}}</li>
           <li class="note">Travel: {{TRAVEL_1_ORIGIN}} → {{TRAVEL_1_DESTINATION}} · ~{{TRAVEL_1_DURATION}} by {{TRAVEL_1_MODE}} + {{TRAVEL_1_BUFFER}} buffer</li>
           <li>{{DAY_1_PLANNED_ITEM}}</li>
           <li class="opt">Suggested: {{DAY_1_OPTIONAL_RESTAURANT_OR_ACTIVITY}}</li>
           <li class="flag">{{DAY_1_SCHEDULE_WARNING}}</li>
+          <li class="note">First optional item to drop: {{DAY_1_FIRST_DROP}}</li>
           <li class="note">{{DAY_1_NOTE}}</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <div style="overflow-x:auto">
+  <div id="bookings" style="overflow-x:auto">
     <div class="section-label">Booking References</div>
     <table class="refs-table">
       <thead><tr><th>What</th><th>Details</th><th>Reference</th><th>Status</th></tr></thead>
@@ -373,7 +499,7 @@ footer { text-align: center; padding: 24px; font-family: 'DM Mono', monospace; f
     </div>
   </div>
 
-  <div>
+  <div id="admin">
     <div class="section-label">Travel Admin</div>
     <div class="admin-grid">
       <div class="admin-card">
@@ -388,7 +514,38 @@ footer { text-align: center; padding: 24px; font-family: 'DM Mono', monospace; f
       </div>
     </div>
   </div>
-</div>
+
+  <div id="emergency-replacement">
+    <div class="section-label">Emergency Replacement</div>
+    <div class="admin-grid">
+      <div class="admin-card">
+        <div class="admin-card-label">🛂 Lost or Stolen Passport</div>
+        <div class="admin-card-title">Report Immediately and Contact the Embassy</div>
+        <div class="admin-card-body">Secure copy location: <strong>{{SECURE_PASSPORT_COPY_LOCATION}}</strong><br>Nearest embassy or consulate: {{NEAREST_EMBASSY_CONTACT}}<br>A copy may help with replacement but is not a valid travel document.</div>
+        <a class="info-card-link" href="https://travel.state.gov/content/travel/en/passports/have-passport/lost-stolen.html">State Department guidance</a>
+        <a class="info-card-link" href="https://www.usembassy.gov/">Find an embassy</a>
+      </div>
+      <div class="admin-card">
+        <div class="admin-card-label">🪪 Lost Driver's License</div>
+        <div class="admin-card-title">Contact the Issuing Authority</div>
+        <div class="admin-card-body">Issuer: <strong>{{DRIVERS_LICENSE_ISSUER}}</strong><br>Masked identifier: {{DRIVERS_LICENSE_MASKED}}<br>Carry another accepted physical ID when available.</div>
+        <a class="info-card-link" href="{{DRIVERS_LICENSE_REPLACEMENT_URL}}">Official replacement page</a>
+      </div>
+      <div class="admin-card">
+        <div class="admin-card-label">🛃 Lost Global Entry Card</div>
+        <div class="admin-card-title">Use Manage Membership</div>
+        <div class="admin-card-body">Masked PASSID: <strong>{{PASSID_MASKED}}</strong><br>Request a replacement through the Trusted Traveler Programs account.</div>
+        <a class="info-card-link" href="https://ttp.dhs.gov/">Trusted Traveler Programs</a>
+      </div>
+      <div class="admin-card">
+        <div class="admin-card-label">💳 Lost or Stolen Payment Card</div>
+        <div class="admin-card-title">Lock the Card and Call the Issuer</div>
+        <div class="admin-card-body">Issuer: <strong>{{CARD_ISSUER}}</strong><br>Card ending: {{CARD_LAST_FOUR}}<br>International collect number: {{CARD_ISSUER_COLLECT_PHONE}}<br>Never store the full card number, CVV, PIN, or banking password.</div>
+        <a class="info-card-link" href="{{CARD_ISSUER_LOST_CARD_URL}}">Issuer lost-card page</a>
+      </div>
+    </div>
+  </div>
+</main>
 
 <footer>{{TRIP_TITLE}} &nbsp;·&nbsp; {{TRAVELER_NAMES}} &nbsp;·&nbsp; {{DATE_RANGE}} &nbsp;·&nbsp; {{ROUTE}} &nbsp;·&nbsp; Updated {{UPDATED_DATE}}</footer>
 

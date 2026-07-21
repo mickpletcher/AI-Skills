@@ -4,6 +4,11 @@ Compiled from repo history and the current working tree.
 
 ## 2026-07-21
 
+- Added a deterministic, clearly labeled fictional public-demo generator and validated example itinerary to `trip-email-html-itinerary`
+- Added accessibility improvements, a deterministic PowerShell HTML validator, emergency replacement guidance, and a bundled offline emergency contacts sheet to `trip-email-html-itinerary`
+- Added verified plain-text offline addresses plus Apple Maps and Google Maps links for lodging, restaurants, activities, transport points, and tour meeting locations to `trip-email-html-itinerary`
+- Added a mobile-wrapping quick-navigation strip below the itinerary hero with static links to Flights, Hotels, Day Plan, Restaurants, Activities, Bookings, and Admin
+- Added four restaurant categories, four activity categories, evidence-based booking urgency labels, and daily pacing checks with overload warnings to `trip-email-html-itinerary`
 - Added a generation-stamped Today's Critical Details panel and door-to-door travel-time feasibility checks with practical buffers and warnings
 - Added a sanitized reusable `assets/itinerary-template.html` to `trip-email-html-itinerary` and made it the required starting point for consistent future output
 - Increased all major itinerary section titles from 14–16px to 18–20px for clearer desktop and iPhone recognition while preserving the existing format

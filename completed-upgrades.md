@@ -4,6 +4,11 @@ Tracked summary of major completed repo upgrades and additions.
 
 ## 2026-07-21
 
+- Added safe fictional public-demo generation and a validated example output to `trip-email-html-itinerary`.
+- Added accessibility enforcement, automated HTML validation, emergency replacement guidance, and a real offline emergency contacts output to `trip-email-html-itinerary`.
+- Added verified plain-text offline addresses plus Apple Maps and Google Maps links throughout `trip-email-html-itinerary` so critical locations work both offline and online.
+- Added static quick-navigation links below the `trip-email-html-itinerary` hero for rapid section access without JavaScript.
+- Added categorized restaurant and activity recommendations, booking urgency labels, and daily pacing classifications to `trip-email-html-itinerary`.
 - Added a current/next travel-day briefing panel and travel-time feasibility checks to `trip-email-html-itinerary`.
 - Added a sanitized reusable HTML reference template to `trip-email-html-itinerary` and made it the required source layout for future generated itineraries.
 - Increased major `trip-email-html-itinerary` section titles to 18–20px for clearer desktop and iPhone readability.

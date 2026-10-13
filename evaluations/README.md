@@ -28,3 +28,5 @@ Mechanical checks cover routing annotations, missing output, selected character 
 - CI runs the offline fixture contract self-test only.
 - `catalog.json` leaves `last_model_evaluation` null for every skill.
 - No production or personal input/output is committed. Keep captured results outside this repository unless explicitly reviewed for publication.
+
+Self-test grading uses explicit failures in ordinary and optimized Python (`-O` or `PYTHONOPTIMIZE`). Negative examples use each fixture's declared forbidden tokens and character limit. These remain synthetic contract checks, not model evaluations.

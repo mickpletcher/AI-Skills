@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Selected the MIT License, copyright 2026 Mick Pletcher; retained existing notices and kept release publishing inactive.
+
 - Bound installer archive parsing, entry counts, expanded payloads, and root source text with configurable limits; retain transactional cleanup and update recovery.
 - Closed release-input symlink/containment gaps, retained evaluation self-test enforcement under optimized Python, and made release member ordering and checksum bytes portable across hosts.
 

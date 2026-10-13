@@ -25,13 +25,11 @@ class ReleaseTests(unittest.TestCase):
                     prepare_release.prepare(repo.ROOT,version,Path(tmp)/'release')
 
     def test_fixture_bundle_is_deterministic_and_does_not_overwrite(self):
-        # A fixture string exercises the nonempty-file gate. It supplies no
-        # license terms to the actual repository and is never distributed.
+        # Exercise the selected repository license in a temporary local bundle.
         with tempfile.TemporaryDirectory() as tmp:
             base=Path(tmp)
             source=base/'source'
             shutil.copytree(repo.ROOT,source,ignore=shutil.ignore_patterns('.git','.venv','__pycache__'))
-            (source/'LICENSE').write_text('TEST FIXTURE ONLY; not repository licensing terms.\n')
             first,second=base/'first',base/'second'
             prepare_release.prepare(source,'v1.2.3',first)
             prepare_release.prepare(source,'v1.2.3',second)
@@ -39,6 +37,9 @@ class ReleaseTests(unittest.TestCase):
             self.assertEqual((first/'SHA256SUMS').read_bytes(),(second/'SHA256SUMS').read_bytes())
             extracted=base/'extracted'
             with zipfile.ZipFile(first/'ai-skills-v1.2.3.zip') as archive:
+                self.assertEqual(archive.read('LICENSE'), repo.canonical_bytes(repo.ROOT/'LICENSE'))
+                notice = 'claude/skills/patentforge-provisional/LICENSE'
+                self.assertEqual(archive.read(notice), repo.canonical_bytes(repo.ROOT/notice))
                 archive.extractall(extracted)  # our own deterministic fixture bundle
             self.assertEqual(repo.validate(extracted.resolve())[1], [])
             with self.assertRaisesRegex(ValueError,'new output directory'):

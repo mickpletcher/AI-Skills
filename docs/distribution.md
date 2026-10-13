@@ -21,7 +21,7 @@ For a repository bundle, the owner supplies a separate `vMAJOR.MINOR.PATCH` tag.
 
 ## Release template
 
-[The release workflow template](../.github/workflow-templates/release.yml) is deliberately outside `.github/workflows`, so it cannot run. After owner approval and the license decision, copy it into the workflows directory and review its permissions. It requires an existing version tag, validates the tagged source, creates a local distribution ZIP, and opens a **draft** release. It does not create tags or publish a release automatically. Configure an appropriate release review process before enabling it.
+[The release workflow template](../.github/workflow-templates/release.yml) is deliberately outside `.github/workflows`, so it cannot run. After separate owner approval to activate release publishing, copy it into the workflows directory and review its permissions. It requires an existing version tag, validates the tagged source, creates a local distribution ZIP, and opens a **draft** release. It does not create tags or publish a release automatically. Configure an appropriate release review process before enabling it.
 
 `python tools/prepare_release.py --version v1.2.3 --output /path/to/new-output` prepares a deterministic bundle only; it does not call GitHub. It refuses an empty LICENSE and an existing output directory. The bundle includes source, packages, catalog, checksums, maintenance docs/tools, and evaluation fixtures; Git internals, hidden/local files, and optional planning files are excluded.
 
@@ -29,8 +29,8 @@ Release preparation checks every explicit input and visible validation input for
 
 Release ZIP members are ordered by relative POSIX path strings. The checksum sidecar is explicit UTF-8 with LF endings. A fixed synthetic fixture hash is checked on Windows and Linux; the same-host rebuild test also checks the complete repository fixture and its extracted links.
 
-## License decision required
+## License
 
-The root [LICENSE](../LICENSE) is empty. No license has been selected and no permission to redistribute is asserted by this work. The owner must choose the intended terms (for example an appropriate open-source license or explicitly restricted terms), confirm they have rights to the repository content and included third-party assets, supply the actual license text and relevant copyright/attribution notices, and decide how those terms apply to packages and generated artifacts. Filling the file is an explicit release gate, not automated legal review.
+The root [LICENSE](../LICENSE) contains the MIT License, copyright 2026 Mick Pletcher. Existing third-party licenses and attribution notices remain applicable and must be preserved. The repository bundle includes the root license; the existing skill-specific license is retained unchanged.
 
-No release, tag, workflow dispatch, account setting, or branch-protection change is part of this local implementation.
+The license choice satisfies the nonempty-license preparation gate. It does not activate the release workflow, create a tag, or authorize publishing a release. The workflow remains an inactive template requiring separate owner approval.

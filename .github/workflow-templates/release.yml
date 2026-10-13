@@ -1,4 +1,4 @@
-# Template only. Not active here. Owner must select license terms and approve activation.
+# Template only. Not active here. MIT license selected; owner must still approve activation.
 name: Prepare draft release
 on:
   workflow_dispatch:

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Skill model provenance",
+  "type": "object",
+  "required": [
+    "skill",
+    "development_history",
+    "evaluations"
+  ],
+  "properties": {
+    "skill": {
+      "type": "string"
+    },
+    "development_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "date",
+          "model",
+          "change"
+        ],
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "change": {
+            "type": "string"
+          },
+          "commit": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "evaluations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "date",
+          "model",
+          "result"
+        ],
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "result": {
+            "enum": [
+              "pass",
+              "fail",
+              "partial"
+            ]
+          },
+          "test_suite": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "unknown",
+            "current",
+            "review-needed",
+            "in-progress"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

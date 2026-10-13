@@ -4,7 +4,7 @@ A Claude skill for writing LinkedIn posts in Mick Pletcher's professional voice.
 
 ## Source of Truth
 
-Use [SKILL.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/linkedin-post/SKILL.md) as the canonical source for this skill. The packaged [linkedin-post.skill](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/linkedin-post/linkedin-post.skill) file is the Claude-ready export built from it.
+Use [SKILL.md](SKILL.md) as the canonical source for this skill. The packaged [linkedin-post.skill](linkedin-post.skill) file is the Claude-ready export built from it.
 
 ## What It Does
 

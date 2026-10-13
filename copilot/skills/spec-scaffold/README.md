@@ -4,7 +4,7 @@ A GitHub Copilot skill for generating numbered spec folders with requirements, p
 
 ## Source of Truth
 
-Use [instructions.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/copilot/skills/spec-scaffold/instructions.md) as the editable source of truth for this skill.
+Use [instructions.md](instructions.md) as the editable source of truth for this skill.
 
 ## What It Does
 
@@ -18,7 +18,7 @@ It follows existing repo spec conventions when they exist.
 
 ## How To Implement In Copilot
 
-Copilot skills are instruction files. Paste the contents of [instructions.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/copilot/skills/spec-scaffold/instructions.md) into the Copilot instruction surface you use.
+Copilot skills are instruction files. Paste the contents of [instructions.md](instructions.md) into the Copilot instruction surface you use.
 
 ## First Test
 

@@ -4,7 +4,7 @@ A Cursor skill for debugging CI failures, local repro steps, and targeted fix lo
 
 ## Source of Truth
 
-Use [instructions.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/cursor/skills/workflow-debugger/instructions.md) as the editable source of truth for this skill.
+Use [instructions.md](instructions.md) as the editable source of truth for this skill.
 
 ## How To Implement In Cursor
 
@@ -12,7 +12,7 @@ Use [instructions.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI
 
 1. Open the target repo in Cursor.
 2. Open the project rules surface you use for repo specific instructions.
-3. Copy the full contents of [instructions.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/cursor/skills/workflow-debugger/instructions.md).
+3. Copy the full contents of [instructions.md](instructions.md).
 4. Paste the content into the project rule.
 5. Save it.
 6. Test it with a real failing command, workflow log, or CI error.

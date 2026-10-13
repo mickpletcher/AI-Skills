@@ -100,7 +100,7 @@ Package `SKILL.md` into `facebook-post.skill`, then install it with your normal 
 
 ## Upgrade Log
 
-See [upgrades.md](upgrades.md) for the structured upgrade log and [completed-changes.md](completed-changes.md) for tracked completed changes.
+See [upgrades.md](upgrades.md) for the structured upgrade log and [completedchanges.md](completedchanges.md) for tracked completed changes.
 
 ## Implement In Claude
 

@@ -1,6 +1,6 @@
 # Upgrade Log: resume-writer
 
-Tracks implemented upgrades to this skill. Future upgrade ideas are in [future-upgrades.md](future-upgrades.md) (local only, not tracked in git).
+Tracks implemented upgrades to this skill. Future upgrade ideas are in `future-upgrades.md` (optional local planning file; not distributed) (local only, not tracked in git).
 
 | Date | Upgrade | Notes |
 | ---- | ------- | ----- |

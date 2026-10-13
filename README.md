@@ -223,85 +223,11 @@ Current examples:
 | Perplexity | `perplexity/skills/<skill-name>/` | `SKILL.md` | Paste Markdown directly or upload the skill file, depending on the skill README |
 | Cursor | `cursor/skills/<skill-name>/` | `instructions.md` | Paste into project rules, user rules, or chat context in Cursor |
 
-## Claude Skills
+## Complete Skill Catalog
 
-| Skill | Description |
-| ----- | ----------- |
-| [alpaca-trading](./claude/skills/alpaca-trading/) | Safe workflows for the `Trading` repo and Alpaca-related automation |
-| [blog-post](./claude/skills/blog-post/) | Write blog posts in Mick's voice for mickitblog.blogspot.com |
-| [blog-to-social](./claude/skills/blog-to-social/) | Convert a finished blog post into Facebook, X, and LinkedIn posts in one pass |
-| [container-home](./claude/skills/container-home/) | Off-grid shipping container lake home project in Dover, Tennessee |
-| [crypto-listings](./claude/skills/crypto-listings/) | Track recent and upcoming cryptocurrency listings across major exchanges |
-| [crypto-research](./claude/skills/crypto-research/) | Structured due diligence on a specific cryptocurrency |
-| [facebook-post](./claude/skills/facebook-post/) | Write and polish Facebook posts in Mick's voice with audience control, media aware captions, and X repurpose support |
-| [facebook-reply](./claude/skills/facebook-reply/) | Write Facebook replies with tone control, context awareness, and batch thread handling |
-| [fitness-log](./claude/skills/fitness-log/) | Track workouts, analyze training trends, plan progression blocks, and generate fitness Facebook posts |
-| [fitness-programming](./claude/skills/fitness-programming/) | Build structured training blocks with presets, recovery adjustments, benchmark reviews, and season planning |
-| [food-analyzer](./claude/skills/food-analyzer/) | Analyze foods, compare meals, and score nutrition fit with confidence, timing, and goal aware context |
-| [github-readme](./claude/skills/github-readme/) | Write polished README.md files in a direct, technical, practitioner-focused voice |
-| [github-repo-architect](./claude/skills/github-repo-architect/) | Turn a rough project idea into a complete GitHub repository architecture |
-| [github-social-preview](./claude/skills/github-social-preview/) | Generate branded GitHub social previews with themes, smarter fitting, and optional visual assets |
-| [idea-forge](./claude/skills/idea-forge/) | Run any raw idea through a five-stage R&D pipeline and produce a scored invention plan with architecture, monetization paths, and an MVP roadmap |
-| [linkedin-post](./claude/skills/linkedin-post/) | Write LinkedIn posts with mode control, credibility checks, CTA styles, and audience variants |
-| [market-brief](./claude/skills/market-brief/) | Generate current morning market briefs for Mick's indices, commodities, currencies, macro, and expanded crypto watchlist |
-| [n8n-workflow](./claude/skills/n8n-workflow/) | Design, build, and troubleshoot n8n workflows on a self-hosted Proxmox stack |
-| [obsidian-workout-export](./claude/skills/obsidian-workout-export/) | Export logged workout sessions into Obsidian-ready Markdown files |
-| [patentforge-provisional](./claude/skills/patentforge-provisional/) | Turn an invention idea into a structured disclosure, prior art search plan, claim candidates, and provisional draft package |
-| [photo-rename](./claude/skills/photo-rename/) | Rename photos with consistent filename rules, confidence handling, batch review, and GPS-aware fallback logic |
-| [pihole-blocklist](./claude/skills/pihole-blocklist/) | Evaluate, categorize, and document new Pi-hole blocklist sources |
-| [pihole-csv-analyzer](./claude/skills/pihole-csv-analyzer/) | Analyze Pi-hole CSV exports and generate practical cleanup recommendations |
-| [powershell-refactor](./claude/skills/powershell-refactor/) | Simplify, tighten, and standardize existing PowerShell scripts without changing the intended behavior |
-| [proxmox-lxc](./claude/skills/proxmox-lxc/) | Deploy and configure Proxmox LXC containers on a self-hosted homelab stack |
-| [resume-writer](./claude/skills/resume-writer/) | Rewrite, audit, score, and target resumes with fit scoring, recruiter skim views, and interview handoff |
-| [spec-writer](./claude/skills/spec-writer/) | Generate numbered repo spec folders with clear requirements, implementation plans, and task lists |
-| [travel-itinerary](./claude/skills/travel-itinerary/) | Plan and export travel itineraries with templates, route notes, realistic pacing, and budget visibility |
-| [travel-planning](./claude/skills/travel-planning/) | Plan solo travel with destination scoring, style presets, booking triage, and itinerary handoff |
-| [travel-research](./claude/skills/travel-research/) | Compare destinations with deeper scoring across budget, climate, logistics, activity fit, and seasonal tradeoffs |
-| [website-content](./claude/skills/website-content/) | Write and update content for mickpletcher.com |
-| [x-post](./claude/skills/x-post/) | Write X posts on tech, PowerShell, IT automation, and fitness topics |
-| [x-reply](./claude/skills/x-reply/) | Write replies to replies on X |
+Use the [generated catalog](CATALOG.md) for every shipped skill across all platforms, including purpose, installation, declared prerequisites, package links, and versions. [catalog.json](catalog.json) provides the machine-readable manifest and [SHA256SUMS](SHA256SUMS) records package hashes. Undeclared versions/prerequisites and model-evaluation dates are never invented.
 
-## ChatGPT Skills
-
-| Skill | Description |
-| ----- | ----------- |
-| [food-analyzer](./chatgpt/skills/food-analyzer/) | Analyze food photos and nutrition labels |
-
-## GitHub Skills
-
-| Skill | Description |
-| ----- | ----------- |
-| [commit-message-writer](./copilot/skills/commit-message-writer/) | Write consistent, ready to paste commit messages from diffs or work summaries |
-| [pr-review](./copilot/skills/pr-review/) | Review pull requests for regressions, practical risk, and missing tests |
-| [project-handoff](./copilot/skills/project-handoff/) | Create durable handoff docs such as assessment, project analysis, or session context files |
-| [readme-sync](./copilot/skills/readme-sync/) | Reconcile README claims with actual code, scripts, commands, tests, and outputs |
-| [repo-cleanup-audit](./copilot/skills/repo-cleanup-audit/) | Classify stale files, generated artifacts, historical records, and source of truth files before cleanup |
-| [spec-scaffold](./copilot/skills/spec-scaffold/) | Generate numbered spec folders with requirements, plan, and task files |
-
-## Gemini Skills
-
-No Gemini skills added yet.
-
-Platform folder:
-
-- [gemini/README.md](./gemini/README.md)
-
-## Perplexity Skills
-
-No Perplexity skills added yet.
-
-Platform folder:
-
-- [perplexity/README.md](./perplexity/README.md)
-
-## Cursor Skills
-
-| Skill | Description |
-| ----- | ----------- |
-| [pr-review](./cursor/skills/pr-review/) | Review pull requests and diffs for regressions, risk, and missing tests |
-| [workflow-debugger](./cursor/skills/workflow-debugger/) | Debug CI failures, local repro paths, and targeted fix loops |
-| [repo-assessment](./cursor/skills/repo-assessment/) | Produce durable repo handoff docs with current state, risks, and best next step |
-| [spec-writer](./cursor/skills/spec-writer/) | Turn rough repo work into numbered specs with requirements, plan, and tasks |
+See [platform installation](docs/installation.md), [dependencies](docs/dependencies.md), [contributing](CONTRIBUTING.md), [behavioral evaluations](evaluations/README.md), and [distribution and the pending license decision](docs/distribution.md).
 
 ## Repository Structure
 
@@ -321,7 +247,7 @@ Platform folder:
 3. Use `shared/` for naming, structure, and repo-level guidance only.
 4. Record checks with [templates/test-template.md](./templates/test-template.md).
 
-For Claude skills, keep tracked shipped history in `completed-changes.md` and keep local `future-upgrades.md` files focused on future planning only.
+For Claude skills, keep tracked shipped history in `completedchanges.md` and keep local `future-upgrades.md` files focused on future planning only.
 
 ## Spec Workflow
 

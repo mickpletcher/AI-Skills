@@ -11,7 +11,7 @@ argument-hint: "[image-or-folder] [software/workflow]"
 
 Help users produce technically sound astrophotography results while preserving original data, metadata, and reproducibility.
 
-## Invocation Boundary
+## Use When
 
 Use this skill only when context clearly indicates astrophotography or night-sky imaging workflows.
 
@@ -22,7 +22,7 @@ Trigger examples:
 - FITS/XISF/RAW subs, linear masters, rejection maps, dithering, deconvolution
 - PixInsight, Siril, Astro Pixel Processor, DeepSkyStacker, StarNet, StarXTerminator, WinJUPOS, Python astro pipelines
 
-When not to use:
+## Do Not Use When
 
 - General photo editing requests without astronomy context
 - Fashion, portrait, product, wedding, travel edits not involving night-sky capture workflows
@@ -77,7 +77,7 @@ Helper scripts:
 - scripts/fits_audit.py
 - scripts/image_stats_preview.py
 
-## Core Workflow Router
+## Workflow
 
 Default deep-sky sequence unless software requires a variant:
 
@@ -101,7 +101,7 @@ Detailed decision guides:
 - Comets, mosaics, OSC dual-narrowband: references/comets-mosaics-dualband.md
 - Artifact recovery: references/troubleshooting.md
 
-## Tool-Specific Guardrails
+## Constraints
 
 - Do not use SCNR as a substitute for proper color calibration.
 - Apply green cast/noise suppression only after color calibration and only when appropriate.
@@ -148,3 +148,17 @@ For shared images, respond in this order:
 3. Tests to confirm
 4. Smallest next edit
 5. Longer reprocessing recommendation (if needed)
+
+## Help And Examples
+
+Ask for the image/data stage and the user's processing software, using the minimal questions policy above. Examples:
+
+- "Help me process my Orion Nebula FITS stack in PixInsight."
+- "Why do my stacked images still have dust donuts?"
+
+## Validation Checklist
+
+- [ ] Original captures and linear masters are preserved.
+- [ ] Observations are distinguished from hypotheses and missing evidence.
+- [ ] The workflow matches the data stage, software, and intended scientific or presentation use.
+- [ ] Solar safety and non-destructive export rules are respected.

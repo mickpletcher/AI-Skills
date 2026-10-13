@@ -28,3 +28,13 @@ The skill asks for acquisition context when needed, protects original files, pri
 - `upgrades.md`: Near-term enhancement ideas.
 - `future-upgrades.md`: Longer-term possibilities.
 - `completedchanges.md`: Change history.
+
+## Prerequisites
+
+- Your astronomy processing application and source data for workflow guidance.
+- Optional local helpers: Python with Astropy for FITS auditing, or Pillow for image statistics/previews.
+- Helpers are optional; when unavailable, use the skill's documented metadata/manual-inspection fallback.
+
+## Installation
+
+Import `astrophotography-processing.skill` into a compatible Claude skill host, or copy this complete directory into the skills location configured by your host. Read `SKILL.md` and retain its references. Test with one of the synthetic example prompts above before using real image data.

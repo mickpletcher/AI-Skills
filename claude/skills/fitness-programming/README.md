@@ -4,7 +4,7 @@ A Claude skill for building structured training plans, progression blocks, and s
 
 ## Source of Truth
 
-Use [SKILL.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/fitness-programming/SKILL.md) as the canonical source for this skill. The packaged [fitness-programming.skill](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/fitness-programming/fitness-programming.skill) file is the Claude-ready export built from it.
+Use [SKILL.md](SKILL.md) as the canonical source for this skill. The packaged [fitness-programming.skill](fitness-programming.skill) file is the Claude-ready export built from it.
 
 ## What It Does
 

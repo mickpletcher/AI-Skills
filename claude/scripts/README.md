@@ -168,61 +168,20 @@ Prints the number of processed skill folders and the number of `future-upgrades.
 
 ## Validate-SkillFolders.ps1
 
-Audits skill folders under a given root path and reports any that are missing required files (`README.md`, `SKILL.md`). Useful for catching incomplete skill packages before committing or deploying.
-
-### Validate-SkillFolders Parameters
-
-| Parameter | Type | Description |
-| --------- | ---- | ----------- |
-| `-Root` | String | Root path to scan. Defaults to current directory |
-| `-FailOnIssues` | Switch | Exit with code 1 if any issues are found. Useful in CI pipelines |
-| `-RepairHints` | Switch | Output `git mv` commands to fix casing issues on detected files |
-
-A folder is treated as a skill candidate if it contains a `skill.md` or `skill.zip` file (case-insensitive detection handled by repair hints).
-
-### Validate-SkillFolders Examples
+Uses the shared Python validator to check every immediate skill directory, including directories missing their main source. Requires exact-case `README.md`, `SKILL.md`, `<name>.skill`, and `completedchanges.md`. Fails if no directories are checked. `-RepairHints` describes safe case-only renaming; it does not mutate files.
 
 ```powershell
-# Validate skills in the current directory
-.\Validate-SkillFolders.ps1
-
-# Validate a specific folder
-.\Validate-SkillFolders.ps1 -Root "C:\Repos\AI-Skills\claude\skills"
-
-# Fail with exit code 1 if issues are found (CI use)
-.\Validate-SkillFolders.ps1 -Root ".\claude\skills" -FailOnIssues
-
-# Show git mv commands to fix file casing problems
-.\Validate-SkillFolders.ps1 -Root ".\claude\skills" -RepairHints
+./claude/scripts/Validate-SkillFolders.ps1 -Root ./claude/skills -FailOnIssues
 ```
-
-### Validate-SkillFolders Output
-
-Prints a pass/fail summary with counts. On failure, outputs a table of affected folders and missing files. With `-RepairHints`, prints ready-to-run `git mv` commands for any fixable casing issues.
-
----
 
 ## Validate-SkillQuality.ps1
 
-Audits skill source files across supported platform folders for the standard sections defined in `shared/skill-standard.md`. Also checks whether Claude `.skill` packages are older than their `SKILL.md` source files.
-
-### Validate-SkillQuality Parameters
-
-| Parameter | Type | Description |
-| --------- | ---- | ----------- |
-| `-Root` | String | Repo root path to scan. Defaults to current directory |
-| `-FailOnIssues` | Switch | Exit with code 1 if any issues are found |
-
-### Validate-SkillQuality Examples
+Validates all platform skill directories: required files, parsed YAML frontmatter against the repository schema, required source sections, navigable local Markdown links/anchors, every package member against source content, deterministic archive bytes, and generated catalog/checksum freshness. Missing sources/packages and empty discovery are failures. Timestamps are not used.
 
 ```powershell
-# Validate all platform skills from the repo root
-.\claude\scripts\Validate-SkillQuality.ps1
-
-# Fail with exit code 1 for CI use
-.\claude\scripts\Validate-SkillQuality.ps1 -FailOnIssues
+./claude/scripts/Validate-SkillQuality.ps1 -FailOnIssues
 ```
 
-### Validate-SkillQuality Output
+Both wrappers require Python 3.11+ and [requirements-dev.txt](../../requirements-dev.txt). Use `-Python /path/to/python` if the executable is not named `python`. `-FailOnIssues` remains accepted for existing callers; failures now always exit nonzero. `-Root` selects the folder root for folder validation or repository root for quality validation.
 
-Prints a pass/fail summary with counts. On failure, outputs the platform, skill, issue, and affected file.
+See [contribution checks](../../CONTRIBUTING.md) and [distribution rules](../../docs/distribution.md) for package/catalog rebuilding and the distinction between CI jobs and enforced required checks.

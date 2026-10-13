@@ -94,4 +94,4 @@ The generated HTML includes:
 
 ## Upgrade Log
 
-See [upgrades.md](upgrades.md) for implemented upgrades and [future-upgrades.md](future-upgrades.md) for backlog ideas.
+See [upgrades.md](upgrades.md) for implemented upgrades and `future-upgrades.md` (optional local planning file; not distributed) for backlog ideas.

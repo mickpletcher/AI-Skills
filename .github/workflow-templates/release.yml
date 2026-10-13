@@ -1,0 +1,41 @@
+# Template only. Not active here. Owner must select license terms and approve activation.
+name: Prepare draft release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Existing vMAJOR.MINOR.PATCH tag to release
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    env:
+      RELEASE_VERSION: ${{ inputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.version }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r requirements-dev.txt
+      - name: Require an existing version tag
+        shell: bash
+        run: |
+          [[ "$RELEASE_VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          git show-ref --verify "refs/tags/$RELEASE_VERSION"
+      - run: python -m unittest discover -s tools/tests -v
+      - run: python tools/skill_repository.py validate
+      - run: python tools/evaluate.py self-test
+      - shell: pwsh
+        run: ./claude/scripts/tests/Initialize-ClaudeSkills.Tests.ps1
+      - name: Prepare bundle (blocks on empty LICENSE)
+        run: python tools/prepare_release.py --version "$RELEASE_VERSION" --output "$RUNNER_TEMP/ai-skills-release"
+      - name: Create draft only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$RELEASE_VERSION" "$RUNNER_TEMP/ai-skills-release/ai-skills-$RELEASE_VERSION.zip" "$RUNNER_TEMP/ai-skills-release/SHA256SUMS" --draft --verify-tag --title "AI Skills $RELEASE_VERSION" --notes "Draft distribution. Review licensing, validation evidence, and platform limitations before publishing."

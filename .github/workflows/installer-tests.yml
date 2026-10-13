@@ -1,0 +1,34 @@
+name: Installer regression tests
+on:
+  pull_request:
+    paths:
+      - 'claude/scripts/Initialize-ClaudeSkills.ps1'
+      - 'claude/scripts/tests/Initialize-ClaudeSkills.Tests.ps1'
+      - '.github/workflows/installer-tests.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'claude/scripts/Initialize-ClaudeSkills.ps1'
+      - 'claude/scripts/tests/Initialize-ClaudeSkills.Tests.ps1'
+      - '.github/workflows/installer-tests.yml'
+permissions:
+  contents: read
+jobs:
+  installer:
+    name: Installer (${{ matrix.os }}, ${{ matrix.shell }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            shell: pwsh
+          - os: windows-latest
+            shell: pwsh
+          - os: windows-latest
+            shell: powershell
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test package limits, installation and recovery in temporary libraries
+        shell: ${{ matrix.shell }}
+        run: ./claude/scripts/tests/Initialize-ClaudeSkills.Tests.ps1

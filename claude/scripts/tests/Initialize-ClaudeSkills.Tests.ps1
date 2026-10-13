@@ -25,8 +25,15 @@ function New-Package([string]$Path, [hashtable]$Entries) {
     } finally { $Zip.Dispose() }
 }
 function Invoke-Installer([string[]]$Arguments, [int]$ExpectedExit = 0) {
-    $Output = & $Engine -NoProfile -File $Installer @Arguments 2>&1 | Out-String
-    Assert-True ($LASTEXITCODE -eq $ExpectedExit) "Expected exit $ExpectedExit, got $LASTEXITCODE. $Output"
+    # Windows PowerShell turns redirected native stderr into ErrorRecords.
+    # Capture expected parameter failures, then assert the native exit explicitly.
+    $PreviousPreference = $ErrorActionPreference
+    try {
+        $ErrorActionPreference = 'Continue'
+        $Output = & $Engine -NoProfile -File $Installer @Arguments 2>&1 | Out-String
+        $ExitCode = $LASTEXITCODE
+    } finally { $ErrorActionPreference = $PreviousPreference }
+    Assert-True ($ExitCode -eq $ExpectedExit) "Expected exit $ExpectedExit, got $ExitCode. $Output"
     return $Output
 }
 function Test-Case([string]$Name, [scriptblock]$Body) {

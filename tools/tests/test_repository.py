@@ -92,6 +92,13 @@ class RepositoryTests(unittest.TestCase):
         (self.folder / 'future-upgrades.md').write_text('local planning, not shipped')
         self.assertEqual(before, repo.package_bytes(self.folder))
 
+    def test_package_member_order_is_case_sensitive_on_every_host(self):
+        for name in ('Z.txt', 'a.txt'):
+            (self.folder / name).write_text(name)
+        import io
+        with zipfile.ZipFile(io.BytesIO(repo.package_bytes(self.folder))) as archive:
+            self.assertEqual(archive.namelist(), sorted(archive.namelist()))
+
     def test_broken_links_anchors_and_case(self):
         (self.folder / 'README.md').write_text('[bad](missing.md) [case](skill.md) [anchor](SKILL.md#missing) [drive](C:/Users/a.md)')
         self.assertEqual(len(repo.link_errors(self.root)), 4)

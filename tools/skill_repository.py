@@ -5,6 +5,7 @@ import argparse
 import hashlib
 import io
 import json
+import os
 import re
 import sys
 import zipfile
@@ -90,7 +91,7 @@ def exact_file(folder, name):
 
 def payload_files(folder):
     files = []
-    for p in sorted(folder.rglob('*')):
+    for p in sorted(folder.rglob('*'), key=lambda path: path.relative_to(folder).as_posix()):
         rel = p.relative_to(folder)
         if any(part.startswith('.') or part == '__pycache__' for part in rel.parts):
             continue
@@ -185,7 +186,7 @@ def link_errors(root):
             if parsed.scheme or parsed.netloc:
                 continue  # No external requests; external link health is not claimed.
             local = unquote(parsed.path)
-            dest = (path.parent / local).resolve() if local else path
+            dest = Path(os.path.abspath(path.parent / local)) if local else path
             if not exact_path(root, dest):
                 errors.append(f'{path.relative_to(root)}: broken/case-mismatched internal link {target}')
             elif parsed.fragment and dest.suffix == '.md' and unquote(parsed.fragment) not in anchors(dest.read_text(encoding='utf-8-sig')):

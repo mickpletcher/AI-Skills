@@ -253,3 +253,6 @@ try {
     if ($RealMove) { ${function:Move-SkillDirectory} = $RealMove }
     Remove-Item -LiteralPath $Temp -Recurse -Force
 }
+
+# Expected failing child processes must not leak their exit code to a calling CI shell.
+$global:LASTEXITCODE = 0

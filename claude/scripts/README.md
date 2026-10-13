@@ -98,7 +98,7 @@ All 35 current packages fit the defaults: observed maxima were 1,208,803 compres
 .\Initialize-ClaudeSkills.ps1 -RepoPath "C:\Repos\AI-Skills" -MaxSourceBytes 512KB
 ```
 
-The regression suite covers all repository packages, every quota at its boundary and one unit over, malformed counts and lengths, bounded streaming, source encodings, batch failures, and existing rollback/recovery behavior. Run `pwsh -NoProfile -File ./claude/scripts/tests/Initialize-ClaudeSkills.Tests.ps1`. All 21 regression groups passed locally with PowerShell 7.5.4 on macOS, including an independent reviewer run; Windows PowerShell 5.1 and Windows/Linux execution remain unverified for this separate change.
+The regression suite covers all repository packages, every quota at its boundary and one unit over, malformed counts and lengths, bounded streaming, source encodings, batch failures, and existing rollback/recovery behavior. Run `pwsh -NoProfile -File ./claude/scripts/tests/Initialize-ClaudeSkills.Tests.ps1`. All 21 regression groups passed locally with PowerShell 7.5.4 on macOS, including an independent reviewer run; the focused installer CI workflow also runs the suite on Linux PowerShell 7, Windows PowerShell 7, and Windows PowerShell 5.1. Check the pull request for the latest run results.
 
 ### Safe Updates And Recovery
 

@@ -4,7 +4,7 @@ A GitHub Copilot skill for reviewing pull requests with a focus on regressions, 
 
 ## Source of Truth
 
-Use [instructions.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/copilot/skills/pr-review/instructions.md) as the editable source of truth for this skill.
+Use [instructions.md](instructions.md) as the editable source of truth for this skill.
 
 ## What It Does
 
@@ -29,7 +29,7 @@ Use this when you want the review behavior available in a specific repository.
 1. Open the target repository where you use Copilot.
 2. Check whether the repo already has a `.github/copilot-instructions.md` file.
 3. If it does not exist, create it.
-4. Copy the full contents of [instructions.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/copilot/skills/pr-review/instructions.md).
+4. Copy the full contents of [instructions.md](instructions.md).
 5. Paste the content into `.github/copilot-instructions.md`.
 6. If that file already contains other useful instructions, merge this skill carefully instead of deleting the existing rules.
 7. Save the file.
@@ -39,7 +39,7 @@ Use this when you want the review behavior available in a specific repository.
 
 Use this when you do not want repo wide instructions.
 
-1. Keep [instructions.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/copilot/skills/pr-review/instructions.md) open in your editor.
+1. Keep [instructions.md](instructions.md) open in your editor.
 2. Start a Copilot Chat session.
 3. Paste the instruction content into the chat before the pull request diff or changed files.
 4. Add your review request.

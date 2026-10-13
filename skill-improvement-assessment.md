@@ -1,5 +1,7 @@
 # Skill Improvement Assessment
 
+For current repository checks, see [CONTRIBUTING.md](CONTRIBUTING.md). The dated findings and counts below describe the 2026-05-22 review.
+
 Assessment date: 2026-05-22
 Remediation status: completed 2026-05-22
 

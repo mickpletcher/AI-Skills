@@ -4,7 +4,7 @@ A Claude skill for renaming photos to descriptive real-world names using image u
 
 ## Source of Truth
 
-Use [SKILL.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/photo-rename/SKILL.md) as the canonical source for this skill. The packaged [photo-rename.skill](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/photo-rename/photo-rename.skill) file is the Claude-ready export built from it.
+Use [SKILL.md](SKILL.md) as the canonical source for this skill. The packaged [photo-rename.skill](photo-rename.skill) file is the Claude-ready export built from it.
 
 ## What It Does
 

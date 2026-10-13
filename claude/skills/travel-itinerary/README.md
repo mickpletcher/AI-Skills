@@ -4,7 +4,7 @@ A Claude skill for planning, formatting, and exporting travel itineraries as Obs
 
 ## Source of Truth
 
-Use [SKILL.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/travel-itinerary/SKILL.md) as the canonical source for this skill. The packaged [travel-itinerary.skill](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/travel-itinerary/travel-itinerary.skill) file is the Claude-ready export built from it.
+Use [SKILL.md](SKILL.md) as the canonical source for this skill. The packaged [travel-itinerary.skill](travel-itinerary.skill) file is the Claude-ready export built from it.
 
 ## Trigger
 
@@ -90,7 +90,7 @@ travel-itinerary/
 
 ## Upgrade Log
 
-See [upgrades.md](upgrades.md) for the structured upgrade log and [completed-changes.md](completed-changes.md) for tracked completed changes.
+See [upgrades.md](upgrades.md) for the structured upgrade log and [completedchanges.md](completedchanges.md) for tracked completed changes.
 
 ## Implement In Claude
 

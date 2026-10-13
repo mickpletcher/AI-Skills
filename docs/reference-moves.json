@@ -1,0 +1,31 @@
+{
+  "baseline_commit": "701a5d616376e58c78a11938a2a76a3388993d52",
+  "description": "SHA-256 of moved sections, normalized to LF with trailing blank lines removed. Instruction text moved without semantic edits.",
+  "moves": [
+    {
+      "source": "claude/skills/resume-writer/SKILL.md",
+      "reference": "claude/skills/resume-writer/references/enhance-workflow.md",
+      "sha256": "a13934bb28d9bd510a7bb8ede4fa1fc715a2ef42f23a1de25d8c293650c52898"
+    },
+    {
+      "source": "claude/skills/resume-writer/SKILL.md",
+      "reference": "claude/skills/resume-writer/references/scoring-workflow.md",
+      "sha256": "a6fb12a9344a024166541368f7a37a8a6a4c48d69e9c4202e7aa168d6b6f1f4c"
+    },
+    {
+      "source": "claude/skills/resume-writer/SKILL.md",
+      "reference": "claude/skills/resume-writer/references/add-insight-workflow.md",
+      "sha256": "10457b94294590c148d2bae281f35129ffb86c873ce3f7a7a4f3eec868480e10"
+    },
+    {
+      "source": "claude/skills/resume-writer/SKILL.md",
+      "reference": "claude/skills/resume-writer/references/refresh-tips-workflow.md",
+      "sha256": "baa82560571fec6ba14f511676b28a87734eca4c18241a1ef5341ba4a715c9f1"
+    },
+    {
+      "source": "claude/skills/trip-email-html-itinerary/SKILL.md",
+      "reference": "claude/skills/trip-email-html-itinerary/references/design-system.md",
+      "sha256": "1c441d1e0f523d8e3e03fd98eecbbbd78d0ff8de28443924e5d9dc02846e82db"
+    }
+  ]
+}

@@ -4,7 +4,7 @@ A Claude skill for exporting logged workout sessions into Obsidian-ready Markdow
 
 ## Source of Truth
 
-Use [SKILL.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/obsidian-workout-export/SKILL.md) as the canonical source for this skill. The packaged [obsidian-workout-export.skill](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/obsidian-workout-export/obsidian-workout-export.skill) file is the Claude-ready export built from it.
+Use [SKILL.md](SKILL.md) as the canonical source for this skill. The packaged [obsidian-workout-export.skill](obsidian-workout-export.skill) file is the Claude-ready export built from it.
 
 ## Trigger
 

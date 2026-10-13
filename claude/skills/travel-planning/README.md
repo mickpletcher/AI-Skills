@@ -4,7 +4,7 @@ A Claude skill for planning solo travel with Mick's travel preferences, constrai
 
 ## Source of Truth
 
-Use [SKILL.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/travel-planning/SKILL.md) as the canonical source for this skill. The packaged `travel-planning.skill` file should be treated as the Claude-ready export built from it.
+Use [SKILL.md](SKILL.md) as the canonical source for this skill. The packaged `travel-planning.skill` file should be treated as the Claude-ready export built from it.
 
 ## Overview
 
@@ -37,8 +37,8 @@ All planning defaults to solo travel unless a specific trip is noted otherwise.
 
 Use the local reference files when the trip matches them:
 
-- [references/europe-2026.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/travel-planning/references/europe-2026.md)
-- [references/colorado-2026.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/travel-planning/references/colorado-2026.md)
+- [references/europe-2026.md](references/europe-2026.md)
+- [references/colorado-2026.md](references/colorado-2026.md)
 
 ## Planning Modes
 

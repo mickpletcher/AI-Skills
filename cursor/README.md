@@ -10,10 +10,10 @@ Use this platform area for Cursor focused rule files, scoped coding instructions
 
 Current Cursor skills:
 
-- [pr-review](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/cursor/skills/pr-review/README.md)
-- [workflow-debugger](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/cursor/skills/workflow-debugger/README.md)
-- [repo-assessment](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/cursor/skills/repo-assessment/README.md)
-- [spec-writer](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/cursor/skills/spec-writer/README.md)
+- [pr-review](skills/pr-review/README.md)
+- [workflow-debugger](skills/workflow-debugger/README.md)
+- [repo-assessment](skills/repo-assessment/README.md)
+- [spec-writer](skills/spec-writer/README.md)
 
 ## Suggested Pattern
 

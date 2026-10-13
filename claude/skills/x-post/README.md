@@ -4,7 +4,7 @@ A Claude skill for writing posts for X on tech, PowerShell, IT automation, and f
 
 ## Source of Truth
 
-Use [SKILL.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/x-post/SKILL.md) as the canonical source for this skill. The packaged [x-post.skill](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/x-post/x-post.skill) file is the Claude-ready export built from it.
+Use [SKILL.md](SKILL.md) as the canonical source for this skill. The packaged [x-post.skill](x-post.skill) file is the Claude-ready export built from it.
 
 ## Trigger
 
@@ -21,8 +21,8 @@ This skill rewrites a draft into a single X post that:
 
 ## Related Skills
 
-- [facebook-post](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/facebook-post/README.md)
-- [facebook-reply](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/facebook-reply/README.md)
+- [facebook-post](../facebook-post/README.md)
+- [facebook-reply](../facebook-reply/README.md)
 
 ## File Structure
 

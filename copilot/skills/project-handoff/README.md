@@ -4,7 +4,7 @@ A GitHub Copilot skill for creating durable handoff documents such as `assessmen
 
 ## Source of Truth
 
-Use [instructions.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/copilot/skills/project-handoff/instructions.md) as the editable source of truth for this skill.
+Use [instructions.md](instructions.md) as the editable source of truth for this skill.
 
 ## What It Does
 
@@ -19,7 +19,7 @@ This skill creates repo-local context files that let a future engineer or AI age
 
 ## How To Implement In Copilot
 
-Copilot skills are instruction files. Paste the contents of [instructions.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/copilot/skills/project-handoff/instructions.md) into the Copilot instruction surface you use.
+Copilot skills are instruction files. Paste the contents of [instructions.md](instructions.md) into the Copilot instruction surface you use.
 
 ## First Test
 

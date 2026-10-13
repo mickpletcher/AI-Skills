@@ -10,7 +10,7 @@
 
     Source priority:
       1. -SourcePath if specified
-      2. -RepoPath\skills if a cloned repo is provided
+      2. -RepoPath\claude\skills (or legacy RepoPath\skills)
       3. $env:USERPROFILE\Downloads (default)
 
 .PARAMETER SkillsRoot
@@ -18,12 +18,13 @@
     Defaults to $env:USERPROFILE\OneDrive\Documents\Claude\Skills.
 
 .PARAMETER SourcePath
-    Path to scan for .skill files.
+    Path to scan recursively for .skill files.
     Defaults to the user's Downloads folder.
 
 .PARAMETER RepoPath
-    Path to a cloned copy of the mickpletcher/Anthropic repo.
-    If provided, installs .skill files found under RepoPath\skills\.
+    Path to a cloned copy of AI-Skills. Scans RepoPath\claude\skills\
+    recursively, with RepoPath\skills\ supported for legacy layouts.
+    An explicit SourcePath takes precedence. Invalid repositories do not fall back to Downloads.
 
 .PARAMETER SkillName
     Install or remove a single named skill only.
@@ -54,7 +55,7 @@
     powershell.exe -ExecutionPolicy Bypass -File Initialize-ClaudeSkills.ps1 -UpdateOnly
 
 .EXAMPLE
-    powershell.exe -ExecutionPolicy Bypass -File Initialize-ClaudeSkills.ps1 -RepoPath "C:\Repos\Anthropic"
+    powershell.exe -ExecutionPolicy Bypass -File Initialize-ClaudeSkills.ps1 -RepoPath "C:\Repos\AI-Skills"
 
 .EXAMPLE
     powershell.exe -ExecutionPolicy Bypass -File Initialize-ClaudeSkills.ps1 -List
@@ -82,6 +83,7 @@ param (
     [string]$RepoPath = '',
 
     [Parameter(Mandatory = $false)]
+    [ValidatePattern('^$|^[a-zA-Z0-9][a-zA-Z0-9_-]*$')]
     [string]$SkillName = '',
 
     [Parameter(Mandatory = $false)]
@@ -127,7 +129,7 @@ function Initialize-SkillsDirectory {
 .SYNOPSIS
     Creates the Claude Skills folder structure if it does not already exist.
 #>
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess)]
     param ()
 
     $Folders = @(
@@ -137,10 +139,10 @@ function Initialize-SkillsDirectory {
     )
 
     foreach ($Folder in $Folders) {
-        if (-not (Test-Path -Path $Folder)) {
+        if (-not (Test-Path -LiteralPath $Folder)) {
             try {
                 if ($PSCmdlet.ShouldProcess($Folder, 'Create directory')) {
-                    New-Item -Path $Folder -ItemType Directory -Force | Out-Null
+                    New-Item -Path $Folder -ItemType Directory -Force -ErrorAction Stop | Out-Null
                     Write-Log -Message "Created: $Folder"
                 }
             } catch {
@@ -160,10 +162,10 @@ function Get-InstalledSkills {
     param ()
 
     $UserSkillsPath = "$SkillsRoot\user"
-    if (-not (Test-Path -Path $UserSkillsPath)) {
+    if (-not (Test-Path -LiteralPath $UserSkillsPath)) {
         return @()
     }
-    return Get-ChildItem -Path $UserSkillsPath -Directory |
+    return Get-ChildItem -LiteralPath $UserSkillsPath -Directory |
         Select-Object -ExpandProperty Name
 }
 
@@ -175,7 +177,7 @@ function Show-InstalledSkills {
     [CmdletBinding()]
     param ()
 
-    $Installed = Get-InstalledSkills
+    $Installed = @(Get-InstalledSkills)
 
     Write-Host ""
     Write-Host "Installed Skills ($($Installed.Count))" -ForegroundColor Cyan
@@ -205,67 +207,153 @@ function Get-SkillFiles {
         [string]$Path
     )
 
-    if (-not (Test-Path -Path $Path)) {
-        Write-Log -Message "Source path not found: $Path" -Severity 3
-        return @()
+    if (-not (Test-Path -LiteralPath $Path -PathType Container)) {
+        throw "Source directory not found: $Path"
     }
 
-    try {
-        $Files = Get-ChildItem -Path $Path -Filter '*.skill' -File -ErrorAction Stop
+    $Files = @(Get-ChildItem -LiteralPath $Path -Filter '*.skill' -File -Recurse -ErrorAction Stop |
+        Where-Object { $SkillName -eq '' -or $_.BaseName -eq $SkillName } |
+        Sort-Object FullName)
+    if ($Files.Count -eq 0) {
+        throw "No .skill packages found in '$Path' matching skill '$SkillName'."
+    }
+    $Duplicates = @($Files | Group-Object BaseName | Where-Object Count -gt 1)
+    if ($Duplicates.Count -gt 0) {
+        throw "Duplicate skill package names in '$Path': $($Duplicates.Name -join ', '). Select an unambiguous source."
+    }
+    return $Files
+}
 
-        if ($SkillName -ne '') {
-            $Files = $Files | Where-Object { $_.BaseName -eq $SkillName }
+function Assert-SafeDirectory {
+    param ([string]$Path)
+
+    # Reject links within the configured library, including the library itself.
+    $Current = [IO.Path]::GetFullPath($Path)
+    $Boundary = [IO.Path]::GetFullPath($SkillsRoot).TrimEnd([IO.Path]::DirectorySeparatorChar)
+    while ($Current) {
+        if (Test-Path -LiteralPath $Current) {
+            $Item = Get-Item -LiteralPath $Current -Force -ErrorAction Stop
+            if (-not $Item.PSIsContainer -or ($Item.Attributes -band [IO.FileAttributes]::ReparsePoint)) {
+                throw "Installation path must be a real directory, not a file or link: $Current"
+            }
         }
-
-        return $Files
-    } catch {
-        Write-Log -Message "Failed to scan '$Path': $_" -Severity 3
-        return @()
+        if ($Current.TrimEnd([IO.Path]::DirectorySeparatorChar) -eq $Boundary) { break }
+        $Current = [IO.Path]::GetDirectoryName($Current)
     }
 }
 
-function Install-SkillFile {
-<#
-.SYNOPSIS
-    Extracts a .skill file into the Claude Skills user directory.
+function Expand-ValidatedSkill {
+    param ([string]$SkillFile, [string]$Destination)
 
-.PARAMETER SkillFile
-    Full path to the .skill file to install.
-#>
-    [CmdletBinding()]
+    Add-Type -AssemblyName System.IO.Compression.FileSystem -ErrorAction Stop
+    $Archive = [IO.Compression.ZipFile]::OpenRead($SkillFile)
+    try {
+        $Paths = @{}
+        $Prefix = [IO.Path]::GetFullPath($Destination) + [IO.Path]::DirectorySeparatorChar
+        foreach ($Entry in $Archive.Entries) {
+            # Treat both separators as separators on every host, including Unix.
+            $Relative = $Entry.FullName.Replace('\', '/')
+            $Parts = $Relative.TrimEnd('/').Split('/')
+            if ([string]::IsNullOrWhiteSpace($Relative) -or $Relative.StartsWith('/') -or
+                ($Parts | Where-Object {
+                    $_ -eq '' -or $_ -eq '.' -or $_ -eq '..' -or
+                    $_ -match '[<>:"|?*\x00-\x1f]' -or $_ -match '[. ]$' -or
+                    $_ -match '^(?i:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\.|$)'
+                })) {
+                throw "Unsafe archive path '$($Entry.FullName)' in '$SkillFile'."
+            }
+            $UnixType = ($Entry.ExternalAttributes -shr 16) -band 0xF000
+            if ($UnixType -notin @(0, 0x8000, 0x4000) -or ($Entry.ExternalAttributes -band 0x400)) {
+                throw "Archive links or special files are not allowed: $($Entry.FullName)"
+            }
+            $Target = [IO.Path]::GetFullPath((Join-Path $Destination ($Parts -join [IO.Path]::DirectorySeparatorChar)))
+            if (-not $Target.StartsWith($Prefix, [StringComparison]::OrdinalIgnoreCase) -or $Paths.ContainsKey($Target)) {
+                throw "Duplicate or escaping archive path: $($Entry.FullName)"
+            }
+            $Paths[$Target] = $true
+            if ($Relative.EndsWith('/')) {
+                [IO.Directory]::CreateDirectory($Target) | Out-Null
+            } else {
+                [IO.Directory]::CreateDirectory([IO.Path]::GetDirectoryName($Target)) | Out-Null
+                $InputStream = $Entry.Open()
+                try {
+                    $OutputStream = [IO.File]::Open($Target, [IO.FileMode]::CreateNew)
+                    try { $InputStream.CopyTo($OutputStream) } finally { $OutputStream.Dispose() }
+                } finally { $InputStream.Dispose() }
+            }
+        }
+        $Source = Join-Path $Destination 'SKILL.md'
+        if (-not (Test-Path -LiteralPath $Source -PathType Leaf) -or
+            [string]::IsNullOrWhiteSpace([IO.File]::ReadAllText($Source))) {
+            throw "Package must contain a nonempty SKILL.md at its root: $SkillFile"
+        }
+    } finally { $Archive.Dispose() }
+}
+
+function Move-SkillDirectory {
+    param ([string]$Source, [string]$Destination)
+    # Same-filesystem directory renames; never merge into or overwrite a directory.
+    [IO.Directory]::Move($Source, $Destination)
+}
+
+function Install-SkillFile {
+    [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory = $true)]
-        [ValidateScript({ Test-Path $_ -PathType Leaf })]
         [string]$SkillFile
     )
 
-    $Name        = [System.IO.Path]::GetFileNameWithoutExtension($SkillFile)
-    $Destination = "$SkillsRoot\user\$Name"
-    $IsUpdate    = Test-Path -Path $Destination
-
+    $Name = [IO.Path]::GetFileNameWithoutExtension($SkillFile)
+    if ($Name -notmatch '^[a-zA-Z0-9][a-zA-Z0-9_-]*$') {
+        throw "Unsafe skill package name: $Name"
+    }
+    $Root = [IO.Path]::GetFullPath($SkillsRoot)
+    $Destination = Join-Path (Join-Path $Root 'user') $Name
+    Assert-SafeDirectory -Path $Destination
+    $IsUpdate = Test-Path -LiteralPath $Destination
     if ($UpdateOnly -and -not $IsUpdate) {
         Write-Log -Message "Skipped (not installed): $Name" -Severity 2
         return
     }
-
     $Action = if ($IsUpdate) { 'Update' } else { 'Install' }
+    if (-not $PSCmdlet.ShouldProcess($Destination, "$Action from $SkillFile")) { return }
 
-    if ($PSCmdlet.ShouldProcess($Name, $Action)) {
-        if ($IsUpdate) {
-            try {
-                Remove-Item -Path $Destination -Recurse -Force -ErrorAction Stop
-            } catch {
-                Write-Log -Message "Failed to remove existing '$Name' before update: $_" -Severity 2
-            }
-        }
-
+    # Keep staging and backup on the destination filesystem, outside the user catalog.
+    $Transaction = Join-Path $Root ('.install-' + [guid]::NewGuid().ToString('N'))
+    $Stage = Join-Path $Transaction 'staged'
+    $Backup = Join-Path $Transaction 'backup'
+    $Committed = $false
+    try {
+        [IO.Directory]::CreateDirectory($Stage) | Out-Null
+        Expand-ValidatedSkill -SkillFile $SkillFile -Destination $Stage
+        if ($IsUpdate) { Move-SkillDirectory -Source $Destination -Destination $Backup }
         try {
-            Expand-Archive -Path $SkillFile -DestinationPath $Destination -Force -ErrorAction Stop
-            $Tag   = if ($IsUpdate) { '[UPDATED]' } else { '[NEW]    ' }
-            $Color = if ($IsUpdate) { 'Cyan' } else { 'Green' }
-            Write-Host "  $Tag $Name" -ForegroundColor $Color
+            Move-SkillDirectory -Source $Stage -Destination $Destination
         } catch {
-            Write-Log -Message "Failed to extract '$Name': $_" -Severity 3
+            $ReplacementError = $_
+            if (Test-Path -LiteralPath $Backup) {
+                try {
+                    Move-SkillDirectory -Source $Backup -Destination $Destination
+                } catch {
+                    throw "Replacement failed for '$Name': $ReplacementError. Rollback also failed: $_. Previous installation retained at '$Backup'; restore it manually after resolving the destination conflict."
+                }
+                throw "Replacement failed for '$Name'; previous installation restored. $ReplacementError"
+            }
+            throw "Installation failed for '$Name': $ReplacementError"
+        }
+        $Committed = $true
+        $Tag = if ($IsUpdate) { '[UPDATED]' } else { '[NEW]' }
+        Write-Log -Message "$Tag $Name"
+    } finally {
+        # Never delete the only remaining copy of a previous installation.
+        if (-not $Committed -and (Test-Path -LiteralPath $Backup)) {
+            Write-Log -Message "Recovery files retained at '$Transaction'." -Severity 3
+        } elseif (Test-Path -LiteralPath $Transaction) {
+            try {
+                Remove-Item -LiteralPath $Transaction -Recurse -Force -ErrorAction Stop
+            } catch {
+                Write-Log -Message "Could not clean temporary files at '$Transaction': $_" -Severity 2
+            }
         }
     }
 }
@@ -310,6 +398,14 @@ Write-Host "Claude Skills Manager" -ForegroundColor Cyan
 Write-Host "=====================" -ForegroundColor Cyan
 Write-Host ""
 
+# Resolve relative library paths against the PowerShell location, not the process cwd.
+try {
+    $SkillsRoot = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($SkillsRoot)
+} catch {
+    Write-Log -Message "Invalid skills library path: $_" -Severity 3
+    exit 1
+}
+
 # List mode
 if ($List) {
     Show-InstalledSkills
@@ -330,37 +426,27 @@ if ($Remove) {
     exit 0
 }
 
-# Resolve source path
-$ResolvedSource = $SourcePath
-
-if ($RepoPath -ne '') {
-    $RepoSkillsPath = Join-Path $RepoPath 'skills'
-    if (Test-Path -Path $RepoSkillsPath) {
-        $ResolvedSource = $RepoSkillsPath
-        Write-Log -Message "Using repo source: $ResolvedSource"
-    } else {
-        Write-Log -Message "Repo skills folder not found at: $RepoSkillsPath" -Severity 2
-        Write-Log -Message "Falling back to: $SourcePath"
+# Discover before creating the library. Explicit SourcePath takes precedence.
+try {
+    $ResolvedSource = $SourcePath
+    if (-not $PSBoundParameters.ContainsKey('SourcePath') -and $RepoPath -ne '') {
+        $RepoSkillsPath = Join-Path (Join-Path $RepoPath 'claude') 'skills'
+        $LegacySkillsPath = Join-Path $RepoPath 'skills'
+        if (Test-Path -LiteralPath $RepoSkillsPath -PathType Container) {
+            $ResolvedSource = $RepoSkillsPath
+        } elseif (Test-Path -LiteralPath $LegacySkillsPath -PathType Container) {
+            $ResolvedSource = $LegacySkillsPath
+        } else {
+            throw "Repository has no claude/skills or skills directory: $RepoPath"
+        }
     }
-}
-
-# Ensure directory structure exists
-Initialize-SkillsDirectory
-
-# Find skill files
-$SkillFiles = Get-SkillFiles -Path $ResolvedSource
-
-if ($SkillFiles.Count -eq 0) {
-    if ($SkillName -ne '') {
-        Write-Log -Message "No .skill file found matching '$SkillName' in: $ResolvedSource" -Severity 2
-    } else {
-        Write-Log -Message "No .skill files found in: $ResolvedSource" -Severity 2
-        Write-Host ""
-        Write-Host "  Download .skill files to: $ResolvedSource" -ForegroundColor Yellow
-        Write-Host "  Or use -RepoPath:          -RepoPath 'C:\Repos\Anthropic'" -ForegroundColor Yellow
-    }
-    Write-Host ""
-    exit 0
+    Write-Log -Message "Using source: $ResolvedSource"
+    $SkillFiles = @(Get-SkillFiles -Path $ResolvedSource)
+    Assert-SafeDirectory -Path (Join-Path $SkillsRoot 'user')
+    Initialize-SkillsDirectory
+} catch {
+    Write-Log -Message "Cannot prepare installation: $_" -Severity 3
+    exit 1
 }
 
 # Install
@@ -368,8 +454,14 @@ $ModeLabel = if ($UpdateOnly) { ' (update only)' } else { '' }
 Write-Log -Message "Processing $($SkillFiles.Count) skill file(s)$ModeLabel"
 Write-Host ""
 
+$Failures = 0
 foreach ($File in $SkillFiles) {
-    Install-SkillFile -SkillFile $File.FullName
+    try {
+        Install-SkillFile -SkillFile $File.FullName
+    } catch {
+        $Failures++
+        Write-Log -Message "Failed package '$($File.FullName)': $_" -Severity 3
+    }
 }
 
 # Final summary
@@ -382,6 +474,10 @@ foreach ($Skill in (Get-InstalledSkills | Sort-Object)) {
 }
 
 Write-Host ""
+if ($Failures -gt 0) {
+    Write-Log -Message "$Failures package(s) failed. See diagnostics above; successful packages were retained." -Severity 3
+    exit 1
+}
 Write-Log -Message "Done. Restart Claude Desktop to load updated skills."
 
 #endregion Main

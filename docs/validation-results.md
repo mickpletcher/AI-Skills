@@ -5,7 +5,7 @@ Scope: review items 2, 4, 5 and 6, developed locally from commit `701a5d616376e5
 | Check | Observed result |
 | --- | --- |
 | Python environment | Python 3.11, PyYAML 6.0.3, macOS |
-| Python regression suite | 25 tests passed; validators, failure fixtures, evaluation contracts, moved sections, release gate/reproducibility, workflow structure |
+| Python regression suite | 26 tests passed; validators, failure fixtures, evaluation contracts, moved sections, release gate/reproducibility, workflow structure |
 | PowerShell environment | PowerShell 7.5.4, macOS |
 | Installer regression suite | 15 tests passed, including temporary installation of all 35 rebuilt packages |
 | Folder validator wrapper | 35 Claude skills checked, zero issues |
@@ -23,11 +23,11 @@ The resume entry point shrank from 786 to 162 lines; the itinerary entry point f
 
 ## Limits and owner decisions
 
-- The Windows/Linux GitHub matrix is authored and structurally tested, but has not run. Windows PowerShell 5.1 is not part of that matrix and has not been tested here.
+- The Windows/Linux GitHub matrix passed for commit `7173462f3e491bf274099cb0ee1fd146f62f3423` ([run evidence](https://github.com/mickpletcher/AI-Skills/actions/runs/38459029576)). Windows PowerShell 5.1 is not part of that matrix and remains untested.
 - Markdown navigable internal links and anchors are checked. External URLs, arbitrary runtime paths, and template placeholder URLs are not fetched or certified.
 - No actual model evaluation, production installation, release, workflow dispatch, or account-setting change was performed.
 - Required-check enforcement must be configured separately by the owner; adding a workflow alone does not block merging.
 - `LICENSE` remains empty. See [the precise license decision and release gate](distribution.md#license-decision-required).
 - Initial versions remain undeclared for `astrophotography-processing`, `github-readme`, `github-repo-architect`, and `idea-forge`. The catalog preserves null values; the owner must decide versions before describing those as independently versioned releases.
 - Package sizes increase because ZIP_STORED avoids compressor-version differences. The largest rebuilt archive is approximately 1.53 MB.
-- Installer extraction resource limits from the separate post-merge review are not implemented in this change. The merged installer implementation and its tests remain unchanged.
+- Installer extraction resource limits from the separate post-merge review are not implemented in this change. The merged installer implementation remains unchanged; the test harness resets expected child-process failures after successful completion so CI receives the correct exit status.

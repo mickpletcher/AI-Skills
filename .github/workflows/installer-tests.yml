@@ -29,6 +29,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-      - name: Test package limits, installation and recovery in temporary libraries
-        shell: ${{ matrix.shell }}
+      - name: Test limits and recovery with PowerShell 7
+        if: matrix.shell == 'pwsh'
+        shell: pwsh
+        run: ./claude/scripts/tests/Initialize-ClaudeSkills.Tests.ps1
+      - name: Test limits and recovery with Windows PowerShell 5.1
+        if: matrix.shell == 'powershell'
+        shell: powershell
         run: ./claude/scripts/tests/Initialize-ClaudeSkills.Tests.ps1

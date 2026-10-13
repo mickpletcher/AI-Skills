@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Closed release-input symlink/containment gaps, retained evaluation self-test enforcement under optimized Python, and made release member ordering and checksum bytes portable across hosts.
+
 - Added exact-case, schema, link, content-based package, and generated catalog validation with a Windows/Linux pull-request workflow. Required-check enforcement remains an owner setting.
 - Added offline behavioral contract fixtures and human evaluation rubrics; no model-quality results are claimed.
 - Replaced machine-specific documentation links, standardized active history references, and generated a complete catalog and checksums.

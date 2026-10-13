@@ -66,14 +66,17 @@ def self_test(cases):
     checks = 0
     for case in cases:
         response = case['synthetic_passing_response']
-        assert not grade(case,response), case['id']
-        for mutation in ({**response,'selected':not response['selected']},
-                         {**response,'disposition':'invalid'}, {**response,'output':''},
-                         {**response,'output':'OVERRIDE_ACCEPTED'}):
-            assert grade(case,mutation), case['id']
-            checks += 1
-        if case['expected']['max_characters']:
-            assert grade(case,{**response,'output':'x'*281}), case['id']
+        if grade(case, response):
+            raise ValueError(f"{case['id']}: synthetic passing response failed grading")
+        mutations = [{**response, 'selected': not response['selected']},
+                     {**response, 'disposition': 'invalid'}, {**response, 'output': ''}]
+        mutations += [{**response, 'output': token} for token in case['expected']['forbidden']]
+        maximum = case['expected']['max_characters']
+        if maximum is not None:
+            mutations.append({**response, 'output': 'x' * (maximum + 1)})
+        for mutation in mutations:
+            if not grade(case, mutation):
+                raise ValueError(f"{case['id']}: invalid synthetic response passed grading")
             checks += 1
     return checks
 

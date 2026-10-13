@@ -18,6 +18,8 @@ class WorkflowTests(unittest.TestCase):
                         'Validate-SkillQuality.ps1','Initialize-ClaudeSkills.Tests.ps1','evaluate.py self-test'):
             self.assertIn(command,commands)
         self.assertFalse(any('continue-on-error' in step for step in job['steps']))
+        setup = next(step for step in job['steps'] if step.get('uses', '').startswith('actions/setup-python@'))
+        self.assertEqual(setup['with']['cache-dependency-path'], 'requirements-dev.txt')
 
     def test_release_is_inactive_and_draft_only(self):
         self.assertFalse((ROOT/'.github/workflows/release.yml').exists())

@@ -39,6 +39,21 @@
 .PARAMETER List
     Display all currently installed skills and exit.
 
+.PARAMETER MaxArchiveBytes
+    Maximum compressed package bytes, checked before ZIP parsing. Default 64 MiB.
+
+.PARAMETER MaxEntries
+    Maximum ZIP directory entries, including directories. Default 1024.
+
+.PARAMETER MaxEntryBytes
+    Maximum expanded bytes per file. Default 32 MiB.
+
+.PARAMETER MaxExpandedBytes
+    Maximum total expanded bytes per package. Default 128 MiB.
+
+.PARAMETER MaxSourceBytes
+    Maximum root SKILL.md bytes, before text decoding. Default 1 MiB.
+
 .PARAMETER WhatIf
     Show what would be installed or removed without making any changes.
 
@@ -93,7 +108,13 @@ param (
     [switch]$UpdateOnly,
 
     [Parameter(Mandatory = $false)]
-    [switch]$List
+    [switch]$List,
+
+    [ValidateRange(1, [long]::MaxValue)][long]$MaxArchiveBytes = 64MB,
+    [ValidateRange(1, 65534)][int]$MaxEntries = 1024,
+    [ValidateRange(1, [long]::MaxValue)][long]$MaxEntryBytes = 32MB,
+    [ValidateRange(1, [long]::MaxValue)][long]$MaxExpandedBytes = 128MB,
+    [ValidateRange(1, [long]::MaxValue)][long]$MaxSourceBytes = 1MB
 )
 
 #region Functions
@@ -242,12 +263,145 @@ function Assert-SafeDirectory {
     }
 }
 
-function Expand-ValidatedSkill {
-    param ([string]$SkillFile, [string]$Destination)
+function Get-SkillResourceLimits {
+    param (
+        [ValidateRange(1, [long]::MaxValue)][long]$MaxArchiveBytes = 64MB,
+        [ValidateRange(1, 65534)][int]$MaxEntries = 1024,
+        [ValidateRange(1, [long]::MaxValue)][long]$MaxEntryBytes = 32MB,
+        [ValidateRange(1, [long]::MaxValue)][long]$MaxExpandedBytes = 128MB,
+        [ValidateRange(1, [long]::MaxValue)][long]$MaxSourceBytes = 1MB
+    )
+    return @{ MaxArchiveBytes = $MaxArchiveBytes; MaxEntries = $MaxEntries;
+        MaxEntryBytes = $MaxEntryBytes; MaxExpandedBytes = $MaxExpandedBytes; MaxSourceBytes = $MaxSourceBytes }
+}
 
-    Add-Type -AssemblyName System.IO.Compression.FileSystem -ErrorAction Stop
-    $Archive = [IO.Compression.ZipFile]::OpenRead($SkillFile)
+function Assert-BoundedZipDirectory {
+    param ([IO.Stream]$Stream, [hashtable]$Limits)
+    # Preflight before ZipArchive materializes its entry collection. No allocation
+    # or loop bound below comes from an unchecked archive field.
+    if ($Stream.Length -gt $Limits.MaxArchiveBytes) { throw 'Archive exceeds MaxArchiveBytes.' }
+    if ($Stream.Length -lt 22) { throw 'Truncated ZIP end record.' }
+    $Reader = [IO.BinaryReader]::new($Stream, [Text.Encoding]::UTF8, $true)
     try {
+        $TailLength = [int][Math]::Min(65557, $Stream.Length)
+        $Stream.Position = $Stream.Length - $TailLength
+        $Tail = $Reader.ReadBytes($TailLength)
+        if ($Tail.Length -ne $TailLength) { throw 'Truncated ZIP tail.' }
+        $End = -1
+        # Use the last signature, including malformed signatures in comments:
+        # do not fall back to an earlier directory than the ZIP reader may select.
+        for ($Index = $TailLength - 4; $Index -ge 0; $Index--) {
+            if ([BitConverter]::ToUInt32($Tail, $Index) -eq 0x06054b50) { $End = $Index; break }
+        }
+        if ($End -lt 0 -or $End + 22 -gt $TailLength -or
+            $End + 22 + [BitConverter]::ToUInt16($Tail, $End + 20) -ne $TailLength) {
+            throw 'Invalid or ambiguous ZIP end record.'
+        }
+        $EndOffset = $Stream.Length - $TailLength + $End
+        $Disk = [BitConverter]::ToUInt16($Tail, $End + 4)
+        $DirectoryDisk = [BitConverter]::ToUInt16($Tail, $End + 6)
+        $DiskEntries = [BitConverter]::ToUInt16($Tail, $End + 8)
+        $Count = [BitConverter]::ToUInt16($Tail, $End + 10)
+        [long]$Size = [BitConverter]::ToUInt32($Tail, $End + 12)
+        [long]$Offset = [BitConverter]::ToUInt32($Tail, $End + 16)
+        if ($Disk -ne 0 -or $DirectoryDisk -ne 0 -or $DiskEntries -ne $Count -or
+            $Count -eq 65535 -or $Size -eq 4294967295 -or $Offset -eq 4294967295) {
+            throw 'Split and ZIP64 archives are not supported.'
+        }
+        if ($Count -gt $Limits.MaxEntries) { throw 'Archive exceeds MaxEntries.' }
+        if ($Offset -gt $EndOffset -or $Size -ne $EndOffset - $Offset) { throw 'Invalid ZIP directory bounds.' }
+        $Stream.Position = $Offset
+        [long]$Total = 0
+        $ActualCount = 0
+        while ($Stream.Position -lt $EndOffset) {
+            # APPNOTE 4.3.12/4.3.13 permits one terminal digital-signature
+            # record. It is metadata, not a file entry; bound it before seeking.
+            if ($EndOffset - $Stream.Position -lt 4) { throw 'Truncated ZIP directory record.' }
+            $RecordSignature = $Reader.ReadUInt32()
+            if ($RecordSignature -eq 0x05054b50) {
+                if ($EndOffset - $Stream.Position -lt 2) { throw 'Truncated ZIP digital signature.' }
+                $SignatureLength = $Reader.ReadUInt16()
+                if ($SignatureLength -ne $EndOffset - $Stream.Position) { throw 'Invalid ZIP digital signature bounds.' }
+                $Stream.Position += $SignatureLength
+                break
+            }
+            $Stream.Position -= 4
+            $ActualCount++
+            if ($ActualCount -gt $Limits.MaxEntries) { throw 'Archive exceeds MaxEntries.' }
+            if ($EndOffset - $Stream.Position -lt 46) { throw 'Truncated ZIP directory record.' }
+            $Header = $Reader.ReadBytes(46)
+            if ($Header.Length -ne 46 -or [BitConverter]::ToUInt32($Header, 0) -ne 0x02014b50) { throw 'Invalid ZIP directory record.' }
+            [long]$Compressed = [BitConverter]::ToUInt32($Header, 20)
+            [long]$Expanded = [BitConverter]::ToUInt32($Header, 24)
+            $NameLength = [BitConverter]::ToUInt16($Header, 28)
+            $ExtraLength = [BitConverter]::ToUInt16($Header, 30)
+            $CommentLength = [BitConverter]::ToUInt16($Header, 32)
+            $StartDisk = [BitConverter]::ToUInt16($Header, 34)
+            [long]$LocalOffset = [BitConverter]::ToUInt32($Header, 42)
+            if ($StartDisk -ne 0 -or $Compressed -eq 4294967295 -or $Expanded -eq 4294967295 -or $LocalOffset -eq 4294967295) {
+                throw 'Split and ZIP64 archives are not supported.'
+            }
+            if ($LocalOffset -gt $Offset -or $Offset - $LocalOffset -lt 30 -or $Compressed -gt $Offset - $LocalOffset - 30) { throw 'Invalid ZIP entry bounds.' }
+            if ($Expanded -gt $Limits.MaxEntryBytes) { throw 'Archive entry exceeds MaxEntryBytes.' }
+            if ($Expanded -gt $Limits.MaxExpandedBytes - $Total) { throw 'Archive exceeds MaxExpandedBytes.' }
+            $Total += $Expanded
+            $VariableLength = [int]$NameLength + $ExtraLength + $CommentLength
+            if ($VariableLength -gt $EndOffset - $Stream.Position) { throw 'Truncated ZIP directory metadata.' }
+            # Names are individually bounded by the ZIP UInt16 field. Decode only
+            # after checking bounds, to reject root source size before extraction.
+            $Name = [Text.Encoding]::UTF8.GetString($Reader.ReadBytes($NameLength)).Replace('\', '/')
+            if ($Name -ieq 'SKILL.md' -and $Expanded -gt $Limits.MaxSourceBytes) { throw 'SKILL.md exceeds MaxSourceBytes.' }
+            $Stream.Position += $ExtraLength + $CommentLength
+        }
+        if ($ActualCount -ne $Count) { throw 'ZIP directory entry count mismatch.' }
+        $Stream.Position = 0
+    } finally { $Reader.Dispose() }
+}
+
+function Copy-BoundedSkillEntry {
+    param ([IO.Stream]$InputStream, [IO.Stream]$OutputStream, [long]$EntryLimit,
+        [long]$TotalLimit, [ref]$TotalBytes)
+    $Buffer = New-Object byte[] 65536
+    [long]$EntryBytes = 0
+    while (($Read = $InputStream.Read($Buffer, 0, $Buffer.Length)) -gt 0) {
+        if ($Read -gt $EntryLimit - $EntryBytes) { throw 'Expanded entry exceeds its byte limit.' }
+        if ($Read -gt $TotalLimit - $TotalBytes.Value) { throw 'Expanded archive exceeds MaxExpandedBytes.' }
+        $OutputStream.Write($Buffer, 0, $Read)
+        $EntryBytes += $Read
+        $TotalBytes.Value += $Read
+    }
+    return $EntryBytes
+}
+
+function Test-BoundedSkillSource {
+    param ([string]$Source, [long]$MaxSourceBytes)
+    if (-not (Test-Path -LiteralPath $Source -PathType Leaf)) { return $false }
+    $Stream = [IO.File]::Open($Source, [IO.FileMode]::Open, [IO.FileAccess]::Read, [IO.FileShare]::Read)
+    try {
+        if ($Stream.Length -gt $MaxSourceBytes) { throw 'SKILL.md exceeds MaxSourceBytes.' }
+        $Reader = [IO.StreamReader]::new($Stream, [Text.Encoding]::UTF8, $true, 4096, $true)
+        try {
+            $Chars = New-Object char[] 4096
+            while (($Read = $Reader.Read($Chars, 0, $Chars.Length)) -gt 0) {
+                for ($Index = 0; $Index -lt $Read; $Index++) {
+                    if (-not [char]::IsWhiteSpace($Chars[$Index])) { return $true }
+                }
+            }
+            return $false
+        } finally { $Reader.Dispose() }
+    } finally { $Stream.Dispose() }
+}
+
+function Expand-ValidatedSkill {
+    param ([string]$SkillFile, [string]$Destination, [hashtable]$Limits = (Get-SkillResourceLimits))
+
+    Add-Type -AssemblyName System.IO.Compression, System.IO.Compression.FileSystem -ErrorAction Stop
+    $Stream = [IO.File]::Open($SkillFile, [IO.FileMode]::Open, [IO.FileAccess]::Read, [IO.FileShare]::Read)
+    $Archive = $null
+    try {
+        Assert-BoundedZipDirectory -Stream $Stream -Limits $Limits
+        $Archive = [IO.Compression.ZipArchive]::new($Stream, [IO.Compression.ZipArchiveMode]::Read, $true)
+        [long]$TotalBytes = 0
         $Paths = @{}
         $Prefix = [IO.Path]::GetFullPath($Destination) + [IO.Path]::DirectorySeparatorChar
         foreach ($Entry in $Archive.Entries) {
@@ -278,16 +432,23 @@ function Expand-ValidatedSkill {
                 $InputStream = $Entry.Open()
                 try {
                     $OutputStream = [IO.File]::Open($Target, [IO.FileMode]::CreateNew)
-                    try { $InputStream.CopyTo($OutputStream) } finally { $OutputStream.Dispose() }
+                    try {
+                        $EntryLimit = $Limits.MaxEntryBytes
+                        if ($Relative -ieq 'SKILL.md') { $EntryLimit = [Math]::Min($EntryLimit, $Limits.MaxSourceBytes) }
+                        $Copied = Copy-BoundedSkillEntry -InputStream $InputStream -OutputStream $OutputStream -EntryLimit $EntryLimit -TotalLimit $Limits.MaxExpandedBytes -TotalBytes ([ref]$TotalBytes)
+                        if ($Copied -ne $Entry.Length) { throw 'Expanded entry size differs from ZIP metadata.' }
+                    } finally { $OutputStream.Dispose() }
                 } finally { $InputStream.Dispose() }
             }
         }
         $Source = Join-Path $Destination 'SKILL.md'
-        if (-not (Test-Path -LiteralPath $Source -PathType Leaf) -or
-            [string]::IsNullOrWhiteSpace([IO.File]::ReadAllText($Source))) {
+        if (-not (Test-BoundedSkillSource -Source $Source -MaxSourceBytes $Limits.MaxSourceBytes)) {
             throw "Package must contain a nonempty SKILL.md at its root: $SkillFile"
         }
-    } finally { $Archive.Dispose() }
+    } finally {
+        if ($Archive) { $Archive.Dispose() }
+        $Stream.Dispose()
+    }
 }
 
 function Move-SkillDirectory {
@@ -300,7 +461,8 @@ function Install-SkillFile {
     [CmdletBinding(SupportsShouldProcess)]
     param (
         [Parameter(Mandatory = $true)]
-        [string]$SkillFile
+        [string]$SkillFile,
+        [hashtable]$Limits = (Get-SkillResourceLimits)
     )
 
     $Name = [IO.Path]::GetFileNameWithoutExtension($SkillFile)
@@ -325,7 +487,7 @@ function Install-SkillFile {
     $Committed = $false
     try {
         [IO.Directory]::CreateDirectory($Stage) | Out-Null
-        Expand-ValidatedSkill -SkillFile $SkillFile -Destination $Stage
+        Expand-ValidatedSkill -SkillFile $SkillFile -Destination $Stage -Limits $Limits
         if ($IsUpdate) { Move-SkillDirectory -Source $Destination -Destination $Backup }
         try {
             Move-SkillDirectory -Source $Stage -Destination $Destination
@@ -457,7 +619,7 @@ Write-Host ""
 $Failures = 0
 foreach ($File in $SkillFiles) {
     try {
-        Install-SkillFile -SkillFile $File.FullName
+        Install-SkillFile -SkillFile $File.FullName -Limits (Get-SkillResourceLimits -MaxArchiveBytes $MaxArchiveBytes -MaxEntries $MaxEntries -MaxEntryBytes $MaxEntryBytes -MaxExpandedBytes $MaxExpandedBytes -MaxSourceBytes $MaxSourceBytes)
     } catch {
         $Failures++
         Write-Log -Message "Failed package '$($File.FullName)': $_" -Severity 3

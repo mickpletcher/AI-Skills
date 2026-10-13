@@ -76,7 +76,6 @@ The table below records the original findings that drove the remediation pass. T
 | `github-social-preview` | High | Add explicit `Intent`, `Use When`, `Do Not Use When`, `Constraints`, and `Validation Checklist`. Keep the script-specific workflow. |
 | `idea-forge` | Moderate | Add explicit `Intent`, `Workflow`, `Constraints`, and `Validation Checklist`. It already has a mature staged process. |
 | `linkedin-post` | Moderate | Add explicit `Intent`, `Do Not Use When`, `Workflow`, `Constraints`, and `Validation Checklist`. Add examples by mode. |
-| `med-vault` | Good | Keep as is structurally. Add `Do Not Use When` for emergency, diagnosis, medication changes, and clinician-only cases. Add examples if not already obvious from command references. |
 | `n8n-workflow` | High | Add explicit `Intent`, `Use When`, `Do Not Use When`, `Constraints`, and `Validation Checklist`. Current content reads more like reference notes than a complete skill. |
 | `obsidian-workout-export` | Moderate | Add explicit `Intent`, `Do Not Use When`, examples, and validation checks. Current workflow is clear. |
 | `patentforge-provisional` | High | Rebuild stale `.skill` package. Add a standard `Workflow` heading if strict conformity is desired. Keep safety and non-legal-advice language prominent. |
@@ -133,7 +132,6 @@ Completed in this order:
    - `crypto-listings`
    - `crypto-research`
    - `food-analyzer`
-   - `med-vault`
    - `patentforge-provisional`
 5. Normalize social and travel skills after the core technical skills.
 

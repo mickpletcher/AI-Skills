@@ -1,6 +1,6 @@
 # Upgrade Log: market-brief
 
-Tracks implemented upgrades to this skill. Future upgrade ideas are in [future-upgrades.md](future-upgrades.md).
+Tracks implemented upgrades to this skill. Future upgrade ideas are in `future-upgrades.md` (optional local planning file; not distributed).
 
 | Date | Upgrade | Notes |
 | --- | --- | --- |

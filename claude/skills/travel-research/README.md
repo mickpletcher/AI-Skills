@@ -4,7 +4,7 @@ A Claude skill for deeper destination comparison before full trip planning start
 
 ## Source of Truth
 
-Use [SKILL.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/travel-research/SKILL.md) as the canonical source for this skill. The packaged [travel-research.skill](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/travel-research/travel-research.skill) file is the Claude-ready export built from it.
+Use [SKILL.md](SKILL.md) as the canonical source for this skill. The packaged [travel-research.skill](travel-research.skill) file is the Claude-ready export built from it.
 
 ## What It Does
 
@@ -29,8 +29,8 @@ This skill is for the decision stage before detailed planning:
 
 ## Related Skills
 
-- [travel-planning](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/travel-planning/README.md)
-- [travel-itinerary](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/travel-itinerary/README.md)
+- [travel-planning](../travel-planning/README.md)
+- [travel-itinerary](../travel-itinerary/README.md)
 
 ## File Structure
 
@@ -38,7 +38,7 @@ This skill is for the decision stage before detailed planning:
 travel-research/
 |-- README.md
 |-- SKILL.md
-|-- completed-changes.md
+|-- completedchanges.md
 |-- upgrades.md
 `-- travel-research.skill
 ```
@@ -49,7 +49,7 @@ See [upgrades.md](upgrades.md) for implemented changes to this skill.
 
 ## Completed Changes
 
-See [completed-changes.md](completed-changes.md) for the tracked shipped history of this skill.
+See [completedchanges.md](completedchanges.md) for the tracked shipped history of this skill.
 
 ## Implement In Claude
 

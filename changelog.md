@@ -2,6 +2,14 @@
 
 Compiled from repo history and the current working tree.
 
+## Unreleased
+
+- Added exact-case, schema, link, content-based package, and generated catalog validation with a Windows/Linux pull-request workflow. Required-check enforcement remains an owner setting.
+- Added offline behavioral contract fixtures and human evaluation rubrics; no model-quality results are claimed.
+- Replaced machine-specific documentation links, standardized active history references, and generated a complete catalog and checksums.
+- Added deterministic packages, distribution/contribution guidance, and an inactive draft-release template blocked by the pending license decision.
+- Moved complete resume and itinerary detail sections into selectively loaded references while preserving their text, and completed astrophotography control sections.
+
 ## 2026-07-21
 
 - Replaced the `trip-email-html-itinerary` public demo HTML deliverable with a ten-image 1080 x 1350 JPG carousel for social sharing, including automated rendering, validation, and a fictional-data watermark on every slide

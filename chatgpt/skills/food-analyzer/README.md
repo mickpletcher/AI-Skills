@@ -4,7 +4,7 @@ A ChatGPT version of the `food-analyzer` skill for analyzing food photos, nutrit
 
 ## Source of Truth
 
-Use [instructions.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/chatgpt/skills/food-analyzer/instructions.md) as the editable ChatGPT source of truth for this skill.
+Use [instructions.md](instructions.md) as the editable ChatGPT source of truth for this skill.
 
 ## Target Surface
 
@@ -17,7 +17,7 @@ Use [instructions.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI
 ### Option 1: Custom GPT
 
 1. Open ChatGPT and create or edit a custom GPT.
-2. In the GPT instructions area, paste the full contents of [instructions.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/chatgpt/skills/food-analyzer/instructions.md).
+2. In the GPT instructions area, paste the full contents of [instructions.md](instructions.md).
 3. If the GPT should specialize in food analysis, mention in the GPT description that it analyzes food photos, labels, ingredients, macros, glycemic impact, and processing level.
 4. Save the GPT and test it with:
    - a plated-meal photo
@@ -30,7 +30,7 @@ If you want this behavior in a normal ChatGPT chat instead of a separate GPT:
 
 1. Open ChatGPT `Settings`.
 2. Open `Custom Instructions`.
-3. Paste the instruction body from [instructions.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/chatgpt/skills/food-analyzer/instructions.md) into the instruction field that controls how ChatGPT should respond.
+3. Paste the instruction body from [instructions.md](instructions.md) into the instruction field that controls how ChatGPT should respond.
 4. Save changes and start a new chat.
 
 ### Recommended Setup Notes

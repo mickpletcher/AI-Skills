@@ -4,7 +4,7 @@ A Claude skill for designing, building, and troubleshooting n8n automation workf
 
 ## Source of Truth
 
-Use [SKILL.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/n8n-workflow/SKILL.md) as the canonical source for this skill. The packaged [n8n-workflow.skill](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/n8n-workflow/n8n-workflow.skill) file is the Claude-ready export built from it.
+Use [SKILL.md](SKILL.md) as the canonical source for this skill. The packaged [n8n-workflow.skill](n8n-workflow.skill) file is the Claude-ready export built from it.
 
 ## What It Does
 

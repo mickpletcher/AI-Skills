@@ -1,0 +1,32 @@
+# Packaging, versions, and release preparation
+
+## Reproducible packages
+
+```sh
+python tools/skill_repository.py package
+python tools/skill_repository.py catalog
+python tools/skill_repository.py validate
+python tools/skill_repository.py package --check
+```
+
+The packager uses sorted relative paths, fixed 1980 timestamps, fixed regular-file permissions, ZIP_STORED (no compressor-version variance), and LF canonicalization for text files. It excludes archives, hidden files/directories, Python bytecode/caches, and `future-upgrades.md` local planning files. It rejects symlinked payloads. Keep unreviewed personal files outside skill source folders: every other visible source file is part of the package. Generated archives are intentionally larger than compressed predecessors.
+
+Validation checks exact package member sets, CRCs, and every payload byte against canonical source content, then compares the whole archive with a deterministic rebuild. Modification times are not used. [SHA256SUMS](../SHA256SUMS) and [catalog.json](../catalog.json) are generated from the resulting archives. Rebuild packages after editing a packaged README, reference, history file, helper, or source—not only `SKILL.md`.
+
+## Versions
+
+A declared skill version must be a string matching the repository's `major.minor.patch` format with optional prerelease/build suffixes. Increment declared versions when changing behavior; use patch increments for compatible documentation/packaging corrections according to owner review. Four existing Claude skills have no declared version, and instruction-only platforms do not currently require frontmatter; the manifest reports null instead of inventing a release history. The owner should choose initial versions before presenting these as independently versioned releases.
+
+For a repository bundle, the owner supplies a separate `vMAJOR.MINOR.PATCH` tag. A catalog entry's version is a source declaration, not evidence of model testing. Reference-only moves preserve source behavior and their original declared versions; the change history identifies the packaging/documentation transition.
+
+## Release template
+
+[The release workflow template](../.github/workflow-templates/release.yml) is deliberately outside `.github/workflows`, so it cannot run. After owner approval and the license decision, copy it into the workflows directory and review its permissions. It requires an existing version tag, validates the tagged source, creates a local distribution ZIP, and opens a **draft** release. It does not create tags or publish a release automatically. Configure an appropriate release review process before enabling it.
+
+`python tools/prepare_release.py --version v1.2.3 --output /path/to/new-output` prepares a deterministic bundle only; it does not call GitHub. It refuses an empty LICENSE and an existing output directory. The bundle includes source, packages, catalog, checksums, maintenance docs/tools, and evaluation fixtures; Git internals, hidden/local files, and optional planning files are excluded.
+
+## License decision required
+
+The root [LICENSE](../LICENSE) is empty. No license has been selected and no permission to redistribute is asserted by this work. The owner must choose the intended terms (for example an appropriate open-source license or explicitly restricted terms), confirm they have rights to the repository content and included third-party assets, supply the actual license text and relevant copyright/attribution notices, and decide how those terms apply to packages and generated artifacts. Filling the file is an explicit release gate, not automated legal review.
+
+No release, tag, workflow dispatch, account setting, or branch-protection change is part of this local implementation.

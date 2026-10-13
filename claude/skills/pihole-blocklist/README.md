@@ -4,11 +4,11 @@ A Claude skill for evaluating, categorizing, and documenting new Pi-hole blockli
 
 ## Source of Truth
 
-Use [SKILL.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/pihole-blocklist/SKILL.md) as the canonical source for this skill. The packaged [pihole-blocklist.skill](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/pihole-blocklist/pihole-blocklist.skill) file is the Claude-ready export built from it.
+Use [SKILL.md](SKILL.md) as the canonical source for this skill. The packaged [pihole-blocklist.skill](pihole-blocklist.skill) file is the Claude-ready export built from it.
 
 ## Overview
 
-This skill covers the curation side of Pi-hole maintenance: deciding whether a new source should be added, skipped, or handled cautiously. It complements [pihole-csv-analyzer](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/pihole-csv-analyzer/README.md), which focuses on analyzing what is already being blocked.
+This skill covers the curation side of Pi-hole maintenance: deciding whether a new source should be added, skipped, or handled cautiously. It complements [pihole-csv-analyzer](../pihole-csv-analyzer/README.md), which focuses on analyzing what is already being blocked.
 
 ## Trigger
 
@@ -40,7 +40,7 @@ NOTES: [caveats, known issues, context]
 
 ## Reference File
 
-Use [pihole-blocklist-sources.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/pihole-blocklist/pihole-blocklist-sources.md) as the local source index for the current curated-source catalog.
+Use [pihole-blocklist-sources.md](pihole-blocklist-sources.md) as the local source index for the current curated-source catalog.
 
 ## File Structure
 

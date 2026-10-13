@@ -4,7 +4,7 @@ A GitHub Copilot skill for writing consistent, ready to paste commit messages fr
 
 ## Source of Truth
 
-Use [instructions.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/copilot/skills/commit-message-writer/instructions.md) as the editable source of truth for this skill.
+Use [instructions.md](instructions.md) as the editable source of truth for this skill.
 
 ## What It Does
 
@@ -17,7 +17,7 @@ This skill helps Copilot turn repo work into a clean commit message:
 
 ## How To Implement In Copilot
 
-Copilot skills are instruction files. Paste the contents of [instructions.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/copilot/skills/commit-message-writer/instructions.md) into the Copilot instruction surface you use.
+Copilot skills are instruction files. Paste the contents of [instructions.md](instructions.md) into the Copilot instruction surface you use.
 
 ## First Test
 

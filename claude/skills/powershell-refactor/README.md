@@ -4,7 +4,7 @@ A Claude skill for simplifying, tightening, and standardizing existing PowerShel
 
 ## Source of Truth
 
-Use [SKILL.md](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/powershell-refactor/SKILL.md) as the canonical source for this skill. The packaged [powershell-refactor.skill](C:/Users/mick0/OneDrive/Documents/Code%20&%20Dev/GitHub/AI-Skills/claude/skills/powershell-refactor/powershell-refactor.skill) file is the Claude ready export built from it.
+Use [SKILL.md](SKILL.md) as the canonical source for this skill. The packaged [powershell-refactor.skill](powershell-refactor.skill) file is the Claude ready export built from it.
 
 ## What It Does
 

@@ -39,7 +39,7 @@ function Assert-NoTransactions([string]$Root) {
 }
 
 try {
-    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    Add-Type -AssemblyName System.IO.Compression, System.IO.Compression.FileSystem
     # Import function definitions only, so fault injection cannot run the script's main/exit.
     $ParseErrors = $null
     $Ast = [Management.Automation.Language.Parser]::ParseFile($Installer, [ref]$null, [ref]$ParseErrors)

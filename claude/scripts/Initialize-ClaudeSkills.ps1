@@ -383,7 +383,7 @@ function Test-BoundedSkillSource {
 function Expand-ValidatedSkill {
     param ([string]$SkillFile, [string]$Destination, [hashtable]$Limits = (Get-SkillResourceLimits))
 
-    Add-Type -AssemblyName System.IO.Compression.FileSystem -ErrorAction Stop
+    Add-Type -AssemblyName System.IO.Compression, System.IO.Compression.FileSystem -ErrorAction Stop
     $Stream = [IO.File]::Open($SkillFile, [IO.FileMode]::Open, [IO.FileAccess]::Read, [IO.FileShare]::Read)
     $Archive = $null
     try {

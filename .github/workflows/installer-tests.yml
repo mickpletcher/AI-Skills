@@ -1,10 +1,6 @@
 name: Installer regression tests
 on:
   pull_request:
-    paths:
-      - 'claude/scripts/Initialize-ClaudeSkills.ps1'
-      - 'claude/scripts/tests/Initialize-ClaudeSkills.Tests.ps1'
-      - '.github/workflows/installer-tests.yml'
   push:
     branches: [main]
     paths:

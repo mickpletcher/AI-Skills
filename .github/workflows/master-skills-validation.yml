@@ -1,0 +1,22 @@
+name: Master skill generation validation
+on:
+  pull_request:
+    paths:
+      - 'master-skills/**'
+      - 'adapters/**'
+      - 'tools/generate_master_skills.py'
+      - 'claude/skills/**'
+      - 'chatgpt/skills/**'
+      - 'cursor/skills/**'
+      - 'codex/skills/**'
+      - '.github/workflows/master-skills-validation.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python tools/generate_master_skills.py --check

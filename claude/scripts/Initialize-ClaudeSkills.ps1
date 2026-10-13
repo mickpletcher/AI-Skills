@@ -314,6 +314,18 @@ function Assert-BoundedZipDirectory {
         [long]$Total = 0
         $ActualCount = 0
         while ($Stream.Position -lt $EndOffset) {
+            # APPNOTE 4.3.12/4.3.13 permits one terminal digital-signature
+            # record. It is metadata, not a file entry; bound it before seeking.
+            if ($EndOffset - $Stream.Position -lt 4) { throw 'Truncated ZIP directory record.' }
+            $RecordSignature = $Reader.ReadUInt32()
+            if ($RecordSignature -eq 0x05054b50) {
+                if ($EndOffset - $Stream.Position -lt 2) { throw 'Truncated ZIP digital signature.' }
+                $SignatureLength = $Reader.ReadUInt16()
+                if ($SignatureLength -ne $EndOffset - $Stream.Position) { throw 'Invalid ZIP digital signature bounds.' }
+                $Stream.Position += $SignatureLength
+                break
+            }
+            $Stream.Position -= 4
             $ActualCount++
             if ($ActualCount -gt $Limits.MaxEntries) { throw 'Archive exceeds MaxEntries.' }
             if ($EndOffset - $Stream.Position -lt 46) { throw 'Truncated ZIP directory record.' }

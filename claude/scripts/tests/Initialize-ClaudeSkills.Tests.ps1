@@ -351,6 +351,49 @@ try {
         try { try { Assert-BoundedZipDirectory $Stream $Limits } catch { $Caught = $true } } finally { $Stream.Dispose() }
         Assert-True $Caught 'Directory entries bypassed the entry quota.'
     }
+    Test-Case 'Terminal ZIP digital signatures install within quotas; malformed records preserve updates' {
+        $Original = Join-Path $Temp 'signed-original.skill'
+        New-Package $Original @{ 'SKILL.md' = '# source' }
+        $Bytes = [IO.File]::ReadAllBytes($Original)
+        $End = $Bytes.Length - 22
+        $DirectorySize = [BitConverter]::ToUInt32($Bytes, $End + 12)
+        foreach ($Variant in @('empty', 'ordinary', 'maximum', 'truncated', 'short', 'long', 'duplicate', 'count')) {
+            $Length = 8
+            if ($Variant -eq 'empty') { $Length = 0 }
+            if ($Variant -eq 'maximum') { $Length = 65535 }
+            $Record = New-Object byte[] (6 + $Length)
+            [BitConverter]::GetBytes([uint32]0x05054b50).CopyTo($Record, 0)
+            [BitConverter]::GetBytes([uint16]$Length).CopyTo($Record, 4)
+            switch ($Variant) {
+                'truncated' { $Record = [byte[]]$Record[0..4] }
+                'short' { [BitConverter]::GetBytes([uint16]7).CopyTo($Record, 4) }
+                'long' { [BitConverter]::GetBytes([uint16]9).CopyTo($Record, 4) }
+                'duplicate' { $Record = [byte[]]($Record + $Record) }
+            }
+            $Changed = [byte[]]($Bytes[0..($End - 1)] + $Record + $Bytes[$End..($Bytes.Length - 1)])
+            $NewEnd = $End + $Record.Length
+            [BitConverter]::GetBytes([uint32]($DirectorySize + $Record.Length)).CopyTo($Changed, $NewEnd + 12)
+            if ($Variant -eq 'count') {
+                [BitConverter]::GetBytes([uint16]0).CopyTo($Changed, $NewEnd + 8)
+                [BitConverter]::GetBytes([uint16]0).CopyTo($Changed, $NewEnd + 10)
+            }
+            $Package = Join-Path $Temp "signed-$Variant.skill"
+            [IO.File]::WriteAllBytes($Package, $Changed)
+            $SkillsRoot = Join-Path $Temp "signed-library-$Variant"
+            $Installed = Join-Path $SkillsRoot "user/signed-$Variant/SKILL.md"
+            [IO.Directory]::CreateDirectory([IO.Path]::GetDirectoryName($Installed)) | Out-Null
+            [IO.File]::WriteAllText($Installed, '# original')
+            $Limits = Get-SkillResourceLimits
+            $Limits.MaxEntries = 1
+            $Caught = $false
+            try { Install-SkillFile -SkillFile $Package -Limits $Limits } catch { $Caught = $true }
+            $Valid = $Variant -in @('empty', 'ordinary', 'maximum')
+            Assert-True ($Caught -ne $Valid) "Incorrect digital signature result: $Variant"
+            $Expected = '# original'; if ($Valid) { $Expected = '# source' }
+            Assert-True ([IO.File]::ReadAllText($Installed) -eq $Expected) "Incorrect installed content: $Variant"
+            Assert-NoTransactions $SkillsRoot
+        }
+    }
     Test-Case 'Ordinary ZIP comments remain supported' {
         $Package = Join-Path $Temp 'comment.skill'
         New-Package $Package @{ 'SKILL.md' = '# source' }

@@ -87,7 +87,7 @@ Limits apply separately to each package. All are configurable positive integers;
 | `-MaxExpandedBytes` | 128 MiB | Declared and actual expanded bytes across the package |
 | `-MaxSourceBytes` | 1 MiB | Root `SKILL.md` bytes before extraction and text decoding |
 
-Extraction checks actual bytes before every write using a fixed 64 KiB buffer, independently of declared sizes. Source validation scans bounded character buffers with BOM detection. Invalid metadata, contradictory counts, split archives, ZIP64 archives, and ambiguous end-record signatures in ZIP comments are rejected. Repack these as ordinary single-disk ZIP packages within the limits. Normal ZIP comments are supported. Increasing byte limits does not enable ZIP64.
+Extraction checks actual bytes before every write using a fixed 64 KiB buffer, independently of declared sizes. Source validation scans bounded character buffers with BOM detection. Invalid metadata, contradictory counts, split archives, ZIP64 archives, and ambiguous end-record signatures in ZIP comments are rejected. Repack these as ordinary single-disk ZIP packages within the limits. Normal ZIP comments and a single bounded terminal central-directory digital-signature record are supported. Signature bytes are treated as metadata, not authenticated. Increasing byte limits does not enable ZIP64.
 
 Rejected packages leave the previous installation intact and clean temporary staging; other valid packages in the batch still install. These quotas bound individual packages, not cumulative batch size or available disk space. The previous installation also occupies disk until replacement completes.
 

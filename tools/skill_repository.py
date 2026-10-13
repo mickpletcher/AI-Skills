@@ -166,11 +166,13 @@ def exact_path(root, path):
         current = current / name
     return current.exists()
 
-def link_errors(root):
+def link_errors(root, source_guard=None):
     errors = []
     for path in sorted(root.rglob('*.md')):
         if any(part.startswith('.') for part in path.relative_to(root).parts):
             continue
+        if source_guard:
+            source_guard(path)
         text = prose(path.read_text(encoding='utf-8-sig'))
         targets = re.findall(r'!?\[[^\]]*\]\(<?([^\s)>]+)>?(?:\s+"[^"]*")?\)', text)
         targets += re.findall(r'(?m)^\s*\[[^\]]+\]:\s*<?([^\s>]+)>?', text)
@@ -189,11 +191,14 @@ def link_errors(root):
             dest = Path(os.path.abspath(path.parent / local)) if local else path
             if not exact_path(root, dest):
                 errors.append(f'{path.relative_to(root)}: broken/case-mismatched internal link {target}')
-            elif parsed.fragment and dest.suffix == '.md' and unquote(parsed.fragment) not in anchors(dest.read_text(encoding='utf-8-sig')):
-                errors.append(f'{path.relative_to(root)}: missing anchor {target}')
+            elif parsed.fragment and dest.suffix == '.md':
+                if source_guard:
+                    source_guard(dest)
+                if unquote(parsed.fragment) not in anchors(dest.read_text(encoding='utf-8-sig')):
+                    errors.append(f'{path.relative_to(root)}: missing anchor {target}')
     return errors
 
-def validate(root, folders_only=False):
+def validate(root, folders_only=False, source_guard=None):
     errors, count = [], 0
     items = [('claude', d) for d in sorted(root.iterdir()) if d.is_dir() and not d.name.startswith('.')] if folders_only else skills(root)
     for platform, folder in items:
@@ -223,7 +228,7 @@ def validate(root, folders_only=False):
     if not count:
         errors.append('No skills checked; refusing an empty validation result')
     if not folders_only:
-        errors += link_errors(root)
+        errors += link_errors(root, source_guard=source_guard)
     return count, errors
 
 def purpose(source, data):

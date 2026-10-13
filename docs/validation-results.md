@@ -27,7 +27,7 @@ The resume entry point shrank from 786 to 162 lines; the itinerary entry point f
 - Markdown navigable internal links and anchors are checked. External URLs, arbitrary runtime paths, and template placeholder URLs are not fetched or certified.
 - No actual model evaluation, production installation, release, workflow dispatch, or account-setting change was performed.
 - Required-check enforcement must be configured separately by the owner; adding a workflow alone does not block merging.
-- `LICENSE` remains empty. See [the precise license decision and release gate](distribution.md#license-decision-required).
+- At the time of this validation, `LICENSE` was empty. The owner has since selected MIT; see [current licensing and release requirements](distribution.md#license). The empty-license regression fixture remains enforced.
 - Initial versions remain undeclared for `astrophotography-processing`, `github-readme`, `github-repo-architect`, and `idea-forge`. The catalog preserves null values; the owner must decide versions before describing those as independently versioned releases.
 - Package sizes increase because ZIP_STORED avoids compressor-version differences. The largest rebuilt archive is approximately 1.53 MB.
 - Installer extraction resource limits from the separate post-merge review are not implemented in this change. The merged installer implementation remains unchanged; the test harness resets expected child-process failures after successful completion so CI receives the correct exit status.

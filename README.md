@@ -227,7 +227,7 @@ Current examples:
 
 Use the [generated catalog](CATALOG.md) for every shipped skill across all platforms, including purpose, installation, declared prerequisites, package links, and versions. [catalog.json](catalog.json) provides the machine-readable manifest and [SHA256SUMS](SHA256SUMS) records package hashes. Undeclared versions/prerequisites and model-evaluation dates are never invented.
 
-See [platform installation](docs/installation.md), [dependencies](docs/dependencies.md), [contributing](CONTRIBUTING.md), [behavioral evaluations](evaluations/README.md), and [distribution and the pending license decision](docs/distribution.md).
+See [platform installation](docs/installation.md), [dependencies](docs/dependencies.md), [contributing](CONTRIBUTING.md), [behavioral evaluations](evaluations/README.md), and [distribution and licensing](docs/distribution.md).
 
 ## Repository Structure
 
@@ -263,3 +263,7 @@ Skip it for small single-skill wording edits or minor doc cleanup.
 - [templates/chatgpt-skill-template.md](./templates/chatgpt-skill-template.md) for ChatGPT specific instruction wrappers
 - [specs/001-skill-repo-workflow/](./specs/001-skill-repo-workflow/) for the repo-level spec baseline
 - [claude/scripts/Update-FutureUpgrades.ps1](./claude/scripts/Update-FutureUpgrades.ps1) to create or refresh skill `future-upgrades.md` files from `upgrades.md`
+
+## License
+
+Licensed under the [MIT License](LICENSE), copyright 2026 Mick Pletcher. Existing third-party licenses and attribution notices remain applicable.

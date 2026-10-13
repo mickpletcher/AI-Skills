@@ -27,6 +27,6 @@ The PR workflow runs validation on Windows and Linux with read-only repository p
 
 External URL availability, arbitrary runtime-generated paths, and actual model quality are not certified by static link/structure checks. The checker validates navigable Markdown inline/reference links and fragments, excluding code examples; review plain-text paths and HTML resources as part of domain changes.
 
-See [distribution and the license decision](docs/distribution.md) before any release. Do not add a license identifier or claim that the project is open source until the owner has supplied the intended terms.
+The repository uses the [MIT License](LICENSE). Preserve existing third-party licenses and attribution notices. See [distribution and licensing](docs/distribution.md) before any release; release workflow activation still requires separate owner approval.
 
 See [local validation evidence](docs/validation-results.md) for the current implementation checks and untested-platform limits.

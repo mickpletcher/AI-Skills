@@ -75,6 +75,31 @@ An invalid repository does not silently fall back to Downloads. Missing sources,
 
 New installs are tagged `[NEW]`, updates `[UPDATED]`, and skipped packages produce a warning. Package failures include the source path and cause; the command exits nonzero if any package failed. Other successful package installations are retained.
 
+### Package Resource Limits
+
+Limits apply separately to each package. All are configurable positive integers; `MaxEntries` is at most 65,534. Byte values use PowerShell byte units (`1MB` = 1 MiB).
+
+| Parameter | Default | Enforced boundary |
+| --- | --- | --- |
+| `-MaxArchiveBytes` | 64 MiB | File length before ZIP parsing |
+| `-MaxEntries` | 1,024 | Independently counted directory records before .NET allocates entries; includes directories |
+| `-MaxEntryBytes` | 32 MiB | Declared and actual expanded bytes per file |
+| `-MaxExpandedBytes` | 128 MiB | Declared and actual expanded bytes across the package |
+| `-MaxSourceBytes` | 1 MiB | Root `SKILL.md` bytes before extraction and text decoding |
+
+Extraction checks actual bytes before every write using a fixed 64 KiB buffer, independently of declared sizes. Source validation scans bounded character buffers with BOM detection. Invalid metadata, contradictory counts, split archives, ZIP64 archives, and ambiguous end-record signatures in ZIP comments are rejected. Repack these as ordinary single-disk ZIP packages within the limits. Normal ZIP comments are supported. Increasing byte limits does not enable ZIP64.
+
+Rejected packages leave the previous installation intact and clean temporary staging; other valid packages in the batch still install. These quotas bound individual packages, not cumulative batch size or available disk space. The previous installation also occupies disk until replacement completes.
+
+All 35 current packages fit the defaults: observed maxima were 1,208,803 compressed bytes, 20 entries, 197,993 bytes in one entry, 1,523,665 expanded bytes in a package, and 40,385 root source bytes. Rebuilt packages from the separate distribution branch also fit these defaults.
+
+```powershell
+# A deliberately stricter local source limit
+.\Initialize-ClaudeSkills.ps1 -RepoPath "C:\Repos\AI-Skills" -MaxSourceBytes 512KB
+```
+
+The regression suite covers all repository packages, every quota at its boundary and one unit over, malformed counts and lengths, bounded streaming, source encodings, batch failures, and existing rollback/recovery behavior. Run `pwsh -NoProfile -File ./claude/scripts/tests/Initialize-ClaudeSkills.Tests.ps1`. All 21 regression groups passed locally with PowerShell 7.5.4 on macOS, including an independent reviewer run; Windows PowerShell 5.1 and Windows/Linux execution remain unverified for this separate change.
+
 ### Safe Updates And Recovery
 
 Each package is extracted into a unique `.install-*` directory inside `SkillsRoot`, outside the `user` catalog. The package must be a readable ZIP containing a nonempty root `SKILL.md`. Extraction rejects traversal and absolute paths, Windows alternate streams/reserved names, links, special files, and duplicate paths (case-insensitively).

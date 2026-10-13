@@ -248,8 +248,144 @@ try {
         Assert-True ($Transactions.Count -eq 1) 'Recovery directory missing.'
         Assert-True ([IO.File]::ReadAllText((Join-Path $Transactions[0].FullName 'backup/SKILL.md')) -eq '# original') 'Recovery backup damaged.'
     }
+    ${function:Move-SkillDirectory} = $RealMove
+    Test-Case 'Every resource limit accepts the boundary and rejects one byte or entry over' {
+        $Package = Join-Path $Temp 'limits.skill'
+        New-Package $Package @{ 'SKILL.md' = '#1234567'; 'extra.txt' = '12345678' }
+        $ArchiveLength = (Get-Item $Package).Length
+        foreach ($Case in @(
+            @{ Name = 'MaxArchiveBytes'; Value = $ArchiveLength },
+            @{ Name = 'MaxEntries'; Value = 2 },
+            @{ Name = 'MaxEntryBytes'; Value = 8 },
+            @{ Name = 'MaxExpandedBytes'; Value = 16 },
+            @{ Name = 'MaxSourceBytes'; Value = 8 }
+        )) {
+            $SkillsRoot = Join-Path $Temp ('limit-' + $Case.Name)
+            [IO.Directory]::CreateDirectory((Join-Path $SkillsRoot 'user')) | Out-Null
+            $Limits = Get-SkillResourceLimits
+            $Limits[$Case.Name] = $Case.Value
+            Install-SkillFile -SkillFile $Package -Limits $Limits
+            $Installed = Join-Path $SkillsRoot 'user/limits/SKILL.md'
+            [IO.File]::WriteAllText($Installed, '# original')
+            $Limits[$Case.Name] = $Case.Value - 1
+            $Caught = $false
+            try { Install-SkillFile -SkillFile $Package -Limits $Limits } catch { $Caught = $true }
+            Assert-True $Caught "Over-limit package accepted: $($Case.Name)"
+            Assert-True ([IO.File]::ReadAllText($Installed) -eq '# original') 'Old installation changed after limit rejection.'
+            Assert-NoTransactions $SkillsRoot
+        }
+        $null = Invoke-Installer @('-SourcePath', $Temp, '-SkillName', 'limits', '-SkillsRoot', (Join-Path $Temp 'cli-limits'), '-MaxEntries', '1') 1
+        $null = Invoke-Installer @('-SourcePath', $Temp, '-SkillName', 'limits', '-SkillsRoot', (Join-Path $Temp 'cli-invalid'), '-MaxSourceBytes', '0') 1
+        $null = Invoke-Installer @('-SourcePath', $Temp, '-SkillName', 'limits', '-SkillsRoot', (Join-Path $Temp 'cli-exact'), '-MaxEntries', '2', '-MaxSourceBytes', '8')
+    }
+    Test-Case 'Streaming quotas reject actual expanded bytes before writing beyond limits' {
+        foreach ($Case in @(
+            @{ Length = 8; EntryLimit = 8; TotalLimit = 8; Initial = 0; Fails = $false },
+            @{ Length = 9; EntryLimit = 8; TotalLimit = 100; Initial = 0; Fails = $true },
+            @{ Length = 9; EntryLimit = 100; TotalLimit = 16; Initial = 8; Fails = $true },
+            @{ Length = 65537; EntryLimit = 65536; TotalLimit = 100000; Initial = 0; Fails = $true }
+        )) {
+            $InputStream = [IO.MemoryStream]::new((New-Object byte[] $Case.Length))
+            $OutputStream = [IO.MemoryStream]::new()
+            [long]$Total = $Case.Initial
+            $Caught = $false
+            try {
+                try { $null = Copy-BoundedSkillEntry $InputStream $OutputStream $Case.EntryLimit $Case.TotalLimit ([ref]$Total) } catch { $Caught = $true }
+                Assert-True ($Caught -eq $Case.Fails) 'Incorrect streaming quota result.'
+                Assert-True ($OutputStream.Length -le $Case.EntryLimit -and $Total -le $Case.TotalLimit) 'Wrote beyond a streaming quota.'
+            } finally { $InputStream.Dispose(); $OutputStream.Dispose() }
+        }
+    }
+    Test-Case 'Forged counts, lengths, ZIP64 and malformed directory metadata cannot bypass limits' {
+        $Original = Join-Path $Temp 'metadata-original.skill'
+        New-Package $Original @{ 'SKILL.md' = '#1234567'; 'extra.txt' = '12345678'; 'empty/' = '' }
+        $Bytes = [IO.File]::ReadAllBytes($Original)
+        $End = $Bytes.Length - 22
+        $Directory = [int][BitConverter]::ToUInt32($Bytes, $End + 16)
+        foreach ($Mutation in @('count', 'count-mismatch', 'zip64-count', 'zip64-size', 'split', 'truncated', 'underreported', 'comment-signature')) {
+            $Changed = [byte[]]$Bytes.Clone()
+            switch ($Mutation) {
+                { $_ -in @('count', 'count-mismatch') } { [BitConverter]::GetBytes([uint16]1).CopyTo($Changed, $End + 8); [BitConverter]::GetBytes([uint16]1).CopyTo($Changed, $End + 10) }
+                'zip64-count' { [BitConverter]::GetBytes([uint16]65535).CopyTo($Changed, $End + 8); [BitConverter]::GetBytes([uint16]65535).CopyTo($Changed, $End + 10) }
+                'zip64-size' { [BitConverter]::GetBytes([uint32]::MaxValue).CopyTo($Changed, $Directory + 24) }
+                'split' { [BitConverter]::GetBytes([uint16]1).CopyTo($Changed, $End + 4) }
+                'truncated' { [BitConverter]::GetBytes([uint16]65535).CopyTo($Changed, $Directory + 28) }
+                'underreported' {
+                    $Position = $Directory
+                    while ($Position -lt $End) {
+                        [BitConverter]::GetBytes([uint32]0).CopyTo($Changed, $Position + 24)
+                        $Position += 46 + [BitConverter]::ToUInt16($Bytes, $Position + 28) + [BitConverter]::ToUInt16($Bytes, $Position + 30) + [BitConverter]::ToUInt16($Bytes, $Position + 32)
+                    }
+                }
+                'comment-signature' {
+                    [BitConverter]::GetBytes([uint16]4).CopyTo($Changed, $End + 20)
+                    $Changed = [byte[]]($Changed + [BitConverter]::GetBytes([uint32]0x06054b50))
+                }
+            }
+            $Package = Join-Path $Temp "$Mutation.skill"
+            [IO.File]::WriteAllBytes($Package, $Changed)
+            $SkillsRoot = Join-Path $Temp "metadata-$Mutation"
+            $Installed = Join-Path $SkillsRoot "user/$Mutation/SKILL.md"
+            [IO.Directory]::CreateDirectory([IO.Path]::GetDirectoryName($Installed)) | Out-Null
+            [IO.File]::WriteAllText($Installed, '# original')
+            $Limits = Get-SkillResourceLimits
+            if ($Mutation -eq 'count') { $Limits.MaxEntries = 2 }
+            if ($Mutation -eq 'underreported') { $Limits.MaxExpandedBytes = 4 }
+            $Caught = $false
+            try { Install-SkillFile -SkillFile $Package -Limits $Limits } catch { $Caught = $true }
+            Assert-True $Caught "Malformed metadata accepted: $Mutation"
+            Assert-True ([IO.File]::ReadAllText($Installed) -eq '# original') 'Metadata failure damaged installed skill.'
+            Assert-NoTransactions $SkillsRoot
+        }
+        # Directory entries consume the same quota as files, even with zero payload.
+        $Stream = [IO.File]::OpenRead($Original)
+        $Limits = Get-SkillResourceLimits; $Limits.MaxEntries = 2
+        $Caught = $false
+        try { try { Assert-BoundedZipDirectory $Stream $Limits } catch { $Caught = $true } } finally { $Stream.Dispose() }
+        Assert-True $Caught 'Directory entries bypassed the entry quota.'
+    }
+    Test-Case 'Ordinary ZIP comments remain supported' {
+        $Package = Join-Path $Temp 'comment.skill'
+        New-Package $Package @{ 'SKILL.md' = '# source' }
+        $Bytes = [IO.File]::ReadAllBytes($Package)
+        $Comment = [Text.Encoding]::UTF8.GetBytes('normal comment')
+        [BitConverter]::GetBytes([uint16]$Comment.Length).CopyTo($Bytes, $Bytes.Length - 2)
+        [IO.File]::WriteAllBytes($Package, [byte[]]($Bytes + $Comment))
+        $SkillsRoot = Join-Path $Temp 'comment-library'
+        [IO.Directory]::CreateDirectory((Join-Path $SkillsRoot 'user')) | Out-Null
+        Install-SkillFile -SkillFile $Package
+        Assert-True (Test-Path (Join-Path $SkillsRoot 'user/comment/SKILL.md')) 'Normal ZIP comment was rejected.'
+        Assert-NoTransactions $SkillsRoot
+    }
+    Test-Case 'Bounded source scanning preserves BOM and whitespace semantics' {
+        $Source = Join-Path $Temp 'bounded-source.md'
+        foreach ($Encoding in @([Text.UTF8Encoding]::new($true), [Text.Encoding]::Unicode, [Text.Encoding]::UTF32)) {
+            foreach ($Text in @('', " `t`r`n", '# source')) {
+                [IO.File]::WriteAllText($Source, $Text, $Encoding)
+                $Limit = [Math]::Max(1, (Get-Item $Source).Length)
+                Assert-True ((Test-BoundedSkillSource $Source $Limit) -eq ($Text -eq '# source')) 'Source encoding or whitespace behavior changed.'
+            }
+        }
+        [IO.File]::WriteAllText($Source, '# oversized source')
+        $Caught = $false
+        try { $null = Test-BoundedSkillSource $Source 1 } catch { $Caught = $true }
+        Assert-True $Caught 'Immediate non-whitespace bypassed source size limit.'
+    }
+    Test-Case 'Resource rejection preserves partial batch success and cleans transactions' {
+        $Source = Join-Path $Temp 'limited-batch'
+        New-Package (Join-Path $Source 'bad.skill') @{ 'SKILL.md' = '# too large' }
+        New-Package (Join-Path $Source 'good.skill') @{ 'SKILL.md' = '#' }
+        $Root = Join-Path $Temp 'limited-batch-library'
+        $null = Invoke-Installer @('-SourcePath', $Source, '-SkillsRoot', $Root, '-MaxSourceBytes', '1') 1
+        Assert-True (Test-Path (Join-Path $Root 'user/good/SKILL.md')) 'Valid package in batch was not installed.'
+        Assert-True (-not (Test-Path (Join-Path $Root 'user/bad'))) 'Rejected package destination remains.'
+        Assert-NoTransactions $Root
+    }
     Write-Host "All $Passed installer regression tests passed."
 } finally {
     if ($RealMove) { ${function:Move-SkillDirectory} = $RealMove }
     Remove-Item -LiteralPath $Temp -Recurse -Force
 }
+
+# Expected failing child processes must not leak their exit code to a calling CI shell.
+$global:LASTEXITCODE = 0

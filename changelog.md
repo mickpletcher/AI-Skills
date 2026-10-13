@@ -2,6 +2,10 @@
 
 Compiled from repo history and the current working tree.
 
+## Unreleased
+
+- Bound installer archive parsing, entry counts, expanded payloads, and root source text with configurable limits; retain transactional cleanup and update recovery.
+
 ## 2026-07-21
 
 - Replaced the `trip-email-html-itinerary` public demo HTML deliverable with a ten-image 1080 x 1350 JPG carousel for social sharing, including automated rendering, validation, and a fictional-data watermark on every slide

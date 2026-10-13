@@ -97,9 +97,6 @@ Could provide a fast lightweight version of `idea-forge` for smaller ideas that 
 9. `chatgpt/skills/food-analyzer`
 Useful for personal nutrition checks, ingredient comparisons, and quick meal guidance on the ChatGPT side.
 
-10. `chatgpt/skills/med-vault`
-Could support medication, supplement, and health note organization with a guided prompt workflow.
-
 ### Tier 4
 
 1. `chatgpt/skills/pihole-blocklist`
@@ -217,28 +214,25 @@ Useful for scope, purchase, and build phase cost planning.
 3. `claude/skills/food-analyzer`
 Useful for meal analysis, ingredient comparisons, and nutrition guidance in a personal planning context.
 
-4. `claude/skills/med-vault`
-Could help organize medication, supplement, and health tracking notes.
-
-5. `claude/skills/property-project-planner`
+4. `claude/skills/property-project-planner`
 A practical planning skill for land, shop, utility, and build sequencing decisions.
 
-6. `claude/skills/off-grid-water-planning`
+5. `claude/skills/off-grid-water-planning`
 Useful for water storage, filtration, pumping, and freeze protection decisions.
 
-7. `claude/skills/battery-bank-planning`
+6. `claude/skills/battery-bank-planning`
 Could cover sizing, chemistry tradeoffs, inverter pairing, and phased expansion.
 
-8. `claude/skills/shop-buildout`
+7. `claude/skills/shop-buildout`
 Good fit for tool, layout, wiring, and phased workspace planning on the property.
 
-9. `claude/skills/triathlon-season-planner`
+8. `claude/skills/triathlon-season-planner`
 Useful personal planning skill that complements fitness programming with race sequencing.
 
-10. `claude/skills/event-trip-planner`
+9. `claude/skills/event-trip-planner`
 Could join travel planning and athletic event logistics into one workflow.
 
-11. `claude/skills/homelab-service-planner`
+10. `claude/skills/homelab-service-planner`
 Good fit for self hosted service choices, container placement, backup, and maintenance planning.
 
 ### Tier 4

@@ -244,7 +244,6 @@ Current examples:
 | [idea-forge](./claude/skills/idea-forge/) | Run any raw idea through a five-stage R&D pipeline and produce a scored invention plan with architecture, monetization paths, and an MVP roadmap |
 | [linkedin-post](./claude/skills/linkedin-post/) | Write LinkedIn posts with mode control, credibility checks, CTA styles, and audience variants |
 | [market-brief](./claude/skills/market-brief/) | Generate current morning market briefs for Mick's indices, commodities, currencies, macro, and expanded crypto watchlist |
-| [med-vault](./claude/skills/med-vault/) | Track medications, review interactions, generate schedules, and run OCR-assisted intake under strict medical safety boundaries |
 | [n8n-workflow](./claude/skills/n8n-workflow/) | Design, build, and troubleshoot n8n workflows on a self-hosted Proxmox stack |
 | [obsidian-workout-export](./claude/skills/obsidian-workout-export/) | Export logged workout sessions into Obsidian-ready Markdown files |
 | [patentforge-provisional](./claude/skills/patentforge-provisional/) | Turn an invention idea into a structured disclosure, prior art search plan, claim candidates, and provisional draft package |

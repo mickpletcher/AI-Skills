@@ -5,10 +5,6 @@ on:
       - 'master-skills/**'
       - 'adapters/**'
       - 'tools/generate_master_skills.py'
-      - 'claude/skills/**'
-      - 'chatgpt/skills/**'
-      - 'cursor/skills/**'
-      - 'codex/skills/**'
       - '.github/workflows/master-skills-validation.yml'
   workflow_dispatch:
 jobs:
@@ -19,4 +15,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python tools/generate_master_skills.py --check
+      - name: Compile generator
+        run: python -m py_compile tools/generate_master_skills.py
+      - name: Generate isolated candidates
+        run: python tools/generate_master_skills.py
+      - name: Verify generated candidates
+        run: python tools/generate_master_skills.py --check

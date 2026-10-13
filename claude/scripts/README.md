@@ -15,7 +15,7 @@ PowerShell scripts for managing Claude skill installations and validating skill 
 
 ## Initialize-ClaudeSkills.ps1
 
-Manages the Claude Skills library. Scans a source directory for `.skill` files and installs them into the Claude Desktop user skills directory.
+Manages the Claude Skills library. Scans a source directory recursively for `.skill` files and installs them into the Claude Desktop user skills directory.
 
 ### Requirements
 
@@ -28,8 +28,8 @@ Manages the Claude Skills library. Scans a source directory for `.skill` files a
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
 | `-SkillsRoot` | String | Override the default Skills library path |
-| `-SourcePath` | String | Override the default source path (defaults to Downloads) |
-| `-RepoPath` | String | Path to a cloned repo with `.skill` files under a `\skills\` subfolder |
+| `-SourcePath` | String | Source directory to scan recursively (defaults to Downloads) |
+| `-RepoPath` | String | Path to an AI-Skills clone with packages under `claude/skills/` (legacy `skills/` also supported) |
 | `-SkillName` | String | Target a single skill by name (without `.skill` extension) |
 | `-Remove` | Switch | Remove a skill. Requires `-SkillName` |
 | `-UpdateOnly` | Switch | Only reinstall already-installed skills. Skips new ones |
@@ -40,11 +40,11 @@ Manages the Claude Skills library. Scans a source directory for `.skill` files a
 
 The script resolves the skill source in this order:
 
-1. `-RepoPath\skills\` if `-RepoPath` is specified and the folder exists
-2. `-SourcePath` if explicitly provided
-3. `$env:USERPROFILE\Downloads` by default
+1. Explicit `-SourcePath`, scanned recursively.
+2. `-RepoPath/claude/skills/`, or `-RepoPath/skills/` for legacy repositories.
+3. `$env:USERPROFILE/Downloads` when neither override is supplied.
 
-If `-RepoPath` is given but `\skills\` is not found, it falls back to Downloads with a warning.
+An invalid repository does not silently fall back to Downloads. Missing sources, zero matching packages (including an unmatched `-SkillName`), and duplicate package names produce a nonzero exit before the library is created. `-UpdateOnly` may successfully skip packages that are not already installed.
 
 ### Examples
 
@@ -55,7 +55,7 @@ If `-RepoPath` is given but `\skills\` is not found, it falls back to Downloads 
 # Install a single skill
 .\Initialize-ClaudeSkills.ps1 -SkillName "blog-post"
 
-# Install directly from this cloned repo
+# Install directly from this cloned repo (including nested skill folders)
 .\Initialize-ClaudeSkills.ps1 -RepoPath "C:\Repos\AI-Skills"
 
 # Update already-installed skills only
@@ -73,7 +73,27 @@ If `-RepoPath` is given but `\skills\` is not found, it falls back to Downloads 
 
 ### Output
 
-New installs are tagged `[NEW]` in green. Updates are tagged `[UPDATED]` in cyan. Skipped or failed items are logged in yellow or red. A full list of installed skills is printed at the end of every run.
+New installs are tagged `[NEW]`, updates `[UPDATED]`, and skipped packages produce a warning. Package failures include the source path and cause; the command exits nonzero if any package failed. Other successful package installations are retained.
+
+### Safe Updates And Recovery
+
+Each package is extracted into a unique `.install-*` directory inside `SkillsRoot`, outside the `user` catalog. The package must be a readable ZIP containing a nonempty root `SKILL.md`. Extraction rejects traversal and absolute paths, Windows alternate streams/reserved names, links, special files, and duplicate paths (case-insensitively).
+
+Only after validation does the installer rename the old installation into a backup and move the staged directory into place. If replacement fails, it restores the backup. If restoration fails too, it retains the backup and prints its exact recovery path. Do not delete that recovery directory until you have restored or copied the previous installation. Normal success and handled failures clean temporary files; cleanup failures report the retained directory.
+
+A process or machine interruption between renames may also leave a recovery directory; there is no automatic crash recovery. Updates are per skill, not a transaction across the entire batch. `-WhatIf` previews discovery and destinations without creating directories or extracting packages. Skill names use letters, digits, hyphens, or underscores and must start with a letter or digit.
+
+### Regression Tests
+
+Run from the repository root:
+
+```powershell
+pwsh -NoProfile -File ./claude/scripts/tests/Initialize-ClaudeSkills.Tests.ps1
+```
+
+On Windows PowerShell 5.1, use `powershell.exe` instead of `pwsh`. The suite requires no Pester module and uses only unique temporary libraries, cleaned up afterward. It covers the actual repository packages, recursive and legacy discovery, source precedence, empty/invalid sources, duplicate names, dry runs, update-only behavior, invalid archives, and injected replacement/rollback failures.
+
+The suite has been verified on macOS with PowerShell 7.5.4. Windows (including PowerShell 5.1) and Linux have not been executed in this environment. On non-Windows hosts, pass explicit `-SkillsRoot` and `-SourcePath` or `-RepoPath`; the default library and Downloads paths remain Windows-oriented.
 
 ### Directory Structure Created
 

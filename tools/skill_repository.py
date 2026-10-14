@@ -84,7 +84,7 @@ def frontmatter(path, root=ROOT):
 def skills(root):
     return [(platform, d) for platform in PLATFORMS
             for d in sorted((root / platform / 'skills').glob('*'))
-            if d.is_dir() and not d.name.startswith('.') and d.name != 'example-skill']
+            if d.is_dir() and not d.name.startswith('.')]
 
 def exact_file(folder, name):
     return any(p.name == name and p.is_file() for p in folder.iterdir())

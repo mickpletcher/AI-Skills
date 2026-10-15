@@ -1,8 +1,8 @@
-<!-- GENERATED CANDIDATE: edit master-skills or adapters, not this file -->
 ---
 name: github-repo-architect
 description: Design a practical, testable Git repository architecture from a project idea, including documentation, CI, and starter files when appropriate.
 ---
+<!-- GENERATED CANDIDATE: edit master-skills or adapters, not this file -->
 # Git Repository Architect
 
 ## Purpose

@@ -1,8 +1,8 @@
-<!-- GENERATED CANDIDATE: edit master-skills or adapters, not this file -->
 ---
 name: example-skill
 description: Demonstrate a reusable cross-platform skill without accessing external systems.
 ---
+<!-- GENERATED CANDIDATE: edit master-skills or adapters, not this file -->
 # Example skill
 
 ## When to use

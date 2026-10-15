@@ -1,5 +1,10 @@
 # AI Skills
 
+[![Repository validation](https://github.com/mickpletcher/AI-Skills/actions/workflows/validate.yml/badge.svg?branch=main&event=push)](https://github.com/mickpletcher/AI-Skills/actions/workflows/validate.yml?query=branch%3Amain)
+[![Installer regression tests](https://github.com/mickpletcher/AI-Skills/actions/workflows/installer-tests.yml/badge.svg?branch=main&event=push)](https://github.com/mickpletcher/AI-Skills/actions/workflows/installer-tests.yml?query=branch%3Amain)
+[![Master skill generation validation](https://github.com/mickpletcher/AI-Skills/actions/workflows/master-skills-validation.yml/badge.svg?branch=main&event=push)](https://github.com/mickpletcher/AI-Skills/actions/workflows/master-skills-validation.yml?query=branch%3Amain)
+[![License](https://img.shields.io/github/license/mickpletcher/AI-Skills)](./LICENSE)
+
 A shared home for AI skills organized by platform. Skills live under the platform they are written for. Shared docs cover conventions and repo guidance only.
 
 See [completed-projects.md](./completed-projects.md) for completed repo additions.

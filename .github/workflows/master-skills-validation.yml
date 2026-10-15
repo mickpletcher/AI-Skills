@@ -4,8 +4,12 @@ on:
     paths:
       - 'master-skills/**'
       - 'adapters/**'
+      - 'generated/**'
+      - 'tools/tests/test_master_skills.py'
       - 'tools/generate_master_skills.py'
       - '.github/workflows/master-skills-validation.yml'
+  push:
+    branches: [main]
   workflow_dispatch:
 jobs:
   validate:
@@ -17,7 +21,5 @@ jobs:
           python-version: '3.12'
       - name: Compile generator
         run: python -m py_compile tools/generate_master_skills.py
-      - name: Generate isolated candidates
-        run: python tools/generate_master_skills.py
       - name: Verify generated candidates
         run: python tools/generate_master_skills.py --check

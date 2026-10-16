@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "required": [
+    "text_reasoning"
+  ],
+  "conditional": {
+    "web_retrieval": "Required only for current external facts; request supplied sources or label current claims unverified when unavailable.",
+    "file_access": "Required for reading CSV attachments/local files or saving candidate output files. Not required for analyzing pasted CSV rows or a supplied summary with explicit sampling limits and inline candidate lists. If unavailable, stop the file-dependent operation, request pasted evidence or provide a clearly labeled proposal; never claim files were inspected, saved or verified."
+  },
+  "fallback": "If a required capability is unknown or unavailable, stop the dependent operation, identify missing evidence, and request input or offer manual steps. Do not claim completion.",
+  "safeguards": "Capability declarations never grant authorization. Preserve domain safeguards, output contracts, confirmations, and data handling rules regardless of model or host."
+}

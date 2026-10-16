@@ -1,5 +1,8 @@
 # Platform Organization
 
+Canonical migration exception: `master-skills/` holds portable review candidates and their dependencies; `adapters/` holds host guidance and `generated/` holds reproducible candidate bundles. Existing platform trees remain the shipped source of truth until a separately reviewed promotion. See [the migration guide](https://github.com/mickpletcher/AI-Skills/blob/main/master-skills/README.md).
+
+
 Use this guide to decide where files belong in this repository.
 
 ## Main Rule

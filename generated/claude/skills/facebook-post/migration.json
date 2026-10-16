@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "skill": "facebook-post",
+  "source": "claude/skills/facebook-post/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "1bdaefee76fc7e246d768757e152c4f488bb5745b63713ea5f48a09e7e2ba7d4",
+  "source_frontmatter": {
+    "name": "facebook-post",
+    "description": "Write and polish Facebook posts on any topic. Trigger on requests to draft, rewrite, polish, improve a Facebook post, or create cross-platform Facebook, X, and LinkedIn bundles, especially when the user starts with `fbp`.",
+    "version": "1.6.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {},
+  "supporting_files_sha256": {},
+  "retained_in_original_sha256": {
+    "README.md": "698e403e403b48f22c132051890128e4b16c677e62fa031cafe581d3cf9441fe",
+    "completedchanges.md": "124882f2dc4c25cfdf3d9bb2e7ef5e9d191ee13adb9e67ed324182751ac4593f",
+    "facebook-post.skill": "92e409306c926bb507e1a3735bc0e45ea76152b243a181d15a019cb321e1c29d",
+    "upgrades.md": "d98dc86c793f3ecf6d63dd384dabd546090918f5bda43536bfca898bbd2387d5"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "skill": "pihole-blocklist",
+  "source": "claude/skills/pihole-blocklist/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "ab1c770756b8aae792e3144a48cc2b20ddd0833b3f47766c5419fe62d22b01b0",
+  "source_frontmatter": {
+    "name": "pihole-blocklist",
+    "description": "Evaluate, categorize, and document new Pi-hole blocklist sources for the curated blocklist repository. Always trigger immediately when the user asks about adding, evaluating, or researching a new Pi-hole blocklist source, or uses phrases like \"should I add this list\", \"evaluate this blocklist\", \"add to pihole\", \"new blocklist\", \"is this a good list\", or pastes a raw blocklist URL. Also trigger when the user wants to review existing sources, update the repo README, check for list overlap, or document a new category. Pre-loaded with the full category taxonomy and evaluation criteria so every new addition is consistent with the existing curation standard.",
+    "version": "1.1.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {
+    "What Claude Should Produce": "Required Output"
+  },
+  "supporting_files_sha256": {
+    "pihole-blocklist-sources.md": "dffbe68aa1d4bb169d36c5696c799a6be6ffd6ed1ab8e9e81a1e93b822d2f9fc"
+  },
+  "retained_in_original_sha256": {
+    "README.md": "05ed8cebc62d5c0596d294b905f9aabc08586be79d7012c5cc63a0c0b56fa72b",
+    "completedchanges.md": "fdc0be60beb8685860b3467b45d836642108fd40c0c0e603587dcca4f0e19b53",
+    "pihole-blocklist.skill": "1f12cd5bd0325eed6d1b399c2cbebc23e9b7a168f0bd354a297d59b9b6bb0d61",
+    "upgrades.md": "112345d5722ccbea627bb04de42f7dc203411253fe78b176e8e65107273f8843"
+  }
+}

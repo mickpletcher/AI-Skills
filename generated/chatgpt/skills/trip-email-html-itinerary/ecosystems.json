@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "allowed": {
+    "claude": "Conversational domain workflow, subject to declared capabilities.",
+    "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+    "cursor": "HTML artifact generation and validation with bundled templates and scripts; requires supplied travel data.",
+    "codex": "HTML artifact generation and validation with bundled templates and scripts; requires supplied travel data."
+  },
+  "skipped": {},
+  "review_status": "proposed",
+  "adaptation_review": "Review mode-specific placement and helper availability before promotion."
+}

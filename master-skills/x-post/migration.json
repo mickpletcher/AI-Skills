@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "skill": "x-post",
+  "source": "claude/skills/x-post/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "24e9f493c59d7a735bed4e901939d4fe1917350158263ed59a64e138e0fbe9a2",
+  "source_frontmatter": {
+    "name": "x-post",
+    "description": "Write posts for X on tech, PowerShell, IT automation, and fitness topics. Always trigger immediately when the user's message starts with \"xp\". Produce a single post within 280 characters, no emojis, avoid em dashes in final X post output, and use 2 to 3 hashtags maximum.",
+    "version": "1.1.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {},
+  "supporting_files_sha256": {},
+  "retained_in_original_sha256": {
+    "README.md": "5dca621874df8dca240a6aa5dbef34074fc8112a8b66b49a490526e8e1477ed9",
+    "completedchanges.md": "dc0f245df5bee73afa8ad78e33ba03b11c55480eb5c2dad600b8e4ee81cde5ad",
+    "upgrades.md": "8badbd8f6d47c859210db3ab1e1fede7ec29641cee56cfd57f89f81d2bd1cad8",
+    "x-post.skill": "36463553d94e3c3c005d214ccf2ebba00160eb4a8f52a71995b7908df46546c6"
+  }
+}

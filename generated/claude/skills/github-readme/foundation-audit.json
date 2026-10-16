@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "source": "claude/skills/github-readme/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "a872b64327a072dedb06e7ff512436c57becdbc186153d54275e137676d0a214",
+  "prior_master_commit": "ac0cc251ca3af459c7640d9124f2c3fadb4ab0f9",
+  "prior_master_sha256": "859322ec7dcf35c0296b7d002e390635c699850f6cc1e95d94f1c27834caca38",
+  "audited_source_sections": [
+    "Intent",
+    "Do Not Use When",
+    "Constraints",
+    "Validation Checklist",
+    "Primary Triggers",
+    "Workflow",
+    "Repair Mode",
+    "Universal Rules",
+    "Section Building Blocks",
+    "License",
+    "Voice Reference",
+    "Output Expectations",
+    "Help And Examples"
+  ],
+  "restored_sections": [
+    "Section details",
+    "Delivery and help"
+  ],
+  "restored_text": "## Section details\nChoose only the blocks supported by the repository evidence:\n- Start with a readable H1 matching the repository name and a plain one-sentence description. Keep the overview to two to four sentences about contents and audience; keep setup steps separate.\n- For multiple skills, use a `Skill | Trigger | Description` inventory; for modules, `Module | Purpose | Typical User | Main Outputs`; for an MCP server, `Tool | Description`. Document API endpoints, authentication and payload schemas when applicable.\n- Use an annotated repository tree when structure matters; annotate folders rather than every file in a large repository.\n- List prerequisite software, tools, accounts and versions separately from installation. Use numbered setup steps with exact, verified commands for cloning, environment creation, dependency installation and configuration where applicable. For mixed stacks, cover each stack. Include skill installation paths only when the repository actually requires them.\n- For environment configuration use `Variable | Required | Example | What It Controls`. Use safe example values, never real secrets.\n- Put the safest, simplest usage command first; use a subsection for each major component when needed. Use code blocks for commands, paths, configuration and examples.\n- For non-obvious failure modes use `Problem | Likely Cause | Fix`. Add factual security notes for credentials, keys and sensitive data.\n- For static sites cover local preview, deployment and content editing; for starter repositories cover customization points.\n- Include related projects only when useful, with `Repo | Description`. A blog reference is optional, useful to the public-facing repository, and limited to one line.\n- Keep the license last and match the actual license file, including MIT only when that is the repository's license.\nAvoid em dashes and motivational sign-offs in README prose, as well as the promotional language already excluded above.\n\n## Delivery and help\nDefault to complete README content in the response unless a repository edit is requested or authorized. For repairs, return corrected sections with placement notes or the full file, whichever creates less churn. Recommend a full rewrite only when roughly half or more is stale, and explain why. Briefly confirm the repository name, chosen type, and major included or omitted sections.\nIf the user needs help, explain the workflow, request a path, pasted repository summary or specific README problem, show a relevant example, and offer a short next prompt. With supplied text only, distinguish a draft from a README verified against current repository files.\n\n",
+  "review": "Portable requirement audit; not a verbatim migration or behavioral evaluation. Existing master retained; requirements inserted before Capability Contract.",
+  "intentional_adaptations": [
+    "Personal author identity is replaced by the requested user voice.",
+    "Assistant names and packaging assumptions are replaced by host capabilities and adapters.",
+    "Missing tools or evidence must be reported, never treated as successful execution.",
+    "Repository-specific conventions are followed when available, not assumed to be bundled.",
+    "Safety, authorization and public compatibility controls in the prior master remain in force."
+  ],
+  "behavior_evaluation": "not_run"
+}

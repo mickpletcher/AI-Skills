@@ -230,6 +230,8 @@ Current examples:
 
 ## Complete Skill Catalog
 
+The separate [canonical candidate catalog](https://github.com/mickpletcher/AI-Skills/blob/main/master-skills/CATALOG.md) covers all 35 Claude skills plus an example. Four-target generated bundles are review candidates, not shipped replacements or evidence of model evaluation. See the [migration and generation guide](https://github.com/mickpletcher/AI-Skills/blob/main/master-skills/README.md) before using them.
+
 Use the [generated catalog](CATALOG.md) for every shipped skill across all platforms, including purpose, installation, declared prerequisites, package links, and versions. [catalog.json](catalog.json) provides the machine-readable manifest and [SHA256SUMS](SHA256SUMS) records package hashes. Undeclared versions/prerequisites and model-evaluation dates are never invented.
 
 See [platform installation](docs/installation.md), [dependencies](docs/dependencies.md), [contributing](CONTRIBUTING.md), [behavioral evaluations](evaluations/README.md), and [distribution and licensing](docs/distribution.md).

@@ -4,6 +4,11 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Restored audited foundational master requirements (scaffold templates/CI, README formats, PowerShell analyzer gates) with pinned provenance and offline regressions; made seven file-access contracts operation-specific without changing ecosystem placements.
+
+- Added capability contracts, explicit ecosystem suitability maps and model-aware candidate generation with provenance and manual reassessment gates; no model calls or automatic promotion.
+- Added 32 canonical master candidates, completing coverage of 35 Claude skills plus the example; preserved original platform files and dependency bytes, added complete generated bundles and migration checks, and kept behavioral evaluation explicitly not run.
+
 - Selected the MIT License, copyright 2026 Mick Pletcher; retained existing notices and kept release publishing inactive.
 
 - Bound installer archive parsing, entry counts, expanded payloads, and root source text with configurable limits; retain transactional cleanup and update recovery.

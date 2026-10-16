@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "skill": "resume-writer",
+  "source": "claude/skills/resume-writer/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "a51b3b64302f162c04f00021d990274c1a6cf8af14ff70f2a45e7f226eabb362",
+  "source_frontmatter": {
+    "name": "resume-writer",
+    "description": "Rewrite and enhance resumes using a persistent library of principles harvested from real recruiters, hiring managers, and HR professionals. Always trigger immediately when the user's message starts with \"rw\". Also trigger on \"resume writer\", \"rewrite my resume\", \"enhance my resume\", \"fix my resume\", \"review my resume\", or any request to improve, audit, or critique a resume. Also trigger when the user pastes a recruiter or hiring manager post (LinkedIn, blog, Reddit) and says \"add to my library\", \"add insight\", \"rw add\", or indicates they want to capture it as a resume principle. Also trigger on \"two page\", \"two-page\", \"trim to two pages\", \"fit on two pages\", \"two page audit\", or \"page trim\" to run the two-page audit mode. Handles paste, .docx, .pdf, and screenshot inputs. Produces a full rewrite plus a condensed audit by default, with full forensic line by line audit only when requested. General-purpose skill that works for any user's resume, not just the skill owner.",
+    "version": "1.2.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {},
+  "supporting_files_sha256": {
+    "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
+    "json-output-spec.md": "b37f41050dba49c75d3f63f7b5ba4ce2cbad8bd489dfde238f069538565e13d0",
+    "references/add-insight-workflow.md": "10457b94294590c148d2bae281f35129ffb86c873ce3f7a7a4f3eec868480e10",
+    "references/common-patterns.md": "0297e324530fab920a6df563ab5aa46896d66a5910aa05449983dc7b0525439a",
+    "references/enhance-workflow.md": "a13934bb28d9bd510a7bb8ede4fa1fc715a2ef42f23a1de25d8c293650c52898",
+    "references/refresh-tips-workflow.md": "baa82560571fec6ba14f511676b28a87734eca4c18241a1ef5341ba4a715c9f1",
+    "references/scoring-workflow.md": "a6fb12a9344a024166541368f7a37a8a6a4c48d69e9c4202e7aa168d6b6f1f4c",
+    "scoring-model.md": "b6eb15139cef3ae0c1b4cecec37322e1efcb0ecd290232dc880860b1703ee340",
+    "scripts/Invoke-ResumeTipsRefresh.ps1": "17f62c6d4ca5055e7372d0b2a2722c88f1de29b2dec35ed82106ce55b27f33c1",
+    "scripts/Register-ResumeTipsRefreshTask.ps1": "a93ec1a16582c12a1a5b9fd59a3eb139dbc196b4eb2d025dd9b6286b0e3c4163",
+    "scripts/resume-tip-submissions-template.csv": "13864e78d025ebd255ae916240e1b96be78ac68b55f6205047b6a5b545f966bc",
+    "tips/README.md": "804036a68d2cbe9124db85a9d88fcac72c4a207f3a647c729f5edb6ce6fc7d78",
+    "tips/archive/.gitkeep": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "tips/inbox/.gitkeep": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "tips/reviewed/.gitkeep": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "tips/sources.json": "37ab767bae92c5895af452e36e9179c4e64ca66365d15b26dead2ada77fee8a5"
+  },
+  "retained_in_original_sha256": {
+    "README.md": "0c6287dd3b60f462094c22e231bc2a1698ef053850fbd8551777f41ef524d799",
+    "completedchanges.md": "354930f747b9cf314278d9c2ceef5a45b3d0448233b8741e69db7ccb3b7ce05c",
+    "resume-writer.skill": "aadfceb69bb24df8130f4b53b6213abbc5a42b95f777abbf3b336c1e63128f1d",
+    "upgrades.md": "c76f1a0e2070ce2f16207223f657d7b19e0a8f41b4ec3d5e4e3b2b1a3243c3ad"
+  }
+}

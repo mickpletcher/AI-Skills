@@ -1,0 +1,64 @@
+TRAVEL EMERGENCY CONTACT SHEET
+Generated: {{GENERATED_DATE_TIME}}
+
+TRIP
+{{TRIP_TITLE}}
+Dates: {{DATE_RANGE}}
+Route: {{ROUTE}}
+Travelers: {{TRAVELER_NAMES}}
+
+PRIMARY EMERGENCY CONTACT
+Name: {{PRIMARY_EMERGENCY_CONTACT_NAME}}
+Phone: {{PRIMARY_EMERGENCY_CONTACT_PHONE}}
+Relationship: {{PRIMARY_EMERGENCY_CONTACT_RELATIONSHIP}}
+
+TRAVEL INSURANCE
+Provider: {{INSURANCE_PROVIDER}}
+Policy: {{INSURANCE_POLICY_MASKED}}
+Emergency phone: {{INSURANCE_EMERGENCY_PHONE}}
+Claims website: {{INSURANCE_CLAIMS_URL}}
+
+AIRLINES
+{{AIRLINE_CONTACTS}}
+
+LODGING
+{{LODGING_CONTACTS_AND_ADDRESSES}}
+
+GROUND TRANSPORT
+{{TRANSPORT_CONTACTS_AND_PICKUP_POINTS}}
+
+TOURS AND FIXED EVENTS
+{{TOUR_CONTACTS_AND_MEETING_POINTS}}
+
+U.S. EMBASSY OR CONSULATE CONTACTS
+{{EMBASSY_CONTACTS_BY_COUNTRY}}
+
+LOST OR STOLEN PASSPORT
+Report and replacement guidance: https://travel.state.gov/content/travel/en/passports/have-passport/lost-stolen.html
+Nearest U.S. embassy or consulate: https://www.usembassy.gov/
+Passport copy location: {{SECURE_PASSPORT_COPY_LOCATION}}
+Do not treat a copy as a valid travel document.
+
+LOST DRIVER'S LICENSE
+Issuing authority: {{DRIVERS_LICENSE_ISSUER}}
+Official replacement page: {{DRIVERS_LICENSE_REPLACEMENT_URL}}
+License number: {{DRIVERS_LICENSE_MASKED}}
+
+LOST GLOBAL ENTRY CARD
+Trusted Traveler Programs: https://ttp.dhs.gov/
+PASSID: {{PASSID_MASKED}}
+Request a replacement through Manage Membership.
+
+LOST OR STOLEN PAYMENT CARD
+Issuer: {{CARD_ISSUER}}
+International collect number: {{CARD_ISSUER_COLLECT_PHONE}}
+Card identifier: ending {{CARD_LAST_FOUR}}
+Never record the full card number, CVV, PIN, or online banking password here.
+
+LOCAL EMERGENCY NUMBERS
+{{LOCAL_EMERGENCY_NUMBERS_BY_COUNTRY}}
+
+NOTES
+{{EMERGENCY_NOTES}}
+
+This sheet contains operational contact details only. Keep identity-document images in a separate locked note or secure vault.

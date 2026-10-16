@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "skill": "crypto-research",
+  "source": "claude/skills/crypto-research/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "127192a9a58cf2beaf68f2be27dbe6436a1e27d114a224051cad9605e69873ad",
+  "source_frontmatter": {
+    "name": "crypto-research",
+    "description": "Deep-dive research report on a specific cryptocurrency before trading or investing. Always trigger immediately when the user's message starts with \"cr\" followed by a coin name or ticker. Also trigger on \"research [coin]\", \"due diligence [coin]\", \"is [coin] worth buying\", or any request for a structured breakdown of a specific crypto asset. Always verify current market, team, tokenomics, and project facts before responding; never answer from memory.",
+    "version": "1.1.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {},
+  "supporting_files_sha256": {},
+  "retained_in_original_sha256": {
+    "README.md": "54ecff8c3b5b67bd066f612d054da6589b4e4e7664efd4a0878718d14c5b29ae",
+    "completedchanges.md": "26579b86d843b849614d2d77ac68455bec6ca9d43b42d2464a4d0b7ba3026f4c",
+    "crypto-research.skill": "d15efccc7be6ef0dc9b05100d1434197590117ddb5a88565587a5e8f0c49672f",
+    "upgrades.md": "31fb260188677fd71fbad1e804649ba6a0600208a065d9879aa4f351b186d637"
+  }
+}

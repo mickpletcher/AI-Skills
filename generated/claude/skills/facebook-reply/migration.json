@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "skill": "facebook-reply",
+  "source": "claude/skills/facebook-reply/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "3abe1d61135953323d6c42cbbac1aaa2fe462d1716db862c55c43daf7a96fa89",
+  "source_frontmatter": {
+    "name": "facebook-reply",
+    "description": "Write replies to Facebook comments on Mick's posts. Trigger on requests to reply to a Facebook comment, especially when the user starts with `fbr`.",
+    "version": "1.2.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {},
+  "supporting_files_sha256": {},
+  "retained_in_original_sha256": {
+    "README.md": "4d5f7a68754d9a4ad01b21a6c5325feb3e4359110640fcd19986749801d84b3b",
+    "completedchanges.md": "15f305b1e36d8a7097cc4329a79b3801e9f1a712ecb162dc5fac3437f93c3478",
+    "facebook-reply.skill": "8a67a996586fe30abae28096d520430806dfd33922ae6fbd73328caab4b53040",
+    "upgrades.md": "fcb5f9ddff18bcc26b29d8473de20e3e11d1524fa3162f4b4ec9fc37f21b5965"
+  }
+}

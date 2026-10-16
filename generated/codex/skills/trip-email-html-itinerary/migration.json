@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "skill": "trip-email-html-itinerary",
+  "source": "claude/skills/trip-email-html-itinerary/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "02ade01b816de4299b8836d0a0ae3771bfd5a1708b5d2cb3faa418fda43a3319",
+  "source_frontmatter": {
+    "name": "trip-email-html-itinerary",
+    "description": "Extract trip logistics from pasted travel emails, booking confirmations, forwarded messages, reservation notes, or raw itinerary text, research useful restaurant and activity suggestions for each destination, and generate one polished, self-contained offline HTML itinerary file for sharing with family or other travelers. Trigger when the user asks to turn trip emails into an HTML itinerary, travel handoff page, shareable trip page, family trip summary, booking-reference page, destination recommendation page, or offline travel document.\n",
+    "version": "2.10.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {},
+  "supporting_files_sha256": {
+    "assets/emergency-contacts-template.txt": "26b3fc77b913f63fba10e0842deb4c08e314c44de486142b13ccefc366d6f01a",
+    "assets/itinerary-template.html": "0c7a96ee250a142683b27cb8d93d02bff2f161af5ac5d8445bf701d6e213afe7",
+    "examples/public-demo-social/01-cover.jpg": "97f9da80bded12787fed952c441c3dc77d5d5a9e62bf0e9d90746f0e9e59474a",
+    "examples/public-demo-social/02-trip-overview.jpg": "e3432dd8c34e4a091e183e64610ee563c9e79f3856e509434817deff7081f065",
+    "examples/public-demo-social/03-flights.jpg": "7031e63fbf922caf5003232900c7ae91f9880ccfb048ee3ab1681a64d1d1035d",
+    "examples/public-demo-social/04-hotels-and-transport.jpg": "f4e8d313742643dc36207a43a4f38bafcca8ac69f2b141743c3b4a3baf22d5f8",
+    "examples/public-demo-social/05-restaurants.jpg": "e0190facfbf69ebf7c88f19e7902d7c455daa06c949e4e251327815785e80912",
+    "examples/public-demo-social/06-activities.jpg": "947c58a28f7724d4d54ffaff335df8ac814133b4128e707662fbffe53d0a7228",
+    "examples/public-demo-social/07-day-plan.jpg": "0d8ee58a9b64d8a93b3bfc0a36aae29c3ac740ade6337a6aad5478fee22d2755",
+    "examples/public-demo-social/08-bookings.jpg": "e2b3e767dcc76291eecab7b08ba8c493b40d721443755827b0f1cd56a5372b53",
+    "examples/public-demo-social/09-travel-admin.jpg": "51b18ef07017c4021413e6734b1bfc7784adbc6ba1ec508d7c1b96692072387e",
+    "examples/public-demo-social/10-emergency-replacement.jpg": "7641534e7a08ceb8462fc771ce75b6c64f316244bf4c369c27dea945c983f8db",
+    "references/design-system.md": "1c441d1e0f523d8e3e03fd98eecbbbd78d0ff8de28443924e5d9dc02846e82db",
+    "scripts/Export-PublicDemoJpegs.ps1": "1cd4c4b2096c135c7752b7e9691fdcb2caf8aea36106007f6fe7f114830a7a77",
+    "scripts/New-PublicDemoItinerary.ps1": "8a0095f57252bdb8c23fc6f331741ed86885c979f171c6d4f0f0962780448e03",
+    "scripts/Test-ItineraryHtml.ps1": "78b12232db200a31d268c5575b2b5af64431fde2fd65ab1ad1a599331a71955d"
+  },
+  "retained_in_original_sha256": {
+    "README.md": "069008878364bb8d024aa4fb1c8003648685c0db8883801cbb98ac674e130799",
+    "completedchanges.md": "d9d1ea8d133cf26a019a703fe250a6677103543fbc295fe294b6bd08f9565ba9",
+    "trip-email-html-itinerary.skill": "ca55871949919c4991b51531829c1839f4312d60d0cbf918559d3a643d746a43",
+    "upgrades.md": "94d806a24798adecb96bba3e23fde058322134e8d8f725a4ff5dedb5e4364d50"
+  }
+}

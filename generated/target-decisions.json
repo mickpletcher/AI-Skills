@@ -1,0 +1,458 @@
+{
+  "alpaca-trading": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities.",
+      "codex": "Trading repository maintenance, PowerShell modules and tests; paper-trading safeguards remain mandatory.",
+      "cursor": "Trading repository maintenance, PowerShell modules and tests; paper-trading safeguards remain mandatory."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {}
+  },
+  "astrophotography-processing": {
+    "adaptation_review": "Review mode-specific placement and helper availability before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "blog-post": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "blog-to-social": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "container-home": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "crypto-listings": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "crypto-research": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "example-skill": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities.",
+      "codex": "Scaffold used to test generation; not a shipped domain skill.",
+      "cursor": "Scaffold used to test generation; not a shipped domain skill."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {}
+  },
+  "facebook-post": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "facebook-reply": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "fitness-log": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "fitness-programming": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "food-analyzer": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Explicit user exclusion: food/photo/nutrition analysis is not their Cursor coding workflow."
+    }
+  },
+  "github-readme": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities.",
+      "codex": "Repository documentation grounded in inspected source files.",
+      "cursor": "Repository documentation grounded in inspected source files."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {}
+  },
+  "github-repo-architect": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities.",
+      "codex": "Repository scaffolding, architecture, CI and implementation plans.",
+      "cursor": "Repository scaffolding, architecture, CI and implementation plans."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {}
+  },
+  "github-social-preview": {
+    "adaptation_review": "Review mode-specific placement and helper availability before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities.",
+      "codex": "Repository asset generation through a bundled script and config.",
+      "cursor": "Repository asset generation through a bundled script and config."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {}
+  },
+  "idea-forge": {
+    "adaptation_review": "Review mode-specific placement and helper availability before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "linkedin-post": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "market-brief": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "n8n-workflow": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities.",
+      "codex": "Workflow JSON, API integration, node configuration and automation debugging.",
+      "cursor": "Workflow JSON, API integration, node configuration and automation debugging."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {}
+  },
+  "obsidian-workout-export": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "patentforge-provisional": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "photo-rename": {
+    "adaptation_review": "Review mode-specific placement and helper availability before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "pihole-blocklist": {
+    "adaptation_review": "Review mode-specific placement and helper availability before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities.",
+      "codex": "Infrastructure repository curation and configuration maintenance.",
+      "cursor": "Infrastructure repository curation and configuration maintenance."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {}
+  },
+  "pihole-csv-analyzer": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities.",
+      "codex": "Structured infrastructure log analysis and candidate configuration files.",
+      "cursor": "Structured infrastructure log analysis and candidate configuration files."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {}
+  },
+  "powershell-refactor": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities.",
+      "codex": "Source-code refactoring with tests and preserved interfaces.",
+      "cursor": "Source-code refactoring with tests and preserved interfaces."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {}
+  },
+  "proxmox-lxc": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities.",
+      "codex": "Infrastructure commands, container configuration and service files; no execution implied.",
+      "cursor": "Infrastructure commands, container configuration and service files; no execution implied."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {}
+  },
+  "resume-writer": {
+    "adaptation_review": "Review mode-specific placement and helper availability before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "spec-writer": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities.",
+      "codex": "Repository specifications, implementation plans and task files.",
+      "cursor": "Repository specifications, implementation plans and task files."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {}
+  },
+  "travel-itinerary": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "travel-planning": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "travel-research": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "trip-email-html-itinerary": {
+    "adaptation_review": "Review mode-specific placement and helper availability before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities.",
+      "codex": "HTML artifact generation and validation with bundled templates and scripts; requires supplied travel data.",
+      "cursor": "HTML artifact generation and validation with bundled templates and scripts; requires supplied travel data."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {}
+  },
+  "website-content": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "x-post": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  },
+  "x-reply": {
+    "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
+    "allowed": {
+      "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+      "claude": "Conversational domain workflow, subject to declared capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+      "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+    }
+  }
+}

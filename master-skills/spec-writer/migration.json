@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "skill": "spec-writer",
+  "source": "claude/skills/spec-writer/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "3b8728f16a9d752c628573b44d47ec3c0076afb87abd25e49e4baf5bedd1ecfa",
+  "source_frontmatter": {
+    "name": "spec-writer",
+    "description": "Generate numbered repo spec folders with clear requirements, implementation plans, and task lists for non-trivial project work.",
+    "version": "1.1.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {},
+  "supporting_files_sha256": {},
+  "retained_in_original_sha256": {
+    "README.md": "18c94b11c26dcdf835cadb55e506e67f4ee845c0092aec78fe7c3b269ba823d2",
+    "completedchanges.md": "7c22d953d0bbcf692286db0b591789e1e516207cd742e35d8cd9e64585caa800",
+    "spec-writer.skill": "95bd390ac51a382ac22ba73f99467ac5d03de8fa47c9b1604151bf7d55ebf1fa",
+    "upgrades.md": "ee9417ea43f01b0555a68c532af9d176907b5f92f529ce1ec773ecd2c80c77c7"
+  }
+}

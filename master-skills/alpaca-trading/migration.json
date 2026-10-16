@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "skill": "alpaca-trading",
+  "source": "claude/skills/alpaca-trading/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "2e0c7187ade7f951b2f7886bd65b1737c23515d276b71937dc3e44d93840812b",
+  "source_frontmatter": {
+    "name": "alpaca-trading",
+    "description": "Work safely in the Trading repository for Alpaca helpers, backtesting, journaling, scheduling, and related PowerShell modules. Prefer additive changes, preserve existing trading logic unless the user asks otherwise, and default to paper-trading-safe guidance.",
+    "version": "1.1.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {
+    "Do not describe the repo as a Claude-only system; it is a general trading repo with Claude-relevant integrations.": "Do not describe the repo as limited to one assistant host; it is a general trading repo with AI integrations."
+  },
+  "supporting_files_sha256": {},
+  "retained_in_original_sha256": {
+    "README.md": "d692a3fd7ca6a021df8eaaddacc2d7cd2a2993c354ad294f797ba142563155ef",
+    "alpaca-trading.skill": "50649f0e54b778fff29ec1544c287e5a5809981050767a2bcf4dc8e7a9ad4f2a",
+    "completedchanges.md": "33c8c269c0bacd25ac747022ed63a80e8afc648981d6f0df78befe59cc7b8aad",
+    "upgrades.md": "bccf8a5a4013204b4f356d4f399edf4b24b2d7d94af42a2209ff60ddbaf00406"
+  }
+}

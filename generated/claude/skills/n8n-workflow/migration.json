@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "skill": "n8n-workflow",
+  "source": "claude/skills/n8n-workflow/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "6a0c2477c3c0547dcde6e1e0b43087305cdfc9ca7789da89f854a515f9fb75de",
+  "source_frontmatter": {
+    "name": "n8n-workflow",
+    "description": "Design, build, or troubleshoot n8n automation workflows. Always trigger immediately when Mick mentions n8n, workflow nodes, automating a pipeline, or connecting services via n8n. Covers node selection, webhook patterns, Claude API integration, credential setup, Cloudflare Tunnel exposure, and Proxmox LXC deployment. Mick runs n8n on Proxmox CT 104 at 192.168.0.81:5678 with Cloudflare Tunnel for HTTPS.",
+    "version": "1.1.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {},
+  "supporting_files_sha256": {},
+  "retained_in_original_sha256": {
+    "README.md": "667c3ceda981e7259671f2799fb041f2c295e3479f9ab2f7ecc8cf61f1798ae5",
+    "completedchanges.md": "a268729db1eb81b8af0ed0323069dfef64f334ddbeb8ab9c012258b096629ef4",
+    "n8n-workflow.skill": "57fe42e78e31076982dd7c63b86baa15c83aebea831696aee0098fe4639b833d",
+    "upgrades.md": "dec9d965d82ab09909e2f521abb30251707c3c28f1b12156b4db4f5ed1fe8468"
+  }
+}

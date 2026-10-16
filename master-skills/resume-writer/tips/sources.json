@@ -1,0 +1,72 @@
+[
+  {
+    "name": "LinkedIn Top Content - Recruitment & HR",
+    "sourceType": "aggregator",
+    "platform": "LinkedIn",
+    "homepage": "https://www.linkedin.com/top-content/recruitment-hr/",
+    "discoveryUrl": "https://www.linkedin.com/top-content/recruitment-hr/",
+    "focus": [
+      "recruiter trends",
+      "HR influencers",
+      "hiring manager themes"
+    ],
+    "active": true,
+    "notes": "Use as a discovery page for new voices and recent posts, then capture individual posts separately."
+  },
+  {
+    "name": "LinkedIn Top Content - Resume and Cover Letter Strategies",
+    "sourceType": "aggregator",
+    "platform": "LinkedIn",
+    "homepage": "https://www.linkedin.com/top-content/career/resume-and-cover-letter-strategies/",
+    "discoveryUrl": "https://www.linkedin.com/top-content/career/resume-and-cover-letter-strategies/",
+    "focus": [
+      "resume advice",
+      "cover letter advice",
+      "job search guidance"
+    ],
+    "active": true,
+    "notes": "Useful for spotting current resume-related discussions without scraping personal feeds."
+  },
+  {
+    "name": "Keirsten Greggs",
+    "sourceType": "recruiter",
+    "platform": "LinkedIn",
+    "homepage": "https://www.linkedin.com/in/keirstengreggs/",
+    "discoveryUrl": "https://www.linkedin.com/pulse/8-tips-approaching-recruiter-2026-update-keirsten-greggs-tyfme",
+    "focus": [
+      "recruiter outreach",
+      "resume quality",
+      "job search behavior"
+    ],
+    "active": true,
+    "notes": "Example current recruiter voice already aligned with the skill's goals."
+  },
+  {
+    "name": "The Muse - Resume Guidance",
+    "sourceType": "publisher",
+    "platform": "The Muse",
+    "homepage": "https://www.themuse.com/advice",
+    "discoveryUrl": "https://www.themuse.com/advice",
+    "focus": [
+      "resume guidance",
+      "recruiter advice",
+      "hiring manager expectations"
+    ],
+    "active": true,
+    "notes": "Use for more stable long-form guidance that can reinforce or challenge social-post advice."
+  },
+  {
+    "name": "Jobscan Blog",
+    "sourceType": "publisher",
+    "platform": "Jobscan",
+    "homepage": "https://www.jobscan.co/blog/",
+    "discoveryUrl": "https://www.jobscan.co/blog/",
+    "focus": [
+      "ATS guidance",
+      "keyword alignment",
+      "resume optimization"
+    ],
+    "active": true,
+    "notes": "Good source for structured resume and ATS guidance that can support promotion decisions."
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "skill": "obsidian-workout-export",
+  "source": "claude/skills/obsidian-workout-export/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "76d67647fcb9649d6dda7ff4fc20f4fe05e8924f5fc98a264d3f374cb5ff8dcd",
+  "source_frontmatter": {
+    "name": "obsidian-workout-export",
+    "description": "Export workout data to an Obsidian-formatted Markdown file. Always trigger immediately when the user types \"owd\". Also trigger on \"export workout\", \"obsidian workout\", \"save workout to obsidian\", or related requests to export workout data into Obsidian. Read the current conversation first before searching prior conversation history. Name the file after the date of the chat that contains the workout data.",
+    "version": "1.1.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {},
+  "supporting_files_sha256": {},
+  "retained_in_original_sha256": {
+    "README.md": "73afb8065e232de5b00d734bd4efb5dbdc4b031034472498e67f1e76797a1d72",
+    "completedchanges.md": "e46b00ba5ae82c64bd4b0fcef2c12f58d5378252377d4b561d932a0f80268ac6",
+    "obsidian-workout-export.skill": "1978f1b5d2f57f25b9512d716c8890b1b0752772882e74488b8de6ab745fd648",
+    "upgrades.md": "16d02ee11b77bc5017f6eef3e6c082756143b3e930b47cd03f1dc9cc2b151dc1"
+  }
+}

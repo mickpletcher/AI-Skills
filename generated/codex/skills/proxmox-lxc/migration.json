@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "skill": "proxmox-lxc",
+  "source": "claude/skills/proxmox-lxc/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "42e16e03ba7af21af9983fc04e72fdd04c92e37254651b44910c6fa4fbb414c4",
+  "source_frontmatter": {
+    "name": "proxmox-lxc",
+    "description": "Deploy and configure Proxmox LXC containers for self-hosted services. Always trigger immediately when Mick asks to deploy, set up, or configure a new service on Proxmox, mentions spinning up a container, or needs a systemd service, Cloudflare Tunnel entry, or UniFi static IP assignment. Generate the full stack including the pct create command, container config, apt setup, systemd unit file, and Cloudflare Tunnel config entry from a service name and IP.",
+    "version": "1.1.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {},
+  "supporting_files_sha256": {},
+  "retained_in_original_sha256": {
+    "README.md": "f63d414bb1e68794bf2da60115825d298c6508e71572ff8ddddd2d39a3e78aae",
+    "completedchanges.md": "864b7d5989ccd38f32867d1a7dedebfb12e28ec7ee5a5c2a564b38233f154f0c",
+    "proxmox-lxc.skill": "0286397900f832b3916173f53226ab224c37d44011b1b75d58b274192385a11d",
+    "upgrades.md": "629c0dd7fe1f4e944305e1c68a44f958f9089e1c0cdb829f2e8aed412cdd0dff"
+  }
+}

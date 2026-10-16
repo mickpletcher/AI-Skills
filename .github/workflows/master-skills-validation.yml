@@ -6,6 +6,8 @@ on:
       - 'adapters/**'
       - 'generated/**'
       - 'tools/tests/test_master_skills.py'
+      - 'tools/tests/test_migration.py'
+      - '.gitattributes'
       - 'tools/generate_master_skills.py'
       - 'tools/skill_repository.py'
       - 'schemas/skill-frontmatter.schema.json'

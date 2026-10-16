@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "skill": "github-social-preview",
+  "source": "claude/skills/github-social-preview/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "e14fddb2789de7879301738f00019b05e79626e1ce19190a350a18202aaba57d",
+  "source_frontmatter": {
+    "name": "github-social-preview",
+    "description": "Generates a professional GitHub repository social preview image sized 1280x640 pixels as a JPG under 1 MB. Always trigger immediately when the user's message starts with \"gsp\". Also trigger on \"generate github social preview\", \"create repo preview image\", or any request to generate a social preview or OG image for a GitHub repository.",
+    "version": "1.2.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {
+    "Use the `WebFetch` tool to read the GitHub repository page.": "Use an available, authorized web retrieval tool to read the GitHub repository page. If retrieval is unavailable, ask for the repository content; do not invent it."
+  },
+  "supporting_files_sha256": {
+    "examples/example_usage.md": "7398d0b03eb6b3990ea4939232c4560d963d977d1221e2e740d2e17e59734fc3",
+    "scripts/generate_preview.py": "f57b48c0b2bcd697f72e92aa5a308a6ebfbe3fc1d88b2b3d8c397056dc8d2817",
+    "templates/design_config.json": "58572a0c9b1fa0d665405307ca600988453bdfdb0a9a2c03c710fe2f8963010a"
+  },
+  "retained_in_original_sha256": {
+    "README.md": "4c6ebde558c477f9715d8670f097895a707832461bb8ee5d3a40774722331cda",
+    "completedchanges.md": "1f4e4361b8c0f2516f0894ddf7b8ea18277498f39beff6b8bbc7f39c6f8c3dac",
+    "github-social-preview.skill": "b242237ad993959190da73991b2d5d0e0e032d50716d1a0ad8e9fdb55746761a",
+    "upgrades.md": "0ed123c75442d42b14c02285fa391de8db1bd0533eed59428c7c7e2e1820c5f2"
+  }
+}

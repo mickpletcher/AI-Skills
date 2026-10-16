@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "skill": "idea-forge",
+  "source": "claude/skills/idea-forge/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "1b055d341948dc0c1d972f4633cf2d0a50ee8bd9d2faf27c4d72d258cd7664a7",
+  "source_frontmatter": {
+    "name": "idea-forge",
+    "description": "Run any raw idea through a multi-stage R&D pipeline that interprets, expands, scores, and converts it into an actionable engineering plan. Always trigger immediately when the user's message starts with \"idea\". Also trigger on \"ideaforge\", \"analyze this idea\", \"expand this concept\", \"assess this invention\", \"explore this thought\", \"develop this further\", \"turn this into a project\", \"evaluate feasibility\", \"forge this idea\", or any request to analyze, expand, score, or develop a rough concept or invention into a structured plan."
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {},
+  "supporting_files_sha256": {
+    "evaluation-framework.md": "60817a3c469449ac28a738cd5e0e17964d9d909875788dba25f32f7849c853ee",
+    "output-template.md": "2e968fc77d004a9a95fc317db0108aaca2569c2638efd04ea9fe391f7b7cc9cd",
+    "scoring-model.md": "37f8b3314e12c215b5e4752d4b29b0ce96097ae3386d4afff371409f3804d439",
+    "scripts/save_to_apple_notes.py": "269eb6626cfea43d23395590ef934343e04f453ab1f06b4b1d7f36f287c43eba",
+    "scripts/save_to_obsidian.py": "b1a4e1203f6dbed1794bb0e1d18c3af13d2bdae95d3205b264979203775dba03"
+  },
+  "retained_in_original_sha256": {
+    "README.md": "6c60022c2e4df4f07dd0895b9e050a34f6527eb7a6408caf8c78398189efca2d",
+    "completedchanges.md": "190c91c5468736f7eafdc1f69ee1683991251a5623850bc8235df01ac6a07122",
+    "idea-forge.skill": "d93a012bd71938c6d51d3ca69cefa1e3972990f5bc13246cb29696527f701768",
+    "upgrades.md": "e7c70a673f7c2667232bbe9abcccc744fe93056fede6aed6231f84f82947c7d3"
+  }
+}

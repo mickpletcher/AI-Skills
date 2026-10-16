@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "skill": "linkedin-post",
+  "source": "claude/skills/linkedin-post/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "3ca7dd506b9cd67d0d34bd40ca01d7c6bed83384bd1d6ddac8ba043633fee81e",
+  "source_frontmatter": {
+    "name": "linkedin-post",
+    "description": "Write LinkedIn posts for Mick Pletcher's professional audience. Always trigger immediately when Mick says \"linkedin post\", \"lnp\", or asks to write something for LinkedIn. LinkedIn audience is professional IT, AI, and automation peers. Tone is more polished than Facebook but still first-person and direct. No emojis. Avoid em dashes in final LinkedIn post output. 2 to 3 hashtags max. Focus on home AI infrastructure, algorithmic trading, enterprise automation, career insights, and tech commentary.",
+    "version": "1.2.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {},
+  "supporting_files_sha256": {},
+  "retained_in_original_sha256": {
+    "README.md": "370d952c448fe5331438d4a3a9977754ba5981ddb239f51ff94870f7d2605ec9",
+    "completedchanges.md": "3af8083082a16f76d3166a8be8e01520b5a834aaa0ec63ce84aa335ed17d7a12",
+    "linkedin-post.skill": "9c9c0385ac826bacbf65ef6eb2bdc9df0f7b339c3536648937c12a6c0ecb9209",
+    "upgrades.md": "849e87b07bed32cb10738ed96b9edfa977e0add81fb8064f29b426d3c267c031"
+  }
+}

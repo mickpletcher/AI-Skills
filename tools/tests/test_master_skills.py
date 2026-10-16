@@ -15,7 +15,8 @@ import generate_master_skills as generator
 
 class MasterSkillTests(unittest.TestCase):
     def test_committed_candidates_match_without_writing(self):
-        with patch.object(Path, 'write_text', side_effect=AssertionError('Check must not write')):
+        with patch.object(Path, 'write_text', side_effect=AssertionError('Check must not write')), \
+             patch.object(Path, 'write_bytes', side_effect=AssertionError('Check must not write')):
             generator.generate(check=True)
 
     def test_missing_and_drifted_candidates_fail_without_repair(self):

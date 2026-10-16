@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "required": [
+    "text_reasoning"
+  ],
+  "conditional": {
+    "web_retrieval": "Required only for current external facts; request supplied sources or label current claims unverified when unavailable.",
+    "file_access": "Required for inspecting supplied files; accept pasted content or state extraction limits when unavailable.",
+    "code_execution": "Required to execute or validate helpers; return commands as unexecuted when unavailable. Runtime prerequisites remain in the source documentation."
+  },
+  "fallback": "If a required capability is unknown or unavailable, stop the dependent operation, identify missing evidence, and request input or offer manual steps. Do not claim completion.",
+  "safeguards": "Capability declarations never grant authorization. Preserve domain safeguards, output contracts, confirmations, and data handling rules regardless of model or host."
+}

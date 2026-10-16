@@ -7,3 +7,5 @@
 5. Run local and CI validation; inspect the final diff, confirm AI Scan is disabled, and open a draft PR. Promotion, runtime evaluations, and merge require separate approval.
 
 This is a preservation migration, not a rewrite of domain behavior. Existing foundational masters are retained. Old packages and maintenance documentation remain in the original platform tree; they are not relabeled as candidate distributions.
+
+The clarified architecture adds per-master capability contracts and explicit ecosystem suitability maps, validated model profiles with isolated output roots, content-addressed build provenance, full-file ownership protection, and manual reassessment gates. Profiles never override exclusions. No actual model execution or automatic promotion is implemented.

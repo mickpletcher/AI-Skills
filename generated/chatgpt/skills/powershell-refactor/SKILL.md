@@ -52,3 +52,7 @@ Report files changed, changes made, behavior preserved or exceptions, line count
 - Existing tests pass or their unavailability is explicitly reported.
 - Analyzer results are verified rather than inferred.
 - Security controls and chosen scope are preserved.
+
+## Capability Contract
+
+Read `capabilities.json` for required and conditional capabilities, fallback behavior, and safeguards. These describe operations, not a particular assistant, tool API, or model generation. Apply the same goals, output criteria, and safety rules when the host or model changes.

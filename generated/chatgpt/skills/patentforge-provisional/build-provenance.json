@@ -1,0 +1,15 @@
+{
+  "adapter": null,
+  "adapter_sha256": null,
+  "behavior_evaluation": "not_run",
+  "ecosystem": "chatgpt",
+  "generator_sha256": "50bf4026c520aaa52adadf643508f0ebfe816317a0e83b674bb70a0bf872a132",
+  "master_revision": "9faf1c3c4c245d789fa1200f5ab5a2e7a94439a9694a9e15493353c9744beb1d",
+  "master_revision_kind": "sha256-bundle",
+  "model_id": null,
+  "model_profile": "baseline",
+  "model_profile_sha256": "7b3a883a2e2a1b75c84cf2bc3052f05eeb2c5a7eb041ae81e3729973edb0e8c6",
+  "profile_loader_sha256": "df3cad0298b2efbdc54b54f9a24ea7f500faf569ae48615d686f78bdbe70a256",
+  "promotion": "blocked_pending_review",
+  "provider": null
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "allowed": {
+    "claude": "Conversational domain workflow, subject to declared capabilities.",
+    "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+    "cursor": "Infrastructure commands, container configuration and service files; no execution implied.",
+    "codex": "Infrastructure commands, container configuration and service files; no execution implied."
+  },
+  "skipped": {},
+  "review_status": "proposed",
+  "adaptation_review": "Verify intended host capabilities and behavior before promotion."
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "allowed": {
+    "claude": "Conversational domain workflow, subject to declared capabilities.",
+    "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+    "cursor": "Repository asset generation through a bundled script and config.",
+    "codex": "Repository asset generation through a bundled script and config."
+  },
+  "skipped": {},
+  "review_status": "proposed",
+  "adaptation_review": "Review mode-specific placement and helper availability before promotion."
+}

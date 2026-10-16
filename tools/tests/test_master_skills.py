@@ -23,7 +23,7 @@ class MasterSkillTests(unittest.TestCase):
         for mutation in ('missing', 'drifted'):
             with self.subTest(mutation=mutation), tempfile.TemporaryDirectory() as tmp:
                 root = Path(tmp)
-                for folder in ('master-skills', 'adapters', 'generated', 'schemas'):
+                for folder in ('master-skills', 'adapters', 'generated', 'schemas', 'model-profiles'):
                     shutil.copytree(ROOT/folder, root/folder)
                 target = root/'generated/claude/skills/example-skill/SKILL.md'
                 if mutation == 'missing':
@@ -63,6 +63,7 @@ class MasterSkillTests(unittest.TestCase):
                 with self.subTest(metadata=metadata, check=check), tempfile.TemporaryDirectory() as tmp:
                     root = Path(tmp)
                     shutil.copytree(ROOT/'schemas', root/'schemas')
+                    shutil.copytree(ROOT/'model-profiles', root/'model-profiles')
                     source = root/'master-skills/example-skill/SKILL.md'
                     source.parent.mkdir(parents=True)
                     source.write_text('---\n' + metadata + '\n---\nBody\n')
@@ -74,7 +75,7 @@ class MasterSkillTests(unittest.TestCase):
         for rename in (False, True):
             with self.subTest(rename=rename), tempfile.TemporaryDirectory() as tmp:
                 root = Path(tmp)
-                for folder in ('master-skills', 'adapters', 'generated', 'schemas'):
+                for folder in ('master-skills', 'adapters', 'generated', 'schemas', 'model-profiles'):
                     shutil.copytree(ROOT/folder, root/folder)
                 source = root/'master-skills/example-skill/SKILL.md'
                 if rename:
@@ -93,17 +94,18 @@ class MasterSkillTests(unittest.TestCase):
                     self.assertIn('STALE GENERATED FILE', output.getvalue())
                     self.assertEqual(before, {p: p.read_bytes() for p in (root/'generated').rglob('*') if p.is_file()})
 
-    def test_legacy_marker_migrates_but_unmanaged_files_are_preserved(self):
+    def test_changed_marker_and_unmanaged_files_are_preserved(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            for folder in ('master-skills', 'adapters', 'generated', 'schemas'):
+            for folder in ('master-skills', 'adapters', 'generated', 'schemas', 'model-profiles'):
                 shutil.copytree(ROOT/folder, root/folder)
             target = root/'generated/claude/skills/example-skill/SKILL.md'
             text = target.read_text()
             target.write_text(generator.MARKER + '\n' + text.replace(generator.MARKER + '\n', ''))
             with patch.object(generator, 'ROOT', root), contextlib.redirect_stdout(io.StringIO()):
-                generator.generate()
-                self.assertEqual(target.read_text(), text)
+                with self.assertRaises(RuntimeError):
+                    generator.generate()
+                target.write_bytes(text.encode('utf-8'))
                 target.write_text('User content\n' + generator.MARKER)
                 with self.assertRaises(RuntimeError):
                     generator.generate()

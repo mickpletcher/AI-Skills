@@ -24,9 +24,13 @@ class MigrationTests(unittest.TestCase):
         self.assertEqual({entry['name'] for entry in catalog['skills']}, masters)
         for entry in catalog['skills']:
             self.assertEqual(entry['description'], frontmatter(ROOT/'master-skills'/entry['name']/'SKILL.md', ROOT)['description'])
-            self.assertEqual(set(entry['targets']), set(generator.TARGETS))
+            self.assertEqual(set(entry['targets']), set(json.loads((ROOT/'master-skills'/entry['name']/'ecosystems.json').read_text(encoding='utf-8'))['allowed']))
         for name in masters:
+            allowed = json.loads((ROOT/'master-skills'/name/'ecosystems.json').read_text(encoding='utf-8'))['allowed']
             for platform, filename in generator.TARGETS.items():
+                if platform not in allowed:
+                    self.assertFalse((ROOT/'generated'/platform/'skills'/name).exists())
+                    continue
                 target = ROOT/'generated'/platform/'skills'/name/filename
                 frontmatter(target, ROOT)
         self.assertTrue(all(entry['status'] == 'candidate' and entry['behavior_evaluation'] == 'not_run'
@@ -54,7 +58,7 @@ class MigrationTests(unittest.TestCase):
                     data = (path.parent/rel).read_bytes()
                     self.assertEqual(hashlib.sha256(data).hexdigest(), digest)
                     self.assertEqual(data, (source.parent/rel).read_bytes())
-                    for platform in generator.TARGETS:
+                    for platform in json.loads((path.parent/'ecosystems.json').read_text(encoding='utf-8'))['allowed']:
                         self.assertEqual(data, (ROOT/'generated'/platform/'skills'/path.parent.name/rel).read_bytes())
                 for rel, digest in record['retained_in_original_sha256'].items():
                     self.assertEqual(hashlib.sha256((source.parent/rel).read_bytes()).hexdigest(), digest)
@@ -68,9 +72,12 @@ class MigrationTests(unittest.TestCase):
             with self.subTest(mutation=mutation), tempfile.TemporaryDirectory() as tmp:
                 root = Path(tmp)
                 shutil.copytree(ROOT/'schemas', root/'schemas')
+                shutil.copytree(ROOT/'model-profiles', root/'model-profiles')
                 source = root/'master-skills/sample/SKILL.md'
                 source.parent.mkdir(parents=True)
                 source.write_text('---\nname: sample\ndescription: Test bundle\n---\nBody\n')
+                shutil.copyfile(ROOT/'master-skills/example-skill/capabilities.json', source.parent/'capabilities.json')
+                shutil.copyfile(ROOT/'master-skills/example-skill/ecosystems.json', source.parent/'ecosystems.json')
                 resource = source.parent/'asset.bin'
                 resource.write_bytes(b'\x00\xfforiginal')
                 with patch.object(generator, 'ROOT', root), contextlib.redirect_stdout(io.StringIO()):
@@ -95,9 +102,12 @@ class MigrationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             shutil.copytree(ROOT/'schemas', root/'schemas')
+            shutil.copytree(ROOT/'model-profiles', root/'model-profiles')
             source = root/'master-skills/sample/SKILL.md'
             source.parent.mkdir(parents=True)
             source.write_text('---\nname: sample\ndescription: Test bundle\n---\nBody\n')
+            shutil.copyfile(ROOT/'master-skills/example-skill/capabilities.json', source.parent/'capabilities.json')
+            shutil.copyfile(ROOT/'master-skills/example-skill/ecosystems.json', source.parent/'ecosystems.json')
             resource = source.parent/'asset.bin'
             resource.write_bytes(b'old')
             with patch.object(generator, 'ROOT', root), contextlib.redirect_stdout(io.StringIO()):

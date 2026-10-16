@@ -45,3 +45,7 @@ Compare the current README to verified repository contents; identify stale secti
 - "readme for this Python CLI, using the actual pyproject.toml and commands"
 - "gr owner/repository: repair outdated installation and usage instructions"
 - "Draft a README for this PowerShell module based on the supplied files"
+
+## Capability Contract
+
+Read `capabilities.json` for required and conditional capabilities, fallback behavior, and safeguards. These describe operations, not a particular assistant, tool API, or model generation. Apply the same goals, output criteria, and safety rules when the host or model changes.

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "allowed": {
+    "claude": "Conversational domain workflow, subject to declared capabilities.",
+    "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+    "cursor": "Infrastructure repository curation and configuration maintenance.",
+    "codex": "Infrastructure repository curation and configuration maintenance."
+  },
+  "skipped": {},
+  "review_status": "proposed",
+  "adaptation_review": "Review mode-specific placement and helper availability before promotion."
+}

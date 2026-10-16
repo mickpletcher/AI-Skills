@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "baseline",
+  "provider": null,
+  "model_id": null,
+  "capabilities": {
+    "text_reasoning": "unknown",
+    "web_retrieval": "unknown",
+    "file_access": "unknown",
+    "code_execution": "unknown",
+    "image_understanding": "unknown",
+    "persistent_storage": "unknown"
+  },
+  "overlay": "No model-specific optimization is asserted. Verify capabilities in the selected host before use.",
+  "evidence": []
+}

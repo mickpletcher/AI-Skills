@@ -242,3 +242,7 @@ Example prompts:
 ## Host Capabilities
 
 Use only tools, files, conversation history, and connected services actually available and authorized in the current host. If browsing, image/document inspection, code execution, persistent storage, or a related skill is unavailable, state the limitation and request the needed input or provide manual steps. Never claim a lookup, save, execution, publication, or installation occurred without evidence. Preserve the domain safety and confirmation rules above.
+
+## Capability Contract
+
+Read `capabilities.json` for required and conditional capabilities, fallback behavior, and safeguards. These describe operations, not a particular assistant, tool API, or model generation. Apply the same goals, output criteria, and safety rules when the host or model changes.

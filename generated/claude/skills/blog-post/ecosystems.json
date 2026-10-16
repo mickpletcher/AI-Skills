@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "allowed": {
+    "claude": "Conversational domain workflow, subject to declared capabilities.",
+    "chatgpt": "Conversational domain workflow, subject to declared capabilities."
+  },
+  "skipped": {
+    "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+    "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+  },
+  "review_status": "proposed",
+  "adaptation_review": "Verify intended host capabilities and behavior before promotion."
+}

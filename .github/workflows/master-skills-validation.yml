@@ -4,6 +4,10 @@ on:
     paths:
       - 'master-skills/**'
       - 'adapters/**'
+      - 'model-profiles/**'
+      - 'generated-models/**'
+      - 'tools/model_profiles.py'
+      - 'tools/tests/test_model_profiles.py'
       - 'generated/**'
       - 'tools/tests/test_master_skills.py'
       - 'tools/tests/test_migration.py'

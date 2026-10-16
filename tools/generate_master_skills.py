@@ -6,6 +6,7 @@ import json
 import re
 from pathlib import Path
 from skill_repository import frontmatter
+from model_profiles import digest, load_profile, load_contract, model_guidance, load_ecosystems
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGETS = {"claude": "SKILL.md", "chatgpt": "instructions.md", "cursor": "instructions.md", "codex": "SKILL.md"}
@@ -35,19 +36,32 @@ def render(source: Path, platform: str) -> str:
     return body.rstrip() + ("\n\n" + suffix if suffix else "") + "\n"
 
 
-def generate(check: bool = False):
+def generate(check: bool = False, model_profile: str = "baseline"):
+    profile, profile_hash = load_profile(ROOT, model_profile)
+    output_root = ROOT / "generated" if model_profile == "baseline" else ROOT / "generated-models" / model_profile
     # Plan and validate the complete bundle before writing anything.
-    if (ROOT / "generated").is_symlink():
+    if any(path.is_symlink() for path in [output_root, *output_root.parents] if path != ROOT and ROOT in path.parents):
         raise ValueError("Refusing generated symlink root")
     expected = {}
     resources = {}
+    decisions = {}
     for source in sorted((ROOT / "master-skills").glob("*/SKILL.md")):
         files = sorted(source.parent.rglob("*"))
         if any(path.is_symlink() for path in [source.parent, *files]):
             raise ValueError(f"Symlinks are not supported in master bundles: {source.parent}")
+        frontmatter(source, ROOT)
+        contract = load_contract(source)
+        placement = load_ecosystems(source, TARGETS)
+        decisions[source.parent.name] = placement
+        bundle_hash = digest(json.dumps({p.relative_to(source.parent).as_posix(): digest(p.read_bytes()) for p in files if p.is_file() and "__pycache__" not in p.parts and p.suffix != ".pyc"}, sort_keys=True).encode())
         for platform, filename in TARGETS.items():
-            folder = ROOT / "generated" / platform / "skills" / source.parent.name
-            expected[folder / filename] = render(source, platform).encode("utf-8")
+            if platform not in placement["allowed"]:
+                continue
+            folder = output_root / platform / "skills" / source.parent.name
+            expected[folder / filename] = (render(source, platform) + "\n" + model_guidance(profile, contract) + "\n").encode("utf-8")
+            appendix = ROOT / "adapters" / platform / source.parent.name / "append.md"
+            provenance = {"master_revision": bundle_hash, "master_revision_kind": "sha256-bundle", "adapter": str(appendix.relative_to(ROOT)).replace("\\", "/") if appendix.exists() else None, "adapter_sha256": digest(appendix.read_bytes()) if appendix.exists() else None, "model_profile": profile["id"], "model_profile_sha256": profile_hash, "provider": profile["provider"], "model_id": profile["model_id"], "ecosystem": platform, "generator_sha256": digest(Path(__file__).read_bytes()), "profile_loader_sha256": digest(Path(__file__).with_name("model_profiles.py").read_bytes()), "promotion": "blocked_pending_review", "behavior_evaluation": "not_run"}
+            expected[folder / "build-provenance.json"] = (json.dumps(provenance, sort_keys=True, indent=2) + "\n").encode()
             for path in files:
                 if not path.is_file() or (path == source and filename == "SKILL.md"):
                     continue
@@ -58,21 +72,22 @@ def generate(check: bool = False):
                 if destination in expected:
                     raise ValueError(f"Resource collides with generated instructions: {destination}")
                 expected[destination] = path.read_bytes()
-                resources[destination.relative_to(ROOT / "generated").as_posix()] = hashlib.sha256(expected[destination]).hexdigest()
 
-    manifest = ROOT / "generated/.resource-manifest.json"
+    expected[output_root / "target-decisions.json"] = (json.dumps(decisions, indent=2, sort_keys=True) + "\n").encode()
+    resources = {path.relative_to(output_root).as_posix(): digest(content) for path, content in expected.items()}
+    manifest = output_root / ".resource-manifest.json"
     previous = json.loads(manifest.read_text(encoding="utf-8")) if manifest.exists() else {}
     if not isinstance(previous, dict) or any(
         not isinstance(key, str) or not isinstance(value, str)
         or not re.fullmatch(r"[a-f0-9]{64}", value)
         or key.startswith("/") or "\\" in key or ".." in key.split("/")
-        or len(key.split("/")) < 4 or key.split("/")[0] not in TARGETS
-        or key.split("/")[1] != "skills"
+        or (key != "target-decisions.json" and (len(key.split("/")) < 4 or key.split("/")[0] not in TARGETS
+        or key.split("/")[1] != "skills"))
         for key, value in previous.items()
     ):
         raise ValueError("Invalid generated resource manifest")
-    stale = {ROOT / "generated" / path for path in previous.keys() - resources.keys()}
-    for path in sorted((ROOT / "generated").rglob("*")):
+    stale = {output_root / path for path in previous.keys() - resources.keys()}
+    for path in sorted(output_root.rglob("*")):
         if path.is_symlink():
             raise ValueError(f"Refusing generated symlink: {path}")
         if path.is_file() and path not in expected and path != manifest and managed(path.read_text(encoding="utf-8", errors="replace")):
@@ -88,12 +103,9 @@ def generate(check: bool = False):
             if not destination.exists() or destination.read_bytes() != content:
                 failures.append(str(destination.relative_to(ROOT)))
         elif destination.exists():
-            key = destination.relative_to(ROOT / "generated").as_posix()
+            key = destination.relative_to(output_root).as_posix()
             existing = destination.read_bytes()
-            if key in resources:
-                owned = key in previous and hashlib.sha256(existing).hexdigest() == previous[key]
-            else:
-                owned = managed(existing.decode("utf-8"))
+            owned = key in previous and hashlib.sha256(existing).hexdigest() == previous[key]
             if not owned:
                 raise RuntimeError(f"Refusing to overwrite unmanaged or edited file: {destination}")
     manifest_content = (json.dumps(resources, indent=2, sort_keys=True) + "\n").encode("utf-8")
@@ -115,5 +127,6 @@ def generate(check: bool = False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--model-profile", default="baseline")
     args = parser.parse_args()
-    generate(args.check)
+    generate(args.check, args.model_profile)

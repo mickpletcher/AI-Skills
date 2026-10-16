@@ -61,7 +61,7 @@ def generate(check: bool = False):
                 resources[destination.relative_to(ROOT / "generated").as_posix()] = hashlib.sha256(expected[destination]).hexdigest()
 
     manifest = ROOT / "generated/.resource-manifest.json"
-    previous = json.loads(manifest.read_text()) if manifest.exists() else {}
+    previous = json.loads(manifest.read_text(encoding="utf-8")) if manifest.exists() else {}
     if not isinstance(previous, dict) or any(
         not isinstance(key, str) or not isinstance(value, str)
         or not re.fullmatch(r"[a-f0-9]{64}", value)

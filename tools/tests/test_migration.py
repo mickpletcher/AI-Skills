@@ -20,7 +20,7 @@ class MigrationTests(unittest.TestCase):
         originals = {p.parent.name for p in (ROOT/'claude/skills').glob('*/SKILL.md')}
         masters = {p.parent.name for p in (ROOT/'master-skills').glob('*/SKILL.md')}
         self.assertEqual(masters, originals | {'example-skill'})
-        catalog = json.loads((ROOT/'master-skills/catalog.json').read_text())
+        catalog = json.loads((ROOT/'master-skills/catalog.json').read_text(encoding="utf-8"))
         self.assertEqual({entry['name'] for entry in catalog['skills']}, masters)
         for entry in catalog['skills']:
             self.assertEqual(entry['description'], frontmatter(ROOT/'master-skills'/entry['name']/'SKILL.md', ROOT)['description'])
@@ -37,7 +37,7 @@ class MigrationTests(unittest.TestCase):
         self.assertEqual(len(records), 32)
         for path in records:
             with self.subTest(skill=path.parent.name):
-                record = json.loads(path.read_text())
+                record = json.loads(path.read_text(encoding="utf-8"))
                 source = ROOT/record['source']
                 self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(), record['source_sha256'])
                 self.assertEqual(frontmatter(source, ROOT), record['source_frontmatter'])
@@ -45,7 +45,7 @@ class MigrationTests(unittest.TestCase):
                 for old, new in record['transformations'].items():
                     self.assertIn(old, original)
                     original = original.replace(old, new)
-                candidate = (path.parent/'SKILL.md').read_text()
+                candidate = (path.parent/'SKILL.md').read_text(encoding="utf-8")
                 self.assertTrue(candidate.startswith(original + '\n## Host Capabilities\n'))
                 actual = {p.relative_to(source.parent).as_posix() for p in source.parent.rglob('*')
                           if p.is_file() and p != source}

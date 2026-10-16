@@ -151,8 +151,8 @@ Capability declarations never grant authorization. Preserve domain safeguards, o
 
 Required capabilities:
 - text_reasoning: unknown. Verify actual availability before the dependent operation.
-- file_access: unknown. Verify actual availability before the dependent operation.
 - Conditional web_retrieval: unknown. Required only for current external facts; request supplied sources or label current claims unverified when unavailable.
+- Conditional file_access: unknown. Required for checking existing spec numbering and repository conventions or writing spec files; do not claim the next number is verified from incomplete excerpts. Not required for drafting a proposed spec from pasted requirements and supplied repository conventions. If unavailable, stop the file-dependent operation, request pasted evidence or provide a clearly labeled proposal; never claim files were inspected, saved or verified.
 
 Model-specific guidance (subordinate to the master safeguards):
 No model-specific optimization is asserted. Verify capabilities in the selected host before use.

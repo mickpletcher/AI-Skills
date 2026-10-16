@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "required": [
-    "text_reasoning",
-    "file_access"
+    "text_reasoning"
   ],
   "conditional": {
-    "web_retrieval": "Required only for current external facts; request supplied sources or label current claims unverified when unavailable."
+    "web_retrieval": "Required only for current external facts; request supplied sources or label current claims unverified when unavailable.",
+    "file_access": "Required for verifying actual local repository contents or saving README changes. Not required for drafting or repairing from pasted source, file listings and README text. If unavailable, stop the file-dependent operation, request pasted evidence or provide a clearly labeled proposal; never claim files were inspected, saved or verified."
   },
   "fallback": "If a required capability is unknown or unavailable, stop the dependent operation, identify missing evidence, and request input or offer manual steps. Do not claim completion.",
   "safeguards": "Capability declarations never grant authorization. Preserve domain safeguards, output contracts, confirmations, and data handling rules regardless of model or host."

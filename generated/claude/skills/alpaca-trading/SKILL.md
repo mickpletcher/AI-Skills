@@ -204,9 +204,9 @@ Capability declarations never grant authorization. Preserve domain safeguards, o
 
 Required capabilities:
 - text_reasoning: unknown. Verify actual availability before the dependent operation.
-- file_access: unknown. Verify actual availability before the dependent operation.
 - Conditional web_retrieval: unknown. Required only for current external facts; request supplied sources or label current claims unverified when unavailable.
 - Conditional code_execution: unknown. Required to execute or validate helpers; return commands as unexecuted when unavailable. Runtime prerequisites remain in the source documentation.
+- Conditional file_access: unknown. Required for inspecting or changing the Trading repository and reading or writing local artifacts; repository-specific work must wait for required instructions and source evidence. Not required for reviewing pasted code or planning a paper-trading workflow. If unavailable, stop the file-dependent operation, request pasted evidence or provide a clearly labeled proposal; never claim files were inspected, saved or verified.
 
 Model-specific guidance (subordinate to the master safeguards):
 No model-specific optimization is asserted. Verify capabilities in the selected host before use.

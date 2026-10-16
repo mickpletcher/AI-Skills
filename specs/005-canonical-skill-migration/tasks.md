@@ -6,3 +6,5 @@
 - [x] Add migration catalog, ownership checks and regression tests.
 - [ ] Complete local/CI verification and draft review.
 - [ ] Separately authorized target-host behavioral evaluation and promotion (not part of this migration).
+
+- [x] Audit three foundational masters against originals, restore portable requirements with provenance, and distinguish pasted-input modes from file operations in seven contracts.

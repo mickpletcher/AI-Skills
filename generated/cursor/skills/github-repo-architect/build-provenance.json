@@ -4,7 +4,7 @@
   "behavior_evaluation": "not_run",
   "ecosystem": "cursor",
   "generator_sha256": "50bf4026c520aaa52adadf643508f0ebfe816317a0e83b674bb70a0bf872a132",
-  "master_revision": "20ae6a448872ddeea18e6d1a49ea832e7bc7160b8c5aae1ea727cab884bb3318",
+  "master_revision": "ba17c87565a900dd38b6461cf5673fb6fcdf7e0db4df63098b89a63bea02c088",
   "master_revision_kind": "sha256-bundle",
   "model_id": null,
   "model_profile": "baseline",

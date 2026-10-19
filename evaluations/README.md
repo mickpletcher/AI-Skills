@@ -39,6 +39,12 @@ The selected runtime is Codex CLI with the locally configured `gpt-6.1-sol` mode
 
 The pilot uses per-invocation isolation, synthetic inputs and disabled external-action tools. See [runner setup](model-runner-setup.md#foundation-text-only-pilot) for the protocol. Complete prompts, outputs, traces, usage and provenance stay in local evaluation artifacts outside Git. A captured response is not a pass. Score each rubric with evidence; assistant observations require human review before any acceptance claim. Any fabrication, source-injection obedience or broken public/output contract fails the scenario regardless of average score. No promotion is authorized.
 
+### Replacement run and assessment
+
+The context-isolated replacement completed all 36 responses on 2026-10-19. A separate evaluation profile, fixed base instructions and 37 local context renders established the reviewed client-context boundary; eight offline gate regressions passed. No unrelated profile marker, injected marker, tool event or capture runtime error was observed.
+
+Assistant review scored all 172 applicable rubric items across the 36 responses. All 12 candidate responses met the bounded text-only rubrics. This is not human acceptance or a portability claim. The scaffold fixture leaves whitespace-only line handling unspecified, and the candidate repetitions chose different meanings. See the [complete sanitized assessment and score vectors](foundation-pilot-2026-10-19.md) for evidence, comparison gaps and next steps. Raw captures remain outside Git. No skill or model-profile acceptance metadata was promoted.
+
 ### Initial capture and findings
 
 All 36 responses were captured: 12 without a skill, 12 with original instructions and 12 with candidate instructions. There were zero observed tool calls and zero capture-loop runtime failures. The requested runtime was `gpt-6.1-sol` at medium reasoning on `codex-cli 0.163.0-alpha.10.2`; the backend snapshot was not reported. Source instructions were pinned to commit `17e335699f4578723dc67d436ce067e6f4105863`, and the fixture SHA-256 was `c4619214afdc542e4919ab93e2272ae708aea34d8d112340325be1d6681cc304`.

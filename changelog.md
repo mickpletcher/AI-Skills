@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Repaired the local foundation pilot's context isolation with a separate profile, fixed base instructions and per-call context audits. Captured 36 replacement responses and scored 172 applicable rubric items; all 12 candidate responses met the text-only pilot rubrics. Recorded scaffold whitespace ambiguity, original/control gaps and pending human/runtime acceptance. No skills were promoted.
+
 - Started the foundation behavioral pilot with six synthetic cases and 36 captured Codex CLI responses. Recorded a candidate line-count discrepancy and inherited-context contamination; results remain provisional, human scores unscored, and promotion unauthorized.
 
 - Completed focused migration review; added preflight rejection of linked parents/Windows junctions, destination type conflicts and portable filename collisions, with offline regressions. Candidates remain unpromoted and behavior evaluation remains not run.

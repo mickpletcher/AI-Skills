@@ -24,6 +24,8 @@ Generation includes the complete master directory except package archives and Py
 
 Helper prerequisites remain those of the source: see [repository dependencies](../docs/dependencies.md) and the pinned original README in each candidate. Copying a helper does not execute it, install dependencies, grant filesystem/app access, or schedule anything. Keep runtime outputs and personal data outside these tracked candidate bundles.
 
+Generation preflights the master, adapter, profile, schema and selected output trees before reading linked content or writing candidates. Symlinks and Windows junctions in parent directories or bundle members are rejected. Planned files and directories must have distinct names even on case-insensitive filesystems. Existing file/directory type conflicts fail before any candidate is written. These checks do not make filesystem writes transactional against concurrent edits or disk failures.
+
 ## Review gates
 
 Run `python tools/generate_master_skills.py --check`, `python tools/skill_repository.py validate`, and `python -m unittest discover -s tools/tests -v`. Migration regressions cover inventory equality, metadata/provenance, exact source and resource preservation, navigable local links, and generated-resource collision/drift/removal behavior. These are structural checks; the existing synthetic fixture self-test does not certify all 35 migrated skills. Before promotion, review actual behavior with synthetic inputs on each intended host/model and verify helper prerequisites independently.

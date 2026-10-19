@@ -6,6 +6,7 @@ import unittest
 import shutil
 import contextlib
 import io
+import subprocess
 from pathlib import Path
 from unittest.mock import patch
 
@@ -16,6 +17,112 @@ from skill_repository import frontmatter, link_errors
 
 
 class MigrationTests(unittest.TestCase):
+    def fixture(self, root):
+        for folder in ('schemas', 'model-profiles'):
+            shutil.copytree(ROOT/folder, root/folder)
+        source = root/'master-skills/example-skill'
+        shutil.copytree(ROOT/'master-skills/example-skill', source)
+        return source
+
+    def test_destination_type_collisions_fail_before_any_writes(self):
+        for name in ('generated', 'generated/chatgpt',
+                     'generated/chatgpt/skills/example-skill',
+                     'generated/chatgpt/skills/example-skill/instructions.md',
+                     'generated/.resource-manifest.json'):
+            with self.subTest(path=name), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp).resolve()
+                self.fixture(root)
+                destination = root/name
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                if destination.suffix:
+                    destination.mkdir()
+                else:
+                    destination.write_bytes(b'user file')
+                for check in (False, True):
+                    with patch.object(generator, 'ROOT', root), \
+                         patch.object(Path, 'write_bytes', side_effect=AssertionError('Partial write')):
+                        with self.assertRaisesRegex(ValueError, 'directory|file type'):
+                            generator.generate(check=check)
+                self.assertFalse((root/'generated/claude').exists())
+                if destination.is_file():
+                    self.assertEqual(destination.read_bytes(), b'user file')
+
+    def test_portable_resource_collisions_fail_before_any_writes(self):
+        for name in ('INSTRUCTIONS.md', 'Build-Provenance.json', 'instructions.md/asset.bin'):
+            with self.subTest(path=name), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp).resolve()
+                source = self.fixture(root)
+                resource = source/name
+                resource.parent.mkdir(parents=True, exist_ok=True)
+                resource.write_bytes(b'fixture')
+                with patch.object(generator, 'ROOT', root), \
+                     patch.object(Path, 'write_bytes', side_effect=AssertionError('Partial write')):
+                    with self.assertRaisesRegex(ValueError, 'colli'):
+                        generator.generate()
+                self.assertFalse((root/'generated').exists())
+
+    def test_linked_inputs_and_outputs_are_rejected(self):
+        cases = ('master-skills', 'master-skills/example-skill/SKILL.md',
+                 'adapters/claude/example-skill/append.md', 'model-profiles',
+                 'model-profiles/baseline.json', 'schemas', 'generated',
+                 'generated/chatgpt/skills/example-skill', 'generated/.resource-manifest.json')
+        for name in cases:
+            with self.subTest(path=name), tempfile.TemporaryDirectory() as tmp:
+                base = Path(tmp).resolve()
+                root = base/'source'
+                self.fixture(root)
+                link = root/name
+                directory = not link.suffix
+                target = base/'target'
+                if link.exists():
+                    shutil.move(str(link), str(target))
+                elif directory:
+                    target.mkdir()
+                else:
+                    target.write_bytes(b'external fixture')
+                link.parent.mkdir(parents=True, exist_ok=True)
+                try:
+                    link.symlink_to(target, target_is_directory=directory)
+                except OSError as exc:
+                    if getattr(exc, 'winerror', None) == 1314:
+                        self.skipTest('Windows symlink privilege unavailable')
+                    raise
+                with patch.object(generator, 'ROOT', root), \
+                     patch.object(Path, 'write_bytes', side_effect=AssertionError('Partial write')):
+                    for check in (False, True):
+                        with self.assertRaisesRegex(ValueError, 'Symlink|junction'):
+                            generator.generate(check=check)
+
+    @unittest.skipUnless(sys.platform == 'win32', 'Windows junction semantics')
+    def test_windows_junction_inputs_and_outputs_are_rejected(self):
+        for name in ('master-skills', 'adapters', 'model-profiles', 'schemas',
+                     'generated', 'generated/chatgpt/skills/example-skill', 'generated-models'):
+            with self.subTest(path=name), tempfile.TemporaryDirectory() as tmp:
+                base = Path(tmp).resolve()
+                root = base/'source'
+                self.fixture(root)
+                profile = json.loads((root/'model-profiles/baseline.json').read_text(encoding='utf-8'))
+                profile.update(id='synthetic', provider='synthetic', model_id='fixture-v1')
+                (root/'model-profiles/synthetic.json').write_text(json.dumps(profile), encoding='utf-8')
+                link = root/name
+                target = base/'target'
+                if link.exists():
+                    shutil.move(str(link), str(target))
+                else:
+                    target.mkdir()
+                link.parent.mkdir(parents=True, exist_ok=True)
+                result = subprocess.run(['cmd', '/c', 'mklink', '/J', str(link), str(target)],
+                                        capture_output=True, text=True)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                try:
+                    with patch.object(generator, 'ROOT', root), \
+                         patch.object(Path, 'write_bytes', side_effect=AssertionError('Partial write')):
+                        for check in (False, True):
+                            with self.assertRaisesRegex(ValueError, 'junction'):
+                                generator.generate(check=check, model_profile='synthetic' if name == 'generated-models' else 'baseline')
+                finally:
+                    link.rmdir()
+
     def test_all_shipped_claude_skills_have_masters_and_candidates(self):
         originals = {p.parent.name for p in (ROOT/'claude/skills').glob('*/SKILL.md')}
         masters = {p.parent.name for p in (ROOT/'master-skills').glob('*/SKILL.md')}

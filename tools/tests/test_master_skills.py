@@ -40,6 +40,8 @@ class MasterSkillTests(unittest.TestCase):
     def test_ci_checks_pristine_checkout_and_triggers_on_generated_changes(self):
         workflow = yaml.load((ROOT/'.github/workflows/master-skills-validation.yml').read_text(), Loader=yaml.BaseLoader)
         self.assertIn('generated/**', workflow['on']['pull_request']['paths'])
+        self.assertIn('tools/tests/test_foundation_audit.py', workflow['on']['pull_request']['paths'])
+        self.assertEqual(workflow['permissions'], {'contents': 'read'})
         self.assertIn('main', workflow['on']['push']['branches'])
         commands = [step['run'] for step in workflow['jobs']['validate']['steps'] if 'run' in step]
         self.assertEqual(commands, ['python -m pip install -r requirements-dev.txt',

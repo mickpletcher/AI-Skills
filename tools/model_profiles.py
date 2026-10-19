@@ -1,7 +1,10 @@
 """Declarative model selection and capability contracts; never calls a model."""
 import hashlib
 import json
+import os
 import re
+import stat
+from pathlib import Path
 
 CAPABILITIES = {'text_reasoning', 'web_retrieval', 'file_access', 'code_execution', 'image_understanding', 'persistent_storage'}
 
@@ -10,12 +13,41 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
+def assert_local_path(root, path):
+    relative = path.relative_to(root)
+    if '..' in relative.parts:
+        raise ValueError(f'Candidate path outside repository: {relative}')
+    current = root
+    for part in relative.parts:
+        current = current/part
+        try:
+            metadata = current.lstat()
+        except FileNotFoundError:
+            continue
+        if stat.S_ISLNK(metadata.st_mode) or getattr(metadata, 'st_reparse_tag', 0) == 0xA0000003:
+            raise ValueError(f'Symlink or junction in candidate path: {relative}')
+    if not path.resolve().is_relative_to(root.resolve()):
+        raise ValueError(f'Candidate path outside repository: {relative}')
+
+
+def local_tree(root, directory):
+    assert_local_path(root, directory)
+    if directory.exists() and not directory.is_dir():
+        raise ValueError(f'Expected candidate directory: {directory.relative_to(root)}')
+    paths = []
+    for parent, directories, files in os.walk(directory, followlinks=False):
+        for name in directories + files:
+            path = Path(parent)/name
+            assert_local_path(root, path)
+            paths.append(path)
+    return sorted(paths)
+
+
 def load_profile(root, name):
     if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', name):
         raise ValueError('Invalid model profile name')
     path = root/'model-profiles'/f'{name}.json'
-    if path.is_symlink():
-        raise ValueError('Profile symlinks are not supported')
+    assert_local_path(root, path)
     data = json.loads(path.read_text(encoding='utf-8'))
     keys = {'schema_version', 'id', 'provider', 'model_id', 'capabilities', 'overlay', 'evidence'}
     if set(data) != keys or data['schema_version'] != 1 or data['id'] != name:

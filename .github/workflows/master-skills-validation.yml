@@ -11,6 +11,7 @@ on:
       - 'generated/**'
       - 'tools/tests/test_master_skills.py'
       - 'tools/tests/test_migration.py'
+      - 'tools/tests/test_foundation_audit.py'
       - '.gitattributes'
       - 'tools/generate_master_skills.py'
       - 'tools/skill_repository.py'
@@ -20,6 +21,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+permissions:
+  contents: read
 jobs:
   validate:
     runs-on: ubuntu-latest

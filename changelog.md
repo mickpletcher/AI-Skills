@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Completed focused migration review; added preflight rejection of linked parents/Windows junctions, destination type conflicts and portable filename collisions, with offline regressions. Candidates remain unpromoted and behavior evaluation remains not run.
+
 - Restored audited foundational master requirements (scaffold templates/CI, README formats, PowerShell analyzer gates) with pinned provenance and offline regressions; made seven file-access contracts operation-specific without changing ecosystem placements.
 
 - Added capability contracts, explicit ecosystem suitability maps and model-aware candidate generation with provenance and manual reassessment gates; no model calls or automatic promotion.

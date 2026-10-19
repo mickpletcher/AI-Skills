@@ -6,7 +6,7 @@ import json
 import re
 from pathlib import Path
 from skill_repository import frontmatter
-from model_profiles import digest, load_profile, load_contract, model_guidance, load_ecosystems
+from model_profiles import digest, load_profile, load_contract, model_guidance, load_ecosystems, local_tree
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGETS = {"claude": "SKILL.md", "chatgpt": "instructions.md", "cursor": "instructions.md", "codex": "SKILL.md"}
@@ -37,18 +37,17 @@ def render(source: Path, platform: str) -> str:
 
 
 def generate(check: bool = False, model_profile: str = "baseline"):
+    for directory in ('master-skills', 'adapters', 'model-profiles', 'schemas'):
+        local_tree(ROOT, ROOT / directory)
     profile, profile_hash = load_profile(ROOT, model_profile)
     output_root = ROOT / "generated" if model_profile == "baseline" else ROOT / "generated-models" / model_profile
+    output_paths = local_tree(ROOT, output_root)
     # Plan and validate the complete bundle before writing anything.
-    if any(path.is_symlink() for path in [output_root, *output_root.parents] if path != ROOT and ROOT in path.parents):
-        raise ValueError("Refusing generated symlink root")
     expected = {}
     resources = {}
     decisions = {}
     for source in sorted((ROOT / "master-skills").glob("*/SKILL.md")):
         files = sorted(source.parent.rglob("*"))
-        if any(path.is_symlink() for path in [source.parent, *files]):
-            raise ValueError(f"Symlinks are not supported in master bundles: {source.parent}")
         frontmatter(source, ROOT)
         contract = load_contract(source)
         placement = load_ecosystems(source, TARGETS)
@@ -76,6 +75,17 @@ def generate(check: bool = False, model_profile: str = "baseline"):
     expected[output_root / "target-decisions.json"] = (json.dumps(decisions, indent=2, sort_keys=True) + "\n").encode()
     resources = {path.relative_to(output_root).as_posix(): digest(content) for path, content in expected.items()}
     manifest = output_root / ".resource-manifest.json"
+    planned = {}
+    for destination in [*expected, manifest]:
+        for path in [destination, *destination.parents]:
+            if path == output_root:
+                break
+            relative = path.relative_to(output_root).as_posix()
+            entry = (relative, path == destination)
+            if planned.setdefault(relative.casefold(), entry) != entry:
+                raise ValueError(f'Case or file/directory collision in generated bundle: {relative}')
+            if path.exists() and (not path.is_file() if path == destination else not path.is_dir()):
+                raise ValueError(f'Generated destination has wrong file type: {path.relative_to(ROOT)}')
     previous = json.loads(manifest.read_text(encoding="utf-8")) if manifest.exists() else {}
     if not isinstance(previous, dict) or any(
         not isinstance(key, str) or not isinstance(value, str)
@@ -87,9 +97,7 @@ def generate(check: bool = False, model_profile: str = "baseline"):
     ):
         raise ValueError("Invalid generated resource manifest")
     stale = {output_root / path for path in previous.keys() - resources.keys()}
-    for path in sorted(output_root.rglob("*")):
-        if path.is_symlink():
-            raise ValueError(f"Refusing generated symlink: {path}")
+    for path in output_paths:
         if path.is_file() and path not in expected and path != manifest and managed(path.read_text(encoding="utf-8", errors="replace")):
             stale.add(path)
     if stale:

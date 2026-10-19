@@ -4,7 +4,7 @@ PowerShell Refactor evaluation requires eight model comparisons from `evaluation
 
 Execution is gated on configured provider access and explicit selection of exact model IDs. No credentials belong in this repository.
 
-For each case, run the original Claude skill and the generated candidate in isolated sessions with identical prompts and model settings. Capture the responses, review `must_preserve` and `forbidden_claims`, and record model IDs, timestamps, commit SHAs, and pass/fail evidence. Do not execute generated scripts.
+For each case, run the original Claude skill and the generated candidate in isolated sessions with identical prompts and model settings. Capture the responses, review `must_preserve` and `forbidden_claims`, and record model IDs, timestamps, commit SHAs, and pass/fail evidence. Capture-only runs do not execute generated scripts. Separately authorized runtime testing requires reviewed synthetic artifacts, temporary workspaces, bounded execution and separate result records; see the [initial runtime assessment](foundation-runtime-2026-10-19.md).
 
 The API runner requirements above are separate from the bounded Codex CLI pilot below. Run-specific evidence, not this setup guide, establishes which model responses were captured.
 
@@ -39,3 +39,9 @@ The gate requires the exact selected developer instruction and user prompt once 
 Eight offline checks exercise clean input acceptance and rejection of unrelated user guidance, unknown developer guidance, skill descriptions, altered task input, response history, changing infrastructure and unexpected content. The previous confounded batch remains immutable. A separate sandbox-network failure before the replacement run produced no completed model response and is retained separately, rather than silently retried into its manifest.
 
 The replacement remains a forced-instruction text-only pilot. Original, candidate and control all use the same new base instructions; its scores cannot be compared causally with the confounded batch. Requested model identity, rather than an unreported backend snapshot, is the reproducible runtime label. Assistant rubric assessment is separate from human acceptance.
+
+### Revision 2 and runtime execution
+
+Fixture revision 2 adds `architect-whitespace-regression` and pins `bool(line.strip())`, Unicode whitespace, universal newlines and the final unterminated line. Preserve historical fixture snapshots and hashes. A complete revision-2 comparison would be 42 responses; the initial runtime phase captured only two repetitions of each architect candidate case. Existing PowerShell/README captures were reused only after hash verification.
+
+Before any runtime command, inspect the proposed source/build/test files, verify capture hashes, require complete extracted files, and use separate temporary projects and environments. Provision trusted dependencies separately. Keep generated package installs offline, suppress unrelated test plugins, apply command timeouts and retain stdout/stderr and exit codes. Compare independent fixture oracles with actual installed entry points; do not rely only on generated tests. Keep raw failures and any repaired copy separate. Local Windows success does not certify generated hosted CI, Linux or human acceptance.

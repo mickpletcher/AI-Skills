@@ -33,7 +33,11 @@ Self-test grading uses explicit failures in ordinary and optimized Python (`-O` 
 
 ## Foundation instruction pilot
 
-Behavioral testing started on 2026-10-19 for `powershell-refactor`, `github-readme` and `github-repo-architect`. The [pilot fixtures](fixtures/foundation-pilot.json) define six synthetic scenarios, three instruction conditions (without skill, original Claude source, generated Codex candidate), and two fresh-session repetitions: 36 planned responses.
+Behavioral testing started on 2026-10-19 for `powershell-refactor`, `github-readme` and `github-repo-architect`. The initial pilot fixture defined six synthetic scenarios, three instruction conditions (without skill, original Claude source, generated Codex candidate), and two fresh-session repetitions: 36 planned responses. The [current fixture](fixtures/foundation-pilot.json), revision 2, specifies whitespace semantics and adds a seventh regression scenario. Its targeted runtime work is tracked separately below.
+
+### Runtime testing started
+
+The [Windows runtime assessment](foundation-runtime-2026-10-19.md) records the revised fixture, four fresh architect captures, PowerShell tests on two editions, README command execution and scaffold pytest/lint/format checks. Counting behavior passed; one scaffold failed its own formatting gate. A separate format-only repair passed without overwriting that failure. These runtime observations supplement the earlier text-only scores and do not authorize acceptance or promotion.
 
 The selected runtime is Codex CLI with the locally configured `gpt-6.1-sol` model and medium reasoning. This is a forced-instruction, text-only comparison. It does not test automatic skill selection, file/tool execution, or behavior in Claude or ChatGPT. The original instructions serve as a comparison, not an approved behavioral baseline. The candidate remains the unconfigured baseline bundle; runtime model selection is recorded separately and grants no verified model-profile capabilities.
 

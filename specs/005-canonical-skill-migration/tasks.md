@@ -31,6 +31,16 @@
 - [x] Establish and audit a separate evaluation profile and fixed base instructions, then rerun every condition: 36 replacement responses, 37 context renders and eight offline context-gate regressions. Preserve the confounded first batch unchanged.
 - [x] Complete evidence-backed assistant scoring: 172 applicable rubric items across all 36 replacement responses; all 12 candidates meet the bounded text-only rubrics. Record the original/control reporting gaps and scaffold planning-note failure in the [sanitized assessment](../../evaluations/foundation-pilot-2026-10-19.md).
 - [x] Validate the replacement evidence: consistent host/base context, unchanged fixture/source hashes, zero observed profile/injection markers or tool events, 25 Python blocks and 12 PowerShell proposals parsed without execution, and five reported line counts checked accurately. All 66 repository regressions passed in a clean Git-byte snapshot.
-- [ ] Pin whitespace-only line semantics before scaffold acceptance testing. The two candidate repetitions chose different interpretations of the underspecified prompt.
+- [x] Pin whitespace-only line semantics to `bool(line.strip())`, including Unicode whitespace, universal newlines and an unterminated final line. Add a seventh fixture scenario, six runtime oracles and three offline mutation regressions.
 - [ ] Obtain human rubric review and acceptance. Assistant scores do not approve a skill or model profile.
 - [ ] Complete the full host/tool/routing scenarios and human acceptance review before considering promotion.
+
+## Initial runtime phase, 2026-10-19
+
+- [x] Capture four targeted architect candidate responses under fixture revision 2 with five audited contexts. Preserve prior captures and remove temporary evaluation credentials.
+- [x] Run the 12 prior PowerShell proposals through nine Pester tests on both PowerShell 7 and Windows PowerShell 5.1. Verify zero before/after analyzer findings with identical default settings.
+- [x] Execute installation, text/JSON examples, help and unittest commands for both prior candidate README drafts in synthetic temporary repositories.
+- [x] Execute both fresh architect scaffolds and both focused regression proposals: 65 generated pytest cases passed; all independent whitespace/error checks passed. Retain one original Ruff formatting failure among 70 Python command checks.
+- [x] Verify a separate one-file, unchanged-AST formatting repair with lint, formatting and all ten affected pytest cases passing. Preserve original failures and exclude corrected harness attempts from model pass counts. See the [runtime assessment](../../evaluations/foundation-runtime-2026-10-19.md).
+- [x] Validate the branch changes in a clean Git-byte snapshot: all 69 Python regressions, generator drift, repository/PowerShell quality, exact-case folders and the 24-case/99-negative-check offline self-test passed.
+- [ ] Complete actual agent file/tool feedback loops, Linux/supported-Python execution, remaining PowerShell scenarios and broader README/routing coverage before human acceptance. The full revised comparison matrix has not been run.

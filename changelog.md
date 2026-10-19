@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Pinned architect nonempty-line semantics and added a focused regression scenario with six runtime oracles. Started offline Windows runtime checks for all three foundational skills; PowerShell/README and counting tests passed, one original scaffold formatting failure was preserved, and a separate format-only repair was verified. Acceptance and promotion remain blocked.
+
 - Repaired the local foundation pilot's context isolation with a separate profile, fixed base instructions and per-call context audits. Captured 36 replacement responses and scored 172 applicable rubric items; all 12 candidate responses met the text-only pilot rubrics. Recorded scaffold whitespace ambiguity, original/control gaps and pending human/runtime acceptance. No skills were promoted.
 
 - Started the foundation behavioral pilot with six synthetic cases and 36 captured Codex CLI responses. Recorded a candidate line-count discrepancy and inherited-context contamination; results remain provisional, human scores unscored, and promotion unauthorized.

@@ -4,7 +4,7 @@ Status: **assistant assessment complete; human acceptance pending**. All 36 repl
 
 ## Scope and isolation
 
-The unchanged [fixture](fixtures/foundation-pilot.json) covers six scenarios, three conditions and two fresh-session repetitions. Conditions are without skill, original Claude instruction text and generated Codex candidate instruction text. Rubrics were withheld from the model. This tests explicitly supplied instructions, not automatic skill selection, reference loading or tools.
+The locally retained fixture snapshot for this run covered six scenarios, three conditions and two fresh-session repetitions; its hash is recorded below. The [current fixture](fixtures/foundation-pilot.json) was subsequently revised for the [runtime phase](foundation-runtime-2026-10-19.md). Historical scores below still use the original snapshot. Conditions are without skill, original Claude instruction text and generated Codex candidate instruction text. Rubrics were withheld from the model. This tests explicitly supplied instructions, not automatic skill selection, reference loading or tools.
 
 A separate process-local evaluation profile excludes global guidance and memories. Fixed base instructions and identical settings apply to every condition. Before the batch and before each call, the local context renderer verifies exact supplied task text and unchanged reviewed CLI infrastructure. All 37 renders passed; host-context and base-instruction fingerprints each remained constant. Eight offline context-gate regressions passed. See [runner setup](model-runner-setup.md#replacement-run-isolation) for the checks and their limits. Shared global instructions/configuration were not changed, and the temporary evaluation credential copy was removed after capture.
 

@@ -1,6 +1,6 @@
 # Canonical candidate catalog
 
-All 35 shipped Claude skill names have a master, plus one example. Explicit per-skill suitability mappings currently produce 96 target entry points: 36 each for Claude and ChatGPT, 12 each for Cursor and Codex (including the example). These are proposed placements, not approved support. Candidates are not promoted, installed, packaged, or behavior-evaluated. The shipped catalog remains at [../CATALOG.md](../CATALOG.md).
+All 35 shipped Claude skill names have a master, plus one example. Explicit per-skill suitability mappings currently produce 96 target entry points: 36 each for Claude and ChatGPT, 12 each for Cursor and Codex (including the example). These are proposed placements, not approved support. Candidates are not promoted, installed or packaged, and none has completed behavioral acceptance. Creation-time evaluation labels below remain unchanged; [partial pilot captures and limitations](../evaluations/README.md#foundation-instruction-pilot) are recorded separately and grant no verified support. The shipped catalog remains at [../CATALOG.md](../CATALOG.md).
 
 | Skill | Proposed targets | Behavior evaluation |
 | --- | --- | --- |

@@ -1,6 +1,6 @@
 # PowerShell Refactor behavioral evaluation plan
 
-Status: **prepared, not executed against a model**. These are synthetic scenarios; no live files, credentials, or production changes are authorized.
+Status: **full eight-case suite not completed**. A bounded [foundation text-only pilot](README.md#foundation-instruction-pilot) started on 2026-10-19 with pipeline-contract and source-injection cases. These are synthetic scenarios; no live files, credentials, or production changes are authorized. The pilot does not replace this full protocol or its execution checks.
 
 ## Evaluation protocol
 

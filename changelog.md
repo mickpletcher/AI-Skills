@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Started the foundation behavioral pilot with six synthetic cases and 36 captured Codex CLI responses. Recorded a candidate line-count discrepancy and inherited-context contamination; results remain provisional, human scores unscored, and promotion unauthorized.
+
 - Completed focused migration review; added preflight rejection of linked parents/Windows junctions, destination type conflicts and portable filename collisions, with offline regressions. Candidates remain unpromoted and behavior evaluation remains not run.
 
 - Restored audited foundational master requirements (scaffold templates/CI, README formats, PowerShell analyzer gates) with pinned provenance and offline regressions; made seven file-access contracts operation-specific without changing ecosystem placements.

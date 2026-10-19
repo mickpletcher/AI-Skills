@@ -10,7 +10,7 @@ Generation requires `python -m pip install -r requirements-dev.txt`. Canonical f
 
 ## Migration inventory and provenance
 
-The [candidate catalog](CATALOG.md) and [machine-readable inventory](catalog.json) contain 36 masters: all 35 Claude skill names plus the example scaffold. This batch adds 32 masters to the existing three real masters. The shipped catalog and packages are unchanged. All candidates remain unpromoted and behavior evaluation is **not run** on every target.
+The [candidate catalog](CATALOG.md) and [machine-readable inventory](catalog.json) contain 36 masters: all 35 Claude skill names plus the example scaffold. This batch adds 32 masters to the existing three real masters. The shipped catalog and packages are unchanged. All candidates remain unpromoted, with no completed behavioral acceptance evaluation. Creation-time catalog/build labels are not a current run log; see the [foundation pilot evidence](../evaluations/README.md#foundation-instruction-pilot) for partial, context-confounded model captures. The pilot does not update verified support or promotion state.
 
 Each new master keeps the original workflow and supported frontmatter, with narrowly recorded changes to assistant-host wording and a capability fallback section. Product-specific examples such as an Anthropic API integration remain because they describe the task, not a required assistant host. Owner preferences are retained as source context, not verified current facts. Claude's named WebFetch option lives in its adapter; other targets use only the capabilities actually available.
 

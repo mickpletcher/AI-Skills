@@ -4,6 +4,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
+from ecosystem_paths import PLATFORM_PATHS
 ROOT = Path(__file__).resolve().parents[1]
 CATEGORIES = {'trigger', 'near_miss', 'missing_input', 'untrusted_source', 'unsafe_request', 'output_contract'}
 
@@ -17,7 +18,7 @@ def load_cases(path=ROOT/'evaluations/fixtures/representative.json'):
             raise ValueError('Duplicate ID or unknown category')
         seen.add(case['id'])
         platform, name = case['skill'].split('/')
-        if not (ROOT/platform/'skills'/name).is_dir():
+        if platform not in PLATFORM_PATHS or not (ROOT/PLATFORM_PATHS[platform]/'skills'/name).is_dir():
             raise ValueError('Fixture names an absent skill')
         coverage.setdefault(case['skill'], set()).add(case['category'])
         if not isinstance(case['input'], str) or not case['input'].strip() or not case['rubric']:

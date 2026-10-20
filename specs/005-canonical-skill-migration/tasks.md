@@ -72,3 +72,7 @@
 - [x] Record results and limits in the [second batch assessment](../../evaluations/migration-batch2-2026-10-19.md). Correct attachment argument parsing and require exact image/prompt audit with five negative regressions. All six scenarios pass bounded assistant review; no demonstrated master instruction defect requires a change.
 - [x] Complete final documentation/quality validation: 72 unit tests, 22 installer regressions, generator drift, 24 offline cases with 99 negative checks, repository/PowerShell quality and exact-case folders passed. Deliver the assessment and fixture through draft PR #11; no skill or placement changes.
 - [ ] Obtain human acceptance of this batch's bounded results. No merging, promotion or expansion of placement is authorized.
+
+## OpenAI directory grouping
+
+- [x] Group existing ChatGPT/Codex sources and generated candidates under `openai/`, preserving target IDs, suitability, skill bytes and promotion gates. See the [implementation and validation checklist](../006-openai-ecosystem-grouping/tasks.md). This structural change does not accept additional behavioral results.

@@ -25,9 +25,9 @@ class MigrationTests(unittest.TestCase):
         return source
 
     def test_destination_type_collisions_fail_before_any_writes(self):
-        for name in ('generated', 'generated/chatgpt',
-                     'generated/chatgpt/skills/example-skill',
-                     'generated/chatgpt/skills/example-skill/instructions.md',
+        for name in ('generated', 'generated/openai', 'generated/openai/chatgpt',
+                     'generated/openai/chatgpt/skills/example-skill',
+                     'generated/openai/chatgpt/skills/example-skill/instructions.md',
                      'generated/.resource-manifest.json'):
             with self.subTest(path=name), tempfile.TemporaryDirectory() as tmp:
                 root = Path(tmp).resolve()
@@ -63,9 +63,10 @@ class MigrationTests(unittest.TestCase):
 
     def test_linked_inputs_and_outputs_are_rejected(self):
         cases = ('master-skills', 'master-skills/example-skill/SKILL.md',
-                 'adapters/claude/example-skill/append.md', 'model-profiles',
+                 'adapters/claude/example-skill/append.md', 'adapters/openai',
+                 'adapters/openai/codex/example-skill/append.md', 'model-profiles',
                  'model-profiles/baseline.json', 'schemas', 'generated',
-                 'generated/chatgpt/skills/example-skill', 'generated/.resource-manifest.json')
+                 'generated/openai', 'generated/openai/chatgpt/skills/example-skill', 'generated/.resource-manifest.json')
         for name in cases:
             with self.subTest(path=name), tempfile.TemporaryDirectory() as tmp:
                 base = Path(tmp).resolve()
@@ -95,8 +96,9 @@ class MigrationTests(unittest.TestCase):
 
     @unittest.skipUnless(sys.platform == 'win32', 'Windows junction semantics')
     def test_windows_junction_inputs_and_outputs_are_rejected(self):
-        for name in ('master-skills', 'adapters', 'model-profiles', 'schemas',
-                     'generated', 'generated/chatgpt/skills/example-skill', 'generated-models'):
+        for name in ('master-skills', 'adapters', 'adapters/openai', 'model-profiles', 'schemas',
+                     'generated', 'generated/openai', 'generated/openai/chatgpt/skills/example-skill',
+                     'generated-models', 'generated-models/synthetic/openai'):
             with self.subTest(path=name), tempfile.TemporaryDirectory() as tmp:
                 base = Path(tmp).resolve()
                 root = base/'source'
@@ -119,7 +121,7 @@ class MigrationTests(unittest.TestCase):
                          patch.object(Path, 'write_bytes', side_effect=AssertionError('Partial write')):
                         for check in (False, True):
                             with self.assertRaisesRegex(ValueError, 'junction'):
-                                generator.generate(check=check, model_profile='synthetic' if name == 'generated-models' else 'baseline')
+                                generator.generate(check=check, model_profile='synthetic' if name.startswith('generated-models') else 'baseline')
                 finally:
                     link.rmdir()
 
@@ -136,9 +138,9 @@ class MigrationTests(unittest.TestCase):
             allowed = json.loads((ROOT/'master-skills'/name/'ecosystems.json').read_text(encoding='utf-8'))['allowed']
             for platform, filename in generator.TARGETS.items():
                 if platform not in allowed:
-                    self.assertFalse((ROOT/'generated'/platform/'skills'/name).exists())
+                    self.assertFalse((ROOT/'generated'/generator.PLATFORM_PATHS[platform]/'skills'/name).exists())
                     continue
-                target = ROOT/'generated'/platform/'skills'/name/filename
+                target = ROOT/'generated'/generator.PLATFORM_PATHS[platform]/'skills'/name/filename
                 frontmatter(target, ROOT)
         self.assertTrue(all(entry['status'] == 'candidate' and entry['behavior_evaluation'] == 'not_run'
                             for entry in catalog['skills']))
@@ -166,12 +168,12 @@ class MigrationTests(unittest.TestCase):
                     self.assertEqual(hashlib.sha256(data).hexdigest(), digest)
                     self.assertEqual(data, (source.parent/rel).read_bytes())
                     for platform in json.loads((path.parent/'ecosystems.json').read_text(encoding='utf-8'))['allowed']:
-                        self.assertEqual(data, (ROOT/'generated'/platform/'skills'/path.parent.name/rel).read_bytes())
+                        self.assertEqual(data, (ROOT/'generated'/generator.PLATFORM_PATHS[platform]/'skills'/path.parent.name/rel).read_bytes())
                 for rel, digest in record['retained_in_original_sha256'].items():
                     self.assertEqual(hashlib.sha256((source.parent/rel).read_bytes()).hexdigest(), digest)
 
     def test_bundle_links_resolve_in_each_target(self):
-        for root in [ROOT, *(ROOT/'generated'/platform/'skills' for platform in generator.TARGETS)]:
+        for root in [ROOT, *(ROOT/'generated'/generator.PLATFORM_PATHS[platform]/'skills' for platform in generator.TARGETS)]:
             self.assertEqual(link_errors(root), [], str(root))
 
     def test_resources_detect_drift_removal_and_unmanaged_collision_without_writes(self):
@@ -220,8 +222,8 @@ class MigrationTests(unittest.TestCase):
             with patch.object(generator, 'ROOT', root), contextlib.redirect_stdout(io.StringIO()):
                 generator.generate()
                 resource.write_bytes(b'new')
-                (root/'generated/codex/skills/sample/asset.bin').unlink()
+                (root/'generated/openai/codex/skills/sample/asset.bin').unlink()
                 generator.generate()
                 generator.generate(check=True)
                 for platform in generator.TARGETS:
-                    self.assertEqual((root/'generated'/platform/'skills/sample/asset.bin').read_bytes(), b'new')
+                    self.assertEqual((root/'generated'/generator.PLATFORM_PATHS[platform]/'skills/sample/asset.bin').read_bytes(), b'new')

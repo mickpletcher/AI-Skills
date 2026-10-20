@@ -12,7 +12,7 @@ Put a skill under the platform that owns it.
 Examples:
 
 - Claude skills go under `claude/`
-- ChatGPT skills go under `chatgpt/`
+- OpenAI targets share `openai/`: ChatGPT skills go under `openai/chatgpt/` and Codex skills under `openai/codex/`
 - GitHub Copilot skills go under `copilot/`
 - Gemini skills go under `gemini/`
 - Perplexity skills go under `perplexity/`
@@ -60,7 +60,9 @@ claude/
         `-- skill-name.skill
 ```
 
-Apply the same idea to `chatgpt/` and `copilot/`, using the file formats those platforms expect.
+Apply the same idea to `openai/chatgpt/` and `copilot/`, using the file formats those platforms expect.
+
+OpenAI is an organizational parent. Logical target IDs remain `chatgpt` and `codex`; do not merge their instruction formats or suitability rules. Generated candidates mirror the grouping under `generated/openai/<target>/skills/`. Adapter lookup uses `adapters/openai/<target>/<skill>/append.md`. Other ecosystem paths are unchanged.
 
 ## Beginner Implementation Rule
 

@@ -13,7 +13,9 @@ python tools/generate_master_skills.py --check --model-profile your-reviewed-pro
 
 Non-baseline builds go to `generated-models/<profile-id>/<ecosystem>/skills/`, isolated from the committed baseline. The profile name must match an existing validated file; future model names are never guessed. These commands perform deterministic local generation only, with no API client, network, installation, or evaluation. Do not add secrets or personal outputs to profiles or generated bundles.
 
-Each `build-provenance.json` records the content-addressed master bundle revision, ecosystem adapter path/hash (or explicit absence), model profile ID/hash, provider/model identity, generator/helper hashes, and unverified promotion/evaluation state. All generated files have hash ownership checks; manual edits block regeneration rather than being silently discarded. Preserve a reviewed prior build before changing its profile if it is an evaluation baseline.
+Each `build-provenance.json` records the content-addressed master bundle revision, ecosystem adapter path/hash (or explicit absence), model profile ID/hash, provider/model identity, generator/helper and ecosystem-path-map hashes, and unverified promotion/evaluation state. All generated files have hash ownership checks; manual edits block regeneration rather than being silently discarded. Preserve a reviewed prior build before changing its profile if it is an evaluation baseline.
+
+OpenAI target IDs remain `chatgpt` and `codex`. Named-profile outputs use `generated-models/<profile>/openai/<target>/skills/`, matching the baseline grouping. This directory change does not widen suitability or establish model capabilities.
 
 ## Reassessment before promotion
 

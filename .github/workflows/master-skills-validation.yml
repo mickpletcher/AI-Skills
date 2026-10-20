@@ -15,6 +15,7 @@ on:
       - '.gitattributes'
       - 'tools/generate_master_skills.py'
       - 'tools/skill_repository.py'
+      - 'tools/ecosystem_paths.py'
       - 'schemas/skill-frontmatter.schema.json'
       - 'requirements-dev.txt'
       - '.github/workflows/master-skills-validation.yml'

@@ -44,6 +44,13 @@ class ModelProfileTests(unittest.TestCase):
                 baseline = {p: p.read_bytes() for p in (root/'generated').rglob('*') if p.is_file()}
                 generator.generate(model_profile='synthetic-new-model')
                 generator.generate(check=True, model_profile='synthetic-new-model')
+                for target in ('chatgpt', 'codex'):
+                    candidate = root/'generated-models/synthetic-new-model'/generator.PLATFORM_PATHS[target]/'skills/example-skill'
+                    self.assertTrue(candidate.is_dir())
+                    provenance = json.loads((candidate/'build-provenance.json').read_text())
+                    self.assertEqual(provenance['ecosystem'], target)
+                    self.assertEqual(provenance['promotion'], 'blocked_pending_review')
+                    self.assertFalse((root/'generated-models/synthetic-new-model'/target).exists())
                 folder = root/'generated-models/synthetic-new-model/claude/skills/example-skill'
                 before = json.loads((folder/'build-provenance.json').read_text(encoding='utf-8'))
                 self.assertEqual(before['model_id'], 'fictional-version-2')
@@ -111,9 +118,9 @@ class ModelProfileTests(unittest.TestCase):
                     generator.generate(model_profile=profile)
                     generator.generate(check=True, model_profile=profile)
                     for platform in ('cursor', 'codex'):
-                        self.assertFalse((output/platform/'skills/food-analyzer').exists())
+                        self.assertFalse((output/generator.PLATFORM_PATHS[platform]/'skills/food-analyzer').exists())
                     for platform in ('claude', 'chatgpt'):
-                        self.assertTrue((output/platform/'skills/food-analyzer').is_dir())
+                        self.assertTrue((output/generator.PLATFORM_PATHS[platform]/'skills/food-analyzer').is_dir())
                     decisions = json.loads((output/'target-decisions.json').read_text(encoding='utf-8'))
                     self.assertIn('Explicit user exclusion', decisions['food-analyzer']['skipped']['cursor'])
 

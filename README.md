@@ -72,9 +72,13 @@ If you change a Claude skill:
 3. Rebuild the `.skill` package so the import file matches the source.
 4. Test again in Claude.
 
-### ChatGPT
+### OpenAI
 
-ChatGPT skills in this repo live under `chatgpt/skills/<skill-name>/`.
+OpenAI targets share the [openai/](openai/README.md) parent directory. ChatGPT and Codex keep separate source formats, capabilities and placement rules.
+
+#### ChatGPT
+
+ChatGPT skills in this repo live under `openai/chatgpt/skills/<skill-name>/`.
 
 What to open:
 
@@ -106,6 +110,10 @@ What to expect:
 - `instructions.md` is the editable source
 - `README.md` explains where to paste it and how to test it
 - A custom GPT is usually the safer option because it does not affect unrelated chats
+
+#### Codex
+
+The existing example scaffold lives under `openai/codex/skills/example-skill/`. It is not a shipped catalog entry. Review candidates live under `generated/openai/codex/skills/`; their generation does not install or promote them.
 
 ### GitHub Copilot
 
@@ -222,7 +230,7 @@ Current examples:
 | Platform | Skill folder | Main source file | How you usually apply it |
 | ----- | ----- | ----- | ----- |
 | Claude | `claude/skills/<skill-name>/` | `SKILL.md` | Import or install the `.skill` package, then test in Claude |
-| ChatGPT | `chatgpt/skills/<skill-name>/` | `instructions.md` | Paste into a custom GPT or ChatGPT Custom Instructions |
+| ChatGPT | `openai/chatgpt/skills/<skill-name>/` | `instructions.md` | Paste into a custom GPT or ChatGPT Custom Instructions |
 | Copilot | `copilot/skills/<skill-name>/` | platform instruction file | Paste into the Copilot instruction surface used by that repo or workflow |
 | Gemini | `gemini/skills/<skill-name>/` | `instructions.md` | Paste into a Gemini Gem or equivalent Gemini instruction surface |
 | Perplexity | `perplexity/skills/<skill-name>/` | `SKILL.md` | Paste Markdown directly or upload the skill file, depending on the skill README |
@@ -241,7 +249,7 @@ See [platform installation](docs/installation.md), [dependencies](docs/dependenc
 - `shared/`: repo-wide guidance, standards, and naming rules
 - `templates/`: starter templates for new skills
 - `claude/`: Claude-specific skills, scripts, and metadata
-- `chatgpt/`: ChatGPT-specific instructions, prompts, and schemas
+- `openai/`: OpenAI targets, with separate `chatgpt/` and `codex/` skill folders
 - `copilot/`: GitHub Copilot instructions and prompts
 - `gemini/`: Gemini-specific instructions and Gem-ready skill content
 - `perplexity/`: Perplexity-specific skill files and setup notes

@@ -6,6 +6,7 @@ import json
 import re
 from pathlib import Path
 from skill_repository import frontmatter
+from ecosystem_paths import PLATFORM_PATHS
 from model_profiles import digest, load_profile, load_contract, model_guidance, load_ecosystems, local_tree
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,7 +32,7 @@ def render(source: Path, platform: str) -> str:
     if header is None:
         raise ValueError(f"Missing YAML frontmatter: {source}")
     body = body[:header.end()].rstrip("\n") + "\n" + MARKER + "\n" + body[header.end():]
-    appendix = ROOT / "adapters" / platform / name / "append.md"
+    appendix = ROOT / "adapters" / PLATFORM_PATHS[platform] / name / "append.md"
     suffix = appendix.read_text(encoding="utf-8").strip() if appendix.exists() else ""
     return body.rstrip() + ("\n\n" + suffix if suffix else "") + "\n"
 
@@ -56,10 +57,11 @@ def generate(check: bool = False, model_profile: str = "baseline"):
         for platform, filename in TARGETS.items():
             if platform not in placement["allowed"]:
                 continue
-            folder = output_root / platform / "skills" / source.parent.name
+            folder = output_root / PLATFORM_PATHS[platform] / "skills" / source.parent.name
             expected[folder / filename] = (render(source, platform) + "\n" + model_guidance(profile, contract) + "\n").encode("utf-8")
-            appendix = ROOT / "adapters" / platform / source.parent.name / "append.md"
+            appendix = ROOT / "adapters" / PLATFORM_PATHS[platform] / source.parent.name / "append.md"
             provenance = {"master_revision": bundle_hash, "master_revision_kind": "sha256-bundle", "adapter": str(appendix.relative_to(ROOT)).replace("\\", "/") if appendix.exists() else None, "adapter_sha256": digest(appendix.read_bytes()) if appendix.exists() else None, "model_profile": profile["id"], "model_profile_sha256": profile_hash, "provider": profile["provider"], "model_id": profile["model_id"], "ecosystem": platform, "generator_sha256": digest(Path(__file__).read_bytes()), "profile_loader_sha256": digest(Path(__file__).with_name("model_profiles.py").read_bytes()), "promotion": "blocked_pending_review", "behavior_evaluation": "not_run"}
+            provenance["ecosystem_paths_sha256"] = digest(Path(__file__).with_name("ecosystem_paths.py").read_bytes())
             expected[folder / "build-provenance.json"] = (json.dumps(provenance, sort_keys=True, indent=2) + "\n").encode()
             for path in files:
                 if not path.is_file() or (path == source and filename == "SKILL.md"):
@@ -91,8 +93,10 @@ def generate(check: bool = False, model_profile: str = "baseline"):
         not isinstance(key, str) or not isinstance(value, str)
         or not re.fullmatch(r"[a-f0-9]{64}", value)
         or key.startswith("/") or "\\" in key or ".." in key.split("/")
-        or (key != "target-decisions.json" and (len(key.split("/")) < 4 or key.split("/")[0] not in TARGETS
-        or key.split("/")[1] != "skills"))
+        or (key != "target-decisions.json" and not any(
+            key.startswith(PLATFORM_PATHS[target] + "/skills/")
+            and len(key.split("/")) >= len(PLATFORM_PATHS[target].split("/")) + 3
+            for target in TARGETS))
         for key, value in previous.items()
     ):
         raise ValueError("Invalid generated resource manifest")

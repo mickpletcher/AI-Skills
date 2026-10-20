@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT/'tools'))
+import generate_master_skills as generator
 from model_profiles import load_contract, model_guidance, load_profile
 
 
@@ -68,7 +69,7 @@ class FoundationAuditTests(unittest.TestCase):
         folder = ROOT/'master-skills'/name
         paths = [folder/'SKILL.md']
         for platform in json.loads((folder/'ecosystems.json').read_text(encoding='utf-8'))['allowed']:
-            generated = ROOT/'generated'/platform/'skills'/name
+            generated = ROOT/'generated'/generator.PLATFORM_PATHS[platform]/'skills'/name
             paths.append(generated/('SKILL.md' if platform in ('claude', 'codex') else 'instructions.md'))
             self.assertEqual((folder/'foundation-audit.json').read_bytes(),
                              (generated/'foundation-audit.json').read_bytes())

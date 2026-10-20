@@ -1,6 +1,6 @@
 # Canonical skills
 
-Skills in this directory are platform-independent sources. Each skill uses a `SKILL.md` with YAML frontmatter containing `name` and `description`. Keep platform-specific instructions in `adapters/<platform>/<skill>/append.md`.
+Skills in this directory are platform-independent sources. Each skill uses a `SKILL.md` with YAML frontmatter containing `name` and `description`. Keep platform-specific instructions in `adapters/<target-directory>/<skill>/append.md`; OpenAI target directories are `openai/chatgpt` and `openai/codex`.
 
 Generate outputs with `python tools/generate_master_skills.py`. Run `python tools/generate_master_skills.py --check` in CI to detect drift. Existing platform-owned skills remain untouched until explicitly migrated.
 
@@ -17,6 +17,8 @@ Each new master keeps the original workflow and supported frontmatter, with narr
 `migration.json` records the source commit, original hash and frontmatter, exact wording substitutions, dependency hashes, and original-only files. Scripts, references, schemas, templates, examples, assets, and skill-specific license notices are copied byte-for-byte. Original README/install guidance, `.skill` packages, and maintenance history stay in the unchanged Claude tree and are linked through pinned source READMEs. New candidate READMEs do not claim those packages install the candidates.
 
 ## Complete generated bundles
+
+OpenAI outputs are grouped under `generated/openai/chatgpt/skills/` and `generated/openai/codex/skills/`, mirroring the source layout. Named model builds use the same nested grouping below `generated-models/<profile>/`. Logical IDs remain `chatgpt` and `codex`; all existing suitability and promotion gates remain unchanged.
 
 Generation includes the complete master directory except package archives and Python bytecode caches. ChatGPT/Cursor use `instructions.md` as their entry point and retain a canonical `SKILL.md` companion so internal reference links still resolve. Claude/Codex use the rendered `SKILL.md` entry point. Supporting resource bytes are not rewritten, and `.gitattributes` preserves those bytes on every checkout platform.
 

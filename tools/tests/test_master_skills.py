@@ -1,5 +1,6 @@
 import contextlib
 import io
+import json
 import shutil
 import sys
 import tempfile
@@ -14,6 +15,34 @@ import generate_master_skills as generator
 
 
 class MasterSkillTests(unittest.TestCase):
+    def test_openai_adapter_paths_and_manifest_keys_are_distinct(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for name in ('schemas', 'model-profiles'):
+                shutil.copytree(ROOT/name, root/name)
+            shutil.copytree(ROOT/'master-skills/example-skill', root/'master-skills/example-skill')
+            for target in ('chatgpt', 'codex'):
+                adapter = root/'adapters'/generator.PLATFORM_PATHS[target]/'example-skill/append.md'
+                adapter.parent.mkdir(parents=True)
+                adapter.write_text(f'Only the {target} adapter.\n')
+            with patch.object(generator, 'ROOT', root), contextlib.redirect_stdout(io.StringIO()):
+                generator.generate()
+                generator.generate(check=True)
+            manifest = json.loads((root/'generated/.resource-manifest.json').read_text())
+            for target in ('chatgpt', 'codex'):
+                path = root/'generated'/generator.PLATFORM_PATHS[target]/'skills/example-skill'/generator.TARGETS[target]
+                self.assertIn(f'Only the {target} adapter.', path.read_text())
+                other = 'codex' if target == 'chatgpt' else 'chatgpt'
+                self.assertNotIn(f'Only the {other} adapter.', path.read_text())
+                self.assertIn(path.relative_to(root/'generated').as_posix(), manifest)
+                self.assertFalse((root/'generated'/target).exists())
+            for key in ('openai/unknown/skills/example-skill/SKILL.md', 'chatgpt/skills/example-skill/instructions.md', 'codex/skills/example-skill/SKILL.md'):
+                invalid = dict(manifest, **{key: '0' * 64})
+                (root/'generated/.resource-manifest.json').write_text(json.dumps(invalid))
+                with patch.object(generator, 'ROOT', root), patch.object(Path, 'write_bytes', side_effect=AssertionError('Partial write')):
+                    with self.assertRaisesRegex(ValueError, 'Invalid generated resource manifest'):
+                        generator.generate()
+
     def test_committed_candidates_match_without_writing(self):
         with patch.object(Path, 'write_text', side_effect=AssertionError('Check must not write')), \
              patch.object(Path, 'write_bytes', side_effect=AssertionError('Check must not write')):
@@ -40,6 +69,7 @@ class MasterSkillTests(unittest.TestCase):
     def test_ci_checks_pristine_checkout_and_triggers_on_generated_changes(self):
         workflow = yaml.load((ROOT/'.github/workflows/master-skills-validation.yml').read_text(), Loader=yaml.BaseLoader)
         self.assertIn('generated/**', workflow['on']['pull_request']['paths'])
+        self.assertIn('tools/ecosystem_paths.py', workflow['on']['pull_request']['paths'])
         self.assertIn('tools/tests/test_foundation_audit.py', workflow['on']['pull_request']['paths'])
         self.assertEqual(workflow['permissions'], {'contents': 'read'})
         self.assertIn('main', workflow['on']['push']['branches'])
@@ -50,7 +80,7 @@ class MasterSkillTests(unittest.TestCase):
 
     def test_every_candidate_has_valid_frontmatter(self):
         for platform, filename in generator.TARGETS.items():
-            for target in (ROOT/'generated'/platform/'skills').glob('*/' + filename):
+            for target in (ROOT/'generated'/generator.PLATFORM_PATHS[platform]/'skills').glob('*/' + filename):
                 with self.subTest(target=target):
                     generator.frontmatter(target, ROOT)
                     self.assertTrue(target.read_text().startswith('---\n'))

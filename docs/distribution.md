@@ -2,6 +2,8 @@
 
 ## Reproducible packages
 
+Release preparation includes existing shipped ChatGPT sources from `openai/chatgpt/` and the OpenAI directory guide. The existing `openai/codex/` example scaffold and `generated/` review candidates remain outside the release bundle; regrouping folders does not promote skills.
+
 ```sh
 python tools/skill_repository.py package
 python tools/skill_repository.py catalog

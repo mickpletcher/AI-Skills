@@ -16,6 +16,8 @@ Review the destinations before removing `-WhatIf`. See the [installer documentat
 
 ## ChatGPT
 
+Repository source lives under `openai/chatgpt/skills/`. The `openai/` grouping does not change the target's instruction format or install anything.
+
 Read the skill's `instructions.md`. Copy it into a dedicated custom GPT's instructions when that feature is available, or use a scoped conversation instruction. Custom Instructions affect broader conversations, so review the scope before using that surface. Upload supporting files only when needed and authorized. No API key is needed to read or copy the instructions.
 
 ## Copilot

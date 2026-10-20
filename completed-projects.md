@@ -4,7 +4,7 @@ This file tracks completed repo level project additions that have been moved out
 
 ## ChatGPT Skills Completed
 
-1. `chatgpt/skills/food-analyzer`
+1. `openai/chatgpt/skills/food-analyzer`
 Already built.
 
 ## Claude Skills Completed

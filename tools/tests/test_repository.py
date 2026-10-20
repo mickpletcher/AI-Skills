@@ -33,6 +33,20 @@ class RepositoryTests(unittest.TestCase):
     def test_valid_fixture(self):
         self.assertEqual(self.issues(), [])
 
+    def test_openai_discovery_keeps_target_ids_and_nested_catalog_paths(self):
+        folder = self.root / 'openai/chatgpt/skills/example'
+        folder.mkdir(parents=True)
+        (folder / 'instructions.md').write_bytes(self.source.read_bytes())
+        (folder / 'README.md').write_text('[Source](instructions.md)\n')
+        legacy = self.root / 'chatgpt/skills/obsolete'
+        legacy.mkdir(parents=True)
+        self.assertEqual(self.issues(), [])
+        records = json.loads(repo.generated(self.root)['catalog.json'])['skills']
+        self.assertEqual({r['id'] for r in records}, {'claude/example', 'chatgpt/example'})
+        target = next(r for r in records if r['platform'] == 'chatgpt')
+        self.assertEqual(target['source'], 'openai/chatgpt/skills/example/instructions.md')
+        self.assertEqual(target['installation'], 'docs/installation.md#chatgpt')
+
     def test_empty_repository_and_folder_root_fail(self):
         shutil.rmtree(self.root / 'claude')
         self.assertIn('No skills checked', '\n'.join(self.issues()))

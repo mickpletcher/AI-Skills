@@ -11,9 +11,9 @@ import zipfile
 from pathlib import Path
 import skill_repository as repo
 
-RELEASE_ROOTS = ['claude','chatgpt','copilot','cursor','gemini','perplexity','shared','templates',
+RELEASE_ROOTS = ['claude','openai/chatgpt','copilot','cursor','gemini','perplexity','shared','templates',
                  'docs','tools','evaluations','schemas','specs']
-RELEASE_FILES = ['LICENSE','README.md','CATALOG.md','catalog.json','SHA256SUMS','CONTRIBUTING.md','requirements-dev.txt','changelog.md','completed-projects.md',
+RELEASE_FILES = ['LICENSE','README.md','openai/README.md','CATALOG.md','catalog.json','SHA256SUMS','CONTRIBUTING.md','requirements-dev.txt','changelog.md','completed-projects.md',
                                   'completed-upgrades.md','skill-improvement-assessment.md',
                                   '.github/github-social-preview.jpg','.github/workflow-templates/release.yml',
                                   '.github/workflows/resume-writer-tips-refresh.yml','.github/workflows/validate.yml']

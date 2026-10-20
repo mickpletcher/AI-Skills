@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Evaluated six synthetic scenarios for spec-writer, pihole-csv-analyzer and photo-rename with isolated tool sessions, an audited image rerun and independent file/metric/copy checks. Recorded bounded assistant passes and host limits; human acceptance remains pending. PR stays draft with no merging or promotion.
+
 - Recorded Mick's acceptance of the bounded foundation tool-test results. Broader certification, merging and promotion remain unauthorized; the credential sync limitation remains unverified.
 
 - Completed four fresh isolated tool-enabled skill cases with independent runtime checks: architect feedback and final-file validation, PowerShell retry/scope/analyzer contracts, and a README repair with executed documented commands. Published the bounded assessment and prepared human review; acceptance, expansion, merging and promotion remain pending.

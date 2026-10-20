@@ -62,4 +62,13 @@
 - [x] Complete bounded assistant assessment, preserve intermediate failures and prepare the local human review packet. See the [fresh workflow assessment](../../evaluations/foundation-tool-workflows-2026-10-19.md).
 - [x] Relocate retained private evidence outside the checkout and sync roots after removing the temporary login copy. Clarify the profile-location requirement and include the credential-storage limitation in the private human review packet.
 - [x] Obtain Mick's acceptance of the bounded results for all three skills, confirmed in this chat on 2026-10-19. This does not certify broader host/model/routing coverage or resolve the unverified credential sync status. PR #11 stays draft; merging and promotion remain unauthorized.
-- [ ] Select and scope the next small batch of migrated skills separately.
+- [x] Select and scope the next small batch separately: Mick authorized `spec-writer`, `pihole-csv-analyzer` and `photo-rename` on 2026-10-19.
+
+## Second migration batch
+
+- [x] Prepare six synthetic scenarios with separate assessment criteria and preflight ecosystem placement. Use Codex candidates for spec/CSV and the ChatGPT photo candidate through the CLI only as a behavioral proxy; preserve the photo skill's existing placement exclusions.
+- [x] Complete seven domain captures for six scenarios plus a real shell/file canary with audited client context. Preserve the first preview's image-evidence limit and use an explicit-image rerun for the visual assessment. Remove temporary evaluation logins outside the checkout and sync roots.
+- [x] Independently verify metrics, actual file effects and preservation of supplied files; assess planning quality, uncertainty and candidate recommendations. Replay the reviewed copy script and verify repeat refusal without file changes.
+- [x] Record results and limits in the [second batch assessment](../../evaluations/migration-batch2-2026-10-19.md). Correct attachment argument parsing and require exact image/prompt audit with five negative regressions. All six scenarios pass bounded assistant review; no demonstrated master instruction defect requires a change.
+- [x] Complete final documentation/quality validation: 72 unit tests, 22 installer regressions, generator drift, 24 offline cases with 99 negative checks, repository/PowerShell quality and exact-case folders passed. Deliver the assessment and fixture through draft PR #11; no skill or placement changes.
+- [ ] Obtain human acceptance of this batch's bounded results. No merging, promotion or expansion of placement is authorized.

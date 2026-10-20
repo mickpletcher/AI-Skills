@@ -71,3 +71,7 @@ The [foundation Linux workflow at the tested commit](https://github.com/mickplet
 ## Fresh tool workflows
 
 The [tool workflow assessment](foundation-tool-workflows-2026-10-19.md) covers four fresh, isolated agent sessions with actual file and shell tools: architect scaffolding, PowerShell deduplication and naming-only scope, and a different README repository. The [revision-2 fixture](fixtures/foundation-tool-workflows.json) contains synthetic tasks and source only. Mick accepted these bounded results on 2026-10-19. This does not authorize merging or promotion. These sessions are separate from both the text-only comparison and Linux artifact replay.
+
+## Second migration batch
+
+The [second batch assessment](migration-batch2-2026-10-19.md) covers six authorized synthetic scenarios for `spec-writer`, `pihole-csv-analyzer` and `photo-rename`. Seven domain captures include a separately audited explicit-image preview rerun. Independent checks confirm CSV metrics, actual copy behavior and preservation of supplied files. All six scenarios pass bounded assistant assessment; human acceptance is pending. Photo testing uses the existing ChatGPT candidate through a CLI behavioral proxy and does not certify native ChatGPT/Claude or change Codex placement. See the [fixture and criteria](fixtures/migration-batch2.json). PR #11 remains draft; no merging or promotion.

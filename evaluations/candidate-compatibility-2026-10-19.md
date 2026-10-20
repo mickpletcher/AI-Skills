@@ -28,6 +28,8 @@ Initial local Astropy provisioning failed because the package-file host could no
 
 The generic validator originally rejected eight of the 12 Codex candidates for their `version` field. All 12 corrected entrypoints pass. The 88-test repository suite passed locally. Final helper resource changes are additionally checked by the helper runtime fixture, regeneration/provenance checks and hosted validation. The source-hash inventory and every ecosystem exclusion remain unchanged.
 
+All 12 hosted jobs passed for `24c20b4962899046febcf32765b622ce5eadb2a0`: [repository validation](https://github.com/mickpletcher/AI-Skills/actions/runs/39373559643), [helper runtime](https://github.com/mickpletcher/AI-Skills/actions/runs/39373559695), [generator drift](https://github.com/mickpletcher/AI-Skills/actions/runs/39373559669), [installers](https://github.com/mickpletcher/AI-Skills/actions/runs/39373559626) and [foundation Linux replay](https://github.com/mickpletcher/AI-Skills/actions/runs/39373559696). The decoded helper log confirms eight methods passed with no skips, including actual compressed FITS parsing and malformed-input handling. Hosted Python 3.12.10 used Astropy 8.0.2, Pillow 12.3.0, PyYAML 6.0.3 and NumPy 2.5.4. This resolves real FITS runtime coverage on that runner; native integrations remain mocked.
+
 ## Behavioral continuation
 
 The nine previously exercised domain skills retain their existing records. The next round targets the other 26 domain skills, including IdeaForge and Proxmox, which have helper/static checks but no behavioral captures. Only allowed generated candidates are used. Conversational candidates tested through CLI are labeled proxies and do not establish Codex placement or native ChatGPT/Claude support.

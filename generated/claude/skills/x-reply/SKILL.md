@@ -69,6 +69,7 @@ Generate the reply immediately. No clarifying questions first.
 - Never start with reflexive openers like `Great question!`, `Thanks!`, or `Appreciate that!`
 - Always show character count after the reply in `[X / 280 characters]` format
 - First person, confident, and conversational
+- Confirm only behavior established by the supplied thread. A preview before a move does not prove that originals remain unchanged; state the missing verification instead of answering with an unsupported guarantee.
 
 ## Tone by Reply Type
 

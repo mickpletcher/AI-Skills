@@ -1,5 +1,7 @@
 # Remaining-skill behavioral round
 
+Status: 52 initial cases and 34 targeted follow-ups completed. See the [assessment](migration-batch4-2026-10-20.md), [initial fixture/results](fixtures/migration-batch4.json) and [separate follow-ups](fixtures/migration-batch4-followup.json). Failures and fixture/control corrections are retained; acceptance remains pending.
+
 Mick authorized the remaining-skill round after the Codex frontmatter and helper checks. It covers the 26 domain skills without prior behavioral captures, with one supplied-evidence task and one boundary/missing-input task each: 52 sessions plus a shell/file canary. Preparation and completed sessions are distinct; results and acceptance must be recorded separately.
 
 The scope includes alpaca-trading, astrophotography-processing, blog-post, blog-to-social, container-home, crypto-listings, crypto-research, facebook-post, facebook-reply, fitness-log, fitness-programming, food-analyzer, idea-forge, linkedin-post, market-brief, obsidian-workout-export, patentforge-provisional, pihole-blocklist, proxmox-lxc, resume-writer, travel-itinerary, travel-planning, travel-research, website-content, x-post and x-reply.

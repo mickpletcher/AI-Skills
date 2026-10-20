@@ -13,7 +13,9 @@
   "original_authoring_model": null,
   "behavior_evaluations": [],
   "host_compatibility": "unverified",
-  "transformations": {},
+  "transformations": {
+    "- First person, confident, and conversational": "- First person, confident, and conversational\n- Confirm only behavior established by the supplied thread. A preview before a move does not prove that originals remain unchanged; state the missing verification instead of answering with an unsupported guarantee."
+  },
   "supporting_files_sha256": {},
   "retained_in_original_sha256": {
     "README.md": "75f328bd67749f06618f54277c7c8e94ef82e317a48e331d188b536b6b2d1ca6",

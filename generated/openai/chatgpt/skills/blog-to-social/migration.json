@@ -13,7 +13,9 @@
   "original_authoring_model": null,
   "behavior_evaluations": [],
   "host_compatibility": "unverified",
-  "transformations": {},
+  "transformations": {
+    "- 280 characters maximum including hashtags": "- 280 characters maximum including hashtags\n- Measure the final X text with an available counter after the last edit before reporting an exact character count. Exclude the count annotation. If a counter is unavailable, label the count unverified rather than inventing a number."
+  },
   "supporting_files_sha256": {},
   "retained_in_original_sha256": {
     "README.md": "0a49ca1dea6bd24cd4edb1c6233f53c2cba3282f384f5bd54c35252e0767bb45",

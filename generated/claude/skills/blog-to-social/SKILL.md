@@ -46,6 +46,7 @@ Read the blog post once, extract the strongest raw material, and produce platfor
 ### X
 
 - 280 characters maximum including hashtags
+- Measure the final X text with an available counter after the last edit before reporting an exact character count. Exclude the count annotation. If a counter is unavailable, label the count unverified rather than inventing a number.
 - Lead with the strongest detail first
 - Use 2 to 3 hashtags
 - Include the URL only if it fits cleanly

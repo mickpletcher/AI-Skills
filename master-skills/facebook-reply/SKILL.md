@@ -257,6 +257,7 @@ Output only the reply text, ready to paste into Facebook. No labels, no explanat
 - Do not use the same stock response across a batch of comments
 - Do not escalate hostile or off-topic threads
 - Do not forget the original post context when it changes how the reply should land
+- Confirm only properties established by the supplied post or thread. If a question asks about an unverified property, separate what is known from what needs checking. A preview before a move establishes order, not that originals remain unchanged.
 
 ## Validation Checklist
 

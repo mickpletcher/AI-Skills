@@ -134,10 +134,11 @@ Before finishing any section, replace unbacked claims with evidence:
 - every capability claim should point to a project, repo, number, or outcome from the source material
 - prefer "automated reporting across 4,000+ endpoints" over "extensive automation experience"
 - if a claim has no available proof, cut it or scope it down rather than leaving it vague
+- do not turn an operation sequence into an unverified safety guarantee: a preview before a move does not establish that the preview leaves originals unchanged
 
 ## Copy Length Variants
 
-When layout constraints are unknown or the user asks, provide the same section in two lengths: a `concise` version (1 to 2 sentences per block, suitable for cards and hero sections) and a `detailed` version (full paragraphs for dedicated pages). Both must carry the same facts; the concise version cuts context, not specifics.
+When layout constraints are unknown and the user has not requested a single length, return both labeled versions of each section: `Concise` (1 to 2 sentences per block) and `Detailed` (full paragraphs). Also provide both when the user asks for variants. A single unlabeled draft does not satisfy this default. If the user explicitly requests one length, honor that request. Both versions must carry the same facts; concise copy cuts context, not specifics.
 
 ## SEO Patterns
 

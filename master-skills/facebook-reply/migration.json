@@ -13,7 +13,9 @@
   "original_authoring_model": null,
   "behavior_evaluations": [],
   "host_compatibility": "unverified",
-  "transformations": {},
+  "transformations": {
+    "- Do not forget the original post context when it changes how the reply should land": "- Do not forget the original post context when it changes how the reply should land\n- Confirm only properties established by the supplied post or thread. If a question asks about an unverified property, separate what is known from what needs checking. A preview before a move establishes order, not that originals remain unchanged."
+  },
   "supporting_files_sha256": {},
   "retained_in_original_sha256": {
     "README.md": "4d5f7a68754d9a4ad01b21a6c5325feb3e4359110640fcd19986749801d84b3b",

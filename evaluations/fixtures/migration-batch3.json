@@ -294,5 +294,149 @@
     "scope": "Independent pure policy and embedded code replay with mocked input/state only"
   },
   "human_acceptance": "pending",
-  "temporary_auth_absent": true
+  "temporary_auth_absent": true,
+  "validator_followup": {
+    "assessment": "evaluations/itinerary-validator-2026-10-19.md",
+    "candidate_helper_sha256": "23ad3c3c8483887d569908db61643b350758276d6b8b4bd0d62058301ec78353",
+    "regression_methods": 5,
+    "powershell_invocations": 10,
+    "unit_tests_passed": 79,
+    "original_captures_unchanged": true,
+    "replay": [
+      {
+        "case": "trip-reconcile",
+        "validator_sha256": "23ad3c3c8483887d569908db61643b350758276d6b8b4bd0d62058301ec78353",
+        "html_sha256": "38cdf527597aabb7bb9e6f4846e8a51bcd80c4df51eb158a4b81dbdd26d2251a",
+        "contacts_sha256": "0bd4fcb2a9b41d85679b024f7a26ee8594d63a51a2397f2f9c5030f2d1a3700b",
+        "exit_code": 0,
+        "output": "Errors: 0\nWarnings: 0",
+        "original_artifacts_unchanged": true
+      },
+      {
+        "case": "trip-secrets",
+        "validator_sha256": "23ad3c3c8483887d569908db61643b350758276d6b8b4bd0d62058301ec78353",
+        "html_sha256": "ca51bf1d73332d3d3366b50ee1ff1f415db891b5c93fa0fcf81aedf53515907e",
+        "contacts_sha256": "8d04c6fee683d4217db770231b09a167dab337f9f2975a597b7c72d8a1eb3351",
+        "exit_code": 0,
+        "output": "Errors: 0\nWarnings: 0",
+        "original_artifacts_unchanged": true
+      }
+    ],
+    "renderer_archive_sha256": "ab1151f210b4e6bb7aa7a79e91a67e8ddb760094c107bfda55241b6aaefe7d53",
+    "renders": [
+      {
+        "case": "trip-reconcile",
+        "width": 1280,
+        "source_html_sha256": "38cdf527597aabb7bb9e6f4846e8a51bcd80c4df51eb158a4b81dbdd26d2251a",
+        "render_html_sha256": "95da801a8b59eee7236ce0ed7adc9043f77062b40d820313a1d80258b3ad82fe",
+        "pdf_sha256": "1379c97f826621e08af6a9615e33f122b6470a2ac799086a7d88e838e93370ed",
+        "renderer": "WeasyPrint 70.0 official Windows standalone",
+        "allowed_resource_protocols": [
+          "data"
+        ],
+        "media": "screen; supplied max-width rules resolved explicitly for selected width; reduced motion enabled",
+        "pdf": "trip-reconcile-1280.pdf",
+        "log": "trip-reconcile-1280.log"
+      },
+      {
+        "case": "trip-reconcile",
+        "width": 390,
+        "source_html_sha256": "38cdf527597aabb7bb9e6f4846e8a51bcd80c4df51eb158a4b81dbdd26d2251a",
+        "render_html_sha256": "5f6ff20d7b61ea7a513a82f72a22a8ec6c1c3f07a1c988d020abc7317a66e73c",
+        "pdf_sha256": "4de6752b5d3debe96a8134e5b2de7435aa6cf52dcc211bd2dc458d1bca4f3175",
+        "renderer": "WeasyPrint 70.0 official Windows standalone",
+        "allowed_resource_protocols": [
+          "data"
+        ],
+        "media": "screen; supplied max-width rules resolved explicitly for selected width; reduced motion enabled",
+        "pdf": "trip-reconcile-390.pdf",
+        "log": "trip-reconcile-390.log"
+      },
+      {
+        "case": "trip-secrets",
+        "width": 1280,
+        "source_html_sha256": "ca51bf1d73332d3d3366b50ee1ff1f415db891b5c93fa0fcf81aedf53515907e",
+        "render_html_sha256": "3d696722117816374aee973cfffcded632ed2ff52d5c2c8e3525836d40623b3c",
+        "pdf_sha256": "18d96470490aff40a1658d101253b63d91c1258d404d0a8e6fab802c5f2b1a1b",
+        "renderer": "WeasyPrint 70.0 official Windows standalone",
+        "allowed_resource_protocols": [
+          "data"
+        ],
+        "media": "screen; supplied max-width rules resolved explicitly for selected width; reduced motion enabled",
+        "pdf": "trip-secrets-1280.pdf",
+        "log": "trip-secrets-1280.log"
+      },
+      {
+        "case": "trip-secrets",
+        "width": 390,
+        "source_html_sha256": "ca51bf1d73332d3d3366b50ee1ff1f415db891b5c93fa0fcf81aedf53515907e",
+        "render_html_sha256": "c81a186cdf8deaa154aaa4f1e569030aad931260ac5e6c499e81d8f0880a78d8",
+        "pdf_sha256": "bad5de949179cac4f37733ff42e60c90bb99481498e33a84f5245d107742c22b",
+        "renderer": "WeasyPrint 70.0 official Windows standalone",
+        "allowed_resource_protocols": [
+          "data"
+        ],
+        "media": "screen; supplied max-width rules resolved explicitly for selected width; reduced motion enabled",
+        "pdf": "trip-secrets-390.pdf",
+        "log": "trip-secrets-390.log"
+      }
+    ],
+    "raster_checks": [
+      {
+        "file": "trip-reconcile-1280.pdf",
+        "png": "trip-reconcile-1280.png",
+        "contact": "trip-reconcile-1280-contact.png",
+        "image_size": [
+          1280,
+          5935
+        ],
+        "tiles": 4,
+        "text_characters": 11159,
+        "horizontal_overflow_characters": 0,
+        "overflow_extent_pt": 0
+      },
+      {
+        "file": "trip-reconcile-390.pdf",
+        "png": "trip-reconcile-390.png",
+        "contact": "trip-reconcile-390-contact.png",
+        "image_size": [
+          390,
+          10819
+        ],
+        "tiles": 7,
+        "text_characters": 11304,
+        "horizontal_overflow_characters": 46,
+        "overflow_extent_pt": 21.66607666015625
+      },
+      {
+        "file": "trip-secrets-1280.pdf",
+        "png": "trip-secrets-1280.png",
+        "contact": "trip-secrets-1280-contact.png",
+        "image_size": [
+          1280,
+          5266
+        ],
+        "tiles": 4,
+        "text_characters": 9388,
+        "horizontal_overflow_characters": 0,
+        "overflow_extent_pt": 0
+      },
+      {
+        "file": "trip-secrets-390.pdf",
+        "png": "trip-secrets-390.png",
+        "contact": "trip-secrets-390-contact.png",
+        "image_size": [
+          390,
+          9289
+        ],
+        "tiles": 6,
+        "text_characters": 9527,
+        "horizontal_overflow_characters": 0,
+        "overflow_extent_pt": 0
+      }
+    ],
+    "visual_assessment": "Three bounded offline passes; reconciliation at 390px clips table status cells. Renderer lacks overflow-x scrolling. Native phone gate remains open.",
+    "human_acceptance": "pending",
+    "shipped_skills_packages_unchanged": true
+  }
 }

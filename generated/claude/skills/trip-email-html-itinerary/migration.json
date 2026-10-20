@@ -37,5 +37,11 @@
     "completedchanges.md": "d9d1ea8d133cf26a019a703fe250a6677103543fbc295fe294b6bd08f9565ba9",
     "trip-email-html-itinerary.skill": "ca55871949919c4991b51531829c1839f4312d60d0cbf918559d3a643d746a43",
     "upgrades.md": "94d806a24798adecb96bba3e23fde058322134e8d8f725a4ff5dedb5e4364d50"
+  },
+  "supporting_file_overrides": {
+    "scripts/Test-ItineraryHtml.ps1": {
+      "sha256": "23ad3c3c8483887d569908db61643b350758276d6b8b4bd0d62058301ec78353",
+      "reason": "Candidate-only correction for the batch-3 unknown-address map-link false positive. Original source hash and shipped helper remain unchanged; see evaluations/itinerary-validator-2026-10-19.md."
+    }
   }
 }

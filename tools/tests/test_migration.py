@@ -163,10 +163,20 @@ class MigrationTests(unittest.TestCase):
                 actual = {p.relative_to(source.parent).as_posix() for p in source.parent.rglob('*')
                           if p.is_file() and p != source}
                 self.assertEqual(actual, set(record['supporting_files_sha256']) | set(record['retained_in_original_sha256']))
+                overrides = record.get('supporting_file_overrides', {})
+                self.assertLessEqual(set(overrides), set(record['supporting_files_sha256']))
                 for rel, digest in record['supporting_files_sha256'].items():
                     data = (path.parent/rel).read_bytes()
-                    self.assertEqual(hashlib.sha256(data).hexdigest(), digest)
-                    self.assertEqual(data, (source.parent/rel).read_bytes())
+                    self.assertEqual(hashlib.sha256((source.parent/rel).read_bytes()).hexdigest(), digest)
+                    if rel in overrides:
+                        override = overrides[rel]
+                        self.assertEqual(set(override), {'sha256', 'reason'})
+                        self.assertTrue(isinstance(override['reason'], str) and override['reason'].strip())
+                        self.assertNotEqual(override['sha256'], digest)
+                        self.assertEqual(hashlib.sha256(data).hexdigest(), override['sha256'])
+                    else:
+                        self.assertEqual(hashlib.sha256(data).hexdigest(), digest)
+                        self.assertEqual(data, (source.parent/rel).read_bytes())
                     for platform in json.loads((path.parent/'ecosystems.json').read_text(encoding='utf-8'))['allowed']:
                         self.assertEqual(data, (ROOT/'generated'/generator.PLATFORM_PATHS[platform]/'skills'/path.parent.name/rel).read_bytes())
                 for rel, digest in record['retained_in_original_sha256'].items():

@@ -66,10 +66,16 @@ foreach ($href in $hrefs) {
 $addressBlocks = [regex]::Matches($html, '(?is)<div\s+class=["'']info-card-address["''].*?</div>')
 if ($addressBlocks.Count -eq 0) { Add-Error 'No plain-text address blocks found.' }
 
+$supportedAddressBlocks = @($addressBlocks | Where-Object {
+    $address = $_.Value -replace '(?is)^<div[^>]*>\s*(?:<strong\b[^>]*>.*?</strong>\s*[·:]?\s*)?', ''
+    $address = [System.Net.WebUtility]::HtmlDecode(($address -replace '<[^>]+>', ' ')).Trim()
+    $address -notmatch '^Address\s+pending\s*(?:\p{Pd}\s*)?verify\s+before\s+travel\b'
+})
+
 $appleMapLinks = [regex]::Matches($html, '(?i)href=["'']https://maps\.apple\.com/[^"'']+["'']').Count
 $googleMapLinks = [regex]::Matches($html, '(?i)href=["'']https://www\.google\.com/maps/search/[^"'']+["'']').Count
-if ($appleMapLinks -lt $addressBlocks.Count) { Add-Warning 'Some addresses do not have Apple Maps links.' }
-if ($googleMapLinks -lt $addressBlocks.Count) { Add-Warning 'Some addresses do not have Google Maps links.' }
+if ($appleMapLinks -lt $supportedAddressBlocks.Count) { Add-Warning 'Some addresses do not have Apple Maps links.' }
+if ($googleMapLinks -lt $supportedAddressBlocks.Count) { Add-Warning 'Some addresses do not have Google Maps links.' }
 
 if ($html -match '(?i)\b(?:PIN|CVV|CVC|password|access\s+code)\b\s*[:#=-]\s*(?!\[redacted\])\S+') {
     Add-Error 'Possible unredacted secret found.'

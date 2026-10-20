@@ -1,6 +1,6 @@
 # Third migration batch, 2026-10-19
 
-Mick authorized the [six scoped cases](migration-batch3-scope.md) for `github-social-preview`, `n8n-workflow` and `trip-email-html-itinerary`. All six sessions completed. Four cases pass bounded assistant review. Both itinerary cases have an outstanding visual gate; the redaction case also exposed a strict-validator defect. This batch is not fully passed or accepted. PR #11 remains draft; no merging, installation, promotion or placement change.
+Mick authorized the [six scoped cases](migration-batch3-scope.md) for `github-social-preview`, `n8n-workflow` and `trip-email-html-itinerary`. All six sessions completed. Four cases pass bounded assistant review. The initial itinerary results below exposed a strict-validator defect and open visual gates. The [follow-up](itinerary-validator-2026-10-19.md) corrects the candidate helper and completes bounded offline visual review; native phone verification remains open. This batch is not fully passed or accepted. PR #11 remains draft; no merging, installation, promotion or placement change.
 
 ## Inputs and isolation
 
@@ -29,9 +29,9 @@ All supplied files across the six workspaces remain byte-identical. Independent 
 
 `scripts/Test-ItineraryHtml.ps1` counts every `info-card-address` block when demanding Apple/Google map links. In the redaction case all four blocks explicitly say `Address pending — verify before travel`; none provides a verified location. The skill correctly prohibits guessed addresses, so requiring map links for those placeholders conflicts with its fallback behavior. The existing helper's failure and hash are retained in the fixture. This is a helper validation defect, not a redaction failure.
 
-Prepare a candidate-only helper correction with a regression for unknown addresses and negative coverage proving supported addresses still require appropriate links. Preserve migration provenance and shipped skill/package bytes; no helper or skill change was made in this assessment. Do not bypass strict validation or add unrelated links to make the result green.
+The initial assessment made no helper change. The subsequent [candidate correction and visual review](itinerary-validator-2026-10-19.md) fixes this defect with executable regressions and explicit resource provenance. Both unchanged itineraries now pass strict replay with zero errors and zero warnings. The original capture and failure above remain historical evidence.
 
-Browser security policy rejected opening the local HTML files because `file:` URLs are not allowed. No alternative browser route was used. A standalone HTML renderer was not available in the preprovisioned runtime. Browser visual, phone/Apple Notes and print-render verification remain incomplete; static CSS presence is not a visual pass.
+Browser security policy rejected opening the local HTML files because `file:` URLs are not allowed. No alternative browser route was used. A standalone renderer was subsequently provisioned for four offline visual checks. Three show bounded visual passes; the reconciliation phone-width table clips in that renderer, which does not support its horizontal scrolling. Native phone/Apple Notes and print verification remain incomplete. See the follow-up for exact bounds and evidence.
 
 The n8n repair explicitly leaves linked-item behavior through loops, exact node schemas, Code-node delay support, notification integration and durable cross-execution conflict handling for an authorized version-pinned engine test. Its mocked execution cannot establish those properties. No production activation or infrastructure connection occurred.
 

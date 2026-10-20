@@ -1,5 +1,7 @@
 # Second native batch corrections
 
+The human numeric path left unexercised in this historical repair run was subsequently tested in [two fresh native repetitions](native-human-numeric-2026-10-20.md). Delivery and arithmetic pass bounded checks; substantive scoring consistency remains unresolved. The qualitative result below remains unchanged.
+
 Mick requested fixes and reruns of the three failures in the [second native batch](native-batch2-2026-10-20.md). PR #11 remains draft. No skills were installed, merged, promoted or moved to additional ecosystems. Original failures remain recorded.
 
 ## Candidate corrections

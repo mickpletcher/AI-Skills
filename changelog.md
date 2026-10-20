@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Tested native human numeric resume scoring in two fresh chats with unchanged candidates. Four downloaded ledgers reconcile with the displayed audits and exact calculator. Retained substantive consistency concerns: the identical original scores 54.5 versus 71.4 with changing principle coverage/category assignments. Updated evidence and follow-up checklist; no rubric acceptance, merging or promotion.
+
 - Corrected candidate resume score/severity reconciliation and library attribution, added a deterministic ledger calculator, and reserved social-preview language-badge space. Added eight scoring and three footer regressions. Replayed three failed native cases plus a fresh JSON format correction; three final bounded passes retain original/intermediate failures and the unexercised human numeric path. No installation, merging or promotion; PR remains draft.
 
 - Recorded acceptance of the bounded first native-writing batch. Completed six native file/output cases plus two delivery follow-ups with actual ZIP, Markdown and JPEG verification. Retained two resume scoring/attribution failures and one social-preview layout collision; three cases passed bounded review. Added remediation tasks without changing candidates or shipped skills. PR stays draft with no merging or promotion.

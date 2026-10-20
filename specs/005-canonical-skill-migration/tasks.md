@@ -133,3 +133,9 @@
 - [x] Correct social-preview tag/language-badge overlap, add a layout regression and rerun the long-title native case. Three rendering regressions pass. Actual 1280x640, 98,802-byte JPEG has separated topic pills and Python badge; truncation is disclosed.
 - [x] Validate and publish the bounded assessment through draft PR #11. Repository/PowerShell quality (46 skills, zero issues), generator drift and 24 offline cases/99 negative checks passed. No candidate/source changes, installation, merging, placement expansion or promotion; hosted delivery checks are tracked on the PR commit.
 - [ ] Obtain separate human acceptance of the second native batch.
+
+## Native human numeric scoring continuation
+
+- [x] Test the previously unexercised human numeric path in two fresh native chats using unchanged candidates and identical synthetic resume/task inputs. Independently check actual ZIPs, four ledgers, source citations, displayed category/severity values and calculator outputs. Both runs pass bounded delivery/reconciliation checks. See the [assessment](../../evaluations/native-human-numeric-2026-10-20.md).
+- [x] Assess repeatability separately from arithmetic. The identical original scores 54.5 versus 71.4 across verdict bands. Record changing principle selection, unconstrained common-pattern category assignment and possible duplicate timeline penalties. Preserve prior failures/fallbacks; do not treat this as rubric acceptance.
+- [ ] Define stable scored principle coverage, common-pattern category mapping and overlapping-finding/missing-evidence treatment, then repeat the same-original native scoring test. No candidate changes were made during this assessment-only continuation.

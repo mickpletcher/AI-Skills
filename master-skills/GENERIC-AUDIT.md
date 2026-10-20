@@ -99,3 +99,7 @@ Mick then accepted the bounded first native-writing results on 2026-10-20. The [
 ## Second native batch corrections
 
 The [repair assessment](../evaluations/native-batch2-repairs-2026-10-20.md) records deterministic resume score/source reconciliation, an actual footer geometry regression and four fresh native reruns. Three final cases pass bounded review, with the intermediate JSON format failure retained. Human resume output used the explicit qualitative fallback; native human numeric scoring remains unexercised. Original native failures remain recorded, acceptance is pending and candidates remain unpromoted.
+
+## Native human numeric scoring assessment
+
+[Two fresh native human numeric runs](../evaluations/native-human-numeric-2026-10-20.md) exercise the previously untested delivery path with unchanged candidate resources. Four actual ledgers pass independent arithmetic/source/display checks. The same original scores 54.5 versus 71.4, revealing unstable assessed scope and common-pattern category choices. Numeric delivery is exercised; substantive rubric consistency and acceptance remain open. Prior failures/fallbacks remain recorded. No installation, merging or promotion.

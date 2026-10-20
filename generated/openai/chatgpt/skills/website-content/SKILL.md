@@ -133,6 +133,8 @@ Before finishing any section, replace unbacked claims with evidence:
 - every capability claim should point to a project, repo, number, or outcome from the source material
 - prefer "automated reporting across 4,000+ endpoints" over "extensive automation experience"
 - if a claim has no available proof, cut it or scope it down rather than leaving it vague
+- first-person copy must not invent the author's motives, private thoughts or personal experience; use supplied facts or neutral project framing
+- preserve who performed each action: building a project does not establish that its author personally conducted a test. If the source does not identify the tester, use neutral wording such as an internal test used 12 files instead of I tested it
 - do not turn an operation sequence into an unverified safety guarantee: a preview before a move does not establish that the preview leaves originals unchanged
 
 ## Copy Length Variants

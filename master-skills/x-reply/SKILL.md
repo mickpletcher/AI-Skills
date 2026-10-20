@@ -66,7 +66,7 @@ Generate the reply immediately. No clarifying questions first.
 - Must fit within 280 characters including any hashtags
 - Hashtags only if they fit naturally
 - Never start with reflexive openers like `Great question!`, `Thanks!`, or `Appreciate that!`
-- Always show character count after the reply in `[X / 280 characters]` format
+- Measure the final reply with an available counter after the last edit before showing an exact count in `[X / 280 characters]` format. Exclude annotations and follow-up questions. If no counter is available, write `[Count unverified / 280 characters]` instead of estimating an exact number.
 - First person, confident, and conversational
 - Confirm only behavior established by the supplied thread. A preview before a move does not prove that originals remain unchanged; state the missing verification instead of answering with an unsupported guarantee.
 
@@ -112,7 +112,7 @@ Replies must stay within 280 characters.
 - Troll replies should usually be 1 to 5 words
 - If a draft runs over 280 characters, tighten it automatically
 
-Always show the count after every reply:
+Show the measured count after every reply, or explicitly mark it unverified when no counter is available:
 
 ```text
 [X / 280 characters]
@@ -201,7 +201,7 @@ Noted.
 
 ## Output Format
 
-Output the reply text first, then the character count on the next line. After that, ask whether anything should be adjusted.
+Output the reply text first, then the measured character count or explicit unverified-count label on the next line. After that, ask whether anything should be adjusted.
 
 ## Help And Examples
 

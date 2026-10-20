@@ -62,3 +62,7 @@ Across the 52 initial and 34 follow-up domain captures, supplied files remain un
 The four corrected masters and their allowed Claude/ChatGPT review copies change, with exact original-source transformations preserved. Shipped skills/packages, ecosystem decisions and model profiles remain unchanged. Existing native photo/third-batch acceptance and the deferred phone gate remain separate. All 35 domain masters now have some bounded behavioral captures; this does not certify all hosts, models, helper environments, routing or real-world decisions. Human acceptance and promotion remain blocked.
 
 Final clean-snapshot validation passed nine migration regressions, generated-resource drift checks, repository/PowerShell quality (46 skills, zero issues) and 24 offline contract cases with 99 negative checks. The compatibility/helper commit already passed all 12 hosted jobs, including both 88-test repository jobs and eight helper methods without skips. Hosted checks for this behavioral delivery are reported on its PR commit.
+
+## Subsequent bounded acceptance
+
+Mick accepted these bounded behavioral results on 2026-10-20 and authorized [targeted native testing](native-writing-2026-10-20.md). The acceptance retains every original failure, fixture limit and follow-up restriction above. It does not certify new native results, approve wider host/model/routing coverage or authorize installation, merging, placement expansion or promotion. The earlier pending statements describe the assessment before this acceptance event.

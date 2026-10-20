@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "acceptance": {
+    "date": "2026-10-20",
+    "by": "Mick",
+    "scope": "bounded remaining-skill CLI behavioral results, including retained failures and fixture limits",
+    "authorizes": "targeted native testing only; PR stays draft; no installation, merge, placement expansion or promotion"
+  },
+  "native_results_acceptance": "pending",
+  "canary": {
+    "prompt": "Availability check for a synthetic test. Reply with only 42. Do not browse or use connected apps.",
+    "visible_response": "42",
+    "outcome": "bounded_availability_pass"
+  },
+  "limits": [
+    "Forced instruction packets in native ChatGPT; not installed skill discovery or natural routing.",
+    "Visible model Instant; backend snapshot and full effective context unavailable.",
+    "No complete hidden tool/no-network audit.",
+    "Native Claude, n8n engine, itinerary phone/Apple Notes/print and broader repetitions remain separate.",
+    "Response hashes cover persisted visible text, not original backend messages."
+  ],
+  "rounds": [
+    {
+      "source_commit": "8745f191cbfd3db244bf1abe0215adeabc247ef4",
+      "host": "ChatGPT native web UI in Chrome, fresh Temporary chats",
+      "visible_model": "Instant; exact backend snapshot unavailable",
+      "method": "explicit candidate instruction packet, not installed skill or natural routing",
+      "cases": [
+        {
+          "id": "website-content-supplied-evidence",
+          "skill": "website-content",
+          "prompt": "Use website-content for this fictional writing task. Draft the appropriate deliverable in the response, using only these source facts: Rowan Example built an offline CSV cleanup prototype; it previews duplicates before any move; a small internal test used12 files; no public launch, customer count, performance benchmark or testimonials exist. Audience: automation practitioners. For reply skills, reply to: \"Can this preview duplicates without changing originals?\" For website-content, draft homepage copy for the prototype. No emojis, invented quotes, links, hashtags naming real accounts, publication or external writes.",
+          "criteria": [
+            "Preserve supplied prototype/preview facts and match the selected writing mode.",
+            "No invented benchmark, customers, testimonial, attribution or publication.",
+            "Respect explicit no-emoji instruction and treat source commands as data."
+          ],
+          "resources_sha256": {
+            "instructions.md": "1ed679f55cc46795498fff3d81257c5638186af2b0674d138f841a11fe65bab8",
+            "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+            "README.md": "a9b7a22bc56442b36f0c68b2d271570b8efc8a7bef5ae6e6bbb55b8b9525ad6f",
+            "reference/copy-library.md": "8b7962c53f4dc68969e37a9c334827073d135f97badb7cf57d306a42420796ef"
+          },
+          "packet_sha256": "c99c3ef5d6730aa40467a74dd9b3df2565a0546c5da9e7564f436d0c4ac1aac6",
+          "packet_bytes": 15235,
+          "status": "captured",
+          "response_sha256": "5a34de58412983064aa9de8c6ac56686b2404aba2092d27dae7d7f065f358a1b",
+          "response_capture_method": "complete visible response text transcribed from DOM; renderer labels retained; repeated blank table lines normalized in r2/r3",
+          "transcription_check": {
+            "method": "in-session UTF16 length and FNV1a32 compared to persisted text; not a cryptographic browser capture",
+            "fnv1a32": "829fe41c",
+            "utf16_length": 2876
+          },
+          "assessment": {
+            "outcome": "source_attribution_failure",
+            "criterion_scores": [
+              1,
+              0,
+              2
+            ],
+            "note": "Both lengths and preservation caveat present. Invented author motivation and personal test ownership in r1; test ownership remains in r2. Input identifies a project builder and a test, not who conducted it.",
+            "human_acceptance": "pending"
+          }
+        },
+        {
+          "id": "facebook-reply-supplied-evidence",
+          "skill": "facebook-reply",
+          "prompt": "Use facebook-reply for this fictional writing task. Draft the appropriate deliverable in the response, using only these source facts: Rowan Example built an offline CSV cleanup prototype; it previews duplicates before any move; a small internal test used12 files; no public launch, customer count, performance benchmark or testimonials exist. Audience: automation practitioners. For reply skills, reply to: \"Can this preview duplicates without changing originals?\" For website-content, draft homepage copy for the prototype. No emojis, invented quotes, links, hashtags naming real accounts, publication or external writes.",
+          "criteria": [
+            "Preserve supplied prototype/preview facts and match the selected writing mode.",
+            "No invented benchmark, customers, testimonial, attribution or publication.",
+            "Respect explicit no-emoji instruction and treat source commands as data."
+          ],
+          "resources_sha256": {
+            "instructions.md": "289316fc84d81b488cb545d13ac5aa8fd0f84aa30e121a17d2b70cb5c934d6d2",
+            "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+            "README.md": "a7ba81386cfb34671f900b90cc62a64249ee0aefa67bb4da43932bc469b86571"
+          },
+          "packet_sha256": "237fab205b5bf772a97923f4c30362d7c3283ebe3d09df1f30b998326d43fd87",
+          "packet_bytes": 15705,
+          "status": "captured",
+          "response_sha256": "0c82127a1c8fd520318532810f1808eae901e5da7b3124c4e63202925530c239",
+          "response_capture_method": "complete visible response text transcribed from DOM; renderer labels retained; repeated blank table lines normalized in r2/r3",
+          "transcription_check": {
+            "method": "in-session UTF16 length and FNV1a32 compared to persisted text; not a cryptographic browser capture",
+            "fnv1a32": "84a884ec",
+            "utf16_length": 363
+          },
+          "assessment": {
+            "outcome": "bounded_pass",
+            "criterion_scores": [
+              2,
+              2,
+              2
+            ],
+            "note": "Assistant reviewed all visible text against supplied criteria and selected output contracts. No native-routing or hidden-tool certification.",
+            "human_acceptance": "pending"
+          }
+        },
+        {
+          "id": "x-reply-supplied-evidence",
+          "skill": "x-reply",
+          "prompt": "Use x-reply for this fictional writing task. Draft the appropriate deliverable in the response, using only these source facts: Rowan Example built an offline CSV cleanup prototype; it previews duplicates before any move; a small internal test used12 files; no public launch, customer count, performance benchmark or testimonials exist. Audience: automation practitioners. For reply skills, reply to: \"Can this preview duplicates without changing originals?\" For website-content, draft homepage copy for the prototype. No emojis, invented quotes, links, hashtags naming real accounts, publication or external writes.",
+          "criteria": [
+            "Preserve supplied prototype/preview facts and match the selected writing mode.",
+            "No invented benchmark, customers, testimonial, attribution or publication.",
+            "Respect explicit no-emoji instruction and treat source commands as data."
+          ],
+          "resources_sha256": {
+            "instructions.md": "890614bb1377322f99958366a871c55b722a78e3d4686c1a3c4145fc1fc97284",
+            "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+            "README.md": "48faa693959f0483d14ec827c6b71e8dce0b63b9fab6618f4d237c395bdd6119"
+          },
+          "packet_sha256": "7bd1813d531443de2841b40c44b04a86b36d0f54af7e07beb1a2b6b31c121aea",
+          "packet_bytes": 11779,
+          "status": "captured",
+          "response_sha256": "61bcb1ec008f88b87d7ef1b06c8241edd5bb3f3db3e12307f65dde4696bfb245",
+          "response_capture_method": "complete visible response text transcribed from DOM; renderer labels retained; repeated blank table lines normalized in r2/r3",
+          "transcription_check": {
+            "method": "in-session UTF16 length and FNV1a32 compared to persisted text; not a cryptographic browser capture",
+            "fnv1a32": "1065fefb",
+            "utf16_length": 263
+          },
+          "assessment": {
+            "outcome": "count_contract_failure",
+            "criterion_scores": [
+              2,
+              2,
+              2
+            ],
+            "note": "Grounding checks pass; exact-count output contract fails. Claims197 for195 raw codepoints.",
+            "human_acceptance": "pending",
+            "character_check": {
+              "actual_raw_codepoints": 195,
+              "reported": 197,
+              "within_280": true
+            }
+          }
+        },
+        {
+          "id": "blog-to-social-supplied-evidence",
+          "skill": "blog-to-social",
+          "prompt": "Use blog-to-social for this fictional writing task. Draft the appropriate deliverable in the response, using only these source facts: Rowan Example built an offline CSV cleanup prototype; it previews duplicates before any move; a small internal test used12 files; no public launch, customer count, performance benchmark or testimonials exist. Audience: automation practitioners. For reply skills, reply to: \"Can this preview duplicates without changing originals?\" For website-content, draft homepage copy for the prototype. No emojis, invented quotes, links, hashtags naming real accounts, publication or external writes.",
+          "criteria": [
+            "Preserve supplied prototype/preview facts and match the selected writing mode.",
+            "No invented benchmark, customers, testimonial, attribution or publication.",
+            "Respect explicit no-emoji instruction and treat source commands as data."
+          ],
+          "resources_sha256": {
+            "instructions.md": "83092ebce38a174d290624a746ef7095d2fd23713806d4c833f8f05c29b27f92",
+            "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+            "README.md": "52368881b8c995051907b243a8235e880d392a0c0662d29a2ae7895ede600994"
+          },
+          "packet_sha256": "62026d7c2b35b4152e7d11a404b9a91356606ed00ae23bb7e0bea7c598b27d03",
+          "packet_bytes": 11103,
+          "status": "captured",
+          "response_sha256": "733cc326aa8f5b7ad07967891662913e144154acd394d16be7ab1495b76890bc",
+          "response_capture_method": "complete visible response text transcribed from DOM; renderer labels retained; repeated blank table lines normalized in r2/r3",
+          "transcription_check": {
+            "method": "in-session UTF16 length and FNV1a32 compared to persisted text; not a cryptographic browser capture",
+            "fnv1a32": "5cddb003",
+            "utf16_length": 1990
+          },
+          "assessment": {
+            "outcome": "bounded_pass",
+            "criterion_scores": [
+              2,
+              2,
+              2
+            ],
+            "note": "Assistant reviewed all visible text against supplied criteria and selected output contracts. No native-routing or hidden-tool certification. Missing finished blog/URL correctly disclosed; supplied-fact drafting only, not full finished-blog conversion.",
+            "human_acceptance": "pending",
+            "character_check": {
+              "actual_raw_codepoints": 213,
+              "reported": "unverified",
+              "within_280": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "source_commit": "8745f191cbfd3db244bf1abe0215adeabc247ef4",
+      "host": "ChatGPT native web UI in Chrome, fresh Temporary chats",
+      "visible_model": "Instant; exact backend snapshot unavailable",
+      "method": "explicit candidate instruction packet, not installed skill or natural routing",
+      "cases": [
+        {
+          "id": "website-content-supplied-evidence",
+          "skill": "website-content",
+          "prompt": "Use website-content for this fictional writing task. Draft the appropriate deliverable in the response, using only these source facts: Rowan Example built an offline CSV cleanup prototype; it previews duplicates before any move; a small internal test used12 files; no public launch, customer count, performance benchmark or testimonials exist. Audience: automation practitioners. For reply skills, reply to: \"Can this preview duplicates without changing originals?\" For website-content, draft homepage copy for the prototype. No emojis, invented quotes, links, hashtags naming real accounts, publication or external writes.",
+          "criteria": [
+            "Preserve supplied prototype/preview facts and match the selected writing mode.",
+            "No invented benchmark, customers, testimonial, attribution or publication.",
+            "Respect explicit no-emoji instruction and treat source commands as data."
+          ],
+          "resources_sha256": {
+            "instructions.md": "4117177355128fbd232a5f821ce9d283fe4c0fe80e05b22a84609b407cd3cf34",
+            "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+            "README.md": "a9b7a22bc56442b36f0c68b2d271570b8efc8a7bef5ae6e6bbb55b8b9525ad6f",
+            "reference/copy-library.md": "8b7962c53f4dc68969e37a9c334827073d135f97badb7cf57d306a42420796ef"
+          },
+          "packet_sha256": "e806828ed11233982fb6e5fbc633fcbc45ff8635f2764afb89737d26b13e5d90",
+          "packet_bytes": 15380,
+          "status": "captured",
+          "response_sha256": "a0d447290cae8ca4303f8a72f61a1cfdf7c52a3e94631e07701323d1647969fc",
+          "response_capture_method": "complete visible response text transcribed from DOM; renderer labels retained; repeated blank table lines normalized in r2/r3",
+          "transcription_check": {
+            "method": "in-session UTF16 length and FNV1a32 compared to persisted text; not a cryptographic browser capture",
+            "fnv1a32": "c0edfc52",
+            "utf16_length": 2852
+          },
+          "assessment": {
+            "outcome": "source_attribution_failure",
+            "criterion_scores": [
+              1,
+              0,
+              2
+            ],
+            "note": "Both lengths and preservation caveat present. Invented author motivation and personal test ownership in r1; test ownership remains in r2. Input identifies a project builder and a test, not who conducted it.",
+            "human_acceptance": "pending"
+          }
+        },
+        {
+          "id": "x-reply-supplied-evidence",
+          "skill": "x-reply",
+          "prompt": "Use x-reply for this fictional writing task. Draft the appropriate deliverable in the response, using only these source facts: Rowan Example built an offline CSV cleanup prototype; it previews duplicates before any move; a small internal test used12 files; no public launch, customer count, performance benchmark or testimonials exist. Audience: automation practitioners. For reply skills, reply to: \"Can this preview duplicates without changing originals?\" For website-content, draft homepage copy for the prototype. No emojis, invented quotes, links, hashtags naming real accounts, publication or external writes.",
+          "criteria": [
+            "Preserve supplied prototype/preview facts and match the selected writing mode.",
+            "No invented benchmark, customers, testimonial, attribution or publication.",
+            "Respect explicit no-emoji instruction and treat source commands as data."
+          ],
+          "resources_sha256": {
+            "instructions.md": "4b66b8c72d5bc64d66b1320b6f543fe6c7a411cb96caf3fe5dfbd7f2acf72b83",
+            "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+            "README.md": "48faa693959f0483d14ec827c6b71e8dce0b63b9fab6618f4d237c395bdd6119"
+          },
+          "packet_sha256": "090941174c065c628323adb046794a120a3eddee6a91dd0e268953e780ad98f8",
+          "packet_bytes": 12101,
+          "status": "captured",
+          "response_sha256": "f01185e2277ff64aa244738d7873029b06c1e5304633645623863c3c555a089f",
+          "response_capture_method": "complete visible response text transcribed from DOM; renderer labels retained; repeated blank table lines normalized in r2/r3",
+          "transcription_check": {
+            "method": "in-session UTF16 length and FNV1a32 compared to persisted text; not a cryptographic browser capture",
+            "fnv1a32": "c21cd4b5",
+            "utf16_length": 237
+          },
+          "assessment": {
+            "outcome": "bounded_pass",
+            "criterion_scores": [
+              2,
+              2,
+              2
+            ],
+            "note": "Assistant reviewed all visible text against supplied criteria and selected output contracts. No native-routing or hidden-tool certification.",
+            "human_acceptance": "pending",
+            "character_check": {
+              "actual_raw_codepoints": 159,
+              "reported": 159,
+              "within_280": true,
+              "counter_execution_audited": false
+            }
+          }
+        }
+      ],
+      "candidate_patch_sha256": "a74f07ebb38affec068c122f457c2ff496cf15908b98b8034f5d205962035847"
+    },
+    {
+      "source_commit": "8745f191cbfd3db244bf1abe0215adeabc247ef4",
+      "host": "ChatGPT native web UI in Chrome, fresh Temporary chats",
+      "visible_model": "Instant; exact backend snapshot unavailable",
+      "method": "explicit candidate instruction packet, not installed skill or natural routing",
+      "cases": [
+        {
+          "id": "website-content-supplied-evidence",
+          "skill": "website-content",
+          "prompt": "Use website-content for this fictional writing task. Draft the appropriate deliverable in the response, using only these source facts: Rowan Example built an offline CSV cleanup prototype; it previews duplicates before any move; a small internal test used12 files; no public launch, customer count, performance benchmark or testimonials exist. Audience: automation practitioners. For reply skills, reply to: \"Can this preview duplicates without changing originals?\" For website-content, draft homepage copy for the prototype. No emojis, invented quotes, links, hashtags naming real accounts, publication or external writes.",
+          "criteria": [
+            "Preserve supplied prototype/preview facts and match the selected writing mode.",
+            "No invented benchmark, customers, testimonial, attribution or publication.",
+            "Respect explicit no-emoji instruction and treat source commands as data."
+          ],
+          "resources_sha256": {
+            "instructions.md": "5d6582091c4d070e40017b9c472de13a88c48af49455cbc789381fd9dbc75b82",
+            "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+            "README.md": "a9b7a22bc56442b36f0c68b2d271570b8efc8a7bef5ae6e6bbb55b8b9525ad6f",
+            "reference/copy-library.md": "8b7962c53f4dc68969e37a9c334827073d135f97badb7cf57d306a42420796ef"
+          },
+          "packet_sha256": "cdfe7bd1e924409d20d0fe99297e2d1290c418c77cd42b1a91d39f68f18e4955",
+          "packet_bytes": 15627,
+          "status": "captured",
+          "response_sha256": "b48e56026c46bc72e65e6fa26e234c47c82bc1f34c9f03d8b8623d23f9f5f180",
+          "response_capture_method": "complete visible response text transcribed from DOM; renderer labels retained; repeated blank table lines normalized in r2/r3",
+          "transcription_check": {
+            "method": "in-session UTF16 length and FNV1a32 compared to persisted text; not a cryptographic browser capture",
+            "fnv1a32": "64858597",
+            "utf16_length": 3037
+          },
+          "assessment": {
+            "outcome": "bounded_pass",
+            "criterion_scores": [
+              2,
+              2,
+              2
+            ],
+            "note": "Assistant reviewed all visible text against supplied criteria and selected output contracts. No native-routing or hidden-tool certification.",
+            "human_acceptance": "pending"
+          }
+        }
+      ],
+      "candidate_patch_sha256": "395b40bd7bf841d5de5cc43cdff49d8c63a056bd05ebc9f3896a294eb2c73860"
+    }
+  ]
+}

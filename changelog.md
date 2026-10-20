@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Recorded Mick's acceptance of bounded remaining-skill results. Ran seven native ChatGPT writing cases, retained count/attribution failures and corrected two candidate contracts with fresh passing observations. Native acceptance, routing and wider host coverage remain separate. PR stays draft with no merging or promotion.
+
 - Completed 52 isolated behavioral cases across the remaining 26 domain skills and 34 targeted follow-ups. Corrected four candidate writing masters for exact counts, evidence-scoped claims and default website length variants. Preserved initial failures, fixture limits and intermediate format gaps. All 35 domain masters now have bounded captures; native certification and human acceptance remain separate. PR stays draft with no promotion.
 
 - Adapted all generated Codex headers to name/description while retaining full source metadata in provenance. Tested remaining helpers with disposable inputs and mocked integrations; corrected image preview collisions/reprocessing, error statuses, resume YAML and scheduled-task replacement. Added a dependency-provisioned Windows helper job and scoped the remaining26 skills for isolated behavioral tests. PR stays draft; no promotion.

@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Completed four fresh isolated tool-enabled skill cases with independent runtime checks: architect feedback and final-file validation, PowerShell retry/scope/analyzer contracts, and a README repair with executed documented commands. Published the bounded assessment and prepared human review; acceptance, expansion, merging and promotion remain pending.
+
 - Require formatting and validation of the exact architect files delivered; regenerate review candidates without promotion. Add hash-pinned synthetic runtime fixtures, a formatter-feedback regression and Linux PowerShell/Python runtime jobs with network-disabled execution and retained evidence. Hosted execution is tracked in the migration checklist.
 
 - Pinned architect nonempty-line semantics and added a focused regression scenario with six runtime oracles. Started offline Windows runtime checks for all three foundational skills; PowerShell/README and counting tests passed, one original scaffold formatting failure was preserved, and a separate format-only repair was verified. Acceptance and promotion remain blocked.

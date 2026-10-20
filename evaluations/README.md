@@ -67,3 +67,7 @@ The injected marker was absent from all 36 outputs. A parse-only check accepted 
 ## Linux runtime continuation
 
 The [foundation Linux workflow at the tested commit](https://github.com/mickpletcher/AI-Skills/blob/d511376b139c51fdb13db3118b4c3e4593084edf/.github/workflows/foundation-runtime.yml) replays reviewed executable excerpts from the earlier captures. Its [fixtures](fixtures/foundation-runtime/projects.json) pin source hashes and omit full model responses and personal context. README narrative is replaced with synthetic packaging/input text; the documented command arguments and supplied implementation are retained. The architect delivery regression requires detection of the original Ruff failure, formatter application, final format/lint/test gates and byte-matched delivery files. See the [Linux assessment](foundation-linux-runtime-2026-10-19.md). This is artifact replay, not a fresh model evaluation or human acceptance.
+
+## Fresh tool workflows
+
+The [tool workflow assessment](foundation-tool-workflows-2026-10-19.md) covers four fresh, isolated agent sessions with actual file and shell tools: architect scaffolding, PowerShell deduplication and naming-only scope, and a different README repository. The [revision-2 fixture](fixtures/foundation-tool-workflows.json) contains synthetic tasks and source only. Bounded assistant review passed; human acceptance remains pending. These sessions are separate from both the text-only comparison and Linux artifact replay.

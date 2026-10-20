@@ -43,7 +43,7 @@
 - [x] Execute both fresh architect scaffolds and both focused regression proposals: 65 generated pytest cases passed; all independent whitespace/error checks passed. Retain one original Ruff formatting failure among 70 Python command checks.
 - [x] Verify a separate one-file, unchanged-AST formatting repair with lint, formatting and all ten affected pytest cases passing. Preserve original failures and exclude corrected harness attempts from model pass counts. See the [runtime assessment](../../evaluations/foundation-runtime-2026-10-19.md).
 - [x] Validate the branch changes in a clean Git-byte snapshot: all 69 Python regressions, generator drift, repository/PowerShell quality, exact-case folders and the 24-case/99-negative-check offline self-test passed.
-- [ ] Complete independent agent file/tool feedback evaluation, remaining PowerShell scenarios and broader README/routing coverage before human acceptance. Linux artifact replay is tracked below. The full revised comparison matrix has not been run.
+- [ ] Complete wider PowerShell/README scenarios, routing coverage and human acceptance. Linux replay and the bounded fresh agent cases are tracked below. The full revised comparison matrix has not been run.
 
 ## Architect delivery and Linux continuation
 
@@ -51,4 +51,13 @@
 - [x] Add reviewed, hash-pinned synthetic executable excerpts and a Linux runtime workflow with network-disabled execution, isolated projects and retained result artifacts. Keep raw model responses and personal context private.
 - [x] Execute Linux PowerShell contracts and Python 3.11 through 3.14 replays for README and architect: nine Pester tests, 312 Python command checks and 65 pytest cases per Python version passed. Require the known original formatting failure, a one-file unchanged-AST repair, passing final gates and matching delivered file hashes.
 - [x] Inspect all five uploaded execution ledgers and delivered files; record hosted results and limits in the [Linux assessment](../../evaluations/foundation-linux-runtime-2026-10-19.md). Fix the release-bundle documentation link found by hosted regression testing.
-- [ ] Independently evaluate the updated skill with actual agent/tool feedback, broader scenarios and human review. Artifact replay does not establish fresh model generation or autonomous agent/tool behavior. Human acceptance and promotion remain blocked.
+- [ ] Complete broader independent agent/tool scenarios and human review. The four fresh cases below establish bounded tool-workflow evidence separately from artifact replay. Human acceptance and promotion remain blocked.
+
+## Fresh tool workflow testing
+
+- [x] Prepare four isolated synthetic cases and verify a real shell/file canary. Pin candidate instructions to `5c0fa9364200c1a48348a809f7533fb4d70bedc8`; audit each session context and remove temporary evaluation credentials after capture.
+- [x] Run a fresh architect agent through real creation, formatter application, failing-test feedback and final gates: 26 pytest cases and 31 independent command checks passed; final Python hashes match its delivery snapshot.
+- [x] Run broader PowerShell deduplication and naming-only cases with repository analyzer settings. Seven and two final Pester tests passed; public metadata and 26 independent baseline probe groups match. Preserve and explain the naming-only case's existing warning.
+- [x] Repair another synthetic repository's README with real file/tool access. Execute all seven documented code blocks and eight independent probes; verify source, tests, dependencies, examples and license are unchanged.
+- [x] Complete bounded assistant assessment, preserve intermediate failures and prepare the local human review packet. See the [fresh workflow assessment](../../evaluations/foundation-tool-workflows-2026-10-19.md).
+- [ ] Obtain Mick's acceptance of these bounded results before expanding testing to the remaining migrated skills. PR #11 stays draft; merging and promotion remain unauthorized.

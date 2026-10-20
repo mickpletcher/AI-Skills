@@ -79,3 +79,7 @@ The [initial runtime phase](../evaluations/foundation-runtime-2026-10-19.md) sub
 The architect master now requires formatter application, final format/lint/test gates and delivery of the validated file contents. All review candidates were regenerated without changing promotion or acceptance metadata. Historical audit provenance is retained with a separately pinned delivery insertion.
 
 The [Linux assessment](../evaluations/foundation-linux-runtime-2026-10-19.md) records passing PowerShell contracts and Python 3.11 through 3.14 artifact replays for all three foundational skills. The original architect formatting failure reproduced, then a one-file unchanged-AST repair passed final gates and delivered-file hash checks. This does not establish independent model/tool behavior or human acceptance.
+
+## Fresh agent tool workflows
+
+Four [fresh tool-enabled cases](../evaluations/foundation-tool-workflows-2026-10-19.md) passed bounded assistant assessment against pinned Codex candidates: a new architect scaffold, PowerShell deduplication and naming-only scope, and a README repair against another synthetic repository. Actual file edits, formatter/test feedback, repository analyzer settings and independent baseline/command checks were exercised. These single-run Windows cases do not establish broader host/model/routing coverage. The local human review packet is prepared; acceptance remains pending, and testing has not expanded to other migrated skills. No promotion metadata changed.

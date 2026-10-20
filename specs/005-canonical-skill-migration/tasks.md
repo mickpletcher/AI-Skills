@@ -44,3 +44,10 @@
 - [x] Verify a separate one-file, unchanged-AST formatting repair with lint, formatting and all ten affected pytest cases passing. Preserve original failures and exclude corrected harness attempts from model pass counts. See the [runtime assessment](../../evaluations/foundation-runtime-2026-10-19.md).
 - [x] Validate the branch changes in a clean Git-byte snapshot: all 69 Python regressions, generator drift, repository/PowerShell quality, exact-case folders and the 24-case/99-negative-check offline self-test passed.
 - [ ] Complete actual agent file/tool feedback loops, Linux/supported-Python execution, remaining PowerShell scenarios and broader README/routing coverage before human acceptance. The full revised comparison matrix has not been run.
+
+## Architect delivery and Linux continuation
+
+- [x] Require formatter application, formatting/lint/test gates and delivery of the exact final files in the architect master; regenerate all allowed review candidates while preserving the historical source audit.
+- [x] Add reviewed, hash-pinned synthetic executable excerpts and a Linux runtime workflow with network-disabled execution, isolated projects and retained result artifacts. Keep raw model responses and personal context private.
+- [ ] Execute Linux PowerShell contracts and Python 3.11 through 3.14 replays for README and architect. Require the known original formatting failure, a one-file unchanged-AST repair, passing final gates and matching delivered file hashes.
+- [ ] Record hosted results and assess remaining limitations. Artifact replay does not establish fresh model generation or autonomous agent/tool behavior. Human acceptance and promotion remain blocked.

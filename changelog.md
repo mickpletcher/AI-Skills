@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Require formatting and validation of the exact architect files delivered; regenerate review candidates without promotion. Add hash-pinned synthetic runtime fixtures, a formatter-feedback regression and Linux PowerShell/Python runtime jobs with network-disabled execution and retained evidence. Hosted execution is tracked in the migration checklist.
+
 - Pinned architect nonempty-line semantics and added a focused regression scenario with six runtime oracles. Started offline Windows runtime checks for all three foundational skills; PowerShell/README and counting tests passed, one original scaffold formatting failure was preserved, and a separate format-only repair was verified. Acceptance and promotion remain blocked.
 
 - Repaired the local foundation pilot's context isolation with a separate profile, fixed base instructions and per-call context audits. Captured 36 replacement responses and scored 172 applicable rubric items; all 12 candidate responses met the text-only pilot rubrics. Recorded scaffold whitespace ambiguity, original/control gaps and pending human/runtime acceptance. No skills were promoted.

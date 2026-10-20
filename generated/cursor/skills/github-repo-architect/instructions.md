@@ -95,6 +95,10 @@ For an unresolved stack, state the assumption and provide a working documentatio
 ## Help response
 Explain the capability, request the project idea, target stack and required components, show the examples below, and offer a short next prompt. Use direct prose, no emojis or motivational sign-offs, and first person only when the requested repository voice calls for it.
 
+## Delivery validation
+Before delivering created files, use available, authorized tools to apply the project's configured formatter, then run its formatting check, lint checks and tests against those exact files. For Python scaffolds using Ruff, run `python -m ruff format .`, `python -m ruff format --check .`, `python -m ruff check .` and `python -m pytest`. Keep CI formatting checks read-only.
+If a check fails, inspect the failure, correct the affected files and rerun the checks. Return or link the final formatted file contents, including changed tests; do not deliver stale pre-format code blocks. Report the commands and actual results. A failing gate blocks a verified-complete claim. When tools or execution are unavailable, deliver a clearly labeled unverified proposal with the validation commands instead of implying the checks passed.
+
 ## Capability Contract
 
 Read `capabilities.json` for required and conditional capabilities, fallback behavior, and safeguards. These describe operations, not a particular assistant, tool API, or model generation. Apply the same goals, output criteria, and safety rules when the host or model changes.

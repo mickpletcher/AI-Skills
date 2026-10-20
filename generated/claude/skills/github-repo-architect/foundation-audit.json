@@ -43,5 +43,13 @@
     "Safety, authorization and public compatibility controls in the prior master remain in force.",
     "Unknown-stack TODO CI is not presented as runnable application CI; working documentation checks require known tooling."
   ],
-  "behavior_evaluation": "not_run"
+  "behavior_evaluation": "not_run",
+  "subsequent_insertions": [
+    {
+      "reason": "Observed scaffold formatting failure; validate and deliver final formatted files without altering the historical restoration audit.",
+      "prior_master_commit": "62a7707f9252fa3aa2001f26e185999070777c6d",
+      "prior_master_sha256": "1bb65e4eeac64f7cef108be4e5e6da44160029acb510da34a5314ce328f5fb7d",
+      "text": "## Delivery validation\nBefore delivering created files, use available, authorized tools to apply the project's configured formatter, then run its formatting check, lint checks and tests against those exact files. For Python scaffolds using Ruff, run `python -m ruff format .`, `python -m ruff format --check .`, `python -m ruff check .` and `python -m pytest`. Keep CI formatting checks read-only.\nIf a check fails, inspect the failure, correct the affected files and rerun the checks. Return or link the final formatted file contents, including changed tests; do not deliver stale pre-format code blocks. Report the commands and actual results. A failing gate blocks a verified-complete claim. When tools or execution are unavailable, deliver a clearly labeled unverified proposal with the validation commands instead of implying the checks passed.\n\n"
+    }
+  ]
 }

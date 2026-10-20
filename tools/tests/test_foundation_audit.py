@@ -23,6 +23,11 @@ class FoundationAuditTests(unittest.TestCase):
             self.assertEqual(re.findall(r'^## (.+)$', source.read_text(encoding='utf-8'), re.M),
                              record['audited_source_sections'])
             master = (path.parent/'SKILL.md').read_text(encoding='utf-8')
+            for insertion in reversed(record.get('subsequent_insertions', [])):
+                self.assertEqual(master.count(insertion['text']), 1)
+                master = master.replace(insertion['text'], '')
+                self.assertEqual(hashlib.sha256(master.encode()).hexdigest(),
+                                 insertion['prior_master_sha256'])
             inserted = record['restored_text']
             self.assertEqual(master.count(inserted), 1)
             self.assertEqual(hashlib.sha256(master.replace(inserted, '').encode()).hexdigest(),

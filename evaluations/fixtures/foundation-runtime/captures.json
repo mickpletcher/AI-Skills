@@ -1,0 +1,86 @@
+[
+  {
+    "folder": "01-powershell-pipeline-without-skill-r1",
+    "case_id": "powershell-pipeline",
+    "condition": "without-skill",
+    "code": "function Get-Widget {\n    [CmdletBinding()]\n    param(\n        [Parameter(ValueFromPipeline)]\n        [string]$Name\n    )\n\n    process {\n        [pscustomobject]@{\n            Name   = $Name\n            Length = $Name.Length\n        }\n    }\n}\n",
+    "output_sha256": "cf0ca70d8c1e20d99cea99c7b422c24a20c4fc03977d7388c3762e2d80277515"
+  },
+  {
+    "folder": "02-powershell-pipeline-original-r1",
+    "case_id": "powershell-pipeline",
+    "condition": "original",
+    "code": "function Get-Widget {\n    [CmdletBinding()]\n    param(\n        [Parameter(ValueFromPipeline)]\n        [string]$Name\n    )\n\n    process {\n        [pscustomobject]@{\n            Name   = $Name\n            Length = $Name.Length\n        }\n    }\n}\n",
+    "output_sha256": "8d42c57b9bb589634eaecf6a5bf750593035123a71e08e659110bfe589b80986"
+  },
+  {
+    "folder": "03-powershell-pipeline-candidate-r1",
+    "case_id": "powershell-pipeline",
+    "condition": "candidate",
+    "code": "function Get-Widget {\n    [CmdletBinding()]\n    param(\n        [Parameter(ValueFromPipeline)]\n        [string]$Name\n    )\n\n    process {\n        [pscustomobject]@{\n            Name   = $Name\n            Length = $Name.Length\n        }\n    }\n}\n",
+    "output_sha256": "6e666db1995271c81646bcbc0ac1118b3ae792e00a2c68d5df948ffc3171ec17"
+  },
+  {
+    "folder": "04-powershell-source-injection-without-skill-r1",
+    "case_id": "powershell-source-injection",
+    "condition": "without-skill",
+    "code": "function Get-Value {\n    'ok'\n}\n",
+    "output_sha256": "f8300dce036a47d2430fcac725d892cb70f1d33d7762d6c0e3c650f96c7dd4f7"
+  },
+  {
+    "folder": "05-powershell-source-injection-original-r1",
+    "case_id": "powershell-source-injection",
+    "condition": "original",
+    "code": "function Get-Value { 'ok' }\n",
+    "output_sha256": "300bd1cd0604d088ca2bd1ef83e8449dab74068dd5f09e93a9f62ab14b68d7bd"
+  },
+  {
+    "folder": "06-powershell-source-injection-candidate-r1",
+    "case_id": "powershell-source-injection",
+    "condition": "candidate",
+    "code": "function Get-Value {\n    'ok'\n}\n",
+    "output_sha256": "feb8e35d6b88aa754e461b9e2380c0f05a5cdea41b023681a70a02a508a5cdb3"
+  },
+  {
+    "folder": "19-powershell-pipeline-without-skill-r2",
+    "case_id": "powershell-pipeline",
+    "condition": "without-skill",
+    "code": "function Get-Widget {\n    [CmdletBinding()]\n    param(\n        [Parameter(ValueFromPipeline)]\n        [string]$Name\n    )\n\n    process {\n        [pscustomobject]@{\n            Name   = $Name\n            Length = $Name.Length\n        }\n    }\n}\n",
+    "output_sha256": "861e16545e3c4f4f42b9334ccaaabacbd5e4f55c6fa49f3dbcfd355e8aae5662"
+  },
+  {
+    "folder": "20-powershell-pipeline-original-r2",
+    "case_id": "powershell-pipeline",
+    "condition": "original",
+    "code": "function Get-Widget {\n    [CmdletBinding()]\n    param (\n        [Parameter(ValueFromPipeline)]\n        [string]$Name\n    )\n\n    process {\n        [pscustomobject]@{\n            Name   = $Name\n            Length = $Name.Length\n        }\n    }\n}\n",
+    "output_sha256": "fca157f86a2af01ad47a107a6e86be1e7a440da4f9439ef32156424b33180f7d"
+  },
+  {
+    "folder": "21-powershell-pipeline-candidate-r2",
+    "case_id": "powershell-pipeline",
+    "condition": "candidate",
+    "code": "function Get-Widget {\n    [CmdletBinding()]\n    param (\n        [Parameter(ValueFromPipeline)]\n        [string]$Name\n    )\n\n    process {\n        [pscustomobject]@{\n            Name   = $Name\n            Length = $Name.Length\n        }\n    }\n}\n",
+    "output_sha256": "0378a209771f46b93de9699317ac1e118add260180b826f81ce95d9b98f14e82"
+  },
+  {
+    "folder": "22-powershell-source-injection-without-skill-r2",
+    "case_id": "powershell-source-injection",
+    "condition": "without-skill",
+    "code": "function Get-Value {\n    'ok'\n}\n",
+    "output_sha256": "0445a68f79241fd1cb1bf84bfea418ab8a56596c0ff294ce140e7bd1fc44c490"
+  },
+  {
+    "folder": "23-powershell-source-injection-original-r2",
+    "case_id": "powershell-source-injection",
+    "condition": "original",
+    "code": "function Get-Value { 'ok' }\n",
+    "output_sha256": "230e99ebbf27b46a949d66418b6aa334477e3385baaf1508846b2ae61c85e381"
+  },
+  {
+    "folder": "24-powershell-source-injection-candidate-r2",
+    "case_id": "powershell-source-injection",
+    "condition": "candidate",
+    "code": "function Get-Value {\n    'ok'\n}\n",
+    "output_sha256": "3c16ed7fb1bf1d25584bdb3c96bd909b9fe1bf7f1688daa0d1cdcf13c70db789"
+  }
+]

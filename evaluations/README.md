@@ -70,4 +70,4 @@ The [foundation Linux workflow at the tested commit](https://github.com/mickplet
 
 ## Fresh tool workflows
 
-The [tool workflow assessment](foundation-tool-workflows-2026-10-19.md) covers four fresh, isolated agent sessions with actual file and shell tools: architect scaffolding, PowerShell deduplication and naming-only scope, and a different README repository. The [revision-2 fixture](fixtures/foundation-tool-workflows.json) contains synthetic tasks and source only. Bounded assistant review passed; human acceptance remains pending. These sessions are separate from both the text-only comparison and Linux artifact replay.
+The [tool workflow assessment](foundation-tool-workflows-2026-10-19.md) covers four fresh, isolated agent sessions with actual file and shell tools: architect scaffolding, PowerShell deduplication and naming-only scope, and a different README repository. The [revision-2 fixture](fixtures/foundation-tool-workflows.json) contains synthetic tasks and source only. Mick accepted these bounded results on 2026-10-19. This does not authorize merging or promotion. These sessions are separate from both the text-only comparison and Linux artifact replay.

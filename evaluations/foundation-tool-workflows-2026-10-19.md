@@ -1,6 +1,6 @@
 # Foundation tool workflow assessment
 
-Status: **four fresh cases passed bounded assistant review; human acceptance pending**. PR #11 remains draft. No skill or model profile was installed or promoted. Synthetic project installs stayed inside evaluation environments. Testing has not expanded to the remaining migrated skills.
+Status: **four fresh cases accepted by Mick on 2026-10-19**. Acceptance covers the bounded results for powershell-refactor, github-readme and github-repo-architect. PR #11 remains draft. No skill or model profile was installed or promoted. Synthetic project installs stayed inside evaluation environments. Testing has not expanded to the remaining migrated skills.
 
 ## Scope and isolation
 
@@ -52,9 +52,9 @@ Manifests retain the exact input/context/output hashes, command results, file ha
 
 The updated architect delivery rule worked in this fresh case: the agent applied formatting, handled observed failures and checked the final files. PowerShell preserved the broader tested contracts and respected naming-only scope, including an explained remaining analyzer warning. The README agent grounded its repair in inspected source and kept application files unchanged. No additional skill instruction change is supported by these four cases.
 
-A local review packet contains the final README/scaffold files, PowerShell diffs and independent evidence for human review. Mick's acceptance remains pending. Acceptance of this bounded assessment would not authorize merging or promotion.
+A local review packet contains the final README/scaffold files, PowerShell diffs, independent evidence and credential-storage limitation. Mick explicitly accepted the bounded results in this chat on 2026-10-19. This does not establish per-item human rubric scores, broader host/model certification or resolution of the unverified OneDrive sync status, and does not authorize merging or promotion.
 
-Remaining limits: one repetition per case; Windows/Python 3.12/PowerShell 7 only for these fresh agents; preprovisioned tooling; no fresh Linux agent session, natural routing, broader repositories, other models/hosts or full comparison matrix. The earlier [Linux artifact replay](foundation-linux-runtime-2026-10-19.md) remains separate evidence. Obtain human acceptance before expanding the migrated-skill test batch.
+Remaining limits: one repetition per case; Windows/Python 3.12/PowerShell 7 only for these fresh agents; preprovisioned tooling; no fresh Linux agent session, natural routing, broader repositories, other models/hosts or full comparison matrix. The earlier [Linux artifact replay](foundation-linux-runtime-2026-10-19.md) remains separate evidence. Select and scope the next small batch separately.
 
 ## Repository validation
 

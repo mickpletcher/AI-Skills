@@ -61,4 +61,5 @@
 - [x] Repair another synthetic repository's README with real file/tool access. Execute all seven documented code blocks and eight independent probes; verify source, tests, dependencies, examples and license are unchanged.
 - [x] Complete bounded assistant assessment, preserve intermediate failures and prepare the local human review packet. See the [fresh workflow assessment](../../evaluations/foundation-tool-workflows-2026-10-19.md).
 - [x] Relocate retained private evidence outside the checkout and sync roots after removing the temporary login copy. Clarify the profile-location requirement and include the credential-storage limitation in the private human review packet.
-- [ ] Obtain Mick's acceptance of these bounded results before expanding testing to the remaining migrated skills. PR #11 stays draft; merging and promotion remain unauthorized.
+- [x] Obtain Mick's acceptance of the bounded results for all three skills, confirmed in this chat on 2026-10-19. This does not certify broader host/model/routing coverage or resolve the unverified credential sync status. PR #11 stays draft; merging and promotion remain unauthorized.
+- [ ] Select and scope the next small batch of migrated skills separately.

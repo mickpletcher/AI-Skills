@@ -2,6 +2,8 @@
 
 Status: **bounded Windows runtime testing started; acceptance pending**. PowerShell and README checks passed. Architect counting/tests passed, but one original proposal failed its configured formatting gate. A separate format-only repair passed; the original failure remains recorded. PR #11 stays draft. No skill, model profile, package or catalog is promoted.
 
+Subsequent delivery-workflow correction and Linux replay results are recorded separately in the [Linux runtime assessment](foundation-linux-runtime-2026-10-19.md). The Windows results below remain historical.
+
 ## Fixture repair
 
 [Foundation fixture revision 2](fixtures/foundation-pilot.json) defines a nonempty line exactly as `bool(line.strip())`. Empty lines and ASCII/Unicode whitespace-only lines, including spaces, tabs, U+2003 and U+00A0, do not count. A final non-whitespace line counts without a trailing newline. File reading recognizes LF, CRLF and CR.

@@ -73,3 +73,9 @@ Personal preferences, environment details and domain examples remain preserved s
 Subsequent behavioral work is tracked separately in the [foundation pilot assessment](../evaluations/foundation-pilot-2026-10-19.md). The replacement run repaired inherited-context contamination and completed 36 text-only comparisons with assistant rubric scores. This does not change the static review above or authorize promotion. Scaffold semantics, execution, routing, broader host coverage and human acceptance remain open.
 
 The [initial runtime phase](../evaluations/foundation-runtime-2026-10-19.md) subsequently pinned scaffold whitespace semantics and exercised synthetic PowerShell, README and architect artifacts on Windows. Counting/tests passed, while one scaffold failed its configured formatting check; a separate format-only repair passed. The original failure remains recorded. Full host/tool/routing coverage and human acceptance remain open, and no candidate or model profile was promoted.
+
+## Linux runtime continuation
+
+The architect master now requires formatter application, final format/lint/test gates and delivery of the validated file contents. All review candidates were regenerated without changing promotion or acceptance metadata. Historical audit provenance is retained with a separately pinned delivery insertion.
+
+The [Linux assessment](../evaluations/foundation-linux-runtime-2026-10-19.md) records passing PowerShell contracts and Python 3.11 through 3.14 artifact replays for all three foundational skills. The original architect formatting failure reproduced, then a one-file unchanged-AST repair passed final gates and delivered-file hash checks. This does not establish independent model/tool behavior or human acceptance.

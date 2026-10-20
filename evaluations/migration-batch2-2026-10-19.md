@@ -16,7 +16,7 @@ All profile and evidence directories were created in local AppData outside the r
 
 ## Results
 
-All six scenarios passed bounded assistant assessment. Seven domain responses were captured: the original six plus a fresh explicit-image preview rerun. Use the rerun for the visual assessment; the first preview's file-preservation checks passed, but its event log does not establish image delivery. One shell/file canary also completed. Human acceptance is pending.
+All six scenarios passed bounded assistant assessment. Seven domain responses were captured: the original six plus a fresh explicit-image preview rerun. Use the rerun for the visual assessment; the first preview's file-preservation checks passed, but its event log does not establish image delivery. One shell/file canary also completed. Mick accepted these bounded results on 2026-10-19 in this chat. This acceptance does not cover native host testing, broader certification, merging or promotion.
 
 | Case | Result and independent evidence |
 | --- | --- |
@@ -54,4 +54,4 @@ Temporary login copies were removed after both the main batch and attachment wor
 
 ## Remaining scope
 
-Human review must assess these actual planning/report/copy artifacts before accepting the batch. Native ChatGPT/Claude photo execution, real travel photos/EXIF/GPS, online research, larger datasets, natural routing, repeated trials, other models and cross-platform execution remain untested here. This is a Windows CLI behavioral proxy for the photo candidate and bounded CLI tool evidence for the two Codex candidates. It is not broad host certification or permission to merge or promote anything.
+Mick accepted the six scenarios' actual planning/report/copy results on 2026-10-19; the private review packet and acceptance sidecar record that scope. Native ChatGPT/Claude photo execution, real travel photos/EXIF/GPS, online research, larger datasets, natural routing, repeated trials, other models and cross-platform execution remain outside this assessment. A separate [native photo test record](photo-native-2026-10-19.md) tracks subsequent work. This is a Windows CLI behavioral proxy for the photo candidate and bounded CLI tool evidence for the two Codex candidates. It is not broad host certification or permission to merge or promote anything.

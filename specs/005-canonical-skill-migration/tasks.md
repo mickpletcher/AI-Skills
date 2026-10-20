@@ -71,8 +71,16 @@
 - [x] Independently verify metrics, actual file effects and preservation of supplied files; assess planning quality, uncertainty and candidate recommendations. Replay the reviewed copy script and verify repeat refusal without file changes.
 - [x] Record results and limits in the [second batch assessment](../../evaluations/migration-batch2-2026-10-19.md). Correct attachment argument parsing and require exact image/prompt audit with five negative regressions. All six scenarios pass bounded assistant review; no demonstrated master instruction defect requires a change.
 - [x] Complete final documentation/quality validation: 72 unit tests, 22 installer regressions, generator drift, 24 offline cases with 99 negative checks, repository/PowerShell quality and exact-case folders passed. Deliver the assessment and fixture through draft PR #11; no skill or placement changes.
-- [ ] Obtain human acceptance of this batch's bounded results. No merging, promotion or expansion of placement is authorized.
+- [x] Obtain Mick's acceptance of the six bounded scenarios, confirmed by his instruction to carry out acceptance, native photo follow-up and next-batch selection on 2026-10-19. Native host results and broader certification remain separate; merging, promotion and placement expansion remain unauthorized.
 
 ## OpenAI directory grouping
 
 - [x] Group existing ChatGPT/Codex sources and generated candidates under `openai/`, preserving target IDs, suitability, skill bytes and promotion gates. See the [implementation and validation checklist](../006-openai-ecosystem-grouping/tasks.md). This structural change does not accept additional behavioral results.
+
+## Native photo follow-up and third batch
+
+- [x] Prepare three disposable JPEGs, two with verified fabricated capture-date/GPS EXIF and one without metadata, plus original-byte ZIP inputs and blinded assessment criteria. Pin the existing ChatGPT candidate and preserve account settings.
+- [x] Attempt native ChatGPT testing after Mick's sign-in and extension setup. Verify successful synthetic attachment delivery and preserve two Instant response-load failures plus one Thinking failure. Record independent input hashes/EXIF checks and host limits in the [native record](../../evaluations/photo-native-2026-10-19.md).
+- [ ] Complete native preview assessment and copy testing in a working host, then independently verify downloaded output. No readable preview was delivered; the dependent copy prompt was not sent. Native vision/metadata/runtime behavior remains unassessed.
+- [x] Select and scope `github-social-preview`, `n8n-workflow` and `trip-email-html-itinerary` for the next synthetic batch. Record [six planned cases and execution gates](../../evaluations/migration-batch3-scope.md); no inference or live actions are claimed by this selection.
+- [x] Validate the documentation/fixture overlay in a clean Git-byte snapshot: repository and PowerShell quality (46 skills, zero issues), generator drift and 24 offline cases/99 negative checks passed. Independently verify input ZIP, JPEG/EXIF hashes and candidate pins; native output verification remains incomplete.

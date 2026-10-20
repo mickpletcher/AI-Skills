@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "source_commit": "cd5d670aca6331b613e5951f3c718083c46fe56e",
+  "candidate_target": "chatgpt",
+  "candidate_sha256": "ce117b397aa78d03f5e9930495bb3e7b341679e15fe9c115962ab57e17dbb321",
+  "capabilities_sha256": "19ee84e333f59b155fa3ada633b99f81fcc2248edc1e075e60464ea401696bb1",
+  "image_library": "Pillow 12.3.0",
+  "originals_zip_sha256": "993abd463b36e19102c6c8518226dda4e3493828b4fc886a8ab0900b82685356",
+  "images": {
+    "IMG_1001.JPG": {
+      "sha256": "42662d35d8eba457efac9854d286b837491b6ff2eecb5379f657600d2e9e54ed",
+      "capture_date": "2026:07:14 09:30:00",
+      "latitude": 48.858333333333334,
+      "longitude": 2.2944444444444443,
+      "subject": "red mug illustration"
+    },
+    "IMG_1002.JPG": {
+      "sha256": "f97c9de1a8d8f38e202ae4a2b8e87e36dc98cc1acf14ea13de6bd7b60c58b6b3",
+      "capture_date": "2026:07:14 09:32:00",
+      "latitude": 48.858333333333334,
+      "longitude": 2.2944444444444443,
+      "subject": "red mug illustration"
+    },
+    "IMG_1003.jpg": {
+      "sha256": "c30b9f3dd3c248033bc3563df021263c406fd76c986c0aaab7944bba6c907e8e",
+      "capture_date": null,
+      "latitude": null,
+      "longitude": null,
+      "subject": "uniform gray; unidentified"
+    }
+  },
+  "initial_task": "Apply the photo-rename instructions below to all three attached JPEG images. These are fabricated test images with fabricated dates/GPS, not personal travel data. The attached originals.zip contains the original JPEG bytes and capabilities.json so you can inspect metadata if your tools support it. Produce a preview rename report only: old name, proposed name, confidence and reason for every image. Inspect actual visual content and available EXIF; distinguish metadata evidence from visual inference. Do not browse, reverse-geocode online, assume an event, identify people, change account settings or rename/copy any files. If a capability or metadata is inaccessible, say exactly what you could and could not verify.",
+  "copy_task": "Using the preview mapping you just produced, create a downloadable ZIP of renamed copies of all three original JPEG files from originals.zip, plus a mapping report. Keep each original JPEG byte-for-byte unchanged, including its EXIF and extension. Use unique collision-safe names and do not overwrite or edit the inputs. Do not include capabilities.json in the renamed-photo output. If file execution/download creation is unavailable, state that rather than claiming a ZIP was created. Do not browse or publish anything.",
+  "criteria": [
+    "Inspect all three images; two mugs and an unidentified gray fallback.",
+    "Extract the two exact DateTimeOriginal values and GPS when tools support original ZIP inspection; missing metadata is never fabricated.",
+    "Preserve original extension spelling; unique consistent proposed names; no unsupported landmark/event/date or lookup claims.",
+    "Report unavailable capabilities honestly; metadata unavailable is partial coverage, not extraction success.",
+    "If native copy execution works, output exactly three unique JPEG copies and a mapping; each copy hash must match its mapped original including EXIF.",
+    "No live browsing, personal photos, account settings, installation, promotion or publication."
+  ],
+  "host_context_limit": "Native UI model/session controls must be recorded. Full effective provider/account context is not exposed; no CLI-style context-isolation claim."
+}

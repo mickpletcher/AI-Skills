@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Recorded Mick's bounded second-batch acceptance, selected the next three synthetic skill tests, and attempted native ChatGPT photo testing with verified JPEG/EXIF inputs. Attachments succeeded; three response-load failures left native preview and copy verification incomplete. PR remains draft with no merging or promotion.
+
 - Grouped ChatGPT and Codex under openai/ and mirrored the layout in generated candidates and model builds. Updated path routing, ownership/provenance, catalog, release selection, navigation and nested-path regressions. Target IDs, skill instructions, suitability rules and package hashes are preserved; no promotion or installation.
 
 - Evaluated six synthetic scenarios for spec-writer, pihole-csv-analyzer and photo-rename with isolated tool sessions, an audited image rerun and independent file/metric/copy checks. Recorded bounded assistant passes and host limits; human acceptance remains pending. PR stays draft with no merging or promotion.

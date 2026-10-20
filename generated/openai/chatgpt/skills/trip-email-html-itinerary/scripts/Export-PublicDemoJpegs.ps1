@@ -41,6 +41,12 @@ $slides = @(
 )
 
 $html = Get-Content -Raw -LiteralPath $resolvedHtml
+foreach ($slide in $slides) {
+    $existingPath = Join-Path $resolvedOutput $slide.File
+    if (Test-Path -LiteralPath $existingPath) {
+        throw "Output already exists; choose an empty destination: $existingPath"
+    }
+}
 $baseUrl = ([uri]$resolvedHtml).AbsoluteUri.Replace('&', '%26')
 
 foreach ($slide in $slides) {

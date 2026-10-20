@@ -36,7 +36,7 @@ def parse_args() -> argparse.Namespace:
 def iter_images(folder: Path) -> Iterable[Path]:
     valid = {".tif", ".tiff", ".png", ".jpg", ".jpeg"}
     for path in sorted(folder.rglob("*")):
-        if path.is_file() and path.suffix.lower() in valid:
+        if path.relative_to(folder).parts[0] != 'process' and path.is_file() and path.suffix.lower() in valid:
             yield path
 
 
@@ -48,6 +48,9 @@ def format_mean(value) -> str:
 
 def main() -> int:
     args = parse_args()
+    if args.preview_max_size < 1:
+        print('Error: preview size must be positive.')
+        return 2
     folder = Path(args.folder).expanduser().resolve()
 
     if not folder.exists() or not folder.is_dir():
@@ -70,8 +73,12 @@ def main() -> int:
 
     process_dir = folder / "process"
     if args.write_preview:
+        if not process_dir.resolve().is_relative_to(folder):
+            print('Error: preview directory resolves outside the input folder.')
+            return 2
         process_dir.mkdir(parents=True, exist_ok=True)
 
+    errors = 0
     for path in files:
         try:
             with Image.open(path) as img:
@@ -103,13 +110,18 @@ def main() -> int:
                 if args.write_preview:
                     preview = img.copy()
                     preview.thumbnail((args.preview_max_size, args.preview_max_size))
-                    target = process_dir / f"preview_{path.stem}.png"
-                    preview.save(target)
+                    target = process_dir / path.relative_to(folder).parent / f"preview_{path.name}.png"
+                    if not target.resolve().is_relative_to(process_dir.resolve()):
+                        raise ValueError('Preview destination resolves outside process/.')
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    with target.open('xb') as output:
+                        preview.save(output, format='PNG')
                     print(f"  preview: {target}")
         except Exception as exc:
             print(f"{path.name}\terror: {exc}")
+            errors += 1
 
-    return 0
+    return 1 if errors else 0
 
 
 if __name__ == "__main__":

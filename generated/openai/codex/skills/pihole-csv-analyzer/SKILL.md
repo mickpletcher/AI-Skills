@@ -1,7 +1,6 @@
 ---
-name: pihole-csv-analyzer
-description: Analyze CSV exports from Pi-hole such as query logs, top domains, top clients, or adlist exports and produce actionable recommendations. Trigger immediately when the user uploads or mentions a Pi-hole CSV file, types "pihole" or "ph analyze", or asks to analyze DNS query data, blocklist hits, or Pi-hole exports. Produce an in-chat analysis plus candidate blocklist and allowlist outputs for review.
-version: 1.1.0
+name: "pihole-csv-analyzer"
+description: "Analyze CSV exports from Pi-hole such as query logs, top domains, top clients, or adlist exports and produce actionable recommendations. Trigger immediately when the user uploads or mentions a Pi-hole CSV file, types \"pihole\" or \"ph analyze\", or asks to analyze DNS query data, blocklist hits, or Pi-hole exports. Produce an in-chat analysis plus candidate blocklist and allowlist outputs for review."
 ---
 <!-- GENERATED CANDIDATE: edit master-skills or adapters, not this file -->
 

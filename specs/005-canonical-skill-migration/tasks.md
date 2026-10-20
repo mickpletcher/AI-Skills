@@ -104,4 +104,13 @@
 - [x] Review and correct the Proxmox candidate: confirmed deployment inputs, dedicated application identity, virtual environment, exclusive config creation and conditional external exposure. Preserve original source provenance; no live infrastructure changes.
 - [x] Correct stale coverage/acceptance and byte-preservation claims in the canonical README and generic audit. Record the [assessment and limits](../../evaluations/candidate-followup-2026-10-19.md).
 - [x] Complete clean Git-byte snapshot validation: all 86 unit tests, generator drift, repository/PowerShell quality, exact-case folders and 24 offline cases/99 negative checks passed. Check all five Proxmox Bash blocks, unit consistency and exclusive config creation with synthetic inputs. Deliver only candidate resources, provenance, regressions and docs through draft PR #11; shipped source/packages and ecosystem placement are unchanged.
-- [ ] Before native Codex promotion, resolve Proxmox's existing `version` frontmatter incompatibility with the generic skill validator. The repository schema accepts the retained metadata; no native compatibility pass is claimed.
+- [x] Resolve generated Codex frontmatter rejection through a target-specific name/description header while preserving full canonical metadata in source and build provenance. Audit all 12 allowed candidates and baseline/named-model behavior. Native runtime certification remains separate.
+
+## Compatibility, helper runtime and remaining skills
+
+- [x] Audit Codex headers and preserve source metadata without changing other targets or suitability. Add structural and named-model regressions.
+- [x] Exercise remaining helpers with synthetic inputs and mocked scheduler, Apple Notes and browser boundaries. Correct preview collisions/reprocessing, failure statuses, resume YAML quoting and forced task replacement. Record original helper hashes and candidate overrides.
+- [ ] Complete dependency-provisioned real FITS testing in hosted CI; retain the failed local dependency download and explicit local skips.
+- [ ] Complete final regression/quality checks and deliver the compatibility/helper changes through draft PR #11.
+- [ ] Run and assess two isolated cases for each of the 26 remaining domain skills, with context audits, exact source pins, synthetic inputs and separate criteria. Keep CLI conversational proxies distinct from native-host support.
+- [ ] Obtain human acceptance separately. No installation, merging, placement expansion or promotion.

@@ -6,6 +6,8 @@ param(
     [switch]$KeepHtml
 )
 
+$ErrorActionPreference = 'Stop'
+
 $templatePath = Join-Path $PSScriptRoot '..\assets\itinerary-template.html'
 $template = Get-Content -Raw -LiteralPath $templatePath
 
@@ -140,7 +142,13 @@ $html = $html.Replace('</footer>', ' · PUBLIC DEMO · FICTIONAL DATA · NOT VAL
 if (-not (Test-Path -LiteralPath $OutputDirectory)) { New-Item -ItemType Directory -Path $OutputDirectory -Force | Out-Null }
 $resolvedOutput = (Resolve-Path -LiteralPath $OutputDirectory).Path
 $htmlPath = Join-Path $resolvedOutput 'public-demo-render-source.html'
-[IO.File]::WriteAllText($htmlPath, $html, [Text.UTF8Encoding]::new($false))
+$stream = [IO.File]::Open($htmlPath, [IO.FileMode]::CreateNew)
+try {
+    $bytes = [Text.UTF8Encoding]::new($false).GetBytes($html)
+    $stream.Write($bytes, 0, $bytes.Length)
+} finally {
+    $stream.Dispose()
+}
 
 $exporter = Join-Path $PSScriptRoot 'Export-PublicDemoJpegs.ps1'
 & $exporter -HtmlPath $htmlPath -OutputDirectory $resolvedOutput -BrowserChannel $BrowserChannel

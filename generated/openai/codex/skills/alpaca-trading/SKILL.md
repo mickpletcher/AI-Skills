@@ -1,7 +1,6 @@
 ---
-name: alpaca-trading
-description: Work safely in the Trading repository for Alpaca helpers, backtesting, journaling, scheduling, and related PowerShell modules. Prefer additive changes, preserve existing trading logic unless the user asks otherwise, and default to paper-trading-safe guidance.
-version: 1.1.0
+name: "alpaca-trading"
+description: "Work safely in the Trading repository for Alpaca helpers, backtesting, journaling, scheduling, and related PowerShell modules. Prefer additive changes, preserve existing trading logic unless the user asks otherwise, and default to paper-trading-safe guidance."
 ---
 <!-- GENERATED CANDIDATE: edit master-skills or adapters, not this file -->
 

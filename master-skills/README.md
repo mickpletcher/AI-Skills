@@ -6,6 +6,8 @@ Generate outputs with `python tools/generate_master_skills.py`. Run `python tool
 
 Supported initial targets: Claude (`SKILL.md`), ChatGPT (`instructions.md`), Cursor (`instructions.md`), and Codex (`SKILL.md`). Generated content does not imply automatic installation or runtime compatibility. Validate actual behavior in each target host.
 
+Codex entrypoints render only `name` and `description` in YAML. Repository-specific fields remain in the unchanged canonical header and in Codex `build-provenance.json` as `source_frontmatter`; policy `codex-name-description-v1` applies to baseline and named-model builds. Other targets retain canonical headers. See the [compatibility and helper assessment](../evaluations/candidate-compatibility-2026-10-19.md).
+
 Generation requires `python -m pip install -r requirements-dev.txt`. Canonical frontmatter is validated against the repository schema before any candidates are written. The generated marker sits after YAML frontmatter. Both generation and `--check` report obsolete managed candidates when a master is removed or renamed; review and remove those files manually. The generator does not delete stale files or overwrite unmanaged content.
 
 ## Migration inventory and provenance

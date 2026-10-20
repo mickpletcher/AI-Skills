@@ -1,6 +1,6 @@
 ---
-name: github-readme
-description: Write or repair an accurate, repository-specific README based on verified project files and requirements.
+name: "github-readme"
+description: "Write or repair an accurate, repository-specific README based on verified project files and requirements."
 ---
 <!-- GENERATED CANDIDATE: edit master-skills or adapters, not this file -->
 # Repository README Writer

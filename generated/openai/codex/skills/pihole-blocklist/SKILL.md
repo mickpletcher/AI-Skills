@@ -1,7 +1,6 @@
 ---
-name: pihole-blocklist
-description: Evaluate, categorize, and document new Pi-hole blocklist sources for the curated blocklist repository. Always trigger immediately when the user asks about adding, evaluating, or researching a new Pi-hole blocklist source, or uses phrases like "should I add this list", "evaluate this blocklist", "add to pihole", "new blocklist", "is this a good list", or pastes a raw blocklist URL. Also trigger when the user wants to review existing sources, update the repo README, check for list overlap, or document a new category. Pre-loaded with the full category taxonomy and evaluation criteria so every new addition is consistent with the existing curation standard.
-version: 1.1.0
+name: "pihole-blocklist"
+description: "Evaluate, categorize, and document new Pi-hole blocklist sources for the curated blocklist repository. Always trigger immediately when the user asks about adding, evaluating, or researching a new Pi-hole blocklist source, or uses phrases like \"should I add this list\", \"evaluate this blocklist\", \"add to pihole\", \"new blocklist\", \"is this a good list\", or pastes a raw blocklist URL. Also trigger when the user wants to review existing sources, update the repo README, check for list overlap, or document a new category. Pre-loaded with the full category taxonomy and evaluation criteria so every new addition is consistent with the existing curation standard."
 ---
 <!-- GENERATED CANDIDATE: edit master-skills or adapters, not this file -->
 

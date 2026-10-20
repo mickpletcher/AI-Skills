@@ -34,5 +34,15 @@
     "astrophotography-processing.skill": "9ae7eca96cb4c33b1aab1aa0cfdae014820d4c008848ef7b51ca8043e9885e8d",
     "completedchanges.md": "05537b494309563518efec7b6c125419371b66705b9f0ad7d7ce8f56bc7dd579",
     "upgrades.md": "fe5689aa0deeb0fb6a153e93237f5e17f07cd7fd595351aa7bbd14262caad3a0"
+  },
+  "supporting_file_overrides": {
+    "scripts/image_stats_preview.py": {
+      "sha256": "489d640ab4f8e649526c47adf9e9d55ed4bc0283261adde4adad6ab728381543",
+      "reason": "Candidate-only helper failure/preview-boundary correction; preserve shipped source hash. See evaluations/candidate-compatibility-2026-10-19.md."
+    },
+    "scripts/fits_audit.py": {
+      "sha256": "20b1f9ea557690c3870710364503a1a6961cf0f67d93f0ee739253d54c9a5d26",
+      "reason": "Candidate-only helper failure/preview-boundary correction; preserve shipped source hash. See evaluations/candidate-compatibility-2026-10-19.md."
+    }
   }
 }

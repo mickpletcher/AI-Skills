@@ -1,6 +1,7 @@
 [CmdletBinding()]
 param(
     [string]$SkillRoot,
+    [ValidatePattern('^\d{4}-\d{2}-\d{2}$')]
     [string]$ReviewDate = (Get-Date -Format 'yyyy-MM-dd'),
     [string]$SubmissionCsvPath
 )
@@ -39,7 +40,7 @@ function ConvertTo-YamlList {
         return "  - resume`n"
     }
 
-    return (($Items | ForEach-Object { "  - $_" }) -join "`n") + "`n"
+    return (($Items | ForEach-Object { '  - ' + (ConvertTo-Json -InputObject ([string]$_) -Compress) }) -join "`n") + "`n"
 }
 
 $tipsRoot = Join-Path $SkillRoot 'tips'
@@ -118,15 +119,15 @@ if ($SubmissionCsvPath) {
 
         $content = @(
             '---'
-            ("source_name: {0}" -f $sourceName)
-            ("source_type: {0}" -f $(if ($row.source_type) { $row.source_type } else { 'unknown' }))
-            ("source_url: {0}" -f $sourceUrl)
-            ("published_at: {0}" -f $publishedAt)
-            ("captured_at: {0}" -f $ReviewDate)
+            ("source_name: {0}" -f (ConvertTo-Json -InputObject $sourceName -Compress))
+            ("source_type: {0}" -f (ConvertTo-Json -InputObject ([string]$(if ($row.source_type) { $row.source_type } else { 'unknown' })) -Compress))
+            ("source_url: {0}" -f (ConvertTo-Json -InputObject $sourceUrl -Compress))
+            ("published_at: {0}" -f (ConvertTo-Json -InputObject $publishedAt -Compress))
+            ("captured_at: {0}" -f (ConvertTo-Json -InputObject $ReviewDate -Compress))
             'topics:'
             (ConvertTo-YamlList -Items $topics).TrimEnd("`n")
             'status: suggested'
-            ("confidence: {0}" -f $(if ($row.confidence) { $row.confidence } else { 'medium' }))
+            ("confidence: {0}" -f (ConvertTo-Json -InputObject ([string]$(if ($row.confidence) { $row.confidence } else { 'medium' })) -Compress))
             '---'
             ''
             '## Why it matters'

@@ -1,6 +1,6 @@
 ---
-name: powershell-refactor
-description: Refactor existing PowerShell scripts and modules while preserving observable behavior, interfaces, and safety controls.
+name: "powershell-refactor"
+description: "Refactor existing PowerShell scripts and modules while preserving observable behavior, interfaces, and safety controls."
 ---
 <!-- GENERATED CANDIDATE: edit master-skills or adapters, not this file -->
 # PowerShell Refactor

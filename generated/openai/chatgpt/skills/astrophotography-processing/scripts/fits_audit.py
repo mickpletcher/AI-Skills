@@ -77,6 +77,7 @@ def main() -> int:
         return 0
 
     print("filename\tdimensions\tEXPTIME\tFILTER\tGAIN\tOFFSET\tTEMP\tBINNING\tDATE-OBS\tOBJECT\tBAYERPAT")
+    errors = 0
     for path in files:
         try:
             with fits.open(path) as hdul:
@@ -101,8 +102,9 @@ def main() -> int:
                 )
         except Exception as exc:
             print(f"{path.name}\terror: {exc}")
+            errors += 1
 
-    return 0
+    return 1 if errors else 0
 
 
 if __name__ == "__main__":

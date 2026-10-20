@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Adapted all generated Codex headers to name/description while retaining full source metadata in provenance. Tested remaining helpers with disposable inputs and mocked integrations; corrected image preview collisions/reprocessing, error statuses, resume YAML and scheduled-task replacement. Added a dependency-provisioned Windows helper job and scoped the remaining26 skills for isolated behavioral tests. PR stays draft; no promotion.
+
 - Fixed candidate Obsidian note overwrites and vault escapes with exclusive writes and containment regressions. Reworked the Proxmox candidate around confirmed infrastructure inputs, a dedicated application account, isolated Python dependencies and optional tunnel exposure. Corrected stale migration coverage/provenance docs. Shipped skills/packages stay unchanged; PR remains draft.
 
 - Corrected the candidate itinerary validator for explicitly pending addresses with five executable regressions and preserved source provenance. Both original itineraries pass strict replay. Offline visual review found three bounded passes and one unresolved phone table; native verification and acceptance remain pending. Shipped skills/packages are unchanged; PR stays draft.

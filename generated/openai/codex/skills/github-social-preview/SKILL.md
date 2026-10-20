@@ -1,7 +1,6 @@
 ---
-name: github-social-preview
-description: Generates a professional GitHub repository social preview image sized 1280x640 pixels as a JPG under 1 MB. Always trigger immediately when the user's message starts with "gsp". Also trigger on "generate github social preview", "create repo preview image", or any request to generate a social preview or OG image for a GitHub repository.
-version: 1.2.0
+name: "github-social-preview"
+description: "Generates a professional GitHub repository social preview image sized 1280x640 pixels as a JPG under 1 MB. Always trigger immediately when the user's message starts with \"gsp\". Also trigger on \"generate github social preview\", \"create repo preview image\", or any request to generate a social preview or OG image for a GitHub repository."
 ---
 <!-- GENERATED CANDIDATE: edit master-skills or adapters, not this file -->
 

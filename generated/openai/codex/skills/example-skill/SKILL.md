@@ -1,6 +1,6 @@
 ---
-name: example-skill
-description: Demonstrate a reusable cross-platform skill without accessing external systems.
+name: "example-skill"
+description: "Demonstrate a reusable cross-platform skill without accessing external systems."
 ---
 <!-- GENERATED CANDIDATE: edit master-skills or adapters, not this file -->
 # Example skill

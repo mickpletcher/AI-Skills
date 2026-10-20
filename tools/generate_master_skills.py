@@ -26,11 +26,15 @@ def render(source: Path, platform: str) -> str:
     name = source.parent.name
     if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", name):
         raise ValueError(f"Invalid skill directory name: {name}")
-    frontmatter(source, ROOT)
+    metadata = frontmatter(source, ROOT)
     body = source.read_text(encoding="utf-8-sig").replace("\r\n", "\n")
     header = HEADER.match(body)
     if header is None:
         raise ValueError(f"Missing YAML frontmatter: {source}")
+    if platform == 'codex':
+        body = ('---\n' + '\n'.join(f'{key}: {json.dumps(metadata[key], ensure_ascii=False)}'
+                                    for key in ('name', 'description')) + '\n---\n' + body[header.end():])
+        header = HEADER.match(body)
     body = body[:header.end()].rstrip("\n") + "\n" + MARKER + "\n" + body[header.end():]
     appendix = ROOT / "adapters" / PLATFORM_PATHS[platform] / name / "append.md"
     suffix = appendix.read_text(encoding="utf-8").strip() if appendix.exists() else ""
@@ -62,6 +66,9 @@ def generate(check: bool = False, model_profile: str = "baseline"):
             appendix = ROOT / "adapters" / PLATFORM_PATHS[platform] / source.parent.name / "append.md"
             provenance = {"master_revision": bundle_hash, "master_revision_kind": "sha256-bundle", "adapter": str(appendix.relative_to(ROOT)).replace("\\", "/") if appendix.exists() else None, "adapter_sha256": digest(appendix.read_bytes()) if appendix.exists() else None, "model_profile": profile["id"], "model_profile_sha256": profile_hash, "provider": profile["provider"], "model_id": profile["model_id"], "ecosystem": platform, "generator_sha256": digest(Path(__file__).read_bytes()), "profile_loader_sha256": digest(Path(__file__).with_name("model_profiles.py").read_bytes()), "promotion": "blocked_pending_review", "behavior_evaluation": "not_run"}
             provenance["ecosystem_paths_sha256"] = digest(Path(__file__).with_name("ecosystem_paths.py").read_bytes())
+            if platform == 'codex':
+                provenance['frontmatter_policy'] = 'codex-name-description-v1'
+                provenance['source_frontmatter'] = frontmatter(source, ROOT)
             expected[folder / "build-provenance.json"] = (json.dumps(provenance, sort_keys=True, indent=2) + "\n").encode()
             for path in files:
                 if not path.is_file() or (path == source and filename == "SKILL.md"):

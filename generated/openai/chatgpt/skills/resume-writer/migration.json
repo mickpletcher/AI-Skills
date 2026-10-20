@@ -37,5 +37,15 @@
     "completedchanges.md": "354930f747b9cf314278d9c2ceef5a45b3d0448233b8741e69db7ccb3b7ce05c",
     "resume-writer.skill": "aadfceb69bb24df8130f4b53b6213abbc5a42b95f777abbf3b336c1e63128f1d",
     "upgrades.md": "c76f1a0e2070ce2f16207223f657d7b19e0a8f41b4ec3d5e4e3b2b1a3243c3ad"
+  },
+  "supporting_file_overrides": {
+    "scripts/Invoke-ResumeTipsRefresh.ps1": {
+      "sha256": "2924aefdbaba17055ee270e37e7294c5e9ec6bb477aa22ee7706710aea05f5f2",
+      "reason": "Candidate-only YAML quoting and scheduled-task preservation correction; original shipped hash retained. See evaluations/candidate-compatibility-2026-10-19.md."
+    },
+    "scripts/Register-ResumeTipsRefreshTask.ps1": {
+      "sha256": "7e339facea0c84d68abbbadde7465683251504c7ddc2a09dbfdf4190566cbf19",
+      "reason": "Candidate-only YAML quoting and scheduled-task preservation correction; original shipped hash retained. See evaluations/candidate-compatibility-2026-10-19.md."
+    }
   }
 }

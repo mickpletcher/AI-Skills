@@ -1,7 +1,6 @@
 ---
-name: spec-writer
-description: Generate numbered repo spec folders with clear requirements, implementation plans, and task lists for non-trivial project work.
-version: 1.1.0
+name: "spec-writer"
+description: "Generate numbered repo spec folders with clear requirements, implementation plans, and task lists for non-trivial project work."
 ---
 <!-- GENERATED CANDIDATE: edit master-skills or adapters, not this file -->
 

@@ -1,15 +1,6 @@
 ---
-name: trip-email-html-itinerary
-description: >
-  Extract trip logistics from pasted travel emails, booking confirmations,
-  forwarded messages, reservation notes, or raw itinerary text, research useful
-  restaurant and activity suggestions for each destination, and generate one
-  polished, self-contained offline HTML itinerary file for sharing with family
-  or other travelers. Trigger when the user asks to turn trip emails into an
-  HTML itinerary, travel handoff page, shareable trip page, family trip summary,
-  booking-reference page, destination recommendation page, or offline travel
-  document.
-version: 2.10.0
+name: "trip-email-html-itinerary"
+description: "Extract trip logistics from pasted travel emails, booking confirmations, forwarded messages, reservation notes, or raw itinerary text, research useful restaurant and activity suggestions for each destination, and generate one polished, self-contained offline HTML itinerary file for sharing with family or other travelers. Trigger when the user asks to turn trip emails into an HTML itinerary, travel handoff page, shareable trip page, family trip summary, booking-reference page, destination recommendation page, or offline travel document.\n"
 ---
 <!-- GENERATED CANDIDATE: edit master-skills or adapters, not this file -->
 

@@ -1,4 +1,4 @@
-[CmdletBinding()]
+[CmdletBinding(SupportsShouldProcess)]
 param(
     [string]$TaskName = 'Resume Writer Weekly Tips Refresh',
     [ValidateSet('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')]
@@ -23,6 +23,9 @@ if (-not (Test-Path -LiteralPath $refreshScriptPath)) {
 }
 
 $startBoundary = [datetime]::ParseExact($StartTime, 'HH:mm', $null)
+if (Get-ScheduledTask -TaskName $TaskName -ErrorAction SilentlyContinue) {
+    throw "Scheduled task already exists; preserve it and choose a different task name: $TaskName"
+}
 $action = New-ScheduledTaskAction `
     -Execute 'powershell.exe' `
     -Argument ('-ExecutionPolicy Bypass -File "{0}"' -f $refreshScriptPath) `
@@ -37,13 +40,14 @@ $settings = New-ScheduledTaskSettingsSet `
     -StartWhenAvailable `
     -MultipleInstances IgnoreNew
 
+if ($PSCmdlet.ShouldProcess($TaskName, 'Register weekly resume tips task')) {
 Register-ScheduledTask `
     -TaskName $TaskName `
     -Action $action `
     -Trigger $trigger `
     -Settings $settings `
-    -Description 'Creates the weekly resume-writer tips review packet.' `
-    -Force | Out-Null
+    -Description 'Creates the weekly resume-writer tips review packet.' | Out-Null
+}
 
 [pscustomobject]@{
     TaskName = $TaskName

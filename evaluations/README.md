@@ -29,6 +29,8 @@ Mechanical checks cover routing annotations, missing output, selected character 
 - `catalog.json` leaves `last_model_evaluation` null for every skill.
 - No production or personal input/output is committed. Keep captured results outside this repository unless explicitly reviewed for publication.
 
+The [compatibility/helper continuation](candidate-compatibility-2026-10-19.md) audits generated Codex headers and tests the remaining helpers before beginning 52 isolated cases for the 26 previously untested domain skills. Local missing-dependency skips and hosted dependency-provisioned results are separate; preparation does not count as behavioral completion.
+
 Self-test grading uses explicit failures in ordinary and optimized Python (`-O` or `PYTHONOPTIMIZE`). Negative examples use each fixture's declared forbidden tokens and character limit. These remain synthetic contract checks, not model evaluations.
 
 ## Foundation instruction pilot

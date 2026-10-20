@@ -42,6 +42,14 @@
     "scripts/Test-ItineraryHtml.ps1": {
       "sha256": "23ad3c3c8483887d569908db61643b350758276d6b8b4bd0d62058301ec78353",
       "reason": "Candidate-only correction for the batch-3 unknown-address map-link false positive. Original source hash and shipped helper remain unchanged; see evaluations/itinerary-validator-2026-10-19.md."
+    },
+    "scripts/New-PublicDemoItinerary.ps1": {
+      "sha256": "fd161465fe15cf37915e3d43a4a36aee091382f72d52418688269d4772ebeedd",
+      "reason": "Candidate-only public-demo output preservation correction. Original shipped hash retained; see evaluations/candidate-compatibility-2026-10-19.md."
+    },
+    "scripts/Export-PublicDemoJpegs.ps1": {
+      "sha256": "6255d933b11cbe56cec94c72579785890601a7c8ec791ef5e40c8e8228ddb55e",
+      "reason": "Candidate-only public-demo output preservation correction. Original shipped hash retained; see evaluations/candidate-compatibility-2026-10-19.md."
     }
   }
 }

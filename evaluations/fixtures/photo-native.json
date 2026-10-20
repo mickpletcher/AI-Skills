@@ -39,5 +39,37 @@
     "If native copy execution works, output exactly three unique JPEG copies and a mapping; each copy hash must match its mapped original including EXIF.",
     "No live browsing, personal photos, account settings, installation, promotion or publication."
   ],
-  "host_context_limit": "Native UI model/session controls must be recorded. Full effective provider/account context is not exposed; no CLI-style context-isolation claim."
+  "host_context_limit": "Native UI model/session controls must be recorded. Full effective provider/account context is not exposed; no CLI-style context-isolation claim.",
+  "native_retry": {
+    "date": "2026-10-19",
+    "host": "ChatGPT native Chrome UI",
+    "model_control": "Instant; exact backend snapshot not exposed",
+    "context": "Fresh observed Temporary chat following a separate host canary; no full hidden/account context audit",
+    "preview": "All three names/subjects and exact timestamps/GPS match the independent fixture; no event or landmark inferred",
+    "copy": {
+      "status": "passed",
+      "zip_bytes": 17083,
+      "zip_sha256": "c28b03848ceb955d1b6ab55e522be048754b90eadfee863442a920bbab0ca3bb",
+      "source_commit": "cd5d670aca6331b613e5951f3c718083c46fe56e",
+      "checks": [
+        "exact four safe flat entries",
+        "three unique case-preserved JPEG copies",
+        "each JPEG byte-identical to mapped original including EXIF",
+        "three-row CSV with correct old/new mapping and SHA256",
+        "capabilities.json excluded"
+      ],
+      "image_sha256": {
+        "2026_07_14_red_mug_01.JPG": "42662d35d8eba457efac9854d286b837491b6ff2eecb5379f657600d2e9e54ed",
+        "2026_07_14_red_mug_02.JPG": "f97c9de1a8d8f38e202ae4a2b8e87e36dc98cc1acf14ea13de6bd7b60c58b6b3",
+        "unidentified_photo_01.jpg": "c30b9f3dd3c248033bc3563df021263c406fd76c986c0aaab7944bba6c907e8e"
+      }
+    },
+    "download_delivery": "Automation did not yield a captured download event; Mick confirmed saving the ZIP. Both matching Downloads copies were independently read.",
+    "limits": [
+      "Only observed content and downloaded bytes are independently verified.",
+      "Full native tool trace, no-browsing claim and remote input preservation are not independently audited.",
+      "Inline illustrative image cards appeared in the response and are not used as proof of original-image rendering.",
+      "No Claude coverage, routing evaluation, repeated sampling or promotion."
+    ]
+  }
 }

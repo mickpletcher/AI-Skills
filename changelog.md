@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Ran six isolated synthetic cases for github-social-preview, n8n-workflow and trip-email-html-itinerary. Recorded four bounded passes, outstanding itinerary visual gates and a strict-validator defect for unknown addresses. Retried native photo testing and independently verified the saved ZIP's exact JPEG bytes and mapping. Acceptance remains pending; PR stays draft with no merging or promotion.
+
 - Recorded Mick's bounded second-batch acceptance, selected the next three synthetic skill tests, and attempted native ChatGPT photo testing with verified JPEG/EXIF inputs. Attachments succeeded; three response-load failures left native preview and copy verification incomplete. PR remains draft with no merging or promotion.
 
 - Grouped ChatGPT and Codex under openai/ and mirrored the layout in generated candidates and model builds. Updated path routing, ownership/provenance, catalog, release selection, navigation and nested-path regressions. Target IDs, skill instructions, suitability rules and package hashes are preserved; no promotion or installation.

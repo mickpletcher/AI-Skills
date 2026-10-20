@@ -1,6 +1,6 @@
 # Third migration batch scope
 
-Status: selected and scoped; not executed.
+Status: six cases executed on 2026-10-19. See the [assessment and remaining gates](migration-batch3-2026-10-19.md); the batch is not fully passed or accepted.
 
 Mick authorized selection of the next three skills on 2026-10-19. The selected masters all have proposed Codex placements, so the planned first execution target is their existing generated Codex candidate under `generated/openai/codex/skills/`. This is scope preparation, not behavioral acceptance or a new promotion decision.
 
@@ -19,4 +19,4 @@ Mick authorized selection of the next three skills on 2026-10-19. The selected m
 - Obtain current official n8n documentation and pin the supplied engine/schema before making importability claims. No live n8n or infrastructure connection is authorized.
 - Record assistant assessment separately from human acceptance and native-host coverage. Keep PR #11 draft; no merging, installation or promotion.
 
-These six cases have not been captured or run. Selecting this batch does not claim model scores, runtime success or approval for live operations.
+This document records the scope selected before inference. Mick subsequently authorized execution. Six case captures and one canary are now retained; actual results and limitations are recorded separately. No live operations or promotion are authorized.

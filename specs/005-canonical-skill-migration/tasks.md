@@ -60,4 +60,5 @@
 - [x] Run broader PowerShell deduplication and naming-only cases with repository analyzer settings. Seven and two final Pester tests passed; public metadata and 26 independent baseline probe groups match. Preserve and explain the naming-only case's existing warning.
 - [x] Repair another synthetic repository's README with real file/tool access. Execute all seven documented code blocks and eight independent probes; verify source, tests, dependencies, examples and license are unchanged.
 - [x] Complete bounded assistant assessment, preserve intermediate failures and prepare the local human review packet. See the [fresh workflow assessment](../../evaluations/foundation-tool-workflows-2026-10-19.md).
+- [x] Relocate retained private evidence outside the checkout and sync roots after removing the temporary login copy. Clarify the profile-location requirement and include the credential-storage limitation in the private human review packet.
 - [ ] Obtain Mick's acceptance of these bounded results before expanding testing to the remaining migrated skills. PR #11 stays draft; merging and promotion remain unauthorized.

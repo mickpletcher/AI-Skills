@@ -28,7 +28,7 @@ Before further comparison calls, use an authenticated evaluation runtime without
 
 ### Replacement run isolation
 
-The replacement harness uses a separate, process-local `CODEX_HOME` outside Git and an empty workspace. Only the existing login is provisioned into that profile, with the source credential file's ACL. The harness never prints credentials or places them in prompts or manifests. Remove the temporary credential copy after the batch. The shared profile, global instructions and account configuration remain untouched.
+Use a separate, process-local `CODEX_HOME` and empty workspace in local storage outside the source checkout and cloud-sync roots. An ignored directory inside OneDrive or another sync folder is not a suitable credential location. Only the existing login is provisioned into that profile, with the source credential file's ACL. The harness never prints credentials or places them in prompts or manifests. Remove the temporary credential copy after the batch. The shared profile, global instructions and account configuration remain untouched.
 
 The evaluation profile must not contain `config.toml`, `AGENTS.md`, `AGENTS.override.md` or memories. Both memory consumption and generation are disabled. A fixed, snapshotted `model_instructions_file` replaces the CLI's default base instructions. The other text-only restrictions remain enabled. These are client-context controls; no claim is made about access to provider-owned system instructions.
 

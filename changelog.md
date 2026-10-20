@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Recorded acceptance of the bounded first native-writing batch. Completed six native file/output cases plus two delivery follow-ups with actual ZIP, Markdown and JPEG verification. Retained two resume scoring/attribution failures and one social-preview layout collision; three cases passed bounded review. Added remediation tasks without changing candidates or shipped skills. PR stays draft with no merging or promotion.
+
 - Recorded Mick's acceptance of bounded remaining-skill results. Ran seven native ChatGPT writing cases, retained count/attribution failures and corrected two candidate contracts with fresh passing observations. Native acceptance, routing and wider host coverage remain separate. PR stays draft with no merging or promotion.
 
 - Completed 52 isolated behavioral cases across the remaining 26 domain skills and 34 targeted follow-ups. Corrected four candidate writing masters for exact counts, evidence-scoped claims and default website length variants. Preserved initial failures, fixture limits and intermediate format gaps. All 35 domain masters now have bounded captures; native certification and human acceptance remain separate. PR stays draft with no promotion.

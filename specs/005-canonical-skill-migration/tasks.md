@@ -123,4 +123,13 @@
 - [x] Preserve native X count and website attribution failures. Correct two candidate masters with exact source transformations and run three fresh correction checks. Final observed X count, website attribution/lengths and grounding checks pass; intermediate website failure remains recorded. See [seven native executions](../../evaluations/native-writing-2026-10-20.md).
 - [x] Preserve complete visible response records privately, check transcription integrity and packet hashes, and publish only bounded assessment metadata. Retain the initial blank-tab interruption and reject stale clipboard capture.
 - [x] Complete final validation and publish acceptance/native evidence through draft PR #11. Nine migration regressions, generator drift, repository/PowerShell quality (46 skills, zero issues) and 24 offline cases/99 negative checks passed. Hosted delivery checks are tracked on the PR commit.
-- [ ] Obtain separate human acceptance of native results. Broader native ecosystems, installed discovery/routing and remaining earlier gates are not certified; no merging or promotion.
+- [x] Mick accepted the bounded native-writing results on 2026-10-20 and authorized the next targeted batch. Retain the three failed captures and all limits. Broader native ecosystems, installed discovery/routing and remaining earlier gates are not certified; no merging or promotion.
+
+## Second targeted native batch
+
+- [x] Select and pin six synthetic cases across pihole-csv-analyzer, resume-writer and github-social-preview at source commit `5040dd57e4f78bbdab6a0d858eba524e78a58f4f`. Use native ChatGPT instruction packets, disposable file artifacts and criteria outside the uploaded packets; no infrastructure, applications, library updates or publication.
+- [x] Execute six native cases plus two CSV delivery follow-ups. Independently inspect actual ZIP, Markdown and JPEG bytes, CSV counts and resume arithmetic; record three bounded passes and three failures. Retain recovered download-event/link limitations separately from artifact verification. See the [assessment](../../evaluations/native-batch2-2026-10-20.md).
+- [ ] Correct resume score/severity reconciliation and scoring-map/library attribution, then rerun human and JSON native cases.
+- [ ] Correct social-preview tag/language-badge overlap, add a layout regression and rerun the long-title native case.
+- [x] Validate and publish the bounded assessment through draft PR #11. Repository/PowerShell quality (46 skills, zero issues), generator drift and 24 offline cases/99 negative checks passed. No candidate/source changes, installation, merging, placement expansion or promotion; hosted delivery checks are tracked on the PR commit.
+- [ ] Obtain separate human acceptance of the second native batch.

@@ -1,6 +1,6 @@
 # Behavioral evaluation framework
 
-Mick accepted the bounded remaining-skill results on 2026-10-20 and authorized [targeted native ChatGPT checks](native-writing-2026-10-20.md). Native results require separate acceptance; earlier failures and host limits remain recorded. PR #11 stays draft with no merging or promotion.
+Mick accepted the bounded remaining-skill results and the [first native writing batch](native-writing-2026-10-20.md) on 2026-10-20. The [second native batch](native-batch2-2026-10-20.md) completes six file/output cases with three bounded passes and three retained scoring/attribution/layout failures. That batch needs remediation and separate acceptance. PR #11 stays draft with no merging or promotion.
 
 The 24 synthetic fixtures cover four representative skills across Claude, ChatGPT, and Copilot: social writing, resume editing, nutrition analysis, and PR review. Each has a positive trigger, near miss, missing input, untrusted source instruction, unsafe request, and output-contract case. This is representative coverage, not proof for all 46 skills or every host model.
 

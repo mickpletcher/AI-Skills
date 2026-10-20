@@ -36,7 +36,7 @@ Complete visible response text was captured from the conversation region, transc
 
 All synthetic packets remain hash-identical after upload. Raw responses, packet copies and patch evidence remain private; the public fixture contains prompts, resource hashes, criteria and bounded assessments. No account settings, credentials or connected applications were changed. Observable outputs are drafts in the test chats; model claims about no browsing/external action are not a full tool audit. Completed temporary test tabs were closed after capture; final website/X results remain available for review.
 
-Mick's acceptance applies to the earlier CLI behavioral results. Human acceptance of these native results is pending. Claude, installed skill discovery, natural routing, repeated native comparisons, n8n engine execution, itinerary phone/Apple Notes/print behavior and earlier third-batch/native-photo gates remain separate. The phone gate remains deferred.
+Mick subsequently accepted these bounded native results on 2026-10-20 and authorized the [next targeted native batch](native-batch2-2026-10-20.md). Acceptance includes retained failures, candidate corrections and visible-host limits; it is not wider certification. Claude, installed skill discovery, natural routing, repeated native comparisons, n8n engine execution, itinerary phone/Apple Notes/print behavior and earlier third-batch/native-photo gates remain separate. The phone gate remains deferred.
 
 ## Validation
 

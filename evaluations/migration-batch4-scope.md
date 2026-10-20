@@ -1,6 +1,6 @@
 # Remaining-skill behavioral round
 
-Status: 52 initial cases and 34 targeted follow-ups completed. See the [assessment](migration-batch4-2026-10-20.md), [initial fixture/results](fixtures/migration-batch4.json) and [separate follow-ups](fixtures/migration-batch4-followup.json). Failures and fixture/control corrections are retained; acceptance remains pending.
+Status: 52 initial cases and 34 targeted follow-ups completed. See the [assessment](migration-batch4-2026-10-20.md), [initial fixture/results](fixtures/migration-batch4.json) and [separate follow-ups](fixtures/migration-batch4-followup.json). Mick accepted these bounded results on 2026-10-20. Failures and fixture/control corrections remain retained; wider native certification and promotion remain separate.
 
 Mick authorized the remaining-skill round after the Codex frontmatter and helper checks. It covers the 26 domain skills without prior behavioral captures, with one supplied-evidence task and one boundary/missing-input task each: 52 sessions plus a shell/file canary. Preparation and completed sessions are distinct; results and acceptance must be recorded separately.
 

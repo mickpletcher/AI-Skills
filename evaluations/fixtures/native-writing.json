@@ -6,7 +6,8 @@
     "scope": "bounded remaining-skill CLI behavioral results, including retained failures and fixture limits",
     "authorizes": "targeted native testing only; PR stays draft; no installation, merge, placement expansion or promotion"
   },
-  "native_results_acceptance": "pending",
+  "native_results_acceptance": "accepted_bounded_2026-10-20",
+  "native_acceptance_note": "Mick accepted the bounded native-writing results including retained failures and limits, then authorized the next targeted native batch. Per-capture pending values preserve their assessment-time state. No merging, installation or promotion.",
   "canary": {
     "prompt": "Availability check for a synthetic test. Reply with only 42. Do not browse or use connected apps.",
     "visible_response": "42",

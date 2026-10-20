@@ -185,51 +185,17 @@ The final audit output should always appear in this order:
 6. Rewritten Resume
 7. Top Fixes / Next Steps
 
-## Internal JSON Output Example
+## Calculation and source evidence
 
-Official JSON contract and field naming live in `json-output-spec.md`.
+Use `json-output-spec.md` as the single output schema. Its example is illustrative, not evidence for the current audit. Compute numeric fields from the current `principle_scores` ledger with `scripts/score_audit.py`. The calculator validates source headings, mapped weights/categories, rounding, severity totals and verdict caps.
 
-```json
-{
-  "reviewContext": "targeted",
-  "confidence": "Medium",
-  "scoringModelVersion": "1.0",
-  "finalScore": 78.4,
-  "rawVerdict": "Strong",
-  "finalVerdict": "Good but inconsistent",
-  "hireLikelihoodSignal": "Possible interview traction if top issues are fixed",
-  "overrideApplied": {
-    "applied": true,
-    "criticalCount": 2,
-    "capVerdict": "Good but inconsistent",
-    "reasons": [
-      "Mostly vague bullets",
-      "Unclear target role"
-    ]
-  },
-  "categoryScores": {
-    "Positioning and Narrative": 74.0,
-    "Evidence and Bullet Strength": 70.8,
-    "ATS and Structural Reliability": 86.5,
-    "Relevance and Targeting": 72.2,
-    "Professionalism and Trust": 83.0
-  },
-  "severityCounts": {
-    "CRITICAL": 2,
-    "MAJOR": 4,
-    "MINOR": 5,
-    "INFO": 2
-  },
-  "missingDataFlags": [
-    "MISSING METRIC",
-    "MISSING OUTCOME"
-  ]
-}
-```
+Every CRITICAL, MAJOR or MINOR finding counted in a summary must be represented in that ledger. Score each source once, grouping its related findings. Score categories from supported text; do not invent document layout or missing history. Include a supported ledger entry for each category before giving an overall score.
+
+Common patterns use source type `common_pattern`, an exact `common-patterns § <heading>` from the supplied file and weight 1.0. Choose the relevant category and explain the observed evidence. Unattributed observations remain explicitly not-in-library and outside numerical scoring.
 
 ## Starter Principle to Category Mapping
 
-Use this starter table for current principles in `insights/principles.md`.
+Only the following names are current headings in `insights/principles.md`. A weight-map row does not create a principle or establish attribution. Cite the actual library heading and source, or a real common-pattern heading. Do not label a scoring example as a library entry.
 
 | Principle | Category | Weight | Default Severity If Weak |
 | --- | --- | ---: | --- |
@@ -246,16 +212,5 @@ Use this starter table for current principles in `insights/principles.md`.
 | Single column wins over pretty layouts | ATS and Structural Reliability | 1.25 | MAJOR |
 | Your technical resume needs a clear narrative | Positioning and Narrative | 1.0 | MAJOR |
 | Chronology should be easy to follow | ATS and Structural Reliability | 1.25 | CRITICAL |
-| Use hybrid structure only when the timeline needs help | ATS and Structural Reliability | 1.0 | MAJOR |
-| The bullet formula is verb, work, outcome | Evidence and Bullet Strength | 1.5 | MAJOR |
-| Put the strongest proof first under each role | Evidence and Bullet Strength | 1.25 | MAJOR |
-| Skills lists need proof, not just nouns | Evidence and Bullet Strength | 1.0 | MAJOR |
-| When hard metrics are missing, show scope instead of fluff | Evidence and Bullet Strength | 1.0 | MAJOR |
-| Explain career direction, do not make the recruiter guess | Positioning and Narrative | 1.25 | MAJOR |
-| Simplicity signals judgment | Professionalism and Trust | 1.0 | MINOR |
-| The file name is part of the first impression | Professionalism and Trust | 0.75 | MINOR |
-| Early career candidates should emphasize proof of readiness, not apologize for lack of years | Positioning and Narrative | 1.0 | MAJOR |
-| Senior candidates must show scope, not just tenure | Positioning and Narrative | 1.0 | MAJOR |
-| Proofread like a hiring manager is looking for a reason to say no | Professionalism and Trust | 1.25 | MAJOR |
 
-This starter map can be extended as the principle library grows.
+Extend the map only after the corresponding attributed principle is actually present in the library. Common patterns retain their own source type.

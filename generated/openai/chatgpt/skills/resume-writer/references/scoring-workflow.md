@@ -17,12 +17,16 @@ Every resume audit in Enhance mode MUST run this scoring workflow.
    - Do not inflate scores due to polished wording alone.
    - Weak evidence should score lower even if formatting quality is strong.
 
-3. Calculate category scores:
-   - Use weighted average per category from `scoring-model.md`.
+3. Build one source-backed `principle_scores` ledger before summarizing:
+   - Library citations must name an actual heading in `insights/principles.md`, using its mapped category and weight.
+   - Common patterns must cite an exact `common-patterns § <heading>` and use weight 1.0. Mapping/example names absent from the library are not library principles.
+   - Score each source once and group its related findings. Every counted severity must appear in the ledger; no additional unlisted severity totals.
 
-4. Calculate final score:
-   - Combine category scores using context specific category weights.
-   - Output final score out of 100.
+4. Calculate and reconcile before delivery:
+   - When Python/file execution is available, run `python scripts/score_audit.py audit-input.json` to derive category scores, final score, severity counts and verdict from the ledger. Then run the final merged audit through `python scripts/score_audit.py final-audit.json --check`.
+   - Copy those computed fields exactly. Category scores and final scores use one decimal place with half-up rounding. Do not replace them with estimated or indicative scores.
+   - Preserve the scored ledger as a reviewable JSON artifact for human audits; JSON mode includes it in `principle_scores`. A scored rewrite needs its own ledger, separate from the original resume.
+   - If execution is unavailable, use an available calculator and expose the ledger/reconciliation. If calculation cannot be verified, state that numeric scoring was not run and give a qualitative audit rather than invented totals.
 
 5. Apply verdict bands:
    - `90 to 100`: Excellent
@@ -72,9 +76,6 @@ Every resume audit in Enhance mode MUST run this scoring workflow.
    - `system_flags`
    - `top_fixes`
    - `rewritten_resume`
-   - `cover_letter`
-   - `interview_prep_handoff`
-   - `two_page_trim_report`
    - `notes`
 
 10a. Longitudinal tracking:
@@ -88,8 +89,7 @@ Every resume audit in Enhance mode MUST run this scoring workflow.
    - In `json` and `both` modes, populate `principle_scores[].fix` whenever possible.
    - If rewrite output is included, place full rewritten resume in `rewritten_resume`.
    - If no rewrite was requested, set `rewritten_resume` to `null`.
-   - If a cover letter was generated, place it in `cover_letter`.
-   - If no cover letter was generated, set `cover_letter` to `null`.
+   - Optional extra deliverables do not add undeclared fields to the JSON schema; place relevant handoff notes under `notes`.
 
 12. System flags:
    - `BULLET_QUALITY_LOW`

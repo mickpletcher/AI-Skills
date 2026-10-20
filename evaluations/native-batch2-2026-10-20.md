@@ -1,5 +1,7 @@
 # Second targeted native batch
 
+The three failures below are preserved. Subsequent candidate fixes and fresh reruns are recorded in the [repair assessment](native-batch2-repairs-2026-10-20.md), including an intermediate JSON formatting failure, final bounded passes and the unexercised human numeric path.
+
 Mick accepted the [first bounded native-writing batch](native-writing-2026-10-20.md) on 2026-10-20 and authorized this continuation. PR #11 remains draft. No installation, merging, placement expansion or promotion.
 
 ## Scope selected before execution

@@ -13,7 +13,9 @@
   "original_authoring_model": null,
   "behavior_evaluations": [],
   "host_compatibility": "unverified",
-  "transformations": {},
+  "transformations": {
+    "Read whenever scoring a resume or producing machine-readable scores. [Full workflow](references/scoring-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode.": "Read whenever scoring a resume or producing machine-readable scores. [Full workflow](references/scoring-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode. Use [the score calculator](scripts/score_audit.py) when local Python execution is available. Report only totals reconciled to the supplied source ledger; do not substitute estimated editorial numbers. Mapping tables and examples are not attributed library entries."
+  },
   "supporting_files_sha256": {
     "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
     "json-output-spec.md": "b37f41050dba49c75d3f63f7b5ba4ce2cbad8bd489dfde238f069538565e13d0",
@@ -46,6 +48,24 @@
     "scripts/Register-ResumeTipsRefreshTask.ps1": {
       "sha256": "7e339facea0c84d68abbbadde7465683251504c7ddc2a09dbfdf4190566cbf19",
       "reason": "Candidate-only YAML quoting and scheduled-task preservation correction; original shipped hash retained. See evaluations/candidate-compatibility-2026-10-19.md."
+    },
+    "scoring-model.md": {
+      "sha256": "c82c88796b729539141b17ae2d82d2ef1a2e61d8f4a6b694a4e6eefe7af426ba",
+      "reason": "Candidate-only correction of native scoring/attribution failures; original shipped hash retained. See evaluations/native-batch2-2026-10-20.md."
+    },
+    "references/scoring-workflow.md": {
+      "sha256": "c8a23b36dc206aa0565c6e28b308aab7ffd56a286566fb54caaf8643b5bff27c",
+      "reason": "Candidate-only correction of native scoring/attribution failures; original shipped hash retained. See evaluations/native-batch2-2026-10-20.md."
+    },
+    "json-output-spec.md": {
+      "sha256": "e6fab1a476da2b3e7eaa8399671179f2bd24913c903a641683d033d86648abbf",
+      "reason": "Candidate-only correction of native scoring/attribution failures; original shipped hash retained. See evaluations/native-batch2-2026-10-20.md."
+    }
+  },
+  "added_supporting_files": {
+    "scripts/score_audit.py": {
+      "sha256": "1f7f4d7ff8d89af5f29fa76fe3fea37e6b4ac50351d9cae2b7b9b9e1b5994b02",
+      "reason": "New candidate-only standard-library score/source-ledger calculator for deterministic native audit reconciliation."
     }
   }
 }

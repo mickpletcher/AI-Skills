@@ -25,6 +25,7 @@ Use cases include:
 - Output must be valid JSON.
 - No markdown fences inside pure JSON mode.
 - No prose outside the JSON object in pure JSON mode.
+- The fenced examples below document the schema. Do not copy their fences or language labels into a `json` response. Before sending, parse the entire response as one JSON object without stripping a prefix, suffix or code block. Its first non-whitespace character must be `{` and its last must be `}`.
 - Use `null` when a scalar field cannot be confidently populated.
 - Use empty arrays when a list has no items.
 - Do not invent values.
@@ -101,7 +102,9 @@ Use cases include:
 - `verdict`: final verdict after critical overrides.
 - `hire_likelihood`: short practical likelihood signal.
 - `critical_issue_count`, `major_issue_count`, `minor_issue_count`: severity totals.
-- `category_scores`: weighted category scores.
+- `category_scores`: weighted category scores, computed from the current ledger.
+- Validate library citations against actual library headings; common patterns use exact `common-patterns § <heading>` citations with weight 1.0. Scoring-map/example presence is not library attribution.
+- Run the score calculator and final `--check` when code execution is available. Severity totals must equal the ledger, and verdict caps must not raise a verdict.
 - `principle_scores`: per principle audit records.
 - `missing_data_flags`: missing evidence markers, separate from writing quality.
 - `system_flags`: cross-principle aggregate warnings.
@@ -145,62 +148,101 @@ These are aggregate warnings across multiple findings, not individual principle 
 {
   "output_mode": "json",
   "review_context": "targeted",
-  "confidence": "medium",
+  "confidence": "high",
   "audit_mode": "condensed",
-  "final_score": 73.8,
-  "verdict": "Good but inconsistent",
-  "hire_likelihood": "Possible interview traction if top issues are fixed",
-  "critical_issue_count": 1,
-  "major_issue_count": 3,
-  "minor_issue_count": 4,
-  "category_scores": {
-    "positioning_and_narrative": 72.0,
-    "evidence_and_bullet_strength": 68.5,
-    "ats_and_structural_reliability": 82.0,
-    "relevance_and_targeting": 70.0,
-    "professionalism_and_trust": 80.0
-  },
   "principle_scores": [
     {
       "principle": "Make the target role obvious in the top third",
       "source_type": "library_principle",
       "source_name": "Make the target role obvious in the top third",
       "category": "Positioning and Narrative",
-      "score": 1,
+      "score": 2,
       "weight": 1.5,
-      "severity": "CRITICAL",
-      "reason": "Summary does not state a clear target role.",
-      "before": "Experienced professional with a diverse background.",
-      "after": "Platform automation engineer focused on endpoint and cloud operations.",
-      "fix": "State target role and strongest aligned evidence in the top third."
+      "severity": "INFO",
+      "reason": "Illustrative observed evidence for this category; replace with actual audit evidence.",
+      "before": null,
+      "after": null,
+      "fix": null
     },
     {
-      "principle": "The bullet formula is verb, work, outcome",
+      "principle": "Every bullet must name the thing",
       "source_type": "library_principle",
-      "source_name": "The bullet formula is verb, work, outcome",
+      "source_name": "Every bullet must name the thing",
       "category": "Evidence and Bullet Strength",
+      "score": 2,
+      "weight": 1.5,
+      "severity": "MINOR",
+      "reason": "Illustrative observed evidence for this category; replace with actual audit evidence.",
+      "before": null,
+      "after": null,
+      "fix": null
+    },
+    {
+      "principle": "Standard section headings beat clever branding",
+      "source_type": "library_principle",
+      "source_name": "Standard section headings beat clever branding",
+      "category": "ATS and Structural Reliability",
+      "score": 3,
+      "weight": 1.25,
+      "severity": "INFO",
+      "reason": "Illustrative observed evidence for this category; replace with actual audit evidence.",
+      "before": null,
+      "after": null,
+      "fix": null
+    },
+    {
+      "principle": "Mirror the job description's language naturally",
+      "source_type": "library_principle",
+      "source_name": "Mirror the job description's language naturally",
+      "category": "Relevance and Targeting",
       "score": 1,
       "weight": 1.5,
       "severity": "MAJOR",
-      "reason": "Bullets describe tasks without outcomes.",
-      "before": "Worked on release checks.",
-      "after": "Automated release checks for 12 services and reduced failed deployments.",
-      "fix": "Add outcome framing and measurable impact when available."
+      "reason": "Illustrative observed evidence for this category; replace with actual audit evidence.",
+      "before": null,
+      "after": null,
+      "fix": "Confirm the missing evidence before changing factual claims."
+    },
+    {
+      "principle": "Typography",
+      "source_type": "common_pattern",
+      "source_name": "common-patterns § Typography",
+      "category": "Professionalism and Trust",
+      "score": 2,
+      "weight": 1.0,
+      "severity": "MINOR",
+      "reason": "Illustrative observed evidence for this category; replace with actual audit evidence.",
+      "before": null,
+      "after": null,
+      "fix": null
     }
   ],
   "missing_data_flags": [
-    "MISSING_METRIC"
+    "MISSING_TOOL_SPECIFICITY"
   ],
   "system_flags": [
-    "BULLET_QUALITY_LOW"
+    "TARGETING_WEAK"
   ],
   "top_fixes": [
-    "Declare a clear target role in the top third and align first bullets to that target."
+    "Supply verified experience for the missing target requirement."
   ],
   "rewritten_resume": null,
   "notes": [
-    "Rewrite not requested in this run."
-  ]
+    "Illustrative ledger only; current audits must score their own evidence."
+  ],
+  "hire_likelihood": "Low likelihood without major revision",
+  "category_scores": {
+    "positioning_and_narrative": 66.7,
+    "evidence_and_bullet_strength": 66.7,
+    "ats_and_structural_reliability": 100.0,
+    "relevance_and_targeting": 33.3,
+    "professionalism_and_trust": 66.7
+  },
+  "final_score": 68.4,
+  "verdict": "Weak",
+  "critical_issue_count": 0,
+  "major_issue_count": 1,
+  "minor_issue_count": 2
 }
 ```
 

@@ -175,7 +175,7 @@ def pick_theme(config: Dict, preset_name: str, accent_override: Optional[str]) -
     return merged
 
 
-def build_preview_checklist(config: Dict, file_size: int) -> List[Tuple[str, str]]:
+def build_preview_checklist(config: Dict, file_size: int, image: Image.Image) -> List[Tuple[str, str]]:
     colors = config.get("colors", {})
     bg = hex_to_rgb(colors.get("bg_start", "#0d1117"))
     text = hex_to_rgb(colors.get("text_primary", "#e6edf3"))
@@ -187,7 +187,12 @@ def build_preview_checklist(config: Dict, file_size: int) -> List[Tuple[str, str
     checklist = []
     checklist.append(("contrast_title", f"PASS ({title_ratio:.2f}:1)") if title_ratio >= 4.5 else ("contrast_title", f"WARN ({title_ratio:.2f}:1)"))
     checklist.append(("contrast_subtitle", f"PASS ({subtitle_ratio:.2f}:1)") if subtitle_ratio >= 3.0 else ("contrast_subtitle", f"WARN ({subtitle_ratio:.2f}:1)"))
-    checklist.append(("crop_safety", f"PASS (safe zone {crop_width}x{crop_height})"))
+    checklist.append(("crop_safety", f"REVIEW (safe zone {crop_width}x{crop_height}; inspect actual rendered content)"))
+    footer = image.info['footer_layout']
+    badge = footer['language']
+    separated = badge is None or all(box[2] < badge[0] for box in footer['tags'])
+    checklist.append(("tag_badge_separation", "PASS" if separated else "WARN (footer overlap)"))
+    checklist.append(("footer_tags", f"{len(footer['tags'])} of {footer['tags_requested']} rendered; language-badge space reserved"))
     checklist.append(("file_size", f"PASS ({file_size / 1024:.1f} KB)") if file_size < MAX_BYTES else ("file_size", f"WARN ({file_size / 1024:.1f} KB)"))
     return checklist
 
@@ -362,48 +367,49 @@ def generate_image(
             draw.text((content_left, y), line, font=subtitle_font, fill=text_secondary)
             y += sub_line_height
 
-    # Tag pills — anchored to bottom-left
+    tag_gap = max(1, int(12 * (width / CANVAS_W)))
+    tag_right = width - padding
+    language_box = None
+    footer_boxes = []
+    if language:
+        lang_font = tag_font
+        dot_r = max(1, int(tag_size * 0.35))
+        dot_gap = int(8 * (width / CANVAS_W))
+        lang_label = fit_text_to_width(language, lang_font, width - padding * 2 - dot_r * 2 - dot_gap, draw)
+        lang_bbox = draw.textbbox((0, 0), lang_label, font=lang_font)
+        lang_text_w = lang_bbox[2] - lang_bbox[0]
+        lang_text_h = lang_bbox[3] - lang_bbox[1]
+        total_w = dot_r * 2 + dot_gap + lang_text_w
+        bx = width - padding - total_w
+        center_y = height - padding - (max(lang_text_h, dot_r * 2) + 1) // 2
+        text_y = center_y - lang_text_h // 2 - lang_bbox[1]
+        language_box = (bx, min(center_y - dot_r, text_y + lang_bbox[1]), width - padding, max(center_y + dot_r, text_y + lang_bbox[3]))
+        tag_right = bx - tag_gap
+
     if tags:
         tag_y = height - padding - int(tag_size * 1.8)
         tag_x = content_left
         tag_h = int(tag_size * 1.6)
         tag_padding_x = int(tag_size * 0.6)
-        tag_gap = int(12 * (width / CANVAS_W))
         corner_r = int(tag_h * 0.35)
-
         for tag in tags[:max_tags]:
             fitted_tag = fit_text_to_width(tag, tag_font, int(width * 0.16), draw)
             bbox = draw.textbbox((0, 0), fitted_tag, font=tag_font)
             tag_w = (bbox[2] - bbox[0]) + tag_padding_x * 2
-            if tag_x + tag_w > width - padding:
+            if tag_x + tag_w > tag_right:
                 break
-            draw_rounded_rect(
-                draw,
-                (tag_x, tag_y, tag_x + tag_w, tag_y + tag_h),
-                radius=corner_r,
-                fill=tag_bg,
-                outline=tag_border,
-                outline_width=1,
-            )
-            text_y = tag_y + (tag_h - (bbox[3] - bbox[1])) // 2
-            draw.text((tag_x + tag_padding_x, text_y), fitted_tag, font=tag_font, fill=tag_text)
+            box = (tag_x, tag_y, tag_x + tag_w, tag_y + tag_h)
+            draw_rounded_rect(draw, box, radius=corner_r, fill=tag_bg, outline=tag_border, outline_width=1)
+            text_y_tag = tag_y + (tag_h - (bbox[3] - bbox[1])) // 2 - bbox[1]
+            draw.text((tag_x + tag_padding_x - bbox[0], text_y_tag), fitted_tag, font=tag_font, fill=tag_text)
+            footer_boxes.append(box)
             tag_x += tag_w + tag_gap
 
-    # Language badge bottom-right
     if language:
-        lang_color_hex = LANGUAGE_COLORS.get(language, "#8b949e")
-        lang_color = hex_to_rgb(lang_color_hex)
-        lang_font = load_font(font_path, tag_size)
-        lang_bbox = draw.textbbox((0, 0), language, font=lang_font)
-        lang_text_w = lang_bbox[2] - lang_bbox[0]
-        lang_text_h = lang_bbox[3] - lang_bbox[1]
-        dot_r = int(tag_size * 0.35)
-        dot_gap = int(8 * (width / CANVAS_W))
-        total_w = dot_r * 2 + dot_gap + lang_text_w
-        bx = width - padding - total_w
-        by = height - padding - lang_text_h - int(4 * (height / CANVAS_H))
-        draw.ellipse([bx, by + (lang_text_h - dot_r * 2) // 2, bx + dot_r * 2, by + (lang_text_h - dot_r * 2) // 2 + dot_r * 2], fill=lang_color)
-        draw.text((bx + dot_r * 2 + dot_gap, by), language, font=lang_font, fill=text_secondary)
+        lang_color = hex_to_rgb(LANGUAGE_COLORS.get(language, "#8b949e"))
+        draw.ellipse([bx, center_y - dot_r, bx + dot_r * 2, center_y + dot_r], fill=lang_color)
+        draw.text((bx + dot_r * 2 + dot_gap - lang_bbox[0], text_y), lang_label, font=lang_font, fill=text_secondary)
+    img.info['footer_layout'] = {'tags': footer_boxes, 'language': language_box, 'tags_requested': min(len(tags), max_tags)}
 
     return img
 
@@ -484,7 +490,7 @@ def main():
     print(f"Size:   {size_kb:.1f} KB (quality {quality_used})")
     print(f"Dims:   {CANVAS_W}x{CANVAS_H}")
     print("Preview checklist:")
-    for name, result in build_preview_checklist(pick_theme(config, args.theme, args.accent or None), final_size):
+    for name, result in build_preview_checklist(pick_theme(config, args.theme, args.accent or None), final_size, img):
         print(f"  {name}: {result}")
 
     if final_size >= MAX_BYTES:

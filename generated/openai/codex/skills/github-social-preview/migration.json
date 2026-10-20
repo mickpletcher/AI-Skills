@@ -26,5 +26,11 @@
     "completedchanges.md": "1f4e4361b8c0f2516f0894ddf7b8ea18277498f39beff6b8bbc7f39c6f8c3dac",
     "github-social-preview.skill": "b242237ad993959190da73991b2d5d0e0e032d50716d1a0ad8e9fdb55746761a",
     "upgrades.md": "0ed123c75442d42b14c02285fa391de8db1bd0533eed59428c7c7e2e1820c5f2"
+  },
+  "supporting_file_overrides": {
+    "scripts/generate_preview.py": {
+      "sha256": "00ee376207573259f13eb34d99da303e83d44f718a5b3429aa7e162a56ec8f81",
+      "reason": "Candidate-only footer-space reservation and actual-layout checklist correction after native tag/badge overlap. Original helper hash retained."
+    }
   }
 }

@@ -181,6 +181,14 @@ class MigrationTests(unittest.TestCase):
                         self.assertEqual(data, (ROOT/'generated'/generator.PLATFORM_PATHS[platform]/'skills'/path.parent.name/rel).read_bytes())
                 for rel, digest in record['retained_in_original_sha256'].items():
                     self.assertEqual(hashlib.sha256((source.parent/rel).read_bytes()).hexdigest(), digest)
+                for rel, addition in record.get('added_supporting_files', {}).items():
+                    self.assertNotIn(rel, actual)
+                    self.assertEqual(set(addition), {'sha256', 'reason'})
+                    self.assertTrue(addition['reason'].strip())
+                    data = (path.parent/rel).read_bytes()
+                    self.assertEqual(hashlib.sha256(data).hexdigest(), addition['sha256'])
+                    for platform in json.loads((path.parent/'ecosystems.json').read_text(encoding='utf-8'))['allowed']:
+                        self.assertEqual(data, (ROOT/'generated'/generator.PLATFORM_PATHS[platform]/'skills'/path.parent.name/rel).read_bytes())
 
     def test_bundle_links_resolve_in_each_target(self):
         for root in [ROOT, *(ROOT/'generated'/generator.PLATFORM_PATHS[platform]/'skills' for platform in generator.TARGETS)]:

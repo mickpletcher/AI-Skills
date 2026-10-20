@@ -94,5 +94,14 @@
 - [x] Correct the candidate map validator for pending addresses, retain supported-address checks and record an explicit provenance override. Five executable regressions pass; both unchanged itinerary artifacts pass strict replay with zero errors/warnings. Shipped skills/packages are unchanged. See the [follow-up assessment](../../evaluations/itinerary-validator-2026-10-19.md).
 - [x] Perform four offline visual checks at desktop and phone widths using an allowed standalone renderer. Three bounded passes; reconciliation phone table clips where horizontal scrolling is unsupported. Preserve the unresolved result and original artifacts.
 - [x] Validate the candidate correction and evidence overlay in a clean Git-byte snapshot: 79 unit tests, generator drift, repository/PowerShell quality, exact-case folders and 24 offline cases/99 negative checks passed. Shipped source/package/catalog/checksum files are unchanged.
-- [ ] Verify every reconciliation booking-table column in a permitted native phone renderer. Browser policy rejected local file URLs; the offline renderer cannot establish scrolling, iPhone/Apple Notes or print behavior.
+- [ ] Deferred at Mick's request: verify every reconciliation booking-table column in a permitted native phone renderer. Browser policy rejected local file URLs; the offline renderer cannot establish scrolling, iPhone/Apple Notes or print behavior. Deferral is not a pass or acceptance.
 - [ ] Obtain human acceptance of the third batch and bounded native photo result. Keep PR #11 draft; no merging, installation or promotion.
+
+## Candidate helper and deployment follow-up
+
+- [x] Reproduce Obsidian silent overwrites and vault traversal with disposable files; preserve real notes and shipped helpers.
+- [x] Correct candidate note creation and folder containment, add seven executable regression methods and record an explicit resource override plus instruction transformation.
+- [x] Review and correct the Proxmox candidate: confirmed deployment inputs, dedicated application identity, virtual environment, exclusive config creation and conditional external exposure. Preserve original source provenance; no live infrastructure changes.
+- [x] Correct stale coverage/acceptance and byte-preservation claims in the canonical README and generic audit. Record the [assessment and limits](../../evaluations/candidate-followup-2026-10-19.md).
+- [x] Complete clean Git-byte snapshot validation: all 86 unit tests, generator drift, repository/PowerShell quality, exact-case folders and 24 offline cases/99 negative checks passed. Check all five Proxmox Bash blocks, unit consistency and exclusive config creation with synthetic inputs. Deliver only candidate resources, provenance, regressions and docs through draft PR #11; shipped source/packages and ecosystem placement are unchanged.
+- [ ] Before native Codex promotion, resolve Proxmox's existing `version` frontmatter incompatibility with the generic skill validator. The repository schema accepts the retained metadata; no native compatibility pass is claimed.

@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Fixed candidate Obsidian note overwrites and vault escapes with exclusive writes and containment regressions. Reworked the Proxmox candidate around confirmed infrastructure inputs, a dedicated application account, isolated Python dependencies and optional tunnel exposure. Corrected stale migration coverage/provenance docs. Shipped skills/packages stay unchanged; PR remains draft.
+
 - Corrected the candidate itinerary validator for explicitly pending addresses with five executable regressions and preserved source provenance. Both original itineraries pass strict replay. Offline visual review found three bounded passes and one unresolved phone table; native verification and acceptance remain pending. Shipped skills/packages are unchanged; PR stays draft.
 
 - Ran six isolated synthetic cases for github-social-preview, n8n-workflow and trip-email-html-itinerary. Recorded four bounded passes, outstanding itinerary visual gates and a strict-validator defect for unknown addresses. Retried native photo testing and independently verified the saved ZIP's exact JPEG bytes and mapping. Acceptance remains pending; PR stays draft with no merging or promotion.

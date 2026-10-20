@@ -271,6 +271,7 @@ If the user requests Obsidian delivery, add this post output step:
 3. Save the analysis as Markdown in the `Ideas` folder of the target Obsidian vault.
 4. If the vault path or vault name is not known, ask for it unless the user already established a default vault.
 5. Preserve the full analysis body. Do not reduce it to a summary unless the user asked for that.
+6. Save only inside the selected vault. The helper refuses existing note filenames, including collisions after title sanitization; choose a distinct title rather than deleting or overwriting the existing note. Updating an existing note requires a separately requested edit.
 
 Obsidian platform handling:
 

@@ -12,7 +12,9 @@
   "original_authoring_model": null,
   "behavior_evaluations": [],
   "host_compatibility": "unverified",
-  "transformations": {},
+  "transformations": {
+    "5. Preserve the full analysis body. Do not reduce it to a summary unless the user asked for that.": "5. Preserve the full analysis body. Do not reduce it to a summary unless the user asked for that.\n6. Save only inside the selected vault. The helper refuses existing note filenames, including collisions after title sanitization; choose a distinct title rather than deleting or overwriting the existing note. Updating an existing note requires a separately requested edit."
+  },
   "supporting_files_sha256": {
     "evaluation-framework.md": "60817a3c469449ac28a738cd5e0e17964d9d909875788dba25f32f7849c853ee",
     "output-template.md": "2e968fc77d004a9a95fc317db0108aaca2569c2638efd04ea9fe391f7b7cc9cd",
@@ -25,5 +27,11 @@
     "completedchanges.md": "190c91c5468736f7eafdc1f69ee1683991251a5623850bc8235df01ac6a07122",
     "idea-forge.skill": "d93a012bd71938c6d51d3ca69cefa1e3972990f5bc13246cb29696527f701768",
     "upgrades.md": "e7c70a673f7c2667232bbe9abcccc744fe93056fede6aed6231f84f82947c7d3"
+  },
+  "supporting_file_overrides": {
+    "scripts/save_to_obsidian.py": {
+      "sha256": "aeff847c020aac344b1fd96c4780fad559751d85428f912fbf730e2a44830bbd",
+      "reason": "Candidate-only correction: exclusive note creation and vault-contained destinations. Original shipped bytes remain unchanged; see evaluations/candidate-followup-2026-10-19.md."
+    }
   }
 }

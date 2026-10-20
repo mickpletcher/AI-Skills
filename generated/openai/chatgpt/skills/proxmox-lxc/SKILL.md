@@ -47,26 +47,19 @@ Plan and document Proxmox LXC deployments for Mick's homelab with practical cont
 
 Deploy and configure Proxmox LXC containers for self-hosted services on Mick's homelab stack.
 
-## Infrastructure Reference
+## Deployment Inputs
 
-| Item | Value |
-| --- | --- |
-| Proxmox host | Local network |
-| UniFi controller | Static IP assignment via MAC |
-| Cloudflare Tunnel | HTTPS exposure with no port forwarding |
-| Existing containers | `CT 104` = `n8n` at `192.168.0.81` |
-| Template | Ubuntu 22.04 standard |
-| Next available CT ID | Ask Mick or check with `pvesh get /nodes/{node}/lxc` |
+Read the target host's supplied inventory or request the missing values. Do not treat historical homelab details as current configuration.
 
-## Pre-Deployment Checks
+- Confirm the Proxmox node, an unused cluster-wide CT ID, an available template volume, storage pool and backup target.
+- Confirm IP/CIDR, bridge, gateway if required, DNS servers, VLAN and allowed client/origin connections. An unanswered ping alone does not establish that an IP is unused.
+- Check host capacity and size memory, cores and disk for the workload and data growth.
+- Default to an unprivileged container. Explain any specific device mapping or privilege exception; do not switch to privileged mode merely to bypass a setup failure.
+- Separate container privilege from application identity: a generic application service runs as a dedicated non-login account. Use root only for setup or a documented application requirement.
+- Select a supported OS template and application runtime from actual inventory and current vendor requirements. Do not invent a template filename, gateway or available storage.
+- Keep internal services internal unless external access was requested. Tunnel configuration requires the existing connector location, reachable origin address, approved hostname and access policy. It does not authorize publishing an administrative interface.
 
-Resolve these before generating the `pct create` command, and state any assumption made:
-
-- **CT ID and IP**: confirm both are unused (`pct list`, ping or UniFi client list); never reuse an IP from the reference table
-- **Resources**: check host headroom (`pvesh get /nodes/{node}/status` or the dashboard) before assigning memory and cores; size from the workload table, not habit
-- **Disk**: estimate data growth, not just install size; databases and media services should not sit on an 8GB rootfs
-- **Privilege**: default unprivileged; flag the specific reason if a service genuinely needs a privileged container or device passthrough (NFS mounts, GPU, tun device for VPN) and name the exact feature flags instead of falling back to privileged mode
-- **Network**: confirm the bridge and whether the service belongs on the main LAN or a separate VLAN; anything exposed through Cloudflare Tunnel should not also need inbound LAN ports opened
+If required values are missing, provide a clearly labeled parameterized plan and request those values before execution. Do not claim preflight, deployment, exposure or rollback succeeded without actual evidence. Planning does not authorize changes to Proxmox, UniFi or Cloudflare.
 
 ## Service Recipes
 
@@ -75,11 +68,11 @@ Common services deviate from the generic sequence in known ways. Apply these adj
 | Service | Memory | Disk | Notes |
 | --- | --- | --- | --- |
 | Pi-hole | 512MB | 8GB | Port 53 TCP/UDP plus web UI; set the container as DNS only after verifying it resolves |
-| Home Assistant | 2048MB | 16GB | Privileged or device passthrough for USB radios; prefer HAOS VM if heavy add-on use is planned |
+| Home Assistant | 2048MB | 16GB | Assess specific USB device mappings; do not default to privileged mode. Prefer HAOS VM when its features are required. |
 | Ollama / local LLM | 4096MB+ | 32GB+ | Models dominate disk; GPU passthrough needs the host driver plus cgroup device entries |
 | PostgreSQL / MariaDB | 2048MB | 16GB+ | Put data on a dedicated mount point; schedule dumps, not just snapshots |
 | Grafana / monitoring | 1024MB | 8GB | Pair with a metrics store; do not point it at production databases without a read-only user |
-| FastAPI / MCP server | 512MB | 8GB | The generic sequence as written |
+| FastAPI / MCP server | 512MB | 8GB | Starting estimate only; verify runtime, entrypoint, data path and access requirements. |
 
 For services not listed, follow the generic sequence and say which recipe assumptions were borrowed.
 
@@ -94,82 +87,68 @@ Make changes testable before they are permanent:
 
 ## Full Deployment Sequence
 
-When asked to deploy a new service, generate all five of these pieces.
+Generate the applicable pieces below after resolving the deployment inputs. These are parameterized examples, not commands that were executed. Substitute validated values; do not pass user-supplied text directly into a shell.
 
-### 1. `pct create` command
+### 1. Container creation
 
 ```bash
-pct create {CT_ID} local:vztmpl/ubuntu-22.04-standard_22.04-1_amd64.tar.zst \
+pct create {CT_ID} '{TEMPLATE_VOLUME}' \
   --hostname {service-name} \
-  --memory 512 \
-  --cores 1 \
-  --rootfs local-lvm:8 \
-  --net0 name=eth0,bridge=vmbr0,ip={IP}/24,gw=192.168.0.1 \
-  --nameserver 1.1.1.1 \
+  --memory {MEMORY_MB} \
+  --cores {CORES} \
+  --rootfs '{STORAGE}:{DISK_GB}' \
+  --net0 'name=eth0,bridge={BRIDGE},ip={IP_CIDR},gw={GATEWAY}' \
+  --nameserver '{DNS_SERVERS}' \
   --unprivileged 1 \
-  --start 1
+  --start 0
 ```
 
-Adjust memory based on workload:
+Omit `gw=` when no gateway is required; add the confirmed VLAN tag only when applicable. Verify the resulting config before the separately authorized `pct start {CT_ID}`. Confirm both the ID and target before rollback; do not generate an unconditional `pct destroy` cleanup.
 
-- Light: MCP server or small API, `512MB`
-- Medium: Python app or n8n-like workload, `1024MB`
-- Heavy: database or ML workload, `2048MB+`
+### 2. Container setup
 
-### 2. Initial container setup
+After creation and authorized startup, enter the new container. Package setup runs inside it, not on the Proxmox host.
 
 ```bash
-# Enter container
 pct enter {CT_ID}
-
-# Update and install basics
-apt update && apt upgrade -y
-apt install -y curl wget git python3 python3-pip
-
-# For Python services
-pip install {packages} --break-system-packages
-
-# For Node services
-curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-apt install -y nodejs
+apt update
+apt install -y ca-certificates python3 python3-venv
 ```
 
-### 3. Application install and config
+Use the selected application's documented runtime and package repository. For Node services, verify the supported release and repository setup before installation; do not pipe a downloaded installer directly into a root shell. Plan OS upgrades separately when they could change an existing service.
+
+### 3. Python application and identity
+
+This example applies to a Python service. Confirm the account is new or already belongs to this application; do not reuse another service's identity.
 
 ```bash
-# Create app directory
-mkdir -p /opt/{service-name}
-cd /opt/{service-name}
-
-# Install app
-pip install {package} --break-system-packages
-
-# Create .env file for secrets
-cat > /opt/{service-name}/.env << EOF
-API_KEY=your_key_here
-API_BASE_URL=https://api.example.com
-PORT=8000
-EOF
-
-chmod 600 /opt/{service-name}/.env
+useradd --system --user-group --home-dir /var/lib/{service-name} --no-create-home --shell /usr/sbin/nologin {service-user}
+install -d -o root -g root -m 0755 /opt/{service-name}
+python3 -m venv /opt/{service-name}/.venv
+/opt/{service-name}/.venv/bin/python -m pip install '{package}'
+(umask 077; set -o noclobber; : > /opt/{service-name}/.env)
 ```
 
-### 4. `systemd` service unit
+Install reviewed application files under the root-owned application directory and replace the unit's example entrypoint with the verified command. Keep runtime writes in `/var/lib/{service-name}`, not the code or virtual environment. Populate the root-readable environment file locally without logging secrets; the system service manager reads it before dropping privileges. The exclusive environment-file creation refuses an existing path; preserve and review any existing configuration rather than replacing it. Preserve existing config and application data before any update.
+
+### 4. Service unit and verification
 
 ```ini
-# /etc/systemd/system/{service-name}.service
-
 [Unit]
 Description={Service Display Name}
 After=network.target
 
 [Service]
 Type=simple
-User=root
+User={service-user}
+Group={service-user}
 WorkingDirectory=/opt/{service-name}
 EnvironmentFile=/opt/{service-name}/.env
-ExecStart=/usr/bin/python3 /opt/{service-name}/server.py http
-Restart=always
+StateDirectory={service-name}
+StateDirectoryMode=0750
+ExecStart=/opt/{service-name}/.venv/bin/python /opt/{service-name}/server.py http
+NoNewPrivileges=yes
+Restart=on-failure
 RestartSec=10
 StandardOutput=journal
 StandardError=journal
@@ -178,35 +157,34 @@ StandardError=journal
 WantedBy=multi-user.target
 ```
 
+Write the reviewed unit to `/etc/systemd/system/{service-name}.service`. Check its application command, account permissions, writable data path and target systemd version, then validate before starting it.
+
 ```bash
+systemd-analyze verify /etc/systemd/system/{service-name}.service
 systemctl daemon-reload
 systemctl enable --now {service-name}
-systemctl status {service-name}
-journalctl -u {service-name} -f
+systemctl status --no-pager {service-name}
+journalctl -u {service-name} -n 50 --no-pager
 ```
 
-### 5. Cloudflare Tunnel config entry
+Verify the actual local health endpoint and service identity, then test only the approved client path. Record a stop/disable and config/data restoration procedure next to the change. Use application-specific units for non-Python services; the generic unit is not proof of compatibility.
+
+### 5. Optional external access
+
+Skip this section for internal-only services. If external access was requested, review the existing tunnel configuration and access policy before proposing an ingress change. The connector must be able to reach the selected origin; confirm bind address and firewall rules for that path. A separate connector may need an allowed LAN origin connection even though no inbound WAN port forwarding is required.
 
 ```yaml
 ingress:
-  - hostname: {service-name}.yourdomain.com
-    service: http://{IP}:{PORT}
+  - hostname: {APPROVED_HOSTNAME}
+    service: http://{ORIGIN_ADDRESS}:{PORT}
   - service: http_status:404
 ```
 
-```bash
-systemctl restart cloudflared
-curl https://{service-name}.yourdomain.com/health
-```
+Merge the proposed entry into the existing ingress list before its final catch-all; preserve other routes. Back up and validate the configuration, apply only the authorized change, verify the expected authentication and health behavior, and retain the exact prior configuration for rollback. Do not restart a shared connector just because this example includes an ingress entry.
 
-## UniFi Static IP Assignment
+## UniFi Addressing
 
-1. Open UniFi controller and go to `Clients`
-2. Find the container by hostname or MAC
-3. Open settings and assign the fixed IP
-4. Apply and reprovision if needed
-
-You can also set the IP at creation time with `--net0 ... ip={IP}/24`.
+Use either a verified static address outside the DHCP allocation range or an appropriate DHCP reservation. Match the container's chosen address mode; a reservation does not configure a guest that uses a different static address. Confirm the correct network, MAC and conflict status before any separately authorized controller change.
 
 ## Common Service Port Reference
 
@@ -253,8 +231,9 @@ pct rollback {CT_ID} pre-update-YYYYMMDD
 - `.env` file created with `chmod 600`
 - `systemd` unit file created and enabled
 - Service starts cleanly
-- Cloudflare Tunnel config updated and restarted
-- External URL responds correctly
+- Service runs under its confirmed application account with the intended writable data path
+- Approved client path and actual health endpoint verified
+- External access configured only if requested, with authentication and rollback verified
 
 ## Help And Examples
 

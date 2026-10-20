@@ -2,7 +2,7 @@
 
 import argparse
 import re
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 
 
 def parse_args() -> argparse.Namespace:
@@ -23,7 +23,7 @@ def main() -> int:
     args = parse_args()
 
     vault_root = Path(args.vault_path).expanduser().resolve()
-    if not vault_root.exists():
+    if not vault_root.is_dir():
         raise SystemExit(f"Vault path not found: {vault_root}")
 
     body_path = Path(args.body_file).expanduser().resolve()
@@ -31,11 +31,20 @@ def main() -> int:
         raise SystemExit(f"Body file not found: {body_path}")
 
     note_body = body_path.read_text(encoding="utf-8")
-    target_folder = vault_root / args.folder
+    folder = Path(args.folder.replace('\\', '/'))
+    if folder.is_absolute() or PureWindowsPath(args.folder).drive or '..' in folder.parts:
+        raise SystemExit('Folder must be a relative path inside the vault.')
+    target_folder = (vault_root / folder).resolve()
+    if not target_folder.is_relative_to(vault_root):
+        raise SystemExit('Folder resolves outside the vault.')
     target_folder.mkdir(parents=True, exist_ok=True)
 
     note_path = target_folder / f"{slugify_file_name(args.title)}.md"
-    note_path.write_text(f"# {args.title}\n\n{note_body.rstrip()}\n", encoding="utf-8")
+    try:
+        with note_path.open('x', encoding='utf-8', newline='\n') as note:
+            note.write(f"# {args.title}\n\n{note_body.rstrip()}\n")
+    except FileExistsError:
+        raise SystemExit(f'Note already exists; choose a different title: {note_path}')
 
     print(f"Saved note to {note_path}")
     return 0

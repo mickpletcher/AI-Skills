@@ -211,7 +211,7 @@
     "display_precision_caveats": 1,
     "domain_retries": 0,
     "candidate_changes": 0,
-    "human_acceptance_pending": true
+    "human_acceptance_pending": false
   },
   "independent_computations": {
     "research-weighted": {
@@ -250,5 +250,9 @@
     "offline_negative_checks": 99,
     "actual_model_evaluations_from_offline_checks": 0,
     "hosted_checks": "tracked on delivery commit"
+  },
+  "human_acceptance": {
+    "date": "2026-10-21",
+    "statement": "Mick explicitly accepted all six bounded travel results on 2026-10-21, including the explained display-precision caveat, and authorized the next untested native batch. Live research/booking, standalone file/Obsidian/mobile/print ingestion, repeatability and broader compatibility remain open. Workout initial delivery remains open. No merging, installation or promotion."
   }
 }

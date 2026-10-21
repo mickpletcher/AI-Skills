@@ -151,3 +151,11 @@ Mick explicitly accepted the bounded workout results on 2026-10-21 and authorize
 ## 2026-10-21 fourth targeted native review
 
 Six fresh Instant instruction-packet cases across travel-research, travel-planning and travel-itinerary pass bounded assistant review. Decimal scores/budgets, calendar/traveler boundaries, source isolation, missing inputs and consistent mobile summaries are checked against supplied synthetic facts. Retain the explained mixed display precision in one research result. No live research or downloaded/imported itinerary certification. Human acceptance remains pending; workout initial delivery and earlier gates stay open. No candidate, placement, shipped package, merge or promotion changes. See [assessment](../evaluations/native-batch4-2026-10-21.md).
+
+## 2026-10-21 bounded travel acceptance
+
+Mick explicitly accepted all six bounded travel results on 2026-10-21, including the explained display-precision caveat, and authorized the next untested native batch. Live research/booking, standalone file/Obsidian/mobile/print ingestion, repeatability and broader compatibility remain open. Workout initial delivery remains open. No merging, installation or promotion.
+
+## 2026-10-21 fifth targeted native review
+
+Seven native Instant attempts across blog-post, linkedin-post and astrophotography-processing yield six completed responses: four bounded passes and two source-grounding failures. Retain the unassessed LinkedIn host failure separately from its passing fresh unchanged retry. A blog alternate opener invents relative review/test timing; a LinkedIn hashtag supplies an unlogged technology. All requested writing counts pass, but that does not establish source fidelity. Actual FITS headers and three returned SHA256 values match original member bytes; preview diagnosis preserves evidence limits. Candidate resources remain unchanged. Correction/rerun and human acceptance are pending; workout initial delivery and all prior gates remain open. See [assessment](../evaluations/native-batch5-2026-10-21.md).

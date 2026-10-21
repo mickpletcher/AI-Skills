@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Recorded bounded travel acceptance and tested the next native writing/astronomy batch. Six completed responses yield four bounded passes and two grounding failures; one LinkedIn host failure is retained alongside its passing unchanged retry. Verified draft counts, supplied code, synthetic preview observations and actual FITS headers/hashes. Candidate fixes remain pending; workout initial delivery stays open. PR remains draft without merging or promotion.
+
 - Recorded Mick's bounded workout acceptance while preserving the open initial-delivery issue. Completed six fresh native travel research/planning/itinerary cases with six bounded passes and one explained display-precision caveat. Verified synthetic scores, budgets, date/traveler boundaries and missing-input behavior; travel acceptance remains pending. PR stays draft without candidate changes, merging or promotion.
 
 - Removed an unlogged program copied from the workout example template and recorded exact candidate transformations. Latest Medium native testing verifies an 895-byte combined ZIP and two 324-byte corrected/recovery downloads exactly equal to native Copy, plus duplicate confirmation. Retained earlier program/Copy failures and current initial-response load failures; recovery does not certify initial delivery. Consolidated bounded review with 108 passing regressions; no merge or promotion.

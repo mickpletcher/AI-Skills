@@ -35,7 +35,7 @@ Two early clipboard reads still held their fresh sentinel. Later reads captured 
 
 Copy exports are whole responses. The year-boundary response includes a fenced Markdown itinerary and surrounding explanation. No downloaded standalone file, byte-zero frontmatter, Obsidian import, phone rendering or print behavior is certified. Live fares, real weather, legal entry requirements, actual reservations, other ecosystems/models, repeatability and installed routing remain untested. Complete provider tool/network history is unavailable. No browsing or connector use is visible in the response UI; provider no-action statements are not an independent network audit.
 
-This batch is ready for bounded human review. Acceptance is pending. Workout initial delivery and all earlier separately documented gates remain open. Repository validation is recorded on the delivery commit; deterministic checks do not count as native model evaluations.
+Mick accepted these six bounded results on 2026-10-21, including the explained rounding caveat, and authorized the next untested native batch. Workout initial delivery and all earlier separately documented gates remain open. Repository validation is recorded on the delivery commit; deterministic checks do not count as native model evaluations.
 
 
 ## Delivery validation

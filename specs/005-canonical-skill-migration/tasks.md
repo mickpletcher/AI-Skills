@@ -210,6 +210,17 @@
 - [x] Correct Facebook paragraph counting/final format checks, retain an intermediate runtime-review scope failure, then preserve diff-review scope explicitly. Fresh unchanged final retry passes two-paragraph/source checks; retain its primary host failure as unassessed. See the [repair assessment](../../evaluations/native-batch6-repairs-2026-10-21.md).
 - [x] Correct final X measurement/recount and selected-preset rules. Both original native tasks pass exact Copy/rendered counts at 234 and 136; one-liner is below140. Original failures and external criteria remain unchanged; actual provider counter execution remains unaudited.
 - [x] Consolidate all six cases: seven attempts, six completed responses, three bounded passes, three formatting/count failures and one unassessed host failure. No candidate changes. On 481d9fe all twelve checks pass; master-generation workflow summary remains running despite its successful job/steps.
-- [ ] Obtain separate bounded acceptance after reviewing retained failures. Keep blog verification, workout initial delivery, broader native coverage and all promotion gates open. No merge, installation or promotion.
+- [x] Mick explicitly accepted the bounded sixth-batch results, including final repair reruns and retained failure limits, on 2026-10-21 and authorized the next untested native batch. Earlier failed/unassessed outputs remain unchanged. Blog verification, workout initial delivery, broader native coverage and all promotion gates remain open. No merge, installation or promotion.
 
 - [x] Validate both writing correction revisions with 108 regressions each. Final generator drift (805 files), repository/PowerShell quality (46 skills, zero issues), exact-case folders (35 skills) and 24 offline cases/99 negative checks pass. Retain identical pre-existing version-frontmatter rejection in four baseline/corrected schema pairs. Keep acceptance and earlier open gates separate.
+
+## Seventh targeted native batch
+
+- [x] Check CI on 5d2c453: all five workflows and twelve individual checks passed; PR remains draft. Sixth-batch acceptance does not close blog verification or workout initial delivery.
+- [x] Select n8n-workflow, pihole-blocklist and container-home without prior targeted native records. Pin six fabricated cases, exact existing candidate resources and criteria outside uploads. Keep operations as offline source review and proposals only.
+- [x] Execute six fresh Instant Temporary chats without retries. Verify complete native copies, exact 3.55/5 rubric arithmetic, 100=70+30 domains and 12-2=10 trim inventory. Retain three bounded passes, two n8n policy/test-matrix inconsistencies and one home source-scope failure. See the [assessment](../../evaluations/native-batch7-2026-10-21.md).
+- [ ] Correct n8n lost-response retry expectations to match the supplied selective retry boundary, then rerun both affected native cases.
+- [ ] Correct container-home fictional-project isolation from embedded historical context, then rerun the affected sequencing case.
+- [ ] Obtain separate bounded seventh-batch acceptance after reviewing retained failures. Keep blog verification, workout initial delivery, broader native coverage and all promotion gates open. No merge, installation or promotion.
+
+- [x] Validate the unchanged-candidate evidence overlay in a clean tracked snapshot: repository/PowerShell quality (46 skills, zero issues), exact-case folders (35 skills), generator drift and 24 offline cases/99 negative checks pass. Deliver only nine review/tracking files through draft PR #11.

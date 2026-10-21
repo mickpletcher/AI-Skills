@@ -288,7 +288,7 @@
     "final_bounded_passes": 3,
     "intermediate_source_scope_failures": 1,
     "unassessed_host_failures": 1,
-    "human_acceptance_pending": true
+    "human_acceptance_pending": false
   },
   "schema_validation": [
     {
@@ -372,5 +372,19 @@
     "offline_contract_cases": 24,
     "offline_negative_checks": 99,
     "offline_model_evaluations": 0
+  },
+  "acceptance": {
+    "date": "2026-10-21",
+    "accepted_by": "Mick",
+    "basis": "Explicit acceptance in this chat",
+    "scope": "Sixth-batch bounded results, including final Facebook/X repair reruns and original Facebook bundle/Proxmox proposal passes. Earlier failed/unassessed outputs stay failed/unassessed.",
+    "excluded_gates": [
+      "blog verification",
+      "workout initial delivery",
+      "broader reliability/hosts/models/routing",
+      "provider counter execution audit",
+      "real deployment/publication",
+      "installation/merge/promotion"
+    ]
   }
 }

@@ -53,3 +53,9 @@ On `481d9fe`, all twelve individual hosted check runs completed successfully. Fo
 ## Open work
 
 Correct and rerun the Facebook standard-format and X count/preset failures in a separate candidate correction round. Preserve all original responses and the earlier host failure. Human acceptance of this batch is pending. Blog final verification, workout cold-start initial delivery, broader hosts/models/routing and all earlier gates stay open. Candidates, shipped skills/packages, placement and promotion metadata are unchanged.
+
+## Bounded acceptance and continuation
+
+Mick explicitly accepted the bounded sixth-batch results in this chat on 2026-10-21 and authorized the next untested native batch. This accepts the documented final Facebook/X repairs, original Facebook bundle and Proxmox proposal observations with their limits. Earlier failed and unassessed captures remain unchanged; acceptance is not a retrospective pass for those outputs. Blog verification, workout initial delivery, broader reliability/hosts/models/routing, provider counter-execution proof and all installation/merge/promotion gates remain open. Earlier pending-acceptance statements above describe their historical review state.
+
+Only acceptance metadata is updated in the corresponding sixth-batch fixtures; original tasks, outcomes, candidate/input pins and raw-capture hashes are preserved.

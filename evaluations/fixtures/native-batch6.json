@@ -294,7 +294,7 @@
   },
   "blog_verification": "open",
   "workout_initial_delivery": "open",
-  "human_acceptance_pending": true,
+  "human_acceptance_pending": false,
   "ci": {
     "source_commit": "20ee9947e6a193c76850cf6af13b39d1e6839241",
     "workflows_succeeded": 5,
@@ -423,5 +423,19 @@
       "successful_workflow_summaries": 4,
       "master_generation_summary": "in_progress despite successful individual validate check"
     }
+  },
+  "acceptance": {
+    "date": "2026-10-21",
+    "accepted_by": "Mick",
+    "basis": "Explicit acceptance in this chat",
+    "scope": "Sixth-batch bounded results, including final Facebook/X repair reruns and original Facebook bundle/Proxmox proposal passes. Earlier failed/unassessed outputs stay failed/unassessed.",
+    "excluded_gates": [
+      "blog verification",
+      "workout initial delivery",
+      "broader reliability/hosts/models/routing",
+      "provider counter execution audit",
+      "real deployment/publication",
+      "installation/merge/promotion"
+    ]
   }
 }

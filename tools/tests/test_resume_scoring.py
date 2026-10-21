@@ -153,6 +153,46 @@ class ResumeScoringTests(unittest.TestCase):
                 path.write_text(json.dumps(bad),encoding='utf-8')
                 self.assertEqual(subprocess.run([*command,'--check'],capture_output=True).returncode,2)
 
+    def test_canonical_output_round_trips_quoted_evidence_and_restores_ledger(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source=Path(directory)/'input.json'
+            target=Path(directory)/'final.json'
+            audit=example()
+            audit['scoring_evidence']['positioning']['evidence']='Headline "Data Engineer"; SQL work at C:\\jobs\\imports.\n100 records daily; source §.'
+            audit['notes']=['Keep "quoted" evidence and C:\\jobs\\imports unchanged.',r'Keep literal \u0022 text unchanged.']
+            audit['principle_scores'][0]['reason']='Edited reason must not survive canonicalization'
+            audit['principle_scores'][6]['fix']='Edited advice belongs outside the ledger'
+            source.write_text(json.dumps(audit),encoding='utf-8')
+            command=[sys.executable,'-X','utf8',str(SKILL/'scripts/score_audit.py')]
+            run=subprocess.run([*command,str(source),'--output',str(target)],capture_output=True,text=True,encoding='utf-8',check=True)
+            delivered=target.read_text(encoding='utf-8')
+            self.assertEqual(delivered,run.stdout)
+            final=json.loads(delivered)
+            self.assertEqual(final,scorer.calculate(audit))
+            self.assertEqual(final['scoring_evidence'],audit['scoring_evidence'])
+            self.assertEqual(final['notes'],audit['notes'])
+            self.assertIn(r'\u0022',delivered)
+            self.assertIn(r'\u005c',delivered)
+            self.assertIn(r'\u000a',delivered)
+            self.assertNotIn(chr(92)+chr(34),delivered)
+            self.assertEqual(subprocess.run([*command,str(target),'--check'],capture_output=True).returncode,0)
+            self.assertEqual(subprocess.run([*command,str(source),'--output',str(target)],capture_output=True).returncode,2)
+            self.assertEqual(target.read_text(encoding='utf-8'),delivered)
+            malformed=json.dumps(final,ensure_ascii=False).replace(chr(92)+chr(34),chr(92)*2+chr(34))
+            source.write_text(malformed,encoding='utf-8')
+            self.assertEqual(subprocess.run([*command,str(source),'--check'],capture_output=True).returncode,2)
+
+    def test_native_fixture_context_cannot_enter_resume_heading_inventory(self):
+        fixture=json.loads((ROOT/'evaluations/fixtures/native-resume-v2-review.json').read_text(encoding='utf-8'))
+        audit=next(case for case in fixture['cases'] if case['id']=='human-v2-1')['audits']['original']
+        with self.assertRaisesRegex(ValueError,'context labels'):scorer.calculate(audit)
+        audit['scoring_evidence']['structure']['section_headings']=['Experience','Education']
+        self.assertEqual(scorer.calculate(audit)['final_score'],76.7)
+        for label in ('Target requirements:',' Job description ','Fixture notes','Task instructions','Assessment date: 2026-10-20','Source notes'):
+            with self.subTest(label=label):
+                audit['scoring_evidence']['structure']['section_headings']=['Experience','Education',label]
+                with self.assertRaisesRegex(ValueError,'context labels'):scorer.calculate(audit)
+
 
 if __name__=='__main__':
     unittest.main()

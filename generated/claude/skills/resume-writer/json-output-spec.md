@@ -29,6 +29,8 @@ Use cases include:
 - Use `null` when a scalar field cannot be confidently populated.
 - Use empty arrays when a list has no items.
 - Do not invent values.
+- For numeric JSON delivery, construct the audit as native data values and run `python scripts/score_audit.py audit-input.json --output final-audit.json` into a new disposable file. Run the final `--check` on that file, read its UTF-8 text and parse the whole text with json.loads. Return that exact text unchanged. The helper uses equivalent JSON Unicode escapes for embedded quotes, backslashes and control characters so Markdown/native Copy does not add punctuation escapes. Preserve those escape spellings in the response; json.loads recovers the exact original string values. It serializes the complete object once; do not add another escape layer or JSON-encode the file text. A prior valid intermediate object does not validate a manually rebuilt response.
+- The complete generated principle_scores array is calculator-owned, including reason/before/after/fix. Add qualitative advice to top_fixes, notes or rewritten_resume before final canonicalization. Never edit the generated array while composing the response.
 
 ## Top Level Schema Definition
 

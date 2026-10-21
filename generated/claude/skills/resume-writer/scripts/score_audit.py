@@ -75,6 +75,8 @@ def calculate(audit, root=ROOT):
         raise ValueError('structure requires section_headings quoted from the resume, or an empty list when absent')
     if len({' '.join(heading.casefold().split()) for heading in headings}) != len(headings):
         raise ValueError('Duplicate structure section heading')
+    if any(re.match(r'^(target requirements|job description|fixture notes|task instructions|assessment date|source notes)(?:\s|:|$)', heading.strip(), re.I) for heading in headings):
+        raise ValueError('Task, fixture and target context labels are not resume section headings')
     if structure['state'] in ('standard', 'mixed') and not headings:
         raise ValueError('Readable sections without headings require missing_headings, not standard or mixed')
     if structure['state'] == 'missing_headings' and headings:
@@ -143,6 +145,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('audit', type=Path)
     parser.add_argument('--check', action='store_true')
+    parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     try:
         audit = json.loads(args.audit.read_text(encoding='utf-8-sig'), parse_constant=reject_constant)
@@ -158,7 +161,14 @@ def main():
                     raise ValueError(f'{key} must be numeric, not boolean')
             if any(type(value) not in (int, float) for value in audit['category_scores'].values()):
                 raise ValueError('Category scores must be numeric')
-        print(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False))
+        escapes = {'"': r'\u0022', '\\': r'\u005c', '/': r'\u002f', 'b': r'\u0008', 'f': r'\u000c', 'n': r'\u000a', 'r': r'\u000d', 't': r'\u0009'}
+        serialized = re.sub(r'\\(["\\bfnrt/])', lambda match: escapes[match[1]], json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False)) + '\n'
+        if json.loads(serialized) != result:
+            raise ValueError('Serialized audit did not round-trip')
+        if args.output:
+            with args.output.open('x', encoding='utf-8', newline='\n') as stream:
+                stream.write(serialized)
+        print(serialized, end='')
     except (ValueError, OSError) as error:
         print(str(error), file=sys.stderr)
         return 2

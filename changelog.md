@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Fixed candidate resume JSON delivery, immutable ledgers and fixture-heading exclusion. Three final native JSON copies pass at 93.3/96.7/93.3; all four human ledgers and original headings reconcile. Retained Copy/host failures and a new experience-inventory error causing a 10-point original-score spread. Added two regression methods; 100 tests pass. Acceptance remains pending; PR stays draft with no merging or promotion.
+
 - Consolidated unchanged-v2 resume testing: two human runs agree at 76.7/85.0 and the contradictory-date cap passes. Retained three invalid JSON boundary outputs, one host load failure and heading-inventory scope drift. Diagnostic quote repairs are not delivery passes. Updated evidence and checklist; PR stays draft with no candidate changes, merging or promotion.
 
 - Fixed candidate resume structure scoring for readable documents without section headings. Added a required heading inventory, missing_headings anchor and two regression methods. Preserved a native ledger-editing failure, clarified final ledger delivery and passed a fresh pure JSON rerun at 55.0. Updated provenance and checklist; PR stays draft with no installation, merging or promotion.

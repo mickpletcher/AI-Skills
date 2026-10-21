@@ -50,16 +50,16 @@
       "reason": "Candidate-only YAML quoting and scheduled-task preservation correction; original shipped hash retained. See evaluations/candidate-compatibility-2026-10-19.md."
     },
     "scoring-model.md": {
-      "sha256": "7506ce92a69fdce05606f89de2d7b2093b49c7d86d35ef4c8c0b3e962de9adc0",
-      "reason": "Candidate-only fixed evidence rubric with explicit quoted heading inventory and readable missing-heading classification; original shipped hash retained."
+      "sha256": "6bbcc6b226f551d94d3aa1a8cf9037c253e43e56b86716ecba80ae852470611c",
+      "reason": "Candidate-only canonical JSON file delivery, immutable derived ledger and resume/context heading separation; original shipped hash retained."
     },
     "references/scoring-workflow.md": {
-      "sha256": "fac1d1b4a8d648582e7901d5165c654142b7d45365740bb0ebcaffd94276db9e",
-      "reason": "Candidate-only fixed evidence rubric with explicit quoted heading inventory and readable missing-heading classification; original shipped hash retained."
+      "sha256": "3646d2ea1abbb294d1f1f62a2db4a68034cedfee6655ed7487dfc0e572b211a1",
+      "reason": "Candidate-only canonical JSON file delivery, immutable derived ledger and resume/context heading separation; original shipped hash retained."
     },
     "json-output-spec.md": {
-      "sha256": "24bc9db51d4f124277d8263b1deed2ead86515aa2fba5271adc986d31e2dc571",
-      "reason": "Candidate-only fixed evidence rubric with explicit quoted heading inventory and readable missing-heading classification; original shipped hash retained."
+      "sha256": "584b9f6e8bcebf7f588e1ab78c503684b3cf027a8e7170a8ef3116eca86d6173",
+      "reason": "Candidate-only canonical JSON file delivery, immutable derived ledger and resume/context heading separation; original shipped hash retained."
     },
     "references/enhance-workflow.md": {
       "sha256": "4a3d7cd07eb701493ba0f72e35480917141eda0b7fcd89b5b4d0d615bbac1e20",
@@ -68,7 +68,7 @@
   },
   "added_supporting_files": {
     "scripts/score_audit.py": {
-      "sha256": "72b2b304dde0813610f0412db7f23d9378ebb176652b0be5a29bd1d1738680a4",
+      "sha256": "824600d0ff3564c4604993efaa2f01bd853f0cf9b87da259b5639c07a20f58f2",
       "reason": "New candidate-only standard-library score/source-ledger calculator for deterministic native audit reconciliation."
     }
   }

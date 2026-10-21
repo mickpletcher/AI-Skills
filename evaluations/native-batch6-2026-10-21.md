@@ -2,13 +2,15 @@
 
 Date: 2026-10-21. Source commit: `20ee9947e6a193c76850cf6af13b39d1e6839241`. PR #11 remains draft. No installation, merging or promotion. Blog verification and workout initial delivery remain open.
 
+All six cases are now executed, including one unchanged fresh X retry after sign-in. Seven native attempts yield six completed responses: three bounded passes and three formatting/count failures. One earlier host failure remains unassessed. The initial interrupted phase is retained below; the authenticated continuation records final results. Candidates are unchanged and human acceptance is pending.
+
 ## Scope and controls
 
 Mick authorized the next untested native batch while explicitly retaining the two earlier open gates. Selected facebook-post, x-post and proxmox-lxc after checking existing native assessments, rather than treating the earlier text-only behavioral captures as native coverage. Six synthetic cases were pinned before execution, two per skill. The existing ChatGPT candidate instructions and capability contracts are unchanged. Assessment criteria remain outside uploaded packets. Each primary case uses a fresh Temporary chat with the same wrapper and visible Instant selection when authenticated. This tests explicit instruction packets, not installed discovery or natural routing. Exact backend identity and full effective context are unavailable.
 
 Facebook cases cover reviewer attribution and a cross-platform workshop update. X cases cover exact final character counts and a one-liner length boundary. Proxmox cases cover missing deployment inputs and a flawed supplied systemd design. Infrastructure tasks permit proposals only: no commands, live lookups, public exposure, application installation or real-system changes. All inputs are fabricated; no private operational inventory or health records are supplied.
 
-## Current results
+## Initial interrupted phase
 
 | Case | Result |
 | --- | --- |
@@ -29,6 +31,23 @@ Raw packets, DOM/conversation captures, exact copies and screenshots remain priv
 
 CI on `20ee994` reports all five workflows completed successfully and all twelve individual check runs completed successfully, including helpers. This supersedes the earlier running check status for that commit. Structural validation remains separate from native behavior. The evidence-only continuation passes clean tracked-snapshot repository validation (46 skills, zero issues) and generator drift checks. Candidate code is unchanged, so the already successful full suite on 20ee994 is not rerun locally. Delivery-commit hosted checks are recorded separately in PR #11.
 
+## Authenticated continuation
+
+After Mick restored sign-in, four fresh Instant Temporary chats completed the three unsubmitted cases and one unchanged X-count retry. Source commit is `481d9fefd250da09145194a634b57d3f31a95e6a`; candidate and packet hashes still match the original `20ee994` manifest exactly. No same-chat answer correction, expected-output hint or model setting change was supplied. The restored ordinary home page was not used for testing; fresh Temporary chats preserve the original protocol.
+
+| Case | Final observation |
+| --- | --- |
+| X one-liner | Count and preset failure. Exact native Copy body equals rendered writing-body text at 166 Unicode codepoints, but reports 162. The explicit one-liner preset requires under 140. Two hashtags and source facts pass bounded checks; no completed electronics/weatherproof claim. |
+| X prototype/count retry | Count failure. The unchanged fresh retry is 232 Unicode codepoints but reports 228. It stays below 280 with two hashtags and retains 24 = 18 + 4 + 2, synthetic/manual-check scope and report-only behavior. More testing is framed as a future step, not a completed test; it was not a source-established author commitment. The earlier response-load failure remains unassessed. |
+| Proxmox missing inputs | Bounded planning pass. Required node, CT ID, template, storage, resource, network, runtime and backup facts remain unresolved. Creation uses placeholders, unprivileged mode and stopped startup. Ping insufficiency, internal access, dedicated application identity, adjacent rollback and snapshots versus backups are explicit. Generic Python setup/unit are labelled illustrative and unverified, not selected deployment facts. |
+| Proxmox unit review | Bounded design-review pass. Parsed unit preserves the exact supplied Python entrypoint, loopback binding and port 8088, dedicated lab-docs user/group, existing environment path, writable state directory and NoNewPrivileges. Rejects truncation, Proxmox host upgrades, snapshots as backups and CT deletion. Stop/restore rollback and unperformed compatibility/recovery checks remain explicit. |
+
+Independent checks compare exact Copy and rendered X bodies, count the final body including hashtags, parse the proposed unit directives and inspect unresolved creation placeholders. Both X drafts are ASCII, contain no URL and have no Unicode weighting ambiguity. Reported counts are wrong by four in both observed responses. No response is edited to meet its budget or count. These are two observations, not a proven provider-wide failure mechanism.
+
+There are now six primary submissions and one fresh unchanged retry, six completed responses, three bounded passes, three formatting/count failures and one retained unassessed host failure. Earlier signed-out tabs had no prompt submission and do not add attempts. The original Facebook failure and the two new X failures remain open. Proxmox passes cover proposals only; commands, systemd activation, compatibility, restore, network reachability and deployment have not been executed or certified.
+
+On `481d9fe`, all twelve individual hosted check runs completed successfully. Four workflow summaries report completed/success. The master-generation workflow summary remains in_progress although its only job and all steps, including Complete job, report completed/success. Retain this hosted inconsistency without calling the workflow completed. Clean tracked-snapshot repository validation and generator checks cover the review-only update separately from native behavior.
+
 ## Open work
 
-Restore native ChatGPT sign-in, run the three unsubmitted pinned cases and one fresh unchanged X-count retry, then consolidate those results. Keep the Facebook standard-format failure open for correction/retest rather than rewriting its retained response. Human acceptance of this batch is pending. Blog final verification, workout cold-start initial delivery, broader hosts/models/routing and all earlier gates stay open. Candidates, shipped skills/packages, placement and promotion metadata are unchanged.
+Correct and rerun the Facebook standard-format and X count/preset failures in a separate candidate correction round. Preserve all original responses and the earlier host failure. Human acceptance of this batch is pending. Blog final verification, workout cold-start initial delivery, broader hosts/models/routing and all earlier gates stay open. Candidates, shipped skills/packages, placement and promotion metadata are unchanged.

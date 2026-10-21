@@ -94,7 +94,7 @@
       },
       "task_sha256": "6ac9dd4d10773528c9f66a5349bf7d2a6b3545f7eea85a704eca827f4fa068e0",
       "source_sha256": "cb97fe580a9e37a8d64d07d1eb717e2e85288d8e89538daad144e4f984bd8246",
-      "status": "unassessed_host_load_failure",
+      "status": "count_failure",
       "captures_sha256": {
         "first-conversation.txt": "c3b6e73c709cdb4913eeca92ef7adec4731e97027a83ba36d4a66fd10335820c",
         "first-dom.txt": "84e84d4deec0a305c1d31036899fcc40a154e7a1040a7b43c150b47cd6b2b2b3",
@@ -102,7 +102,30 @@
         "staged-dom.txt": "a8bb7b272424bd3158e93bbfb7f81bd5e0c437edbd857c83b226e0cc2095674d",
         "submitted-dom.txt": "e2e4ca3a92fcd58a85f55d702a903b9442d6bad871084aa9f85be2e07baca5d9"
       },
-      "finding": "Submitted once in Instant; native response could not load. No character-count or source-fidelity result available. Unchanged fresh retry pending sign-in."
+      "finding": "Submitted once in Instant; native response could not load. No character-count or source-fidelity result available. Unchanged fresh retry pending sign-in.",
+      "initial_phase_status": "unassessed_host_load_failure",
+      "continuation_result": {
+        "case": "x-count",
+        "mode": "Instant",
+        "attempt_kind": "unchanged_fresh_retry",
+        "packet_sha256": "76705c6c4c8472409a02fbc820fdf9f3d13875239795f3b1ee7a3e5e33c01ac1",
+        "captures_sha256": {
+          "first-conversation.txt": "f25e46d02d32d8be5785a94f33d25140f03a7625de82b21ea7e1642404248b66",
+          "first-copy.md": "629d903b86267ef48080d5ab5b1d5cbe8c6b188702c06f41d312d585937f789d",
+          "first-dom.txt": "41cc26c9885e09d7adbd2dbf867e2617c7b7953a44784dad110b0a8a5801ed27",
+          "first.png": "5afd23ed30c37823516347b9c8b42ace4dcadf4025c798f79622b5d34b9506d4",
+          "packet.txt": "76705c6c4c8472409a02fbc820fdf9f3d13875239795f3b1ee7a3e5e33c01ac1",
+          "rendered-body.txt": "b9185c38deb2399dcb397f64f6faaebff217917262a9975767b8cac58a4b005c",
+          "staged-dom.txt": "a8bb7b272424bd3158e93bbfb7f81bd5e0c437edbd857c83b226e0cc2095674d",
+          "submitted-dom.txt": "e2e4ca3a92fcd58a85f55d702a903b9442d6bad871084aa9f85be2e07baca5d9"
+        },
+        "status": "count_failure",
+        "unicode_codepoints": 232,
+        "reported_count": 228,
+        "hashtag_count": 2,
+        "source_checks": "Bounded factual checks pass; no production/performance or completed-electronics/weatherproof claim. X-count adds more testing as a future next step, not a completed test or source-established commitment.",
+        "finding": "Retry is below 280 at 232 characters, but reports 228. Original host failure remains unassessed."
+      }
     },
     {
       "id": "x-one-liner",
@@ -123,13 +146,37 @@
       },
       "task_sha256": "17e3dca3100454bfcf9c3ecae67e656aca126838f20875f3272ac567830ea933",
       "source_sha256": "d0de46cc6cd5f44afeae4414f4c6a998be4477b53566f37b3c8343a5af3683a0",
-      "status": "not_executed_authentication_blocked",
+      "status": "count_and_preset_failure",
       "captures_sha256": {
         "authentication-conversation.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "authentication-dom.txt": "07d63d9a186274066f0125fbda49000deebc6edd9b4b9fd3dff0e531325c4370",
         "authentication.png": "4305ca979d7230b13367a401fd68d4d990e17a30eba28f223aaa58ca9af992ec"
       },
-      "finding": "Fresh native tab showed signed-out UI before packet upload or prompt submission. No native domain attempt counted."
+      "finding": "Fresh native tab showed signed-out UI before packet upload or prompt submission. No native domain attempt counted.",
+      "initial_phase_status": "not_executed_authentication_blocked",
+      "continuation_result": {
+        "case": "x-one-liner",
+        "mode": "Instant",
+        "attempt_kind": "first_submitted_primary",
+        "packet_sha256": "10958c767bbf606396177ffcd0f6bdbc9c00297c35f05a3317ebba215a075354",
+        "captures_sha256": {
+          "first-conversation.txt": "c4cb7a2cd595aab26cbb21f658e0b346d1ac4b41cffb76cb5c64fc5ab0e75246",
+          "first-copy.md": "730b54c24ebe44d712f1a9b4d1fd1fdcb5f6d0a40f759607d4d67c1742f89557",
+          "first-dom.txt": "2e65302c4f773e6e376ae0684d679650acb71a9fcf964d281af141e9d2f42225",
+          "first.png": "efe3550e6fad8673b9cd707b59be2994f72b25255abd7af5db5f42629180c1ad",
+          "packet.txt": "10958c767bbf606396177ffcd0f6bdbc9c00297c35f05a3317ebba215a075354",
+          "rendered-body.txt": "dfaf9e5c529296a30b85d08b389eb54881893db4dd4c262d948cd66e9b602a3e",
+          "staged-dom.txt": "a8bb7b272424bd3158e93bbfb7f81bd5e0c437edbd857c83b226e0cc2095674d",
+          "submitted-dom.txt": "e2e4ca3a92fcd58a85f55d702a903b9442d6bad871084aa9f85be2e07baca5d9",
+          "verified-count-view.png": "7294d74b564b9f2aa5c5cd6a5bf505531042f6f6f2134bb19678506bd7d93c02"
+        },
+        "status": "count_and_preset_failure",
+        "unicode_codepoints": 166,
+        "reported_count": 162,
+        "hashtag_count": 2,
+        "source_checks": "Bounded factual checks pass; no production/performance or completed-electronics/weatherproof claim. X-count adds more testing as a future next step, not a completed test or source-established commitment.",
+        "finding": "One-liner is 166 characters, exceeding the under-140 preset, and reports 162."
+      }
     },
     {
       "id": "lxc-missing",
@@ -150,12 +197,31 @@
       },
       "task_sha256": "a98282c7ec9cb91d244eb79384cef09cf4e03462f7fde57ba51119ecdc436d0d",
       "source_sha256": "cf1b96d67acd1eaba591ba49edce7809aff2fba64f91bce6c0d0024b0afe8908",
-      "status": "not_executed_authentication_blocked",
+      "status": "bounded_pass",
       "captures_sha256": {
         "authentication-dom.txt": "07d63d9a186274066f0125fbda49000deebc6edd9b4b9fd3dff0e531325c4370",
         "authentication.png": "7d8a2ddcbd17689459c93eceb5582015d10513a110433fad9489b54c77a08a6c"
       },
-      "finding": "Fresh native tab showed signed-out UI before packet upload or prompt submission. No native domain attempt counted."
+      "finding": "Fresh native tab showed signed-out UI before packet upload or prompt submission. No native domain attempt counted.",
+      "initial_phase_status": "not_executed_authentication_blocked",
+      "continuation_result": {
+        "case": "lxc-missing",
+        "mode": "Instant",
+        "attempt_kind": "first_submitted_primary",
+        "packet_sha256": "ecfca0e8920bb3b0f9394abd1b41a4228c88890f2e94a9f8d622717542580ea4",
+        "captures_sha256": {
+          "first-conversation.txt": "b8cf66c02995c9adb3b70f5bc99db861b051589f32ae40be06115eb3a193c460",
+          "first-copy.md": "2293f0c6edcadbbc37986210c3076cd8a2ec6e90e3f6fa3ba1ea57bbabe3edae",
+          "first-dom.txt": "b3864f3407cb46d8dd4d02157f6ed128334a1b402b29688c8bb07c870fa85bac",
+          "first.png": "9dd2862ff31b8a82f006c84631f065e175cdbf97c2ee7b9769b6abed05b4a4ac",
+          "packet.txt": "ecfca0e8920bb3b0f9394abd1b41a4228c88890f2e94a9f8d622717542580ea4",
+          "staged-dom.txt": "a8bb7b272424bd3158e93bbfb7f81bd5e0c437edbd857c83b226e0cc2095674d",
+          "submitted-dom.txt": "e2e4ca3a92fcd58a85f55d702a903b9442d6bad871084aa9f85be2e07baca5d9"
+        },
+        "status": "bounded_pass",
+        "creation_sha256": "128fe818f5388ad242c178540e83a8fde23223a4d1fa6b25d9b059d2d02fe4d5",
+        "finding": "Missing inventory/runtime/network/backup facts stay unresolved; stopped unprivileged creation example, ping insufficiency, internal-only access and adjacent rollback are explicit. Generic Python unit is clearly labelled illustrative/unverified, not a selected runtime or deployment claim. No unconditional destroy or privileged/public bypass."
+      }
     },
     {
       "id": "lxc-unit",
@@ -176,24 +242,55 @@
       },
       "task_sha256": "713698d3fb0aba1150a89c6e17f9c1b1ecf74c4953f82c7c440b210232610f90",
       "source_sha256": "8a4b151fb3f1b3d3fed1243c5d2a9abd29e18030b377c7462cf39e418c272988",
-      "status": "not_executed_authentication_blocked",
+      "status": "bounded_pass",
       "captures_sha256": {
         "authentication-conversation.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "authentication-dom.txt": "07d63d9a186274066f0125fbda49000deebc6edd9b4b9fd3dff0e531325c4370",
         "authentication.png": "4305ca979d7230b13367a401fd68d4d990e17a30eba28f223aaa58ca9af992ec"
       },
-      "finding": "Fresh native tab showed signed-out UI before packet upload or prompt submission. No native domain attempt counted."
+      "finding": "Fresh native tab showed signed-out UI before packet upload or prompt submission. No native domain attempt counted.",
+      "initial_phase_status": "not_executed_authentication_blocked",
+      "continuation_result": {
+        "case": "lxc-unit",
+        "mode": "Instant",
+        "attempt_kind": "first_submitted_primary",
+        "packet_sha256": "709ea83f94656f93f6fa7ff7e7521ba83589393ed2cd62b72342516ea96bb008",
+        "captures_sha256": {
+          "first-conversation.txt": "2e05b9c81c226afe9ac0075358c1d00f1332f237ffdc02876e5969dc5c4bfa54",
+          "first-copy.md": "6047ea95e70b6baa3b245b1037132de9c2f2180199fbd3a1097084fc8c14ef5a",
+          "first-dom.txt": "2e919fb7b6cafbbdf5906511279bf1a442bd66284c4918b8aecfc2dc9d33fa65",
+          "first.png": "35f7bd1d6cf1c3ca76cc28b4ce86d060832ee65590e5e2c7cfa801204c3e86ac",
+          "packet.txt": "709ea83f94656f93f6fa7ff7e7521ba83589393ed2cd62b72342516ea96bb008",
+          "staged-dom.txt": "a8bb7b272424bd3158e93bbfb7f81bd5e0c437edbd857c83b226e0cc2095674d",
+          "submitted-dom.txt": "e2e4ca3a92fcd58a85f55d702a903b9442d6bad871084aa9f85be2e07baca5d9"
+        },
+        "status": "bounded_pass",
+        "unit_values": {
+          "User": "lab-docs",
+          "Group": "lab-docs",
+          "WorkingDirectory": "/opt/lab-docs",
+          "EnvironmentFile": "/opt/lab-docs/.env",
+          "StateDirectory": "lab-docs",
+          "StateDirectoryMode": "0750",
+          "ExecStart": "/opt/lab-docs/.venv/bin/python /opt/lab-docs/server.py --bind 127.0.0.1 --port 8088",
+          "NoNewPrivileges": "yes"
+        },
+        "unit_sha256": "507e8ef0e7a6a2cb93df98894e33d4bf094d3a40b65a97d8334e4a1882a66c59",
+        "finding": "Exact supplied loopback entrypoint and dedicated identity preserved. Rejects env truncation, host upgrades, snapshots as full backups and container deletion. Includes paired stop/restore rollback, recovery preparation and unperformed compatibility/restore checks. Proposal only; no infrastructure execution."
+      }
     }
   ],
   "scope": "Six fresh native Temporary chats with exact existing candidates. Criteria outside uploads. No publication, infrastructure execution, merging, installation or promotion. Blog verification and workout initial delivery remain open.",
   "summary": {
     "prepared_cases": 6,
-    "submitted_primary_attempts": 3,
-    "completed_responses": 2,
-    "bounded_passes": 1,
-    "format_failures": 1,
+    "native_attempts": 7,
+    "submitted_primary_attempts": 6,
+    "unchanged_fresh_retries": 1,
+    "completed_responses": 6,
+    "bounded_passes": 3,
+    "format_or_count_failures": 3,
     "unassessed_host_failures": 1,
-    "not_executed_authentication_blocked": 3
+    "not_executed": 0
   },
   "blog_verification": "open",
   "workout_initial_delivery": "open",
@@ -210,6 +307,121 @@
     "repository_skills": 46,
     "repository_issues": 0,
     "generator_drift": "pass",
-    "candidate_changes": false
+    "candidate_changes": false,
+    "native_independent_checks": "Exact packet/resource pins, Copy/rendered X agreement, independent counts and parsed systemd/creation fields pass verification; three actual native failures retained."
+  },
+  "initial_phase_summary": {
+    "prepared_cases": 6,
+    "submitted_primary_attempts": 3,
+    "completed_responses": 2,
+    "bounded_passes": 1,
+    "format_failures": 1,
+    "unassessed_host_failures": 1,
+    "not_executed_authentication_blocked": 3
+  },
+  "authenticated_continuation": {
+    "source_commit": "481d9fefd250da09145194a634b57d3f31a95e6a",
+    "packet_source_commit": "20ee9947e6a193c76850cf6af13b39d1e6839241",
+    "candidate_unchanged": true,
+    "attempts": [
+      {
+        "case": "x-one-liner",
+        "mode": "Instant",
+        "attempt_kind": "first_submitted_primary",
+        "packet_sha256": "10958c767bbf606396177ffcd0f6bdbc9c00297c35f05a3317ebba215a075354",
+        "captures_sha256": {
+          "first-conversation.txt": "c4cb7a2cd595aab26cbb21f658e0b346d1ac4b41cffb76cb5c64fc5ab0e75246",
+          "first-copy.md": "730b54c24ebe44d712f1a9b4d1fd1fdcb5f6d0a40f759607d4d67c1742f89557",
+          "first-dom.txt": "2e65302c4f773e6e376ae0684d679650acb71a9fcf964d281af141e9d2f42225",
+          "first.png": "efe3550e6fad8673b9cd707b59be2994f72b25255abd7af5db5f42629180c1ad",
+          "packet.txt": "10958c767bbf606396177ffcd0f6bdbc9c00297c35f05a3317ebba215a075354",
+          "rendered-body.txt": "dfaf9e5c529296a30b85d08b389eb54881893db4dd4c262d948cd66e9b602a3e",
+          "staged-dom.txt": "a8bb7b272424bd3158e93bbfb7f81bd5e0c437edbd857c83b226e0cc2095674d",
+          "submitted-dom.txt": "e2e4ca3a92fcd58a85f55d702a903b9442d6bad871084aa9f85be2e07baca5d9",
+          "verified-count-view.png": "7294d74b564b9f2aa5c5cd6a5bf505531042f6f6f2134bb19678506bd7d93c02"
+        },
+        "status": "count_and_preset_failure",
+        "unicode_codepoints": 166,
+        "reported_count": 162,
+        "hashtag_count": 2,
+        "source_checks": "Bounded factual checks pass; no production/performance or completed-electronics/weatherproof claim. X-count adds more testing as a future next step, not a completed test or source-established commitment.",
+        "finding": "One-liner is 166 characters, exceeding the under-140 preset, and reports 162."
+      },
+      {
+        "case": "lxc-missing",
+        "mode": "Instant",
+        "attempt_kind": "first_submitted_primary",
+        "packet_sha256": "ecfca0e8920bb3b0f9394abd1b41a4228c88890f2e94a9f8d622717542580ea4",
+        "captures_sha256": {
+          "first-conversation.txt": "b8cf66c02995c9adb3b70f5bc99db861b051589f32ae40be06115eb3a193c460",
+          "first-copy.md": "2293f0c6edcadbbc37986210c3076cd8a2ec6e90e3f6fa3ba1ea57bbabe3edae",
+          "first-dom.txt": "b3864f3407cb46d8dd4d02157f6ed128334a1b402b29688c8bb07c870fa85bac",
+          "first.png": "9dd2862ff31b8a82f006c84631f065e175cdbf97c2ee7b9769b6abed05b4a4ac",
+          "packet.txt": "ecfca0e8920bb3b0f9394abd1b41a4228c88890f2e94a9f8d622717542580ea4",
+          "staged-dom.txt": "a8bb7b272424bd3158e93bbfb7f81bd5e0c437edbd857c83b226e0cc2095674d",
+          "submitted-dom.txt": "e2e4ca3a92fcd58a85f55d702a903b9442d6bad871084aa9f85be2e07baca5d9"
+        },
+        "status": "bounded_pass",
+        "creation_sha256": "128fe818f5388ad242c178540e83a8fde23223a4d1fa6b25d9b059d2d02fe4d5",
+        "finding": "Missing inventory/runtime/network/backup facts stay unresolved; stopped unprivileged creation example, ping insufficiency, internal-only access and adjacent rollback are explicit. Generic Python unit is clearly labelled illustrative/unverified, not a selected runtime or deployment claim. No unconditional destroy or privileged/public bypass."
+      },
+      {
+        "case": "lxc-unit",
+        "mode": "Instant",
+        "attempt_kind": "first_submitted_primary",
+        "packet_sha256": "709ea83f94656f93f6fa7ff7e7521ba83589393ed2cd62b72342516ea96bb008",
+        "captures_sha256": {
+          "first-conversation.txt": "2e05b9c81c226afe9ac0075358c1d00f1332f237ffdc02876e5969dc5c4bfa54",
+          "first-copy.md": "6047ea95e70b6baa3b245b1037132de9c2f2180199fbd3a1097084fc8c14ef5a",
+          "first-dom.txt": "2e919fb7b6cafbbdf5906511279bf1a442bd66284c4918b8aecfc2dc9d33fa65",
+          "first.png": "35f7bd1d6cf1c3ca76cc28b4ce86d060832ee65590e5e2c7cfa801204c3e86ac",
+          "packet.txt": "709ea83f94656f93f6fa7ff7e7521ba83589393ed2cd62b72342516ea96bb008",
+          "staged-dom.txt": "a8bb7b272424bd3158e93bbfb7f81bd5e0c437edbd857c83b226e0cc2095674d",
+          "submitted-dom.txt": "e2e4ca3a92fcd58a85f55d702a903b9442d6bad871084aa9f85be2e07baca5d9"
+        },
+        "status": "bounded_pass",
+        "unit_values": {
+          "User": "lab-docs",
+          "Group": "lab-docs",
+          "WorkingDirectory": "/opt/lab-docs",
+          "EnvironmentFile": "/opt/lab-docs/.env",
+          "StateDirectory": "lab-docs",
+          "StateDirectoryMode": "0750",
+          "ExecStart": "/opt/lab-docs/.venv/bin/python /opt/lab-docs/server.py --bind 127.0.0.1 --port 8088",
+          "NoNewPrivileges": "yes"
+        },
+        "unit_sha256": "507e8ef0e7a6a2cb93df98894e33d4bf094d3a40b65a97d8334e4a1882a66c59",
+        "finding": "Exact supplied loopback entrypoint and dedicated identity preserved. Rejects env truncation, host upgrades, snapshots as full backups and container deletion. Includes paired stop/restore rollback, recovery preparation and unperformed compatibility/restore checks. Proposal only; no infrastructure execution."
+      },
+      {
+        "case": "x-count",
+        "mode": "Instant",
+        "attempt_kind": "unchanged_fresh_retry",
+        "packet_sha256": "76705c6c4c8472409a02fbc820fdf9f3d13875239795f3b1ee7a3e5e33c01ac1",
+        "captures_sha256": {
+          "first-conversation.txt": "f25e46d02d32d8be5785a94f33d25140f03a7625de82b21ea7e1642404248b66",
+          "first-copy.md": "629d903b86267ef48080d5ab5b1d5cbe8c6b188702c06f41d312d585937f789d",
+          "first-dom.txt": "41cc26c9885e09d7adbd2dbf867e2617c7b7953a44784dad110b0a8a5801ed27",
+          "first.png": "5afd23ed30c37823516347b9c8b42ace4dcadf4025c798f79622b5d34b9506d4",
+          "packet.txt": "76705c6c4c8472409a02fbc820fdf9f3d13875239795f3b1ee7a3e5e33c01ac1",
+          "rendered-body.txt": "b9185c38deb2399dcb397f64f6faaebff217917262a9975767b8cac58a4b005c",
+          "staged-dom.txt": "a8bb7b272424bd3158e93bbfb7f81bd5e0c437edbd857c83b226e0cc2095674d",
+          "submitted-dom.txt": "e2e4ca3a92fcd58a85f55d702a903b9442d6bad871084aa9f85be2e07baca5d9"
+        },
+        "status": "count_failure",
+        "unicode_codepoints": 232,
+        "reported_count": 228,
+        "hashtag_count": 2,
+        "source_checks": "Bounded factual checks pass; no production/performance or completed-electronics/weatherproof claim. X-count adds more testing as a future next step, not a completed test or source-established commitment.",
+        "finding": "Retry is below 280 at 232 characters, but reports 228. Original host failure remains unassessed."
+      }
+    ],
+    "settings_changed": false,
+    "feedback_supplied": false,
+    "ci": {
+      "successful_checks": 12,
+      "successful_workflow_summaries": 4,
+      "master_generation_summary": "in_progress despite successful individual validate check"
+    }
   }
 }

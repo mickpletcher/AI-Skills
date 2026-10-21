@@ -13,7 +13,10 @@
   "original_authoring_model": null,
   "behavior_evaluations": [],
   "host_compatibility": "unverified",
-  "transformations": {},
+  "transformations": {
+    "After the draft, offer 2 to 3 title options and matching first sentences in Mick's voice: one plain and descriptive, one that leads with the result or number, and optionally one that leads with the problem. No clickbait. Keep the body unchanged; the user picks the opener.": "After the draft, offer 2 to 3 title options and matching first sentences in Mick's voice: one plain and descriptive, one that leads with the result or number, and optionally one that leads with the problem. No clickbait. Keep the body unchanged; the user picks the opener. Apply the same source-evidence limits to every title and opener as to the main draft. Preserve who performed each action and any established event order; omit before/after relationships when the source does not establish them.",
+    "- First-person voice as Mick": "- First-person voice as Mick\n- First-person voice does not supply missing chronology. When the source does not specify when the author acted relative to someone else, describe the author's action without placing it before or after that person's actions. Apply this to the main draft as well as every title and opener."
+  },
   "supporting_files_sha256": {},
   "retained_in_original_sha256": {
     "README.md": "efde3a2c8538b0d9c565fb340fe72d082d83c3d9a654defe486700a2f4feb0bf",

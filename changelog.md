@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Corrected blog chronology grounding and LinkedIn technology hashtag selection with exact candidate provenance. The unchanged LinkedIn native rerun passes; retain an intermediate blog timing failure and three unassessed final-blog host failures. Final blog verification and workout initial delivery remain open. Both candidate revisions pass 108 regressions; PR stays draft without merging or promotion.
+
 - Recorded bounded travel acceptance and tested the next native writing/astronomy batch. Six completed responses yield four bounded passes and two grounding failures; one LinkedIn host failure is retained alongside its passing unchanged retry. Verified draft counts, supplied code, synthetic preview observations and actual FITS headers/hashes. Candidate fixes remain pending; workout initial delivery stays open. PR remains draft without merging or promotion.
 
 - Recorded Mick's bounded workout acceptance while preserving the open initial-delivery issue. Completed six fresh native travel research/planning/itinerary cases with six bounded passes and one explained display-precision caveat. Verified synthetic scores, budgets, date/traveler boundaries and missing-input behavior; travel acceptance remains pending. PR stays draft without candidate changes, merging or promotion.

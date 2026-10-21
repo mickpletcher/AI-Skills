@@ -13,7 +13,9 @@
   "original_authoring_model": null,
   "behavior_evaluations": [],
   "host_compatibility": "unverified",
-  "transformations": {},
+  "transformations": {
+    "Use 2 to 3 hashtags on their own line at the end.": "Use 2 to 3 hashtags on their own line at the end. Use technology-specific hashtags only when the supplied facts identify that technology. Audience defaults, profile context and example posts do not establish the implementation technology. When it is unspecified, choose topic-level hashtags supported by the source instead."
+  },
   "supporting_files_sha256": {},
   "retained_in_original_sha256": {
     "README.md": "370d952c448fe5331438d4a3a9977754ba5981ddb239f51ff94870f7d2605ec9",

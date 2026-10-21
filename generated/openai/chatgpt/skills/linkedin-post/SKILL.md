@@ -131,7 +131,7 @@ Optional. Use it for what comes next, a short observation, or a fitted CTA when 
 
 **Hashtags**
 
-Use 2 to 3 hashtags on their own line at the end.
+Use 2 to 3 hashtags on their own line at the end. Use technology-specific hashtags only when the supplied facts identify that technology. Audience defaults, profile context and example posts do not establish the implementation technology. When it is unspecified, choose topic-level hashtags supported by the source instead.
 
 ## Format Rules
 

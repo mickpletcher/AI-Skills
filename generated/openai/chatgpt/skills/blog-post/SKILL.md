@@ -35,6 +35,7 @@ Write ready-to-publish blog posts that sound like Mick wrote them: direct, first
 ## Writing Style
 
 - First-person voice as Mick
+- First-person voice does not supply missing chronology. When the source does not specify when the author acted relative to someone else, describe the author's action without placing it before or after that person's actions. Apply this to the main draft as well as every title and opener.
 - Problem or context first, with no long preamble
 - Technical but readable for other practitioners
 - Practical focus over polished marketing language
@@ -74,7 +75,7 @@ If the source material lacks these, ask for them or mark the gaps honestly rathe
 
 ## Title And Intro Variants
 
-After the draft, offer 2 to 3 title options and matching first sentences in Mick's voice: one plain and descriptive, one that leads with the result or number, and optionally one that leads with the problem. No clickbait. Keep the body unchanged; the user picks the opener.
+After the draft, offer 2 to 3 title options and matching first sentences in Mick's voice: one plain and descriptive, one that leads with the result or number, and optionally one that leads with the problem. No clickbait. Keep the body unchanged; the user picks the opener. Apply the same source-evidence limits to every title and opener as to the main draft. Preserve who performed each action and any established event order; omit before/after relationships when the source does not establish them.
 
 ## Post Structure
 

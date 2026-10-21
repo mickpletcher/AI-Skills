@@ -1,5 +1,7 @@
 # Fifth targeted native batch
 
+Follow-up: [candidate corrections and native reruns](native-batch5-grounding-repairs-2026-10-21.md). LinkedIn passes; final blog verification remains unassessed after host load failures. Original results below remain historical evidence.
+
 Date: 2026-10-21. PR #11 stays draft. No merge, installation or promotion.
 
 Mick explicitly accepted the six bounded travel results, including the explained rounding caveat, and authorized the next untested native batch. Travel live research, booking, standalone file/Obsidian/mobile/print ingestion, repeatability and broader compatibility remain open. Workout initial delivery remains open; recovered exports do not certify that path.

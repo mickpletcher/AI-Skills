@@ -103,3 +103,7 @@ The [repair assessment](../evaluations/native-batch2-repairs-2026-10-20.md) reco
 ## Native human numeric scoring assessment
 
 [Two fresh native human numeric runs](../evaluations/native-human-numeric-2026-10-20.md) exercise the previously untested delivery path with unchanged candidate resources. Four actual ledgers pass independent arithmetic/source/display checks. The same original scores 54.5 versus 71.4, revealing unstable assessed scope and common-pattern category choices. Numeric delivery is exercised; substantive rubric consistency and acceptance remain open. Prior failures/fallbacks remain recorded. No installation, merging or promotion.
+
+## Fixed resume rubric and native rerun
+
+The [consistency correction](../evaluations/native-scoring-consistency-2026-10-20.md) replaces arbitrary principle selection with seven calculator-owned criteria, fixed source/category mappings and single ownership of missing evidence. Two fresh human numeric runs now score the same original 76.7 and their rewrites 85.0; actual ZIPs, four ledgers, display values and provider log outputs reconcile. One interrupted attempt is unassessed. A strict JSON case passes parsing, calculation and source-injection checks but grants unjustified full structure credit to a resume without headings. That extraction/anchor boundary and separate acceptance remain open. The bounded repeatability observation does not certify general scoring reliability. Candidate provenance is retained; shipped skills, placement and promotion metadata remain unchanged.

@@ -109,11 +109,11 @@ Critical overrides cap verdict regardless of numeric score.
 Critical conditions include:
 
 - Unreadable or badly parsed resume
-- Missing or unsafe contact information
+- Unsafe personal data actually present; missing contact details are a follow-up flag
 - Unclear target role
 - Mostly vague bullets
 - ATS hostile layout
-- Confusing or misleading timeline
+- Contradictory recorded dates; an unexplained interval alone is missing context, not a scored failure
 
 Override caps:
 
@@ -185,32 +185,39 @@ The final audit output should always appear in this order:
 6. Rewritten Resume
 7. Top Fixes / Next Steps
 
-## Calculation and source evidence
+## Fixed evidence rubric
 
-Use `json-output-spec.md` as the single output schema. Its example is illustrative, not evidence for the current audit. Compute numeric fields from the current `principle_scores` ledger with `scripts/score_audit.py`. The calculator validates source headings, mapped weights/categories, rounding, severity totals and verdict caps.
+Numeric audits use `rubric_version: fixed-evidence-v1`. The calculator owns selection, sources, categories, weights, scores and severity. Provide observations in `scoring_evidence`; do not select principles or assign scores yourself. It emits exactly seven entries in canonical order. All other library principles and common patterns may support qualitative advice, but cannot be added to the numeric ledger or severity counts. Historical scores from other rubric versions are not directly comparable.
 
-Every CRITICAL, MAJOR or MINOR finding counted in a summary must be represented in that ledger. Score each source once, grouping its related findings. Score categories from supported text; do not invent document layout or missing history. Include a supported ledger entry for each category before giving an overall score.
+| Criterion | Source | Category | Weight |
+| --- | --- | --- | ---: |
+| positioning | Make the target role obvious in the top third | Positioning and Narrative | 1.5 |
+| specificity | Every bullet must name the thing | Evidence and Bullet Strength | 1.5 |
+| measurements | Numbers, everywhere, or you get an interview with nobody | Evidence and Bullet Strength | 1.5 |
+| structure | Standard section headings beat clever branding | ATS and Structural Reliability | 1.25 |
+| chronology | Chronology should be easy to follow | ATS and Structural Reliability | 1.25 |
+| alignment | Mirror the job description's language naturally | Relevance and Targeting | 1.5 |
+| privacy | No photos, no headshots, no personal data | Professionalism and Trust | 1.0 |
 
-Common patterns use source type `common_pattern`, an exact `common-patterns § <heading>` from the supplied file and weight 1.0. Choose the relevant category and explain the observed evidence. Unattributed observations remain explicitly not-in-library and outside numerical scoring.
+Privacy uses `common_pattern` and exact source `common-patterns § No photos, no headshots, no personal data`. The other targeted criteria use actual library headings. Generic alignment instead uses `common-patterns § Skills keyword dumps`, Relevance and Targeting, weight 1.0. No other common-pattern/category assignment is scored. The calculator verifies the authoritative headings exist.
 
-## Starter Principle to Category Mapping
+### Observation inventory
 
-Only the following names are current headings in `insights/principles.md`. A weight-map row does not create a principle or establish attribution. Cite the actual library heading and source, or a real common-pattern heading. Do not label a scoring example as a library entry.
+`scoring_evidence` contains the following required fields. Preserve this inventory for both original and rewrite. Extract it again from each version, and explain changed observations. Do not carry an original observation into a rewrite without checking it. Exact quoted text and a short evidence explanation make judgments reviewable.
 
-| Principle | Category | Weight | Default Severity If Weak |
-| --- | --- | ---: | --- |
-| Lead with project impact, not credentials | Positioning and Narrative | 1.25 | MAJOR |
-| Every bullet must name the thing | Evidence and Bullet Strength | 1.5 | MAJOR |
-| Numbers, everywhere, or you get an interview with nobody | Evidence and Bullet Strength | 1.5 | MAJOR |
-| Two pages is the ceiling | ATS and Structural Reliability | 1.0 | MINOR |
-| A resume is a sales document, not a job history | Positioning and Narrative | 1.25 | MAJOR |
-| Make the target role obvious in the top third | Positioning and Narrative | 1.5 | CRITICAL |
-| The summary must be targeted, not decorative | Positioning and Narrative | 1.0 | MAJOR |
-| Mirror the job description's language naturally | Relevance and Targeting | 1.5 | MAJOR |
-| Standard section headings beat clever branding | ATS and Structural Reliability | 1.25 | MAJOR |
-| Keep critical data out of headers, footers, and text boxes | ATS and Structural Reliability | 1.5 | CRITICAL |
-| Single column wins over pretty layouts | ATS and Structural Reliability | 1.25 | MAJOR |
-| Your technical resume needs a clear narrative | Positioning and Narrative | 1.0 | MAJOR |
-| Chronology should be easy to follow | ATS and Structural Reliability | 1.25 | CRITICAL |
+- `positioning`: `{ "state": "...", "evidence": "quoted support or explicit absence" }`. `role_and_evidence` means a headline or summary explicitly names the role AND a concrete work object/outcome (3/INFO). `role_only` means an explicit target/headline without that supported summary (2/MINOR). `inferred` means direction can only be inferred (1/MAJOR). `absent` means no discernible role direction (0/CRITICAL). Historical experience titles alone are not a target summary.
+- `experience_statements`: a nonempty list of `{ "text": "exact experience statement", "names_specific_object": true, "has_supplied_measure": false, "evidence": "explanation" }`. Inventory every distinct activity/outcome in the EXPERIENCE section once. Exclude summary repetitions, skills, education and fixture/missing-data notes. Do not split a statement into its scope and result, omit weak statements or add invented work. For specificity, a named system, process, artifact or environment qualifies; no unsupported implementation detail is needed. For measurement, a supplied count, scope, time or outcome qualifies. Presence of a date alone does not. These two booleans concern separate aspects of the same statements.
+- `structure`: state/evidence object. `standard` means conventional section headings and readable role entries (3/INFO); `mixed` means some conventional sections, with mixed labels (2/MINOR); `unclear` means sections cannot be identified reliably (1/MAJOR); `unreadable` means parsing is unusable (0/CRITICAL). Do not infer page count, columns or typography from plain text. Use qualitative review if required observations cannot be made.
+- `chronology`: state/evidence object. `clear` means supplied role date ranges are explicit, ordered and noncontradictory (3/INFO), including an explicit Present end date. `coarse` means year-only ranges (2/MINOR). `missing_dates` means a supplied role lacks a start/end date (1/MAJOR). `contradictory` requires an actual contradictory range, such as end before start (0/CRITICAL). Concurrent roles or gaps are not automatically contradictions. An unexplained period after a clearly dated role is `MISSING_TIMELINE_CONTEXT`, not a lower chronology state.
+- `requirements`: a nonempty list of `{ "text": "one supplied requirement", "supported": true, "evidence": "resume quote or explicit absence" }`. Targeted reviews inventory ALL explicitly supplied requirements once, including unsupported requirements. Generic reviews inventory each claimed skill once and check its experience support; do not invent a target. Preserve the same target inventory for original/rewrite. No inventory means no overall numeric score.
+- `privacy`: state/evidence object. `safe` means no photos or unnecessary sensitive personal information in the supplied material (3/INFO). `unsafe` requires actual such content (0/CRITICAL). A supplied name/email is ordinary contact data. Missing contact details or timeline context do not change privacy. If the supplied representation prevents observation, give a qualitative review instead of a numeric total.
 
-Extend the map only after the corresponding attributed principle is actually present in the library. Common patterns retain their own source type.
+### Derived scores and single ownership
+
+Specificity: all statements name a concrete object = 3/INFO; some = 1/MAJOR; none = 0/CRITICAL. Measurements: all statements have a supplied measure = 3/INFO; some = 2/MINOR; none = 0/MAJOR. Alignment: all inventoried requirements supported = 3/INFO; some = 1/MAJOR; none = 0/MAJOR. Unsupported target experience belongs ONLY to alignment; it is not also a trust or evidence-writing penalty.
+
+Each scored weakness has one owner: role framing -> positioning; unnamed work object -> specificity; missing measures -> measurements; unclear sections -> structure; missing/contradictory recorded dates -> chronology; unsupported requirements -> alignment; actual sensitive personal content -> privacy. No extra severity entries or cross-category copies. Unknown gap context, missing certifications and requests for more detail remain unscored follow-up flags. Do not use a second principle/pattern to count the same weakness again. The helper rejects added, omitted, duplicated or remapped numeric criteria.
+
+Run `python scripts/score_audit.py audit-input.json` on the evidence inventory, copy its derived fields and full ledger, then run `python scripts/score_audit.py final-audit.json --check`. The final check covers criterion entries as well as category totals, verdict and counts. Severity follows the anchors; do not edit it independently. Better prose does not turn absent experience or a missing metric into evidence.
+
+These are document-rubric scores, not calibrated interview probabilities or hiring decisions. Stable extraction remains necessary even with deterministic aggregation. If evidence is uncertain, report the uncertainty and use qualitative review rather than choosing arbitrary state/score values.

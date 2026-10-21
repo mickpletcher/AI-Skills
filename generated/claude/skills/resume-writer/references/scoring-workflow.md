@@ -9,24 +9,14 @@ Every resume audit in Enhance mode MUST run this scoring workflow.
    - Targeted resume review (job description or explicit target role provided)
    - Low confidence extraction review
 
-2. For each relevant principle:
-   - Assign score from `0` to `3`.
-   - Assign severity independently (`CRITICAL`, `MAJOR`, `MINOR`, `INFO`).
-   - Apply principle weight from the mapping table.
-   - When uncertain between adjacent scores, choose the lower score unless strong evidence supports the higher score.
-   - Do not inflate scores due to polished wording alone.
-   - Weak evidence should score lower even if formatting quality is strong.
+2. Build the complete `scoring_evidence` inventory defined in `scoring-model.md`, using rubric version `fixed-evidence-v1`. Do not choose a subset of principles. Keep source quotes, distinguish missing facts from actual violations, and preserve the same supplied target inventory across versions.
 
-3. Build one source-backed `principle_scores` ledger before summarizing:
-   - Library citations must name an actual heading in `insights/principles.md`, using its mapped category and weight.
-   - Common patterns must cite an exact `common-patterns § <heading>` and use weight 1.0. Mapping/example names absent from the library are not library principles.
-   - Score each source once and group its related findings. Every counted severity must appear in the ledger; no additional unlisted severity totals.
+3. Run the calculator to generate the seven canonical scored entries. Fixed sources/categories/weights and anchored observations replace reviewer-selected principle scores and independent severity guesses. Additional qualitative advice is outside numeric scoring/counts. Missing timeline context is an unscored flag; contradictory recorded dates belong only to chronology. Do not penalize an unsupported target requirement in any other criterion.
 
-4. Calculate and reconcile before delivery:
-   - When Python/file execution is available, run `python scripts/score_audit.py audit-input.json` to derive category scores, final score, severity counts and verdict from the ledger. Then run the final merged audit through `python scripts/score_audit.py final-audit.json --check`.
-   - Copy those computed fields exactly. Category scores and final scores use one decimal place with half-up rounding. Do not replace them with estimated or indicative scores.
-   - Preserve the scored ledger as a reviewable JSON artifact for human audits; JSON mode includes it in `principle_scores`. A scored rewrite needs its own ledger, separate from the original resume.
-   - If execution is unavailable, use an available calculator and expose the ledger/reconciliation. If calculation cannot be verified, state that numeric scoring was not run and give a qualitative audit rather than invented totals.
+4. Reconcile before delivery:
+   - Run `python scripts/score_audit.py audit-input.json` then `python scripts/score_audit.py final-audit.json --check`. Copy every derived field and criterion entry exactly.
+   - Human audits preserve both the full evidence inventory and generated ledger in reviewable JSON artifacts. A scored rewrite needs its own inventory/ledger, extracted from the rewritten file.
+   - If execution or required evidence observation is unavailable, state numeric scoring was not run and give a qualitative review. Do not use guessed numbers or silently omit criteria.
 
 5. Apply verdict bands:
    - `90 to 100`: Excellent

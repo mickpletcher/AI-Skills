@@ -36,6 +36,8 @@ Use cases include:
 {
   "output_mode": "human | json | both",
   "review_context": "generic | targeted",
+  "rubric_version": "fixed-evidence-v1",
+  "scoring_evidence": {},
   "confidence": "high | medium | low",
   "audit_mode": "condensed | forensic",
   "final_score": 0,
@@ -53,6 +55,7 @@ Use cases include:
   },
   "principle_scores": [
     {
+      "criterion_id": "positioning | specificity | measurements | structure | chronology | alignment | privacy",
       "principle": "string",
       "source_type": "library_principle | common_pattern",
       "source_name": "string",
@@ -103,7 +106,7 @@ Use cases include:
 - `hire_likelihood`: short practical likelihood signal.
 - `critical_issue_count`, `major_issue_count`, `minor_issue_count`: severity totals.
 - `category_scores`: weighted category scores, computed from the current ledger.
-- Validate library citations against actual library headings; common patterns use exact `common-patterns § <heading>` citations with weight 1.0. Scoring-map/example presence is not library attribution.
+- `rubric_version` and `scoring_evidence`: required for numeric scoring. Use the complete inventory and fixed mappings in `scoring-model.md`. The calculator generates exactly seven criterion entries; do not add other patterns, select principles or estimate severity. Supporting source citations do not imply a free choice of numeric category.
 - Run the score calculator and final `--check` when code execution is available. Severity totals must equal the ledger, and verdict caps must not raise a verdict.
 - `principle_scores`: per principle audit records.
 - `missing_data_flags`: missing evidence markers, separate from writing quality.
@@ -115,6 +118,8 @@ Use cases include:
 ## Required vs Optional Fields
 
 All top-level fields in this schema are required.
+
+Unscored fallback may additionally use null for final_score, verdict and severity counts, with empty category_scores/principle_scores and null scoring_evidence. This fallback is not a completed numeric audit.
 
 Allowed nullable scalars:
 
@@ -150,34 +155,105 @@ These are aggregate warnings across multiple findings, not individual principle 
   "review_context": "targeted",
   "confidence": "high",
   "audit_mode": "condensed",
+  "missing_data_flags": [],
+  "system_flags": [],
+  "top_fixes": [],
+  "rewritten_resume": null,
+  "notes": [
+    "Illustrative complete evidence inventory; not evidence for the current applicant."
+  ],
+  "hire_likelihood": "Document rubric only; not a calibrated interview probability.",
+  "category_scores": {
+    "positioning_and_narrative": 100.0,
+    "evidence_and_bullet_strength": 100.0,
+    "ats_and_structural_reliability": 100.0,
+    "relevance_and_targeting": 100.0,
+    "professionalism_and_trust": 100.0
+  },
+  "final_score": 100.0,
+  "verdict": "Excellent",
+  "critical_issue_count": 0,
+  "major_issue_count": 0,
+  "minor_issue_count": 0,
+  "rubric_version": "fixed-evidence-v1",
+  "scoring_evidence": {
+    "positioning": {
+      "state": "role_and_evidence",
+      "evidence": "Data Engineer summary names SQL pipeline work."
+    },
+    "experience_statements": [
+      {
+        "text": "Built SQL pipelines processing 100 records daily.",
+        "names_specific_object": true,
+        "has_supplied_measure": true,
+        "evidence": "Named SQL pipelines and supplied volume."
+      }
+    ],
+    "structure": {
+      "state": "standard",
+      "evidence": "Experience and Education headings."
+    },
+    "chronology": {
+      "state": "clear",
+      "evidence": "Jan 2021 - Dec 2024 role range."
+    },
+    "requirements": [
+      {
+        "text": "SQL",
+        "supported": true,
+        "evidence": "Built SQL pipelines."
+      }
+    ],
+    "privacy": {
+      "state": "safe",
+      "evidence": "Supplied plain text contains ordinary contact data only."
+    }
+  },
   "principle_scores": [
     {
+      "criterion_id": "positioning",
       "principle": "Make the target role obvious in the top third",
       "source_type": "library_principle",
       "source_name": "Make the target role obvious in the top third",
       "category": "Positioning and Narrative",
-      "score": 2,
+      "score": 3,
       "weight": 1.5,
       "severity": "INFO",
-      "reason": "Illustrative observed evidence for this category; replace with actual audit evidence.",
+      "reason": "Data Engineer summary names SQL pipeline work.",
       "before": null,
       "after": null,
       "fix": null
     },
     {
+      "criterion_id": "specificity",
       "principle": "Every bullet must name the thing",
       "source_type": "library_principle",
       "source_name": "Every bullet must name the thing",
       "category": "Evidence and Bullet Strength",
-      "score": 2,
+      "score": 3,
       "weight": 1.5,
-      "severity": "MINOR",
-      "reason": "Illustrative observed evidence for this category; replace with actual audit evidence.",
+      "severity": "INFO",
+      "reason": "1/1 experience statements meet specificity; see scoring_evidence.experience_statements",
       "before": null,
       "after": null,
       "fix": null
     },
     {
+      "criterion_id": "measurements",
+      "principle": "Numbers, everywhere, or you get an interview with nobody",
+      "source_type": "library_principle",
+      "source_name": "Numbers, everywhere, or you get an interview with nobody",
+      "category": "Evidence and Bullet Strength",
+      "score": 3,
+      "weight": 1.5,
+      "severity": "INFO",
+      "reason": "1/1 experience statements meet measurements; see scoring_evidence.experience_statements",
+      "before": null,
+      "after": null,
+      "fix": null
+    },
+    {
+      "criterion_id": "structure",
       "principle": "Standard section headings beat clever branding",
       "source_type": "library_principle",
       "source_name": "Standard section headings beat clever branding",
@@ -185,71 +261,61 @@ These are aggregate warnings across multiple findings, not individual principle 
       "score": 3,
       "weight": 1.25,
       "severity": "INFO",
-      "reason": "Illustrative observed evidence for this category; replace with actual audit evidence.",
+      "reason": "Experience and Education headings.",
       "before": null,
       "after": null,
       "fix": null
     },
     {
+      "criterion_id": "chronology",
+      "principle": "Chronology should be easy to follow",
+      "source_type": "library_principle",
+      "source_name": "Chronology should be easy to follow",
+      "category": "ATS and Structural Reliability",
+      "score": 3,
+      "weight": 1.25,
+      "severity": "INFO",
+      "reason": "Jan 2021 - Dec 2024 role range.",
+      "before": null,
+      "after": null,
+      "fix": null
+    },
+    {
+      "criterion_id": "alignment",
       "principle": "Mirror the job description's language naturally",
       "source_type": "library_principle",
       "source_name": "Mirror the job description's language naturally",
       "category": "Relevance and Targeting",
-      "score": 1,
+      "score": 3,
       "weight": 1.5,
-      "severity": "MAJOR",
-      "reason": "Illustrative observed evidence for this category; replace with actual audit evidence.",
+      "severity": "INFO",
+      "reason": "1/1 supplied requirements supported; see scoring_evidence.requirements",
       "before": null,
       "after": null,
-      "fix": "Confirm the missing evidence before changing factual claims."
+      "fix": null
     },
     {
-      "principle": "Typography",
+      "criterion_id": "privacy",
+      "principle": "No photos, no headshots, no personal data",
       "source_type": "common_pattern",
-      "source_name": "common-patterns § Typography",
+      "source_name": "common-patterns \u00a7 No photos, no headshots, no personal data",
       "category": "Professionalism and Trust",
-      "score": 2,
+      "score": 3,
       "weight": 1.0,
-      "severity": "MINOR",
-      "reason": "Illustrative observed evidence for this category; replace with actual audit evidence.",
+      "severity": "INFO",
+      "reason": "Supplied plain text contains ordinary contact data only.",
       "before": null,
       "after": null,
       "fix": null
     }
-  ],
-  "missing_data_flags": [
-    "MISSING_TOOL_SPECIFICITY"
-  ],
-  "system_flags": [
-    "TARGETING_WEAK"
-  ],
-  "top_fixes": [
-    "Supply verified experience for the missing target requirement."
-  ],
-  "rewritten_resume": null,
-  "notes": [
-    "Illustrative ledger only; current audits must score their own evidence."
-  ],
-  "hire_likelihood": "Low likelihood without major revision",
-  "category_scores": {
-    "positioning_and_narrative": 66.7,
-    "evidence_and_bullet_strength": 66.7,
-    "ats_and_structural_reliability": 100.0,
-    "relevance_and_targeting": 33.3,
-    "professionalism_and_trust": 66.7
-  },
-  "final_score": 68.4,
-  "verdict": "Weak",
-  "critical_issue_count": 0,
-  "major_issue_count": 1,
-  "minor_issue_count": 2
+  ]
 }
 ```
 
 ## Failure Handling Rules
 
 - If extraction is severely scrambled or incomplete, return valid JSON with:
-  - conservative low scoring,
+  - no numeric score when the full required evidence inventory cannot be observed,
   - relevant `system_flags`,
   - clear `notes`,
   - `rewritten_resume` set to `null` unless a safe rewrite was still possible.
@@ -260,7 +326,7 @@ These are aggregate warnings across multiple findings, not individual principle 
 
 - Set `confidence` to `low`.
 - Score only trusted sections.
-- Keep uncertain sections out of `principle_scores` or use conservative low scores with explanatory `notes`.
+- If any required criterion cannot be observed, do not omit it or guess a low score. Return an unscored audit: `final_score`, `verdict` and severity counts null, `category_scores` {}, `principle_scores` [], `scoring_evidence` null, and explicit limitation notes. Do not run numeric calculation on that fallback.
 - Cap maximum verdict at `Strong` unless user manually confirms extracted text.
 
 ## Targeted vs Generic Review Context Behavior

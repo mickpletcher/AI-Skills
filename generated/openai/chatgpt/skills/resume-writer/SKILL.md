@@ -112,7 +112,7 @@ Read before enhancing or auditing a resume; also read the scoring reference for 
 
 ## Scoring Workflow
 
-Read whenever scoring a resume or producing machine-readable scores. [Full workflow](references/scoring-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode. Use [the score calculator](scripts/score_audit.py) when local Python execution is available. Report only totals reconciled to the supplied source ledger; do not substitute estimated editorial numbers. Mapping tables and examples are not attributed library entries.
+Read whenever scoring a resume or producing machine-readable scores. [Full workflow](references/scoring-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode. Use [the score calculator](scripts/score_audit.py) when local Python execution is available. Report only totals reconciled to the supplied source ledger; do not substitute estimated editorial numbers. Mapping tables and examples are not attributed library entries. Numeric audits use the fixed-evidence-v1 inventory and seven calculator-generated criteria in scoring-model.md; do not choose a principle subset or duplicate a missing-data penalty.
 
 ## Add Insight Workflow
 

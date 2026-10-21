@@ -120,14 +120,7 @@ Be specific. "Weak bullet" is not a valid issue. "No outcome specified — says 
 
 When the same violation maps to both a library principle and a pattern, apply the precedence rule: cite the library principle.
 
-Capture scoring inputs while auditing:
-
-- Principle name
-- Score (`0` to `3`)
-- Severity (`CRITICAL`, `MAJOR`, `MINOR`, `INFO`)
-- Category (from `scoring-model.md`)
-- Principle weight (from `scoring-model.md`)
-- Missing data flag (if present)
+Capture the complete fixed-evidence-v1 scoring_evidence inventory from scoring-model.md. The calculator selects all seven criteria and derives scores, severity, category and weight. Keep missing-data flags separate; additional qualitative findings do not add numeric penalties.
 
 **Recruiter skim view** (run as part of every audit):
 
@@ -154,7 +147,7 @@ For each gap found, record:
 Classify each gap:
 
 - **Explained**: The resume already addresses it. No action needed beyond noting it.
-- **Unexplained**: No context exists in the resume. Flag as MAJOR, cite `common-patterns § Red flags` (unexplained gaps), and set `MISSING_TIMELINE_CONTEXT`.
+- **Unexplained**: No context exists in the resume. Set `MISSING_TIMELINE_CONTEXT` and request truthful context. Do not score the absence, assign MAJOR severity, or copy it into a second category.
 - **Overlap**: Two roles share overlapping dates. Flag for the user to verify — may indicate concurrent employment or a title inflation risk.
 
 For each unexplained gap, generate 2-3 framing options based on duration and surrounding context. Present these as options for the user to select and adapt — never insert them into the rewrite without user confirmation.
@@ -169,7 +162,7 @@ Framing by duration:
 
 Surface gap findings in the output:
 
-- Unexplained gaps appear as MAJOR issues in Issues by Severity
+- Unexplained gaps appear only in Missing Data; actual missing/contradictory role dates are scored once by chronology
 - `MISSING_TIMELINE_CONTEXT` appears in Missing Data
 - Framing options appear in Top Fixes, labeled clearly as options not insertions
 
@@ -198,15 +191,15 @@ Known substitutions to check (non-exhaustive — apply judgment for any tool tha
 For each flagged term:
 
 - Record the outdated term, the preferred term, and the location in the resume
-- Classify severity: MINOR if cosmetic, MAJOR if the outdated name signals a skills gap or misalignment with a modern job description
-- When a job description is present and uses the current name, escalate to MAJOR if the resume uses the old name
+- Describe naming advice qualitatively. Numeric severity is derived only by the seven fixed criteria; do not add a taxonomy penalty.
+- A historical product alias alone does not establish missing experience. Check supported requirements through alignment once; do not add another penalty.
 
 Do not flag abbreviations that are still widely used and unambiguous in context (e.g., "SQL", "VM", "SaaS"). Only flag when the full renamed brand or deprecated product name is the actual issue.
 
 Surface taxonomy findings in the output:
 
-- Each flagged term appears in Audit Findings with current preferred name and severity
-- MAJOR taxonomy issues appear in Issues by Severity
+- Each flagged term appears as qualitative naming advice with its current preferred name
+- Issues by Severity contains only calculator-generated criterion counts; naming advice does not add entries
 - Corrections are applied in the rewritten resume — use the current preferred name everywhere
 
 **LinkedIn and artifact alignment check** (run as part of every audit when enough data is present):

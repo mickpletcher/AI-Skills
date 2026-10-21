@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Fixed candidate resume principle coverage, category mappings and duplicate penalties with a seven-criterion evidence rubric. Two fresh human runs now agree at 76.7 for the original and 85.0 for their rewrites; all four downloaded ledgers reconcile. Strict JSON/injection checks pass, with sparse-document structure credit still unresolved. Updated regressions, provenance and checklist. PR stays draft; no installation, merging or promotion.
+
 - Tested native human numeric resume scoring in two fresh chats with unchanged candidates. Four downloaded ledgers reconcile with the displayed audits and exact calculator. Retained substantive consistency concerns: the identical original scores 54.5 versus 71.4 with changing principle coverage/category assignments. Updated evidence and follow-up checklist; no rubric acceptance, merging or promotion.
 
 - Corrected candidate resume score/severity reconciliation and library attribution, added a deterministic ledger calculator, and reserved social-preview language-badge space. Added eight scoring and three footer regressions. Replayed three failed native cases plus a fresh JSON format correction; three final bounded passes retain original/intermediate failures and the unexercised human numeric path. No installation, merging or promotion; PR remains draft.

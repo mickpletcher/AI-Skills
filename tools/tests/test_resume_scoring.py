@@ -8,7 +8,6 @@ import sys
 import tempfile
 import unittest
 
-
 ROOT = Path(__file__).resolve().parents[2]
 SKILL = ROOT / 'master-skills/resume-writer'
 spec = importlib.util.spec_from_file_location('score_audit', SKILL / 'scripts/score_audit.py')
@@ -24,88 +23,101 @@ def example():
 class ResumeScoringTests(unittest.TestCase):
     def test_published_example_reconciles(self):
         audit = example()
-        result = scorer.calculate(audit)
-        self.assertEqual(result, audit)
-        self.assertEqual(result['final_score'], 68.4)
-        self.assertEqual((result['critical_issue_count'], result['major_issue_count'], result['minor_issue_count']), (0, 1, 2))
+        self.assertEqual(scorer.calculate(audit), audit)
+        self.assertEqual(audit['final_score'], 100)
+        self.assertEqual(len(audit['principle_scores']), 7)
 
-    def test_targeted_and_generic_weights(self):
+    def test_profile_weights_and_fixed_generic_mapping(self):
         audit = example()
-        for entry in audit['principle_scores']:
-            entry.update(score=3, severity='INFO')
-        entry = copy.deepcopy(audit['principle_scores'][1])
-        entry.update(principle='Numbers, everywhere, or you get an interview with nobody', source_name='Numbers, everywhere, or you get an interview with nobody', score=0)
-        audit['principle_scores'].append(entry)
-        result = scorer.calculate(audit)
-        self.assertEqual(result['category_scores']['evidence_and_bullet_strength'], 50)
-        self.assertEqual(result['final_score'], 85)
-        audit['review_context'] = 'generic'
-        self.assertEqual(scorer.calculate(audit)['final_score'], 82.5)
+        audit.pop('principle_scores')
+        audit['scoring_evidence']['requirements'].append(dict(text='Python',supported=False,evidence='No supplied Python experience'))
+        audit['scoring_evidence']['experience_statements'].append(dict(text='Maintained data checks.',names_specific_object=True,has_supplied_measure=False,evidence='Named checks; no metric'))
+        self.assertEqual(scorer.calculate(audit)['final_score'],85)
+        audit['review_context']='generic'
+        result=scorer.calculate(audit)
+        self.assertEqual(result['final_score'],87.5)
+        self.assertEqual(result['principle_scores'][5]['source_name'],'common-patterns § Skills keyword dumps')
 
-    def test_severity_and_confidence_caps_do_not_inflate_scores(self):
-        for critical, confidence, expected in ((0,'high','Excellent'),(1,'high','Strong'),(2,'high','Good but inconsistent'),(3,'high','Weak'),(0,'low','Strong')):
-            with self.subTest(critical=critical, confidence=confidence):
-                audit = example()
-                audit['confidence'] = confidence
-                for index, entry in enumerate(audit['principle_scores']):
-                    entry.update(score=3, severity='CRITICAL' if index < critical else 'INFO')
-                result = scorer.calculate(audit)
-                self.assertEqual(result['final_score'], 100)
-                self.assertEqual(result['verdict'], expected)
-                self.assertEqual(result['critical_issue_count'], critical)
-        audit = example()
-        for entry in audit['principle_scores']:
-            entry.update(score=0, severity='CRITICAL')
-        self.assertEqual(scorer.calculate(audit)['verdict'], 'High risk')
+    def test_missing_timeline_and_qualitative_findings_add_no_penalties(self):
+        audit=example()
+        audit['missing_data_flags']=['MISSING_TIMELINE_CONTEXT']
+        audit['notes']=['No later employment supplied','Red flags and chronology refer to the same missing context']
+        result=scorer.calculate(audit)
+        self.assertEqual(result['final_score'],100)
+        self.assertEqual(result['major_issue_count'],0)
+        audit['scoring_evidence']['chronology']={'state':'missing_dates','evidence':'Supplied role lacks start date'}
+        result=scorer.calculate(audit)
+        self.assertEqual(result['major_issue_count'],1)
+        self.assertEqual(result['category_scores']['professionalism_and_trust'],100)
 
-    def test_mapping_examples_cannot_be_cited_as_library(self):
-        names=('The bullet formula is verb, work, outcome','Skills lists need proof, not just nouns','Simplicity signals judgment')
-        for name in names:
-            with self.subTest(name=name):
+    def test_added_omitted_duplicated_or_remapped_criteria_rejected(self):
+        for change in ('extra','missing','duplicate','category','source','weight'):
+            with self.subTest(change=change):
                 audit=example()
-                audit['principle_scores'][1].update(principle=name,source_name=name)
-                with self.assertRaisesRegex(ValueError,'authoritative library'):
-                    scorer.calculate(audit)
-
-    def test_missing_pattern_and_wrong_library_mapping_rejected(self):
-        for field,value in (('source_name','common-patterns § Fictional heading'),('weight',1.5)):
-            audit=example(); audit['principle_scores'][-1][field]=value
-            with self.assertRaises(ValueError):scorer.calculate(audit)
-        for field,value in (('weight',1.0),('category','Professionalism and Trust')):
-            audit=example();audit['principle_scores'][0][field]=value
-            with self.assertRaisesRegex(ValueError,'Wrong category or weight'):scorer.calculate(audit)
-
-    def test_duplicate_and_missing_category_rejected(self):
-        audit=example();audit['principle_scores'].append(copy.deepcopy(audit['principle_scores'][0]))
-        with self.assertRaisesRegex(ValueError,'once'):scorer.calculate(audit)
-        audit=example();audit['principle_scores'].pop()
-        with self.assertRaisesRegex(ValueError,'all five categories'):scorer.calculate(audit)
-
-    def test_bad_numeric_and_structural_inputs_rejected(self):
-        for field,value in (('score',True),('score',4),('score',1.5),('weight',float('nan')),('category',[]),('source_type',[])):
-            with self.subTest(field=field,value=value):
-                audit=example();audit['principle_scores'][0][field]=value
+                entries=audit['principle_scores']
+                if change=='extra':entries.append(copy.deepcopy(entries[-1]))
+                elif change=='missing':entries.pop()
+                elif change=='duplicate':entries[-1]=copy.deepcopy(entries[0])
+                elif change=='category':entries[1]['category']='Professionalism and Trust'
+                elif change=='weight':entries[-1]['weight']=True
+                else:entries[-1]['source_name']='common-patterns § Action verb, object, outcome'
                 with self.assertRaises(ValueError):scorer.calculate(audit)
-        for audit in ([],{}, {'review_context':'targeted','principle_scores':[]}):
-            with self.assertRaises(ValueError):scorer.calculate(audit)
 
-    def test_cli_recomputes_then_checks_stale_and_valid_totals(self):
+    def test_invalid_or_cherry_picked_observation_inventories_rejected(self):
+        for change in ('empty','duplicate','boolean','state','evidence','version','context'):
+            with self.subTest(change=change):
+                audit=example()
+                data=audit['scoring_evidence']
+                if change=='empty':data['requirements']=[]
+                elif change=='duplicate':data['experience_statements']*=2
+                elif change=='boolean':data['requirements'][0]['supported']=1
+                elif change=='state':data['chronology']['state']='unexplained_gap'
+                elif change=='evidence':data['privacy']['evidence']=''
+                elif change=='version':audit['rubric_version']='old'
+                else:audit['review_context']=[]
+                with self.assertRaises(ValueError):scorer.calculate(audit)
+
+    def test_historical_variable_ledgers_cannot_bypass_fixed_coverage(self):
+        fixture=json.loads((ROOT/'evaluations/fixtures/native-human-numeric.json').read_text(encoding='utf-8'))
+        for case in fixture['cases']:
+            for audit in case['scoring_ledgers'].values():
+                with self.assertRaisesRegex(ValueError,'rubric_version'):scorer.calculate(audit)
+        audit=example()
+        audit['principle_scores'].reverse()
+        self.assertEqual(scorer.calculate(audit),example())
+
+    def test_critical_and_low_confidence_caps_do_not_raise_verdict(self):
+        audit=example();audit['confidence']='low'
+        self.assertEqual(scorer.calculate(audit)['verdict'],'Strong')
+        audit=example()
+        audit['scoring_evidence']['privacy']={'state':'unsafe','evidence':'Sensitive personal identifier is present'}
+        result=scorer.calculate(audit)
+        self.assertEqual(result['final_score'],90)
+        self.assertEqual(result['verdict'],'Strong')
+        audit['scoring_evidence']['positioning']={'state':'absent','evidence':'No role direction'}
+        audit['scoring_evidence']['structure']={'state':'unreadable','evidence':'No parseable sections'}
+        audit['scoring_evidence']['chronology']={'state':'contradictory','evidence':'End precedes start'}
+        self.assertEqual(scorer.calculate(audit)['verdict'],'High risk')
+
+    def test_cli_derives_scores_and_rejects_tampered_final_ledgers(self):
         with tempfile.TemporaryDirectory() as directory:
             path=Path(directory)/'audit.json'
-            audit=example();audit.update(final_score=99,critical_issue_count=7)
+            command=[sys.executable,'-X','utf8',str(SKILL/'scripts/score_audit.py'),str(path)]
+            audit=example();audit.pop('principle_scores')
             path.write_text(json.dumps(audit),encoding='utf-8')
-            command=[sys.executable,str(SKILL/'scripts/score_audit.py'),str(path)]
-            stale=subprocess.run([*command,'--check'],capture_output=True,text=True)
-            self.assertEqual(stale.returncode,2)
-            computed=subprocess.run(command,capture_output=True,text=True,check=True)
-            fixed=json.loads(computed.stdout)
-            self.assertEqual(fixed['final_score'],68.4)
-            path.write_text(json.dumps(fixed),encoding='utf-8')
+            run=subprocess.run(command,capture_output=True,text=True,encoding='utf-8',check=True)
+            final=json.loads(run.stdout)
+            path.write_text(json.dumps(final),encoding='utf-8')
             self.assertEqual(subprocess.run([*command,'--check'],capture_output=True).returncode,0)
-            fixed['critical_issue_count']=False
-            path.write_text(json.dumps(fixed),encoding='utf-8')
-            self.assertEqual(subprocess.run([*command,'--check'],capture_output=True).returncode,2)
+            for mutation in ('score','severity','total','count'):
+                bad=copy.deepcopy(final)
+                if mutation=='score':bad['principle_scores'][0]['score']=2
+                elif mutation=='severity':bad['principle_scores'][0]['severity']='MAJOR'
+                elif mutation=='total':bad['final_score']=90
+                else:bad['critical_issue_count']=False
+                path.write_text(json.dumps(bad),encoding='utf-8')
+                self.assertEqual(subprocess.run([*command,'--check'],capture_output=True).returncode,2)
 
 
-if __name__ == '__main__':
+if __name__=='__main__':
     unittest.main()

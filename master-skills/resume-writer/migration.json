@@ -14,7 +14,7 @@
   "behavior_evaluations": [],
   "host_compatibility": "unverified",
   "transformations": {
-    "Read whenever scoring a resume or producing machine-readable scores. [Full workflow](references/scoring-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode.": "Read whenever scoring a resume or producing machine-readable scores. [Full workflow](references/scoring-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode. Use [the score calculator](scripts/score_audit.py) when local Python execution is available. Report only totals reconciled to the supplied source ledger; do not substitute estimated editorial numbers. Mapping tables and examples are not attributed library entries. Numeric audits use the fixed-evidence-v1 inventory and seven calculator-generated criteria in scoring-model.md; do not choose a principle subset or duplicate a missing-data penalty."
+    "Read whenever scoring a resume or producing machine-readable scores. [Full workflow](references/scoring-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode.": "Read whenever scoring a resume or producing machine-readable scores. [Full workflow](references/scoring-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode. Use [the score calculator](scripts/score_audit.py) when local Python execution is available. Report only totals reconciled to the supplied source ledger; do not substitute estimated editorial numbers. Mapping tables and examples are not attributed library entries. Numeric audits use the fixed-evidence-v2 inventory and seven calculator-generated criteria in scoring-model.md; do not choose a principle subset or duplicate a missing-data penalty."
   },
   "supporting_files_sha256": {
     "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
@@ -50,25 +50,25 @@
       "reason": "Candidate-only YAML quoting and scheduled-task preservation correction; original shipped hash retained. See evaluations/candidate-compatibility-2026-10-19.md."
     },
     "scoring-model.md": {
-      "sha256": "ae9fc2193a48c4fca4c68b21598d141427342ed4cdc04cdf16af059d2fcaa379",
-      "reason": "Candidate-only fixed scoring coverage, anchored evidence and single penalty ownership; original shipped hash retained."
+      "sha256": "7506ce92a69fdce05606f89de2d7b2093b49c7d86d35ef4c8c0b3e962de9adc0",
+      "reason": "Candidate-only fixed evidence rubric with explicit quoted heading inventory and readable missing-heading classification; original shipped hash retained."
     },
     "references/scoring-workflow.md": {
-      "sha256": "7acfbc2b4bf7da0292623ffa55c0093c26a1a09ab927f31e943d778ca91179f7",
-      "reason": "Candidate-only fixed scoring coverage, anchored evidence and single penalty ownership; original shipped hash retained."
+      "sha256": "fac1d1b4a8d648582e7901d5165c654142b7d45365740bb0ebcaffd94276db9e",
+      "reason": "Candidate-only fixed evidence rubric with explicit quoted heading inventory and readable missing-heading classification; original shipped hash retained."
     },
     "json-output-spec.md": {
-      "sha256": "a5a7fb93766a00422fa7041649536bec406dc1bbedc04654d6283b35170f7db8",
-      "reason": "Candidate-only fixed scoring coverage, anchored evidence and single penalty ownership; original shipped hash retained."
+      "sha256": "24bc9db51d4f124277d8263b1deed2ead86515aa2fba5271adc986d31e2dc571",
+      "reason": "Candidate-only fixed evidence rubric with explicit quoted heading inventory and readable missing-heading classification; original shipped hash retained."
     },
     "references/enhance-workflow.md": {
-      "sha256": "5835e7bc2a079a4cc66a42f1c76c8884294060ff48c9346990a931ae70b7f2f3",
-      "reason": "Candidate-only fixed scoring coverage, anchored evidence and single penalty ownership; original shipped hash retained."
+      "sha256": "4a3d7cd07eb701493ba0f72e35480917141eda0b7fcd89b5b4d0d615bbac1e20",
+      "reason": "Candidate-only fixed evidence rubric with explicit quoted heading inventory and readable missing-heading classification; original shipped hash retained."
     }
   },
   "added_supporting_files": {
     "scripts/score_audit.py": {
-      "sha256": "4e8529f0fa1babc985da2f4a7f6bc2578067aeddad61d4f07a3f3d77c1cdde1d",
+      "sha256": "72b2b304dde0813610f0412db7f23d9378ebb176652b0be5a29bd1d1738680a4",
       "reason": "New candidate-only standard-library score/source-ledger calculator for deterministic native audit reconciliation."
     }
   }

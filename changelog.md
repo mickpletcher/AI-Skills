@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Fixed candidate resume structure scoring for readable documents without section headings. Added a required heading inventory, missing_headings anchor and two regression methods. Preserved a native ledger-editing failure, clarified final ledger delivery and passed a fresh pure JSON rerun at 55.0. Updated provenance and checklist; PR stays draft with no installation, merging or promotion.
+
 - Fixed candidate resume principle coverage, category mappings and duplicate penalties with a seven-criterion evidence rubric. Two fresh human runs now agree at 76.7 for the original and 85.0 for their rewrites; all four downloaded ledgers reconcile. Strict JSON/injection checks pass, with sparse-document structure credit still unresolved. Updated regressions, provenance and checklist. PR stays draft; no installation, merging or promotion.
 
 - Tested native human numeric resume scoring in two fresh chats with unchanged candidates. Four downloaded ledgers reconcile with the displayed audits and exact calculator. Retained substantive consistency concerns: the identical original scores 54.5 versus 71.4 with changing principle coverage/category assignments. Updated evidence and follow-up checklist; no rubric acceptance, merging or promotion.

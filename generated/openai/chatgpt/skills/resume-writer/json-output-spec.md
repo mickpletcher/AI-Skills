@@ -36,7 +36,7 @@ Use cases include:
 {
   "output_mode": "human | json | both",
   "review_context": "generic | targeted",
-  "rubric_version": "fixed-evidence-v1",
+  "rubric_version": "fixed-evidence-v2",
   "scoring_evidence": {},
   "confidence": "high | medium | low",
   "audit_mode": "condensed | forensic",
@@ -175,7 +175,7 @@ These are aggregate warnings across multiple findings, not individual principle 
   "critical_issue_count": 0,
   "major_issue_count": 0,
   "minor_issue_count": 0,
-  "rubric_version": "fixed-evidence-v1",
+  "rubric_version": "fixed-evidence-v2",
   "scoring_evidence": {
     "positioning": {
       "state": "role_and_evidence",
@@ -191,6 +191,7 @@ These are aggregate warnings across multiple findings, not individual principle 
     ],
     "structure": {
       "state": "standard",
+      "section_headings": ["Experience", "Education"],
       "evidence": "Experience and Education headings."
     },
     "chronology": {

@@ -6,7 +6,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = 'fixed-evidence-v1'
+VERSION = 'fixed-evidence-v2'
 CATEGORIES = ('Positioning and Narrative', 'Evidence and Bullet Strength', 'ATS and Structural Reliability', 'Relevance and Targeting', 'Professionalism and Trust')
 PROFILES = {'generic': (25, 35, 20, 10, 10), 'targeted': (25, 30, 20, 15, 10)}
 VERDICTS = ('High risk', 'Weak', 'Good but inconsistent', 'Strong', 'Excellent')
@@ -21,7 +21,7 @@ SLOTS = (
 )
 STATES = {
     'positioning': {'role_and_evidence': (3, 'INFO'), 'role_only': (2, 'MINOR'), 'inferred': (1, 'MAJOR'), 'absent': (0, 'CRITICAL')},
-    'structure': {'standard': (3, 'INFO'), 'mixed': (2, 'MINOR'), 'unclear': (1, 'MAJOR'), 'unreadable': (0, 'CRITICAL')},
+    'structure': {'standard': (3, 'INFO'), 'mixed': (2, 'MINOR'), 'missing_headings': (2, 'MINOR'), 'unclear': (1, 'MAJOR'), 'unreadable': (0, 'CRITICAL')},
     'chronology': {'clear': (3, 'INFO'), 'coarse': (2, 'MINOR'), 'missing_dates': (1, 'MAJOR'), 'contradictory': (0, 'CRITICAL')},
     'privacy': {'safe': (3, 'INFO'), 'unsafe': (0, 'CRITICAL')},
 }
@@ -69,6 +69,16 @@ def calculate(audit, root=ROOT):
         if not isinstance(observation, dict) or not isinstance(observation.get('state'), str) or observation['state'] not in choices or not nonempty(observation.get('evidence')):
             raise ValueError(f'Invalid or unobservable {key}; use qualitative review')
         states[key] = choices[observation['state']]
+    structure = evidence['structure']
+    headings = structure.get('section_headings')
+    if not isinstance(headings, list) or any(not nonempty(heading) for heading in headings):
+        raise ValueError('structure requires section_headings quoted from the resume, or an empty list when absent')
+    if len({' '.join(heading.casefold().split()) for heading in headings}) != len(headings):
+        raise ValueError('Duplicate structure section heading')
+    if structure['state'] in ('standard', 'mixed') and not headings:
+        raise ValueError('Readable sections without headings require missing_headings, not standard or mixed')
+    if structure['state'] == 'missing_headings' and headings:
+        raise ValueError('missing_headings requires an empty section_headings inventory')
     specific = sum(item['names_specific_object'] for item in statements)
     measured = sum(item['has_supplied_measure'] for item in statements)
     matched = sum(item['supported'] for item in requirements)

@@ -9,7 +9,9 @@ Every resume audit in Enhance mode MUST run this scoring workflow.
    - Targeted resume review (job description or explicit target role provided)
    - Low confidence extraction review
 
-2. Build the complete `scoring_evidence` inventory defined in `scoring-model.md`, using rubric version `fixed-evidence-v1`. Do not choose a subset of principles. Keep source quotes, distinguish missing facts from actual violations, and preserve the same supplied target inventory across versions.
+2. Build the complete `scoring_evidence` inventory defined in `scoring-model.md`, using rubric version `fixed-evidence-v2`. Do not choose a subset of principles. Record actual structure.section_headings; a readable resume without any labels uses missing_headings, not standard. Keep source quotes, distinguish missing facts from actual violations, and preserve the same supplied target inventory across versions.
+
+The calculator's full `principle_scores` array is an immutable calculation artifact, including `reason`, `before`, `after` and `fix`. Copy it verbatim into the delivered JSON. Put editorial advice, examples and rewritten wording in `top_fixes`, `notes` or `rewritten_resume`, never inside that array. Save and check the exact final object after adding those other fields. If `--check` fails, repair the object and check again before delivery; an earlier check of a different object does not validate the response.
 
 3. Run the calculator to generate the seven canonical scored entries. Fixed sources/categories/weights and anchored observations replace reviewer-selected principle scores and independent severity guesses. Additional qualitative advice is outside numeric scoring/counts. Missing timeline context is an unscored flag; contradictory recorded dates belong only to chronology. Do not penalize an unsupported target requirement in any other criterion.
 

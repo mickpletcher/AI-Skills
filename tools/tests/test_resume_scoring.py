@@ -38,6 +38,41 @@ class ResumeScoringTests(unittest.TestCase):
         self.assertEqual(result['final_score'],87.5)
         self.assertEqual(result['principle_scores'][5]['source_name'],'common-patterns § Skills keyword dumps')
 
+    def test_sparse_native_structure_boundary_with_and_without_headings(self):
+        fixture=json.loads((ROOT/'evaluations/fixtures/native-scoring-consistency.json').read_text(encoding='utf-8'))
+        audit=next(case['audit'] for case in fixture['cases'] if case['id']=='json-fixed-boundary')
+        audit['rubric_version']=scorer.VERSION
+        structure=audit['scoring_evidence']['structure']
+        structure['section_headings']=[]
+        with self.assertRaisesRegex(ValueError,'missing_headings'):scorer.calculate(audit)
+        structure.update(state='missing_headings',evidence='Readable role entry and work statement, with no section headings.')
+        result=scorer.calculate(audit)
+        self.assertEqual(result['final_score'],55)
+        self.assertEqual(result['category_scores']['ats_and_structural_reliability'],83.3)
+        self.assertEqual((result['critical_issue_count'],result['major_issue_count'],result['minor_issue_count']),(0,3,1))
+        self.assertEqual(result['principle_scores'][3]['score'],2)
+        self.assertEqual(result['principle_scores'][4]['score'],3)
+        self.assertEqual(result['principle_scores'][6]['score'],3)
+        structure.update(state='standard',section_headings=['Experience'],evidence='Experience heading and readable role entry.')
+        headed=scorer.calculate(audit)
+        self.assertEqual(headed['final_score'],58.3)
+        self.assertEqual(headed['category_scores']['ats_and_structural_reliability'],100)
+        self.assertEqual(headed['minor_issue_count'],0)
+
+    def test_structure_requires_consistent_quoted_heading_inventory(self):
+        for change in ('omitted','string','blank','duplicate','boolean','mixed_empty','missing_with_labels'):
+            with self.subTest(change=change):
+                audit=example()
+                structure=audit['scoring_evidence']['structure']
+                if change=='omitted':structure.pop('section_headings')
+                elif change=='string':structure['section_headings']='Experience'
+                elif change=='blank':structure['section_headings']=[' ']
+                elif change=='duplicate':structure['section_headings']=['Experience',' experience ']
+                elif change=='boolean':structure['section_headings']=[True]
+                elif change=='mixed_empty':structure.update(state='mixed',section_headings=[])
+                else:structure['state']='missing_headings'
+                with self.assertRaises(ValueError):scorer.calculate(audit)
+
     def test_missing_timeline_and_qualitative_findings_add_no_penalties(self):
         audit=example()
         audit['missing_data_flags']=['MISSING_TIMELINE_CONTEXT']
@@ -95,7 +130,7 @@ class ResumeScoringTests(unittest.TestCase):
         self.assertEqual(result['final_score'],90)
         self.assertEqual(result['verdict'],'Strong')
         audit['scoring_evidence']['positioning']={'state':'absent','evidence':'No role direction'}
-        audit['scoring_evidence']['structure']={'state':'unreadable','evidence':'No parseable sections'}
+        audit['scoring_evidence']['structure']={'state':'unreadable','section_headings':[],'evidence':'No parseable sections'}
         audit['scoring_evidence']['chronology']={'state':'contradictory','evidence':'End precedes start'}
         self.assertEqual(scorer.calculate(audit)['verdict'],'High risk')
 

@@ -279,3 +279,5 @@
 - [x] Validate the final correction in a clean tracked snapshot: 108 regressions, repository/PowerShell quality 46 skills/zero issues, folders 35 skills, generator 805 files and offline 24 cases/99 negative checks. Generic version-frontmatter limitation remains unchanged. Baseline CI on 9e926ee passes five workflows/twelve checks; delivery CI separate.
 - [ ] Verify complete native delivery of the final plain-Markdown patent package. Bounded host retries exhausted; do not mark failed/unassessed outputs passed.
 - [ ] Obtain separate bounded human review. Food-analyzer, n8n and blog verification and workout initial delivery remain open. Keep PR draft; no merge, installation or promotion.
+
+- [x] Run one unchanged final patent continuation after Mick reported connection readiness. The unchanged final patent continuation again returns a host response-load error and remains unassessed. Patent verification stays open; no further retry. CI on 9b14219 passes all five workflows/twelve checks.

@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Resumed the final workout native tests after sign-in. Verified the actual 743-byte combined ZIP against unchanged pinned candidate/source data. Retained three duplicate primary/regeneration response load failures as unassessed; the duplicate/correction delivery sequence remains pending host recovery. Updated review/checklist without candidate, package, placement, merge or promotion changes.
+
 - Corrected workout combined-duration scope and added a read-only export validator with six regressions. Two native combined ZIPs and duplicate/correction content pass bounded review; three of four exact native Copy exports retain leading-newline failures. Required validated canonical file delivery on permitted file-capable exports and corrections, with its native rerun pending ChatGPT sign-in. Updated review/checklist; PR stays draft with no merging or promotion.
 
 - Recorded Mick's bounded resume v3 acceptance and completed the next native batch for spec-writer, idea-forge and obsidian-workout-export. Verified four actual ZIPs and safe helper replay; four cases pass bounded review. Retained workout combined-duration scope and copied-frontmatter delivery failures, with duplicate/correction behavior passing separately. Updated evidence/checklist without candidate changes; PR remains draft with no merging or promotion.

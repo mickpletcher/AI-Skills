@@ -335,7 +335,29 @@
           "packet.txt": "d3aafa2cd6f4c005b233f92c12144b486d144cfee8573da5a1d8554f52455042",
           "resources.zip": "04a20821ec1771717f373f989b66bed637f9a8a3967ab968429eb9f8528e5704",
           "session.txt": "e568d8005b5caf49f8f7ad940af979499fa4de04427b7a18928cfe677f53c28b"
-        }
+        },
+        "status": "bounded_native_download_pass",
+        "delivered_note": "---\ndate: 2026-10-16\ntype: combined\nfocus: Lower A\ntags: [workout, strength, cycling]\nprs: 0\nride_duration_minutes: 50\n---\n# Workout Log - Day 2: Lower A plus ride\n**Date:** 2026-10-16\n\n## Body Stats\n| Metric | Value |\n| --- | --- |\n| Bodyweight | 180 lbs |\n\n## Session - Day 2: Lower A\n\n### 1. Strength\n| Exercise | Weight | Sets | Reps | PR? |\n| --- | --- | --- | --- | --- |\n| Goblet squat | 40 lbs | 3 | 5-8 (individual set reps unlogged) | no |\n| Pull-ups | bodyweight | 2 | 4 | no |\n\n### 2. Ride\n| Metric | Value |\n| --- | --- |\n| Route | Riverside loop |\n| Distance | 12 miles |\n| Duration | 50 minutes |\n| Elevation | 200 ft |\n\n## Notes and Flags\n- Calf raises skipped.\n",
+        "artifact": {
+          "bytes": 743,
+          "sha256": "d2ef7facba7af31bbc1709cdf043b5b15ec4d2a9d55bce28050f199104cb4794",
+          "member_sha256": {
+            "WorkoutData/2026-10-17.md": "e3aeedc9faac9d937c26a3400ce11634fd2b0cddd6d3a46e6e84be68af267b49"
+          }
+        },
+        "captures": {
+          "-dom.txt": "7429f1bdc1fced19506ddf6c6db0af20f48a94bcd84f5e1fccb78539b16c303f",
+          "-conversation.txt": "0d6aff6878f0121a227adfa0433261c9ed787c08d4a67a0aed881a26bb84cf8f",
+          ".png": "047887f6a4ba10c5adf93a3f3e21010c0e5f50247df0a491d8f69b1ef908ebcd"
+        },
+        "checks": [
+          "Actual downloaded ZIP has exactly the intended note and folder.",
+          "Frontmatter starts at byte zero; helper replay and full YAML parsing pass.",
+          "Source chat filename and actual workout date preserved.",
+          "Unknown combined total omitted; ride duration scoped to 50 minutes.",
+          "Activity order, rep range, all logged values and skipped exercise preserved.",
+          "No real vault/app ingestion or provider command history verified."
+        ]
       },
       {
         "id": "workout-duplicate",
@@ -357,7 +379,39 @@
         "input_sha256": {
           "packet.txt": "43be715e3bb1e5af5bdb8bfe07f150589180a6e81114a074972107b34bbd39e4",
           "resources.zip": "04a20821ec1771717f373f989b66bed637f9a8a3967ab968429eb9f8528e5704"
-        }
+        },
+        "status": "unassessed_host_response_load_failures",
+        "attempts": [
+          {
+            "attempt": 1,
+            "method": "Fresh Temporary chat; unchanged packet and wrapper.",
+            "outcome": "This response could not load."
+          },
+          {
+            "attempt": 2,
+            "method": "One fresh Temporary chat retry; unchanged packet and wrapper.",
+            "outcome": "This response could not load."
+          },
+          {
+            "attempt": 3,
+            "method": "Try again on Instant in the same failed retry chat; no prompt/model changes.",
+            "outcome": "This response could not load."
+          }
+        ],
+        "captures": {
+          "host-failure-dom.txt": "af01e9b481415162c079565e4a57f82b03b177e4c133847d3685499a359b5675",
+          "host-failure.png": "451c9f56ca3d39118d0dd19f8f60c9e46acce8b96f029545bf514577b15f4cc9",
+          "retry-host-failure-dom.txt": "7a93497ecdd6a4b8009ad9993e95c121992540b7e0b78a6abeca7bffc11c6a99",
+          "retry-host-failure.png": "a7ba09df95baaef72d615530f1ac6b9e46cf2e1dfa8e7e090e6e569faedf8dc0"
+        },
+        "followups_executed": false,
+        "initial_or_corrected_file_received": false,
+        "native_copy_received": false,
+        "limits": [
+          "No domain deliverable was available to assess in this revision.",
+          "Third failure observed in the live DOM; persistent screenshot unavailable after browser control reset and reported Debugger unattached. First two failure DOMs/screenshots retained.",
+          "No additional retry, model switch or candidate change was performed."
+        ]
       }
     ],
     "criteria_not_uploaded": [
@@ -365,17 +419,25 @@
       "Downloaded and both native Copy-code note bodies start with --- at byte zero, parse as YAML/frontmatter and preserve exact source/corrected data.",
       "Duplicate request asks before a full corrected re-export; original failures retained and no real vault/app claims."
     ],
-    "native_status": "Not started: new ChatGPT tabs are signed out; sign-in requested. Final canonical-file-per-export delivery remains unverified."
+    "tested_commit": "458c5d0c3de65bb8ad26a18967dda5c2b7b162f4",
+    "native_status": "Partially assessed: combined download passes; duplicate/correction remains unassessed after three host response load failures.",
+    "provider_execution_independently_verified": false,
+    "real_obsidian_ingestion": false,
+    "authentication": "Sign-in confirmed before both primary tasks; current blocker is response loading, not sign-in."
   },
   "summary": {
-    "completed_primary_cases": 4,
-    "completed_domain_responses": 8,
-    "combined_download_bounded_passes": 2,
+    "completed_primary_cases": 5,
+    "completed_domain_responses": 9,
+    "combined_download_bounded_passes": 3,
     "native_copy_passes": 1,
     "native_copy_failures": 3,
-    "unassessed_primary_host_load_failures": 2,
+    "unassessed_primary_host_load_failures": 4,
     "format_probe_load_failures": 1,
-    "final_revision_native_pending": true
+    "final_revision_native_pending": true,
+    "final_revision_completed_cases": 1,
+    "final_revision_unassessed_cases": 1,
+    "final_revision_unassessed_host_load_failures": 3,
+    "unassessed_regenerated_host_load_failures": 1
   },
   "limits": [
     "Original batch3 failures retained unchanged.",

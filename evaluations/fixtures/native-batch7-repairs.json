@@ -303,5 +303,44 @@
   },
   "blog_verification": "open",
   "workout_initial_delivery": "open",
-  "pr_draft": true
+  "pr_draft": true,
+  "continuations": [
+    {
+      "date": "2026-10-21",
+      "source_commit": "e4cbe182af6eb74c603a9c114a1c550bf43df1a3",
+      "case": "n8n-review",
+      "mode": "Instant",
+      "fresh_temporary_chat": true,
+      "candidate_task_source_wrapper_criteria_unchanged": true,
+      "evidence_directory": "native-n8n-review-rerun",
+      "status": "unassessed_host_load_failure",
+      "captures_sha256": {
+        "final-conversation.txt": "c3b6e73c709cdb4913eeca92ef7adec4731e97027a83ba36d4a66fd10335820c",
+        "final-dom.txt": "84e84d4deec0a305c1d31036899fcc40a154e7a1040a7b43c150b47cd6b2b2b3",
+        "first-dom.txt": "8746574e307c1672af3af58fae1eea991b37485ea68fbc8027265ac998a9b046",
+        "packet.txt": "722abfa395807cb25b562822b341b8efa7b9e04f29531f3b189058bcfdef3de7",
+        "ready-dom.txt": "a4938428eefc365350b3de9b584230712d54a642f1754b1535b19ed1e93ed3d5",
+        "result.png": "28d2dba2a1660ebdd76c52eeec1ec3382d26cf3c09e5c2b9b3d17bbe4ac46afa",
+        "second-dom.txt": "de26355492bb8d1305ae5dff7a13c64da9ea234bde2fb18ce8c7e73effd89834",
+        "staged-dom.txt": "a8bb7b272424bd3158e93bbfb7f81bd5e0c437edbd857c83b226e0cc2095674d",
+        "submitted-dom.txt": "e2e4ca3a92fcd58a85f55d702a903b9442d6bad871084aa9f85be2e07baca5d9",
+        "third-dom.txt": "84e84d4deec0a305c1d31036899fcc40a154e7a1040a7b43c150b47cd6b2b2b3"
+      },
+      "finding": "One fresh unchanged-packet submission returned This response couldn’t load. No review or test matrix available. No regeneration, candidate edit or additional mode attempt. Verification remains open.",
+      "ci": {
+        "commit": "e4cbe182af6eb74c603a9c114a1c550bf43df1a3",
+        "completed_successful_workflows": 5,
+        "completed_successful_checks": 12
+      }
+    }
+  ],
+  "cumulative_summary": {
+    "affected_cases": 3,
+    "native_attempts": 7,
+    "completed_responses": 2,
+    "bounded_passes": 2,
+    "unassessed_host_failures": 5,
+    "n8n_review_verified": false,
+    "human_acceptance_pending": true
+  }
 }

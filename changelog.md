@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Reran the remaining n8n workflow review against the unchanged candidate in a fresh native Instant chat. Retain another unassessed host response-load failure and keep verification open. All five workflows and twelve checks pass on e4cbe18. Blog verification and workout initial delivery remain open; PR stays draft without merging or promotion.
+
 - Corrected n8n retry-policy/test consistency and container-home fictional-project context isolation with exact candidate provenance. Native design and home reruns pass bounded review; retain four host failures and keep existing-workflow review verification open. All 108 regressions pass. Blog verification and workout initial delivery stay open; PR remains draft without merging or promotion.
 
 - Recorded Mick's bounded sixth-batch acceptance and six fresh native cases for n8n-workflow, pihole-blocklist and container-home. Three cases pass bounded review; retain two workflow policy/test inconsistencies and one fictional-project context leak. Candidate resources are unchanged. Blog verification, workout initial delivery and new corrections remain open; PR stays draft without merging or promotion.

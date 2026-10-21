@@ -227,3 +227,5 @@
 - [x] Validate the unchanged-candidate evidence overlay in a clean tracked snapshot: repository/PowerShell quality (46 skills, zero issues), exact-case folders (35 skills), generator drift and 24 offline cases/99 negative checks pass. Deliver only nine review/tracking files through draft PR #11.
 
 - [x] Validate seventh-batch candidate repairs: 108 regressions, generator drift for 805 files, repository/PowerShell quality (46 skills, zero issues), exact-case folders (35 skills), and 24 offline cases/99 negative checks pass. Codex n8n generic schema passes; four master/ChatGPT pairs retain identical pre-existing version rejection. Keep native verification/acceptance and earlier gates separate.
+
+- [x] Rerun the remaining n8n review against unchanged candidate/task/source/wrapper/criteria at e4cbe18 in one fresh Instant Temporary chat. Retain another unassessed response-load failure; verification and acceptance remain open. Confirm all five workflows and twelve individual CI checks passed on e4cbe18. Keep blog verification and workout initial delivery open; PR stays draft without merging or promotion.

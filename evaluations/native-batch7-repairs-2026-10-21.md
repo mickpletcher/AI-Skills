@@ -38,3 +38,13 @@ All 108 regressions pass on a clean tracked snapshot with the candidate patch. G
 ## Remaining work
 
 Obtain an assessable native response for the corrected n8n existing-workflow review, keeping its task/source and candidate pins unchanged. Its original policy/test inconsistency remains failed until a new response can be assessed. Separate bounded human acceptance remains pending. Blog verification, workout initial delivery, broader hosts/models/routing, real n8n compatibility and construction suitability remain open. PR stays draft; no merge, installation or promotion.
+
+## Unchanged-candidate review rerun
+
+At commit `e4cbe182af6eb74c603a9c114a1c550bf43df1a3`, one new Instant Temporary chat received the exact existing n8n review packet (`722abfa3…fdef3de7`). Candidate resources, task, synthetic source, wrapper and external criteria remain unchanged. Upload completion and Instant mode were verified before the single submission. The response ended with “This response couldn’t load.” No review or test matrix is available; this is another unassessed host failure, not a candidate pass or a new behavioral failure. No regeneration or mode change followed.
+
+The fixture retains this continuation separately from the original six repair attempts. Cumulative repair evidence now has seven attempts, two assessable responses, two bounded passes and five unassessed host failures. The existing-workflow review verification gate and separate bounded human acceptance remain open. Private packet, staged/ready/submitted/final UI states, conversation and screenshot hashes are recorded without publishing raw evidence.
+
+CI on the unchanged candidate commit passed all five workflows and twelve individual checks. Generator drift also passed locally. Earlier regression results remain attached to their original revision. Blog verification and workout initial delivery remain open. PR #11 stays draft; nothing is merged, installed or promoted.
+
+The evidence overlay passes repository validation on a clean tracked snapshot (46 skills, zero issues) and all 24 offline contract cases/99 negative checks. A direct working-folder check included unrelated ignored legacy files and reported nine issues; those files were preserved and excluded from the tracked-snapshot result. No new candidate code requires another regression run beyond the passing candidate CI.

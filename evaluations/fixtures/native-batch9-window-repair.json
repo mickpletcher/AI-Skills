@@ -75,7 +75,7 @@
     "bounded_fallback_passes": 1,
     "unassessed_host_load_failures": 2,
     "native_verification_open": false,
-    "human_acceptance_pending": true,
+    "human_acceptance_pending": false,
     "live_retrieval_verified": false
   },
   "schema_validation": [
@@ -136,7 +136,6 @@
     "n8n existing-workflow review verification",
     "blog final verification",
     "workout initial delivery",
-    "separate bounded human acceptance",
     "actual live retrieval/broader hosts/models/routing",
     "all promotion gates"
   ],
@@ -189,5 +188,13 @@
         "full_regressions": "covered by passing unchanged-candidate CI and prior108-test run; not rerun for evidence-only continuation"
       }
     }
-  ]
+  ],
+  "acceptance": {
+    "date": "2026-10-21",
+    "reviewer": "Mick",
+    "basis_commit": "95a8bd5f8bd532333dfd40fe6c65c9d7c3bf2602",
+    "status": "bounded_results_accepted",
+    "authorization": "Accept the bounded crypto-listings results",
+    "scope": "Supplied-data UTC boundary case and corrected missing-live-data fallback, including retained original failure/two host errors and stated limits. No actual live retrieval, broader ninth-batch acceptance,placement change,merge or promotion."
+  }
 }

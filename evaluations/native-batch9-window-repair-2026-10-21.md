@@ -2,7 +2,7 @@
 
 Date: 2026-10-21. Source commit: `6b2973f7baf63d81544e0a267923169bce8110d4`. PR #11 remains draft. No merging, installation or promotion.
 
-The unchanged corrected candidate now passes the original native fallback case in one assessable Instant response. Anchor/windows and dependent counts remain unavailable rather than inferred. The two earlier host failures and original failed response remain preserved. This closes bounded fallback verification only; live retrieval and separate human acceptance remain open.
+The unchanged corrected candidate now passes the original native fallback case in one assessable Instant response. Anchor/windows and dependent counts remain unavailable rather than inferred. The two earlier host failures and original failed response remain preserved. This closes bounded fallback verification only. Mick accepted the bounded crypto-listings results on 2026-10-21; live retrieval remains unverified and no broader ninth-batch acceptance or promotion is implied.
 
 ## Candidate correction
 
@@ -31,7 +31,7 @@ Generic skill validation retains identical pre-existing `version` frontmatter re
 
 The unchanged corrected-candidate packet has an assessable bounded fallback pass recorded below. Keep the original failed output and host errors intact. Actual live retrieval, current listings, financial accuracy, trading suitability and repeated reliability remain unverified.
 
-Food-analyzer missing-image verification, n8n workflow-review verification, blog final verification and workout initial delivery remain open. Separate bounded human review and all promotion gates remain open. PR stays draft; nothing is merged, installed or promoted.
+Food-analyzer missing-image verification, n8n workflow-review verification, blog final verification and workout initial delivery remain open. Bounded crypto-listings human review is accepted; other review and all promotion gates remain open. PR stays draft; nothing is merged, installed or promoted.
 
 
 ## Unchanged-candidate continuation after sign-in
@@ -45,3 +45,8 @@ One assessable continuation plus two earlier host failures gives three corrected
 CI on the unchanged tested commit passes all five workflows and twelve individual checks. Delivery CI is tracked separately. The fixture pins the actual native Copy, rendered UI and screenshot, with raw evidence private outside Git and OneDrive. Candidate and placement bytes are unchanged. Food-analyzer, n8n and blog verification and workout initial delivery remain open. PR stays draft without merging, installation or promotion.
 
 The six-file continuation evidence overlay passes clean tracked repository validation (46 skills, zero issues), generator drift and all 24 offline contract cases/99 negative checks. Full regressions remain covered by the unchanged tested candidate's passing CI and prior 108-test run; no fresh model evaluation is implied by offline checks.
+
+
+## Bounded acceptance
+
+Mick explicitly accepted the bounded crypto-listings results on 2026-10-21 and authorized the next untested native batch. Acceptance covers the supplied-source boundary case and corrected no-live-data fallback, with the original failure, two unassessed host errors and all recorded limits retained. It does not establish actual current retrieval, repeated reliability, broader ninth-batch acceptance or any skill/model/placement promotion. Food-analyzer, n8n and blog verification and workout initial delivery remain open. PR stays draft; no merge, installation or promotion.

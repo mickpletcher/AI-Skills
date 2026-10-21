@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Recorded bounded crypto-listings acceptance and the tenth native batch for Alpaca, PatentForge and trip itinerary candidates. Two bounded passes, two partial responses, one incomplete package and three host failures retained. Candidate bytes unchanged; food/n8n/blog verification and workout initial delivery stay open. PR remains draft without merging or promotion.
+
 - Verified the unchanged crypto-listings UTC fallback in a fresh native Instant response after sign-in: all three original criteria pass, with anchor/windows/counts left unavailable. Preserve the original failure and two host errors. CI passes on 7af1216. Food-analyzer, n8n and blog verification and workout initial delivery remain open; PR stays draft without merging or promotion.
 
 - Tightened crypto-listings UTC-anchor fallback and aligned its checklist with exact source provenance. Regenerated existing Claude/ChatGPT review bundles; all 108 regressions pass. Two native reruns return host load failures, so verification remains open. Food-analyzer, n8n and blog verification and workout initial delivery stay open; PR remains draft without merging or promotion.

@@ -44,7 +44,7 @@ Design, build, or troubleshoot n8n automation workflows for Mick's self-hosted P
 2. **Error handling on every external call:** Add an Error Trigger or use `Continue on Fail` with a downstream notification step.
 3. **Credentials in the n8n credential store:** Never hardcode API keys in nodes. Use named credentials.
 4. **Use a Set node to normalize data:** Clean up fields before passing data to downstream steps.
-5. **Test with static data first:** Pin node output during development and unpin for production.
+5. **Test with static data first:** Pin node output during development and unpin for production. Derive retry decisions and test expectations from the same supplied contract: allowed statuses or error classes, total-attempt limit, terminal outcomes and uncertain results. Idempotency can prevent duplicate effects; it does not authorize a retry excluded by that contract. A lost response or transport error is not an allowed HTTP status. If the contract does not permit retrying that condition, stop automatic retries and report the outcome as uncertain; any reconciliation must be separately permitted.
 
 ## Common Node Patterns
 
@@ -122,7 +122,7 @@ When the user shares an existing workflow (exported JSON, screenshot, or descrip
 
 - **Trigger choice**: is the trigger right for the job? Polling schedules where a webhook exists waste runs; webhooks without secret validation are exposed.
 - **Idempotency**: if the workflow fires twice with the same input, does anything double: duplicate emails, double orders, repeated rows? Add a dedupe key check or upsert pattern where it matters.
-- **Retries**: do external calls retry transient failures, and is anything retried that must not be (payments, order placement)?
+- **Retries**: do external calls follow the supplied retry conditions and total-attempt limit, and is anything retried that must not be (payments, order placement)? Check every example and test-matrix row against that policy. Do not broaden a status-only retry policy to lost responses or transport errors merely because the operation is idempotent. Distinguish confirmed failure from an uncertain commit outcome.
 - **Failure visibility**: when a node fails at 3am, does anyone find out? Every production workflow needs an error path that notifies.
 - **Data normalization**: are downstream nodes coupled to raw API shapes that will break on the next API change?
 

@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Corrected n8n retry-policy/test consistency and container-home fictional-project context isolation with exact candidate provenance. Native design and home reruns pass bounded review; retain four host failures and keep existing-workflow review verification open. All 108 regressions pass. Blog verification and workout initial delivery stay open; PR remains draft without merging or promotion.
+
 - Recorded Mick's bounded sixth-batch acceptance and six fresh native cases for n8n-workflow, pihole-blocklist and container-home. Three cases pass bounded review; retain two workflow policy/test inconsistencies and one fictional-project context leak. Candidate resources are unchanged. Blog verification, workout initial delivery and new corrections remain open; PR stays draft without merging or promotion.
 
 - Corrected Facebook standard paragraph counting/review scope and X final character measurement/preset rules with exact candidate provenance. Final native reruns pass two-paragraph/source checks and exact 234/136 character counts. Retain an intermediate Facebook scope failure and one host failure. Blog verification, workout initial delivery and acceptance stay open; PR remains draft without merging or promotion.

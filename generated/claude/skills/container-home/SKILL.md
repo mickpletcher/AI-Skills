@@ -34,6 +34,8 @@ Use this skill when the user is asking about Mick's off-grid shipping container 
 
 Provide project-specific context and guidance for the current build, the planned expansion, and the broader retirement-property strategy without making the user restate the full background every time.
 
+Establish which project the user is asking about before applying the background below. Current supplied facts take precedence. Use Mick's historical project context only for requests about that real project, without treating it as verified current status. For a fictional, synthetic or different project, use only the supplied project facts; do not import the historical location, ownership, retirement purpose, construction history or additional planned structures. Keep missing facts unknown. General sequencing and safety principles still apply when relevant.
+
 ## Current Structure
 
 - Two 40-foot high cube containers welded side by side
@@ -150,17 +152,17 @@ Treat Mick as an experienced builder. Do not hand-hold. Give direct, technical a
 
 ## Constraints
 
-- Do not rewrite the project facts into a vague generic container-home answer
+- Preserve the supplied facts for the project in scope rather than replacing them with generic prose or historical facts about a different project.
 - Do not assume this is a rental, speculative build, or flip
 - Do not over-explain basic welding or construction concepts unless asked
-- Do not lose the off-grid and retirement-planning context
+- Preserve off-grid and retirement-planning context only when established for the project in scope; do not infer it for a fictional or different project.
 
 ## Validation Checklist
 
-- [ ] Uses the actual current build and expansion facts
+- [ ] Uses the supplied build and expansion facts for the project in scope, with historical background kept separate from verified current status.
 - [ ] Keeps septic permitting as a critical-path constraint
 - [ ] Reflects the owner-builder and mostly solo construction model
-- [ ] Preserves the off-grid and retirement-planning context
+- [ ] Preserves off-grid and retirement-planning context when established for the project in scope, without importing unrelated historical details.
 - [ ] Avoids em dashes in final Facebook post output
 
 ## Help And Examples

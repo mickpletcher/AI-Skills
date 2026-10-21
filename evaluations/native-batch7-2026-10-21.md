@@ -4,6 +4,8 @@ Date: 2026-10-21. Source commit: `5d2c4538f490745ea5e4f1b25ce1c32aea16d7c9`. PR 
 
 Mick accepted the bounded sixth-batch results, including the final Facebook/X repairs and retained failure limits, and authorized this batch. That acceptance does not extend to these new results. Six fresh Instant Temporary chats completed with three bounded passes, two workflow-planning consistency failures and one source-scope failure. No host retry or candidate edit was needed.
 
+Subsequent candidate corrections and affected native reruns are recorded in the [repair assessment](native-batch7-repairs-2026-10-21.md). Design and fictional-home reruns pass bounded review; existing-workflow review verification remains open after host failures. The original failures below remain unchanged.
+
 ## Scope and controls
 
 Selected n8n-workflow, pihole-blocklist and container-home after checking prior targeted native records. Earlier CLI behavioral/static assessments do not establish ChatGPT-native coverage. Two cases per skill use exact existing candidate instructions/capabilities plus fictional supplied records. Input/resource/task/source/wrapper hashes and external criteria were pinned before execution. Criteria were not uploaded. No real engine, API, DNS policy, publication, construction, purchasing or infrastructure operation is authorized.

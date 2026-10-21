@@ -28,7 +28,7 @@ Retrieve and format new and upcoming cryptocurrency listings across major exchan
 ## Workflow
 
 1. Verify current listings data before writing anything.
-2. Use exact UTC windows for the last 7 days and next 7 days.
+2. Use exact UTC windows for the last 7 days and next 7 days only after establishing an exact anchor timestamp with a timezone from supplied or authorized clock evidence. Convert an offset timestamp to UTC. A report date alone does not establish the anchor; never assume midnight. If the anchor is unavailable, label the anchor and both windows `Not established`, request an exact timestamp with timezone, and leave window-dependent filtering and counts unavailable. Do not print inferred date ranges while asking for the missing anchor. An established anchor does not replace current listing-source verification.
 3. Separate recently listed items from upcoming officially confirmed listings.
 4. Mark gaps honestly instead of filling them with rumor.
 5. Output the brief in the required markdown format with sources for every row.
@@ -152,7 +152,7 @@ Keep detail mode factual and avoid hype language.
 
 ## Validation Checklist
 
-- [ ] Recent listings use the correct 7-day window
+- [ ] An exact timestamp establishes the UTC anchor and both 7-day windows, or the missing anchor/windows and dependent counts remain unavailable without inferred date ranges
 - [ ] Upcoming listings have official confirmation
 - [ ] Every row includes at least one source URL
 - [ ] Missing data is marked honestly

@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Tightened crypto-listings UTC-anchor fallback and aligned its checklist with exact source provenance. Regenerated existing Claude/ChatGPT review bundles; all 108 regressions pass. Two native reruns return host load failures, so verification remains open. Food-analyzer, n8n and blog verification and workout initial delivery stay open; PR remains draft without merging or promotion.
+
 - Recorded the ninth native batch for market-brief, crypto-listings and crypto-research using fictional offline inputs and missing-live-data fallbacks. Five bounded passes, one listings UTC-window failure and one retained host failure. Candidates unchanged; live retrieval unverified. Food/n8n/blog verification and workout initial delivery stay open; PR remains draft without merging or promotion.
 
 - Reran the unchanged food-analyzer missing-image native case. Retain another unassessed host response-load failure and keep verification open. All five workflows/twelve checks pass on e466a54. n8n and blog verification and workout initial delivery stay open; PR remains draft without merging or promotion.

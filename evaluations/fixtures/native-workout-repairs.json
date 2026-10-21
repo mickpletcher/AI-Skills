@@ -1,6 +1,6 @@
 {
   "assessment_date": "2026-10-21",
-  "acceptance": "Pending separate human review. No installation, merging or promotion.",
+  "acceptance": "Mick explicitly accepted the bounded workout results on 2026-10-21 and authorized the next untested native batch. Acceptance covers observed source-faithful combined downloads, duplicate confirmation, corrected/recovered delivery and exact Copy bytes in Medium. Initial delivery, repeatability, Instant recovery, real Obsidian ingestion and broader compatibility remain open. Earlier failures remain failed. No merging, installation or promotion.",
   "visible_model": "Instant; backend identity and effective context unavailable.",
   "provider_execution_independently_verified": false,
   "real_vault_or_obsidian_ingestion": false,
@@ -444,7 +444,7 @@
       "corrected_and_recovered_source_downloads_verified": 2,
       "initial_native_delivery_unassessed": true,
       "additional_original_source_recovery_turns": 1,
-      "human_acceptance_pending": true,
+      "human_acceptance_pending": false,
       "copy_boundaries": {
         "corrected-export": "boundary_pass",
         "baseline-recovery": "boundary_pass"
@@ -695,10 +695,15 @@
       "Duplicate request asks before a full corrected re-export; original failures retained and no real vault/app claims."
     ],
     "visible_mode": "GPT-6 Medium; regeneration menu calls it 6 Thinking. Exact backend and effective context unavailable.",
-    "acceptance": "Independent review complete; human acceptance pending. No merge, install or promotion.",
+    "acceptance": "Mick explicitly accepted the bounded workout results on 2026-10-21 and authorized the next untested native batch. Acceptance covers observed source-faithful combined downloads, duplicate confirmation, corrected/recovered delivery and exact Copy bytes in Medium. Initial delivery, repeatability, Instant recovery, real Obsidian ingestion and broader compatibility remain open. Earlier failures remain failed. No merging, installation or promotion.",
     "provider_execution_history_verified": false,
     "real_obsidian_ingestion_verified": false,
     "download_transport_event": "Baseline Original file click timed out, but the actual new 324-byte local download was present and verified; the click was not resent."
   },
-  "latest_review": "program_template_repair_review; earlier final_delivery_revision and flat counters describe the preserved pre-program-fix runs."
+  "latest_review": "program_template_repair_review; earlier final_delivery_revision and flat counters describe the preserved pre-program-fix runs.",
+  "human_acceptance": {
+    "date": "2026-10-21",
+    "statement": "Mick explicitly accepted the bounded workout results on 2026-10-21 and authorized the next untested native batch. Acceptance covers observed source-faithful combined downloads, duplicate confirmation, corrected/recovered delivery and exact Copy bytes in Medium. Initial delivery, repeatability, Instant recovery, real Obsidian ingestion and broader compatibility remain open. Earlier failures remain failed. No merging, installation or promotion.",
+    "initial_delivery_issue_open": true
+  }
 }

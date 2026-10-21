@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Recorded Mick's bounded workout acceptance while preserving the open initial-delivery issue. Completed six fresh native travel research/planning/itinerary cases with six bounded passes and one explained display-precision caveat. Verified synthetic scores, budgets, date/traveler boundaries and missing-input behavior; travel acceptance remains pending. PR stays draft without candidate changes, merging or promotion.
+
 - Removed an unlogged program copied from the workout example template and recorded exact candidate transformations. Latest Medium native testing verifies an 895-byte combined ZIP and two 324-byte corrected/recovery downloads exactly equal to native Copy, plus duplicate confirmation. Retained earlier program/Copy failures and current initial-response load failures; recovery does not certify initial delivery. Consolidated bounded review with 108 passing regressions; no merge or promotion.
 
 - Resumed the final workout native tests after sign-in. Verified the actual 743-byte combined ZIP against unchanged pinned candidate/source data. Retained three duplicate primary/regeneration response load failures as unassessed; the duplicate/correction delivery sequence remains pending host recovery. Updated review/checklist without candidate, package, placement, merge or promotion changes.

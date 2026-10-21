@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Consolidated native coverage for all 36 candidates without new acceptance or promotion. Ran four bounded inline/upload delivery diagnostics and two example-skill cases: mixed diagnostic delivery, one bounded plan pass and one unassessed missing-objective host failure. Existing verification/delivery gates stay open; candidates unchanged and PR draft.
+
 - Recorded the unchanged architect security native continuation and green CI on 6e6d0ca. The unchanged architect security-prerequisite continuation returns another host response-load error and remains unassessed. Verification stays open; no further retry. Patent/food/n8n/blog verification and workout initial delivery remain open; PR stays draft without merging or promotion.
 
 - Recorded the eleventh native batch for the foundation trio after prior CLI/tool/Linux coverage: five bounded passes and two architect-security host errors. Independent toy PowerShell checks pass; candidates unchanged. Patent/food/n8n/blog verification and workout initial delivery stay open; PR remains draft without merging or promotion.

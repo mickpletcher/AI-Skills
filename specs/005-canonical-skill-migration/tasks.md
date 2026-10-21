@@ -293,3 +293,13 @@
 - [x] Validate the clean tracked evidence overlay: repository 46 skills/zero issues, generator drift and offline 24 cases/99 negative checks pass; zero offline model evaluations. Delivery CI checked separately.
 
 - [x] Rerun the unchanged architect security case once in a fresh Instant Temporary chat. The unchanged architect security-prerequisite continuation returns another host response-load error and remains unassessed. Verification stays open; no further retry. All five CI workflows/twelve checks pass on 6e6d0ca; patent/food/n8n/blog verification and workout initial delivery remain open.
+
+## Consolidated coverage, delivery diagnostic and example-skill
+
+- [x] Consolidate one 36-row [native coverage/acceptance matrix](../../evaluations/native-coverage-2026-10-21.md) with machine-readable current instruction/evidence pins, thirteen scoped native acceptances and 23 pending native reviews. Preserve historical failures and later acceptance scope without rewriting fixtures or granting promotion.
+- [x] Run the pre-pinned four-cell inline/upload short/full-packet diagnostic, one attempt per cell without retries. Inline canary and both full-packet cells complete; short upload fails to load. Restore long inline text from automatic pasted-attachment conversion before Send. Neutral diagnostic wrapper differs from the official wrapper; no causal root cause or gate closure claimed.
+- [x] Run both example-skill cases with unchanged candidate instructions. Three-step plan/verification passes 2/2/2; missing-objective case returns a host response-load error and remains unassessed. No retry or false acceptance.
+- [x] Verify all five source CI workflows and twelve checks pass on d6a3949. Keep all six existing architect/patent/food/n8n/blog/workout verification or delivery issues open; no candidate, placement, merge, installation or promotion change.
+- [ ] Obtain an assessable example-skill missing-objective native response. Diagnostic successes do not close official security verification or any existing gate.
+- [ ] Review pending bounded native acceptance scopes separately. Do not infer acceptance from this matrix or diagnostic work.
+- [x] Validate the clean tracked eight-file matrix/evidence overlay: repository 46 skills/zero issues, generator drift and offline 24 cases/99 negative checks pass. Independently confirm 36 unique rows, 13 scoped acceptances/23 pending reviews and zero promotions; delivery CI separate.

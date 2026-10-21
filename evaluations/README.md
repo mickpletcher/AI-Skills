@@ -1,5 +1,7 @@
 # Behavioral evaluation framework
 
+The [ninth targeted native batch](native-batch9-2026-10-21.md) covers market-brief, crypto-listings and crypto-research using unchanged candidates, fictional source review and missing-live-data fallbacks only. Seven Instant attempts yield five bounded passes, one listings date-window failure and one retained host failure. Actual live retrieval remains unverified. CI passes all five workflows/twelve checks on b6c2fe9. Food-analyzer, n8n and blog verification and workout initial delivery remain open. PR #11 stays draft without merging or promotion.
+
 The [eighth targeted native batch](native-batch8-2026-10-21.md) covers fitness-log, fitness-programming and food-analyzer with unchanged candidates. Seven fresh Instant attempts across six synthetic text cases yield five bounded passes and two blank completed deliveries for the missing-image case. That verification remains unassessed. Source commit 3e4682b passes all five workflows/twelve checks. n8n workflow-review verification, blog verification, workout initial delivery and separate human acceptance remain open. PR #11 stays draft without merging or promotion.
 
 Mick accepted the bounded remaining-skill results and the [first native writing batch](native-writing-2026-10-20.md) on 2026-10-20. The [second native batch](native-batch2-2026-10-20.md) completes six file/output cases with three bounded passes and three retained scoring/attribution/layout failures. That batch needs remediation and separate acceptance. PR #11 stays draft with no merging or promotion.

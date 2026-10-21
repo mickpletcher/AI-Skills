@@ -241,3 +241,13 @@
 - [ ] Obtain separate bounded eighth-batch acceptance. Keep all earlier open gates, broader hosts/models/routing and promotion gates open. No merging, installation or promotion.
 
 - [x] Rerun food-analyzer missing-image verification once in a fresh Instant Temporary chat at e466a54 with unchanged candidate/task/source/wrapper/criteria and packet bytes. Retain the initially blank state and settled host response-load failure with exact Copy/evidence hashes. No assessable food response; verification and acceptance remain open. All five workflows/twelve checks passed on e466a54. Keep n8n/blog verification and workout initial delivery open; PR stays draft without merging or promotion.
+
+## Ninth targeted native batch
+
+- [x] Check CI on b6c2fe9: all five workflows and twelve individual checks passed. Keep food-analyzer, n8n and blog verification and workout initial delivery open. No seventh/eighth acceptance inferred; PR stays draft.
+- [x] Select market-brief, crypto-listings and crypto-research without prior targeted native records. Pin six fabricated offline source-review/missing-live-data cases and unchanged candidate resources before submission. Keep rubrics outside uploads, financial accounts/orders and current external retrieval out of scope.
+- [x] Execute six fresh Instant Temporary chats plus one identical ambiguous-token retry. Retain five bounded passes, one listings date-window failure and one unassessed primary host failure. See the [assessment](../../evaluations/native-batch9-2026-10-21.md).
+- [x] Independently verify all input/resource pins, exact follow-up, quote-change math, UTC half-open boundary memberships, duplicate/venue counts and supply ratios. Preserve native output and unknown risk fields; do not convert host failures or partial screens to passes.
+- [x] Validate the six-file evidence overlay in a clean tracked snapshot: repository/PowerShell quality (46 skills, zero issues), exact-case Claude folders (35 skills, zero issues), generator drift and 24 offline cases/99 negative checks pass. Source CI covers full regressions; delivery CI tracked separately.
+- [ ] Correct crypto-listings missing-anchor fallback: leave UTC windows undefined until an exact anchor is established. Rerun the original scenario with only candidate changes; preserve failed output and external criteria.
+- [ ] Obtain separate bounded ninth-batch human review. Keep actual live retrieval, broader hosts/models/routing, earlier verification/delivery and all promotion gates open. No merging, installation or promotion.

@@ -101,7 +101,7 @@ Recommended structure:
 ```markdown
 # Workout Log - [DAY NAME AND FOCUS]
 **Date:** YYYY-MM-DD
-**Program:** 15 Percent Body Fat Project
+**Program:** [program name, only if explicitly logged]
 
 ## Body Stats
 | Metric | Value |
@@ -122,7 +122,7 @@ Recommended structure:
 - factual session notes, regressions, or flags
 ```
 
-Omit sections with no data. If there are no PRs, either omit the section or state `None this session`.
+Omit sections with no data. Template program names are placeholders, not session facts; omit the Program line unless the source explicitly names a program. If there are no PRs, either omit the section or state `None this session`.
 
 ### Template variants
 

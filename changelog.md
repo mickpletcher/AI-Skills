@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Removed an unlogged program copied from the workout example template and recorded exact candidate transformations. Latest Medium native testing verifies an 895-byte combined ZIP and two 324-byte corrected/recovery downloads exactly equal to native Copy, plus duplicate confirmation. Retained earlier program/Copy failures and current initial-response load failures; recovery does not certify initial delivery. Consolidated bounded review with 108 passing regressions; no merge or promotion.
+
 - Resumed the final workout native tests after sign-in. Verified the actual 743-byte combined ZIP against unchanged pinned candidate/source data. Retained three duplicate primary/regeneration response load failures as unassessed; the duplicate/correction delivery sequence remains pending host recovery. Updated review/checklist without candidate, package, placement, merge or promotion changes.
 
 - Corrected workout combined-duration scope and added a read-only export validator with six regressions. Two native combined ZIPs and duplicate/correction content pass bounded review; three of four exact native Copy exports retain leading-newline failures. Required validated canonical file delivery on permitted file-capable exports and corrections, with its native rerun pending ChatGPT sign-in. Updated review/checklist; PR stays draft with no merging or promotion.

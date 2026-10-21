@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Reran the unchanged food-analyzer missing-image native case. Retain another unassessed host response-load failure and keep verification open. All five workflows/twelve checks pass on e466a54. n8n and blog verification and workout initial delivery stay open; PR remains draft without merging or promotion.
+
 - Recorded the eighth native batch for fitness-log, fitness-programming and food-analyzer with unchanged candidates: five bounded passes and two unassessed blank completed deliveries. Verified actual export YAML and synthetic arithmetic. CI passes on 3e4682b. Keep missing-image, n8n and blog verification and workout initial delivery open; PR stays draft without merging or promotion.
 
 - Reran the remaining n8n workflow review against the unchanged candidate in a fresh native Instant chat. Retain another unassessed host response-load failure and keep verification open. All five workflows and twelve checks pass on e4cbe18. Blog verification and workout initial delivery remain open; PR stays draft without merging or promotion.

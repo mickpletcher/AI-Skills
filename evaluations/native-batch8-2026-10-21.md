@@ -37,3 +37,15 @@ CI on source commit `3e4682b` completed successfully: all five workflows and twe
 ## Remaining work
 
 Obtain an assessable unchanged missing-image response before closing that verification. Separate bounded human acceptance remains pending. Keep n8n workflow-review verification, blog verification and workout initial delivery open. Broader host/model/routing coverage, visual analysis, real-world suitability and all promotion gates remain open. PR stays draft; no merging, installation or promotion.
+
+## Unchanged missing-image rerun
+
+At commit `e466a54f535e9857f852acf0ff0fb391e0b707d7`, one new Instant Temporary chat received the exact original missing-image packet (`a019b1db…278f7554`). Candidate instructions/capabilities, task, source, wrapper and external criteria are unchanged. Upload completion and Instant mode were verified before the single submission. Criteria remain outside the upload; no photo was supplied, as required by this case.
+
+The response initially appeared blank with a completion marker, then settled to “This response couldn’t load.” Native Copy returns that host error rather than a food-analysis response. Both states and the screenshot are retained with exact hashes. This attempt is an unassessed host response-load failure, not a missing-input behavior pass or a demonstrated safety failure. No regeneration, mode change or further retry followed.
+
+The original seven attempts and their scores remain unchanged. Cumulative evidence now has eight attempts: five assessable responses/five bounded passes, two retained blank completed deliveries and one response-load failure. Missing-image verification and separate human acceptance stay open. n8n workflow-review verification, blog verification and workout initial delivery also remain open. No candidate, placement or promotion metadata changes.
+
+CI on tested commit `e466a54` passed all five workflows and twelve individual checks. Delivery-commit CI is tracked separately. Raw evidence remains private outside Git and OneDrive. PR #11 stays draft; nothing is merged, installed or promoted.
+
+The clean tracked rerun-evidence overlay passes repository validation (46 skills, zero issues), generator drift and all 24 offline contract cases/99 negative checks. Those checks perform zero model evaluations and do not close missing-image verification. The unchanged candidate's full regressions remain covered by its passing CI.

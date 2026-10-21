@@ -368,5 +368,53 @@
     "offline_negative_checks": 99,
     "offline_model_evaluations": 0,
     "full_regressions": "covered by passing unchanged-candidate source CI; not rerun for evidence-only overlay"
+  },
+  "continuations": [
+    {
+      "date": "2026-10-21",
+      "source_commit": "e466a54f535e9857f852acf0ff0fb391e0b707d7",
+      "case": "food-missing-image",
+      "mode": "Instant",
+      "fresh_temporary_chat": true,
+      "candidate_task_source_wrapper_criteria_unchanged": true,
+      "evidence_directory": "native-food-missing-rerun",
+      "status": "unassessed_host_load_failure",
+      "criterion_scores": null,
+      "finding": "One unchanged fresh Instant submission initially appeared blank, then settled to This response couldn’t load. Native Copy returns the same host error, not food-analysis content. No regeneration, mode change or candidate edit. Missing-image verification remains open; earlier blank attempts remain unchanged.",
+      "native_copy_bytes": 29,
+      "captures_sha256": {
+        "ci-checks.json": "96fc86088f5a7260fafea0b5c0806db7f7870ffe3efaffc000ef42a2673cde78",
+        "final-conversation.txt": "c3b6e73c709cdb4913eeca92ef7adec4731e97027a83ba36d4a66fd10335820c",
+        "final-copy.md": "33c1efdbee4733eac7209f1754e691ed7e13d4fe4577a975fc0ddd991031e6c6",
+        "final-dom.txt": "84e84d4deec0a305c1d31036899fcc40a154e7a1040a7b43c150b47cd6b2b2b3",
+        "first-dom.txt": "695442ae3cfbb3942aaf531fc4297799c5d1b42e0023db84991419031fe46dfb",
+        "packet.txt": "a019b1db6e5ebb107cfafafccc5324a2c858e33a72c894db11b22095278f7554",
+        "ready-dom.txt": "a4938428eefc365350b3de9b584230712d54a642f1754b1535b19ed1e93ed3d5",
+        "result.png": "ae49a6bffc979be72b5f604c0cb4b413bf26a3af28a9ec7df08b1e6037261d61",
+        "settled-conversation.txt": "c3b6e73c709cdb4913eeca92ef7adec4731e97027a83ba36d4a66fd10335820c",
+        "settled-dom.txt": "c472d6a67f6043fd9001a02544bea5ac8a65c4f3379043bc1410130efda5f220",
+        "staged-dom.txt": "a8bb7b272424bd3158e93bbfb7f81bd5e0c437edbd857c83b226e0cc2095674d",
+        "submitted-dom.txt": "e2e4ca3a92fcd58a85f55d702a903b9442d6bad871084aa9f85be2e07baca5d9"
+      },
+      "ci": {
+        "commit": "e466a54f535e9857f852acf0ff0fb391e0b707d7",
+        "successful_workflows": 5,
+        "successful_individual_checks": 12
+      }
+    }
+  ],
+  "cumulative_summary": {
+    "cases": 6,
+    "attempts": 8,
+    "assessable_responses": 5,
+    "bounded_passes": 5,
+    "behavioral_failures": 0,
+    "unassessed_blank_completed": 2,
+    "unassessed_cases": [
+      "food-missing-image"
+    ],
+    "human_acceptance_pending": true,
+    "unassessed_host_load_failures": 1,
+    "unassessed_total": 3
   }
 }

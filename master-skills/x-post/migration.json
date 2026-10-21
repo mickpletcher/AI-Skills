@@ -13,7 +13,14 @@
   "original_authoring_model": null,
   "behavior_evaluations": [],
   "host_compatibility": "unverified",
-  "transformations": {},
+  "transformations": {
+    "- Use 2 to 3 hashtags maximum, placed at the end": "- Use 2 to 3 hashtags at the end for the default single post; the one-liner preset uses 1 to 2.",
+    "- Always show the character count after the post": "- Show a measured character count after the post, or explicitly label it unverified when no counter is available.",
+    "Always show the count in this format:\n\n```text\n[X / 280 characters]\n```\n\nIf the post is over 280 characters, flag it and provide a tighter version automatically.": "Measure the final post text with an available text counter or code execution after the last edit. Include all spaces, line breaks and hashtags; exclude labels, the count annotation and follow-up questions. Do not estimate the count from wording or reuse a count from an earlier draft. For plain text without URLs, report Unicode codepoints. Native X weighting for URLs or non-ASCII content requires a compatible platform counter; distinguish a raw count from an unverified platform count.\n\nUse the selected preset's limit: 280 maximum for the default single post, strictly fewer than 140 for a one-liner, including its hashtags. If the measured draft exceeds that limit, shorten it and measure the revised text again before delivery.\n\nShow the measured count as `[N / 280 characters]` for a default post or `[N / 140 characters; one-liner must be under 140]` for a one-liner. If no counter is available, label the count unverified instead of inventing an exact number; keep the draft conservative and disclose that its length has not been verified.",
+    "Always use 2 to 3 hashtags and place them at the end.": "Use 2 to 3 hashtags at the end for a default single post, or 1 to 2 for a one-liner. Include them in the selected preset budget.",
+    "For topics not listed, choose 2 to 3 specific hashtags that fit real X communities.": "For topics not listed, choose specific relevant hashtags within the selected preset's allowance.",
+    "Output the post text first, then the character count on the next line. After that, ask whether anything should be adjusted.": "Output the post text first, then its final measured character count or explicit unverified label on the next line. Honor the selected preset's limit in both the post and annotation. After that, ask whether anything should be adjusted."
+  },
   "supporting_files_sha256": {},
   "retained_in_original_sha256": {
     "README.md": "5dca621874df8dca240a6aa5dbef34074fc8112a8b66b49a490526e8e1477ed9",

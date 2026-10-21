@@ -13,7 +13,11 @@
   "original_authoring_model": null,
   "behavior_evaluations": [],
   "host_compatibility": "unverified",
-  "transformations": {},
+  "transformations": {
+    "- `standard`: 1 to 2 short paragraphs plus hashtags": "- `standard`: 1 to 2 short prose paragraphs plus a separate hashtag line when relevant. The hook belongs in one of those paragraphs; do not add a third prose paragraph for a hook or closing reflection. Count only the post body, excluding any separate verification note.",
+    "8. Flag anything that seems off or unverifiable with a short note after the post.": "8. Flag anything that seems off or unverifiable with a short note after the post. Before delivery, check the final post body against the selected length preset and merge or cut excess paragraphs. Keep the lead tied to the supplied specific detail rather than adding a generic setup.",
+    "6. Preserve the original details while rewriting into cleaner post language.": "6. Preserve the original details while rewriting into cleaner post language. Preserve the scope of the author's review as well as who performed each action. Reviewing a source diff does not establish that the author reviewed or validated runtime results."
+  },
   "supporting_files_sha256": {},
   "retained_in_original_sha256": {
     "README.md": "698e403e403b48f22c132051890128e4b16c677e62fa031cafe581d3cf9441fe",

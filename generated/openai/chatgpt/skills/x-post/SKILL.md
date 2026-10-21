@@ -57,9 +57,9 @@ xp hit 790 on leg press today, started at 465 three months ago
 - No quotation marks around words or phrases
 - Single post only
 - Must fit within 280 characters including hashtags
-- Use 2 to 3 hashtags maximum, placed at the end
+- Use 2 to 3 hashtags at the end for the default single post; the one-liner preset uses 1 to 2.
 - First person, confident, and conversational
-- Always show the character count after the post
+- Show a measured character count after the post, or explicitly label it unverified when no counter is available.
 
 ## Character Budget
 
@@ -69,13 +69,11 @@ xp hit 790 on leg press today, started at 465 three months ago
 - Leave enough space for the body before adding hashtags
 - If the draft is too long, cut adjectives first, then restructure instead of truncating mid-thought
 
-Always show the count in this format:
+Measure the final post text with an available text counter or code execution after the last edit. Include all spaces, line breaks and hashtags; exclude labels, the count annotation and follow-up questions. Do not estimate the count from wording or reuse a count from an earlier draft. For plain text without URLs, report Unicode codepoints. Native X weighting for URLs or non-ASCII content requires a compatible platform counter; distinguish a raw count from an unverified platform count.
 
-```text
-[X / 280 characters]
-```
+Use the selected preset's limit: 280 maximum for the default single post, strictly fewer than 140 for a one-liner, including its hashtags. If the measured draft exceeds that limit, shorten it and measure the revised text again before delivery.
 
-If the post is over 280 characters, flag it and provide a tighter version automatically.
+Show the measured count as `[N / 280 characters]` for a default post or `[N / 140 characters; one-liner must be under 140]` for a one-liner. If no counter is available, label the count unverified instead of inventing an exact number; keep the draft conservative and disclose that its length has not been verified.
 
 ## Voice and Tone
 
@@ -112,7 +110,7 @@ Banned phrases:
 
 ## Hashtag Strategy
 
-Always use 2 to 3 hashtags and place them at the end.
+Use 2 to 3 hashtags at the end for a default single post, or 1 to 2 for a one-liner. Include them in the selected preset budget.
 
 **Tech / PowerShell / IT**
 
@@ -122,7 +120,7 @@ Always use 2 to 3 hashtags and place them at the end.
 
 `#StrengthTraining #MuscleBuilding #FitnessProgress #Lifting #NaturalStrength`
 
-For topics not listed, choose 2 to 3 specific hashtags that fit real X communities.
+For topics not listed, choose specific relevant hashtags within the selected preset's allowance.
 
 ## Length Presets
 
@@ -190,7 +188,7 @@ So excited to share that I've been absolutely crushing my fitness goals lately! 
 
 ## Output Format
 
-Output the post text first, then the character count on the next line. After that, ask whether anything should be adjusted.
+Output the post text first, then its final measured character count or explicit unverified label on the next line. Honor the selected preset's limit in both the post and annotation. After that, ask whether anything should be adjusted.
 
 ## Help And Examples
 

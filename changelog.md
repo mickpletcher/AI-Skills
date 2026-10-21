@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Corrected Facebook standard paragraph counting/review scope and X final character measurement/preset rules with exact candidate provenance. Final native reruns pass two-paragraph/source checks and exact 234/136 character counts. Retain an intermediate Facebook scope failure and one host failure. Blog verification, workout initial delivery and acceptance stay open; PR remains draft without merging or promotion.
+
 - Corrected blog chronology grounding and LinkedIn technology hashtag selection with exact candidate provenance. The unchanged LinkedIn native rerun passes; retain an intermediate blog timing failure and three unassessed final-blog host failures. Final blog verification and workout initial delivery remain open. Both candidate revisions pass 108 regressions; PR stays draft without merging or promotion.
 
 - Recorded bounded travel acceptance and tested the next native writing/astronomy batch. Six completed responses yield four bounded passes and two grounding failures; one LinkedIn host failure is retained alongside its passing unchanged retry. Verified draft counts, supplied code, synthetic preview observations and actual FITS headers/hashes. Candidate fixes remain pending; workout initial delivery stays open. PR remains draft without merging or promotion.

@@ -4,6 +4,8 @@ Date: 2026-10-21. Source commit: `20ee9947e6a193c76850cf6af13b39d1e6839241`. PR 
 
 All six cases are now executed, including one unchanged fresh X retry after sign-in. Seven native attempts yield six completed responses: three bounded passes and three formatting/count failures. One earlier host failure remains unassessed. The initial interrupted phase is retained below; the authenticated continuation records final results. Candidates are unchanged and human acceptance is pending.
 
+Subsequent candidate corrections and fresh native reruns are recorded in the [repair assessment](native-batch6-repairs-2026-10-21.md). All three final affected cases pass bounded review, with an intermediate Facebook scope failure and a host failure retained. The original failures in this record remain unchanged.
+
 ## Scope and controls
 
 Mick authorized the next untested native batch while explicitly retaining the two earlier open gates. Selected facebook-post, x-post and proxmox-lxc after checking existing native assessments, rather than treating the earlier text-only behavioral captures as native coverage. Six synthetic cases were pinned before execution, two per skill. The existing ChatGPT candidate instructions and capability contracts are unchanged. Assessment criteria remain outside uploaded packets. Each primary case uses a fresh Temporary chat with the same wrapper and visible Instant selection when authenticated. This tests explicit instruction packets, not installed discovery or natural routing. Exact backend identity and full effective context are unavailable.

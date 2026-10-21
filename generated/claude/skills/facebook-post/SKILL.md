@@ -37,9 +37,9 @@ Treat `fbp` as an immediate trigger. Do not ask clarifying questions first unles
 3. Infer the best post mode and length preset from the draft unless the user already specified them.
 4. Generate 2 to 3 possible hook approaches internally, then choose the strongest one that sounds natural.
 5. Infer the right audience mode and media context from the draft unless the user specifies them.
-6. Preserve the original details while rewriting into cleaner post language.
+6. Preserve the original details while rewriting into cleaner post language. Preserve the scope of the author's review as well as who performed each action. Reviewing a source diff does not establish that the author reviewed or validated runtime results.
 7. If the post includes a question or engagement prompt, make sure it sounds natural and not needy.
-8. Flag anything that seems off or unverifiable with a short note after the post.
+8. Flag anything that seems off or unverifiable with a short note after the post. Before delivery, check the final post body against the selected length preset and merge or cut excess paragraphs. Keep the lead tied to the supplied specific detail rather than adding a generic setup.
 9. Add relevant hashtags when they genuinely fit.
 10. Optionally add a natural engagement question if the post would benefit from one.
 11. If the user asks for X repurpose mode, also produce a matching X post that keeps the same core point in tighter platform native form.
@@ -114,7 +114,7 @@ When the user asks to turn a Facebook post into a blog draft:
 Infer one of these presets unless the user requests a specific length:
 
 - `short update`: 2 to 4 sentences plus hashtags
-- `standard`: 1 to 2 short paragraphs plus hashtags
+- `standard`: 1 to 2 short prose paragraphs plus a separate hashtag line when relevant. The hook belongs in one of those paragraphs; do not add a third prose paragraph for a hook or closing reflection. Count only the post body, excluding any separate verification note.
 - `story`: 3 to 5 short paragraphs when context or progression matters
 
 Default to `standard`. Use `short update` when the draft is a quick result or milestone. Use `story` when the draft includes a sequence, contrast, or lesson that benefits from a little narrative room.

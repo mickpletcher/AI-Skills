@@ -155,4 +155,11 @@
 
 - [x] Rerun generic, mixed-heading, missing-start-date and contradictory-date native JSON boundaries against unchanged committed v3 resources. All four entire Copy exports parse directly, equal rendered JSON and pass exact ledgers/Decimal replay at 93.3/96.7/93.3/90.0; the critical chronology case is capped at Strong. No retries or new failures.
 - [x] Consolidate the four fresh JSON cases with the two earlier v3 human runs. Verify identical resource hashes and replay all four actual human ZIP ledgers. Preserve the v1/v2 failure history and distinguish earlier human observations from fresh boundary executions. See the [v3 review](../../evaluations/native-resume-v3-boundaries-2026-10-21.md).
-- [ ] Obtain separate acceptance of the consolidated bounded v3 results. Broader extraction reliability, document formats, native hosts/models/routing and all promotion gates remain open.
+- [x] Mick accepted the consolidated bounded resume v3 results in this chat on 2026-10-21 and authorized the next targeted native batch. Acceptance covers the documented six native executions/eight audits and their limits. Earlier failed captures remain failed; broader extraction reliability, document formats, native hosts/models/routing and all promotion gates remain open.
+
+## Third targeted native batch
+
+- [x] Select spec-writer, idea-forge and obsidian-workout-export using existing allowed ChatGPT candidates. Pin six synthetic cases and candidate/input hashes, with assessment criteria outside uploads. Keep filesystem work inside disposable chat repositories/vaults; no real app, infrastructure, installation, publication or promotion.
+- [x] Execute six primary cases and two duplicate/correction follow-up turns. Independently verify four actual ZIPs, spec source preservation, 52.5/55 score arithmetic and safe helper replay. Record four bounded passes and two workout delivery failures: unscoped combined duration and leading blank lines in native Copy-code frontmatter. See the [assessment](../../evaluations/native-batch3-2026-10-21.md).
+- [ ] Correct combined-duration scope and first-byte Markdown frontmatter delivery, then repeat the combined export and duplicate/corrected-export workflow. Retain original failures; real Obsidian ingestion remains unverified.
+- [ ] Obtain separate acceptance of the new native batch; no acceptance is inferred from authorization to test.

@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Recorded Mick's bounded resume v3 acceptance and completed the next native batch for spec-writer, idea-forge and obsidian-workout-export. Verified four actual ZIPs and safe helper replay; four cases pass bounded review. Retained workout combined-duration scope and copied-frontmatter delivery failures, with duplicate/correction behavior passing separately. Updated evidence/checklist without candidate changes; PR remains draft with no merging or promotion.
+
 - Consolidated native resume v3 review: four fresh JSON boundaries pass direct native Copy parsing, exact ledgers and independent arithmetic at 93.3/96.7/93.3/90.0 with the critical verdict cap. Replayed the four earlier human ledgers on identical resources. Updated evidence/checklist without candidate changes; acceptance remains pending and PR stays draft with no merging or promotion.
 
 - Fixed candidate resume experience grouping and fixture-note scoring with a versioned source-block/context-note contract. Two fresh native human runs agree at 76.7 for the same original and 85.0 for their rewrites; four actual ledgers and source partitions reconcile. Added two regression methods and retained the previous failure. PR stays draft; no merging or promotion.

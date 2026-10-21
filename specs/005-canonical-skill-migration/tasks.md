@@ -281,3 +281,13 @@
 - [ ] Obtain separate bounded human review. Food-analyzer, n8n and blog verification and workout initial delivery remain open. Keep PR draft; no merge, installation or promotion.
 
 - [x] Run one unchanged final patent continuation after Mick reported connection readiness. The unchanged final patent continuation again returns a host response-load error and remains unassessed. Patent verification stays open; no further retry. CI on 9b14219 passes all five workflows/twelve checks.
+
+## Eleventh targeted native batch
+
+- [x] Verify all five workflows/twelve checks pass on 59a69d4. Keep patent/food/n8n/blog verification and workout initial delivery open; no earlier acceptance inferred.
+- [x] Select the foundation trio with prior CLI/tool/Linux coverage but no targeted ChatGPT native packet records. Pin six synthetic tasks/sources/candidates and keep external criteria outside uploads.
+- [x] Run six fresh Instant Temporary chats plus one identical architect-security retry. Five bounded passes and two unassessed host errors retained. See the [assessment](../../evaluations/native-batch11-2026-10-21.md).
+- [x] Independently verify all pins, README artifact license placement, naming-only diff/count and local toy PowerShell arithmetic/pipeline/WhatIf/Confirm behavior. Native analyzer/tests remain unexecuted; no real removal or infrastructure action.
+- [ ] Obtain an assessable Repository Architect native security-prerequisite response against the unchanged candidate and original case. Both bounded attempts returned host errors.
+- [ ] Obtain separate bounded eleventh-batch human review. Keep patent/food/n8n/blog verification, workout initial delivery, earlier unaccepted scopes and all promotion gates open. PR remains draft; no merge, installation or promotion.
+- [x] Validate the clean tracked evidence overlay: repository 46 skills/zero issues, generator drift and offline 24 cases/99 negative checks pass; zero offline model evaluations. Delivery CI checked separately.

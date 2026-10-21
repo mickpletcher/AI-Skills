@@ -209,3 +209,7 @@ The [Alpaca/patent corrections and native reruns](../evaluations/native-batch10-
 ## Unchanged patent native continuation
 
 The [unchanged patent continuation](../evaluations/native-batch10-repairs-2026-10-21.md#unchanged-continuation-after-connection-readiness) uses exact final candidate/packet bytes after connection readiness. The unchanged final patent continuation again returns a host response-load error and remains unassessed. Patent verification stays open; no further retry. Source 9b14219 passes all five CI workflows/twelve checks. Food-analyzer, n8n and blog verification and workout initial delivery remain open. PR stays draft without merging or promotion.
+
+## Eleventh targeted native batch
+
+The [eleventh native batch](../evaluations/native-batch11-2026-10-21.md) fills the ChatGPT packet gap for powershell-refactor, github-readme and github-repo-architect after prior CLI/tool/Linux coverage. Seven attempts yield five bounded passes and two unassessed architect security-prerequisite host failures. Independent toy PowerShell replays preserve pipeline arithmetic and WhatIf/Confirm behavior; native checks remain unexecuted. Candidates unchanged. All five source CI workflows/twelve checks pass on 59a69d4. Architect security and patent/food/n8n/blog verification and workout initial delivery stay open. Separate acceptance pending; PR stays draft without merging or promotion.

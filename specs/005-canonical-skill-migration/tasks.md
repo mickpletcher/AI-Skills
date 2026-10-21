@@ -200,3 +200,12 @@
 
 - [x] Rerun the unchanged final blog candidate in two fresh Instant chats with identical packet/resource hashes. Retain both blank completed responses as unassessed delivery failures; no draft is available and final verification remains open.
 - [x] Check hosted CI on a51fd90: all five workflows completed successfully; eleven checks succeeded and helpers retains inconsistent in-progress status despite successful workflow/steps. PR remains draft and workout initial delivery remains open.
+
+## Sixth targeted native batch
+
+- [x] Check CI on 20ee994: all five workflows and all twelve individual checks completed successfully. Keep blog verification and workout initial delivery open; PR stays draft.
+- [x] Select facebook-post, x-post and proxmox-lxc without prior targeted native records. Pin six synthetic cases and exact existing candidate hashes before execution; keep criteria outside uploads and infrastructure work as proposals only.
+- [x] Execute three authenticated Instant primary cases. Retain a Facebook standard-format failure, a passing cross-platform bundle with a 219-character X body, and one unassessed X host response-load failure. See the [assessment](../../evaluations/native-batch6-2026-10-21.md).
+- [ ] Restore ChatGPT sign-in, run the three unsubmitted cases and one fresh unchanged X retry. Authentication-blocked prepared cases are not counted as domain attempts.
+- [ ] Correct and rerun the Facebook standard-format failure; preserve its successful source checks and original failed response.
+- [ ] Consolidate the completed sixth-batch results for separate bounded acceptance. Keep blog verification, workout initial delivery, broader native coverage and all promotion gates open. No merge, installation or promotion.

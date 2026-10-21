@@ -13,7 +13,9 @@
   "original_authoring_model": null,
   "behavior_evaluations": [],
   "host_compatibility": "unverified",
-  "transformations": {},
+  "transformations": {
+    "Always return the final package in this structure:": "For full-package requests, deliver a complete concise first pass before expanding individual sections. Use plain Markdown headings, short paragraphs and bullet lists, without tables, diagrams, cards or interactive checklists in this initial pass. Keep the complete initial package within 1,200 words unless the user explicitly requests a different length; allocate no more than 300 words to section 10. State the mechanism fully once in section 10 and cross-reference it elsewhere instead of repeating the disclosure. Keep sections 2 through 8 to a short paragraph or list each, and use a small supported claim set. Templates guide coverage, not verbatim duplication. Start with all five mandatory disclaimer points. Put each confidentiality flag and proposed replacement in section 1, preserving technical disclosure and leaving replacement decisions to the user. Populate all 14 sections below, including section 10's required manuscript subsections, the figure list, manual filing checklist, attorney review gaps and final disclaimer. Reserve space for sections 11 through 14. Check all sections and a complete final sentence before calling the package complete. If delivery limits prevent completion, explicitly label it incomplete and identify missing sections; never claim filing readiness. Expand only after the complete first pass or when requested. Inventor interview mode still asks one question at a time rather than forcing a package.\n\nReturn the final package in this structure:"
+  },
   "supporting_files_sha256": {
     "LICENSE": "0a2353d05ec65d81e9076f475d3cdd4352dd5137a2efefb465bf2982463ddff8",
     "docs/patent-center-upload-guide.md": "9360ba54cab4140d2dc73b89254ba7a1ec2ab73f18015652ab40fd34a1256506",

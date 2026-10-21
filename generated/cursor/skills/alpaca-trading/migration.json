@@ -14,7 +14,9 @@
   "behavior_evaluations": [],
   "host_compatibility": "unverified",
   "transformations": {
-    "Do not describe the repo as a Claude-only system; it is a general trading repo with Claude-relevant integrations.": "Do not describe the repo as limited to one assistant host; it is a general trading repo with AI integrations."
+    "Do not describe the repo as a Claude-only system; it is a general trading repo with Claude-relevant integrations.": "Do not describe the repo as limited to one assistant host; it is a general trading repo with AI integrations.",
+    "2. Read the nearby README, script, or module before proposing changes.": "2. Read the nearby README, script, or module before proposing changes. If repository evidence is unavailable, request applicable instructions, the actual tree and touched module/caller source, relevant tests and configuration/API contracts. For non-trivial changes, also request existing GitHub Spec artifacts (requirements, spec, plan and tasks) or confirmation that none exist. The layout and reference paths below are background, not proof that files exist in the current repository. Do not invent inspection, files or implementation.",
+    "- **Partial fills**: position sizing, journaling, and exit logic handle a partially filled entry without double-ordering": "- **Partial fills**: distinguish requested, cumulatively filled and remaining unfilled quantities explicitly. Reconcile their arithmetic from supplied order state; do not treat the unfilled remainder as exposure. Journal actual fills, size exits only for verified filled exposure after accounting for existing exits, and reconcile later fills, cancellations and restarts without duplicate orders."
   },
   "supporting_files_sha256": {},
   "retained_in_original_sha256": {

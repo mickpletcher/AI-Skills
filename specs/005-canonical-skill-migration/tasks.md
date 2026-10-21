@@ -267,7 +267,15 @@
 - [x] Pin six synthetic cases for previously untested alpaca-trading, patentforge-provisional and trip-email-html-itinerary. Keep external rubrics outside uploads and all actual broker/legal/travel actions out of scope.
 - [x] Execute six fresh Instant Temporary chats plus two unchanged itinerary host retries. Retain two bounded passes, two partial responses, one incomplete package and three unassessed host failures. See the [assessment](../../evaluations/native-batch10-2026-10-21.md).
 - [x] Independently verify inputs/resources/retry equality, patent section cutoff, proposed test count and intake redaction. Clean tracked overlay passes repository validation (46 skills, zero issues), generator drift and 24 offline cases/99 negative checks. Preserve exact raw evidence privately; candidates unchanged.
-- [ ] Address explicit remaining-fill and Spec-context coverage, then rerun the affected Alpaca cases.
+- [x] Address explicit remaining-fill and Spec-context coverage; both original Alpaca native cases pass 2/2/2 with exact original task/source/criteria. Proposed tests remain unexecuted.
 - [ ] Establish complete 14-section patent package delivery with upfront required boundaries and confidentiality flag/replacement review; rerun the original case without changing task/source/criteria.
-- [ ] Obtain an assessable unchanged trip HTML-fragment native review. Full artifact generation/rendering remains outside this batch.
+- [x] Obtain an assessable unchanged trip HTML-fragment native review (2/2/2), with independent static fragment checks. Retain minor priority-badge discrepancy; full artifact generation/rendering remains outside this batch.
 - [ ] Obtain separate bounded tenth-batch human review. Keep food-analyzer, n8n and blog verification, workout initial delivery, earlier unaccepted scopes and all promotion gates open. PR stays draft; no merge, installation or promotion.
+
+## Tenth-batch correction validation
+
+- [x] Record three exact candidate transformations and regenerate only existing allowed review targets. Preserve shipped packages, versions, original source hashes, capabilities and promotion/placement metadata.
+- [x] Preserve all original and intermediate outputs and pin every revision/retry separately. See the [correction assessment](../../evaluations/native-batch10-repairs-2026-10-21.md).
+- [x] Validate the final correction in a clean tracked snapshot: 108 regressions, repository/PowerShell quality 46 skills/zero issues, folders 35 skills, generator 805 files and offline 24 cases/99 negative checks. Generic version-frontmatter limitation remains unchanged. Baseline CI on 9e926ee passes five workflows/twelve checks; delivery CI separate.
+- [ ] Verify complete native delivery of the final plain-Markdown patent package. Bounded host retries exhausted; do not mark failed/unassessed outputs passed.
+- [ ] Obtain separate bounded human review. Food-analyzer, n8n and blog verification and workout initial delivery remain open. Keep PR draft; no merge, installation or promotion.

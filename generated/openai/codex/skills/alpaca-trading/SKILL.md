@@ -53,7 +53,7 @@ Use the existing structure instead of inventing a new module layout.
 ## Workflow
 
 1. Identify which existing repo area the change belongs to.
-2. Read the nearby README, script, or module before proposing changes.
+2. Read the nearby README, script, or module before proposing changes. If repository evidence is unavailable, request applicable instructions, the actual tree and touched module/caller source, relevant tests and configuration/API contracts. For non-trivial changes, also request existing GitHub Spec artifacts (requirements, spec, plan and tasks) or confirmation that none exist. The layout and reference paths below are background, not proof that files exist in the current repository. Do not invent inspection, files or implementation.
 3. Reuse current patterns for Python, PowerShell, logging, and tests.
 4. For non-trivial work, follow the repo workflow: requirements, spec, plan, tasks, implementation, audit, regression test.
 5. Prefer paper-trading examples unless the user explicitly asks for live-trading support.
@@ -121,7 +121,7 @@ Before proposing or reviewing a change that touches order placement, walk the fu
 
 - **Entry**: validated symbol, side, quantity, and order type; idempotency or duplicate-submit protection; behavior when the market is closed
 - **Open order**: what happens to unfilled limit orders at end of day; time-in-force is explicit, not defaulted silently
-- **Partial fills**: position sizing, journaling, and exit logic handle a partially filled entry without double-ordering
+- **Partial fills**: distinguish requested, cumulatively filled and remaining unfilled quantities explicitly. Reconcile their arithmetic from supplied order state; do not treat the unfilled remainder as exposure. Journal actual fills, size exits only for verified filled exposure after accounting for existing exits, and reconcile later fills, cancellations and restarts without duplicate orders.
 - **Exits**: stop and target exist before or at entry (bracket or managed); exit logic survives a restart with positions already open
 - **Cancel/replace**: replaces are atomic from the strategy's view; stale order IDs are not reused
 - **Failure paths**: rejected orders, API errors, and timeouts are logged to the journal and do not leave untracked positions

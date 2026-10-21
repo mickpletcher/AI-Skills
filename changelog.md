@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Corrected Alpaca coverage and patent first-pass delivery; reran the original native cases and unchanged trip fragment review. Both Alpaca cases and trip fragment review pass bounded criteria. Final patent delivery remains open after retained cutoffs and host failures. Validation passes; food/n8n/blog verification and workout initial delivery stay open. PR remains draft without merging or promotion.
+
 - Recorded bounded crypto-listings acceptance and the tenth native batch for Alpaca, PatentForge and trip itinerary candidates. Two bounded passes, two partial responses, one incomplete package and three host failures retained. Candidate bytes unchanged; food/n8n/blog verification and workout initial delivery stay open. PR remains draft without merging or promotion.
 
 - Verified the unchanged crypto-listings UTC fallback in a fresh native Instant response after sign-in: all three original criteria pass, with anchor/windows/counts left unavailable. Preserve the original failure and two host errors. CI passes on 7af1216. Food-analyzer, n8n and blog verification and workout initial delivery remain open; PR stays draft without merging or promotion.

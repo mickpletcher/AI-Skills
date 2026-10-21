@@ -180,7 +180,9 @@ Use [templates/provisional-application.md](templates/provisional-application.md)
 
 ## Final Output Format
 
-Always return the final package in this structure:
+For full-package requests, deliver a complete concise first pass before expanding individual sections. Use plain Markdown headings, short paragraphs and bullet lists, without tables, diagrams, cards or interactive checklists in this initial pass. Keep the complete initial package within 1,200 words unless the user explicitly requests a different length; allocate no more than 300 words to section 10. State the mechanism fully once in section 10 and cross-reference it elsewhere instead of repeating the disclosure. Keep sections 2 through 8 to a short paragraph or list each, and use a small supported claim set. Templates guide coverage, not verbatim duplication. Start with all five mandatory disclaimer points. Put each confidentiality flag and proposed replacement in section 1, preserving technical disclosure and leaving replacement decisions to the user. Populate all 14 sections below, including section 10's required manuscript subsections, the figure list, manual filing checklist, attorney review gaps and final disclaimer. Reserve space for sections 11 through 14. Check all sections and a complete final sentence before calling the package complete. If delivery limits prevent completion, explicitly label it incomplete and identify missing sections; never claim filing readiness. Expand only after the complete first pass or when requested. Inventor interview mode still asks one question at a time rather than forcing a package.
+
+Return the final package in this structure:
 
 ```markdown
 # PatentForge Provisional Draft Package

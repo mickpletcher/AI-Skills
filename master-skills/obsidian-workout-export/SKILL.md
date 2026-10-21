@@ -143,14 +143,14 @@ Add YAML frontmatter so notes are queryable:
 date: YYYY-MM-DD
 type: strength | ride | run | combined
 focus: [day focus, e.g. Lower A]
-duration: [minutes, if logged]
+duration: [whole-session minutes, only if explicitly logged]
 effort: [easy | moderate | hard, only if stated or clearly implied]
 tags: [workout, plus activity tags like strength or cycling]
 prs: [count, 0 if none]
 ---
 ```
 
-Only include fields the log supports. Add a one-line progression note at the end of the file when the session data shows a clear change from the last comparable session, and skip it otherwise.
+Only include fields the log supports. Top-level duration always means the whole note's session duration. For a combined day, omit it unless the source explicitly supplies a whole-session total; do not copy one activity's duration or add an incomplete set of durations. Keep each known activity duration in its own section or clearly scoped activity field, such as ride_duration_minutes. Do not infer strength duration, rest time or a combined total. Add a one-line progression note at the end of the file when the session data shows a clear change from the last comparable session, and skip it otherwise.
 
 ### Duplicate protection
 
@@ -162,7 +162,11 @@ Before producing the file, check whether this session was already exported in th
 
 ### 4. Output expectations
 
-Produce the Markdown content directly unless the user specifically asks for a file to be created in a local repo or folder.
+Produce the Markdown content directly unless the user specifically asks for a file to be created in a local repo or folder. Build one canonical UTF-8 note whose first bytes are `---` followed by a newline, with no BOM, leading blank line, heading, prose or Markdown fence inside the note. The closing YAML delimiter precedes the Markdown body. Do not strip a failed delivered copy and report the original as valid.
+
+When Python/file execution is available, validate the exact canonical note with [scripts/validate_export.py](scripts/validate_export.py) before delivery. Run `python scripts/validate_export.py note.md`. Only when the source explicitly logs a combined whole-session total may you include top-level duration and pass that source value with `--logged-total-minutes VALUE`; never pass a single activity duration as that total. This standard-library helper is read-only and checks the first-byte boundary, literal type/duration fields and combined-duration scope, not full YAML syntax or source truth. Parse the full YAML with an available YAML parser as a separate check; disclose if that parser is unavailable.
+
+For inline delivery, show the exact canonical note in a fenced `text` block, starting the `---` line immediately after the opening fence's newline, with no empty content line. Use plain text code delivery rather than a rich Markdown preview that can prepend layout whitespace. Keep filename, destination and explanatory prose outside the copyable block. For a corrected re-export, update the canonical note, run the same validation again and read back that exact note before composing the replacement. Do not recreate its wrapper from the previous rendered chat. Start the replacement block with exactly the two consecutive lines ````text` and `---`; the delimiter is the first content line, with zero empty lines between the fence and delimiter. Check this again on every follow-up, even when the initial export was valid. Keep the entire corrected note in one block. A locally validated file does not prove the host's Copy control preserves bytes; do not claim native Copy or Obsidian ingestion was verified without readback. When file creation and downloadable outputs are available and permitted, attach the validated canonical Markdown file for every initial export and corrected re-export, including when the user also requests the body in chat. Prefer that file for Obsidian import. State that inline Copy bytes have not been verified unless they were actually read back; a locally validated file does not validate the displayed code block. If file delivery is unavailable, return the requested inline body and disclose that its Copy boundary still needs verification. Never silently report an unverified inline copy as an Obsidian-ready file. Downloaded Markdown must contain only canonical note bytes, not display fences or wrappers.
 
 When you finish, confirm:
 

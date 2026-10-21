@@ -2,7 +2,7 @@
 
 Date: 2026-10-21. Source commit: `6b2973f7baf63d81544e0a267923169bce8110d4`. PR #11 remains draft. No merging, installation or promotion.
 
-The candidate now leaves the anchor and both UTC windows unestablished when an exact timestamp is unavailable. The original failed native case was rerun twice in fresh Instant Temporary chats; both returned host response-load failures. There is no assessable domain response and native verification remains open. Static checks do not close that gate.
+The unchanged corrected candidate now passes the original native fallback case in one assessable Instant response. Anchor/windows and dependent counts remain unavailable rather than inferred. The two earlier host failures and original failed response remain preserved. This closes bounded fallback verification only; live retrieval and separate human acceptance remain open.
 
 ## Candidate correction
 
@@ -10,7 +10,7 @@ Two exact original-source transformations update the workflow and its quality ch
 
 The master and migration provenance are updated, then only the existing allowed Claude/ChatGPT review bundles and resource manifest change. Original shipped sources/packages, versions, original source hashes, capability contracts, ecosystem suitability/placement and promotion metadata remain unchanged. No Codex/Cursor placement is added. This focused instruction change uses existing structural/provenance regressions and actual native attempts rather than a wording-matching test.
 
-## Controlled native rerun
+## Initial controlled native reruns
 
 The [repair fixture](fixtures/native-batch9-window-repair.json) retains the exact task, synthetic source, wrapper and external rubric from the [ninth-batch fixture](fixtures/native-batch9.json). Only candidate instruction bytes change. Reversing that substitution restores the original packet byte for byte. Capability bytes are unchanged. Criteria remain outside uploads; neither attempt receives prior output, intended answers or corrective feedback.
 
@@ -29,6 +29,19 @@ Generic skill validation retains identical pre-existing `version` frontmatter re
 
 ## Remaining work
 
-Obtain an assessable response for the unchanged corrected-candidate packet before closing crypto-listings native fallback verification. Keep the original failed output and criteria intact. This change does not verify actual live retrieval, current listings, financial accuracy, trading suitability or repeated reliability.
+The unchanged corrected-candidate packet has an assessable bounded fallback pass recorded below. Keep the original failed output and host errors intact. Actual live retrieval, current listings, financial accuracy, trading suitability and repeated reliability remain unverified.
 
 Food-analyzer missing-image verification, n8n workflow-review verification, blog final verification and workout initial delivery remain open. Separate bounded human review and all promotion gates remain open. PR stays draft; nothing is merged, installed or promoted.
+
+
+## Unchanged-candidate continuation after sign-in
+
+At `7af1216f5044688af8a5294f99b8c2bd44c060f2`, candidate resources, packet, task/source, wrapper and external criteria remain byte-identical to the corrected rerun. Initial signed-out preflight submitted no prompt. After Mick restored sign-in, the home view was switched to Temporary chat, sidebar hidden and Instant verified before uploading and sending the unchanged packet once. No answer feedback, candidate edit, regeneration or model switch.
+
+The complete native response and exact Copy meet all three original criteria (2/2/2). Its verification table leaves the exact UTC anchor and both seven-day windows `Not established`; exchange counts remain unavailable with an explicit warning that unavailable does not mean zero. No numeric reporting intervals are inferred from the report date. The sole timestamp under “such as” illustrates the requested input syntax and is not adopted as an anchor. Official/current listing and price verification stay blocked. TOKENZ appears only as a Notes rumor with its undated forum origin; no project detail or buy/sell recommendation is fabricated. It requests timestamped official announcements, market snapshots and an exact anchor with timezone.
+
+One assessable continuation plus two earlier host failures gives three corrected-candidate attempts: one bounded pass and two unassessed host errors. The original ninth-batch failure stays unchanged. This is a forced-instruction fallback observation, not actual live retrieval, repeated reliability or native installation/routing certification. Full effective context and exact backend identity remain unavailable.
+
+CI on the unchanged tested commit passes all five workflows and twelve individual checks. Delivery CI is tracked separately. The fixture pins the actual native Copy, rendered UI and screenshot, with raw evidence private outside Git and OneDrive. Candidate and placement bytes are unchanged. Food-analyzer, n8n and blog verification and workout initial delivery remain open. PR stays draft without merging, installation or promotion.
+
+The six-file continuation evidence overlay passes clean tracked repository validation (46 skills, zero issues), generator drift and all 24 offline contract cases/99 negative checks. Full regressions remain covered by the unchanged tested candidate's passing CI and prior 108-test run; no fresh model evaluation is implied by offline checks.

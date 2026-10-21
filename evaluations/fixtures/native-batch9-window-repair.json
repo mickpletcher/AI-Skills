@@ -70,11 +70,13 @@
     }
   ],
   "summary": {
-    "attempts": 2,
-    "assessable_domain_responses": 0,
+    "attempts": 3,
+    "assessable_domain_responses": 1,
+    "bounded_fallback_passes": 1,
     "unassessed_host_load_failures": 2,
-    "native_verification_open": true,
-    "human_acceptance_pending": true
+    "native_verification_open": false,
+    "human_acceptance_pending": true,
+    "live_retrieval_verified": false
   },
   "schema_validation": [
     {
@@ -130,7 +132,6 @@
     "successful_individual_checks": 12
   },
   "open_gates": [
-    "crypto-listings corrected native fallback verification",
     "food-analyzer missing-image verification",
     "n8n existing-workflow review verification",
     "blog final verification",
@@ -140,5 +141,53 @@
     "all promotion gates"
   ],
   "pr_draft": true,
-  "limits": "Two native host errors provide no assessable behavior. Original date-window failure, tasks and criteria remain unchanged. Forced candidate upload is not automatic routing or installed-skill certification. Full effective context, backend identity and provider-side tools/input preservation remain unavailable. Raw evidence remains private outside Git and OneDrive."
+  "limits": "One bounded native fallback pass does not certify current retrieval, financial accuracy, repeated reliability or automatic routing. The original failed response and two corrected-candidate host errors remain unchanged. Exact backend identity, complete effective context and provider-side input/tool auditing remain unavailable. Raw evidence private outside Git and OneDrive.",
+  "continuations": [
+    {
+      "date": "2026-10-21",
+      "source_commit": "7af1216f5044688af8a5294f99b8c2bd44c060f2",
+      "case": "listings-no-live",
+      "mode": "Instant",
+      "candidate_task_source_wrapper_criteria_packet_unchanged": true,
+      "temporary_chat_verified_before_submission": true,
+      "status": "bounded_fallback_pass",
+      "criterion_scores": [
+        2,
+        2,
+        2
+      ],
+      "evidence_directory": "native-crypto-window-unchanged",
+      "captures_sha256": {
+        "ci-checks.json": "9616e48ee23f05297f1ac314c1dc8be9f16cdc644aa9974168c0c4072776845f",
+        "final-conversation.txt": "ae2e438f1f61bde00ea2bdb25d2372987f2d1e3101b772f7164b1c4f19e8395a",
+        "final-copy.md": "13db33fc026534b506fabfcb1a530486ad31637e612fb562333353e1ddd2dfe1",
+        "final-dom.txt": "a16a22bd0790e1866e79a0c5d11337501ce693f321c0c1fdfc29aae58b330ed9",
+        "first-dom.txt": "a16a22bd0790e1866e79a0c5d11337501ce693f321c0c1fdfc29aae58b330ed9",
+        "packet.txt": "2f31154d36985d6aa7dc66cf4b0c72e35d6f261e79cddf865992f477c00f6708",
+        "preflight.json": "7c36e2470ed7b37c014d1bbd0fe11a51764ba287cbe5554f148cdb53f1697c7d",
+        "ready-dom.txt": "8f3bc154c0c56a55c382d0e3f843769f5e494977d467fd8834b775225b4ac8b0",
+        "signed-out-dom.txt": "162f6ca800e3d61d8c584d942ab8537d8cfd51bf200dddc96b4cf1a45a2fa41b",
+        "signed-out.png": "417eecbbd7fc2f83b9dd1db78f70dc327f101e5d4a5d00192d0352ff17b06fcd",
+        "staged-dom.txt": "cc0cadb57335783ba1cc0c55bfa29aecf41c887d3d34893ddaebc20a4c7a168f",
+        "submitted-dom.txt": "af78502a2d83a5114d2ae467e9fb6cee0eea2eccd5066e21aedd8927495b0e97",
+        "verified-fallback.png": "b36fab40caa47d6e08d966942e814a6b2c81751695c98037d509f154d1eca2b3"
+      },
+      "finding": "Anchor and both UTC windows remain Not established; exchange counts unavailable, explicitly not zero. Current listings/prices/detail facts blocked; TOKENZ remains Notes-only rumor. Requests exact timestamp/timezone and official timestamped sources. No invented reporting intervals, confirmed listing, price or trade advice. Timestamp shown under such as is a syntax example, not an adopted anchor. Signed-out preflight added no model attempt; after sign-in Temporary chat and Instant were verified before the single submission.",
+      "ci": {
+        "commit": "7af1216f5044688af8a5294f99b8c2bd44c060f2",
+        "successful_workflows": 5,
+        "successful_individual_checks": 12
+      },
+      "validation": {
+        "clean_tracked_evidence_snapshot": true,
+        "repository_skills": 46,
+        "repository_issues": 0,
+        "generator_drift": "pass",
+        "offline_cases": 24,
+        "offline_negative_checks": 99,
+        "offline_model_evaluations": 0,
+        "full_regressions": "covered by passing unchanged-candidate CI and prior108-test run; not rerun for evidence-only continuation"
+      }
+    }
+  ]
 }

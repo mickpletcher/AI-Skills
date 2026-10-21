@@ -142,3 +142,10 @@
 - [x] Run a fresh strict JSON/source-injection regression: parsing, fixed-ledger calculation, missing-timeline ownership and injection boundaries pass. Preserve its unsupported full structure credit and an interrupted human attempt; neither is a full substantive pass.
 - [x] Define readable missing-heading structure as 2/MINOR with a required quoted heading inventory and versioned evidence contract. Add paired headed/heading-free and malformed-inventory regressions. Rerun native JSON: retain the initial edited-ledger failure, clarify immutable-ledger delivery and verify a fresh final 55.0 audit with exact helper replay. See the [structure correction](../../evaluations/native-resume-structure-2026-10-20.md). The calculator still cannot verify observation truth from resume text.
 - [ ] Obtain separate acceptance of the bounded scoring-consistency results; keep broader reliability, native-host and promotion gates open.
+
+## Resume v2 consolidated native review
+
+- [x] Repeat human numeric testing twice with the unchanged final v2 candidate and identical task/source bytes. Verify actual ZIPs, four ledgers, displayed categories/severity, provider log outputs and preserved facts. Both originals score 76.7 and both rewrites 85.0; retain original heading-inventory scope drift.
+- [x] Execute generic, mixed-heading, missing-start-date and contradictory-date native cases with a fresh missing-date host retry. Record three strict JSON delivery failures, one unassessed host load failure and the passing 90.0/Strong contradictory-date cap. Diagnostic quote repairs are not original-response passes. See the [consolidated review](../../evaluations/native-resume-v2-review-2026-10-20.md).
+- [ ] Correct final JSON quote serialization and exact immutable-ledger delivery, then rerun the three failed boundary cases. Clarify exclusion of fixture/task notes from heading inventories and test the affected same-original case.
+- [ ] Obtain separate human review of the consolidated v2 results and retained failures. Keep all broader host/routing and promotion gates open.

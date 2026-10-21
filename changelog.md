@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Consolidated unchanged-v2 resume testing: two human runs agree at 76.7/85.0 and the contradictory-date cap passes. Retained three invalid JSON boundary outputs, one host load failure and heading-inventory scope drift. Diagnostic quote repairs are not delivery passes. Updated evidence and checklist; PR stays draft with no candidate changes, merging or promotion.
+
 - Fixed candidate resume structure scoring for readable documents without section headings. Added a required heading inventory, missing_headings anchor and two regression methods. Preserved a native ledger-editing failure, clarified final ledger delivery and passed a fresh pure JSON rerun at 55.0. Updated provenance and checklist; PR stays draft with no installation, merging or promotion.
 
 - Fixed candidate resume principle coverage, category mappings and duplicate penalties with a seven-criterion evidence rubric. Two fresh human runs now agree at 76.7 for the original and 85.0 for their rewrites; all four downloaded ledgers reconcile. Strict JSON/injection checks pass, with sparse-document structure credit still unresolved. Updated regressions, provenance and checklist. PR stays draft; no installation, merging or promotion.

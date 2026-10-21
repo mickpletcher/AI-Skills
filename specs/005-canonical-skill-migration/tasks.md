@@ -150,3 +150,9 @@
 - [x] Correct final JSON serialization, immutable-ledger delivery and context-heading scope. Three final native copied JSON audits pass exact checks at 93.3/96.7/93.3; both human heading inventories and all four ledgers reconcile. Retain intermediate Copy failures and two unassessed host failures. See the [repair assessment](../../evaluations/native-resume-v2-repairs-2026-10-21.md).
 - [x] Correct experience activity/result grouping and exclusion of embedded fixture notes with the v3 source-block/context-note contract and two regression methods. Two fresh same-original native human runs now agree at 76.7/85.0; actual ZIPs, four ledgers, source partitions and human tables reconcile. Retain the earlier v2 10-point spread. See the [grouping assessment](../../evaluations/native-resume-grouping-2026-10-21.md). Broader extraction reliability and separate acceptance remain open.
 - [ ] Obtain separate human review of the consolidated v2 results and retained failures. Keep all broader host/routing and promotion gates open.
+
+## Resume v3 consolidated review
+
+- [x] Rerun generic, mixed-heading, missing-start-date and contradictory-date native JSON boundaries against unchanged committed v3 resources. All four entire Copy exports parse directly, equal rendered JSON and pass exact ledgers/Decimal replay at 93.3/96.7/93.3/90.0; the critical chronology case is capped at Strong. No retries or new failures.
+- [x] Consolidate the four fresh JSON cases with the two earlier v3 human runs. Verify identical resource hashes and replay all four actual human ZIP ledgers. Preserve the v1/v2 failure history and distinguish earlier human observations from fresh boundary executions. See the [v3 review](../../evaluations/native-resume-v3-boundaries-2026-10-21.md).
+- [ ] Obtain separate acceptance of the consolidated bounded v3 results. Broader extraction reliability, document formats, native hosts/models/routing and all promotion gates remain open.

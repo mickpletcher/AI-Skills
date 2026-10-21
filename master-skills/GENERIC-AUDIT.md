@@ -123,3 +123,7 @@ The [repair round](../evaluations/native-resume-v2-repairs-2026-10-21.md) adds c
 ## Resume experience source grouping
 
 The [v3 grouping correction](../evaluations/native-resume-grouping-2026-10-21.md) requires complete source activity blocks, one scored entry per block and exact excluded context-note partitions. Fourteen scoring methods pass, including replay of the captured split-entry failure. Two fresh native human runs agree at 76.7 for the same original and 85.0 for their rewrites; actual ZIPs, four exact ledgers, source partitions and readable tables reconcile. The prior v2 76.7/66.7 spread remains historical. Source observation truth, other formats/hosts/routing and separate acceptance remain open. No shipped resources, placement, installation, merging or promotion changes.
+
+## Consolidated v3 human and JSON review
+
+The [v3 boundary review](../evaluations/native-resume-v3-boundaries-2026-10-21.md) adds four fresh native JSON passes using exactly the human round resources. Entire copied/rendered responses agree and all exact ledgers/Decimal calculations pass: generic 93.3, mixed headings 96.7, missing start 93.3, contradictory dates 90.0 with the Strong cap. Replayed four earlier actual human ledgers; original 76.7 and rewrite 85.0 remain consistent in the two-run pair. Six native observations/eight audits now support bounded consolidated review. Prior failures remain recorded; acceptance, broader extraction/host/routing coverage and promotion remain separate. No candidate or shipped resource changes.

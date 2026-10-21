@@ -39,3 +39,11 @@ The README writing artifact separately preserves License as its last section; fo
 The clean tracked evidence overlay passes repository validation (46 skills, zero issues), generator drift and all 24 offline contract cases/99 negative checks. Full regression coverage remains tied to passing CI on the unchanged source and the prior 108-test candidate run. Offline contract checks perform zero model evaluations. Delivery CI is tracked separately.
 
 Repository Architect security-prerequisite verification remains open, alongside patent package verification, food-analyzer, n8n and blog verification and workout initial delivery. Separate bounded human acceptance, earlier unaccepted scopes, broader hosts/models/routing and all promotion gates remain open. No merge, installation or promotion.
+
+## Unchanged architect security continuation
+
+At source `6e6d0cae0cb05dfe98ebb7f8f9fd86b5ced387ed`, one fresh Instant Temporary chat uses byte-identical candidate instructions, capability contract, original task/source/wrapper/external criteria and packet. Rubrics remain outside uploads; no feedback, regeneration or model switch. The unchanged architect security-prerequisite continuation returns another host response-load error and remains unassessed. Verification stays open; no further retry. One fresh unchanged native continuation returns a response-load error in UI and native Copy. No assessable security-boundary response; verification remains open. No further retry or candidate edit. Exact native Copy, rendered UI, screenshot and input hashes are retained privately and pinned in the fixture. All five workflows and twelve CI checks pass on the unchanged source; delivery CI is tracked separately.
+
+Patent, food-analyzer, n8n and blog verification and workout initial delivery remain open. Separate bounded human acceptance, earlier unaccepted scopes and all promotion gates remain open. PR stays draft; no merge, installation or promotion.
+
+The six-file continuation evidence overlay passes clean tracked repository validation (46 skills, zero issues), generator drift and all 24 offline contract cases/99 negative checks. These offline checks perform zero model evaluations. Full regressions remain covered by the unchanged tested source CI and prior 108-test run.

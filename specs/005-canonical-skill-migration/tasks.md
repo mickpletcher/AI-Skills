@@ -291,3 +291,5 @@
 - [ ] Obtain an assessable Repository Architect native security-prerequisite response against the unchanged candidate and original case. Both bounded attempts returned host errors.
 - [ ] Obtain separate bounded eleventh-batch human review. Keep patent/food/n8n/blog verification, workout initial delivery, earlier unaccepted scopes and all promotion gates open. PR remains draft; no merge, installation or promotion.
 - [x] Validate the clean tracked evidence overlay: repository 46 skills/zero issues, generator drift and offline 24 cases/99 negative checks pass; zero offline model evaluations. Delivery CI checked separately.
+
+- [x] Rerun the unchanged architect security case once in a fresh Instant Temporary chat. The unchanged architect security-prerequisite continuation returns another host response-load error and remains unassessed. Verification stays open; no further retry. All five CI workflows/twelve checks pass on 6e6d0ca; patent/food/n8n/blog verification and workout initial delivery remain open.

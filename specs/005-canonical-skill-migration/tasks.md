@@ -197,3 +197,6 @@
 - [x] Run all 108 regressions on both candidate revisions and final generator drift. Retain identical pre-existing version-frontmatter rejection in four baseline/corrected generic-validator pairs; intended-target checks remain separate.
 - [x] Complete final clean-snapshot repository/PowerShell quality (46 skills, zero issues), exact-case folders (35 skills), and 24 offline cases/99 negative checks. Deliver candidate corrections, exact provenance and retained native evidence through draft PR #11; hosted checks tracked on the delivery commit.
 - [ ] Verify final blog source fidelity/format when an assessable native response is available; obtain separate bounded human review. Keep workout initial delivery and all earlier gates open. No merge, install or promotion.
+
+- [x] Rerun the unchanged final blog candidate in two fresh Instant chats with identical packet/resource hashes. Retain both blank completed responses as unassessed delivery failures; no draft is available and final verification remains open.
+- [x] Check hosted CI on a51fd90: all five workflows completed successfully; eleven checks succeeded and helpers retains inconsistent in-progress status despite successful workflow/steps. PR remains draft and workout initial delivery remains open.

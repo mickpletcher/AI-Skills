@@ -328,5 +328,87 @@
     "offline_negative_checks": 99,
     "actual_model_evaluations_from_offline_checks": 0,
     "hosted_checks": "tracked on delivery commit"
+  },
+  "unchanged_final_rerun": {
+    "assessment_date": "2026-10-21",
+    "source_commit": "a51fd90e7c8ceda34c60b816d913461678a90cc4",
+    "candidate_unchanged": true,
+    "resources_sha256": {
+      "instructions.md": "f1964a2fc5820d132d190d518c08c2a3ee4afeb672d6acf6635cb11bb6c9e9d8",
+      "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d"
+    },
+    "attempts": [
+      {
+        "mode": "Instant",
+        "status": "unassessed_blank_native_response",
+        "evidence_directory": "native-blog-final-rerun",
+        "packet_sha256": "8b04ca0639bb57ec1af38aff006bf34a0f2a7ba0f81e8d4fd88be09163191f1e",
+        "captures_sha256": {
+          "packet.txt": "8b04ca0639bb57ec1af38aff006bf34a0f2a7ba0f81e8d4fd88be09163191f1e",
+          "response-conversation.txt": "d7f0373ae376371cfec08b8cf2f5109280be5b731c809a50b47abc37224fe0af",
+          "response-dom.txt": "e30091c924b1ec79813b3ad217de2f2a1c1412b366b545d28443ef199256e6f3",
+          "response.png": "9b4c76ca365cce8dad13c2283c320ecaf643605d6b4c862e143ed128139345f0",
+          "staged-dom.txt": "a8bb7b272424bd3158e93bbfb7f81bd5e0c437edbd857c83b226e0cc2095674d",
+          "submitted-dom.txt": "e2e4ca3a92fcd58a85f55d702a903b9442d6bad871084aa9f85be2e07baca5d9"
+        }
+      },
+      {
+        "mode": "Instant",
+        "status": "unassessed_blank_native_response",
+        "evidence_directory": "retry",
+        "packet_sha256": "8b04ca0639bb57ec1af38aff006bf34a0f2a7ba0f81e8d4fd88be09163191f1e",
+        "captures_sha256": {
+          "packet.txt": "8b04ca0639bb57ec1af38aff006bf34a0f2a7ba0f81e8d4fd88be09163191f1e",
+          "response-conversation.txt": "c3b6e73c709cdb4913eeca92ef7adec4731e97027a83ba36d4a66fd10335820c",
+          "response-dom.txt": "c7d9985d470af2d20a3239ce171bdaeee3235576f386639d553a5e264fdecce9",
+          "response.png": "a07d80c750b5285f0ba654627e2667a8f1d0135801cd1e1543b171b81117ca46",
+          "staged-dom.txt": "a8bb7b272424bd3158e93bbfb7f81bd5e0c437edbd857c83b226e0cc2095674d",
+          "submitted-dom.txt": "e2e4ca3a92fcd58a85f55d702a903b9442d6bad871084aa9f85be2e07baca5d9"
+        }
+      }
+    ],
+    "completed_drafts": 0,
+    "final_blog_verified": false,
+    "workout_initial_delivery": "open",
+    "ci_workflows": [
+      {
+        "conclusion": "success",
+        "databaseId": 39622357367,
+        "headSha": "a51fd90e7c8ceda34c60b816d913461678a90cc4",
+        "name": "Candidate helper runtime",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "databaseId": 39622357377,
+        "headSha": "a51fd90e7c8ceda34c60b816d913461678a90cc4",
+        "name": "Installer regression tests",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "databaseId": 39622357320,
+        "headSha": "a51fd90e7c8ceda34c60b816d913461678a90cc4",
+        "name": "Repository validation",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "databaseId": 39622357400,
+        "headSha": "a51fd90e7c8ceda34c60b816d913461678a90cc4",
+        "name": "Foundation synthetic Linux runtime",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "databaseId": 39622357341,
+        "headSha": "a51fd90e7c8ceda34c60b816d913461678a90cc4",
+        "name": "Master skill generation validation",
+        "status": "completed"
+      }
+    ],
+    "ci_check_caveat": "11 of 12 check runs completed successfully; helpers still reports in_progress despite its completed successful workflow and all listed steps succeeding.",
+    "pr_draft": true,
+    "human_acceptance_pending": true
   }
 }

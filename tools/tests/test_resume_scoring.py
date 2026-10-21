@@ -20,6 +20,14 @@ def example():
     return json.loads(re.search(r'## Example JSON Object\s+```json\s+(.*?)```', text, re.S).group(1))
 
 
+def source_blocks(audit):
+    audit['rubric_version']=scorer.VERSION
+    evidence=audit['scoring_evidence']
+    evidence['experience_source_blocks']=[item['text'] for item in evidence['experience_statements']]
+    for item in evidence['experience_statements']:item.update(source_block=item['text'],context_notes=[])
+    return audit
+
+
 class ResumeScoringTests(unittest.TestCase):
     def test_published_example_reconciles(self):
         audit = example()
@@ -32,6 +40,7 @@ class ResumeScoringTests(unittest.TestCase):
         audit.pop('principle_scores')
         audit['scoring_evidence']['requirements'].append(dict(text='Python',supported=False,evidence='No supplied Python experience'))
         audit['scoring_evidence']['experience_statements'].append(dict(text='Maintained data checks.',names_specific_object=True,has_supplied_measure=False,evidence='Named checks; no metric'))
+        source_blocks(audit)
         self.assertEqual(scorer.calculate(audit)['final_score'],85)
         audit['review_context']='generic'
         result=scorer.calculate(audit)
@@ -42,6 +51,7 @@ class ResumeScoringTests(unittest.TestCase):
         fixture=json.loads((ROOT/'evaluations/fixtures/native-scoring-consistency.json').read_text(encoding='utf-8'))
         audit=next(case['audit'] for case in fixture['cases'] if case['id']=='json-fixed-boundary')
         audit['rubric_version']=scorer.VERSION
+        source_blocks(audit)
         structure=audit['scoring_evidence']['structure']
         structure['section_headings']=[]
         with self.assertRaisesRegex(ValueError,'missing_headings'):scorer.calculate(audit)
@@ -185,6 +195,7 @@ class ResumeScoringTests(unittest.TestCase):
     def test_native_fixture_context_cannot_enter_resume_heading_inventory(self):
         fixture=json.loads((ROOT/'evaluations/fixtures/native-resume-v2-review.json').read_text(encoding='utf-8'))
         audit=next(case for case in fixture['cases'] if case['id']=='human-v2-1')['audits']['original']
+        source_blocks(audit)
         with self.assertRaisesRegex(ValueError,'context labels'):scorer.calculate(audit)
         audit['scoring_evidence']['structure']['section_headings']=['Experience','Education']
         self.assertEqual(scorer.calculate(audit)['final_score'],76.7)
@@ -192,6 +203,46 @@ class ResumeScoringTests(unittest.TestCase):
             with self.subTest(label=label):
                 audit['scoring_evidence']['structure']['section_headings']=['Experience','Education',label]
                 with self.assertRaisesRegex(ValueError,'context labels'):scorer.calculate(audit)
+
+    def test_native_experience_blocks_keep_results_and_exclude_fixture_notes(self):
+        fixture=json.loads((ROOT/'evaluations/fixtures/native-resume-v2-repairs.json').read_text(encoding='utf-8'))
+        failed=copy.deepcopy(next(case for case in fixture['cases'] if case['id']=='human-v2-2')['audits']['original'])
+        prior=next(case for case in fixture['cases'] if case['id']=='human-v2-1')['audits']['original']
+        blocks=[item['text'] for item in prior['scoring_evidence']['experience_statements']]
+        failed['rubric_version']=scorer.VERSION
+        failed['scoring_evidence']['experience_source_blocks']=blocks
+        with self.assertRaisesRegex(ValueError,'do not split'):scorer.calculate(failed)
+        audit=copy.deepcopy(prior)
+        source_blocks(audit)
+        statement=audit['scoring_evidence']['experience_statements'][1]
+        note='No measured compliance gain is supplied.'
+        self.assertIn(note,statement['source_block'])
+        statement['context_notes']=[note]
+        statement['text']=statement['source_block'].replace(note,'').strip()
+        result=scorer.calculate(audit)
+        self.assertEqual(result['final_score'],76.7)
+        self.assertEqual(result['category_scores']['evidence_and_bullet_strength'],83.3)
+        self.assertEqual((result['major_issue_count'],result['minor_issue_count']),(1,2))
+        self.assertTrue(result['scoring_evidence']['experience_statements'][0]['has_supplied_measure'])
+        self.assertFalse(result['scoring_evidence']['experience_statements'][1]['has_supplied_measure'])
+        for mutation in ('drop_result','score_note','omit_activity','reorder','invent_note','duplicate_note','notes_string'):
+            with self.subTest(mutation=mutation):
+                bad=copy.deepcopy(audit);entries=bad['scoring_evidence']['experience_statements']
+                if mutation=='drop_result':entries[0]['text']=entries[0]['text'].split('. ')[0]+'.'
+                elif mutation=='score_note':entries[1]['text']=entries[1]['source_block']
+                elif mutation=='omit_activity':entries.pop()
+                elif mutation=='reorder':entries.reverse()
+                elif mutation=='invent_note':entries[1]['context_notes']=['Invented note']
+                elif mutation=='duplicate_note':entries[1]['context_notes']*=2
+                else:entries[1]['context_notes']=note
+                with self.assertRaises(ValueError):scorer.calculate(bad)
+
+    def test_v2_inventories_require_explicit_v3_source_observations(self):
+        audit=example();audit['rubric_version']='fixed-evidence-v2'
+        with self.assertRaisesRegex(ValueError,'rubric_version'):scorer.calculate(audit)
+        audit['rubric_version']=scorer.VERSION
+        audit['scoring_evidence'].pop('experience_source_blocks')
+        with self.assertRaisesRegex(ValueError,'experience_source_blocks'):scorer.calculate(audit)
 
 
 if __name__=='__main__':

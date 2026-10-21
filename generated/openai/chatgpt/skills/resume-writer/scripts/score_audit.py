@@ -6,7 +6,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = 'fixed-evidence-v2'
+VERSION = 'fixed-evidence-v3'
 CATEGORIES = ('Positioning and Narrative', 'Evidence and Bullet Strength', 'ATS and Structural Reliability', 'Relevance and Targeting', 'Professionalism and Trust')
 PROFILES = {'generic': (25, 35, 20, 10, 10), 'targeted': (25, 30, 20, 15, 10)}
 VERDICTS = ('High risk', 'Weak', 'Good but inconsistent', 'Strong', 'Excellent')
@@ -62,6 +62,24 @@ def calculate(audit, root=ROOT):
     if not isinstance(evidence, dict):
         raise ValueError('A complete scoring_evidence inventory is required')
     statements = items(evidence.get('experience_statements'), 'experience_statements', ('names_specific_object', 'has_supplied_measure'))
+    blocks = evidence.get('experience_source_blocks')
+    if not isinstance(blocks, list) or not blocks or any(not nonempty(block) for block in blocks):
+        raise ValueError('experience_source_blocks requires complete source bullets or activity paragraphs')
+    if len({' '.join(block.split()) for block in blocks}) != len(blocks) or len(blocks) != len(statements):
+        raise ValueError('Score each complete experience source block once; do not split activity and result')
+    for block, statement in zip(blocks, statements):
+        if statement.get('source_block') != block:
+            raise ValueError('Experience statements must follow the complete source block inventory in order')
+        notes = statement.get('context_notes')
+        if not isinstance(notes, list) or any(not nonempty(note) for note in notes) or len(set(notes)) != len(notes):
+            raise ValueError('context_notes must list exact excluded fixture or missing-data notes')
+        activity = block
+        for note in notes:
+            if activity.count(note) != 1:
+                raise ValueError('Each excluded context note must occur once in its source block')
+            activity = activity.replace(note, '', 1)
+        if ' '.join(activity.split()) != ' '.join(statement['text'].split()):
+            raise ValueError('Experience text must retain the whole activity and result, excluding only context_notes')
     requirements = items(evidence.get('requirements'), 'requirements', ('supported',))
     states = {}
     for key, choices in STATES.items():

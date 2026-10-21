@@ -14,7 +14,7 @@
   "behavior_evaluations": [],
   "host_compatibility": "unverified",
   "transformations": {
-    "Read whenever scoring a resume or producing machine-readable scores. [Full workflow](references/scoring-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode.": "Read whenever scoring a resume or producing machine-readable scores. [Full workflow](references/scoring-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode. Use [the score calculator](scripts/score_audit.py) when local Python execution is available. Report only totals reconciled to the supplied source ledger; do not substitute estimated editorial numbers. Mapping tables and examples are not attributed library entries. Numeric audits use the fixed-evidence-v2 inventory and seven calculator-generated criteria in scoring-model.md; do not choose a principle subset or duplicate a missing-data penalty."
+    "Read whenever scoring a resume or producing machine-readable scores. [Full workflow](references/scoring-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode.": "Read whenever scoring a resume or producing machine-readable scores. [Full workflow](references/scoring-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode. Use [the score calculator](scripts/score_audit.py) when local Python execution is available. Report only totals reconciled to the supplied source ledger; do not substitute estimated editorial numbers. Mapping tables and examples are not attributed library entries. Numeric audits use the fixed-evidence-v3 inventory and seven calculator-generated criteria in scoring-model.md; do not choose a principle subset or duplicate a missing-data penalty."
   },
   "supporting_files_sha256": {
     "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
@@ -50,25 +50,25 @@
       "reason": "Candidate-only YAML quoting and scheduled-task preservation correction; original shipped hash retained. See evaluations/candidate-compatibility-2026-10-19.md."
     },
     "scoring-model.md": {
-      "sha256": "6bbcc6b226f551d94d3aa1a8cf9037c253e43e56b86716ecba80ae852470611c",
-      "reason": "Candidate-only canonical JSON file delivery, immutable derived ledger and resume/context heading separation; original shipped hash retained."
+      "sha256": "35403eb00d38ff51ce2335a3a578d21cd2cbbf3a699380e161a32fe730c65f72",
+      "reason": "Candidate-only v3 source-block grouping and explicit unscored context-note partition; original shipped hash retained."
     },
     "references/scoring-workflow.md": {
-      "sha256": "3646d2ea1abbb294d1f1f62a2db4a68034cedfee6655ed7487dfc0e572b211a1",
-      "reason": "Candidate-only canonical JSON file delivery, immutable derived ledger and resume/context heading separation; original shipped hash retained."
+      "sha256": "8643e868b517b79468c952816be5005f1333f4018732a0a21ae1d644ab7a2f67",
+      "reason": "Candidate-only v3 source-block grouping and explicit unscored context-note partition; original shipped hash retained."
     },
     "json-output-spec.md": {
-      "sha256": "584b9f6e8bcebf7f588e1ab78c503684b3cf027a8e7170a8ef3116eca86d6173",
-      "reason": "Candidate-only canonical JSON file delivery, immutable derived ledger and resume/context heading separation; original shipped hash retained."
+      "sha256": "30b030611c9b2e88b85faf2c70ffa0468e4b5a7e75b9308a0f9f4da636bb34e4",
+      "reason": "Candidate-only v3 source-block grouping and explicit unscored context-note partition; original shipped hash retained."
     },
     "references/enhance-workflow.md": {
-      "sha256": "4a3d7cd07eb701493ba0f72e35480917141eda0b7fcd89b5b4d0d615bbac1e20",
-      "reason": "Candidate-only fixed evidence rubric with explicit quoted heading inventory and readable missing-heading classification; original shipped hash retained."
+      "sha256": "66f4e643619e8495574f59f124e93bce32850c5b3199b7657addc80256dd19e7",
+      "reason": "Candidate-only v3 source-block grouping and explicit unscored context-note partition; original shipped hash retained."
     }
   },
   "added_supporting_files": {
     "scripts/score_audit.py": {
-      "sha256": "824600d0ff3564c4604993efaa2f01bd853f0cf9b87da259b5639c07a20f58f2",
+      "sha256": "cabb2399ebd12280b30e4cb405eb019806bd9928786d64f6c33dac08f49291b9",
       "reason": "New candidate-only standard-library score/source-ledger calculator for deterministic native audit reconciliation."
     }
   }

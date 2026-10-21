@@ -38,7 +38,7 @@ Use cases include:
 {
   "output_mode": "human | json | both",
   "review_context": "generic | targeted",
-  "rubric_version": "fixed-evidence-v2",
+  "rubric_version": "fixed-evidence-v3",
   "scoring_evidence": {},
   "confidence": "high | medium | low",
   "audit_mode": "condensed | forensic",
@@ -177,7 +177,7 @@ These are aggregate warnings across multiple findings, not individual principle 
   "critical_issue_count": 0,
   "major_issue_count": 0,
   "minor_issue_count": 0,
-  "rubric_version": "fixed-evidence-v2",
+  "rubric_version": "fixed-evidence-v3",
   "scoring_evidence": {
     "positioning": {
       "state": "role_and_evidence",
@@ -188,12 +188,17 @@ These are aggregate warnings across multiple findings, not individual principle 
         "text": "Built SQL pipelines processing 100 records daily.",
         "names_specific_object": true,
         "has_supplied_measure": true,
-        "evidence": "Named SQL pipelines and supplied volume."
+        "evidence": "Named SQL pipelines and supplied volume.",
+        "source_block": "Built SQL pipelines processing 100 records daily.",
+        "context_notes": []
       }
     ],
     "structure": {
       "state": "standard",
-      "section_headings": ["Experience", "Education"],
+      "section_headings": [
+        "Experience",
+        "Education"
+      ],
       "evidence": "Experience and Education headings."
     },
     "chronology": {
@@ -210,7 +215,10 @@ These are aggregate warnings across multiple findings, not individual principle 
     "privacy": {
       "state": "safe",
       "evidence": "Supplied plain text contains ordinary contact data only."
-    }
+    },
+    "experience_source_blocks": [
+      "Built SQL pipelines processing 100 records daily."
+    ]
   },
   "principle_scores": [
     {
@@ -301,7 +309,7 @@ These are aggregate warnings across multiple findings, not individual principle 
       "criterion_id": "privacy",
       "principle": "No photos, no headshots, no personal data",
       "source_type": "common_pattern",
-      "source_name": "common-patterns \u00a7 No photos, no headshots, no personal data",
+      "source_name": "common-patterns § No photos, no headshots, no personal data",
       "category": "Professionalism and Trust",
       "score": 3,
       "weight": 1.0,

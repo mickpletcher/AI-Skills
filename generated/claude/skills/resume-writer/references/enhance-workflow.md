@@ -120,7 +120,7 @@ Be specific. "Weak bullet" is not a valid issue. "No outcome specified — says 
 
 When the same violation maps to both a library principle and a pattern, apply the precedence rule: cite the library principle.
 
-Capture the complete fixed-evidence-v2 scoring_evidence inventory from scoring-model.md. The calculator selects all seven criteria and derives scores, severity, category and weight. Keep missing-data flags separate; additional qualitative findings do not add numeric penalties.
+Capture the complete fixed-evidence-v3 scoring_evidence inventory from scoring-model.md. The calculator selects all seven criteria and derives scores, severity, category and weight. Keep missing-data flags separate; additional qualitative findings do not add numeric penalties.
 
 **Recruiter skim view** (run as part of every audit):
 

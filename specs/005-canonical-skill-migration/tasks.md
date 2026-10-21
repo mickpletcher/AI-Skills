@@ -229,3 +229,13 @@
 - [x] Validate seventh-batch candidate repairs: 108 regressions, generator drift for 805 files, repository/PowerShell quality (46 skills, zero issues), exact-case folders (35 skills), and 24 offline cases/99 negative checks pass. Codex n8n generic schema passes; four master/ChatGPT pairs retain identical pre-existing version rejection. Keep native verification/acceptance and earlier gates separate.
 
 - [x] Rerun the remaining n8n review against unchanged candidate/task/source/wrapper/criteria at e4cbe18 in one fresh Instant Temporary chat. Retain another unassessed response-load failure; verification and acceptance remain open. Confirm all five workflows and twelve individual CI checks passed on e4cbe18. Keep blog verification and workout initial delivery open; PR stays draft without merging or promotion.
+
+## Eighth targeted native batch
+
+- [x] Check CI on 3e4682b: all five workflows and twelve individual checks passed. Preserve n8n workflow-review verification, blog verification, workout initial delivery and seventh-batch acceptance as open gates; PR stays draft.
+- [x] Select fitness-log, fitness-programming and food-analyzer without prior targeted native records. Pin six fabricated text cases, exact candidate resources and packet hashes before submission. Keep external criteria outside uploads and real health/tracker actions out of scope.
+- [x] Execute six fresh Instant Temporary chats plus one unchanged missing-image retry. Five assessable responses pass bounded source/arithmetic/planning checks. Retain both blank completed responses and zero-byte copies as unassessed, not content passes. See the [assessment](../../evaluations/native-batch8-2026-10-21.md).
+- [x] Independently verify candidate/packet hashes, actual dashboard/food-log YAML parsing, 3/4 sessions,105minutes,27reps, strict-versus-assisted boundaries,37/36minute session totals, single-variable adjustment and food scaling/daily values. Preserve whole-response Copy flattening separately from the working dashboard Copy.
+- [x] Validate the six-file evidence overlay in a clean tracked snapshot: repository/PowerShell quality (46 skills, zero issues), exact-case Claude folders (35 skills, zero issues), generator drift and 24 offline cases/99 negative checks pass. Full regressions remain covered by passing source CI; no candidate changes. Delivery CI is tracked separately.
+- [ ] Verify food-analyzer missing-image behavior against an assessable response using unchanged inputs. No image-recognition, medication-interaction or real training-suitability claim.
+- [ ] Obtain separate bounded eighth-batch acceptance. Keep all earlier open gates, broader hosts/models/routing and promotion gates open. No merging, installation or promotion.

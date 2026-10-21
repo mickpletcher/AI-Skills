@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Recorded the eighth native batch for fitness-log, fitness-programming and food-analyzer with unchanged candidates: five bounded passes and two unassessed blank completed deliveries. Verified actual export YAML and synthetic arithmetic. CI passes on 3e4682b. Keep missing-image, n8n and blog verification and workout initial delivery open; PR stays draft without merging or promotion.
+
 - Reran the remaining n8n workflow review against the unchanged candidate in a fresh native Instant chat. Retain another unassessed host response-load failure and keep verification open. All five workflows and twelve checks pass on e4cbe18. Blog verification and workout initial delivery remain open; PR stays draft without merging or promotion.
 
 - Corrected n8n retry-policy/test consistency and container-home fictional-project context isolation with exact candidate provenance. Native design and home reruns pass bounded review; retain four host failures and keep existing-workflow review verification open. All 108 regressions pass. Blog verification and workout initial delivery stay open; PR remains draft without merging or promotion.

@@ -1,5 +1,7 @@
 # Behavioral evaluation framework
 
+The [eighth targeted native batch](native-batch8-2026-10-21.md) covers fitness-log, fitness-programming and food-analyzer with unchanged candidates. Seven fresh Instant attempts across six synthetic text cases yield five bounded passes and two blank completed deliveries for the missing-image case. That verification remains unassessed. Source commit 3e4682b passes all five workflows/twelve checks. n8n workflow-review verification, blog verification, workout initial delivery and separate human acceptance remain open. PR #11 stays draft without merging or promotion.
+
 Mick accepted the bounded remaining-skill results and the [first native writing batch](native-writing-2026-10-20.md) on 2026-10-20. The [second native batch](native-batch2-2026-10-20.md) completes six file/output cases with three bounded passes and three retained scoring/attribution/layout failures. That batch needs remediation and separate acceptance. PR #11 stays draft with no merging or promotion.
 
 The 24 synthetic fixtures cover four representative skills across Claude, ChatGPT, and Copilot: social writing, resume editing, nutrition analysis, and PR review. Each has a positive trigger, near miss, missing input, untrusted source instruction, unsafe request, and output-contract case. This is representative coverage, not proof for all 46 skills or every host model.

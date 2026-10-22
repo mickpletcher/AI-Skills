@@ -48,7 +48,8 @@ def render_inline(data, logged_total_minutes=None):
     validate(data, logged_total_minutes)
     if not data.endswith(b'\n'):
         raise ValueError('Canonical note must end with a newline before rendering')
-    return b'```text\n' + data + b'```\n'
+    fence = b'`' * max(3, 1 + max((len(match[0]) for match in re.finditer(rb'`+', data)), default=0))
+    return fence + b'markdown\n' + data + fence + b'\n'
 
 
 def main():

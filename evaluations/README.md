@@ -1,5 +1,7 @@
 # Behavioral evaluation framework
 
+The [workout Copy repair and four current controls](native-batch16-2026-10-22.md) record this update. Final workout native initial/corrected Copy passes 323-byte strict/YAML checks after retaining a failed indented attempt. Current blog/LinkedIn/preview controls pass; home unsupported #OffGrid remains open. Recommendations 22 ready/one held, no new acceptance. PR draft; no merge or promotion.
+
 The [scope review and unchanged repeats](native-batch15-2026-10-22.md) record this update. Reviewed all23 pending bounded scopes:19 current sampled scopes ready for human review and four held for current-resource controls. Unchanged patent/food repeats pass; workout duplicate/content passes but exact initial/corrected Copy fails again. Both delivery paths reopened. No new acceptance or promotion; PR remains draft.
 
 The [delivery repairs](native-batch14-2026-10-22.md) pass bounded patent word limits (1114 total/289 section10), food two-sentence missing-image intake and workout initial/duplicate/corrected delivery with exact byte-zero Copy. Earlier failures remain retained. Final-byte supplied-label food and patent interview controls also pass after retained browser timeouts; no new acceptance. PR stays draft without merging, installation or promotion.

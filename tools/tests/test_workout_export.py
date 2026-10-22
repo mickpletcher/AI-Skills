@@ -67,8 +67,8 @@ class WorkoutExportTests(unittest.TestCase):
         for data,total in [(note('strength'),None),(note('ride','50','\r\n'),None),(note(duration='90'),'90')]:
             with self.subTest(data=data):
                 rendered=validator.render_inline(data,total)
-                self.assertTrue(rendered.startswith(b'```text\n---'))
-                self.assertEqual(rendered[len(b'```text\n'):-len(b'```\n')],data)
+                self.assertTrue(rendered.startswith(b'```markdown\n---'))
+                self.assertEqual(rendered[len(b'```markdown\n'):-len(b'```\n')],data)
 
     def test_inline_serialization_refuses_failed_copy_without_trimming(self):
         for data in (b'\n'+note('strength'),note('strength').rstrip(b'\n')):
@@ -79,13 +79,17 @@ class WorkoutExportTests(unittest.TestCase):
             path=Path(folder)/'note.md';data=note(duration='90');path.write_bytes(data)
             result=subprocess.run([sys.executable,str(SCRIPT),str(path),'--logged-total-minutes','90','--render-inline'],capture_output=True)
             self.assertEqual(result.returncode,0)
-            self.assertEqual(result.stdout,b'```text\n'+data+b'```\n')
+            self.assertEqual(result.stdout,b'```markdown\n'+data+b'```\n')
             self.assertEqual(path.read_bytes(),data)
             path.write_bytes(b'\n'+data)
             result=subprocess.run([sys.executable,str(SCRIPT),str(path),'--render-inline'],capture_output=True)
             self.assertEqual(result.returncode,2)
             self.assertEqual(result.stdout,b'')
             self.assertEqual(path.read_bytes(),b'\n'+data)
+
+    def test_inline_fence_outsizes_nested_fences_and_preserves_blank_lines(self):
+        data=b'---\ntype: strength\n---\n# Workout Log\n\n```text\nLogged note.\n```\n'
+        self.assertEqual(validator.render_inline(data),b'````markdown\n'+data+b'````\n')
 
 
 if __name__ == '__main__':

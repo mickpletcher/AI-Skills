@@ -235,3 +235,8 @@ The [delivery repairs](../evaluations/native-batch14-2026-10-22.md) pass bounded
 ## Pending-scope review and unchanged native repeats
 
 Reviewed all23 pending bounded scopes:19 current sampled scopes ready for human review and four held for current-resource controls. Unchanged patent/food repeats pass; workout duplicate/content passes but exact initial/corrected Copy fails again. Both delivery paths reopened. No new acceptance or promotion; PR remains draft. See the [assessment](../evaluations/native-batch15-2026-10-22.md).
+
+
+## Workout Copy repair and current controls
+
+Final workout native initial/corrected Copy passes 323-byte strict/YAML checks after retaining a failed indented attempt. Current blog/LinkedIn/preview controls pass; home unsupported #OffGrid remains open. Recommendations 22 ready/one held, no new acceptance. PR draft; no merge or promotion. See the [assessment](../evaluations/native-batch16-2026-10-22.md).

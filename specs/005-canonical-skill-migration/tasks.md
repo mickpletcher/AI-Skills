@@ -342,4 +342,14 @@
 - [ ] Run the four original current-resource controls and inspect actual preview JPEG. Keep original inputs/criteria unchanged.
 - [ ] Obtain human review of pending scopes and the repaired workout revision. Keep real integrations, routing/hosts/models, provider traces, repeatability and promotion gates open. PR remains draft; no merge or promotion.
 
-- [x] Final evidence-overlay validation passes repository46/zero issues, generator807files, offline24cases/99negative checks, exact pins and actual food-log YAML. All12 source CI checks pass; delivery CI checked separately.
+- [x] Final evidence-overlay validation passes repository 46/zero issues, generator 807 files, offline 24 cases/99 negative checks, exact pins and actual food-log YAML. All12 source CI checks pass; delivery CI checked separately.
+
+
+## Workout Copy repair and four current-version checks
+
+- [x] Retain failed indented-code revision, then implement filename-first Markdown-labelled adaptive fence serialization. Preserve source metadata, versions, capabilities, placement and shipped packages. Regenerate existing review targets only.
+- [x] Rerun original initial/duplicate/correction workflow in fresh Medium Temporary chat. Exact initial/corrected Copy each 323 bytes starts with frontmatter at byte zero, strict validation and YAML parsing pass; correction changes only row sets 3 to 4. Duplicate asks overwrite/skip. See the [assessment](../../evaluations/native-batch16-2026-10-22.md).
+- [x] Run all four original current-version controls in fresh Instant contexts. Blog 418 words, LinkedIn 189/202 words and actual JPEG 51,053 bytes/1280x640 pass. Home retains correct main facts but adds unsupported #OffGrid; preserve that finding.
+- [x] Validate final candidate: 118 regressions, repository 46/zero issues, generator 807 files and offline 24 cases/99 negative checks pass. Generic validator's pre-existing version rejection remains unchanged. Delivery CI separate.
+- [ ] Ground home-update hashtags in supplied fictional facts and rerun the same original case.
+- [ ] Establish broader Copy/Download reliability, real integrations/Obsidian ingestion, other hosts/routing and provider traces. Keep human acceptance and all promotion gates open. PR draft; no merge or promotion.

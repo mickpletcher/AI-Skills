@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Repaired bounded patent word-limit, food intake verbosity and workout Copy formatting defects. Native package1114/289 words and exact290-byte initial/corrected notes pass; duplicate protection preserved. Retained intermediate failures; both final-byte controls pass. PR remains draft with no new acceptance, merge or promotion.
+
 - Recorded four controlled delivery diagnostics and seven native reruns. Four bounded verification paths close; patent word limits, food clarification scope and workout initial Copy boundary remain open. Reviewed all 23 pending scopes without new acceptance; candidates unchanged and PR draft.
 
 - Consolidated native coverage for all 36 candidates without new acceptance or promotion. Ran four bounded inline/upload delivery diagnostics and two example-skill cases: mixed diagnostic delivery, one bounded plan pass and one unassessed missing-objective host failure. Existing verification/delivery gates stay open; candidates unchanged and PR draft.

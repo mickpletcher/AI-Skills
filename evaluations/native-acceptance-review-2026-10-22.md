@@ -1,10 +1,10 @@
 # Pending native acceptance review
 
-Date: 2026-10-22. Basis `ab06c0b`. PR #11 remains draft. No merge, installation or promotion.
+Date: 2026-10-22. Basis `985bdbd`. PR #11 remains draft. No merge, installation or promotion.
 
-Reviewed all 23 pending rows against selected fixtures, later repair/continuation results, retained failures and scope limitations. All selected evidence and current instruction hashes match the [coverage matrix](native-coverage-2026-10-22.md). This is a recommendation, not a fresh replay of every raw artifact or new human acceptance. The existing 13 scoped acceptances remain unchanged.
+The [repair assessment](native-batch14-2026-10-22.md) supports bounded defect closure for patent word limits, food concise clarification and workout exact Copy. These are verification results, not human acceptance. Historical thirteen accepted scopes and 23 pending reviews remain unchanged; the new repaired revisions have no new acceptance.
 
-Twenty-one recorded scopes are ready for bounded human review. Two complete sampled scopes remain on hold pending open-path evidence. The prior split was 17 ready and six held; four official bounded passes change only these recommendations. Completed subsets can be reviewed separately without accepting the unresolved path. Workout already has bounded acceptance; its initial-delivery gate stays separate. See the [new diagnostic and rerun assessment](native-batch13-2026-10-22.md) for current observations, and the [machine-readable recommendations](native-acceptance-review-2026-10-22.json) for exact provenance.
+All 23 pending recorded scopes are now ready for bounded human review, after final-byte supplied-label food and patent interview controls passed. Earlier failures remain retained. Workout's historical acceptance does not accept the new serialization revision. See the [matrix](native-coverage-2026-10-22.md) and [machine-readable recommendations](native-acceptance-review-2026-10-22.json).
 
 ## Ready for scoped human review
 
@@ -32,11 +32,13 @@ Twenty-one recorded scopes are ready for bounded human review. Two complete samp
 | spec-writer | Two inspected disposable planning artifact cases with existing-file preservation/reuse. No broader implementation or repository certification. |
 | trip-email-html-itinerary | Intake and static fragment review. Priority badge discrepancy retained; full HTML generation/rendering/mobile/print excluded. |
 
-## Hold complete sampled scope
+## Newly ready repaired scopes
 
-| Skill | Unresolved path |
+| Skill | Bounded scope and limits |
 | --- | --- |
-| food-analyzer | Concise missing-image clarification verification OPEN; missing-input grounding now observed |
-| patentforge-provisional | Patent delivery word limits OPEN; all14 sections now delivered; Legal accuracy and filing readiness not certified |
+| food-analyzer | Final concise missing-image clarification and supplied-label scaling. No actual image recognition, medication interaction or real nutrition safety certification. |
+| patentforge-provisional | Final14-section fictional package1114/289 words and one-question mechanism intake. No legal accuracy, patentability or filing-readiness certification. |
+
+No complete sampled scope remains held for the reported defects. Human acceptance remains pending.
 
 No acceptance is inferred from this report, successful CI, diagnostics or a passing subset. Native backend/context/tool tracing, other hosts/models/routing, integrations and promotion remain outside these recommendations. Original failures and unassessed attempts remain unchanged.

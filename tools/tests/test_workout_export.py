@@ -63,6 +63,30 @@ class WorkoutExportTests(unittest.TestCase):
                 self.assertEqual(result.returncode,expected)
                 self.assertEqual(path.read_bytes(),data)
 
+    def test_inline_serialization_preserves_note_bytes_without_extra_first_line(self):
+        for data,total in [(note('strength'),None),(note('ride','50','\r\n'),None),(note(duration='90'),'90')]:
+            with self.subTest(data=data):
+                rendered=validator.render_inline(data,total)
+                self.assertTrue(rendered.startswith(b'```text\n---'))
+                self.assertEqual(rendered[len(b'```text\n'):-len(b'```\n')],data)
+
+    def test_inline_serialization_refuses_failed_copy_without_trimming(self):
+        for data in (b'\n'+note('strength'),note('strength').rstrip(b'\n')):
+            with self.subTest(data=data), self.assertRaises(ValueError):validator.render_inline(data)
+
+    def test_cli_inline_stdout_is_exact_and_keeps_source_unchanged(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/'note.md';data=note(duration='90');path.write_bytes(data)
+            result=subprocess.run([sys.executable,str(SCRIPT),str(path),'--logged-total-minutes','90','--render-inline'],capture_output=True)
+            self.assertEqual(result.returncode,0)
+            self.assertEqual(result.stdout,b'```text\n'+data+b'```\n')
+            self.assertEqual(path.read_bytes(),data)
+            path.write_bytes(b'\n'+data)
+            result=subprocess.run([sys.executable,str(SCRIPT),str(path),'--render-inline'],capture_output=True)
+            self.assertEqual(result.returncode,2)
+            self.assertEqual(result.stdout,b'')
+            self.assertEqual(path.read_bytes(),b'\n'+data)
+
 
 if __name__ == '__main__':
     unittest.main()

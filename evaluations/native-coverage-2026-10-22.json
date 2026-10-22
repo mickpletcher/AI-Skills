@@ -1,7 +1,7 @@
 {
   "assessment_date": "2026-10-22",
-  "basis_commit": "ab06c0b026adff1030ae502e3e559c2aba957fc4",
-  "scope": "Current compiled native review view following native-batch13. Prior matrix and original attempts remain unchanged. Bounded verification closure is separate from human acceptance and promotion.",
+  "basis_commit": "985bdbdc42c4d5a7774139f4816b7af55fad44dc",
+  "scope": "Current compiled view following native-batch14. Historical fixtures remain unchanged. Defect closure, final-byte controls and human acceptance are separate.",
   "definitions": {
     "bounded_pass": "Only the recorded synthetic case and tested delivery path, not full skill/host/model compatibility.",
     "unassessed": "No assessable domain response; not pass or a proven candidate defect.",
@@ -15,9 +15,10 @@
     "accepted_bounded_native_scopes": 13,
     "pending_bounded_native_review": 23,
     "candidate_promotions": 0,
-    "bounded_verification_paths_closed_this_round": 4,
-    "remaining_targeted_verification_paths": 3,
-    "new_human_acceptances": 0
+    "bounded_verification_paths_closed_this_round": 3,
+    "remaining_targeted_verification_paths": 0,
+    "new_human_acceptances": 0,
+    "remaining_targeted_paths_description": "Reported defects and final-byte controls pass bounded observations. Broader integration/reliability and human acceptance remain open."
   },
   "rows": [
     {
@@ -329,18 +330,19 @@
     },
     {
       "skill": "food-analyzer",
-      "native_outcome": "Recognizes absent image and requests actual photo without invented nutrition/allergen/history facts. However, a 296-word report, nutrition table, formula and execution checklist fail the concise missing-input criterion. Verification remains open for response scope.",
+      "native_outcome": "Final two-sentence missing-image clarification and final-byte supplied-label control pass without invented nutrition or unnecessary image request.",
       "bounded_native_acceptance": "Pending separate bounded native review",
       "evidence": [
         "evaluations/fixtures/native-batch8.json",
-        "evaluations/fixtures/native-batch13.json"
+        "evaluations/fixtures/native-batch13.json",
+        "evaluations/fixtures/native-batch14.json"
       ],
       "open_verification": [
-        "Concise missing-image clarification verification OPEN; missing-input grounding now observed"
+        "Image recognition, medication interactions and real nutrition safety unverified"
       ],
       "acceptance_evidence": null,
-      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
-      "current_chatgpt_instruction_sha256": "8eab91b80173f0a9d015dffa1277a149e9cfa4c97a3a98aef93d3f56b3c8d38e",
+      "retained_issue_history": "Concise missing-image defect closed for final recorded case; original verbose reports and intermediate instruction gap retained.",
+      "current_chatgpt_instruction_sha256": "5f60e3baeddccb07259b05fbdf5c3877cd87873d29546d0b6983a89debd4f3bf",
       "allowed_review_targets": [
         "claude",
         "chatgpt"
@@ -349,10 +351,12 @@
       "promotion": "Blocked; not authorized",
       "evidence_sha256": {
         "evaluations/fixtures/native-batch8.json": "6cd6e3dc0216f186f3f24e1dbc70c64eb2ee5875e1e7a64999dac357cb88f8d3",
-        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab",
+        "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58"
       },
       "current_instruction_hash_present_in_selected_evidence": true,
-      "latest_verification_result": "OPEN"
+      "latest_verification_result": "Reported defects and final controls bounded PASS; broader limits remain OPEN",
+      "current_revision_human_acceptance": "Pending; no new acceptance granted"
     },
     {
       "skill": "github-readme",
@@ -557,19 +561,20 @@
     },
     {
       "skill": "obsidian-workout-export",
-      "native_outcome": "Fresh Medium first response delivers the correct three-set row/push-up note and filename, without a recovery prompt. Exact native Copy code begins with a newline before frontmatter and fails the supplied validator. Duplicate/correction follow-ups were not rerun; no initial-delivery pass.",
+      "native_outcome": "Final initial and corrected Copy notes are290 exact bytes with frontmatter at byte zero; duplicate asks overwrite/skip; correction preserves source.",
       "bounded_native_acceptance": "Accepted only within recorded bounded scope",
       "evidence": [
         "evaluations/fixtures/native-workout-repairs.json",
-        "evaluations/fixtures/native-batch13.json"
+        "evaluations/fixtures/native-batch13.json",
+        "evaluations/fixtures/native-batch14.json"
       ],
       "open_verification": [
-        "Initial exact Copy boundary OPEN; first response content now delivered",
-        "Real Obsidian ingestion and repeated first delivery unverified"
+        "Real Obsidian ingestion and repeated delivery unverified",
+        "Current repaired revision human review pending; historical acceptance does not accept new bytes"
       ],
       "acceptance_evidence": "evaluations/fixtures/native-workout-repairs.json",
-      "retained_issue_history": "Duration-scope/copied-frontmatter failures retained; initial delivery remains open despite accepted recovery paths.",
-      "current_chatgpt_instruction_sha256": "71e7330d7006ca34aa74f012b4aca065c1d7403664d7550f39f205436286acce",
+      "retained_issue_history": "Duration/frontmatter/initial-Copy failures retained; final initial, duplicate and correction paths pass bounded checks.",
+      "current_chatgpt_instruction_sha256": "8b45cc00b2ce7f9d6a41320b5393509bb56d6694ad9cecebb3d22438d2721d72",
       "allowed_review_targets": [
         "claude",
         "chatgpt"
@@ -578,27 +583,29 @@
       "promotion": "Blocked; not authorized",
       "evidence_sha256": {
         "evaluations/fixtures/native-workout-repairs.json": "059d1adb80020bf2251605bbfd7de209fd32e694da87890a40e78751ca8e36a7",
-        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab",
+        "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58"
       },
       "current_instruction_hash_present_in_selected_evidence": true,
-      "latest_verification_result": "OPEN"
+      "latest_verification_result": "Reported defects and final controls bounded PASS; broader limits remain OPEN",
+      "current_revision_human_acceptance": "Pending; no new acceptance granted"
     },
     {
       "skill": "patentforge-provisional",
-      "native_outcome": "All 14 sections and five upfront disclaimer points delivered, with source-grounded mechanism, suggested confidentiality replacements and search-only strategy. Delivery exceeds the candidate 1200-word total and 300-word section-10 limits; verification remains open.",
+      "native_outcome": "Final14-section package passes1114/1200 total and289/300 section10; final-byte one-question interview control also passes. Source mechanism, confidentiality flags and upfront boundaries preserved.",
       "bounded_native_acceptance": "Pending separate bounded native review",
       "evidence": [
         "evaluations/fixtures/native-batch10.json",
         "evaluations/fixtures/native-batch10-repairs.json",
-        "evaluations/fixtures/native-batch13.json"
+        "evaluations/fixtures/native-batch13.json",
+        "evaluations/fixtures/native-batch14.json"
       ],
       "open_verification": [
-        "Patent delivery word limits OPEN; all14 sections now delivered",
         "Legal accuracy and filing readiness not certified"
       ],
       "acceptance_evidence": null,
-      "retained_issue_history": "Section10/12/13 package cutoffs and host errors retained; final verification remains open.",
-      "current_chatgpt_instruction_sha256": "eb1e3628cfe1fd25e2d9d8f5c93953fd5906ca5f2a6ee18e31f988e70c9a87eb",
+      "retained_issue_history": "Earlier cutoffs, host errors and1272/1252-word failures retained. Final bounded word-limit delivery passes.",
+      "current_chatgpt_instruction_sha256": "e021e42b094bcd927920db4d3a48763a79e0f7c10b347b66008a38383dd8f5ad",
       "allowed_review_targets": [
         "claude",
         "chatgpt"
@@ -608,10 +615,12 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch10.json": "66dcc76e7c321bc9956032c2e355b0a19931faf86d6fb64fe4c1134b29bc5757",
         "evaluations/fixtures/native-batch10-repairs.json": "50bfdb97ebc429ee52e6aa3ac13bedee250c0c79ac68bd07133ac8bdf2a4d56c",
-        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab",
+        "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58"
       },
       "current_instruction_hash_present_in_selected_evidence": true,
-      "latest_verification_result": "OPEN"
+      "latest_verification_result": "Reported defects and final controls bounded PASS; broader limits remain OPEN",
+      "current_revision_human_acceptance": "Pending; no new acceptance granted"
     },
     {
       "skill": "photo-rename",

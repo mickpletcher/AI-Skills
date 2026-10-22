@@ -1,11 +1,11 @@
 {
   "assessment_date": "2026-10-22",
-  "basis_commit": "ab06c0b026adff1030ae502e3e559c2aba957fc4",
-  "review_method": "Reviewed selected fixture results, later repair/continuation records, historical failures, scope limitations and current instruction/evidence hash equality. This is a review recommendation, not a fresh replay of every retained raw artifact or a new human acceptance. Pending official reruns are recorded separately in native-batch13.",
+  "basis_commit": "985bdbdc42c4d5a7774139f4816b7af55fad44dc",
+  "review_method": "Current recommendations after batch14 including final-byte controls. All23 pending recorded scopes ready for bounded human review; no new acceptance. Earlier failures and13 historical acceptances preserved.",
   "summary": {
     "pending_native_reviews": 23,
-    "ready_for_scoped_human_review": 21,
-    "hold_complete_sampled_scope": 2,
+    "ready_for_scoped_human_review": 23,
+    "hold_complete_sampled_scope": 0,
     "new_human_acceptances": 0,
     "promotions": 0
   },
@@ -131,16 +131,17 @@
     },
     {
       "skill": "food-analyzer",
-      "recommendation": "Hold complete sampled scope pending open-path evidence",
+      "recommendation": "Ready for human review of bounded recorded scope",
       "proposed_scope": "Only completed case subsets may be reviewed; do not accept the unresolved path.",
-      "recorded_outcome": "Recognizes absent image and requests actual photo without invented nutrition/allergen/history facts. However, a 296-word report, nutrition table, formula and execution checklist fail the concise missing-input criterion. Verification remains open for response scope.",
+      "recorded_outcome": "Final two-sentence missing-image clarification and final-byte supplied-label control pass without invented nutrition or unnecessary image request.",
       "open_limits": [
-        "Concise missing-image clarification verification OPEN; missing-input grounding now observed"
+        "Image recognition, medication interactions and real nutrition safety unverified"
       ],
-      "current_instruction_sha256": "8eab91b80173f0a9d015dffa1277a149e9cfa4c97a3a98aef93d3f56b3c8d38e",
+      "current_instruction_sha256": "5f60e3baeddccb07259b05fbdf5c3877cd87873d29546d0b6983a89debd4f3bf",
       "evidence_sha256": {
         "evaluations/fixtures/native-batch8.json": "6cd6e3dc0216f186f3f24e1dbc70c64eb2ee5875e1e7a64999dac357cb88f8d3",
-        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab",
+        "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58"
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked"
@@ -258,18 +259,18 @@
     },
     {
       "skill": "patentforge-provisional",
-      "recommendation": "Hold complete sampled scope pending open-path evidence",
+      "recommendation": "Ready for human review of bounded recorded scope",
       "proposed_scope": "Only completed case subsets may be reviewed; do not accept the unresolved path.",
-      "recorded_outcome": "All 14 sections and five upfront disclaimer points delivered, with source-grounded mechanism, suggested confidentiality replacements and search-only strategy. Delivery exceeds the candidate 1200-word total and 300-word section-10 limits; verification remains open.",
+      "recorded_outcome": "Final14-section package passes1114/1200 total and289/300 section10; final-byte one-question interview control also passes. Source mechanism, confidentiality flags and upfront boundaries preserved.",
       "open_limits": [
-        "Patent delivery word limits OPEN; all14 sections now delivered",
         "Legal accuracy and filing readiness not certified"
       ],
-      "current_instruction_sha256": "eb1e3628cfe1fd25e2d9d8f5c93953fd5906ca5f2a6ee18e31f988e70c9a87eb",
+      "current_instruction_sha256": "e021e42b094bcd927920db4d3a48763a79e0f7c10b347b66008a38383dd8f5ad",
       "evidence_sha256": {
         "evaluations/fixtures/native-batch10.json": "66dcc76e7c321bc9956032c2e355b0a19931faf86d6fb64fe4c1134b29bc5757",
         "evaluations/fixtures/native-batch10-repairs.json": "50bfdb97ebc429ee52e6aa3ac13bedee250c0c79ac68bd07133ac8bdf2a4d56c",
-        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab",
+        "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58"
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked"

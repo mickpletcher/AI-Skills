@@ -225,3 +225,8 @@ The [coverage matrix](../evaluations/native-coverage-2026-10-21.md) consolidates
 ## Controlled delivery comparison and seven-path assessment
 
 The [controlled wrapper comparison and seven reruns](../evaluations/native-batch13-2026-10-22.md) complete all 11 responses without a host load failure. Four official bounded paths close: architect security, n8n existing-flow review, blog final draft and example missing objective. Patent total/section10 word limits, food concise clarification and workout initial exact Copy boundary remain open. The [current matrix](../evaluations/native-coverage-2026-10-22.md) preserves 13 bounded acceptances and 23 pending human reviews; the [recommendation review](../evaluations/native-acceptance-review-2026-10-22.md) identifies 21 scopes ready for human review and two held, granting no acceptance. Candidates unchanged; PR remains draft without merging, installation or promotion.
+
+
+## Patent, food and workout delivery repairs
+
+The [delivery repairs](../evaluations/native-batch14-2026-10-22.md) pass bounded patent word limits (1114 total/289 section10), food two-sentence missing-image intake and workout initial/duplicate/corrected delivery with exact byte-zero Copy. Earlier failures remain retained. Final-byte supplied-label food and patent interview controls also pass after retained browser timeouts; no new acceptance. PR stays draft without merging, installation or promotion.

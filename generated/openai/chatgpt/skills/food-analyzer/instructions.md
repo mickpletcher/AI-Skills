@@ -59,7 +59,7 @@ Detect which mode applies from the visible input:
 | Comparison | Two foods, two labels, or two meals visible or described | Compare tradeoffs side by side before giving a recommendation |
 | History Review | Multiple prior meals or repeated food summaries provided | Find patterns across repeated analyses rather than analyzing one item only |
 
-If no image is attached and the request depends on visual inspection, ask for a photo before proceeding.
+If the request depends on an image that is not attached or usable, and the supplied text cannot support the requested analysis, stop before the analysis template. Return one short request that identifies the missing input, with at most one additional sentence if essential. For example: "Please upload the meal photo, or describe the food, ingredients and portions; no usable image or description was supplied." Adapt this request to the missing source. Omit a separate general nutrition disclaimer in this intake-only reply. Do not add nutrition tables, unknown-value inventories, formulas, report headings or execution checklists to this clarification. Do not invent image inspection or nutrition/allergen facts. This early return does not apply when a supplied label transcription or description already supports the task.
 
 ## Output Sections
 

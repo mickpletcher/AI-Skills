@@ -44,13 +44,25 @@ def validate(data, logged_total_minutes=None):
                 raise ValueError('Combined duration differs from the supplied whole-session total')
 
 
+def render_inline(data, logged_total_minutes=None):
+    validate(data, logged_total_minutes)
+    if not data.endswith(b'\n'):
+        raise ValueError('Canonical note must end with a newline before rendering')
+    return b'```text\n' + data + b'```\n'
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('note', type=Path)
     parser.add_argument('--logged-total-minutes')
+    parser.add_argument('--render-inline', action='store_true')
     args = parser.parse_args()
     try:
-        validate(args.note.read_bytes(), args.logged_total_minutes)
+        data = args.note.read_bytes()
+        validate(data, args.logged_total_minutes)
+        if args.render_inline:
+            sys.stdout.buffer.write(render_inline(data, args.logged_total_minutes))
+            return 0
     except (ValueError, OSError) as error:
         print(str(error), file=sys.stderr)
         return 2

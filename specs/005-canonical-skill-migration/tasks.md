@@ -318,3 +318,16 @@
 - [ ] Obtain explicit scoped human acceptance; no merging, installation or promotion.
 - [x] Validate the clean tracked evidence overlay: repository 46/zero issues, generator drift and offline 24/99 pass. Source CI on ab06c0b passes all 12 checks. Delivery CI tracked separately.
 - [x] Prepare concise PR review summary and retained-evidence links for publication with this delivery; keep PR draft.
+
+
+## Patent, food and workout delivery repairs
+
+- [x] Add read-only patent 14-section/word-limit validation and exact workout inline serialization with meaningful boundary regressions. Keep source hashes, versions, capabilities, placement and shipped packages unchanged; regenerate only existing review targets.
+- [x] Pin every revision and retain intermediate failures. Final patent package passes 1114/1200 total and 289/300 in section 10; food missing-image intake is two concise sentences. See the [assessment](../../evaluations/native-batch14-2026-10-22.md).
+- [x] Finish workout initial, duplicate and authorized correction native checks. Initial/corrected Copy each 290 exact bytes, byte-zero frontmatter, unchanged validator pass; duplicate asks overwrite/skip; corrected row with four sets preserves all other source data.
+- [x] Consolidate exact inputs/resources/Copy/UI hashes and current review recommendations without accepting new revisions or rewriting historical fixtures.
+- [x] Complete final-byte food supplied-label control. Later readback proves the original submission completed without resend; arithmetic and source boundaries pass.
+- [x] Run pinned final-byte patent interview control. One substantive mechanism question and all five boundaries pass. V1 controls remain historical only.
+- [ ] Obtain separate human review of repaired scopes. Keep repeated reliability, actual integrations, provider traces, other hosts/models/routing and all promotion gates open. PR stays draft; no merge or promotion.
+
+- [x] Final clean tracked validation passes all 117 regressions, repository 46 skills/zero issues, generator 807 files and offline 24 cases/99 negative checks. Source CI 12 checks green; delivery CI tracked against new commit.

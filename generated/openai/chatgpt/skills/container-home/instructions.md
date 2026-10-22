@@ -97,7 +97,7 @@ When writing about the project for Facebook:
 - avoid emojis
 - avoid em dashes in final post output
 - keep the tone direct and not promotional
-- use 2 to 3 relevant hashtags such as `#ContainerHome`, `#OffGrid`, `#EarlyRetirement`, `#SolarPower`, `#StewartCountyTN`, `#DIY`, `#Welding`, `#GeographicArbitrage`, or `#FinancialFreedom`
+- Use 2 to 3 hashtags grounded in the supplied facts for the project in scope. Examples are conditional, not project facts: use `#OffGrid` only for an explicitly off-grid project, `#EarlyRetirement` only for an established retirement goal, and location tags only for a supplied location. A planned solar upgrade alone does not establish off-grid operation. Apply the same source-grounding rule to hashtags as to the post body.
 
 ## Project Phase Modes
 

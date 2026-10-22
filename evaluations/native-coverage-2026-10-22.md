@@ -1,5 +1,7 @@
 # Current native coverage and acceptance matrix
 
+Latest: [home repair and preview Download](native-batch17-2026-10-22.md). Home original native rerun and unchanged workout Copy repeat remain OPEN due disconnected browser control. Normal Download file readback now passes for one retained JPEG; repeatability remains unverified. Recommendations stay 22 ready/one held, no new acceptance. The prior batch16 observations below are retained.
+
 Date: 2026-10-22. Basis `b504d5e`. PR #11 remains draft. No merge, installation or promotion.
 
 The [workout repair and four controls](native-batch16-2026-10-22.md) support 22 ready pending scopes and one held home scope. All 23 human reviews remain pending; thirteen historical bounded acceptances are unchanged. No new acceptance is granted.
@@ -9,7 +11,7 @@ Final workout initial/corrected Copy each 323 exact bytes pass byte-zero validat
 ## Remaining verification
 
 - Home update hashtag grounding and original-case rerun.
-- Repeated native Copy/Download reliability; conventional Download readback remains unverified despite exact viewer-byte JPEG retrieval.
+- Repeated native Copy/Download reliability; conventional Download readback now passes once in batch17, beyond earlier exact viewer-byte JPEG retrieval.
 - Real Obsidian ingestion/integrations, provider context/tool tracing, other hosts/models and installed routing.
 - Explicit human acceptance of pending scopes and the new workout revision. All promotion remains blocked.
 
@@ -34,7 +36,7 @@ See the [recommendations](native-acceptance-review-2026-10-22.md) and [machine-r
 | food-analyzer | Unchanged missing-image repeat remains two concise sentences; supplied-label arithmetic/control repeats pass. Real image recognition and health safety remain unverified. | Pending separate bounded native review | Image recognition, medication interactions and real nutrition safety unverified | [native-batch8](fixtures/native-batch8.json), [native-batch13](fixtures/native-batch13.json), [native-batch14](fixtures/native-batch14.json), [native-batch15](fixtures/native-batch15.json) |
 | github-readme | Repair and missing-context native cases pass | Pending separate bounded native review | Actual README installation/execution not certified | [native-batch11](fixtures/native-batch11.json) |
 | github-repo-architect | Defers production architecture, asks system/identity/secret-storage/approval/deployment/recovery/audit questions and rejects sticky-note authorization. No actual secrets requested or production readiness claimed. | Pending separate bounded native review | Full scaffold and deployed security unverified | [native-batch11](fixtures/native-batch11.json), [native-batch12](fixtures/native-batch12.json), [native-batch13](fixtures/native-batch13.json) |
-| github-social-preview | Supplied README preview and corrected overlap artifact pass Current-version original control passes in batch16. | Pending separate bounded native review | Broader assets/languages/layouts and provider tool trace unverified; Normal Download-button readback unverified; exact viewer-embedded JPEG bytes and layout verified. | [native-batch2](fixtures/native-batch2.json), [native-batch2-repairs](fixtures/native-batch2-repairs.json), [native-batch16](fixtures/native-batch16.json) |
+| github-social-preview | Supplied README preview and corrected overlap artifact pass Current-version original control passes in batch16. | Pending separate bounded native review | Broader assets/languages/layouts and provider tool trace unverified; Normal Download now verified once in batch17; repeatability unverified. Earlier exact viewer-embedded bytes and layout verified. | [native-batch2](fixtures/native-batch2.json), [native-batch2-repairs](fixtures/native-batch2-repairs.json), [native-batch16](fixtures/native-batch16.json) |
 | idea-forge | Both targeted native cases pass, including inspected artifact bytes | Pending separate bounded native review | Broader repositories and repeatability unverified | [native-batch3](fixtures/native-batch3.json) |
 | linkedin-post | Final grounded lesson and audience variants pass Current-version original control passes in batch16. | Pending separate bounded native review | Real publication and broader grounding reliability unverified | [native-batch5](fixtures/native-batch5.json), [native-batch5-grounding-repairs](fixtures/native-batch5-grounding-repairs.json), [native-batch16](fixtures/native-batch16.json) |
 | market-brief | Bounded supplied-source and unavailable-live-data cases pass | Pending separate bounded native review | Actual live retrieval and financial accuracy unverified | [native-batch9](fixtures/native-batch9.json) |

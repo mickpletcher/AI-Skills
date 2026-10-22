@@ -1,6 +1,6 @@
 {
   "assessment_date": "2026-10-22",
-  "basis_commit": "b504d5e0cb1cfff08b9934cc1f1aff3f41c1fd43",
+  "basis_commit": "8a9da02df51f532a8c00d152cd805118d64f01ea",
   "review_method": "Following batch15 scope review, batch16 runs four original current-version controls. Blog/LinkedIn/preview pass; home unsupported off-grid hashtag remains open. Final workout Copy passes one bounded case; human acceptance remains pending.",
   "summary": {
     "pending_native_reviews": 23,
@@ -72,18 +72,19 @@
       "skill": "container-home",
       "recommendation": "Hold complete current sampled scope; unsupported off-grid hashtag",
       "proposed_scope": "Source-faithful draft and corrected fictional planning isolation. No structural sizing, permit or construction approval.",
-      "recorded_outcome": "Current-version update preserves main facts but adds unsupported #OffGrid. Original sequence pass retained; complete current sampled scope remains held.",
+      "recorded_outcome": "Batch16 post preserves main facts but adds unsupported #OffGrid. Batch17 instruction repairs hashtag grounding; original native rerun not executed.",
       "open_limits": [
         "Historical context failure retained",
         "no structural/construction execution verified",
-        "Ground home-update hashtags only in supplied fictional facts; rerun the original update without unsupported #OffGrid."
+        "Original home update against repaired hashtag guidance not executed; native verification OPEN."
       ],
-      "current_instruction_sha256": "6bf41cea684fc22d0de08b41edca3b02588aae53b3c866d477bf08778086f313",
+      "current_instruction_sha256": "9213b51688403a89de76f938863458802b77e14b2b463d58e7560cec6166cb3d",
       "evidence_sha256": {
         "evaluations/fixtures/native-batch7.json": "44cbf258eb4de07595bb8589abb39c25ca4dd125b0c1a40c83f95cbd6d8b64f5",
         "evaluations/fixtures/native-batch7-repairs.json": "99271828d4f076425f5f812a7bf3992d9d748e25df2d3b00341a298fd95d15b1",
         "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37",
-        "evaluations/fixtures/native-batch16.json": "9f0907921ae9e30e1cb1c3fa63089da56a7c3730f8eef2f97ff12ebf0a56e665"
+        "evaluations/fixtures/native-batch16.json": "9f0907921ae9e30e1cb1c3fa63089da56a7c3730f8eef2f97ff12ebf0a56e665",
+        "evaluations/fixtures/native-batch17.json": "a64a35459b3c153546d29ba9d90b5c9b364c2d4ed3a98aed4d421ec676381617"
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
@@ -91,9 +92,10 @@
       "open_current_candidate_control": {
         "case_id": "home-update",
         "changed_resource": "instructions.md",
-        "next_action": "Ground home-update hashtags only in supplied fictional facts; rerun the original update without unsupported #OffGrid.",
-        "status": "OPEN_GROUNDING_GAP"
-      }
+        "next_action": "Rerun the original home update against repaired hashtag guidance once native browser control reconnects.",
+        "status": "OPEN_NOT_EXECUTED"
+      },
+      "batch17_verification": "Instruction repaired; original native rerun not executed. Earlier unsupported hashtag retained; current correctness unverified."
     },
     {
       "skill": "crypto-research",
@@ -221,18 +223,19 @@
     {
       "skill": "github-social-preview",
       "recommendation": "Ready for human review of bounded recorded scope",
-      "proposed_scope": "Current README fallback JPEG via exact viewer-embedded source and repaired long-title JPEG layout. Original overlap retained; normal Download delivery, other assets/layouts and full provider traces unverified.",
+      "proposed_scope": "Current README fallback JPEG with exact viewer and normal Download file readback, plus repaired long-title JPEG layout. Original overlap retained; repeatability, other assets/layouts and provider traces unverified.",
       "recorded_outcome": "Supplied README preview and corrected overlap artifact pass",
       "open_limits": [
         "Broader assets/languages/layouts and provider tool trace unverified",
-        "Normal Download-button file readback unverified; exact viewer-embedded JPEG retrieval verified instead."
+        "One retained JPEG normal Download verified in batch17; repeated fresh-generation/download reliability remains unverified."
       ],
       "current_instruction_sha256": "d9191b2630475265b9d8e75ce2652377f2644dd3e78818f31ef8cd76c65f5bce",
       "evidence_sha256": {
         "evaluations/fixtures/native-batch2.json": "29d4e00d49ad514cd60eab42f6ba4fdda002f3c1def4cc19c1596a7123a34400",
         "evaluations/fixtures/native-batch2-repairs.json": "920c943ae76b25235dfc2a21e27b2e196a7b8553ee082ba17b7f911082661fb1",
         "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37",
-        "evaluations/fixtures/native-batch16.json": "9f0907921ae9e30e1cb1c3fa63089da56a7c3730f8eef2f97ff12ebf0a56e665"
+        "evaluations/fixtures/native-batch16.json": "9f0907921ae9e30e1cb1c3fa63089da56a7c3730f8eef2f97ff12ebf0a56e665",
+        "evaluations/fixtures/native-batch17.json": "a64a35459b3c153546d29ba9d90b5c9b364c2d4ed3a98aed4d421ec676381617"
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
@@ -243,7 +246,8 @@
         "next_action": "Rerun original README fallback with current preview helper and inspect actual JPEG.",
         "status": "CLOSED_BOUNDED",
         "evidence": "evaluations/fixtures/native-batch16.json"
-      }
+      },
+      "batch17_verification": "Normal Download > JPG produced the exact 51053-byte previously verified JPEG; bounded file-delivery gap closed. Browser event wait timeout retained."
     },
     {
       "skill": "idea-forge",
@@ -449,5 +453,6 @@
       "promotion": "Blocked",
       "assistant_review": "Intake reconciliation and later static fragment review pass. Badge-priority discrepancy retained; full generated/rendered/mobile itinerary excluded."
     }
-  ]
+  ],
+  "batch17_summary": "Home hashtag instruction repaired; original native home rerun and unchanged workout repeat not executed due browser control. Normal preview Download actual JPEG verified. Human acceptance unchanged."
 }

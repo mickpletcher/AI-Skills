@@ -240,3 +240,8 @@ Reviewed all23 pending bounded scopes:19 current sampled scopes ready for human 
 ## Workout Copy repair and current controls
 
 Final workout native initial/corrected Copy passes 323-byte strict/YAML checks after retaining a failed indented attempt. Current blog/LinkedIn/preview controls pass; home unsupported #OffGrid remains open. Recommendations 22 ready/one held, no new acceptance. PR draft; no merge or promotion. See the [assessment](../evaluations/native-batch16-2026-10-22.md).
+
+
+## Home hashtags and native delivery follow-up
+
+Home hashtag source-grounding instruction repaired. Original home native rerun and unchanged workout Copy repeat remain open due disconnected browser control; neither prompt submitted. Normal preview Download produced an exact verified 51,053-byte JPEG. No new acceptance, merge or promotion; PR draft. See the [assessment](../evaluations/native-batch17-2026-10-22.md).

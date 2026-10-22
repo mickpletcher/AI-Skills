@@ -1,5 +1,7 @@
 # Pending native acceptance review
 
+Latest: [home repair and preview Download](native-batch17-2026-10-22.md). Home original native rerun and unchanged workout Copy repeat remain OPEN due disconnected browser control. Normal Download file readback now passes for one retained JPEG; repeatability remains unverified. Recommendations stay 22 ready/one held, no new acceptance. The prior batch16 observations below are retained.
+
 Date: 2026-10-22. Basis `b504d5e`. PR #11 remains draft. No merge, installation or promotion.
 
 All 23 pending scopes were reviewed in batch15. The [four current-version checks and workout repair](native-batch16-2026-10-22.md) now support 22 ready recorded scopes and one held: home update adds unsupported `#OffGrid`. All 23 human reviews remain pending; thirteen historical acceptances are unchanged. The new workout revision passes bounded initial/corrected Copy and still requires separate human review.
@@ -20,7 +22,7 @@ Actual fixture/resource hashes and limitations are in the [machine-readable revi
 | food-analyzer | Concise missing-image intake and supplied-label scaling. No image-recognition, medication or real nutrition-safety certification. |
 | github-readme | Supplied-source README draft and missing-context intake. No installation or execution certification. |
 | github-repo-architect | Synthetic blueprint and original security-prerequisite clarification. No full scaffold/deployment security or repeatability certification. |
-| github-social-preview | Current README fallback JPEG via exact viewer-embedded source and repaired long-title JPEG layout. Original overlap retained; normal Download delivery, other assets/layouts and full provider traces unverified. |
+| github-social-preview | Current README fallback JPEG via exact viewer-embedded source and repaired long-title JPEG layout. Original overlap retained; repeated fresh-generation/download reliability, other assets/layouts and full provider traces unverified. |
 | idea-forge | Bounded scoring and inspected disposable artifact with collision refusal. No real vault or general scoring calibration. |
 | linkedin-post | Corrected source-grounded technical lesson and audience variants. Original unsupported technology hashtag retained; no publication. |
 | market-brief | Supplied snapshot arithmetic and unavailable-live-data fallback. No current market accuracy or live retrieval. |
@@ -37,6 +39,6 @@ Actual fixture/resource hashes and limitations are in the [machine-readable revi
 
 | Skill | Remaining issue |
 | --- | --- |
-| container-home | Ground hashtags only in supplied fictional facts and rerun the original home update without unsupported `#OffGrid`. Earlier sequencing and main factual post content remain reviewable within their recorded limits. |
+| container-home | Hashtag instruction repaired; rerun the original home update once native browser control reconnects. Prior unsupported `#OffGrid` remains retained. Earlier sequencing and main factual post content remain reviewable within their recorded limits. |
 
 No acceptance is inferred from this report, successful CI or passing subsets. Broader limits remain open in the [coverage matrix](native-coverage-2026-10-22.md).

@@ -18,7 +18,8 @@
     "- Do not rewrite the project facts into a vague generic container-home answer": "- Preserve the supplied facts for the project in scope rather than replacing them with generic prose or historical facts about a different project.",
     "- Do not lose the off-grid and retirement-planning context": "- Preserve off-grid and retirement-planning context only when established for the project in scope; do not infer it for a fictional or different project.",
     "- [ ] Uses the actual current build and expansion facts": "- [ ] Uses the supplied build and expansion facts for the project in scope, with historical background kept separate from verified current status.",
-    "- [ ] Preserves the off-grid and retirement-planning context": "- [ ] Preserves off-grid and retirement-planning context when established for the project in scope, without importing unrelated historical details."
+    "- [ ] Preserves the off-grid and retirement-planning context": "- [ ] Preserves off-grid and retirement-planning context when established for the project in scope, without importing unrelated historical details.",
+    "- use 2 to 3 relevant hashtags such as `#ContainerHome`, `#OffGrid`, `#EarlyRetirement`, `#SolarPower`, `#StewartCountyTN`, `#DIY`, `#Welding`, `#GeographicArbitrage`, or `#FinancialFreedom`": "- Use 2 to 3 hashtags grounded in the supplied facts for the project in scope. Examples are conditional, not project facts: use `#OffGrid` only for an explicitly off-grid project, `#EarlyRetirement` only for an established retirement goal, and location tags only for a supplied location. A planned solar upgrade alone does not establish off-grid operation. Apply the same source-grounding rule to hashtags as to the post body."
   },
   "supporting_files_sha256": {},
   "retained_in_original_sha256": {

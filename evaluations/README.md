@@ -1,5 +1,7 @@
 # Behavioral evaluation framework
 
+Latest: [home repair and preview Download](native-batch17-2026-10-22.md). Home hashtag source-grounding instruction repaired. Original home native rerun and unchanged workout Copy repeat remain open due disconnected browser control; neither prompt submitted. Normal preview Download produced an exact verified 51,053-byte JPEG. No new acceptance, merge or promotion; PR draft.
+
 The [workout Copy repair and four current controls](native-batch16-2026-10-22.md) record this update. Final workout native initial/corrected Copy passes 323-byte strict/YAML checks after retaining a failed indented attempt. Current blog/LinkedIn/preview controls pass; home unsupported #OffGrid remains open. Recommendations 22 ready/one held, no new acceptance. PR draft; no merge or promotion.
 
 The [scope review and unchanged repeats](native-batch15-2026-10-22.md) record this update. Reviewed all23 pending bounded scopes:19 current sampled scopes ready for human review and four held for current-resource controls. Unchanged patent/food repeats pass; workout duplicate/content passes but exact initial/corrected Copy fails again. Both delivery paths reopened. No new acceptance or promotion; PR remains draft.

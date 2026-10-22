@@ -1,6 +1,6 @@
 {
   "assessment_date": "2026-10-22",
-  "basis_commit": "b504d5e0cb1cfff08b9934cc1f1aff3f41c1fd43",
+  "basis_commit": "8a9da02df51f532a8c00d152cd805118d64f01ea",
   "scope": "Current compiled review after batch16. Final workout Copy passes; blog/LinkedIn/preview current-version gaps close bounded. Home unsupported off-grid hashtag remains open; no new human acceptance.",
   "definitions": {
     "bounded_pass": "Only the recorded synthetic case and tested delivery path, not full skill/host/model compatibility.",
@@ -15,10 +15,10 @@
     "accepted_bounded_native_scopes": 13,
     "pending_bounded_native_review": 23,
     "candidate_promotions": 0,
-    "bounded_verification_paths_closed_this_round": 5,
-    "remaining_targeted_verification_paths": 1,
+    "bounded_verification_paths_closed_this_round": 1,
+    "remaining_targeted_verification_paths": 2,
     "new_human_acceptances": 0,
-    "remaining_targeted_paths_description": "Home update hashtag grounding. Repeated Copy/Download reliability, real integrations, other hosts/routing and human acceptance remain open.",
+    "remaining_targeted_paths_description": "Original home update against repaired hashtags and unchanged workout initial/corrected Copy repeat not executed. Broader reliability, integrations, other hosts/routing and human acceptance remain open.",
     "pending_scopes_ready_current_sampled": 22,
     "pending_scopes_held_current_sampled": 1
   },
@@ -148,21 +148,22 @@
     },
     {
       "skill": "container-home",
-      "native_outcome": "Current original update preserves main build facts but adds unsupported #OffGrid; current source-grounding verification OPEN. Earlier sequence pass retained.",
+      "native_outcome": "Prior batch16 post preserves main facts but adds unsupported #OffGrid. Current hashtag instruction repaired; original native rerun not executed, correctness OPEN.",
       "bounded_native_acceptance": "Pending separate bounded native review",
       "evidence": [
         "evaluations/fixtures/native-batch7.json",
         "evaluations/fixtures/native-batch7-repairs.json",
-        "evaluations/fixtures/native-batch16.json"
+        "evaluations/fixtures/native-batch16.json",
+        "evaluations/fixtures/native-batch17.json"
       ],
       "open_verification": [
         "Historical context failure retained",
         "no structural/construction execution verified",
-        "Home-update hashtags must be grounded in the fictional source; #OffGrid unsupported."
+        "Original home update against repaired hashtag guidance not executed; native verification OPEN."
       ],
       "acceptance_evidence": null,
       "retained_issue_history": "Historical project-context import retained; corrected isolation rerun passes.",
-      "current_chatgpt_instruction_sha256": "6bf41cea684fc22d0de08b41edca3b02588aae53b3c866d477bf08778086f313",
+      "current_chatgpt_instruction_sha256": "9213b51688403a89de76f938863458802b77e14b2b463d58e7560cec6166cb3d",
       "allowed_review_targets": [
         "claude",
         "chatgpt"
@@ -172,7 +173,8 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch7.json": "44cbf258eb4de07595bb8589abb39c25ca4dd125b0c1a40c83f95cbd6d8b64f5",
         "evaluations/fixtures/native-batch7-repairs.json": "99271828d4f076425f5f812a7bf3992d9d748e25df2d3b00341a298fd95d15b1",
-        "evaluations/fixtures/native-batch16.json": "9f0907921ae9e30e1cb1c3fa63089da56a7c3730f8eef2f97ff12ebf0a56e665"
+        "evaluations/fixtures/native-batch16.json": "9f0907921ae9e30e1cb1c3fa63089da56a7c3730f8eef2f97ff12ebf0a56e665",
+        "evaluations/fixtures/native-batch17.json": "a64a35459b3c153546d29ba9d90b5c9b364c2d4ed3a98aed4d421ec676381617"
       },
       "current_instruction_hash_present_in_selected_evidence": true,
       "scope_review_evidence": {
@@ -182,10 +184,11 @@
       "open_current_candidate_control": {
         "case_id": "home-update",
         "changed_resource": "instructions.md",
-        "next_action": "Ground hashtags and rerun the original fictional update.",
-        "status": "OPEN_GROUNDING_GAP"
+        "next_action": "Rerun the original home update against repaired hashtag guidance once native browser control reconnects.",
+        "status": "OPEN_NOT_EXECUTED"
       },
-      "latest_verification_result": "Main facts pass; hashtag grounding gap OPEN"
+      "latest_verification_result": "Main facts pass; hashtag grounding gap OPEN",
+      "batch17_verification": "Instruction repaired; original native rerun not executed. Earlier unsupported hashtag retained; current correctness unverified."
     },
     {
       "skill": "crypto-listings",
@@ -495,11 +498,12 @@
       "evidence": [
         "evaluations/fixtures/native-batch2.json",
         "evaluations/fixtures/native-batch2-repairs.json",
-        "evaluations/fixtures/native-batch16.json"
+        "evaluations/fixtures/native-batch16.json",
+        "evaluations/fixtures/native-batch17.json"
       ],
       "open_verification": [
         "Broader assets/languages/layouts and provider tool trace unverified",
-        "Normal Download-button readback unverified; exact viewer-embedded JPEG bytes and layout verified."
+        "One retained JPEG normal Download verified in batch17; repeated fresh-generation/download reliability remains unverified."
       ],
       "acceptance_evidence": null,
       "retained_issue_history": "Original label overlap retained; corrected artifact passes bounded checks.",
@@ -515,7 +519,8 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch2.json": "29d4e00d49ad514cd60eab42f6ba4fdda002f3c1def4cc19c1596a7123a34400",
         "evaluations/fixtures/native-batch2-repairs.json": "920c943ae76b25235dfc2a21e27b2e196a7b8553ee082ba17b7f911082661fb1",
-        "evaluations/fixtures/native-batch16.json": "9f0907921ae9e30e1cb1c3fa63089da56a7c3730f8eef2f97ff12ebf0a56e665"
+        "evaluations/fixtures/native-batch16.json": "9f0907921ae9e30e1cb1c3fa63089da56a7c3730f8eef2f97ff12ebf0a56e665",
+        "evaluations/fixtures/native-batch17.json": "a64a35459b3c153546d29ba9d90b5c9b364c2d4ed3a98aed4d421ec676381617"
       },
       "current_instruction_hash_present_in_selected_evidence": true,
       "scope_review_evidence": {
@@ -528,7 +533,8 @@
         "next_action": "Rerun original README fallback with current preview helper and inspect actual JPEG.",
         "status": "CLOSED_BOUNDED",
         "evidence": "evaluations/fixtures/native-batch16.json"
-      }
+      },
+      "batch17_verification": "Normal Download > JPG produced the exact 51053-byte previously verified JPEG; bounded file-delivery gap closed. Browser event wait timeout retained."
     },
     {
       "skill": "idea-forge",
@@ -674,7 +680,8 @@
         "evaluations/fixtures/native-batch13.json",
         "evaluations/fixtures/native-batch14.json",
         "evaluations/fixtures/native-batch15.json",
-        "evaluations/fixtures/native-batch16.json"
+        "evaluations/fixtures/native-batch16.json",
+        "evaluations/fixtures/native-batch17.json"
       ],
       "open_verification": [
         "Repeated initial/corrected native Copy reliability unverified",
@@ -695,11 +702,13 @@
         "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab",
         "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58",
         "evaluations/fixtures/native-batch15.json": "bd800307d0af259fac99a3e3d0b924734a97440018b203013b10d2ff34bf2c06",
-        "evaluations/fixtures/native-batch16.json": "9f0907921ae9e30e1cb1c3fa63089da56a7c3730f8eef2f97ff12ebf0a56e665"
+        "evaluations/fixtures/native-batch16.json": "9f0907921ae9e30e1cb1c3fa63089da56a7c3730f8eef2f97ff12ebf0a56e665",
+        "evaluations/fixtures/native-batch17.json": "a64a35459b3c153546d29ba9d90b5c9b364c2d4ed3a98aed4d421ec676381617"
       },
       "current_instruction_hash_present_in_selected_evidence": true,
       "latest_verification_result": "Initial/corrected Copy and duplicate protection bounded PASS; broader limits OPEN",
-      "current_revision_human_acceptance": "Pending; no new acceptance granted"
+      "current_revision_human_acceptance": "Pending; no new acceptance granted",
+      "batch17_verification": "Unchanged initial/duplicate/corrected workflow repeat pinned but not executed. Batch16 pass retained; repeated reliability open."
     },
     {
       "skill": "patentforge-provisional",
@@ -1128,5 +1137,6 @@
     "n8n existing-workflow review",
     "Blog final corrected draft",
     "Example missing objective"
-  ]
+  ],
+  "batch17_summary": "Home hashtag instruction repaired; original native home rerun and unchanged workout repeat not executed due browser control. Normal preview Download actual JPEG verified. Human acceptance unchanged."
 }

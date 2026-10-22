@@ -353,3 +353,14 @@
 - [x] Validate final candidate: 118 regressions, repository 46/zero issues, generator 807 files and offline 24 cases/99 negative checks pass. Generic validator's pre-existing version rejection remains unchanged. Delivery CI separate.
 - [ ] Ground home-update hashtags in supplied fictional facts and rerun the same original case.
 - [ ] Establish broader Copy/Download reliability, real integrations/Obsidian ingestion, other hosts/routing and provider traces. Keep human acceptance and all promotion gates open. PR draft; no merge or promotion.
+
+
+## Home hashtag and native delivery follow-up
+
+- [x] Ground home hashtags in supplied facts, make examples conditional and preserve original source metadata, versions, capabilities, placement and shipped packages. Regenerate existing review bundles only.
+- [x] Pin original home and unchanged workout inputs/criteria/wrappers/modes before attempted submission. Keep criteria outside uploads.
+- [x] Test retained preview normal Download > JPG; independently verify actual new Downloads file equals all 51,053 previously inspected JPEG bytes. Retain browser event timeout separately. See the [assessment](../../evaluations/native-batch17-2026-10-22.md).
+- [x] Validate final home candidate: 118 regressions in 240.963 seconds; repository/link overlay 46 skills/zero issues; generator 807 files; offline 24 cases/99 negatives. Generic baseline/current version-frontmatter limitation unchanged. Delivery CI separate.
+- [ ] Reconnect native browser control and run the original home update against repaired guidance. Current native verification remains open; no prompt submitted.
+- [ ] Run unchanged workout initial/duplicate/corrected repeat in a separate fresh Medium Temporary chat and inspect exact Copy without trimming. No repeat pass claimed.
+- [ ] Resolve broader reliability, real integrations, provider traces, other hosts/routing and explicit human acceptance. PR draft; no merge or promotion.

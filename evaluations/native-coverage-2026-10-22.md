@@ -51,4 +51,4 @@ The four bounded architect/n8n/blog/example closures from [batch13](native-batch
 | x-post | Final formatting/count repairs pass with earlier failures retained | Accepted only within recorded bounded scope | Real publication and repeated counting reliability unverified | [native-batch6](fixtures/native-batch6.json), [native-batch6-repairs](fixtures/native-batch6-repairs.json) |
 | x-reply | Bounded native-writing cases pass after retained corrections | Accepted only within recorded bounded scope | Broader reliability/hosts/models/routing remain unverified | [native-writing](fixtures/native-writing.json) |
 
-Candidate instruction bytes and placement are unchanged. Hash presence is provenance only, not proof every resource or behavior passed. No original failure/unassessed response is relabeled. All candidates remain blocked from promotion.
+Only the three repaired candidate instructions and their existing review bundles changed in this round. Placement is unchanged. Hash presence is provenance only, not proof every resource or behavior passed. No original failure/unassessed response is relabeled. All candidates remain blocked from promotion.

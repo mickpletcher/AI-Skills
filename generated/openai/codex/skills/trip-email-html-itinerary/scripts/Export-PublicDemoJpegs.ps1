@@ -14,6 +14,10 @@ param(
     [int]$Height = 1350
 )
 
+if ($PSVersionTable.PSEdition -eq 'Core' -and -not $IsWindows) {
+    throw 'Public demo JPEG export requires Windows, npx.cmd and System.Drawing. No output was created.'
+}
+
 $resolvedHtml = (Resolve-Path -LiteralPath $HtmlPath).Path
 $validator = Join-Path $PSScriptRoot 'Test-ItineraryHtml.ps1'
 $pwsh = (Get-Command pwsh -ErrorAction Stop).Source

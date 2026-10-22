@@ -207,6 +207,14 @@ function Register-ScheduledTask { $global:registered++; if ($args -contains '-Fo
         self.assertNotEqual(result.returncode, 0)
         self.assertEqual(html_path.read_text(encoding='utf-8'), html)
         exporter.write_text(real_exporter, encoding='utf-8')
+        if os.name != 'nt':
+            slides = self.root / 'unsupported-slides'
+            result = self.run_ps(f"& '{exporter.as_posix()}' -HtmlPath '{html_path.as_posix()}' -OutputDirectory '{slides.as_posix()}'")
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn('requires Windows', result.stderr)
+            self.assertFalse(slides.exists())
+            self.assertEqual(html_path.read_text(encoding='utf-8'), html)
+            return
         jpeg = self.root / 'synthetic.jpg'
         Image.effect_noise((1080, 1350), 100).convert('RGB').save(jpeg, quality=85)
         slides = self.root / 'slides'

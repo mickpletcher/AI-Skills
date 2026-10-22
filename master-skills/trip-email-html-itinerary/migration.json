@@ -48,8 +48,8 @@
       "reason": "Candidate-only public-demo output preservation correction. Original shipped hash retained; see evaluations/candidate-compatibility-2026-10-19.md."
     },
     "scripts/Export-PublicDemoJpegs.ps1": {
-      "sha256": "6255d933b11cbe56cec94c72579785890601a7c8ec791ef5e40c8e8228ddb55e",
-      "reason": "Candidate-only public-demo output preservation correction. Original shipped hash retained; see evaluations/candidate-compatibility-2026-10-19.md."
+      "sha256": "ed4c51d364afff5db1af177ca2e979749af74c4231916852f7eac85c1bcf8028",
+      "reason": "Candidate-only preservation correction and explicit Windows platform guard before output creation. Original shipped hash retained; Linux HTML building is tested separately from unsupported JPEG rendering. See evaluations/host-routing-integration-2026-10-22.md."
     }
   }
 }

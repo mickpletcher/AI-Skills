@@ -184,7 +184,7 @@
 - [x] Select blog-post, linkedin-post and astrophotography-processing from skills without targeted native records. Pin six fabricated cases, exact existing candidate resources and synthetic PNG/FITS inputs; keep criteria outside uploads.
 - [x] Execute seven fresh Instant conversations: six completed domain responses plus one retained unassessed LinkedIn host load failure. Its one fresh unchanged retry passes; no answer hints or duplicate blog submissions after browser control reset.
 - [x] Independently count drafts/variants (388/440/219/193/201 words), compare exact supplied code, inspect the synthetic preview and reconcile actual FITS headers/all three returned member hashes. Record four bounded passes and two source-grounding failures in the [assessment](../../evaluations/native-batch5-2026-10-21.md). No candidate changes.
-- [ ] Partial: candidate chronology/hashtag corrections are implemented and affected native tests rerun. LinkedIn passes; the intermediate blog still adds timing, and final blog verification remains unassessed after two Instant and one separate Medium host failures. Original failed outputs remain failed. See the correction continuation below.
+- [x] Candidate chronology/hashtag corrections implemented and affected native tests rerun. LinkedIn passes. The intermediate blog timing failure and subsequent host failures remain retained; the unchanged final blog passes bounded verification in native-batch13 on 2026-10-22. Separate human acceptance remains open.
 - [x] Complete clean tracked-byte validation: 108 regressions, generator drift, repository/PowerShell quality (46 skills, zero issues), exact-case folders and 24 offline cases/99 negative checks pass. Deliver seven review/tracking files through draft PR #11; hosted checks are tracked on the delivery commit.
 - [ ] Obtain separate bounded acceptance after reviewing this batch and its failed outputs. Keep workout initial delivery, broader hosts/models/routing, real astronomy processing and all earlier gates open. No merging, installation or promotion.
 
@@ -196,7 +196,8 @@
 - [x] Attempt final blog verification twice in Instant and once separately in Medium. Retain all three response-load failures as unassessed, preserve exact input pins, stop bounded retries and restore Instant. No host failure or static check is a native pass.
 - [x] Run all 108 regressions on both candidate revisions and final generator drift. Retain identical pre-existing version-frontmatter rejection in four baseline/corrected generic-validator pairs; intended-target checks remain separate.
 - [x] Complete final clean-snapshot repository/PowerShell quality (46 skills, zero issues), exact-case folders (35 skills), and 24 offline cases/99 negative checks. Deliver candidate corrections, exact provenance and retained native evidence through draft PR #11; hosted checks tracked on the delivery commit.
-- [ ] Verify final blog source fidelity/format when an assessable native response is available; obtain separate bounded human review. Keep workout initial delivery and all earlier gates open. No merge, install or promotion.
+- [x] Verify final blog source fidelity/format against an assessable unchanged native response in native-batch13 on 2026-10-22. Earlier failures remain unchanged.
+- [ ] Obtain separate bounded blog human review. Workout initial delivery and all other unresolved gates remain open. No merge, install or promotion.
 
 - [x] Rerun the unchanged final blog candidate in two fresh Instant chats with identical packet/resource hashes. Retain both blank completed responses as unassessed delivery failures; no draft is available and final verification remains open.
 - [x] Check hosted CI on a51fd90: all five workflows completed successfully; eleven checks succeeded and helpers retains inconsistent in-progress status despite successful workflow/steps. PR remains draft and workout initial delivery remains open.
@@ -221,7 +222,7 @@
 - [x] Execute six fresh Instant Temporary chats without retries. Verify complete native copies, exact 3.55/5 rubric arithmetic, 100=70+30 domains and 12-2=10 trim inventory. Retain three bounded passes, two n8n policy/test-matrix inconsistencies and one home source-scope failure. See the [assessment](../../evaluations/native-batch7-2026-10-21.md).
 - [x] Correct n8n retry-policy/test consistency and rerun both original native cases. The design now gives the lost-response case one attempt/no retry. Existing-workflow review returns two Instant and one separate Medium host failures; keep those unassessed and restore Instant. See the [repair assessment](../../evaluations/native-batch7-repairs-2026-10-21.md).
 - [x] Correct fictional/alternate-project isolation and aligned constraints/checklist in container-home. Its unchanged fresh Instant retry preserves supplied data/gates and omits historical location, retirement/solo history and extra structures; retain its primary host failure.
-- [ ] Verify corrected n8n existing-workflow review against an assessable native response. Design-case/static passes and the separate failed Medium attempt do not close this gate.
+- [x] Verify corrected n8n existing-workflow review against an assessable unchanged Instant response in native-batch13 on 2026-10-22. Original policy failures and unassessed attempts remain unchanged; no engine execution certified.
 - [ ] Obtain separate bounded seventh-batch acceptance after reviewing retained failures. Keep blog verification, workout initial delivery, broader native coverage and all promotion gates open. No merge, installation or promotion.
 
 - [x] Validate the unchanged-candidate evidence overlay in a clean tracked snapshot: repository/PowerShell quality (46 skills, zero issues), exact-case folders (35 skills), generator drift and 24 offline cases/99 negative checks pass. Deliver only nine review/tracking files through draft PR #11.
@@ -288,7 +289,7 @@
 - [x] Select the foundation trio with prior CLI/tool/Linux coverage but no targeted ChatGPT native packet records. Pin six synthetic tasks/sources/candidates and keep external criteria outside uploads.
 - [x] Run six fresh Instant Temporary chats plus one identical architect-security retry. Five bounded passes and two unassessed host errors retained. See the [assessment](../../evaluations/native-batch11-2026-10-21.md).
 - [x] Independently verify all pins, README artifact license placement, naming-only diff/count and local toy PowerShell arithmetic/pipeline/WhatIf/Confirm behavior. Native analyzer/tests remain unexecuted; no real removal or infrastructure action.
-- [ ] Obtain an assessable Repository Architect native security-prerequisite response against the unchanged candidate and original case. Both bounded attempts returned host errors.
+- [x] Obtain an assessable Repository Architect native security-prerequisite response against the unchanged candidate and original case in native-batch13 on 2026-10-22. Original host failures remain unassessed; close only bounded clarification verification.
 - [ ] Obtain separate bounded eleventh-batch human review. Keep patent/food/n8n/blog verification, workout initial delivery, earlier unaccepted scopes and all promotion gates open. PR remains draft; no merge, installation or promotion.
 - [x] Validate the clean tracked evidence overlay: repository 46 skills/zero issues, generator drift and offline 24 cases/99 negative checks pass; zero offline model evaluations. Delivery CI checked separately.
 
@@ -300,6 +301,20 @@
 - [x] Run the pre-pinned four-cell inline/upload short/full-packet diagnostic, one attempt per cell without retries. Inline canary and both full-packet cells complete; short upload fails to load. Restore long inline text from automatic pasted-attachment conversion before Send. Neutral diagnostic wrapper differs from the official wrapper; no causal root cause or gate closure claimed.
 - [x] Run both example-skill cases with unchanged candidate instructions. Three-step plan/verification passes 2/2/2; missing-objective case returns a host response-load error and remains unassessed. No retry or false acceptance.
 - [x] Verify all five source CI workflows and twelve checks pass on d6a3949. Keep all six existing architect/patent/food/n8n/blog/workout verification or delivery issues open; no candidate, placement, merge, installation or promotion change.
-- [ ] Obtain an assessable example-skill missing-objective native response. Diagnostic successes do not close official security verification or any existing gate.
+- [x] Obtain an assessable unchanged example-skill missing-objective native response in native-batch13 on 2026-10-22. Original host failure remains unassessed; diagnostic successes alone close no official gate.
 - [ ] Review pending bounded native acceptance scopes separately. Do not infer acceptance from this matrix or diagnostic work.
 - [x] Validate the clean tracked eight-file matrix/evidence overlay: repository 46 skills/zero issues, generator drift and offline 24 cases/99 negative checks pass. Independently confirm 36 unique rows, 13 scoped acceptances/23 pending reviews and zero promotions; delivery CI separate.
+
+## Controlled delivery comparison and seven-path assessment
+
+- [x] Verify all twelve CI checks pass on ab06c0b and PR #11 remains draft.
+- [x] Pin fixed architect packet/upload/Instant conditions and original/neutral/neutral/original wrappers. All four diagnostic responses complete; no cause or repeated reliability established. Preserve timed-out-click readback and authentication interruption without resubmission.
+- [x] Pin and rerun all seven original cases without candidate changes, feedback, regeneration or retries. Preserve workout's original Medium/files wrapper and two uploads; other cases use Instant. See the [assessment](../../evaluations/native-batch13-2026-10-22.md).
+- [x] Independently assess complete responses and close only bounded architect security, n8n existing-workflow review, blog final draft and example missing-objective verification. Original failures remain unchanged; no human acceptance inferred.
+- [ ] Resolve patent delivery word limits: all 14 sections now arrive, but total 1409 and section10 prose 342 exceed 1200/300.
+- [ ] Resolve food missing-image response scope: grounding works, but 296-word report does not meet concise clarification criterion.
+- [ ] Resolve workout initial native Copy boundary: correct first-response note arrives, but exact 325-byte Copy starts with a blank line and fails validation. No normalization or recovery counted as a pass.
+- [x] Review all 23 pending native acceptance scopes with current instruction/evidence hash equality. Recommend 21 bounded scopes for human review and hold two incomplete scopes. Preserve 13 earlier acceptances; grant none new.
+- [ ] Obtain explicit scoped human acceptance; no merging, installation or promotion.
+- [x] Validate the clean tracked evidence overlay: repository 46/zero issues, generator drift and offline 24/99 pass. Source CI on ab06c0b passes all 12 checks. Delivery CI tracked separately.
+- [x] Prepare concise PR review summary and retained-evidence links for publication with this delivery; keep PR draft.

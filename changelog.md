@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Recorded four controlled delivery diagnostics and seven native reruns. Four bounded verification paths close; patent word limits, food clarification scope and workout initial Copy boundary remain open. Reviewed all 23 pending scopes without new acceptance; candidates unchanged and PR draft.
+
 - Consolidated native coverage for all 36 candidates without new acceptance or promotion. Ran four bounded inline/upload delivery diagnostics and two example-skill cases: mixed diagnostic delivery, one bounded plan pass and one unassessed missing-objective host failure. Existing verification/delivery gates stay open; candidates unchanged and PR draft.
 
 - Recorded the unchanged architect security native continuation and green CI on 6e6d0ca. The unchanged architect security-prerequisite continuation returns another host response-load error and remains unassessed. Verification stays open; no further retry. Patent/food/n8n/blog verification and workout initial delivery remain open; PR stays draft without merging or promotion.

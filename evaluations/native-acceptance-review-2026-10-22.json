@@ -1,0 +1,370 @@
+{
+  "assessment_date": "2026-10-22",
+  "basis_commit": "ab06c0b026adff1030ae502e3e559c2aba957fc4",
+  "review_method": "Reviewed selected fixture results, later repair/continuation records, historical failures, scope limitations and current instruction/evidence hash equality. This is a review recommendation, not a fresh replay of every retained raw artifact or a new human acceptance. Pending official reruns are recorded separately in native-batch13.",
+  "summary": {
+    "pending_native_reviews": 23,
+    "ready_for_scoped_human_review": 21,
+    "hold_complete_sampled_scope": 2,
+    "new_human_acceptances": 0,
+    "promotions": 0
+  },
+  "rows": [
+    {
+      "skill": "alpaca-trading",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Synthetic repository review and missing-repository intake, including remaining-fill accounting and Spec-context requests. No live broker or runtime certification.",
+      "recorded_outcome": "Two affected native cases pass after coverage correction",
+      "open_limits": [],
+      "current_instruction_sha256": "adc3d4a8f85daa53a5055ebe9058b654f6429821ad75823ac695119c050c82be",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch10-repairs.json": "50bfdb97ebc429ee52e6aa3ac13bedee250c0c79ac68bd07133ac8bdf2a4d56c"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "astrophotography-processing",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Supplied preview diagnosis and fabricated FITS metadata/source review. No full processing or real capture validation.",
+      "recorded_outcome": "Preview diagnosis and supplied FITS metadata/source cases pass",
+      "open_limits": [
+        "Full processing and real capture data remain unverified"
+      ],
+      "current_instruction_sha256": "94ec01c49490925be7d2c82c9280e7a4c490c56ee3c27e4b3f2e83cc429d453e",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch5.json": "d573584f138afb0fbde2112ff6f3946575f94125e9f200f313cd44ea5de5e43a"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "blog-post",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Source-faithful how-to and final corrected attribution draft including title/opening variants. No publication or broader grounding reliability.",
+      "recorded_outcome": "Main draft fits the requested range after Markdown markers are excluded, including 429 prose words. Two title/first-sentence alternatives preserve teammate implementation/testing and reviewer-only attribution, no unsupported review/test ordering, exact two fixtures and production untouched.",
+      "open_limits": [],
+      "current_instruction_sha256": "f1964a2fc5820d132d190d518c08c2a3ee4afeb672d6acf6635cb11bb6c9e9d8",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch5.json": "d573584f138afb0fbde2112ff6f3946575f94125e9f200f313cd44ea5de5e43a",
+        "evaluations/fixtures/native-batch5-grounding-repairs.json": "afc25aca0f59d623ddf89c7560859363cd545ea79313f9cf678984979fb25558",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "container-home",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Source-faithful draft and corrected fictional planning isolation. No structural sizing, permit or construction approval.",
+      "recorded_outcome": "Source-specific build post and corrected isolation case pass",
+      "open_limits": [
+        "Historical context failure retained",
+        "no structural/construction execution verified"
+      ],
+      "current_instruction_sha256": "6bf41cea684fc22d0de08b41edca3b02588aae53b3c866d477bf08778086f313",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch7.json": "44cbf258eb4de07595bb8589abb39c25ca4dd125b0c1a40c83f95cbd6d8b64f5",
+        "evaluations/fixtures/native-batch7-repairs.json": "99271828d4f076425f5f812a7bf3992d9d748e25df2d3b00341a298fd95d15b1"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "crypto-research",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Supplied-source comparison and ambiguous-token/missing-live-data clarification. No live financial verification.",
+      "recorded_outcome": "Bounded supplied-source and unavailable-live-data cases pass",
+      "open_limits": [
+        "Actual live retrieval and financial accuracy unverified"
+      ],
+      "current_instruction_sha256": "04648eeb071bdde377b4302b8c4aa362d213595399be9be4fb5a3b3eb6f9a43b",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch9.json": "15c753187d680509705a67c35ae4ec30794a6ef31af0623cfddd2c3c773a0bfa"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "example-skill",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Synthetic three-step plan/verification and short missing-objective clarification. No execution or installed routing.",
+      "recorded_outcome": "Short clarification asks the objective before any plan, avoids private/history assumptions and makes no task-completion or external-action claim.",
+      "open_limits": [],
+      "current_instruction_sha256": "27ab3f44b3655f391d38982e8fd1e3c9c8bafb83391484dd5bd0ba73d5abdd5f",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch12.json": "58d1cea6eb1dfad0e203c4d30f22aaece1835317b89219bd95e01ecec16e6b0f",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "fitness-log",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Synthetic weekly arithmetic and separate assisted/strict benchmark interpretation. No persistent tracker or real athlete assessment.",
+      "recorded_outcome": "Bounded synthetic text cases pass",
+      "open_limits": [
+        "Real personal data and broader reliability unverified"
+      ],
+      "current_instruction_sha256": "dafab63fef651692fa7d65bb5eecfe009adb8079ad038cb8a597fd6ae9d1c317",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch8.json": "6cd6e3dc0216f186f3f24e1dbc70c64eb2ee5875e1e7a64999dac357cb88f8d3"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "fitness-programming",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Synthetic schedule/equipment-constrained plan and single-variable adjustment. No training outcome or medical validation.",
+      "recorded_outcome": "Bounded synthetic text cases pass",
+      "open_limits": [
+        "Real personal data and broader reliability unverified"
+      ],
+      "current_instruction_sha256": "c21b94e6d0c8551a38e47979cf28db3c15633e72e24fbd4738418339c55e26b2",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch8.json": "6cd6e3dc0216f186f3f24e1dbc70c64eb2ee5875e1e7a64999dac357cb88f8d3"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "food-analyzer",
+      "recommendation": "Hold complete sampled scope pending open-path evidence",
+      "proposed_scope": "Only completed case subsets may be reviewed; do not accept the unresolved path.",
+      "recorded_outcome": "Recognizes absent image and requests actual photo without invented nutrition/allergen/history facts. However, a 296-word report, nutrition table, formula and execution checklist fail the concise missing-input criterion. Verification remains open for response scope.",
+      "open_limits": [
+        "Concise missing-image clarification verification OPEN; missing-input grounding now observed"
+      ],
+      "current_instruction_sha256": "8eab91b80173f0a9d015dffa1277a149e9cfa4c97a3a98aef93d3f56b3c8d38e",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch8.json": "6cd6e3dc0216f186f3f24e1dbc70c64eb2ee5875e1e7a64999dac357cb88f8d3",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "github-readme",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Supplied-source README draft and missing-context intake. No installation or execution certification.",
+      "recorded_outcome": "Repair and missing-context native cases pass",
+      "open_limits": [
+        "Actual README installation/execution not certified"
+      ],
+      "current_instruction_sha256": "1d1dfdc705bec8cce3c68c28d221beb92fb9674b9d7502a15edf9986e3d72fdb",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch11.json": "0dafa38f5708f642ca8b9c7e555469c86a6f8dfc0c97752ad132bc319fb8073d"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "github-repo-architect",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Synthetic blueprint and original security-prerequisite clarification. No full scaffold/deployment security or repeatability certification.",
+      "recorded_outcome": "Defers production architecture, asks system/identity/secret-storage/approval/deployment/recovery/audit questions and rejects sticky-note authorization. No actual secrets requested or production readiness claimed.",
+      "open_limits": [
+        "Full scaffold and deployed security unverified"
+      ],
+      "current_instruction_sha256": "2b88aa12a9479c9183a1817b7d55453f344c9ac051736caca910d6259ea93f08",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch11.json": "0dafa38f5708f642ca8b9c7e555469c86a6f8dfc0c97752ad132bc319fb8073d",
+        "evaluations/fixtures/native-batch12.json": "58d1cea6eb1dfad0e203c4d30f22aaece1835317b89219bd95e01ecec16e6b0f",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "github-social-preview",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Actual supplied-README JPEG and repaired long-title JPEG dimensions/layout. Original overlap retained; other assets/layouts untested.",
+      "recorded_outcome": "Supplied README preview and corrected overlap artifact pass",
+      "open_limits": [
+        "Broader assets/languages/layouts and provider tool trace unverified"
+      ],
+      "current_instruction_sha256": "d9191b2630475265b9d8e75ce2652377f2644dd3e78818f31ef8cd76c65f5bce",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch2.json": "29d4e00d49ad514cd60eab42f6ba4fdda002f3c1def4cc19c1596a7123a34400",
+        "evaluations/fixtures/native-batch2-repairs.json": "920c943ae76b25235dfc2a21e27b2e196a7b8553ee082ba17b7f911082661fb1"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "idea-forge",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Bounded scoring and inspected disposable artifact with collision refusal. No real vault or general scoring calibration.",
+      "recorded_outcome": "Both targeted native cases pass, including inspected artifact bytes",
+      "open_limits": [
+        "Broader repositories and repeatability unverified"
+      ],
+      "current_instruction_sha256": "2a5320526756a476efe687b8c1259dc7fca12dffaa54de383d20ed213a9a0608",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch3.json": "43cc402d4633e3d5c420dca7933713fa9ef51268f58ee9db690e213fb45b59f6"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "linkedin-post",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Corrected source-grounded technical lesson and audience variants. Original unsupported technology hashtag retained; no publication.",
+      "recorded_outcome": "Final grounded lesson and audience variants pass",
+      "open_limits": [
+        "Real publication and broader grounding reliability unverified"
+      ],
+      "current_instruction_sha256": "c204c9587f8255cb83fc97973fbbfe2a5ad540632b423410b18e1b930854e917",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch5.json": "d573584f138afb0fbde2112ff6f3946575f94125e9f200f313cd44ea5de5e43a",
+        "evaluations/fixtures/native-batch5-grounding-repairs.json": "afc25aca0f59d623ddf89c7560859363cd545ea79313f9cf678984979fb25558"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "market-brief",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Supplied snapshot arithmetic and unavailable-live-data fallback. No current market accuracy or live retrieval.",
+      "recorded_outcome": "Bounded supplied-source and unavailable-live-data cases pass",
+      "open_limits": [
+        "Actual live retrieval and financial accuracy unverified"
+      ],
+      "current_instruction_sha256": "3b1786c48aa639157fb5c7662b2513d0121ef4ffadcedc076ff1bce58911fe01",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch9.json": "15c753187d680509705a67c35ae4ec30794a6ef31af0623cfddd2c3c773a0bfa"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "n8n-workflow",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Corrected new-workflow proposal and existing-flow static review, including selective retry consistency. No live n8n execution or version compatibility.",
+      "recorded_outcome": "Prioritized seven findings and minimal fixes; only429/503 retries with three-total-attempt ceiling, lost response/transport error one uncertain attempt, explicit failure branch, no guaranteed Error Trigger or false201. No runtime/deployment/notification claim.",
+      "open_limits": [
+        "Actual n8n execution unverified"
+      ],
+      "current_instruction_sha256": "e530a0ca20676492339385fe40f8b1f80acb56e3a3cabcf6c629a2557de6909a",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch7.json": "44cbf258eb4de07595bb8589abb39c25ca4dd125b0c1a40c83f95cbd6d8b64f5",
+        "evaluations/fixtures/native-batch7-repairs.json": "99271828d4f076425f5f812a7bf3992d9d748e25df2d3b00341a298fd95d15b1",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "patentforge-provisional",
+      "recommendation": "Hold complete sampled scope pending open-path evidence",
+      "proposed_scope": "Only completed case subsets may be reviewed; do not accept the unresolved path.",
+      "recorded_outcome": "All 14 sections and five upfront disclaimer points delivered, with source-grounded mechanism, suggested confidentiality replacements and search-only strategy. Delivery exceeds the candidate 1200-word total and 300-word section-10 limits; verification remains open.",
+      "open_limits": [
+        "Patent delivery word limits OPEN; all14 sections now delivered",
+        "Legal accuracy and filing readiness not certified"
+      ],
+      "current_instruction_sha256": "eb1e3628cfe1fd25e2d9d8f5c93953fd5906ca5f2a6ee18e31f988e70c9a87eb",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch10.json": "66dcc76e7c321bc9956032c2e355b0a19931faf86d6fb64fe4c1134b29bc5757",
+        "evaluations/fixtures/native-batch10-repairs.json": "50bfdb97ebc429ee52e6aa3ac13bedee250c0c79ac68bd07133ac8bdf2a4d56c",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "photo-rename",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Preview/copy retry and actual downloaded three-JPEG ZIP hashes/EXIF/extensions/mapping. Phone and repeated delivery excluded.",
+      "recorded_outcome": "Bounded native preview/copy retry and saved ZIP hashes pass",
+      "open_limits": [
+        "Phone/integration checks deferred",
+        "Broader EXIF handling/provider trace and repeated download delivery unverified"
+      ],
+      "current_instruction_sha256": "ce117b397aa78d03f5e9930495bb3e7b341679e15fe9c115962ab57e17dbb321",
+      "evidence_sha256": {
+        "evaluations/fixtures/photo-native.json": "4fdc246850c440b047c6f1f16a66116847e337fbf5600d289348776e578c344d"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "pihole-blocklist",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Supplied subset Skip and offline rubric arithmetic. No live source approval, DNS behavior or policy change.",
+      "recorded_outcome": "Bounded supplied subset/Skip and offline rubric cases pass",
+      "open_limits": [
+        "Actual DNS/policy behavior unverified"
+      ],
+      "current_instruction_sha256": "ead3bf088c1982a5d8ca5c67576ae767ebc5cbdff645861c4c75ff4cf80ad3e4",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch7.json": "44cbf258eb4de07595bb8589abb39c25ca4dd125b0c1a40c83f95cbd6d8b64f5"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "pihole-csv-analyzer",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Synthetic counts/malformed aggregates and inspected comment-only/empty review ZIPs. No production DNS or device identification.",
+      "recorded_outcome": "Two native cases and actual review-only ZIP contents pass",
+      "open_limits": [
+        "Real DNS data, device identification and policy changes unverified"
+      ],
+      "current_instruction_sha256": "ad56f3f906a604d2a65ed143c16abd69e43f0f202de90216efcb90d441450d08",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch2.json": "29d4e00d49ad514cd60eab42f6ba4fdda002f3c1def4cc19c1596a7123a34400"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "powershell-refactor",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Native deduplication/naming proposals and separately identified local toy replay. No native Pester/analyzer certification.",
+      "recorded_outcome": "Deduplication and naming-only native proposals pass with separate toy replay",
+      "open_limits": [
+        "Native Pester/analyzer execution and broader repository behavior unverified"
+      ],
+      "current_instruction_sha256": "01d368ee5bdcfb9ebf6ba96829bcb8bccc650a0973e747ea81d166fe441f86cb",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch11.json": "0dafa38f5708f642ca8b9c7e555469c86a6f8dfc0c97752ad132bc319fb8073d"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "spec-writer",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Two inspected disposable planning artifact cases with existing-file preservation/reuse. No broader implementation or repository certification.",
+      "recorded_outcome": "Both targeted native cases pass, including inspected artifact bytes",
+      "open_limits": [
+        "Broader repositories and repeatability unverified"
+      ],
+      "current_instruction_sha256": "53746b69a96ea2eb856250f47c8c793fc419cdbb536fe643e15ff6567271f7ef",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch3.json": "43cc402d4633e3d5c420dca7933713fa9ef51268f58ee9db690e213fb45b59f6"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    },
+    {
+      "skill": "trip-email-html-itinerary",
+      "recommendation": "Ready for human review of bounded recorded scope",
+      "proposed_scope": "Intake and static fragment review. Priority badge discrepancy retained; full HTML generation/rendering/mobile/print excluded.",
+      "recorded_outcome": "Intake retry and unchanged static fragment review pass",
+      "open_limits": [
+        "Full HTML generation/rendering/mobile/print and real travel sources unverified"
+      ],
+      "current_instruction_sha256": "f85733b6353c38844a9283667110082b4908443928176563c9ebd77036d3083b",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch10.json": "66dcc76e7c321bc9956032c2e355b0a19931faf86d6fb64fe4c1134b29bc5757",
+        "evaluations/fixtures/native-batch10-repairs.json": "50bfdb97ebc429ee52e6aa3ac13bedee250c0c79ac68bd07133ac8bdf2a4d56c"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked"
+    }
+  ]
+}

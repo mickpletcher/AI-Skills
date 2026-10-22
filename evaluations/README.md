@@ -1,5 +1,7 @@
 # Behavioral evaluation framework
 
+Latest [host, routing and integration tests](host-routing-integration-2026-10-22.md): 12 Codex candidates loaded across scoped cases, three independently checked file integrations, and passing Linux/Windows helper CI after an explicit unsupported-JPEG guard. Original native results and 22-ready/one-held acceptance recommendations remain unchanged. Native Claude/Cursor, ChatGPT reruns, repeatability and real app/service integrations stay open.
+
 Latest: [home repair and preview Download](native-batch17-2026-10-22.md). Home hashtag source-grounding instruction repaired. Original home native rerun and unchanged workout Copy repeat remain open due disconnected browser control; neither prompt submitted. Normal preview Download produced an exact verified 51,053-byte JPEG. No new acceptance, merge or promotion; PR draft.
 
 The [workout Copy repair and four current controls](native-batch16-2026-10-22.md) record this update. Final workout native initial/corrected Copy passes 323-byte strict/YAML checks after retaining a failed indented attempt. Current blog/LinkedIn/preview controls pass; home unsupported #OffGrid remains open. Recommendations 22 ready/one held, no new acceptance. PR draft; no merge or promotion.

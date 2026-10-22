@@ -1,5 +1,7 @@
 # Current native coverage and acceptance matrix
 
+Latest [host, routing and integration tests](host-routing-integration-2026-10-22.md): 12 Codex candidates loaded across scoped cases, three independently checked file integrations, and passing Linux/Windows helper CI after an explicit unsupported-JPEG guard. Original native results and 22-ready/one-held acceptance recommendations remain unchanged. Native Claude/Cursor, ChatGPT reruns, repeatability and real app/service integrations stay open.
+
 Latest: [home repair and preview Download](native-batch17-2026-10-22.md). Home original native rerun and unchanged workout Copy repeat remain OPEN due disconnected browser control. Normal Download file readback now passes for one retained JPEG; repeatability remains unverified. Recommendations stay 22 ready/one held, no new acceptance. The prior batch16 observations below are retained.
 
 Date: 2026-10-22. Basis `b504d5e`. PR #11 remains draft. No merge, installation or promotion.

@@ -245,3 +245,8 @@ Final workout native initial/corrected Copy passes 323-byte strict/YAML checks a
 ## Home hashtags and native delivery follow-up
 
 Home hashtag source-grounding instruction repaired. Original home native rerun and unchanged workout Copy repeat remain open due disconnected browser control; neither prompt submitted. Normal preview Download produced an exact verified 51,053-byte JPEG. No new acceptance, merge or promotion; PR draft. See the [assessment](../evaluations/native-batch17-2026-10-22.md).
+
+
+## Broader host, routing and integration tests
+
+Latest [host, routing and integration tests](../evaluations/host-routing-integration-2026-10-22.md): 12 Codex candidates loaded across scoped cases, three independently checked file integrations, and passing Linux/Windows helper CI after an explicit unsupported-JPEG guard. Original native results and 22-ready/one-held acceptance recommendations remain unchanged. Native Claude/Cursor, ChatGPT reruns, repeatability and real app/service integrations stay open. Candidate-only JPEG helper now refuses unsupported non-Windows execution before output creation; no placement or source-version change.

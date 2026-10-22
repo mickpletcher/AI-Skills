@@ -1,7 +1,7 @@
 {
   "assessment_date": "2026-10-22",
-  "basis_commit": "8a9da02df51f532a8c00d152cd805118d64f01ea",
-  "scope": "Current compiled review after batch16. Final workout Copy passes; blog/LinkedIn/preview current-version gaps close bounded. Home unsupported off-grid hashtag remains open; no new human acceptance.",
+  "basis_commit": "6ef2148d4dccbcd175661f01d2e6b5444185a835",
+  "scope": "Compiled historical native scopes with separate bounded host18 routing/file/helper evidence. Home/workout reruns and broader host/integration limits remain open; no new human acceptance.",
   "definitions": {
     "bounded_pass": "Only the recorded synthetic case and tested delivery path, not full skill/host/model compatibility.",
     "unassessed": "No assessable domain response; not pass or a proven candidate defect.",
@@ -49,7 +49,18 @@
       "scope_review_evidence": {
         "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
       },
-      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-alpaca-scoped"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "astrophotography-processing",
@@ -278,7 +289,18 @@
       "scope_review_evidence": {
         "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
       },
-      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-example-skill"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "facebook-post",
@@ -448,7 +470,19 @@
       "scope_review_evidence": {
         "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
       },
-      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-github-readme",
+          "integration-readme"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "github-repo-architect",
@@ -489,7 +523,18 @@
       "scope_review_evidence": {
         "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
       },
-      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-github-repo-architect"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "github-social-preview",
@@ -534,7 +579,18 @@
         "status": "CLOSED_BOUNDED",
         "evidence": "evaluations/fixtures/native-batch16.json"
       },
-      "batch17_verification": "Normal Download > JPG produced the exact 51053-byte previously verified JPEG; bounded file-delivery gap closed. Browser event wait timeout retained."
+      "batch17_verification": "Normal Download > JPG produced the exact 51053-byte previously verified JPEG; bounded file-delivery gap closed. Browser event wait timeout retained.",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-github-social-preview"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "idea-forge",
@@ -669,7 +725,19 @@
       "scope_review_evidence": {
         "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
       },
-      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-n8n-workflow",
+          "route-n8n-supplied"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "obsidian-workout-export",
@@ -805,7 +873,18 @@
       "scope_review_evidence": {
         "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
       },
-      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-pihole-blocklist"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "pihole-csv-analyzer",
@@ -835,7 +914,20 @@
       "scope_review_evidence": {
         "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
       },
-      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-pihole-csv-analyzer",
+          "route-pihole-boundary",
+          "integration-pihole"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "powershell-refactor",
@@ -865,7 +957,18 @@
       "scope_review_evidence": {
         "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
       },
-      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-powershell-refactor"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "proxmox-lxc",
@@ -891,7 +994,18 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch6.json": "c14278bc7df46d64852e4d55a1500dff0d89b70c50db7d927e25196354986a01"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-proxmox-lxc"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "resume-writer",
@@ -949,7 +1063,19 @@
       "scope_review_evidence": {
         "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
       },
-      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-spec-writer",
+          "integration-spec"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "travel-itinerary",
@@ -1053,7 +1179,18 @@
       "scope_review_evidence": {
         "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
       },
-      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-trip-email-html-itinerary"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "website-content",
@@ -1138,5 +1275,22 @@
     "Blog final corrected draft",
     "Example missing objective"
   ],
-  "batch17_summary": "Home hashtag instruction repaired; original native home rerun and unchanged workout repeat not executed due browser control. Normal preview Download actual JPEG verified. Human acceptance unchanged."
+  "batch17_summary": "Home hashtag instruction repaired; original native home rerun and unchanged workout repeat not executed due browser control. Normal preview Download actual JPEG verified. Human acceptance unchanged.",
+  "broader_host_testing": {
+    "evidence": "evaluations/fixtures/host-routing-integration18.json",
+    "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+    "native_candidates_loaded": 12,
+    "routing_sessions": 16,
+    "native_file_integrations": 3,
+    "human_acceptance": "No new acceptance; original 23 reviews remain pending",
+    "remaining_open": [
+      "Original ChatGPT home rerun and unchanged workout initial/corrected Copy repeat",
+      "Native Claude and Cursor behavior; their CLIs are not available here",
+      "Codex on Linux/macOS, more models, repeated/installed-user routing reliability",
+      "Actual Obsidian ingestion, Apple Notes, scheduler, browser export and live n8n/broker/Proxmox/DNS integrations",
+      "Linux itinerary JPEG rendering is explicitly unsupported; guard pass is not rendering support",
+      "Provider-owned hidden context/tool guarantees and all human acceptance/promotion gates"
+    ],
+    "helper_ci": "https://github.com/mickpletcher/AI-Skills/actions/runs/39846596143"
+  }
 }

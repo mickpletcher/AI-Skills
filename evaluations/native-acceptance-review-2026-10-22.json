@@ -1,6 +1,6 @@
 {
   "assessment_date": "2026-10-22",
-  "basis_commit": "8a9da02df51f532a8c00d152cd805118d64f01ea",
+  "basis_commit": "6ef2148d4dccbcd175661f01d2e6b5444185a835",
   "review_method": "Following batch15 scope review, batch16 runs four original current-version controls. Blog/LinkedIn/preview pass; home unsupported off-grid hashtag remains open. Final workout Copy passes one bounded case; human acceptance remains pending.",
   "summary": {
     "pending_native_reviews": 23,
@@ -24,7 +24,18 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Corrected two-case review covers unknown-commit reconciliation, partial4/remaining6/exit4 and missing Spec context. Tests are proposed, not broker execution."
+      "assistant_review": "Corrected two-case review covers unknown-commit reconciliation, partial4/remaining6/exit4 and missing Spec context. Tests are proposed, not broker execution.",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-alpaca-scoped"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "astrophotography-processing",
@@ -128,7 +139,18 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Three-step CSV plan and later missing-objective clarification pass. Diagnostics are not official acceptance or execution evidence."
+      "assistant_review": "Three-step CSV plan and later missing-objective clarification pass. Diagnostics are not official acceptance or execution evidence.",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-example-skill"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "fitness-log",
@@ -199,7 +221,19 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Supplied-manifest draft preserves supported runtime/flags and final license; shortcut asks for repository evidence. No actual installation verified."
+      "assistant_review": "Supplied-manifest draft preserves supported runtime/flags and final license; shortcut asks for repository evidence. No actual installation verified.",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-github-readme",
+          "integration-readme"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "github-repo-architect",
@@ -218,7 +252,18 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Blueprint proposal and later security clarification pass. Source-boundary clarification does not prove scaffold or deployed security."
+      "assistant_review": "Blueprint proposal and later security clarification pass. Source-boundary clarification does not prove scaffold or deployed security.",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-github-repo-architect"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "github-social-preview",
@@ -247,7 +292,18 @@
         "status": "CLOSED_BOUNDED",
         "evidence": "evaluations/fixtures/native-batch16.json"
       },
-      "batch17_verification": "Normal Download > JPG produced the exact 51053-byte previously verified JPEG; bounded file-delivery gap closed. Browser event wait timeout retained."
+      "batch17_verification": "Normal Download > JPG produced the exact 51053-byte previously verified JPEG; bounded file-delivery gap closed. Browser event wait timeout retained.",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-github-social-preview"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "idea-forge",
@@ -326,7 +382,19 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Corrected design and later existing-flow review pass selective retry/failure-branch checks. Proposed engine behavior is not live n8n execution."
+      "assistant_review": "Corrected design and later existing-flow review pass selective retry/failure-branch checks. Proposed engine behavior is not live n8n execution.",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-n8n-workflow",
+          "route-n8n-supplied"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "patentforge-provisional",
@@ -382,7 +450,18 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Supplied strict-subset Skip and3.55/5 rubric calculation pass. No live source approval, DNS behavior or policy change."
+      "assistant_review": "Supplied strict-subset Skip and3.55/5 rubric calculation pass. No live source approval, DNS behavior or policy change.",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-pihole-blocklist"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "pihole-csv-analyzer",
@@ -399,7 +478,20 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Recorded query totals10/6/3/1 and malformed aggregate handling reconcile; inspected ZIPs are comment-only or empty review artifacts. No operational policy evidence."
+      "assistant_review": "Recorded query totals10/6/3/1 and malformed aggregate handling reconcile; inspected ZIPs are comment-only or empty review artifacts. No operational policy evidence.",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-pihole-csv-analyzer",
+          "route-pihole-boundary",
+          "integration-pihole"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "powershell-refactor",
@@ -416,7 +508,18 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Native proposals preserve pipeline/WhatIf/Confirm boundaries, with separately labelled local toy replay. Native analyzer/Pester not executed."
+      "assistant_review": "Native proposals preserve pipeline/WhatIf/Confirm boundaries, with separately labelled local toy replay. Native analyzer/Pester not executed.",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-powershell-refactor"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "spec-writer",
@@ -433,7 +536,19 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Recorded artifacts correctly choose008 or reuse007, preserving code/other files and draft planning status. No implementation claimed."
+      "assistant_review": "Recorded artifacts correctly choose008 or reuse007, preserving code/other files and draft planning status. No implementation claimed.",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-spec-writer",
+          "integration-spec"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     },
     {
       "skill": "trip-email-html-itinerary",
@@ -451,8 +566,36 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Intake reconciliation and later static fragment review pass. Badge-priority discrepancy retained; full generated/rendered/mobile itinerary excluded."
+      "assistant_review": "Intake reconciliation and later static fragment review pass. Badge-priority discrepancy retained; full generated/rendered/mobile itinerary excluded.",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-trip-email-html-itinerary"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
     }
   ],
-  "batch17_summary": "Home hashtag instruction repaired; original native home rerun and unchanged workout repeat not executed due browser control. Normal preview Download actual JPEG verified. Human acceptance unchanged."
+  "batch17_summary": "Home hashtag instruction repaired; original native home rerun and unchanged workout repeat not executed due browser control. Normal preview Download actual JPEG verified. Human acceptance unchanged.",
+  "broader_host_testing": {
+    "evidence": "evaluations/fixtures/host-routing-integration18.json",
+    "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+    "native_candidates_loaded": 12,
+    "routing_sessions": 16,
+    "native_file_integrations": 3,
+    "human_acceptance": "No new acceptance; original 23 reviews remain pending",
+    "remaining_open": [
+      "Original ChatGPT home rerun and unchanged workout initial/corrected Copy repeat",
+      "Native Claude and Cursor behavior; their CLIs are not available here",
+      "Codex on Linux/macOS, more models, repeated/installed-user routing reliability",
+      "Actual Obsidian ingestion, Apple Notes, scheduler, browser export and live n8n/broker/Proxmox/DNS integrations",
+      "Linux itinerary JPEG rendering is explicitly unsupported; guard pass is not rendering support",
+      "Provider-owned hidden context/tool guarantees and all human acceptance/promotion gates"
+    ],
+    "helper_ci": "https://github.com/mickpletcher/AI-Skills/actions/runs/39846596143"
+  }
 }

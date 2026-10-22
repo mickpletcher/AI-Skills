@@ -364,3 +364,15 @@
 - [ ] Reconnect native browser control and run the original home update against repaired guidance. Current native verification remains open; no prompt submitted.
 - [ ] Run unchanged workout initial/duplicate/corrected repeat in a separate fresh Medium Temporary chat and inspect exact Copy without trimming. No repeat pass claimed.
 - [ ] Resolve broader reliability, real integrations, provider traces, other hosts/routing and explicit human acceptance. PR draft; no merge or promotion.
+
+
+## Broader host, routing and integration tests
+
+- [x] Audit an isolated native Codex repository catalog of all 12 existing targets, excluding unrelated user/system skills, memory and personal instructions. Retain failed preflights/canaries and exact contexts.
+- [x] Complete 16 routing probes and three fresh filesystem integrations without model feedback/regeneration. All 12 candidates have observed loading; preserve the under-scoped generic trading fixture separately. Independently verify spec preservation, README source/CLI probes and Pi-hole ZIP/source bytes. See the [assessment](../../evaluations/host-routing-integration-2026-10-22.md).
+- [x] Run all 22 installer regressions in PowerShell 7 and Windows PowerShell 5.1 using disposable libraries.
+- [x] Extend helper CI to actual Linux and Windows runners. Retain the initial Linux failure; add a candidate-only Windows guard before JPEG export side effects, test Linux HTML/guard behavior and preserve Windows browser-stub checks. Both repaired jobs pass eight helper and three layout checks, including real FITS files.
+- [x] Validate the repair with 118 regressions, repository 46/zero issues and generator 807 files. Local helper FITS skip remains recorded; hosted tests pass with dependencies. No browser/scheduler/Apple Notes live integration claim.
+- [ ] Complete native Claude/Cursor and Linux/macOS Codex testing when hosts are available. Keep broader host/model, repeated/installed routing, real app/service integrations and provider guarantees open.
+- [ ] Rerun the original ChatGPT home update and unchanged workout initial/duplicate/corrected Copy tests after browser control recovers. No new prompts were submitted on that host.
+- [ ] Obtain explicit scoped human acceptance. Keep the PR draft; no merge, installation, promotion or placement expansion.

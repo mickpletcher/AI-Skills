@@ -1,7 +1,7 @@
 {
   "assessment_date": "2026-10-22",
-  "basis_commit": "985bdbdc42c4d5a7774139f4816b7af55fad44dc",
-  "scope": "Current compiled view following native-batch14. Historical fixtures remain unchanged. Defect closure, final-byte controls and human acceptance are separate.",
+  "basis_commit": "867e50ae0e8f7b9f465553dd7ff1b2edcfb6cd4e",
+  "scope": "Current compiled view after23-scope review and unchanged native repeats in batch15. Historical evidence/acceptances preserved; new workout exact Copy failures reopen delivery.",
   "definitions": {
     "bounded_pass": "Only the recorded synthetic case and tested delivery path, not full skill/host/model compatibility.",
     "unassessed": "No assessable domain response; not pass or a proven candidate defect.",
@@ -15,10 +15,12 @@
     "accepted_bounded_native_scopes": 13,
     "pending_bounded_native_review": 23,
     "candidate_promotions": 0,
-    "bounded_verification_paths_closed_this_round": 3,
-    "remaining_targeted_verification_paths": 0,
+    "bounded_verification_paths_closed_this_round": 0,
+    "remaining_targeted_verification_paths": 6,
     "new_human_acceptances": 0,
-    "remaining_targeted_paths_description": "Reported defects and final-byte controls pass bounded observations. Broader integration/reliability and human acceptance remain open."
+    "remaining_targeted_paths_description": "Four current-resource controls plus workout initial and corrected exact Copy. Broader limits and human acceptance remain open.",
+    "pending_scopes_ready_current_sampled": 19,
+    "pending_scopes_held_current_sampled": 4
   },
   "rows": [
     {
@@ -43,7 +45,11 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch10-repairs.json": "50bfdb97ebc429ee52e6aa3ac13bedee250c0c79ac68bd07133ac8bdf2a4d56c"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "astrophotography-processing",
@@ -67,7 +73,11 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch5.json": "d573584f138afb0fbde2112ff6f3946575f94125e9f200f313cd44ea5de5e43a"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "blog-post",
@@ -78,7 +88,9 @@
         "evaluations/fixtures/native-batch5-grounding-repairs.json",
         "evaluations/fixtures/native-batch13.json"
       ],
-      "open_verification": [],
+      "open_verification": [
+        "Rerun original how-to against current grounding instructions."
+      ],
       "acceptance_evidence": null,
       "retained_issue_history": "Unsupported alternate-opener timing retained; final corrected verification still open.",
       "current_chatgpt_instruction_sha256": "f1964a2fc5820d132d190d518c08c2a3ee4afeb672d6acf6635cb11bb6c9e9d8",
@@ -99,6 +111,16 @@
         "assessment": "evaluations/native-batch13-2026-10-22.md",
         "case": "blog",
         "scope": "Only this recorded synthetic task/candidate/delivery observation, no human acceptance or reliability certification"
+      },
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Hold complete current sampled scope; retained subsets remain reviewable",
+      "open_current_candidate_control": {
+        "case_id": "blog-howto",
+        "changed_resource": "instructions.md",
+        "next_action": "Rerun original how-to against current grounding instructions.",
+        "status": "OPEN"
       }
     },
     {
@@ -133,7 +155,8 @@
       ],
       "open_verification": [
         "Historical context failure retained",
-        "no structural/construction execution verified"
+        "no structural/construction execution verified",
+        "Rerun original update against current context-isolation instructions."
       ],
       "acceptance_evidence": null,
       "retained_issue_history": "Historical project-context import retained; corrected isolation rerun passes.",
@@ -148,7 +171,17 @@
         "evaluations/fixtures/native-batch7.json": "44cbf258eb4de07595bb8589abb39c25ca4dd125b0c1a40c83f95cbd6d8b64f5",
         "evaluations/fixtures/native-batch7-repairs.json": "99271828d4f076425f5f812a7bf3992d9d748e25df2d3b00341a298fd95d15b1"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Hold complete current sampled scope; retained subsets remain reviewable",
+      "open_current_candidate_control": {
+        "case_id": "home-update",
+        "changed_resource": "instructions.md",
+        "next_action": "Rerun original update against current context-isolation instructions.",
+        "status": "OPEN"
+      }
     },
     {
       "skill": "crypto-listings",
@@ -198,7 +231,11 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch9.json": "15c753187d680509705a67c35ae4ec30794a6ef31af0623cfddd2c3c773a0bfa"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "example-skill",
@@ -230,7 +267,11 @@
         "assessment": "evaluations/native-batch13-2026-10-22.md",
         "case": "example",
         "scope": "Only this recorded synthetic task/candidate/delivery observation, no human acceptance or reliability certification"
-      }
+      },
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "facebook-post",
@@ -302,7 +343,11 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch8.json": "6cd6e3dc0216f186f3f24e1dbc70c64eb2ee5875e1e7a64999dac357cb88f8d3"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "fitness-programming",
@@ -326,16 +371,21 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch8.json": "6cd6e3dc0216f186f3f24e1dbc70c64eb2ee5875e1e7a64999dac357cb88f8d3"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "food-analyzer",
-      "native_outcome": "Final two-sentence missing-image clarification and final-byte supplied-label control pass without invented nutrition or unnecessary image request.",
+      "native_outcome": "Unchanged missing-image repeat remains two concise sentences; supplied-label arithmetic/control repeats pass. Real image recognition and health safety remain unverified.",
       "bounded_native_acceptance": "Pending separate bounded native review",
       "evidence": [
         "evaluations/fixtures/native-batch8.json",
         "evaluations/fixtures/native-batch13.json",
-        "evaluations/fixtures/native-batch14.json"
+        "evaluations/fixtures/native-batch14.json",
+        "evaluations/fixtures/native-batch15.json"
       ],
       "open_verification": [
         "Image recognition, medication interactions and real nutrition safety unverified"
@@ -352,11 +402,16 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch8.json": "6cd6e3dc0216f186f3f24e1dbc70c64eb2ee5875e1e7a64999dac357cb88f8d3",
         "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab",
-        "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58"
+        "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58",
+        "evaluations/fixtures/native-batch15.json": "bd800307d0af259fac99a3e3d0b924734a97440018b203013b10d2ff34bf2c06"
       },
       "current_instruction_hash_present_in_selected_evidence": true,
       "latest_verification_result": "Reported defects and final controls bounded PASS; broader limits remain OPEN",
-      "current_revision_human_acceptance": "Pending; no new acceptance granted"
+      "current_revision_human_acceptance": "Pending; no new acceptance granted",
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "github-readme",
@@ -382,7 +437,11 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch11.json": "0dafa38f5708f642ca8b9c7e555469c86a6f8dfc0c97752ad132bc319fb8073d"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "github-repo-architect",
@@ -419,7 +478,11 @@
         "assessment": "evaluations/native-batch13-2026-10-22.md",
         "case": "architect",
         "scope": "Only this recorded synthetic task/candidate/delivery observation, no human acceptance or reliability certification"
-      }
+      },
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "github-social-preview",
@@ -430,7 +493,8 @@
         "evaluations/fixtures/native-batch2-repairs.json"
       ],
       "open_verification": [
-        "Broader assets/languages/layouts and provider tool trace unverified"
+        "Broader assets/languages/layouts and provider tool trace unverified",
+        "Rerun original README fallback with current preview helper and inspect actual JPEG."
       ],
       "acceptance_evidence": null,
       "retained_issue_history": "Original label overlap retained; corrected artifact passes bounded checks.",
@@ -447,7 +511,17 @@
         "evaluations/fixtures/native-batch2.json": "29d4e00d49ad514cd60eab42f6ba4fdda002f3c1def4cc19c1596a7123a34400",
         "evaluations/fixtures/native-batch2-repairs.json": "920c943ae76b25235dfc2a21e27b2e196a7b8553ee082ba17b7f911082661fb1"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Hold complete current sampled scope; retained subsets remain reviewable",
+      "open_current_candidate_control": {
+        "case_id": "social-preview-readme-fallback",
+        "changed_resource": "scripts/generate_preview.py",
+        "next_action": "Rerun original README fallback with current preview helper and inspect actual JPEG.",
+        "status": "OPEN"
+      }
     },
     {
       "skill": "idea-forge",
@@ -471,7 +545,11 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch3.json": "43cc402d4633e3d5c420dca7933713fa9ef51268f58ee9db690e213fb45b59f6"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "linkedin-post",
@@ -482,7 +560,8 @@
         "evaluations/fixtures/native-batch5-grounding-repairs.json"
       ],
       "open_verification": [
-        "Real publication and broader grounding reliability unverified"
+        "Real publication and broader grounding reliability unverified",
+        "Rerun original audience variants against current grounding instructions."
       ],
       "acceptance_evidence": null,
       "retained_issue_history": "Unsupported technology hashtag retained; grounded rerun passes.",
@@ -497,7 +576,17 @@
         "evaluations/fixtures/native-batch5.json": "d573584f138afb0fbde2112ff6f3946575f94125e9f200f313cd44ea5de5e43a",
         "evaluations/fixtures/native-batch5-grounding-repairs.json": "afc25aca0f59d623ddf89c7560859363cd545ea79313f9cf678984979fb25558"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Hold complete current sampled scope; retained subsets remain reviewable",
+      "open_current_candidate_control": {
+        "case_id": "linkedin-variants",
+        "changed_resource": "instructions.md",
+        "next_action": "Rerun original audience variants against current grounding instructions.",
+        "status": "OPEN"
+      }
     },
     {
       "skill": "market-brief",
@@ -521,7 +610,11 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch9.json": "15c753187d680509705a67c35ae4ec30794a6ef31af0623cfddd2c3c773a0bfa"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "n8n-workflow",
@@ -557,23 +650,30 @@
         "assessment": "evaluations/native-batch13-2026-10-22.md",
         "case": "n8n",
         "scope": "Only this recorded synthetic task/candidate/delivery observation, no human acceptance or reliability certification"
-      }
+      },
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "obsidian-workout-export",
-      "native_outcome": "Final initial and corrected Copy notes are290 exact bytes with frontmatter at byte zero; duplicate asks overwrite/skip; correction preserves source.",
+      "native_outcome": "Unchanged Medium repeat preserves content and duplicate protection, but initial/corrected Copy each332bytes begin with newline and fail byte-zero validation. Earlier290-byte passes retained.",
       "bounded_native_acceptance": "Accepted only within recorded bounded scope",
       "evidence": [
         "evaluations/fixtures/native-workout-repairs.json",
         "evaluations/fixtures/native-batch13.json",
-        "evaluations/fixtures/native-batch14.json"
+        "evaluations/fixtures/native-batch14.json",
+        "evaluations/fixtures/native-batch15.json"
       ],
       "open_verification": [
-        "Real Obsidian ingestion and repeated delivery unverified",
+        "Initial exact Copy delivery REOPENED after unchanged repeat failure",
+        "Corrected exact Copy delivery REOPENED after unchanged repeat failure",
+        "Real Obsidian ingestion and reliable repeated delivery unverified",
         "Current repaired revision human review pending; historical acceptance does not accept new bytes"
       ],
       "acceptance_evidence": "evaluations/fixtures/native-workout-repairs.json",
-      "retained_issue_history": "Duration/frontmatter/initial-Copy failures retained; final initial, duplicate and correction paths pass bounded checks.",
+      "retained_issue_history": "Historical duration/frontmatter failures and batch14 passing observations retained. Batch15 fails exact Copy again without candidate/input changes.",
       "current_chatgpt_instruction_sha256": "8b45cc00b2ce7f9d6a41320b5393509bb56d6694ad9cecebb3d22438d2721d72",
       "allowed_review_targets": [
         "claude",
@@ -584,21 +684,23 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-workout-repairs.json": "059d1adb80020bf2251605bbfd7de209fd32e694da87890a40e78751ca8e36a7",
         "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab",
-        "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58"
+        "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58",
+        "evaluations/fixtures/native-batch15.json": "bd800307d0af259fac99a3e3d0b924734a97440018b203013b10d2ff34bf2c06"
       },
       "current_instruction_hash_present_in_selected_evidence": true,
-      "latest_verification_result": "Reported defects and final controls bounded PASS; broader limits remain OPEN",
+      "latest_verification_result": "Content/duplicate pass; initial and corrected exact Copy FAIL, delivery OPEN",
       "current_revision_human_acceptance": "Pending; no new acceptance granted"
     },
     {
       "skill": "patentforge-provisional",
-      "native_outcome": "Final14-section package passes1114/1200 total and289/300 section10; final-byte one-question interview control also passes. Source mechanism, confidentiality flags and upfront boundaries preserved.",
+      "native_outcome": "Unchanged package repeat passes1140/1200 total and290/300 section10 with all14 sections; one-question interview control repeats pass.",
       "bounded_native_acceptance": "Pending separate bounded native review",
       "evidence": [
         "evaluations/fixtures/native-batch10.json",
         "evaluations/fixtures/native-batch10-repairs.json",
         "evaluations/fixtures/native-batch13.json",
-        "evaluations/fixtures/native-batch14.json"
+        "evaluations/fixtures/native-batch14.json",
+        "evaluations/fixtures/native-batch15.json"
       ],
       "open_verification": [
         "Legal accuracy and filing readiness not certified"
@@ -616,11 +718,16 @@
         "evaluations/fixtures/native-batch10.json": "66dcc76e7c321bc9956032c2e355b0a19931faf86d6fb64fe4c1134b29bc5757",
         "evaluations/fixtures/native-batch10-repairs.json": "50bfdb97ebc429ee52e6aa3ac13bedee250c0c79ac68bd07133ac8bdf2a4d56c",
         "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab",
-        "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58"
+        "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58",
+        "evaluations/fixtures/native-batch15.json": "bd800307d0af259fac99a3e3d0b924734a97440018b203013b10d2ff34bf2c06"
       },
       "current_instruction_hash_present_in_selected_evidence": true,
       "latest_verification_result": "Reported defects and final controls bounded PASS; broader limits remain OPEN",
-      "current_revision_human_acceptance": "Pending; no new acceptance granted"
+      "current_revision_human_acceptance": "Pending; no new acceptance granted",
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "photo-rename",
@@ -645,7 +752,11 @@
       "evidence_sha256": {
         "evaluations/fixtures/photo-native.json": "4fdc246850c440b047c6f1f16a66116847e337fbf5600d289348776e578c344d"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "pihole-blocklist",
@@ -671,7 +782,11 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch7.json": "44cbf258eb4de07595bb8589abb39c25ca4dd125b0c1a40c83f95cbd6d8b64f5"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "pihole-csv-analyzer",
@@ -697,7 +812,11 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch2.json": "29d4e00d49ad514cd60eab42f6ba4fdda002f3c1def4cc19c1596a7123a34400"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "powershell-refactor",
@@ -723,7 +842,11 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch11.json": "0dafa38f5708f642ca8b9c7e555469c86a6f8dfc0c97752ad132bc319fb8073d"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "proxmox-lxc",
@@ -803,7 +926,11 @@
       "evidence_sha256": {
         "evaluations/fixtures/native-batch3.json": "43cc402d4633e3d5c420dca7933713fa9ef51268f58ee9db690e213fb45b59f6"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "travel-itinerary",
@@ -903,7 +1030,11 @@
         "evaluations/fixtures/native-batch10.json": "66dcc76e7c321bc9956032c2e355b0a19931faf86d6fb64fe4c1134b29bc5757",
         "evaluations/fixtures/native-batch10-repairs.json": "50bfdb97ebc429ee52e6aa3ac13bedee250c0c79ac68bd07133ac8bdf2a4d56c"
       },
-      "current_instruction_hash_present_in_selected_evidence": true
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review"
     },
     {
       "skill": "website-content",

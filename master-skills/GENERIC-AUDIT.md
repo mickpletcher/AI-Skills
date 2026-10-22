@@ -230,3 +230,8 @@ The [controlled wrapper comparison and seven reruns](../evaluations/native-batch
 ## Patent, food and workout delivery repairs
 
 The [delivery repairs](../evaluations/native-batch14-2026-10-22.md) pass bounded patent word limits (1114 total/289 section10), food two-sentence missing-image intake and workout initial/duplicate/corrected delivery with exact byte-zero Copy. Earlier failures remain retained. Final-byte supplied-label food and patent interview controls also pass after retained browser timeouts; no new acceptance. PR stays draft without merging, installation or promotion.
+
+
+## Pending-scope review and unchanged native repeats
+
+Reviewed all23 pending bounded scopes:19 current sampled scopes ready for human review and four held for current-resource controls. Unchanged patent/food repeats pass; workout duplicate/content passes but exact initial/corrected Copy fails again. Both delivery paths reopened. No new acceptance or promotion; PR remains draft. See the [assessment](../evaluations/native-batch15-2026-10-22.md).

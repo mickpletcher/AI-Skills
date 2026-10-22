@@ -331,3 +331,15 @@
 - [ ] Obtain separate human review of repaired scopes. Keep repeated reliability, actual integrations, provider traces, other hosts/models/routing and all promotion gates open. PR stays draft; no merge or promotion.
 
 - [x] Final clean tracked validation passes all 117 regressions, repository 46 skills/zero issues, generator 807 files and offline 24 cases/99 negative checks. Source CI 12 checks green; delivery CI tracked against new commit.
+
+
+## Pending-scope review and unchanged native repeats
+
+- [x] Review all 23 pending scopes against original criteria, retained outcomes and current resources. Preserve 13 historical accepted scopes and all 23 pending human reviews. No new acceptance.
+- [x] Identify four historical-pass controls not repeated after instruction/helper changes: blog how-to, home update, LinkedIn variants and preview README fallback. Hold their complete current sampled scopes; recorded subsets remain reviewable. See the [assessment](../../evaluations/native-batch15-2026-10-22.md).
+- [x] Pin and execute five unchanged final-case repeats with original modes/transport/wrappers and no feedback/regeneration. Patent 1140/290 and food/control cases pass; workout content and duplicate/correction semantics pass but initial/corrected Copy each 332 bytes fail byte-zero frontmatter.
+- [ ] Correct and verify reliable workout initial/corrected native Copy delivery. Reopened by batch15; do not substitute trimming or prior passing copies.
+- [ ] Run the four original current-resource controls and inspect actual preview JPEG. Keep original inputs/criteria unchanged.
+- [ ] Obtain human review of pending scopes and the repaired workout revision. Keep real integrations, routing/hosts/models, provider traces, repeatability and promotion gates open. PR remains draft; no merge or promotion.
+
+- [x] Final evidence-overlay validation passes repository46/zero issues, generator807files, offline24cases/99negative checks, exact pins and actual food-log YAML. All12 source CI checks pass; delivery CI checked separately.

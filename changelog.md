@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Reviewed all23 pending bounded scopes:19 current sampled scopes ready for human review and four held for current-resource controls. Unchanged patent/food repeats pass; workout duplicate/content passes but exact initial/corrected Copy fails again. Both delivery paths reopened. No new acceptance or promotion; PR remains draft.
+
 - Repaired bounded patent word-limit, food intake verbosity and workout Copy formatting defects. Native package1114/289 words and exact290-byte initial/corrected notes pass; duplicate protection preserved. Retained intermediate failures; both final-byte controls pass. PR remains draft with no new acceptance, merge or promotion.
 
 - Recorded four controlled delivery diagnostics and seven native reruns. Four bounded verification paths close; patent word limits, food clarification scope and workout initial Copy boundary remain open. Reviewed all 23 pending scopes without new acceptance; candidates unchanged and PR draft.

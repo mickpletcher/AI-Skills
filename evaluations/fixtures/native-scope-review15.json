@@ -1,0 +1,1229 @@
+{
+  "assessment_date": "2026-10-22",
+  "basis_commit": "867e50ae0e8f7b9f465553dd7ff1b2edcfb6cd4e",
+  "basis_recommendations_sha256": "f23369b6b1dedefa07dc7caacd7bcce1854867614db3ddc4f3e9f53d3ee6dbf2",
+  "method": "Assistant review of all23 proposed scopes, original criteria, selected fixture outcomes/repairs, current instruction/resource hashes and recorded limitations. This is not a fresh replay of every raw artifact or human acceptance. Prepared records alone are not execution passes. Older failures remain unchanged.",
+  "summary": {
+    "reviewed_scopes": 23,
+    "ready_bounded_current_sampled_scopes": 19,
+    "hold_complete_current_sampled_scope": 4,
+    "historical_recorded_subsets_reviewable": 23,
+    "new_human_acceptances": 0,
+    "promotions": 0
+  },
+  "rows": [
+    {
+      "skill": "alpaca-trading",
+      "proposed_scope": "Synthetic repository review and missing-repository intake, including remaining-fill accounting and Spec-context requests. No live broker or runtime certification.",
+      "open_limits": [],
+      "current_instruction_sha256": "adc3d4a8f85daa53a5055ebe9058b654f6429821ad75823ac695119c050c82be",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch10-repairs.json": "50bfdb97ebc429ee52e6aa3ac13bedee250c0c79ac68bd07133ac8bdf2a4d56c"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Two affected native cases pass after coverage correction",
+      "assistant_review": "Corrected two-case review covers unknown-commit reconciliation, partial4/remaining6/exit4 and missing Spec context. Tests are proposed, not broker execution.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch10-repairs.json",
+          "json_pointer": "/cases/0",
+          "id": "alpaca-review",
+          "recorded_status": "bounded_lifecycle_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch10-repairs.json",
+          "json_pointer": "/cases/1",
+          "id": "alpaca-no-repo",
+          "recorded_status": "bounded_evidence_request_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    },
+    {
+      "skill": "astrophotography-processing",
+      "proposed_scope": "Supplied preview diagnosis and fabricated FITS metadata/source review. No full processing or real capture validation.",
+      "open_limits": [
+        "Full processing and real capture data remain unverified"
+      ],
+      "current_instruction_sha256": "94ec01c49490925be7d2c82c9280e7a4c490c56ee3c27e4b3f2e83cc429d453e",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch5.json": "d573584f138afb0fbde2112ff6f3946575f94125e9f200f313cd44ea5de5e43a"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Preview diagnosis and supplied FITS metadata/source cases pass",
+      "assistant_review": "Recorded preview diagnosis separates observation from hypotheses; FITS headers and three hashes support exposure/gain mismatch findings. No full calibration pipeline.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch5.json",
+          "json_pointer": "/cases/4",
+          "id": "astro-preview",
+          "recorded_status": "bounded_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch5.json",
+          "json_pointer": "/cases/5",
+          "id": "astro-fits",
+          "recorded_status": "bounded_pass",
+          "criteria_count": 4,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    },
+    {
+      "skill": "blog-post",
+      "proposed_scope": "Source-faithful how-to and final corrected attribution draft including title/opening variants. No publication or broader grounding reliability.",
+      "open_limits": [],
+      "current_instruction_sha256": "f1964a2fc5820d132d190d518c08c2a3ee4afeb672d6acf6635cb11bb6c9e9d8",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch5.json": "d573584f138afb0fbde2112ff6f3946575f94125e9f200f313cd44ea5de5e43a",
+        "evaluations/fixtures/native-batch5-grounding-repairs.json": "afc25aca0f59d623ddf89c7560859363cd545ea79313f9cf678984979fb25558",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Main draft fits the requested range after Markdown markers are excluded, including 429 prose words. Two title/first-sentence alternatives preserve teammate implementation/testing and reviewer-only attribution, no unsupported review/test ordering, exact two fixtures and production untouched.",
+      "assistant_review": "Corrected current attribution case passes. Earlier how-to pass predates the grounding instruction change; do not infer a current-byte how-to pass.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch5.json",
+          "json_pointer": "/cases/0",
+          "id": "blog-howto",
+          "recorded_status": "bounded_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch5.json",
+          "json_pointer": "/cases/1",
+          "id": "blog-attribution",
+          "recorded_status": "source_grounding_failure",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch5-grounding-repairs.json",
+          "json_pointer": "/initial_revision/cases/0",
+          "id": "blog-attribution",
+          "recorded_status": "prepared_not_executed",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch5-grounding-repairs.json",
+          "json_pointer": "/final_revision/cases/0",
+          "id": "blog-attribution",
+          "recorded_status": "prepared_not_executed",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch13.json",
+          "json_pointer": "/official_cases/4",
+          "id": "blog",
+          "recorded_status": "bounded_attribution_draft_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Hold complete current sampled scope; retained subsets remain reviewable",
+      "recommendation": "Hold complete current sampled scope; retained subsets remain reviewable",
+      "open_current_candidate_control": {
+        "case_id": "blog-howto",
+        "changed_resource": "instructions.md",
+        "next_action": "Rerun original how-to against current grounding instructions.",
+        "status": "OPEN"
+      }
+    },
+    {
+      "skill": "container-home",
+      "proposed_scope": "Source-faithful draft and corrected fictional planning isolation. No structural sizing, permit or construction approval.",
+      "open_limits": [
+        "Historical context failure retained",
+        "no structural/construction execution verified"
+      ],
+      "current_instruction_sha256": "6bf41cea684fc22d0de08b41edca3b02588aae53b3c866d477bf08778086f313",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch7.json": "44cbf258eb4de07595bb8589abb39c25ca4dd125b0c1a40c83f95cbd6d8b64f5",
+        "evaluations/fixtures/native-batch7-repairs.json": "99271828d4f076425f5f812a7bf3992d9d748e25df2d3b00341a298fd95d15b1"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Source-specific build post and corrected isolation case pass",
+      "assistant_review": "Corrected fictional sequence passes after retained context failure. Earlier update pass predates context-isolation instructions; no construction approval.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch7.json",
+          "json_pointer": "/cases/4",
+          "id": "home-update",
+          "recorded_status": "bounded_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch7.json",
+          "json_pointer": "/cases/5",
+          "id": "home-sequence",
+          "recorded_status": "source_scope_failure",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch7-repairs.json",
+          "json_pointer": "/candidate_revision/cases/2",
+          "id": "home-sequence",
+          "recorded_status": "prepared_not_executed",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Hold complete current sampled scope; retained subsets remain reviewable",
+      "recommendation": "Hold complete current sampled scope; retained subsets remain reviewable",
+      "open_current_candidate_control": {
+        "case_id": "home-update",
+        "changed_resource": "instructions.md",
+        "next_action": "Rerun original update against current context-isolation instructions.",
+        "status": "OPEN"
+      }
+    },
+    {
+      "skill": "crypto-research",
+      "proposed_scope": "Supplied-source comparison and ambiguous-token/missing-live-data clarification. No live financial verification.",
+      "open_limits": [
+        "Actual live retrieval and financial accuracy unverified"
+      ],
+      "current_instruction_sha256": "04648eeb071bdde377b4302b8c4aa362d213595399be9be4fb5a3b3eb6f9a43b",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch9.json": "15c753187d680509705a67c35ae4ec30794a6ef31af0623cfddd2c3c773a0bfa"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Bounded supplied-source and unavailable-live-data cases pass",
+      "assistant_review": "Both supplied-source comparison and identity clarification pass after retained host failure. No live retrieval or clean-risk finding follows from unknown fields.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch9.json",
+          "json_pointer": "/cases/4",
+          "id": "research-compare",
+          "recorded_status": "bounded_offline_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch9.json",
+          "json_pointer": "/cases/5",
+          "id": "research-ambiguous",
+          "recorded_status": "bounded_fallback_pass_after_unchanged_retry",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    },
+    {
+      "skill": "example-skill",
+      "proposed_scope": "Synthetic three-step plan/verification and short missing-objective clarification. No execution or installed routing.",
+      "open_limits": [],
+      "current_instruction_sha256": "27ab3f44b3655f391d38982e8fd1e3c9c8bafb83391484dd5bd0ba73d5abdd5f",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch12.json": "58d1cea6eb1dfad0e203c4d30f22aaece1835317b89219bd95e01ecec16e6b0f",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Short clarification asks the objective before any plan, avoids private/history assumptions and makes no task-completion or external-action claim.",
+      "assistant_review": "Three-step CSV plan and later missing-objective clarification pass. Diagnostics are not official acceptance or execution evidence.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch12.json",
+          "json_pointer": "/cases/4",
+          "id": "example-plan",
+          "recorded_status": "bounded_plan_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch12.json",
+          "json_pointer": "/cases/5",
+          "id": "example-missing",
+          "recorded_status": "unassessed_host_load_failure",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch13.json",
+          "json_pointer": "/official_cases/6",
+          "id": "example",
+          "recorded_status": "bounded_missing_objective_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    },
+    {
+      "skill": "fitness-log",
+      "proposed_scope": "Synthetic weekly arithmetic and separate assisted/strict benchmark interpretation. No persistent tracker or real athlete assessment.",
+      "open_limits": [
+        "Real personal data and broader reliability unverified"
+      ],
+      "current_instruction_sha256": "dafab63fef651692fa7d65bb5eecfe009adb8079ad038cb8a597fd6ae9d1c317",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch8.json": "6cd6e3dc0216f186f3f24e1dbc70c64eb2ee5875e1e7a64999dac357cb88f8d3"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Bounded synthetic text cases pass",
+      "assistant_review": "Recorded3/4 sessions,105minutes,27 strict reps and separate assisted benchmark reconcile. No tracker persistence or real athlete certification.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch8.json",
+          "json_pointer": "/cases/0",
+          "id": "log-week",
+          "recorded_status": "bounded_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch8.json",
+          "json_pointer": "/cases/1",
+          "id": "log-benchmark",
+          "recorded_status": "bounded_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    },
+    {
+      "skill": "fitness-programming",
+      "proposed_scope": "Synthetic schedule/equipment-constrained plan and single-variable adjustment. No training outcome or medical validation.",
+      "open_limits": [
+        "Real personal data and broader reliability unverified"
+      ],
+      "current_instruction_sha256": "c21b94e6d0c8551a38e47979cf28db3c15633e72e24fbd4738418339c55e26b2",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch8.json": "6cd6e3dc0216f186f3f24e1dbc70c64eb2ee5875e1e7a64999dac357cb88f8d3"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Bounded synthetic text cases pass",
+      "assistant_review": "Recorded two-day equipment-limited plan and single-variable adjustment meet synthetic constraints. No medical or training-outcome validation.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch8.json",
+          "json_pointer": "/cases/2",
+          "id": "program-block",
+          "recorded_status": "bounded_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch8.json",
+          "json_pointer": "/cases/3",
+          "id": "program-adjust",
+          "recorded_status": "bounded_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    },
+    {
+      "skill": "food-analyzer",
+      "proposed_scope": "Concise missing-image intake and supplied-label scaling. No image-recognition, medication or real nutrition-safety certification.",
+      "open_limits": [
+        "Image recognition, medication interactions and real nutrition safety unverified"
+      ],
+      "current_instruction_sha256": "5f60e3baeddccb07259b05fbdf5c3877cd87873d29546d0b6983a89debd4f3bf",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch8.json": "6cd6e3dc0216f186f3f24e1dbc70c64eb2ee5875e1e7a64999dac357cb88f8d3",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab",
+        "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Final two-sentence missing-image clarification and final-byte supplied-label control pass without invented nutrition or unnecessary image request.",
+      "assistant_review": "Final missing-image clarification and final supplied-label scaling pass. Review this explicit text/intake scope; actual image recognition remains open.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch8.json",
+          "json_pointer": "/cases/4",
+          "id": "food-scale",
+          "recorded_status": "bounded_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch8.json",
+          "json_pointer": "/cases/5",
+          "id": "food-missing-image",
+          "recorded_status": "unassessed_blank_completed",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch13.json",
+          "json_pointer": "/official_cases/2",
+          "id": "food",
+          "recorded_status": "missing_input_grounding_pass_concision_gap",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch14.json",
+          "json_pointer": "/cases/1",
+          "id": "food",
+          "recorded_status": "intermediate_instruction_gap",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch14.json",
+          "json_pointer": "/cases/3",
+          "id": "food-scale",
+          "recorded_status": "bounded_pass_v1_control",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch14.json",
+          "json_pointer": "/revisions/0/cases/1",
+          "id": "food-v2",
+          "recorded_status": "bounded_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch14.json",
+          "json_pointer": "/revisions/2/cases/0",
+          "id": "food-scale-final",
+          "recorded_status": "bounded_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review",
+      "prior_proposed_scope": "Only completed case subsets may be reviewed; do not accept the unresolved path."
+    },
+    {
+      "skill": "github-readme",
+      "proposed_scope": "Supplied-source README draft and missing-context intake. No installation or execution certification.",
+      "open_limits": [
+        "Actual README installation/execution not certified"
+      ],
+      "current_instruction_sha256": "1d1dfdc705bec8cce3c68c28d221beb92fb9674b9d7502a15edf9986e3d72fdb",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch11.json": "0dafa38f5708f642ca8b9c7e555469c86a6f8dfc0c97752ad132bc319fb8073d"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Repair and missing-context native cases pass",
+      "assistant_review": "Supplied-manifest draft preserves supported runtime/flags and final license; shortcut asks for repository evidence. No actual installation verified.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch11.json",
+          "json_pointer": "/cases/2",
+          "id": "readme-repair",
+          "recorded_status": "bounded_draft_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch11.json",
+          "json_pointer": "/cases/3",
+          "id": "readme-shortcut",
+          "recorded_status": "bounded_intake_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    },
+    {
+      "skill": "github-repo-architect",
+      "proposed_scope": "Synthetic blueprint and original security-prerequisite clarification. No full scaffold/deployment security or repeatability certification.",
+      "open_limits": [
+        "Full scaffold and deployed security unverified"
+      ],
+      "current_instruction_sha256": "2b88aa12a9479c9183a1817b7d55453f344c9ac051736caca910d6259ea93f08",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch11.json": "0dafa38f5708f642ca8b9c7e555469c86a6f8dfc0c97752ad132bc319fb8073d",
+        "evaluations/fixtures/native-batch12.json": "58d1cea6eb1dfad0e203c4d30f22aaece1835317b89219bd95e01ecec16e6b0f",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Defers production architecture, asks system/identity/secret-storage/approval/deployment/recovery/audit questions and rejects sticky-note authorization. No actual secrets requested or production readiness claimed.",
+      "assistant_review": "Blueprint proposal and later security clarification pass. Source-boundary clarification does not prove scaffold or deployed security.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch11.json",
+          "json_pointer": "/cases/4",
+          "id": "architect-blueprint",
+          "recorded_status": "bounded_blueprint_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch11.json",
+          "json_pointer": "/cases/5",
+          "id": "architect-sensitive",
+          "recorded_status": "unassessed_host_load_failure",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch11.json",
+          "json_pointer": "/security_continuation/case",
+          "id": "architect-sensitive-continuation",
+          "recorded_status": "prepared_not_executed",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch13.json",
+          "json_pointer": "/official_cases/0",
+          "id": "architect",
+          "recorded_status": "bounded_security_boundary_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    },
+    {
+      "skill": "github-social-preview",
+      "proposed_scope": "Actual supplied-README JPEG and repaired long-title JPEG dimensions/layout. Original overlap retained; other assets/layouts untested.",
+      "open_limits": [
+        "Broader assets/languages/layouts and provider tool trace unverified"
+      ],
+      "current_instruction_sha256": "d9191b2630475265b9d8e75ce2652377f2644dd3e78818f31ef8cd76c65f5bce",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch2.json": "29d4e00d49ad514cd60eab42f6ba4fdda002f3c1def4cc19c1596a7123a34400",
+        "evaluations/fixtures/native-batch2-repairs.json": "920c943ae76b25235dfc2a21e27b2e196a7b8553ee082ba17b7f911082661fb1"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Supplied README preview and corrected overlap artifact pass",
+      "assistant_review": "Corrected long-title JPEG was inspected and passes. Original README fallback used the older generate_preview.py; final-helper fallback remains unverified.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch2.json",
+          "json_pointer": "/cases/4",
+          "id": "social-preview-readme-fallback",
+          "recorded_status": "captured",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "scripts/generate_preview.py"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch2.json",
+          "json_pointer": "/cases/5",
+          "id": "social-preview-long-title",
+          "recorded_status": "captured",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "scripts/generate_preview.py"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch2-repairs.json",
+          "json_pointer": "/cases/2",
+          "id": "social-preview-long-title",
+          "recorded_status": "bounded_pass_actual_jpeg_visually_reviewed",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Hold complete current sampled scope; retained subsets remain reviewable",
+      "recommendation": "Hold complete current sampled scope; retained subsets remain reviewable",
+      "open_current_candidate_control": {
+        "case_id": "social-preview-readme-fallback",
+        "changed_resource": "scripts/generate_preview.py",
+        "next_action": "Rerun original README fallback with current preview helper and inspect actual JPEG.",
+        "status": "OPEN"
+      }
+    },
+    {
+      "skill": "idea-forge",
+      "proposed_scope": "Bounded scoring and inspected disposable artifact with collision refusal. No real vault or general scoring calibration.",
+      "open_limits": [
+        "Broader repositories and repeatability unverified"
+      ],
+      "current_instruction_sha256": "2a5320526756a476efe687b8c1259dc7fca12dffaa54de383d20ed213a9a0608",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch3.json": "43cc402d4633e3d5c420dca7933713fa9ef51268f58ee9db690e213fb45b59f6"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Both targeted native cases pass, including inspected artifact bytes",
+      "assistant_review": "Recorded52.5/100 arithmetic and inspected disposable save/collision/traversal behavior support bounded review. General calibration and real vault excluded.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch3.json",
+          "json_pointer": "/cases/2",
+          "id": "idea-score",
+          "recorded_status": "bounded_native_pass",
+          "criteria_count": 2,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch3.json",
+          "json_pointer": "/cases/3",
+          "id": "idea-save",
+          "recorded_status": "bounded_native_pass",
+          "criteria_count": 2,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    },
+    {
+      "skill": "linkedin-post",
+      "proposed_scope": "Corrected source-grounded technical lesson and audience variants. Original unsupported technology hashtag retained; no publication.",
+      "open_limits": [
+        "Real publication and broader grounding reliability unverified"
+      ],
+      "current_instruction_sha256": "c204c9587f8255cb83fc97973fbbfe2a5ad540632b423410b18e1b930854e917",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch5.json": "d573584f138afb0fbde2112ff6f3946575f94125e9f200f313cd44ea5de5e43a",
+        "evaluations/fixtures/native-batch5-grounding-repairs.json": "afc25aca0f59d623ddf89c7560859363cd545ea79313f9cf678984979fb25558"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Final grounded lesson and audience variants pass",
+      "assistant_review": "Corrected lesson passes; audience variants passed before later grounding instructions. Current-byte variants remain open; no publication.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch5.json",
+          "json_pointer": "/cases/2",
+          "id": "linkedin-lesson",
+          "recorded_status": "source_grounding_failure",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch5.json",
+          "json_pointer": "/cases/3",
+          "id": "linkedin-variants",
+          "recorded_status": "bounded_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch5-grounding-repairs.json",
+          "json_pointer": "/initial_revision/cases/1",
+          "id": "linkedin-lesson",
+          "recorded_status": "prepared_not_executed",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch5-grounding-repairs.json",
+          "json_pointer": "/final_revision/cases/1",
+          "id": "linkedin-lesson",
+          "recorded_status": "prepared_not_executed",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Hold complete current sampled scope; retained subsets remain reviewable",
+      "recommendation": "Hold complete current sampled scope; retained subsets remain reviewable",
+      "open_current_candidate_control": {
+        "case_id": "linkedin-variants",
+        "changed_resource": "instructions.md",
+        "next_action": "Rerun original audience variants against current grounding instructions.",
+        "status": "OPEN"
+      }
+    },
+    {
+      "skill": "market-brief",
+      "proposed_scope": "Supplied snapshot arithmetic and unavailable-live-data fallback. No current market accuracy or live retrieval.",
+      "open_limits": [
+        "Actual live retrieval and financial accuracy unverified"
+      ],
+      "current_instruction_sha256": "3b1786c48aa639157fb5c7662b2513d0121ef4ffadcedc076ff1bce58911fe01",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch9.json": "15c753187d680509705a67c35ae4ec30794a6ef31af0623cfddd2c3c773a0bfa"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Bounded supplied-source and unavailable-live-data cases pass",
+      "assistant_review": "Synthetic conflict/change calculations and unavailable-live-data fallback pass. No current quotes or retrieval verified.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch9.json",
+          "json_pointer": "/cases/0",
+          "id": "market-snapshot",
+          "recorded_status": "bounded_offline_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch9.json",
+          "json_pointer": "/cases/1",
+          "id": "market-no-live",
+          "recorded_status": "bounded_fallback_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    },
+    {
+      "skill": "n8n-workflow",
+      "proposed_scope": "Corrected new-workflow proposal and existing-flow static review, including selective retry consistency. No live n8n execution or version compatibility.",
+      "open_limits": [
+        "Actual n8n execution unverified"
+      ],
+      "current_instruction_sha256": "e530a0ca20676492339385fe40f8b1f80acb56e3a3cabcf6c629a2557de6909a",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch7.json": "44cbf258eb4de07595bb8589abb39c25ca4dd125b0c1a40c83f95cbd6d8b64f5",
+        "evaluations/fixtures/native-batch7-repairs.json": "99271828d4f076425f5f812a7bf3992d9d748e25df2d3b00341a298fd95d15b1",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Prioritized seven findings and minimal fixes; only429/503 retries with three-total-attempt ceiling, lost response/transport error one uncertain attempt, explicit failure branch, no guaranteed Error Trigger or false201. No runtime/deployment/notification claim.",
+      "assistant_review": "Corrected design and later existing-flow review pass selective retry/failure-branch checks. Proposed engine behavior is not live n8n execution.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch7.json",
+          "json_pointer": "/cases/0",
+          "id": "n8n-design",
+          "recorded_status": "planning_consistency_failure",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch7.json",
+          "json_pointer": "/cases/1",
+          "id": "n8n-review",
+          "recorded_status": "planning_consistency_failure",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch7-repairs.json",
+          "json_pointer": "/candidate_revision/cases/0",
+          "id": "n8n-design",
+          "recorded_status": "prepared_not_executed",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch7-repairs.json",
+          "json_pointer": "/candidate_revision/cases/1",
+          "id": "n8n-review",
+          "recorded_status": "prepared_not_executed",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch13.json",
+          "json_pointer": "/official_cases/3",
+          "id": "n8n",
+          "recorded_status": "bounded_workflow_review_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    },
+    {
+      "skill": "patentforge-provisional",
+      "proposed_scope": "Fictional14-section package delivery within stated limits and one-question mechanism intake. No legal sufficiency, patentability or filing-readiness certification.",
+      "open_limits": [
+        "Legal accuracy and filing readiness not certified"
+      ],
+      "current_instruction_sha256": "e021e42b094bcd927920db4d3a48763a79e0f7c10b347b66008a38383dd8f5ad",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch10.json": "66dcc76e7c321bc9956032c2e355b0a19931faf86d6fb64fe4c1134b29bc5757",
+        "evaluations/fixtures/native-batch10-repairs.json": "50bfdb97ebc429ee52e6aa3ac13bedee250c0c79ac68bd07133ac8bdf2a4d56c",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab",
+        "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Final14-section package passes1114/1200 total and289/300 section10; final-byte one-question interview control also passes. Source mechanism, confidentiality flags and upfront boundaries preserved.",
+      "assistant_review": "Final14-section package and one-question interview pass recorded content and delivery contracts. No legal sufficiency, actual search or filing readiness.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch10.json",
+          "json_pointer": "/cases/2",
+          "id": "patent-package",
+          "recorded_status": "incomplete_package_delivery",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch10.json",
+          "json_pointer": "/cases/3",
+          "id": "patent-interview",
+          "recorded_status": "bounded_interview_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch10-repairs.json",
+          "json_pointer": "/cases/2",
+          "id": "patent-package",
+          "recorded_status": "incomplete_package_delivery",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch10-repairs.json",
+          "json_pointer": "/candidate_revisions/0",
+          "id": "patent-package-v2",
+          "recorded_status": "prepared_not_executed",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch10-repairs.json",
+          "json_pointer": "/candidate_revisions/1",
+          "id": "patent-package-v3",
+          "recorded_status": "prepared_not_executed",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch10-repairs.json",
+          "json_pointer": "/unchanged_continuation/case",
+          "id": "patent-package-v3-continuation",
+          "recorded_status": "prepared_not_executed",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch13.json",
+          "json_pointer": "/official_cases/1",
+          "id": "patent",
+          "recorded_status": "complete_package_with_delivery_contract_failure",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch14.json",
+          "json_pointer": "/cases/0",
+          "id": "patent",
+          "recorded_status": "failed_delivery_limit",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch14.json",
+          "json_pointer": "/cases/4",
+          "id": "patent-interview",
+          "recorded_status": "bounded_pass_v1_control",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch14.json",
+          "json_pointer": "/revisions/0/cases/0",
+          "id": "patent-v2",
+          "recorded_status": "failed_delivery_limit",
+          "criteria_count": 3,
+          "current_resource_mismatches": [
+            "instructions.md"
+          ],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch14.json",
+          "json_pointer": "/revisions/1/cases/0",
+          "id": "patent-v3",
+          "recorded_status": "bounded_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch14.json",
+          "json_pointer": "/revisions/2/cases/1",
+          "id": "patent-interview-final",
+          "recorded_status": "bounded_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review",
+      "prior_proposed_scope": "Only completed case subsets may be reviewed; do not accept the unresolved path."
+    },
+    {
+      "skill": "photo-rename",
+      "proposed_scope": "Preview/copy retry and actual downloaded three-JPEG ZIP hashes/EXIF/extensions/mapping. Phone and repeated delivery excluded.",
+      "open_limits": [
+        "Phone/integration checks deferred",
+        "Broader EXIF handling/provider trace and repeated download delivery unverified"
+      ],
+      "current_instruction_sha256": "ce117b397aa78d03f5e9930495bb3e7b341679e15fe9c115962ab57e17dbb321",
+      "evidence_sha256": {
+        "evaluations/fixtures/photo-native.json": "4fdc246850c440b047c6f1f16a66116847e337fbf5600d289348776e578c344d"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Bounded native preview/copy retry and saved ZIP hashes pass",
+      "assistant_review": "Retained actual saved ZIP verifies three byte-identical renamed JPEGs plus mapping. Automated download failed; human-assisted delivery is part of the bounded scope.",
+      "case_resource_audit": [],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    },
+    {
+      "skill": "pihole-blocklist",
+      "proposed_scope": "Supplied subset Skip and offline rubric arithmetic. No live source approval, DNS behavior or policy change.",
+      "open_limits": [
+        "Actual DNS/policy behavior unverified"
+      ],
+      "current_instruction_sha256": "ead3bf088c1982a5d8ca5c67576ae767ebc5cbdff645861c4c75ff4cf80ad3e4",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch7.json": "44cbf258eb4de07595bb8589abb39c25ca4dd125b0c1a40c83f95cbd6d8b64f5"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Bounded supplied subset/Skip and offline rubric cases pass",
+      "assistant_review": "Supplied strict-subset Skip and3.55/5 rubric calculation pass. No live source approval, DNS behavior or policy change.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch7.json",
+          "json_pointer": "/cases/2",
+          "id": "blocklist-subset",
+          "recorded_status": "bounded_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch7.json",
+          "json_pointer": "/cases/3",
+          "id": "blocklist-rubric",
+          "recorded_status": "bounded_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    },
+    {
+      "skill": "pihole-csv-analyzer",
+      "proposed_scope": "Synthetic counts/malformed aggregates and inspected comment-only/empty review ZIPs. No production DNS or device identification.",
+      "open_limits": [
+        "Real DNS data, device identification and policy changes unverified"
+      ],
+      "current_instruction_sha256": "ad56f3f906a604d2a65ed143c16abd69e43f0f202de90216efcb90d441450d08",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch2.json": "29d4e00d49ad514cd60eab42f6ba4fdda002f3c1def4cc19c1596a7123a34400"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Two native cases and actual review-only ZIP contents pass",
+      "assistant_review": "Recorded query totals10/6/3/1 and malformed aggregate handling reconcile; inspected ZIPs are comment-only or empty review artifacts. No operational policy evidence.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch2.json",
+          "json_pointer": "/cases/0",
+          "id": "pihole-query-log",
+          "recorded_status": "captured",
+          "criteria_count": 4,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch2.json",
+          "json_pointer": "/cases/1",
+          "id": "pihole-malformed-counts",
+          "recorded_status": "captured",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    },
+    {
+      "skill": "powershell-refactor",
+      "proposed_scope": "Native deduplication/naming proposals and separately identified local toy replay. No native Pester/analyzer certification.",
+      "open_limits": [
+        "Native Pester/analyzer execution and broader repository behavior unverified"
+      ],
+      "current_instruction_sha256": "01d368ee5bdcfb9ebf6ba96829bcb8bccc650a0973e747ea81d166fe441f86cb",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch11.json": "0dafa38f5708f642ca8b9c7e555469c86a6f8dfc0c97752ad132bc319fb8073d"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Deduplication and naming-only native proposals pass with separate toy replay",
+      "assistant_review": "Native proposals preserve pipeline/WhatIf/Confirm boundaries, with separately labelled local toy replay. Native analyzer/Pester not executed.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch11.json",
+          "json_pointer": "/cases/0",
+          "id": "ps-dedup",
+          "recorded_status": "bounded_proposal_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch11.json",
+          "json_pointer": "/cases/1",
+          "id": "ps-naming",
+          "recorded_status": "bounded_proposal_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    },
+    {
+      "skill": "spec-writer",
+      "proposed_scope": "Two inspected disposable planning artifact cases with existing-file preservation/reuse. No broader implementation or repository certification.",
+      "open_limits": [
+        "Broader repositories and repeatability unverified"
+      ],
+      "current_instruction_sha256": "53746b69a96ea2eb856250f47c8c793fc419cdbb536fe643e15ff6567271f7ef",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch3.json": "43cc402d4633e3d5c420dca7933713fa9ef51268f58ee9db690e213fb45b59f6"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Both targeted native cases pass, including inspected artifact bytes",
+      "assistant_review": "Recorded artifacts correctly choose008 or reuse007, preserving code/other files and draft planning status. No implementation claimed.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch3.json",
+          "json_pointer": "/cases/0",
+          "id": "spec-new",
+          "recorded_status": "bounded_native_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch3.json",
+          "json_pointer": "/cases/1",
+          "id": "spec-reuse",
+          "recorded_status": "bounded_native_pass",
+          "criteria_count": 2,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    },
+    {
+      "skill": "trip-email-html-itinerary",
+      "proposed_scope": "Intake and static fragment review. Priority badge discrepancy retained; full HTML generation/rendering/mobile/print excluded.",
+      "open_limits": [
+        "Full HTML generation/rendering/mobile/print and real travel sources unverified"
+      ],
+      "current_instruction_sha256": "f85733b6353c38844a9283667110082b4908443928176563c9ebd77036d3083b",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch10.json": "66dcc76e7c321bc9956032c2e355b0a19931faf86d6fb64fe4c1134b29bc5757",
+        "evaluations/fixtures/native-batch10-repairs.json": "50bfdb97ebc429ee52e6aa3ac13bedee250c0c79ac68bd07133ac8bdf2a4d56c"
+      },
+      "human_acceptance": "Pending; no new acceptance granted",
+      "promotion": "Blocked",
+      "prior_recommendation": "Ready for human review of bounded recorded scope",
+      "basis_recorded_outcome": "Intake retry and unchanged static fragment review pass",
+      "assistant_review": "Intake reconciliation and later static fragment review pass. Badge-priority discrepancy retained; full generated/rendered/mobile itinerary excluded.",
+      "case_resource_audit": [
+        {
+          "fixture": "evaluations/fixtures/native-batch10.json",
+          "json_pointer": "/cases/4",
+          "id": "trip-intake",
+          "recorded_status": "bounded_intake_pass_after_unchanged_retry",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch10.json",
+          "json_pointer": "/cases/5",
+          "id": "trip-fragment-review",
+          "recorded_status": "unassessed_host_load_failure",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        },
+        {
+          "fixture": "evaluations/fixtures/native-batch10-repairs.json",
+          "json_pointer": "/cases/3",
+          "id": "trip-fragment-review",
+          "recorded_status": "bounded_fragment_review_pass",
+          "criteria_count": 3,
+          "current_resource_mismatches": [],
+          "resource_inventory_present": true
+        }
+      ],
+      "review_disposition": "Ready for bounded recorded-scope human review",
+      "recommendation": "Ready for bounded recorded-scope human review"
+    }
+  ],
+  "global_open_limits": [
+    "repeated reliability beyond small retained observations",
+    "other hosts/models and installed routing",
+    "hidden/provider context and tool execution tracing",
+    "actual integrations and real-system effects",
+    "explicit human acceptance of pending scopes and new workout revision"
+  ]
+}

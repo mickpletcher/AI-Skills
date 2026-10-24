@@ -376,3 +376,24 @@
 - [ ] Complete native Claude/Cursor and Linux/macOS Codex testing when hosts are available. Keep broader host/model, repeated/installed routing, real app/service integrations and provider guarantees open.
 - [ ] Rerun the original ChatGPT home update and unchanged workout initial/duplicate/corrected Copy tests after browser control recovers. No new prompts were submitted on that host.
 - [ ] Obtain explicit scoped human acceptance. Keep the PR draft; no merge, installation, promotion or placement expansion.
+
+
+## Migration follow-up on 2026-10-23
+
+- [x] Refresh GitHub readback: reviewed head f5ab3b4 has 13 successful checks; PR #11 remains open and draft. Review all 23 pending records without changing acceptance decisions. See the [follow-up](../../evaluations/migration-follow-up-2026-10-23.md).
+- [x] Check native host availability: two browser inventory timeouts before submission; Claude/Cursor CLIs absent from PATH; WSL reports not installed. These are host limits, not candidate failures or passes.
+- [ ] Restore browser control and run the pinned original home update once. Keep its current sampled scope held pending assessable evidence.
+- [ ] Run unchanged workout initial/duplicate/corrected turns in a separate fresh Medium Temporary chat. Validate exact Copy bytes without trimming and preserve source facts.
+- [ ] Run native Claude/Cursor and additional Codex host/model/routing checks when hosts are available. No installation or configuration change is implied.
+- [ ] Obtain explicit human review of 22 ready bounded scopes and the separate repaired workout revision. All 23 acceptance decisions remain pending. Keep unverified integrations open and PR draft. No merge or promotion.
+
+- [x] Validate the tracked documentation overlay: 46 skills/zero issues; offline 24 cases/99 negatives/zero model calls; whitespace check passes. Retain the separate nine-issue live-workspace failure from ignored residue without changing that residue.
+
+
+## Home and workout native reruns on 2026-10-24
+
+- [x] Verify exact original packets, wrappers and current resources; run home once at Instant and unchanged workout initial/duplicate/correction at Medium in separate fresh Unpersonalized Temporary chats. See the [assessment](../../evaluations/native-home-workout-2026-10-24.md).
+- [x] Independently validate grounded home tags and actual initial/corrected code Copy: 323 bytes each, byte-zero frontmatter, strict/YAML checks, source preservation and only row sets 3 to 4 changed. Duplicate asks Skip/Overwrite without another note.
+- [x] Refresh CI on f5ab3b4: all 13 checks pass and PR #11 remains open and draft. Preserve historical failures and acceptances; no candidate changes.
+- [ ] Obtain human acceptance of all 23 ready bounded scopes and separate repaired workout revision. Keep broader repeatability, real integrations, other hosts/models/routing and provider guarantees open. No merge or promotion.
+- [x] Validate the final tracked evidence overlay: 46 skills/zero issues, offline 24 cases/99 negative checks/zero model calls, exact resource/input/output pins, unchanged human acceptance decisions and added-text privacy/whitespace checks.

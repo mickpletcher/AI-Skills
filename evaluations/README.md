@@ -1,5 +1,9 @@
 # Behavioral evaluation framework
 
+Latest [home/workout reruns](native-home-workout-2026-10-24.md): repaired home hashtags and unchanged workout initial/duplicate/corrected sequence pass fresh bounded tests. Exact native initial/corrected Copy each 323 bytes passes strict/YAML validation with only the authorized sets change. All 23 pending scopes are ready for bounded human review; no new acceptance. Broader repeatability, real integrations and other hosts remain open. PR draft; no merge or promotion.
+Latest [migration follow-up](migration-follow-up-2026-10-23.md): all 13 checks pass on the reviewed head; PR #11 is open and draft. Browser inventory still times out before native submission. Claude/Cursor CLIs and a WSL Linux host are unavailable. Home/workout repeats, other native hosts and all 23 human acceptance reviews remain open. No new native pass or acceptance is claimed.
+
+
 Latest [host, routing and integration tests](host-routing-integration-2026-10-22.md): 12 Codex candidates loaded across scoped cases, three independently checked file integrations, and passing Linux/Windows helper CI after an explicit unsupported-JPEG guard. Original native results and 22-ready/one-held acceptance recommendations remain unchanged. Native Claude/Cursor, ChatGPT reruns, repeatability and real app/service integrations stay open.
 
 Latest: [home repair and preview Download](native-batch17-2026-10-22.md). Home hashtag source-grounding instruction repaired. Original home native rerun and unchanged workout Copy repeat remain open due disconnected browser control; neither prompt submitted. Normal preview Download produced an exact verified 51,053-byte JPEG. No new acceptance, merge or promotion; PR draft.

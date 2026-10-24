@@ -15,12 +15,12 @@
     "accepted_bounded_native_scopes": 13,
     "pending_bounded_native_review": 23,
     "candidate_promotions": 0,
-    "bounded_verification_paths_closed_this_round": 1,
-    "remaining_targeted_verification_paths": 2,
+    "bounded_verification_paths_closed_this_round": 2,
+    "remaining_targeted_verification_paths": 0,
     "new_human_acceptances": 0,
-    "remaining_targeted_paths_description": "Original home update against repaired hashtags and unchanged workout initial/corrected Copy repeat not executed. Broader reliability, integrations, other hosts/routing and human acceptance remain open.",
-    "pending_scopes_ready_current_sampled": 22,
-    "pending_scopes_held_current_sampled": 1
+    "remaining_targeted_paths_description": "Original repaired home update and unchanged workout Copy repeat pass one fresh bounded workflow each. General repeatability, real integrations, other hosts/routing and human acceptance remain open.",
+    "pending_scopes_ready_current_sampled": 23,
+    "pending_scopes_held_current_sampled": 0
   },
   "rows": [
     {
@@ -159,18 +159,18 @@
     },
     {
       "skill": "container-home",
-      "native_outcome": "Prior batch16 post preserves main facts but adds unsupported #OffGrid. Current hashtag instruction repaired; original native rerun not executed, correctness OPEN.",
+      "native_outcome": "Original repaired home update passes current native rerun: grounded hashtags, dry-fit progress, separate current/planned containers and pending septic/solar. Earlier unsupported tag retained.",
       "bounded_native_acceptance": "Pending separate bounded native review",
       "evidence": [
         "evaluations/fixtures/native-batch7.json",
         "evaluations/fixtures/native-batch7-repairs.json",
         "evaluations/fixtures/native-batch16.json",
-        "evaluations/fixtures/native-batch17.json"
+        "evaluations/fixtures/native-batch17.json",
+        "evaluations/fixtures/native-home-workout19.json"
       ],
       "open_verification": [
         "Historical context failure retained",
-        "no structural/construction execution verified",
-        "Original home update against repaired hashtag guidance not executed; native verification OPEN."
+        "no structural/construction execution verified"
       ],
       "acceptance_evidence": null,
       "retained_issue_history": "Historical project-context import retained; corrected isolation rerun passes.",
@@ -199,7 +199,14 @@
         "status": "OPEN_NOT_EXECUTED"
       },
       "latest_verification_result": "Main facts pass; hashtag grounding gap OPEN",
-      "batch17_verification": "Instruction repaired; original native rerun not executed. Earlier unsupported hashtag retained; current correctness unverified."
+      "batch17_verification": "Instruction repaired; original native rerun not executed. Earlier unsupported hashtag retained; current correctness unverified.",
+      "native19": {
+        "status": "BOUNDED_PASS",
+        "evidence": "evaluations/fixtures/native-home-workout19.json",
+        "evidence_sha256": "3fa29aacf5877cee442e0f2381f248389f26544c1ced0a3010ae1f1a33f98d4a",
+        "new_human_acceptance": false,
+        "limits": "One additional observation; general repeatability, actual integrations, provider guarantees and human acceptance remain open."
+      }
     },
     {
       "skill": "crypto-listings",
@@ -741,7 +748,7 @@
     },
     {
       "skill": "obsidian-workout-export",
-      "native_outcome": "Final Markdown-fence candidate initial/corrected native Copy each323bytes, frontmatter at byte zero, strict/YAML checks pass; duplicate protection passes. Indented attempt and earlier failures retained.",
+      "native_outcome": "Unchanged fresh initial/duplicate/corrected repeat passes; exact initial/corrected native Copy each 323 bytes, strict/YAML checks pass, only sets 3 to 4 changes. Previous failures retained.",
       "bounded_native_acceptance": "Accepted only within recorded bounded scope",
       "evidence": [
         "evaluations/fixtures/native-workout-repairs.json",
@@ -749,10 +756,11 @@
         "evaluations/fixtures/native-batch14.json",
         "evaluations/fixtures/native-batch15.json",
         "evaluations/fixtures/native-batch16.json",
-        "evaluations/fixtures/native-batch17.json"
+        "evaluations/fixtures/native-batch17.json",
+        "evaluations/fixtures/native-home-workout19.json"
       ],
       "open_verification": [
-        "Repeated initial/corrected native Copy reliability unverified",
+        "One additional repeat passes; broader Copy reliability remains unverified",
         "Actual Obsidian ingestion and other host/routing compatibility unverified",
         "Human acceptance of new serialization revision pending"
       ],
@@ -776,7 +784,14 @@
       "current_instruction_hash_present_in_selected_evidence": true,
       "latest_verification_result": "Initial/corrected Copy and duplicate protection bounded PASS; broader limits OPEN",
       "current_revision_human_acceptance": "Pending; no new acceptance granted",
-      "batch17_verification": "Unchanged initial/duplicate/corrected workflow repeat pinned but not executed. Batch16 pass retained; repeated reliability open."
+      "batch17_verification": "Unchanged initial/duplicate/corrected workflow repeat pinned but not executed. Batch16 pass retained; repeated reliability open.",
+      "native19": {
+        "status": "BOUNDED_PASS",
+        "evidence": "evaluations/fixtures/native-home-workout19.json",
+        "evidence_sha256": "3fa29aacf5877cee442e0f2381f248389f26544c1ced0a3010ae1f1a33f98d4a",
+        "new_human_acceptance": false,
+        "limits": "One additional observation; general repeatability, actual integrations, provider guarantees and human acceptance remain open."
+      }
     },
     {
       "skill": "patentforge-provisional",
@@ -1292,5 +1307,16 @@
       "Provider-owned hidden context/tool guarantees and all human acceptance/promotion gates"
     ],
     "helper_ci": "https://github.com/mickpletcher/AI-Skills/actions/runs/39846596143"
+  },
+  "native19_summary": {
+    "evidence": "evaluations/fixtures/native-home-workout19.json",
+    "evidence_sha256": "3fa29aacf5877cee442e0f2381f248389f26544c1ced0a3010ae1f1a33f98d4a",
+    "home": "BOUNDED_PASS",
+    "workout": "BOUNDED_PASS",
+    "pending_human_reviews": 23,
+    "ready": 23,
+    "held": 0,
+    "new_human_acceptances": 0,
+    "promotions": 0
   }
 }

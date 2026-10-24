@@ -1,14 +1,12 @@
 # Pending native acceptance review
 
-Latest [host, routing and integration tests](host-routing-integration-2026-10-22.md): 12 Codex candidates loaded across scoped cases, three independently checked file integrations, and passing Linux/Windows helper CI after an explicit unsupported-JPEG guard. Original native results and 22-ready/one-held acceptance recommendations remain unchanged. Native Claude/Cursor, ChatGPT reruns, repeatability and real app/service integrations stay open.
+Date: 2026-10-24. Candidate head `f5ab3b4`. PR #11 remains draft. No merge, installation or promotion.
 
-Latest: [home repair and preview Download](native-batch17-2026-10-22.md). Home original native rerun and unchanged workout Copy repeat remain OPEN due disconnected browser control. Normal Download file readback now passes for one retained JPEG; repeatability remains unverified. Recommendations stay 22 ready/one held, no new acceptance. The prior batch16 observations below are retained.
+The [home/workout reruns](native-home-workout-2026-10-24.md) pass their original bounded criteria with unchanged resources. Repaired home hashtags follow supplied facts. Workout initial/corrected native Copy each contains exactly 323 bytes with frontmatter at byte zero; strict/YAML checks pass and the sole correction changes row sets from 3 to 4. Duplicate protection asks Skip or Overwrite.
 
-Date: 2026-10-22. Basis `b504d5e`. PR #11 remains draft. No merge, installation or promotion.
+All 23 pending scopes are now ready for bounded human review. All 23 acceptance decisions remain pending, the repaired workout revision requires separate review, and thirteen historical bounded acceptances are unchanged. These observations do not prove broad repeatability, provider guarantees, real integrations or compatibility across hosts/models. No new acceptance or promotion.
 
-All 23 pending scopes were reviewed in batch15. The [four current-version checks and workout repair](native-batch16-2026-10-22.md) now support 22 ready recorded scopes and one held: home update adds unsupported `#OffGrid`. All 23 human reviews remain pending; thirteen historical acceptances are unchanged. The new workout revision passes bounded initial/corrected Copy and still requires separate human review.
-
-Actual fixture/resource hashes and limitations are in the [machine-readable review](native-acceptance-review-2026-10-22.json). This is not a fresh replay of every historical artifact or proof of repeated reliability, installed routing, provider traces or real integrations.
+Earlier [host tests](host-routing-integration-2026-10-22.md), [home repair](native-batch17-2026-10-22.md), [workout repair/controls](native-batch16-2026-10-22.md) and retained original fixtures preserve their historical failures and limits. Current hashes and evidence pins are in the linked machine-readable records.
 
 ## Ready for bounded recorded-scope human review
 
@@ -17,6 +15,7 @@ Actual fixture/resource hashes and limitations are in the [machine-readable revi
 | alpaca-trading | Synthetic repository review and missing-repository intake, including remaining-fill accounting and Spec-context requests. No live broker or runtime certification. |
 | astrophotography-processing | Supplied preview diagnosis and fabricated FITS metadata/source review. No full processing or real capture validation. |
 | blog-post | Source-faithful how-to and final corrected attribution draft including title/opening variants. No publication or broader grounding reliability. |
+| container-home | Source-faithful fictional update with repaired grounded hashtags and prior corrected planning isolation. No structural sizing, permit/construction approval or broad repeatability. |
 | crypto-research | Supplied-source comparison and ambiguous-token/missing-live-data clarification. No live financial verification. |
 | example-skill | Synthetic three-step plan/verification and short missing-objective clarification. No execution or installed routing. |
 | fitness-log | Synthetic weekly arithmetic and separate assisted/strict benchmark interpretation. No persistent tracker or real athlete assessment. |
@@ -37,10 +36,6 @@ Actual fixture/resource hashes and limitations are in the [machine-readable revi
 | spec-writer | Two inspected disposable planning artifact cases with existing-file preservation/reuse. No broader implementation or repository certification. |
 | trip-email-html-itinerary | Intake and static fragment review. Priority badge discrepancy retained; full HTML generation/rendering/mobile/print excluded. |
 
-## Hold complete current sampled scope
-
-| Skill | Remaining issue |
-| --- | --- |
-| container-home | Hashtag instruction repaired; rerun the original home update once native browser control reconnects. Prior unsupported `#OffGrid` remains retained. Earlier sequencing and main factual post content remain reviewable within their recorded limits. |
+No current sampled scope is held after this rerun. Earlier home failures remain in their original fixtures.
 
 No acceptance is inferred from this report, successful CI or passing subsets. Broader limits remain open in the [coverage matrix](native-coverage-2026-10-22.md).

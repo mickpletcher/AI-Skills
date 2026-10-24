@@ -1,0 +1,2626 @@
+{
+  "schema_version": 1,
+  "source_commit": "5e3f05beb29bc256c8c1b433e61c62dd8936eefc",
+  "rubric_version": "fixed-evidence-v2",
+  "initial_resources_sha256": {
+    "instructions.md": "819a9d65ffbb6fd6a9f0bd5948fe8886f8e8b889bee16adddd19b7621dc8fb20",
+    "capabilities.json": "181e12ff5e74fbc195b8e19b85aa227e75c935ced6eb803339c2019f680231d1",
+    "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
+    "references/common-patterns.md": "0297e324530fab920a6df563ab5aa46896d66a5910aa05449983dc7b0525439a",
+    "references/enhance-workflow.md": "4a3d7cd07eb701493ba0f72e35480917141eda0b7fcd89b5b4d0d615bbac1e20",
+    "references/scoring-workflow.md": "3737992237096b3662125ddb66181ad9b2913f261be3886d27f156d60fa55669",
+    "scoring-model.md": "6bbcc6b226f551d94d3aa1a8cf9037c253e43e56b86716ecba80ae852470611c",
+    "json-output-spec.md": "d224b964d0216bcf9e0ee73d0777642a384f39eda8073b2af3cf6a00d5d30873",
+    "scripts/score_audit.py": "43c95fa9e4b734a5330ec796d4a2df2d8358ade36aa543d92271e6a07251d654"
+  },
+  "final_resources_sha256": {
+    "instructions.md": "819a9d65ffbb6fd6a9f0bd5948fe8886f8e8b889bee16adddd19b7621dc8fb20",
+    "capabilities.json": "181e12ff5e74fbc195b8e19b85aa227e75c935ced6eb803339c2019f680231d1",
+    "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
+    "references/common-patterns.md": "0297e324530fab920a6df563ab5aa46896d66a5910aa05449983dc7b0525439a",
+    "references/enhance-workflow.md": "4a3d7cd07eb701493ba0f72e35480917141eda0b7fcd89b5b4d0d615bbac1e20",
+    "references/scoring-workflow.md": "3646d2ea1abbb294d1f1f62a2db4a68034cedfee6655ed7487dfc0e572b211a1",
+    "scoring-model.md": "6bbcc6b226f551d94d3aa1a8cf9037c253e43e56b86716ecba80ae852470611c",
+    "json-output-spec.md": "584b9f6e8bcebf7f588e1ab78c503684b3cf027a8e7170a8ef3116eca86d6173",
+    "scripts/score_audit.py": "824600d0ff3564c4604993efaa2f01bd853f0cf9b87da259b5639c07a20f58f2"
+  },
+  "initial_patch_sha256": "137d410b2860b233884a4c2a9407987f2dfbd10e18c0e9bc4fcef4fa824320ea",
+  "canary": {
+    "visually_observed_response": "NO",
+    "ax_sha256": "ce833cbb4d8895c293a57fdbbd628eb5f42b305264a4fe835858b2b9963ca5b2",
+    "screenshot_sha256": "f546821a35ab6271d31b68e6b8743cd13c39fdd6a3180bbaf4f99177375beb92"
+  },
+  "transport_probe": {
+    "copied_sha256": "bec765e91a435c6ab5c77c7910d83b258a0e673bffefd002cf457eb956f6fb21",
+    "parsed_values": {
+      "quote": "\"",
+      "path": "C:\\jobs",
+      "line": "first\nsecond"
+    },
+    "domain_case": false
+  },
+  "cases": [
+    {
+      "id": "human-v2-1",
+      "task": "rw Enhance the fictional resume in resume.txt for the supplied Automation Engineer target. The applicant is Alex Example, not Mick. Use human output mode and the normal condensed audit, with numeric scoring for both the original resume and your rewrite. Use the supplied candidate instructions and exact score calculator from resources.zip in a disposable workspace. Run the calculator for each separate ledger and run --check on each final audit. Present the final score, verdict, all five category values and severity counts for both versions in the readable audit. Include missing-data notes and source-backed findings. Preserve employer, historical title, dates, education and supplied figures. Microsoft Graph is desired but experience is not established. Do not invent certifications, employment after May 2025, leadership, metrics or a gap explanation. Assessment date: 2026-10-20. Deliver one downloadable human_numeric_outputs.zip containing rewritten_resume.md, original_audit.json, rewritten_audit.json and execution_log.txt. The JSON files are supporting score ledgers, not a request to change the chat response to JSON mode. The execution log should contain the actual calculator commands, exit codes and captured output; label any unavailable trace honestly. Do not browse, use connected apps, submit applications, update a persistent library, install dependencies or change real systems. If Python/file execution is unavailable, state the exact limitation and that numeric scoring was not executed. Do not substitute estimated scores or count a qualitative fallback as completed numeric scoring.",
+      "uploads": [
+        "packet.txt",
+        "resources.zip",
+        "resume.txt"
+      ],
+      "input_sha256": {
+        "packet.txt": "63eb5baf042e40ac1820fed2bdeea1bcdfb13e1b21802c049517b082ecac4166",
+        "resources.zip": "6605f9a72aa50a89134f3c301f9537850d6920edf23fe3bce18359ea260b6df8",
+        "resume.txt": "c7a588e66087f0b15d21c05018b54dda59a244c10c4ce0e082554b9801b2dd3a"
+      },
+      "inputs_and_resources_preserved": true,
+      "ax_sha256": "0e720005737171c1d2e36acfea48acf86ba89ace87fe46a300aaeaa3adf8ca80",
+      "screenshot_sha256": "23a41ae6f2e67012654875f4ddcd5d0d2b631926028bf229de16474bbfc6c429",
+      "artifact": {
+        "bytes": 7501,
+        "sha256": "2de53918e990155c645ce83b11ff1cde1fe5ff960b01a0fdc4efef014048ab33",
+        "member_sha256": {
+          "rewritten_resume.md": "2ac965123f095f254a125d489255eed7c26f6be3e797bd979114cc40dc841ba7",
+          "original_audit.json": "5bbcc5ed9921618fe2e6caf935827d504db0f7605845ec4b62a510a51df3f024",
+          "rewritten_audit.json": "aed7326cd9afe68543973af61e5f1df2d8b45b24858147cc9cfb57bb9af87e00",
+          "execution_log.txt": "6bdc59a84347dbd8570712f92d14c9a0964839d588973a5f4ce4e08d9115ac8d"
+        }
+      },
+      "audits": {
+        "original": {
+          "output_mode": "human",
+          "review_context": "targeted",
+          "rubric_version": "fixed-evidence-v2",
+          "confidence": "high",
+          "audit_mode": "condensed",
+          "hire_likelihood": "Document rubric signal only; not a calibrated interview probability.",
+          "missing_data_flags": [
+            "MISSING_METRIC",
+            "MISSING_TIMELINE_CONTEXT"
+          ],
+          "system_flags": [
+            "TARGETING_WEAK"
+          ],
+          "top_fixes": [
+            "Confirm and document Microsoft Graph experience only if actually held; otherwise keep it off the resume.",
+            "Supply a measured Microsoft Intune compliance outcome if available.",
+            "Provide truthful context for the period after May 2025, if appropriate."
+          ],
+          "rewritten_resume": null,
+          "notes": [
+            "Target requirements are fixture context, not resume content.",
+            "No certifications supplied; no post-May 2025 employment established.",
+            "As of 2026-10-20, the interval after May 2025 is approximately 16 months; no reason supplied.",
+            "No browsing or persistent writes performed."
+          ],
+          "scoring_evidence": {
+            "positioning": {
+              "state": "role_only",
+              "evidence": "Target: Automation Engineer appears, but no supported summary accompanies it."
+            },
+            "experience_statements": [
+              {
+                "text": "Built PowerShell reporting across 400 Windows devices. Weekly report preparation fell from 3 hours to 45 minutes.",
+                "names_specific_object": true,
+                "has_supplied_measure": true,
+                "evidence": "PowerShell reporting, 400 Windows devices and 3 hours to 45 minutes are supplied."
+              },
+              {
+                "text": "Maintained Microsoft Intune compliance checks. No measured compliance gain is supplied.",
+                "names_specific_object": true,
+                "has_supplied_measure": false,
+                "evidence": "Microsoft Intune compliance checks are named, but no compliance gain is quantified."
+              }
+            ],
+            "structure": {
+              "state": "standard",
+              "section_headings": [
+                "Experience",
+                "Education"
+              ],
+              "evidence": "Observed conventional resume section labels and readable role entry."
+            },
+            "chronology": {
+              "state": "clear",
+              "evidence": "Automation Engineer | Example Labs | Jun 2022 - May 2025; dates explicit and noncontradictory."
+            },
+            "requirements": [
+              {
+                "text": "PowerShell",
+                "supported": true,
+                "evidence": "Built PowerShell reporting across 400 Windows devices."
+              },
+              {
+                "text": "Microsoft Intune",
+                "supported": true,
+                "evidence": "Maintained Microsoft Intune compliance checks."
+              },
+              {
+                "text": "Microsoft Graph",
+                "supported": false,
+                "evidence": "No Microsoft Graph experience is established in the supplied resume."
+              }
+            ],
+            "privacy": {
+              "state": "safe",
+              "evidence": "Plain-text resume contains ordinary name/email contact data and no photo or unnecessary sensitive information."
+            }
+          },
+          "principle_scores": [
+            {
+              "criterion_id": "positioning",
+              "principle": "Make the target role obvious in the top third",
+              "source_type": "library_principle",
+              "source_name": "Make the target role obvious in the top third",
+              "category": "Positioning and Narrative",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "Target: Automation Engineer appears, but no supported summary accompanies it.",
+              "before": null,
+              "after": null,
+              "fix": "Review positioning using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "specificity",
+              "principle": "Every bullet must name the thing",
+              "source_type": "library_principle",
+              "source_name": "Every bullet must name the thing",
+              "category": "Evidence and Bullet Strength",
+              "score": 3,
+              "weight": 1.5,
+              "severity": "INFO",
+              "reason": "2/2 experience statements meet specificity; see scoring_evidence.experience_statements",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "measurements",
+              "principle": "Numbers, everywhere, or you get an interview with nobody",
+              "source_type": "library_principle",
+              "source_name": "Numbers, everywhere, or you get an interview with nobody",
+              "category": "Evidence and Bullet Strength",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "1/2 experience statements meet measurements; see scoring_evidence.experience_statements",
+              "before": null,
+              "after": null,
+              "fix": "Review measurements using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "structure",
+              "principle": "Standard section headings beat clever branding",
+              "source_type": "library_principle",
+              "source_name": "Standard section headings beat clever branding",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Observed conventional resume section labels and readable role entry.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "chronology",
+              "principle": "Chronology should be easy to follow",
+              "source_type": "library_principle",
+              "source_name": "Chronology should be easy to follow",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Automation Engineer | Example Labs | Jun 2022 - May 2025; dates explicit and noncontradictory.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "alignment",
+              "principle": "Mirror the job description's language naturally",
+              "source_type": "library_principle",
+              "source_name": "Mirror the job description's language naturally",
+              "category": "Relevance and Targeting",
+              "score": 1,
+              "weight": 1.5,
+              "severity": "MAJOR",
+              "reason": "2/3 supplied requirements supported; see scoring_evidence.requirements",
+              "before": null,
+              "after": null,
+              "fix": "Review alignment using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "privacy",
+              "principle": "No photos, no headshots, no personal data",
+              "source_type": "common_pattern",
+              "source_name": "common-patterns § No photos, no headshots, no personal data",
+              "category": "Professionalism and Trust",
+              "score": 3,
+              "weight": 1.0,
+              "severity": "INFO",
+              "reason": "Plain-text resume contains ordinary name/email contact data and no photo or unnecessary sensitive information.",
+              "before": null,
+              "after": null,
+              "fix": null
+            }
+          ],
+          "category_scores": {
+            "positioning_and_narrative": 66.7,
+            "evidence_and_bullet_strength": 83.3,
+            "ats_and_structural_reliability": 100.0,
+            "relevance_and_targeting": 33.3,
+            "professionalism_and_trust": 100.0
+          },
+          "final_score": 76.7,
+          "verdict": "Good but inconsistent",
+          "critical_issue_count": 0,
+          "major_issue_count": 1,
+          "minor_issue_count": 2
+        },
+        "rewritten": {
+          "output_mode": "human",
+          "review_context": "targeted",
+          "rubric_version": "fixed-evidence-v2",
+          "confidence": "high",
+          "audit_mode": "condensed",
+          "hire_likelihood": "Document rubric signal only; not a calibrated interview probability.",
+          "missing_data_flags": [
+            "MISSING_METRIC",
+            "MISSING_TIMELINE_CONTEXT"
+          ],
+          "system_flags": [
+            "TARGETING_WEAK"
+          ],
+          "top_fixes": [
+            "Confirm and document Microsoft Graph experience only if actually held; otherwise keep it off the resume.",
+            "Supply a measured Microsoft Intune compliance outcome if available.",
+            "Provide truthful context for the period after May 2025, if appropriate."
+          ],
+          "rewritten_resume": "# Alex Example\nalex@example.invalid\n\n## Summary\nAutomation Engineer with experience building PowerShell reporting for 400 Windows devices and maintaining Microsoft Intune compliance checks. Reduced weekly report preparation from 3 hours to 45 minutes.\n\n## Experience\n**Automation Engineer | Example Labs | Jun 2022 - May 2025**\n- Built PowerShell reporting across 400 Windows devices, reducing weekly report preparation from 3 hours to 45 minutes.\n- Maintained Microsoft Intune compliance checks; compliance improvement was not quantified.\n\n## Technical Skills\n- Automation and reporting: PowerShell; Windows device reporting\n- Device compliance: Microsoft Intune compliance checks\n\n## Education\nAssociate of Science, Computer Information Systems | Example College | 2020\n",
+          "notes": [
+            "Target requirements are fixture context, not resume content.",
+            "No certifications supplied; no post-May 2025 employment established.",
+            "As of 2026-10-20, the interval after May 2025 is approximately 16 months; no reason supplied.",
+            "No browsing or persistent writes performed."
+          ],
+          "scoring_evidence": {
+            "positioning": {
+              "state": "role_and_evidence",
+              "evidence": "Summary explicitly states Automation Engineer and PowerShell reporting for 400 Windows devices."
+            },
+            "experience_statements": [
+              {
+                "text": "Built PowerShell reporting across 400 Windows devices, reducing weekly report preparation from 3 hours to 45 minutes.",
+                "names_specific_object": true,
+                "has_supplied_measure": true,
+                "evidence": "PowerShell reporting, 400 Windows devices and 3 hours to 45 minutes are supplied."
+              },
+              {
+                "text": "Maintained Microsoft Intune compliance checks; compliance improvement was not quantified.",
+                "names_specific_object": true,
+                "has_supplied_measure": false,
+                "evidence": "Microsoft Intune compliance checks are named, but no compliance gain is quantified."
+              }
+            ],
+            "structure": {
+              "state": "standard",
+              "section_headings": [
+                "Summary",
+                "Experience",
+                "Technical Skills",
+                "Education"
+              ],
+              "evidence": "Observed conventional resume section labels and readable role entry."
+            },
+            "chronology": {
+              "state": "clear",
+              "evidence": "Automation Engineer | Example Labs | Jun 2022 - May 2025; dates explicit and noncontradictory."
+            },
+            "requirements": [
+              {
+                "text": "PowerShell",
+                "supported": true,
+                "evidence": "Built PowerShell reporting across 400 Windows devices."
+              },
+              {
+                "text": "Microsoft Intune",
+                "supported": true,
+                "evidence": "Maintained Microsoft Intune compliance checks."
+              },
+              {
+                "text": "Microsoft Graph",
+                "supported": false,
+                "evidence": "No Microsoft Graph experience is established in the supplied resume."
+              }
+            ],
+            "privacy": {
+              "state": "safe",
+              "evidence": "Plain-text resume contains ordinary name/email contact data and no photo or unnecessary sensitive information."
+            }
+          },
+          "principle_scores": [
+            {
+              "criterion_id": "positioning",
+              "principle": "Make the target role obvious in the top third",
+              "source_type": "library_principle",
+              "source_name": "Make the target role obvious in the top third",
+              "category": "Positioning and Narrative",
+              "score": 3,
+              "weight": 1.5,
+              "severity": "INFO",
+              "reason": "Summary explicitly states Automation Engineer and PowerShell reporting for 400 Windows devices.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "specificity",
+              "principle": "Every bullet must name the thing",
+              "source_type": "library_principle",
+              "source_name": "Every bullet must name the thing",
+              "category": "Evidence and Bullet Strength",
+              "score": 3,
+              "weight": 1.5,
+              "severity": "INFO",
+              "reason": "2/2 experience statements meet specificity; see scoring_evidence.experience_statements",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "measurements",
+              "principle": "Numbers, everywhere, or you get an interview with nobody",
+              "source_type": "library_principle",
+              "source_name": "Numbers, everywhere, or you get an interview with nobody",
+              "category": "Evidence and Bullet Strength",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "1/2 experience statements meet measurements; see scoring_evidence.experience_statements",
+              "before": null,
+              "after": null,
+              "fix": "Review measurements using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "structure",
+              "principle": "Standard section headings beat clever branding",
+              "source_type": "library_principle",
+              "source_name": "Standard section headings beat clever branding",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Observed conventional resume section labels and readable role entry.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "chronology",
+              "principle": "Chronology should be easy to follow",
+              "source_type": "library_principle",
+              "source_name": "Chronology should be easy to follow",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Automation Engineer | Example Labs | Jun 2022 - May 2025; dates explicit and noncontradictory.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "alignment",
+              "principle": "Mirror the job description's language naturally",
+              "source_type": "library_principle",
+              "source_name": "Mirror the job description's language naturally",
+              "category": "Relevance and Targeting",
+              "score": 1,
+              "weight": 1.5,
+              "severity": "MAJOR",
+              "reason": "2/3 supplied requirements supported; see scoring_evidence.requirements",
+              "before": null,
+              "after": null,
+              "fix": "Review alignment using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "privacy",
+              "principle": "No photos, no headshots, no personal data",
+              "source_type": "common_pattern",
+              "source_name": "common-patterns § No photos, no headshots, no personal data",
+              "category": "Professionalism and Trust",
+              "score": 3,
+              "weight": 1.0,
+              "severity": "INFO",
+              "reason": "Plain-text resume contains ordinary name/email contact data and no photo or unnecessary sensitive information.",
+              "before": null,
+              "after": null,
+              "fix": null
+            }
+          ],
+          "category_scores": {
+            "positioning_and_narrative": 100.0,
+            "evidence_and_bullet_strength": 83.3,
+            "ats_and_structural_reliability": 100.0,
+            "relevance_and_targeting": 33.3,
+            "professionalism_and_trust": 100.0
+          },
+          "final_score": 85.0,
+          "verdict": "Strong",
+          "critical_issue_count": 0,
+          "major_issue_count": 1,
+          "minor_issue_count": 1
+        }
+      },
+      "checks": {
+        "original": {
+          "full_ledger_and_source_mapping_match": true,
+          "independent_decimal_replay_matches": true,
+          "local_check_exit": 0,
+          "score": 76.7,
+          "severity_counts": {
+            "MINOR": 2,
+            "INFO": 4,
+            "MAJOR": 1
+          },
+          "heading_inventory_excludes_context": true,
+          "human_tables_match": true,
+          "experience_statement_count": 2,
+          "experience_inventory_matches_activity_groups": true
+        },
+        "rewritten": {
+          "full_ledger_and_source_mapping_match": true,
+          "independent_decimal_replay_matches": true,
+          "local_check_exit": 0,
+          "score": 85.0,
+          "severity_counts": {
+            "INFO": 5,
+            "MINOR": 1,
+            "MAJOR": 1
+          },
+          "heading_inventory_excludes_context": true,
+          "human_tables_match": true,
+          "experience_statement_count": 2,
+          "experience_inventory_matches_activity_groups": true
+        }
+      },
+      "provider_log_outputs_match_delivered_ledgers": true,
+      "rewrite_facts_preserved": true,
+      "provider_execution_independently_verified": false,
+      "status": "bounded_human_pass",
+      "input": {
+        "id": "human-v2-1",
+        "task": "rw Enhance the fictional resume in resume.txt for the supplied Automation Engineer target. The applicant is Alex Example, not Mick. Use human output mode and the normal condensed audit, with numeric scoring for both the original resume and your rewrite. Use the supplied candidate instructions and exact score calculator from resources.zip in a disposable workspace. Run the calculator for each separate ledger and run --check on each final audit. Present the final score, verdict, all five category values and severity counts for both versions in the readable audit. Include missing-data notes and source-backed findings. Preserve employer, historical title, dates, education and supplied figures. Microsoft Graph is desired but experience is not established. Do not invent certifications, employment after May 2025, leadership, metrics or a gap explanation. Assessment date: 2026-10-20. Deliver one downloadable human_numeric_outputs.zip containing rewritten_resume.md, original_audit.json, rewritten_audit.json and execution_log.txt. The JSON files are supporting score ledgers, not a request to change the chat response to JSON mode. The execution log should contain the actual calculator commands, exit codes and captured output; label any unavailable trace honestly. Do not browse, use connected apps, submit applications, update a persistent library, install dependencies or change real systems. If Python/file execution is unavailable, state the exact limitation and that numeric scoring was not executed. Do not substitute estimated scores or count a qualitative fallback as completed numeric scoring.",
+        "uploads": [
+          "packet.txt",
+          "resources.zip",
+          "resume.txt"
+        ],
+        "input_sha256": {
+          "packet.txt": "63eb5baf042e40ac1820fed2bdeea1bcdfb13e1b21802c049517b082ecac4166",
+          "resources.zip": "6605f9a72aa50a89134f3c301f9537850d6920edf23fe3bce18359ea260b6df8",
+          "resume.txt": "c7a588e66087f0b15d21c05018b54dda59a244c10c4ce0e082554b9801b2dd3a"
+        }
+      }
+    },
+    {
+      "id": "human-v2-2",
+      "task": "rw Enhance the fictional resume in resume.txt for the supplied Automation Engineer target. The applicant is Alex Example, not Mick. Use human output mode and the normal condensed audit, with numeric scoring for both the original resume and your rewrite. Use the supplied candidate instructions and exact score calculator from resources.zip in a disposable workspace. Run the calculator for each separate ledger and run --check on each final audit. Present the final score, verdict, all five category values and severity counts for both versions in the readable audit. Include missing-data notes and source-backed findings. Preserve employer, historical title, dates, education and supplied figures. Microsoft Graph is desired but experience is not established. Do not invent certifications, employment after May 2025, leadership, metrics or a gap explanation. Assessment date: 2026-10-20. Deliver one downloadable human_numeric_outputs.zip containing rewritten_resume.md, original_audit.json, rewritten_audit.json and execution_log.txt. The JSON files are supporting score ledgers, not a request to change the chat response to JSON mode. The execution log should contain the actual calculator commands, exit codes and captured output; label any unavailable trace honestly. Do not browse, use connected apps, submit applications, update a persistent library, install dependencies or change real systems. If Python/file execution is unavailable, state the exact limitation and that numeric scoring was not executed. Do not substitute estimated scores or count a qualitative fallback as completed numeric scoring.",
+      "uploads": [
+        "packet.txt",
+        "resources.zip",
+        "resume.txt"
+      ],
+      "input_sha256": {
+        "packet.txt": "63eb5baf042e40ac1820fed2bdeea1bcdfb13e1b21802c049517b082ecac4166",
+        "resources.zip": "6605f9a72aa50a89134f3c301f9537850d6920edf23fe3bce18359ea260b6df8",
+        "resume.txt": "c7a588e66087f0b15d21c05018b54dda59a244c10c4ce0e082554b9801b2dd3a"
+      },
+      "inputs_and_resources_preserved": true,
+      "ax_sha256": "3731a45df9b161baa147d4f0630606bf3ae4d5189d5365f9b7e4cc4596b80dd2",
+      "screenshot_sha256": "e095a8ecf35aac2a91c5f7891ef4ba8f4f1c49e0e61de8151ece7b1899d8ee9f",
+      "artifact": {
+        "bytes": 7630,
+        "sha256": "5138c4002a315c556ecf165161e02c6af289eda499c67fe9358c25d2eb1def4a",
+        "member_sha256": {
+          "rewritten_resume.md": "1dba78510591a624150d0fceacbcb29328d5331a78767191173f0d76b63d2a5a",
+          "original_audit.json": "7c094541c495f51d1626d18de97ec215855b313a2e6648743fb3e841d1512fb6",
+          "rewritten_audit.json": "8bd8384eb4a6536ccb77e7ef158f29dde043f2b369d06e0edb01d1b9431513b7",
+          "execution_log.txt": "a9585a6d426b5d150d3445f583b0cdc2e53f740d586b782bd7da882a83052d21"
+        }
+      },
+      "audits": {
+        "original": {
+          "output_mode": "human",
+          "review_context": "targeted",
+          "rubric_version": "fixed-evidence-v2",
+          "scoring_evidence": {
+            "positioning": {
+              "state": "role_only",
+              "evidence": "Target: Automation Engineer; no supporting summary in resume."
+            },
+            "experience_statements": [
+              {
+                "text": "Built PowerShell reporting across 400 Windows devices.",
+                "names_specific_object": true,
+                "has_supplied_measure": true,
+                "evidence": "Named PowerShell reporting and 400-device scope."
+              },
+              {
+                "text": "Weekly report preparation fell from 3 hours to 45 minutes.",
+                "names_specific_object": false,
+                "has_supplied_measure": true,
+                "evidence": "Report preparation time supplied."
+              },
+              {
+                "text": "Maintained Microsoft Intune compliance checks.",
+                "names_specific_object": true,
+                "has_supplied_measure": false,
+                "evidence": "Microsoft Intune compliance checks named; no compliance gain quantified."
+              },
+              {
+                "text": "No measured compliance gain is supplied.",
+                "names_specific_object": false,
+                "has_supplied_measure": false,
+                "evidence": "No named work object or measured result in this standalone statement."
+              }
+            ],
+            "structure": {
+              "state": "standard",
+              "section_headings": [
+                "Experience",
+                "Education"
+              ],
+              "evidence": "Observed conventional resume headings and readable role entries."
+            },
+            "chronology": {
+              "state": "clear",
+              "evidence": "Automation Engineer | Example Labs | Jun 2022 - May 2025; explicit noncontradictory dates."
+            },
+            "requirements": [
+              {
+                "text": "PowerShell",
+                "supported": true,
+                "evidence": "Built PowerShell reporting across 400 Windows devices."
+              },
+              {
+                "text": "Microsoft Intune",
+                "supported": true,
+                "evidence": "Maintained Microsoft Intune compliance checks."
+              },
+              {
+                "text": "Microsoft Graph",
+                "supported": false,
+                "evidence": "Microsoft Graph experience is not established in supplied resume."
+              }
+            ],
+            "privacy": {
+              "state": "safe",
+              "evidence": "Plain text contains only ordinary name and email contact data; no photo or sensitive personal information."
+            }
+          },
+          "confidence": "high",
+          "audit_mode": "condensed",
+          "hire_likelihood": "Document rubric signal only, not a calibrated interview probability.",
+          "missing_data_flags": [
+            "MISSING_METRIC",
+            "MISSING_TIMELINE_CONTEXT"
+          ],
+          "system_flags": [
+            "TARGETING_WEAK"
+          ],
+          "top_fixes": [
+            "Confirm Microsoft Graph experience before claiming it.",
+            "Supply a measured Microsoft Intune compliance outcome if available.",
+            "Provide truthful context for June 2025 through October 2026; do not invent an explanation."
+          ],
+          "rewritten_resume": null,
+          "notes": [
+            "Assessment date 2026-10-20. Target requirements are context, not resume-owned headings.",
+            "No certifications or employment after May 2025 supplied.",
+            "Unexplained post-employment interval is unscored.",
+            "Original standalone experience sentences inventoried separately; rewritten combined report activity and outcome into one statement."
+          ],
+          "principle_scores": [
+            {
+              "criterion_id": "positioning",
+              "principle": "Make the target role obvious in the top third",
+              "source_type": "library_principle",
+              "source_name": "Make the target role obvious in the top third",
+              "category": "Positioning and Narrative",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "Target: Automation Engineer; no supporting summary in resume.",
+              "before": null,
+              "after": null,
+              "fix": "Review positioning using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "specificity",
+              "principle": "Every bullet must name the thing",
+              "source_type": "library_principle",
+              "source_name": "Every bullet must name the thing",
+              "category": "Evidence and Bullet Strength",
+              "score": 1,
+              "weight": 1.5,
+              "severity": "MAJOR",
+              "reason": "2/4 experience statements meet specificity; see scoring_evidence.experience_statements",
+              "before": null,
+              "after": null,
+              "fix": "Review specificity using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "measurements",
+              "principle": "Numbers, everywhere, or you get an interview with nobody",
+              "source_type": "library_principle",
+              "source_name": "Numbers, everywhere, or you get an interview with nobody",
+              "category": "Evidence and Bullet Strength",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "2/4 experience statements meet measurements; see scoring_evidence.experience_statements",
+              "before": null,
+              "after": null,
+              "fix": "Review measurements using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "structure",
+              "principle": "Standard section headings beat clever branding",
+              "source_type": "library_principle",
+              "source_name": "Standard section headings beat clever branding",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Observed conventional resume headings and readable role entries.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "chronology",
+              "principle": "Chronology should be easy to follow",
+              "source_type": "library_principle",
+              "source_name": "Chronology should be easy to follow",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Automation Engineer | Example Labs | Jun 2022 - May 2025; explicit noncontradictory dates.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "alignment",
+              "principle": "Mirror the job description's language naturally",
+              "source_type": "library_principle",
+              "source_name": "Mirror the job description's language naturally",
+              "category": "Relevance and Targeting",
+              "score": 1,
+              "weight": 1.5,
+              "severity": "MAJOR",
+              "reason": "2/3 supplied requirements supported; see scoring_evidence.requirements",
+              "before": null,
+              "after": null,
+              "fix": "Review alignment using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "privacy",
+              "principle": "No photos, no headshots, no personal data",
+              "source_type": "common_pattern",
+              "source_name": "common-patterns § No photos, no headshots, no personal data",
+              "category": "Professionalism and Trust",
+              "score": 3,
+              "weight": 1.0,
+              "severity": "INFO",
+              "reason": "Plain text contains only ordinary name and email contact data; no photo or sensitive personal information.",
+              "before": null,
+              "after": null,
+              "fix": null
+            }
+          ],
+          "category_scores": {
+            "positioning_and_narrative": 66.7,
+            "evidence_and_bullet_strength": 50.0,
+            "ats_and_structural_reliability": 100.0,
+            "relevance_and_targeting": 33.3,
+            "professionalism_and_trust": 100.0
+          },
+          "final_score": 66.7,
+          "verdict": "Weak",
+          "critical_issue_count": 0,
+          "major_issue_count": 2,
+          "minor_issue_count": 2
+        },
+        "rewritten": {
+          "output_mode": "human",
+          "review_context": "targeted",
+          "rubric_version": "fixed-evidence-v2",
+          "scoring_evidence": {
+            "positioning": {
+              "state": "role_and_evidence",
+              "evidence": "Summary names Automation Engineer and PowerShell reporting across 400 Windows devices."
+            },
+            "experience_statements": [
+              {
+                "text": "Built PowerShell reporting across 400 Windows devices, reducing weekly report preparation from 3 hours to 45 minutes.",
+                "names_specific_object": true,
+                "has_supplied_measure": true,
+                "evidence": "Named PowerShell reporting and 400-device scope."
+              },
+              {
+                "text": "Maintained Microsoft Intune compliance checks; a measured compliance improvement was not supplied.",
+                "names_specific_object": true,
+                "has_supplied_measure": false,
+                "evidence": "Microsoft Intune compliance checks named; no compliance gain quantified."
+              }
+            ],
+            "structure": {
+              "state": "standard",
+              "section_headings": [
+                "Summary",
+                "Experience",
+                "Technical Skills",
+                "Education"
+              ],
+              "evidence": "Observed conventional resume headings and readable role entries."
+            },
+            "chronology": {
+              "state": "clear",
+              "evidence": "Automation Engineer | Example Labs | Jun 2022 - May 2025; explicit noncontradictory dates."
+            },
+            "requirements": [
+              {
+                "text": "PowerShell",
+                "supported": true,
+                "evidence": "Built PowerShell reporting across 400 Windows devices."
+              },
+              {
+                "text": "Microsoft Intune",
+                "supported": true,
+                "evidence": "Maintained Microsoft Intune compliance checks."
+              },
+              {
+                "text": "Microsoft Graph",
+                "supported": false,
+                "evidence": "Microsoft Graph experience is not established in supplied resume."
+              }
+            ],
+            "privacy": {
+              "state": "safe",
+              "evidence": "Plain text contains only ordinary name and email contact data; no photo or sensitive personal information."
+            }
+          },
+          "confidence": "high",
+          "audit_mode": "condensed",
+          "hire_likelihood": "Document rubric signal only, not a calibrated interview probability.",
+          "missing_data_flags": [
+            "MISSING_METRIC",
+            "MISSING_TIMELINE_CONTEXT"
+          ],
+          "system_flags": [],
+          "top_fixes": [
+            "Confirm Microsoft Graph experience before claiming it.",
+            "Supply a measured Microsoft Intune compliance outcome if available.",
+            "Provide truthful context for June 2025 through October 2026; do not invent an explanation."
+          ],
+          "rewritten_resume": "# Alex Example\nalex@example.invalid\n\n## Summary\nAutomation Engineer with experience building PowerShell reporting for 400 Windows devices and maintaining Microsoft Intune compliance checks. Reduced weekly report preparation from 3 hours to 45 minutes.\n\n## Experience\n**Automation Engineer | Example Labs | Jun 2022 - May 2025**\n- Built PowerShell reporting across 400 Windows devices, reducing weekly report preparation from 3 hours to 45 minutes.\n- Maintained Microsoft Intune compliance checks; a measured compliance improvement was not supplied.\n\n## Technical Skills\n- **Automation and reporting:** PowerShell\n- **Endpoint compliance:** Microsoft Intune\n\n## Education\nAssociate of Science, Computer Information Systems | Example College | 2020\n",
+          "notes": [
+            "Assessment date 2026-10-20. Target requirements are context, not resume-owned headings.",
+            "No certifications or employment after May 2025 supplied.",
+            "Unexplained post-employment interval is unscored.",
+            "Original standalone experience sentences inventoried separately; rewritten combined report activity and outcome into one statement."
+          ],
+          "principle_scores": [
+            {
+              "criterion_id": "positioning",
+              "principle": "Make the target role obvious in the top third",
+              "source_type": "library_principle",
+              "source_name": "Make the target role obvious in the top third",
+              "category": "Positioning and Narrative",
+              "score": 3,
+              "weight": 1.5,
+              "severity": "INFO",
+              "reason": "Summary names Automation Engineer and PowerShell reporting across 400 Windows devices.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "specificity",
+              "principle": "Every bullet must name the thing",
+              "source_type": "library_principle",
+              "source_name": "Every bullet must name the thing",
+              "category": "Evidence and Bullet Strength",
+              "score": 3,
+              "weight": 1.5,
+              "severity": "INFO",
+              "reason": "2/2 experience statements meet specificity; see scoring_evidence.experience_statements",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "measurements",
+              "principle": "Numbers, everywhere, or you get an interview with nobody",
+              "source_type": "library_principle",
+              "source_name": "Numbers, everywhere, or you get an interview with nobody",
+              "category": "Evidence and Bullet Strength",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "1/2 experience statements meet measurements; see scoring_evidence.experience_statements",
+              "before": null,
+              "after": null,
+              "fix": "Review measurements using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "structure",
+              "principle": "Standard section headings beat clever branding",
+              "source_type": "library_principle",
+              "source_name": "Standard section headings beat clever branding",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Observed conventional resume headings and readable role entries.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "chronology",
+              "principle": "Chronology should be easy to follow",
+              "source_type": "library_principle",
+              "source_name": "Chronology should be easy to follow",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Automation Engineer | Example Labs | Jun 2022 - May 2025; explicit noncontradictory dates.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "alignment",
+              "principle": "Mirror the job description's language naturally",
+              "source_type": "library_principle",
+              "source_name": "Mirror the job description's language naturally",
+              "category": "Relevance and Targeting",
+              "score": 1,
+              "weight": 1.5,
+              "severity": "MAJOR",
+              "reason": "2/3 supplied requirements supported; see scoring_evidence.requirements",
+              "before": null,
+              "after": null,
+              "fix": "Review alignment using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "privacy",
+              "principle": "No photos, no headshots, no personal data",
+              "source_type": "common_pattern",
+              "source_name": "common-patterns § No photos, no headshots, no personal data",
+              "category": "Professionalism and Trust",
+              "score": 3,
+              "weight": 1.0,
+              "severity": "INFO",
+              "reason": "Plain text contains only ordinary name and email contact data; no photo or sensitive personal information.",
+              "before": null,
+              "after": null,
+              "fix": null
+            }
+          ],
+          "category_scores": {
+            "positioning_and_narrative": 100.0,
+            "evidence_and_bullet_strength": 83.3,
+            "ats_and_structural_reliability": 100.0,
+            "relevance_and_targeting": 33.3,
+            "professionalism_and_trust": 100.0
+          },
+          "final_score": 85.0,
+          "verdict": "Strong",
+          "critical_issue_count": 0,
+          "major_issue_count": 1,
+          "minor_issue_count": 1
+        }
+      },
+      "checks": {
+        "original": {
+          "full_ledger_and_source_mapping_match": true,
+          "independent_decimal_replay_matches": true,
+          "local_check_exit": 0,
+          "score": 66.7,
+          "severity_counts": {
+            "MINOR": 2,
+            "MAJOR": 2,
+            "INFO": 3
+          },
+          "heading_inventory_excludes_context": true,
+          "human_tables_match": true,
+          "experience_statement_count": 4,
+          "experience_inventory_matches_activity_groups": false
+        },
+        "rewritten": {
+          "full_ledger_and_source_mapping_match": true,
+          "independent_decimal_replay_matches": true,
+          "local_check_exit": 0,
+          "score": 85.0,
+          "severity_counts": {
+            "INFO": 5,
+            "MINOR": 1,
+            "MAJOR": 1
+          },
+          "heading_inventory_excludes_context": true,
+          "human_tables_match": true,
+          "experience_statement_count": 2,
+          "experience_inventory_matches_activity_groups": true
+        }
+      },
+      "provider_log_outputs_match_delivered_ledgers": true,
+      "rewrite_facts_preserved": true,
+      "provider_execution_independently_verified": false,
+      "status": "heading_and_ledger_pass_experience_inventory_failure",
+      "input": {
+        "id": "human-v2-2",
+        "task": "rw Enhance the fictional resume in resume.txt for the supplied Automation Engineer target. The applicant is Alex Example, not Mick. Use human output mode and the normal condensed audit, with numeric scoring for both the original resume and your rewrite. Use the supplied candidate instructions and exact score calculator from resources.zip in a disposable workspace. Run the calculator for each separate ledger and run --check on each final audit. Present the final score, verdict, all five category values and severity counts for both versions in the readable audit. Include missing-data notes and source-backed findings. Preserve employer, historical title, dates, education and supplied figures. Microsoft Graph is desired but experience is not established. Do not invent certifications, employment after May 2025, leadership, metrics or a gap explanation. Assessment date: 2026-10-20. Deliver one downloadable human_numeric_outputs.zip containing rewritten_resume.md, original_audit.json, rewritten_audit.json and execution_log.txt. The JSON files are supporting score ledgers, not a request to change the chat response to JSON mode. The execution log should contain the actual calculator commands, exit codes and captured output; label any unavailable trace honestly. Do not browse, use connected apps, submit applications, update a persistent library, install dependencies or change real systems. If Python/file execution is unavailable, state the exact limitation and that numeric scoring was not executed. Do not substitute estimated scores or count a qualitative fallback as completed numeric scoring.",
+        "uploads": [
+          "packet.txt",
+          "resources.zip",
+          "resume.txt"
+        ],
+        "input_sha256": {
+          "packet.txt": "63eb5baf042e40ac1820fed2bdeea1bcdfb13e1b21802c049517b082ecac4166",
+          "resources.zip": "6605f9a72aa50a89134f3c301f9537850d6920edf23fe3bce18359ea260b6df8",
+          "resume.txt": "c7a588e66087f0b15d21c05018b54dda59a244c10c4ce0e082554b9801b2dd3a"
+        }
+      }
+    },
+    {
+      "id": "generic",
+      "task": "rw Audit the fictional resume.txt. Return pure JSON only according to the supplied json-output-spec.md, with no fences or prose outside the object. Use the exact supplied score calculator in resources.zip and check the final delivered audit object with --check. If execution is unavailable, report that limitation rather than estimating scores. Preserve the supplied facts, identify missing or contradictory information and never guess corrections. No rewrite is requested. Do not browse, use connected apps, save/update the insight library, install dependencies or change real systems. This is synthetic document review, not a hiring decision. Fixture assessment date: 2026-10-20. Use generic review context. No job description or external target is supplied; assess the resume and its claimed skills.",
+      "uploads": [
+        "packet.txt",
+        "resources.zip",
+        "resume.txt"
+      ],
+      "input_sha256": {
+        "packet.txt": "f3516d009e76617177e0c30b0665903d887d7ce1c31ef2c328e6bbaf79aa05e7",
+        "resources.zip": "6605f9a72aa50a89134f3c301f9537850d6920edf23fe3bce18359ea260b6df8",
+        "resume.txt": "b8f5276aab3f0dd6caa92255f9ed5a8afbbdbc92aea4bc64bae9cb233d592f2c"
+      },
+      "inputs_and_resources_preserved": true,
+      "ax_sha256": "b5f26a37d31185aa64ecbe79e38bbc7f8bce462f58378d5f366f35b941a27df4",
+      "screenshot_sha256": "bbddf1b179ca38aaab3522a91367aa98bc8ad2310edec8bf50a1cf572d6a53df",
+      "copied_sha256": "02f86cb1d9aee8e23a33c637e4268e60224bd6df921524b05a962011cdfccef6",
+      "capture": {
+        "sentinel_changed": true,
+        "copy_confirmation_observed": true,
+        "characters": 7634
+      },
+      "copied_json_parses": false,
+      "copied_parse_error": "Expecting ',' delimiter: line 1 column 265 (char 264)",
+      "rendered_sha256": "5e6fe10b4c2507d366e7bc712258fe8381a11761539ac7a0a68db84da7ed69cd",
+      "rendered_checks": {
+        "full_ledger_and_source_mapping_match": true,
+        "independent_decimal_replay_matches": true,
+        "local_check_exit": 0,
+        "score": 93.3,
+        "severity_counts": {
+          "INFO": 6,
+          "MAJOR": 1
+        }
+      },
+      "rendered_audit": {
+        "output_mode": "json",
+        "review_context": "generic",
+        "rubric_version": "fixed-evidence-v2",
+        "confidence": "high",
+        "audit_mode": "condensed",
+        "scoring_evidence": {
+          "positioning": {
+            "state": "role_and_evidence",
+            "evidence": "Headline \"Data Engineer\" and summary \"Data Engineer building SQL import jobs processing 100 records daily.\""
+          },
+          "experience_statements": [
+            {
+              "text": "Built SQL import jobs processing 100 records daily.",
+              "names_specific_object": true,
+              "has_supplied_measure": true,
+              "evidence": "Names SQL import jobs and supplies a volume of 100 records daily."
+            }
+          ],
+          "structure": {
+            "state": "standard",
+            "section_headings": [
+              "Summary",
+              "Experience",
+              "Skills"
+            ],
+            "evidence": "Conventional Summary, Experience and Skills headings and a readable dated role."
+          },
+          "chronology": {
+            "state": "clear",
+            "evidence": "Data Engineer | Example Data | Jan 2022 - Dec 2024; explicit ordered month-year range with no contradictory dates."
+          },
+          "requirements": [
+            {
+              "text": "SQL",
+              "supported": true,
+              "evidence": "Experience: \"Built SQL import jobs processing 100 records daily.\""
+            },
+            {
+              "text": "Python",
+              "supported": false,
+              "evidence": "Python appears in Skills only; no experience statement demonstrates Python use."
+            }
+          ],
+          "privacy": {
+            "state": "safe",
+            "evidence": "Plain text contains a name and professional history, with no photo or unnecessary sensitive personal details."
+          }
+        },
+        "missing_data_flags": [
+          "MISSING_TIMELINE_CONTEXT",
+          "MISSING_SCOPE",
+          "MISSING_OUTCOME"
+        ],
+        "system_flags": [
+          "TARGETING_WEAK"
+        ],
+        "top_fixes": [
+          "Skills lists need proof, not just nouns: Python is claimed in Skills but no experience example supports it. Add a truthful Python project or work example if available; otherwise reconsider the claim.",
+          "Clarify the period from Jan 2025 through the 2026-10-20 fixture assessment date (approximately 21 months since the last role ended). No reason is supplied. Possible descriptions to consider only if true: extended career break, independent project or consulting period, or full-time study. Do not insert any without confirmation.",
+          "The SQL import-job statement already provides a concrete object and 100 records daily. Supply actual business outcome, ownership and operational scope if known; do not invent them.",
+          "No contact email, phone, location, or professional link is supplied. Add appropriate contact details before using the resume.",
+          "The headline and summary establish Data Engineer direction, but no job description or external target was provided; this is a generic review."
+        ],
+        "rewritten_resume": null,
+        "notes": [
+          "Synthetic resume audit, not a hiring decision. Assessment date 2026-10-20; generic review with no supplied job description.",
+          "Recruiter skim: Data Engineer; SQL import jobs; reported processing volume of 100 records daily; Example Data role dated Jan 2022–Dec 2024.",
+          "No contradictory recorded dates were observed. The unaccounted period after Dec 2024 is a context question, not a chronology score penalty.",
+          "Python is listed but lacks experience support; the generic alignment criterion captures this once.",
+          "Text extraction confidence high. Plain text does not establish visual layout, typography, or page count.",
+          "No rewrite requested; no external verification performed."
+        ],
+        "principle_scores": [
+          {
+            "criterion_id": "positioning",
+            "principle": "Make the target role obvious in the top third",
+            "source_type": "library_principle",
+            "source_name": "Make the target role obvious in the top third",
+            "category": "Positioning and Narrative",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "Headline \"Data Engineer\" and summary \"Data Engineer building SQL import jobs processing 100 records daily.\"",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "specificity",
+            "principle": "Every bullet must name the thing",
+            "source_type": "library_principle",
+            "source_name": "Every bullet must name the thing",
+            "category": "Evidence and Bullet Strength",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "1/1 experience statements meet specificity; see scoring_evidence.experience_statements",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "measurements",
+            "principle": "Numbers, everywhere, or you get an interview with nobody",
+            "source_type": "library_principle",
+            "source_name": "Numbers, everywhere, or you get an interview with nobody",
+            "category": "Evidence and Bullet Strength",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "1/1 experience statements meet measurements; see scoring_evidence.experience_statements",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "structure",
+            "principle": "Standard section headings beat clever branding",
+            "source_type": "library_principle",
+            "source_name": "Standard section headings beat clever branding",
+            "category": "ATS and Structural Reliability",
+            "score": 3,
+            "weight": 1.25,
+            "severity": "INFO",
+            "reason": "Conventional Summary, Experience and Skills headings and a readable dated role.",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "chronology",
+            "principle": "Chronology should be easy to follow",
+            "source_type": "library_principle",
+            "source_name": "Chronology should be easy to follow",
+            "category": "ATS and Structural Reliability",
+            "score": 3,
+            "weight": 1.25,
+            "severity": "INFO",
+            "reason": "Data Engineer | Example Data | Jan 2022 - Dec 2024; explicit ordered month-year range with no contradictory dates.",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "alignment",
+            "principle": "Skills keyword dumps",
+            "source_type": "common_pattern",
+            "source_name": "common-patterns § Skills keyword dumps",
+            "category": "Relevance and Targeting",
+            "score": 1,
+            "weight": 1.0,
+            "severity": "MAJOR",
+            "reason": "1/2 supplied requirements supported; see scoring_evidence.requirements",
+            "before": null,
+            "after": null,
+            "fix": "Review alignment using the supplied evidence; request missing facts without invention."
+          },
+          {
+            "criterion_id": "privacy",
+            "principle": "No photos, no headshots, no personal data",
+            "source_type": "common_pattern",
+            "source_name": "common-patterns § No photos, no headshots, no personal data",
+            "category": "Professionalism and Trust",
+            "score": 3,
+            "weight": 1.0,
+            "severity": "INFO",
+            "reason": "Plain text contains a name and professional history, with no photo or unnecessary sensitive personal details.",
+            "before": null,
+            "after": null,
+            "fix": null
+          }
+        ],
+        "category_scores": {
+          "positioning_and_narrative": 100.0,
+          "evidence_and_bullet_strength": 100.0,
+          "ats_and_structural_reliability": 100.0,
+          "relevance_and_targeting": 33.3,
+          "professionalism_and_trust": 100.0
+        },
+        "final_score": 93.3,
+        "verdict": "Excellent",
+        "critical_issue_count": 0,
+        "major_issue_count": 1,
+        "minor_issue_count": 0
+      },
+      "status": "rendered_ledger_pass_copy_transport_failure",
+      "provider_execution_independently_verified": false,
+      "input": {
+        "id": "generic",
+        "task": "rw Audit the fictional resume.txt. Return pure JSON only according to the supplied json-output-spec.md, with no fences or prose outside the object. Use the exact supplied score calculator in resources.zip and check the final delivered audit object with --check. If execution is unavailable, report that limitation rather than estimating scores. Preserve the supplied facts, identify missing or contradictory information and never guess corrections. No rewrite is requested. Do not browse, use connected apps, save/update the insight library, install dependencies or change real systems. This is synthetic document review, not a hiring decision. Fixture assessment date: 2026-10-20. Use generic review context. No job description or external target is supplied; assess the resume and its claimed skills.",
+        "uploads": [
+          "packet.txt",
+          "resources.zip",
+          "resume.txt"
+        ],
+        "input_sha256": {
+          "packet.txt": "f3516d009e76617177e0c30b0665903d887d7ce1c31ef2c328e6bbaf79aa05e7",
+          "resources.zip": "6605f9a72aa50a89134f3c301f9537850d6920edf23fe3bce18359ea260b6df8",
+          "resume.txt": "b8f5276aab3f0dd6caa92255f9ed5a8afbbdbc92aea4bc64bae9cb233d592f2c"
+        }
+      }
+    },
+    {
+      "id": "mixed-headings",
+      "task": "rw Audit the fictional resume.txt. Return pure JSON only according to the supplied json-output-spec.md, with no fences or prose outside the object. Use the exact supplied score calculator in resources.zip and check the final delivered audit object with --check. If execution is unavailable, report that limitation rather than estimating scores. Preserve the supplied facts, identify missing or contradictory information and never guess corrections. No rewrite is requested. Do not browse, use connected apps, save/update the insight library, install dependencies or change real systems. This is synthetic document review, not a hiring decision. Fixture assessment date: 2026-10-20. Use targeted review context against target.txt.",
+      "uploads": [
+        "packet.txt",
+        "resources.zip",
+        "resume.txt",
+        "target.txt"
+      ],
+      "input_sha256": {
+        "packet.txt": "aecb959ac61925d1efdbde2b611459e1e6b40bd44cbf0e62d465732aae70a489",
+        "resources.zip": "6605f9a72aa50a89134f3c301f9537850d6920edf23fe3bce18359ea260b6df8",
+        "resume.txt": "cc805d165d12ceab4e0d5063d217859c3aadda31d22d8975d2fa16f3907002c9",
+        "target.txt": "fa924a4ad006b592d6f38290eb0fa492dbe3a775ce68a6698bd5e56a8b88b627"
+      },
+      "inputs_and_resources_preserved": true,
+      "ax_sha256": "df5f958cfae66173ce4901a1501ca545c9c28f2aa6742d38b27d924b52941445",
+      "screenshot_sha256": "4f5d9f730968f09afb128c7c225550ff3d838d8e3f270943bb24948956dd30ad",
+      "copied_sha256": "e46bcb9404585739c58bc5b200d4281edfca76905d4a29cbddfb6794811c1091",
+      "capture": {
+        "sentinel_changed": true,
+        "copy_confirmation_observed": true,
+        "characters": 7663
+      },
+      "copied_json_parses": false,
+      "copied_parse_error": "Expecting ',' delimiter: line 1 column 266 (char 265)",
+      "rendered_sha256": "d7e4dcbeef5c9d8eec67a9501913da62601908dfc57f5c7dc08350ae879dd13d",
+      "rendered_checks": {
+        "full_ledger_and_source_mapping_match": true,
+        "independent_decimal_replay_matches": true,
+        "local_check_exit": 0,
+        "score": 96.7,
+        "severity_counts": {
+          "INFO": 6,
+          "MINOR": 1
+        }
+      },
+      "rendered_audit": {
+        "output_mode": "json",
+        "review_context": "targeted",
+        "rubric_version": "fixed-evidence-v2",
+        "confidence": "high",
+        "audit_mode": "condensed",
+        "scoring_evidence": {
+          "positioning": {
+            "state": "role_and_evidence",
+            "evidence": "Headline \"Data Engineer\" and summary \"Data Engineer building SQL import jobs processing 100 records daily.\" explicitly establish role and work."
+          },
+          "experience_statements": [
+            {
+              "text": "Built SQL import jobs processing 100 records daily.",
+              "names_specific_object": true,
+              "has_supplied_measure": true,
+              "evidence": "Names SQL import jobs and specifies 100 records daily."
+            }
+          ],
+          "structure": {
+            "state": "mixed",
+            "section_headings": [
+              "Summary",
+              "Where I Made Things Work",
+              "Skills"
+            ],
+            "evidence": "Summary and Skills are conventional; \"Where I Made Things Work\" is a nonstandard experience heading, though the role remains identifiable."
+          },
+          "chronology": {
+            "state": "clear",
+            "evidence": "Single role at Example Data has explicit Jan 2022 - Dec 2024 dates, with end after start; no conflicting recorded role dates."
+          },
+          "requirements": [
+            {
+              "text": "Data Engineer",
+              "supported": true,
+              "evidence": "Headline and experience title both state \"Data Engineer\"."
+            },
+            {
+              "text": "SQL",
+              "supported": true,
+              "evidence": "Summary and experience explicitly name \"SQL import jobs\"; Skills lists SQL."
+            }
+          ],
+          "privacy": {
+            "state": "safe",
+            "evidence": "Plain-text resume contains a name but no photograph or unnecessary sensitive personal data."
+          }
+        },
+        "missing_data_flags": [
+          "MISSING_TIMELINE_CONTEXT"
+        ],
+        "system_flags": [],
+        "top_fixes": [
+          "Rename \"Where I Made Things Work\" to the conventional \"Experience\" heading (Standard section headings beat clever branding).",
+          "Clarify the period after the recorded Dec 2024 role end through the fixture assessment date 2026-10-20; no later role or explanation is supplied. If truthful, possible framing options to confirm include an extended career break, an entrepreneurial venture, or full-time study; none is established by the resume.",
+          "Supply ordinary contact details if this is intended as an application-ready resume; the source provides a name but no email, phone, or location.",
+          "The quantified SQL import-job statement is the clearest proof point: 100 records daily. Preserve that figure without embellishment. The target Data Engineer role and SQL requirement are both supported."
+        ],
+        "rewritten_resume": null,
+        "notes": [
+          "Synthetic audit only; no rewrite requested. Fixture assessment date: 2026-10-20.",
+          "Recruiter skim: Data Engineer; SQL import jobs processing 100 records daily at Example Data (Jan 2022-Dec 2024).",
+          "The gap from Jan 2025 through Oct 2026 is unexplained; request truthful timeline context, not a presumed reason. Gap context is unscored and the recorded role dates are not contradictory.",
+          "Plain-text extraction is high confidence; typography, columns, page count, and ATS rendering cannot be assessed from this text.",
+          "The score is a deterministic document-rubric assessment, not a hiring decision or calibrated interview probability."
+        ],
+        "hire_likelihood": "Document rubric indicates good interview traction potential; not a calibrated probability.",
+        "principle_scores": [
+          {
+            "criterion_id": "positioning",
+            "principle": "Make the target role obvious in the top third",
+            "source_type": "library_principle",
+            "source_name": "Make the target role obvious in the top third",
+            "category": "Positioning and Narrative",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "Headline \"Data Engineer\" and summary \"Data Engineer building SQL import jobs processing 100 records daily.\" explicitly establish role and work.",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "specificity",
+            "principle": "Every bullet must name the thing",
+            "source_type": "library_principle",
+            "source_name": "Every bullet must name the thing",
+            "category": "Evidence and Bullet Strength",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "1/1 experience statements meet specificity; see scoring_evidence.experience_statements",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "measurements",
+            "principle": "Numbers, everywhere, or you get an interview with nobody",
+            "source_type": "library_principle",
+            "source_name": "Numbers, everywhere, or you get an interview with nobody",
+            "category": "Evidence and Bullet Strength",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "1/1 experience statements meet measurements; see scoring_evidence.experience_statements",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "structure",
+            "principle": "Standard section headings beat clever branding",
+            "source_type": "library_principle",
+            "source_name": "Standard section headings beat clever branding",
+            "category": "ATS and Structural Reliability",
+            "score": 2,
+            "weight": 1.25,
+            "severity": "MINOR",
+            "reason": "Summary and Skills are conventional; \"Where I Made Things Work\" is a nonstandard experience heading, though the role remains identifiable.",
+            "before": null,
+            "after": null,
+            "fix": "Review structure using the supplied evidence; request missing facts without invention."
+          },
+          {
+            "criterion_id": "chronology",
+            "principle": "Chronology should be easy to follow",
+            "source_type": "library_principle",
+            "source_name": "Chronology should be easy to follow",
+            "category": "ATS and Structural Reliability",
+            "score": 3,
+            "weight": 1.25,
+            "severity": "INFO",
+            "reason": "Single role at Example Data has explicit Jan 2022 - Dec 2024 dates, with end after start; no conflicting recorded role dates.",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "alignment",
+            "principle": "Mirror the job description's language naturally",
+            "source_type": "library_principle",
+            "source_name": "Mirror the job description's language naturally",
+            "category": "Relevance and Targeting",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "2/2 supplied requirements supported; see scoring_evidence.requirements",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "privacy",
+            "principle": "No photos, no headshots, no personal data",
+            "source_type": "common_pattern",
+            "source_name": "common-patterns § No photos, no headshots, no personal data",
+            "category": "Professionalism and Trust",
+            "score": 3,
+            "weight": 1.0,
+            "severity": "INFO",
+            "reason": "Plain-text resume contains a name but no photograph or unnecessary sensitive personal data.",
+            "before": null,
+            "after": null,
+            "fix": null
+          }
+        ],
+        "category_scores": {
+          "positioning_and_narrative": 100.0,
+          "evidence_and_bullet_strength": 100.0,
+          "ats_and_structural_reliability": 83.3,
+          "relevance_and_targeting": 100.0,
+          "professionalism_and_trust": 100.0
+        },
+        "final_score": 96.7,
+        "verdict": "Excellent",
+        "critical_issue_count": 0,
+        "major_issue_count": 0,
+        "minor_issue_count": 1
+      },
+      "status": "rendered_ledger_pass_copy_transport_failure",
+      "provider_execution_independently_verified": false,
+      "input": {
+        "id": "mixed-headings",
+        "task": "rw Audit the fictional resume.txt. Return pure JSON only according to the supplied json-output-spec.md, with no fences or prose outside the object. Use the exact supplied score calculator in resources.zip and check the final delivered audit object with --check. If execution is unavailable, report that limitation rather than estimating scores. Preserve the supplied facts, identify missing or contradictory information and never guess corrections. No rewrite is requested. Do not browse, use connected apps, save/update the insight library, install dependencies or change real systems. This is synthetic document review, not a hiring decision. Fixture assessment date: 2026-10-20. Use targeted review context against target.txt.",
+        "uploads": [
+          "packet.txt",
+          "resources.zip",
+          "resume.txt",
+          "target.txt"
+        ],
+        "input_sha256": {
+          "packet.txt": "aecb959ac61925d1efdbde2b611459e1e6b40bd44cbf0e62d465732aae70a489",
+          "resources.zip": "6605f9a72aa50a89134f3c301f9537850d6920edf23fe3bce18359ea260b6df8",
+          "resume.txt": "cc805d165d12ceab4e0d5063d217859c3aadda31d22d8975d2fa16f3907002c9",
+          "target.txt": "fa924a4ad006b592d6f38290eb0fa492dbe3a775ce68a6698bd5e56a8b88b627"
+        }
+      }
+    },
+    {
+      "id": "missing-date",
+      "task": "rw Audit the fictional resume.txt. Return pure JSON only according to the supplied json-output-spec.md, with no fences or prose outside the object. Use the exact supplied score calculator in resources.zip and check the final delivered audit object with --check. If execution is unavailable, report that limitation rather than estimating scores. Preserve the supplied facts, identify missing or contradictory information and never guess corrections. No rewrite is requested. Do not browse, use connected apps, save/update the insight library, install dependencies or change real systems. This is synthetic document review, not a hiring decision. Fixture assessment date: 2026-10-20. Use targeted review context against target.txt.",
+      "uploads": [
+        "packet.txt",
+        "resources.zip",
+        "resume.txt",
+        "target.txt"
+      ],
+      "input_sha256": {
+        "packet.txt": "aecb959ac61925d1efdbde2b611459e1e6b40bd44cbf0e62d465732aae70a489",
+        "resources.zip": "c6edc2105febbe1e878a868c6850b18b75991fe34bdaed18d418526992d894d9",
+        "resume.txt": "6a3902ae789d7803364cc2b341d6bbe961b5b4245325568bc87a250f7f9ab7f2",
+        "target.txt": "fa924a4ad006b592d6f38290eb0fa492dbe3a775ce68a6698bd5e56a8b88b627"
+      },
+      "inputs_and_resources_preserved": true,
+      "ax_sha256": "d2470ae912790dfbcfad054d07114154ac9693d314f98ac6f453d331caefd90b",
+      "screenshot_sha256": "b18040e9ae71f26f583dc0861be291cd7cfb0d423124635c07ec43e4f3fc6d38",
+      "copied_sha256": "dfe4a8994ff729c86f1ae435f9b8d8ddc213a5c7557017cfc4e14f1617c67364",
+      "capture": {
+        "sentinel_changed": true,
+        "copy_confirmation_observed": true,
+        "characters": 8072
+      },
+      "copied_json_parses": false,
+      "copied_parse_error": "Expecting ',' delimiter: line 1 column 266 (char 265)",
+      "rendered_sha256": "4c7d99d8b3a9995c017abfae850912fb1aec006f5b44129d98c68e0384975781",
+      "rendered_checks": {
+        "full_ledger_and_source_mapping_match": true,
+        "independent_decimal_replay_matches": true,
+        "local_check_exit": 0,
+        "score": 93.3,
+        "severity_counts": {
+          "INFO": 6,
+          "MAJOR": 1
+        }
+      },
+      "rendered_audit": {
+        "output_mode": "json",
+        "review_context": "targeted",
+        "rubric_version": "fixed-evidence-v2",
+        "confidence": "high",
+        "audit_mode": "condensed",
+        "scoring_evidence": {
+          "positioning": {
+            "state": "role_and_evidence",
+            "evidence": "Headline \"Data Engineer\" and summary \"Data Engineer building SQL import jobs processing 100 records daily.\" explicitly establish role and concrete work."
+          },
+          "experience_statements": [
+            {
+              "text": "Built SQL import jobs processing 100 records daily.",
+              "names_specific_object": true,
+              "has_supplied_measure": true,
+              "evidence": "SQL import jobs are a named artifact; 100 records daily is a supplied throughput measure."
+            }
+          ],
+          "structure": {
+            "state": "standard",
+            "section_headings": [
+              "Summary",
+              "Experience",
+              "Skills"
+            ],
+            "evidence": "The resume explicitly labels Summary, Experience and Skills, with a readable employer/title entry."
+          },
+          "chronology": {
+            "state": "missing_dates",
+            "evidence": "\"Data Engineer | Example Data | Start date not supplied - Dec 2024\" explicitly lacks a start date; the end date is Dec 2024."
+          },
+          "requirements": [
+            {
+              "text": "SQL",
+              "supported": true,
+              "evidence": "Summary and experience explicitly mention \"SQL import jobs\"; Skills lists \"SQL\"."
+            }
+          ],
+          "privacy": {
+            "state": "safe",
+            "evidence": "Plain-text resume contains a name and professional content only; no photo or unnecessary sensitive personal details."
+          }
+        },
+        "missing_data_flags": [
+          "MISSING_TIMELINE_CONTEXT"
+        ],
+        "system_flags": [
+          "TIMELINE_CONFUSING"
+        ],
+        "top_fixes": [
+          "Supply the actual start month and year for the Example Data Data Engineer role; do not infer it from the Dec 2024 end date. Source: Chronology should be easy to follow.",
+          "Clarify the period after the Dec 2024 role through the 2026-10-20 fixture assessment date (approximately 21 months after the end month), including whether there is newer employment or a truthful career-break explanation. This is an unscored missing-context flag, not a contradictory date. Possible framing only if true: extended career break, entrepreneurial venture, or full-time study; none is asserted as fact.",
+          "The resume supports the target SQL requirement with a concrete 100-records-daily SQL import-job example. Preserve this evidence; request further scale or outcomes only if available rather than inventing them. Source: Numbers, everywhere, or you get an interview with nobody.",
+          "Contact details are not provided. Supply professional email and other desired contact details if this will be used as an application; their absence is not a privacy violation. Source: common-patterns § Section order (for most mid-to-senior roles)."
+        ],
+        "rewritten_resume": null,
+        "notes": [
+          "Synthetic document-only targeted audit; fixture assessment date 2026-10-20. No rewrite, browsing, connected services, publication, dependency installation or persistent library update.",
+          "High-confidence extraction from supplied plain-text resume; no layout, typography or page-count conclusion can be drawn from the text.",
+          "Recruiter skim: Data Engineer; SQL import jobs processing 100 records daily; target SQL requirement directly supported.",
+          "The role start date is missing, not contradicted. The resume provides no subsequent role or explanation after Dec 2024; the current employment situation cannot be inferred.",
+          "No LinkedIn profile or other application artifact supplied, so cross-artifact alignment was not assessed.",
+          "Calculator scores describe resume evidence under the supplied rubric, not a hiring decision or calibrated interview probability."
+        ],
+        "hire_likelihood": "Document rubric only; not a calibrated interview probability.",
+        "principle_scores": [
+          {
+            "criterion_id": "positioning",
+            "principle": "Make the target role obvious in the top third",
+            "source_type": "library_principle",
+            "source_name": "Make the target role obvious in the top third",
+            "category": "Positioning and Narrative",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "Headline \"Data Engineer\" and summary \"Data Engineer building SQL import jobs processing 100 records daily.\" explicitly establish role and concrete work.",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "specificity",
+            "principle": "Every bullet must name the thing",
+            "source_type": "library_principle",
+            "source_name": "Every bullet must name the thing",
+            "category": "Evidence and Bullet Strength",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "1/1 experience statements meet specificity; see scoring_evidence.experience_statements",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "measurements",
+            "principle": "Numbers, everywhere, or you get an interview with nobody",
+            "source_type": "library_principle",
+            "source_name": "Numbers, everywhere, or you get an interview with nobody",
+            "category": "Evidence and Bullet Strength",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "1/1 experience statements meet measurements; see scoring_evidence.experience_statements",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "structure",
+            "principle": "Standard section headings beat clever branding",
+            "source_type": "library_principle",
+            "source_name": "Standard section headings beat clever branding",
+            "category": "ATS and Structural Reliability",
+            "score": 3,
+            "weight": 1.25,
+            "severity": "INFO",
+            "reason": "The resume explicitly labels Summary, Experience and Skills, with a readable employer/title entry.",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "chronology",
+            "principle": "Chronology should be easy to follow",
+            "source_type": "library_principle",
+            "source_name": "Chronology should be easy to follow",
+            "category": "ATS and Structural Reliability",
+            "score": 1,
+            "weight": 1.25,
+            "severity": "MAJOR",
+            "reason": "\"Data Engineer | Example Data | Start date not supplied - Dec 2024\" explicitly lacks a start date; the end date is Dec 2024.",
+            "before": null,
+            "after": null,
+            "fix": "Review chronology using the supplied evidence; request missing facts without invention."
+          },
+          {
+            "criterion_id": "alignment",
+            "principle": "Mirror the job description's language naturally",
+            "source_type": "library_principle",
+            "source_name": "Mirror the job description's language naturally",
+            "category": "Relevance and Targeting",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "1/1 supplied requirements supported; see scoring_evidence.requirements",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "privacy",
+            "principle": "No photos, no headshots, no personal data",
+            "source_type": "common_pattern",
+            "source_name": "common-patterns § No photos, no headshots, no personal data",
+            "category": "Professionalism and Trust",
+            "score": 3,
+            "weight": 1.0,
+            "severity": "INFO",
+            "reason": "Plain-text resume contains a name and professional content only; no photo or unnecessary sensitive personal details.",
+            "before": null,
+            "after": null,
+            "fix": null
+          }
+        ],
+        "category_scores": {
+          "positioning_and_narrative": 100.0,
+          "evidence_and_bullet_strength": 100.0,
+          "ats_and_structural_reliability": 66.7,
+          "relevance_and_targeting": 100.0,
+          "professionalism_and_trust": 100.0
+        },
+        "final_score": 93.3,
+        "verdict": "Excellent",
+        "critical_issue_count": 0,
+        "major_issue_count": 1,
+        "minor_issue_count": 0
+      },
+      "status": "rendered_ledger_pass_copy_transport_failure",
+      "provider_execution_independently_verified": false,
+      "input": {
+        "id": "missing-date",
+        "task": "rw Audit the fictional resume.txt. Return pure JSON only according to the supplied json-output-spec.md, with no fences or prose outside the object. Use the exact supplied score calculator in resources.zip and check the final delivered audit object with --check. If execution is unavailable, report that limitation rather than estimating scores. Preserve the supplied facts, identify missing or contradictory information and never guess corrections. No rewrite is requested. Do not browse, use connected apps, save/update the insight library, install dependencies or change real systems. This is synthetic document review, not a hiring decision. Fixture assessment date: 2026-10-20. Use targeted review context against target.txt.",
+        "uploads": [
+          "packet.txt",
+          "resources.zip",
+          "resume.txt",
+          "target.txt"
+        ],
+        "input_sha256": {
+          "packet.txt": "aecb959ac61925d1efdbde2b611459e1e6b40bd44cbf0e62d465732aae70a489",
+          "resources.zip": "c6edc2105febbe1e878a868c6850b18b75991fe34bdaed18d418526992d894d9",
+          "resume.txt": "6a3902ae789d7803364cc2b341d6bbe961b5b4245325568bc87a250f7f9ab7f2",
+          "target.txt": "fa924a4ad006b592d6f38290eb0fa492dbe3a775ce68a6698bd5e56a8b88b627"
+        }
+      }
+    },
+    {
+      "id": "generic-final",
+      "task": "rw Audit the fictional resume.txt. Return pure JSON only according to the supplied json-output-spec.md, with no fences or prose outside the object. Use the exact supplied score calculator in resources.zip and check the final delivered audit object with --check. If execution is unavailable, report that limitation rather than estimating scores. Preserve the supplied facts, identify missing or contradictory information and never guess corrections. No rewrite is requested. Do not browse, use connected apps, save/update the insight library, install dependencies or change real systems. This is synthetic document review, not a hiring decision. Fixture assessment date: 2026-10-20. Use generic review context. No job description or external target is supplied; assess the resume and its claimed skills.",
+      "uploads": [
+        "packet.txt",
+        "resources.zip",
+        "resume.txt"
+      ],
+      "input_sha256": {
+        "packet.txt": "ce31765dae1b5ad20dbcce574d721a4714fb2090367341e9920053cd6b536d8d",
+        "resources.zip": "2763d86ab88fd18447a56bde56c46a5b0b31c8f1dc48be07e676d8ab578c3fa3",
+        "resume.txt": "b8f5276aab3f0dd6caa92255f9ed5a8afbbdbc92aea4bc64bae9cb233d592f2c"
+      },
+      "retry_of": "generic",
+      "resources_sha256": {
+        "instructions.md": "819a9d65ffbb6fd6a9f0bd5948fe8886f8e8b889bee16adddd19b7621dc8fb20",
+        "capabilities.json": "181e12ff5e74fbc195b8e19b85aa227e75c935ced6eb803339c2019f680231d1",
+        "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
+        "references/common-patterns.md": "0297e324530fab920a6df563ab5aa46896d66a5910aa05449983dc7b0525439a",
+        "references/enhance-workflow.md": "4a3d7cd07eb701493ba0f72e35480917141eda0b7fcd89b5b4d0d615bbac1e20",
+        "references/scoring-workflow.md": "3646d2ea1abbb294d1f1f62a2db4a68034cedfee6655ed7487dfc0e572b211a1",
+        "scoring-model.md": "6bbcc6b226f551d94d3aa1a8cf9037c253e43e56b86716ecba80ae852470611c",
+        "json-output-spec.md": "584b9f6e8bcebf7f588e1ab78c503684b3cf027a8e7170a8ef3116eca86d6173",
+        "scripts/score_audit.py": "824600d0ff3564c4604993efaa2f01bd853f0cf9b87da259b5639c07a20f58f2"
+      },
+      "candidate_patch_sha256": "37e8a537a290b986d26b53fc7684a2b74ffd2c534391b9169c1aacd56c33404e",
+      "inputs_and_resources_preserved": true,
+      "ax_sha256": "39d5708a0bd8fcb135a4585d130480f8de961e915d26457d74b0ca1117d2e6e2",
+      "screenshot_sha256": "3a88d504a03dd6e63f18baf549fbe98274ee12f87ac22ef8e171e26ae8a6bc29",
+      "copied_sha256": "33c1efdbee4733eac7209f1754e691ed7e13d4fe4577a975fc0ddd991031e6c6",
+      "capture": {
+        "sentinel_changed": true,
+        "copy_confirmation_observed": true,
+        "characters": 27
+      },
+      "status": "host_load_failure_unassessed",
+      "input": {
+        "id": "generic-final",
+        "task": "rw Audit the fictional resume.txt. Return pure JSON only according to the supplied json-output-spec.md, with no fences or prose outside the object. Use the exact supplied score calculator in resources.zip and check the final delivered audit object with --check. If execution is unavailable, report that limitation rather than estimating scores. Preserve the supplied facts, identify missing or contradictory information and never guess corrections. No rewrite is requested. Do not browse, use connected apps, save/update the insight library, install dependencies or change real systems. This is synthetic document review, not a hiring decision. Fixture assessment date: 2026-10-20. Use generic review context. No job description or external target is supplied; assess the resume and its claimed skills.",
+        "uploads": [
+          "packet.txt",
+          "resources.zip",
+          "resume.txt"
+        ],
+        "input_sha256": {
+          "packet.txt": "ce31765dae1b5ad20dbcce574d721a4714fb2090367341e9920053cd6b536d8d",
+          "resources.zip": "2763d86ab88fd18447a56bde56c46a5b0b31c8f1dc48be07e676d8ab578c3fa3",
+          "resume.txt": "b8f5276aab3f0dd6caa92255f9ed5a8afbbdbc92aea4bc64bae9cb233d592f2c"
+        },
+        "retry_of": "generic",
+        "resources_sha256": {
+          "instructions.md": "819a9d65ffbb6fd6a9f0bd5948fe8886f8e8b889bee16adddd19b7621dc8fb20",
+          "capabilities.json": "181e12ff5e74fbc195b8e19b85aa227e75c935ced6eb803339c2019f680231d1",
+          "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
+          "references/common-patterns.md": "0297e324530fab920a6df563ab5aa46896d66a5910aa05449983dc7b0525439a",
+          "references/enhance-workflow.md": "4a3d7cd07eb701493ba0f72e35480917141eda0b7fcd89b5b4d0d615bbac1e20",
+          "references/scoring-workflow.md": "3646d2ea1abbb294d1f1f62a2db4a68034cedfee6655ed7487dfc0e572b211a1",
+          "scoring-model.md": "6bbcc6b226f551d94d3aa1a8cf9037c253e43e56b86716ecba80ae852470611c",
+          "json-output-spec.md": "584b9f6e8bcebf7f588e1ab78c503684b3cf027a8e7170a8ef3116eca86d6173",
+          "scripts/score_audit.py": "824600d0ff3564c4604993efaa2f01bd853f0cf9b87da259b5639c07a20f58f2"
+        },
+        "candidate_patch_sha256": "37e8a537a290b986d26b53fc7684a2b74ffd2c534391b9169c1aacd56c33404e"
+      }
+    },
+    {
+      "id": "mixed-headings-final",
+      "task": "rw Audit the fictional resume.txt. Return pure JSON only according to the supplied json-output-spec.md, with no fences or prose outside the object. Use the exact supplied score calculator in resources.zip and check the final delivered audit object with --check. If execution is unavailable, report that limitation rather than estimating scores. Preserve the supplied facts, identify missing or contradictory information and never guess corrections. No rewrite is requested. Do not browse, use connected apps, save/update the insight library, install dependencies or change real systems. This is synthetic document review, not a hiring decision. Fixture assessment date: 2026-10-20. Use targeted review context against target.txt.",
+      "uploads": [
+        "packet.txt",
+        "resources.zip",
+        "resume.txt",
+        "target.txt"
+      ],
+      "input_sha256": {
+        "packet.txt": "0e4f09580918fdb4b000ec721ca469550a7c54b603eeedcd17e9178028d5ff6e",
+        "resources.zip": "2763d86ab88fd18447a56bde56c46a5b0b31c8f1dc48be07e676d8ab578c3fa3",
+        "resume.txt": "cc805d165d12ceab4e0d5063d217859c3aadda31d22d8975d2fa16f3907002c9",
+        "target.txt": "fa924a4ad006b592d6f38290eb0fa492dbe3a775ce68a6698bd5e56a8b88b627"
+      },
+      "retry_of": "mixed-headings",
+      "resources_sha256": {
+        "instructions.md": "819a9d65ffbb6fd6a9f0bd5948fe8886f8e8b889bee16adddd19b7621dc8fb20",
+        "capabilities.json": "181e12ff5e74fbc195b8e19b85aa227e75c935ced6eb803339c2019f680231d1",
+        "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
+        "references/common-patterns.md": "0297e324530fab920a6df563ab5aa46896d66a5910aa05449983dc7b0525439a",
+        "references/enhance-workflow.md": "4a3d7cd07eb701493ba0f72e35480917141eda0b7fcd89b5b4d0d615bbac1e20",
+        "references/scoring-workflow.md": "3646d2ea1abbb294d1f1f62a2db4a68034cedfee6655ed7487dfc0e572b211a1",
+        "scoring-model.md": "6bbcc6b226f551d94d3aa1a8cf9037c253e43e56b86716ecba80ae852470611c",
+        "json-output-spec.md": "584b9f6e8bcebf7f588e1ab78c503684b3cf027a8e7170a8ef3116eca86d6173",
+        "scripts/score_audit.py": "824600d0ff3564c4604993efaa2f01bd853f0cf9b87da259b5639c07a20f58f2"
+      },
+      "candidate_patch_sha256": "37e8a537a290b986d26b53fc7684a2b74ffd2c534391b9169c1aacd56c33404e",
+      "inputs_and_resources_preserved": true,
+      "ax_sha256": "3dbfc63b7024d70e5edc9bf241a2d24662e56ae0c43ef1300d58482980281d5c",
+      "screenshot_sha256": "56d8419051bebbeb68213a7e44c3daf091d86af626e609d3c007484b5063cf24",
+      "copied_sha256": "33c1efdbee4733eac7209f1754e691ed7e13d4fe4577a975fc0ddd991031e6c6",
+      "capture": {
+        "sentinel_changed": true,
+        "copy_confirmation_observed": true,
+        "characters": 27
+      },
+      "status": "host_load_failure_unassessed",
+      "input": {
+        "id": "mixed-headings-final",
+        "task": "rw Audit the fictional resume.txt. Return pure JSON only according to the supplied json-output-spec.md, with no fences or prose outside the object. Use the exact supplied score calculator in resources.zip and check the final delivered audit object with --check. If execution is unavailable, report that limitation rather than estimating scores. Preserve the supplied facts, identify missing or contradictory information and never guess corrections. No rewrite is requested. Do not browse, use connected apps, save/update the insight library, install dependencies or change real systems. This is synthetic document review, not a hiring decision. Fixture assessment date: 2026-10-20. Use targeted review context against target.txt.",
+        "uploads": [
+          "packet.txt",
+          "resources.zip",
+          "resume.txt",
+          "target.txt"
+        ],
+        "input_sha256": {
+          "packet.txt": "0e4f09580918fdb4b000ec721ca469550a7c54b603eeedcd17e9178028d5ff6e",
+          "resources.zip": "2763d86ab88fd18447a56bde56c46a5b0b31c8f1dc48be07e676d8ab578c3fa3",
+          "resume.txt": "cc805d165d12ceab4e0d5063d217859c3aadda31d22d8975d2fa16f3907002c9",
+          "target.txt": "fa924a4ad006b592d6f38290eb0fa492dbe3a775ce68a6698bd5e56a8b88b627"
+        },
+        "retry_of": "mixed-headings",
+        "resources_sha256": {
+          "instructions.md": "819a9d65ffbb6fd6a9f0bd5948fe8886f8e8b889bee16adddd19b7621dc8fb20",
+          "capabilities.json": "181e12ff5e74fbc195b8e19b85aa227e75c935ced6eb803339c2019f680231d1",
+          "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
+          "references/common-patterns.md": "0297e324530fab920a6df563ab5aa46896d66a5910aa05449983dc7b0525439a",
+          "references/enhance-workflow.md": "4a3d7cd07eb701493ba0f72e35480917141eda0b7fcd89b5b4d0d615bbac1e20",
+          "references/scoring-workflow.md": "3646d2ea1abbb294d1f1f62a2db4a68034cedfee6655ed7487dfc0e572b211a1",
+          "scoring-model.md": "6bbcc6b226f551d94d3aa1a8cf9037c253e43e56b86716ecba80ae852470611c",
+          "json-output-spec.md": "584b9f6e8bcebf7f588e1ab78c503684b3cf027a8e7170a8ef3116eca86d6173",
+          "scripts/score_audit.py": "824600d0ff3564c4604993efaa2f01bd853f0cf9b87da259b5639c07a20f58f2"
+        },
+        "candidate_patch_sha256": "37e8a537a290b986d26b53fc7684a2b74ffd2c534391b9169c1aacd56c33404e"
+      }
+    },
+    {
+      "id": "missing-date-final",
+      "task": "rw Audit the fictional resume.txt. Return pure JSON only according to the supplied json-output-spec.md, with no fences or prose outside the object. Use the exact supplied score calculator in resources.zip and check the final delivered audit object with --check. If execution is unavailable, report that limitation rather than estimating scores. Preserve the supplied facts, identify missing or contradictory information and never guess corrections. No rewrite is requested. Do not browse, use connected apps, save/update the insight library, install dependencies or change real systems. This is synthetic document review, not a hiring decision. Fixture assessment date: 2026-10-20. Use targeted review context against target.txt.",
+      "uploads": [
+        "packet.txt",
+        "resources.zip",
+        "resume.txt",
+        "target.txt"
+      ],
+      "input_sha256": {
+        "packet.txt": "0e4f09580918fdb4b000ec721ca469550a7c54b603eeedcd17e9178028d5ff6e",
+        "resources.zip": "2763d86ab88fd18447a56bde56c46a5b0b31c8f1dc48be07e676d8ab578c3fa3",
+        "resume.txt": "6a3902ae789d7803364cc2b341d6bbe961b5b4245325568bc87a250f7f9ab7f2",
+        "target.txt": "fa924a4ad006b592d6f38290eb0fa492dbe3a775ce68a6698bd5e56a8b88b627"
+      },
+      "retry_of": "missing-date",
+      "resources_sha256": {
+        "instructions.md": "819a9d65ffbb6fd6a9f0bd5948fe8886f8e8b889bee16adddd19b7621dc8fb20",
+        "capabilities.json": "181e12ff5e74fbc195b8e19b85aa227e75c935ced6eb803339c2019f680231d1",
+        "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
+        "references/common-patterns.md": "0297e324530fab920a6df563ab5aa46896d66a5910aa05449983dc7b0525439a",
+        "references/enhance-workflow.md": "4a3d7cd07eb701493ba0f72e35480917141eda0b7fcd89b5b4d0d615bbac1e20",
+        "references/scoring-workflow.md": "3646d2ea1abbb294d1f1f62a2db4a68034cedfee6655ed7487dfc0e572b211a1",
+        "scoring-model.md": "6bbcc6b226f551d94d3aa1a8cf9037c253e43e56b86716ecba80ae852470611c",
+        "json-output-spec.md": "584b9f6e8bcebf7f588e1ab78c503684b3cf027a8e7170a8ef3116eca86d6173",
+        "scripts/score_audit.py": "824600d0ff3564c4604993efaa2f01bd853f0cf9b87da259b5639c07a20f58f2"
+      },
+      "candidate_patch_sha256": "37e8a537a290b986d26b53fc7684a2b74ffd2c534391b9169c1aacd56c33404e",
+      "inputs_and_resources_preserved": true,
+      "ax_sha256": "a33c81a9f869c8bb7ec4cafe67f97a545786b47dbaef24860568ca6353243923",
+      "screenshot_sha256": "1d994eead52a812e8b1936d1567b4846f2b676ec572adb554484f24e77acf297",
+      "copied_sha256": "574f435716ca61b345f733da2061f257f22aa42dae2a6a3d45801be382b02116",
+      "capture": {
+        "sentinel_changed": true,
+        "copy_confirmation_observed": true,
+        "characters": 7659
+      },
+      "copied_json_parses": true,
+      "checks": {
+        "full_ledger_and_source_mapping_match": true,
+        "independent_decimal_replay_matches": true,
+        "local_check_exit": 0,
+        "score": 93.3,
+        "severity_counts": {
+          "INFO": 6,
+          "MAJOR": 1
+        }
+      },
+      "audit": {
+        "output_mode": "json",
+        "review_context": "targeted",
+        "rubric_version": "fixed-evidence-v2",
+        "confidence": "high",
+        "audit_mode": "condensed",
+        "scoring_evidence": {
+          "positioning": {
+            "state": "role_and_evidence",
+            "evidence": "Headline \"Data Engineer\" and summary \"Data Engineer building SQL import jobs processing 100 records daily.\""
+          },
+          "experience_statements": [
+            {
+              "text": "Built SQL import jobs processing 100 records daily.",
+              "names_specific_object": true,
+              "has_supplied_measure": true,
+              "evidence": "SQL import jobs are a specific artifact; 100 records daily is a supplied throughput measure."
+            }
+          ],
+          "structure": {
+            "state": "standard",
+            "section_headings": [
+              "Summary",
+              "Experience",
+              "Skills"
+            ],
+            "evidence": "Explicit Summary, Experience and Skills labels; role entry is readable."
+          },
+          "chronology": {
+            "state": "missing_dates",
+            "evidence": "\"Data Engineer | Example Data | Start date not supplied - Dec 2024\" explicitly lacks a start date; no contradictory recorded dates."
+          },
+          "requirements": [
+            {
+              "text": "Data Engineer",
+              "supported": true,
+              "evidence": "Resume headline and experience title both state \"Data Engineer\"."
+            },
+            {
+              "text": "SQL",
+              "supported": true,
+              "evidence": "Summary, experience statement and Skills section explicitly name SQL."
+            }
+          ],
+          "privacy": {
+            "state": "safe",
+            "evidence": "Plain text includes a name and role, without a photo or unnecessary sensitive personal information."
+          }
+        },
+        "missing_data_flags": [
+          "MISSING_TIMELINE_CONTEXT"
+        ],
+        "system_flags": [
+          "TIMELINE_CONFUSING"
+        ],
+        "top_fixes": [
+          "Supply the actual start month and year for the Example Data Data Engineer role; do not infer it from the Dec 2024 end date. Source: Chronology should be easy to follow.",
+          "Clarify activity from Jan 2025 through the 2026-10-20 assessment date (approximately 21 months since the last stated end month). If there was a break, truthful framing options to adapt only if applicable include an extended career break, an entrepreneurial venture, or full-time study. Do not insert any option without confirmation. Source: common-patterns § Red flags recruiters look for.",
+          "Preserve the strong Data Engineer/SQL match and the supplied 100-records-daily measure; if available, add verified impact or business outcome beyond throughput. Source: Numbers, everywhere, or you get an interview with nobody.",
+          "Supply contact details appropriate for an application if desired; none are present in the provided resume. Source: common-patterns § Section order (for most mid-to-senior roles)."
+        ],
+        "rewritten_resume": null,
+        "notes": [
+          "Synthetic targeted condensed audit, assessed 2026-10-20; not a hiring decision or calibrated interview probability.",
+          "Recruiter skim: Data Engineer; built SQL import jobs processing 100 records daily. SQL and role title match both explicit target requirements.",
+          "Missing role start date is a scored chronology weakness; the unexplained post-Dec-2024 interval is a separate unscored timeline-context request, not a contradictory date.",
+          "No rewrite requested. Text extraction is high confidence; layout, page count and typography cannot be established from plain text.",
+          "No LinkedIn profile, portfolio or cover letter supplied for alignment checks."
+        ],
+        "principle_scores": [
+          {
+            "criterion_id": "positioning",
+            "principle": "Make the target role obvious in the top third",
+            "source_type": "library_principle",
+            "source_name": "Make the target role obvious in the top third",
+            "category": "Positioning and Narrative",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "Headline \"Data Engineer\" and summary \"Data Engineer building SQL import jobs processing 100 records daily.\"",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "specificity",
+            "principle": "Every bullet must name the thing",
+            "source_type": "library_principle",
+            "source_name": "Every bullet must name the thing",
+            "category": "Evidence and Bullet Strength",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "1/1 experience statements meet specificity; see scoring_evidence.experience_statements",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "measurements",
+            "principle": "Numbers, everywhere, or you get an interview with nobody",
+            "source_type": "library_principle",
+            "source_name": "Numbers, everywhere, or you get an interview with nobody",
+            "category": "Evidence and Bullet Strength",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "1/1 experience statements meet measurements; see scoring_evidence.experience_statements",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "structure",
+            "principle": "Standard section headings beat clever branding",
+            "source_type": "library_principle",
+            "source_name": "Standard section headings beat clever branding",
+            "category": "ATS and Structural Reliability",
+            "score": 3,
+            "weight": 1.25,
+            "severity": "INFO",
+            "reason": "Explicit Summary, Experience and Skills labels; role entry is readable.",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "chronology",
+            "principle": "Chronology should be easy to follow",
+            "source_type": "library_principle",
+            "source_name": "Chronology should be easy to follow",
+            "category": "ATS and Structural Reliability",
+            "score": 1,
+            "weight": 1.25,
+            "severity": "MAJOR",
+            "reason": "\"Data Engineer | Example Data | Start date not supplied - Dec 2024\" explicitly lacks a start date; no contradictory recorded dates.",
+            "before": null,
+            "after": null,
+            "fix": "Review chronology using the supplied evidence; request missing facts without invention."
+          },
+          {
+            "criterion_id": "alignment",
+            "principle": "Mirror the job description's language naturally",
+            "source_type": "library_principle",
+            "source_name": "Mirror the job description's language naturally",
+            "category": "Relevance and Targeting",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "2/2 supplied requirements supported; see scoring_evidence.requirements",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "privacy",
+            "principle": "No photos, no headshots, no personal data",
+            "source_type": "common_pattern",
+            "source_name": "common-patterns § No photos, no headshots, no personal data",
+            "category": "Professionalism and Trust",
+            "score": 3,
+            "weight": 1.0,
+            "severity": "INFO",
+            "reason": "Plain text includes a name and role, without a photo or unnecessary sensitive personal information.",
+            "before": null,
+            "after": null,
+            "fix": null
+          }
+        ],
+        "category_scores": {
+          "positioning_and_narrative": 100.0,
+          "evidence_and_bullet_strength": 100.0,
+          "ats_and_structural_reliability": 66.7,
+          "relevance_and_targeting": 100.0,
+          "professionalism_and_trust": 100.0
+        },
+        "final_score": 93.3,
+        "verdict": "Excellent",
+        "critical_issue_count": 0,
+        "major_issue_count": 1,
+        "minor_issue_count": 0
+      },
+      "status": "bounded_native_copy_json_pass",
+      "provider_execution_independently_verified": false,
+      "input": {
+        "id": "missing-date-final",
+        "task": "rw Audit the fictional resume.txt. Return pure JSON only according to the supplied json-output-spec.md, with no fences or prose outside the object. Use the exact supplied score calculator in resources.zip and check the final delivered audit object with --check. If execution is unavailable, report that limitation rather than estimating scores. Preserve the supplied facts, identify missing or contradictory information and never guess corrections. No rewrite is requested. Do not browse, use connected apps, save/update the insight library, install dependencies or change real systems. This is synthetic document review, not a hiring decision. Fixture assessment date: 2026-10-20. Use targeted review context against target.txt.",
+        "uploads": [
+          "packet.txt",
+          "resources.zip",
+          "resume.txt",
+          "target.txt"
+        ],
+        "input_sha256": {
+          "packet.txt": "0e4f09580918fdb4b000ec721ca469550a7c54b603eeedcd17e9178028d5ff6e",
+          "resources.zip": "2763d86ab88fd18447a56bde56c46a5b0b31c8f1dc48be07e676d8ab578c3fa3",
+          "resume.txt": "6a3902ae789d7803364cc2b341d6bbe961b5b4245325568bc87a250f7f9ab7f2",
+          "target.txt": "fa924a4ad006b592d6f38290eb0fa492dbe3a775ce68a6698bd5e56a8b88b627"
+        },
+        "retry_of": "missing-date",
+        "resources_sha256": {
+          "instructions.md": "819a9d65ffbb6fd6a9f0bd5948fe8886f8e8b889bee16adddd19b7621dc8fb20",
+          "capabilities.json": "181e12ff5e74fbc195b8e19b85aa227e75c935ced6eb803339c2019f680231d1",
+          "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
+          "references/common-patterns.md": "0297e324530fab920a6df563ab5aa46896d66a5910aa05449983dc7b0525439a",
+          "references/enhance-workflow.md": "4a3d7cd07eb701493ba0f72e35480917141eda0b7fcd89b5b4d0d615bbac1e20",
+          "references/scoring-workflow.md": "3646d2ea1abbb294d1f1f62a2db4a68034cedfee6655ed7487dfc0e572b211a1",
+          "scoring-model.md": "6bbcc6b226f551d94d3aa1a8cf9037c253e43e56b86716ecba80ae852470611c",
+          "json-output-spec.md": "584b9f6e8bcebf7f588e1ab78c503684b3cf027a8e7170a8ef3116eca86d6173",
+          "scripts/score_audit.py": "824600d0ff3564c4604993efaa2f01bd853f0cf9b87da259b5639c07a20f58f2"
+        },
+        "candidate_patch_sha256": "37e8a537a290b986d26b53fc7684a2b74ffd2c534391b9169c1aacd56c33404e"
+      },
+      "rendered_sha256": "36331431bd7307d124a40a4904ecc5f6b66326e26b26935c3772787fef53ce6d",
+      "rendered_matches_copied_json": true
+    },
+    {
+      "id": "generic-final-retry",
+      "task": "rw Audit the fictional resume.txt. Return pure JSON only according to the supplied json-output-spec.md, with no fences or prose outside the object. Use the exact supplied score calculator in resources.zip and check the final delivered audit object with --check. If execution is unavailable, report that limitation rather than estimating scores. Preserve the supplied facts, identify missing or contradictory information and never guess corrections. No rewrite is requested. Do not browse, use connected apps, save/update the insight library, install dependencies or change real systems. This is synthetic document review, not a hiring decision. Fixture assessment date: 2026-10-20. Use generic review context. No job description or external target is supplied; assess the resume and its claimed skills.",
+      "uploads": [
+        "packet.txt",
+        "resources.zip",
+        "resume.txt"
+      ],
+      "input_sha256": {
+        "packet.txt": "ce31765dae1b5ad20dbcce574d721a4714fb2090367341e9920053cd6b536d8d",
+        "resources.zip": "2763d86ab88fd18447a56bde56c46a5b0b31c8f1dc48be07e676d8ab578c3fa3",
+        "resume.txt": "b8f5276aab3f0dd6caa92255f9ed5a8afbbdbc92aea4bc64bae9cb233d592f2c"
+      },
+      "retry_of": "generic-final",
+      "resources_sha256": {
+        "instructions.md": "819a9d65ffbb6fd6a9f0bd5948fe8886f8e8b889bee16adddd19b7621dc8fb20",
+        "capabilities.json": "181e12ff5e74fbc195b8e19b85aa227e75c935ced6eb803339c2019f680231d1",
+        "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
+        "references/common-patterns.md": "0297e324530fab920a6df563ab5aa46896d66a5910aa05449983dc7b0525439a",
+        "references/enhance-workflow.md": "4a3d7cd07eb701493ba0f72e35480917141eda0b7fcd89b5b4d0d615bbac1e20",
+        "references/scoring-workflow.md": "3646d2ea1abbb294d1f1f62a2db4a68034cedfee6655ed7487dfc0e572b211a1",
+        "scoring-model.md": "6bbcc6b226f551d94d3aa1a8cf9037c253e43e56b86716ecba80ae852470611c",
+        "json-output-spec.md": "584b9f6e8bcebf7f588e1ab78c503684b3cf027a8e7170a8ef3116eca86d6173",
+        "scripts/score_audit.py": "824600d0ff3564c4604993efaa2f01bd853f0cf9b87da259b5639c07a20f58f2"
+      },
+      "candidate_patch_sha256": "37e8a537a290b986d26b53fc7684a2b74ffd2c534391b9169c1aacd56c33404e",
+      "inputs_and_resources_preserved": true,
+      "ax_sha256": "221d2f43e438471104c553ba892a5d49dfe25fe17d811c45d6f682b0e0dbbd72",
+      "screenshot_sha256": "df7a88e2616b19ab6c885c30dfa30c2480f28dc5ac6ff761a2511c5a51813fcd",
+      "copied_sha256": "bb3021eba4c6731abe34f7c4d80fc145932dbaad2cf6c9319c5f10c979e13f5a",
+      "capture": {
+        "sentinel_changed": true,
+        "copy_confirmation_observed": true,
+        "characters": 7515
+      },
+      "copied_json_parses": true,
+      "checks": {
+        "full_ledger_and_source_mapping_match": true,
+        "independent_decimal_replay_matches": true,
+        "local_check_exit": 0,
+        "score": 93.3,
+        "severity_counts": {
+          "INFO": 6,
+          "MAJOR": 1
+        }
+      },
+      "audit": {
+        "output_mode": "json",
+        "review_context": "generic",
+        "rubric_version": "fixed-evidence-v2",
+        "confidence": "high",
+        "audit_mode": "condensed",
+        "scoring_evidence": {
+          "positioning": {
+            "state": "role_and_evidence",
+            "evidence": "Headline \"Data Engineer\" and summary \"Data Engineer building SQL import jobs processing 100 records daily.\""
+          },
+          "experience_statements": [
+            {
+              "text": "Built SQL import jobs processing 100 records daily.",
+              "names_specific_object": true,
+              "has_supplied_measure": true,
+              "evidence": "SQL import jobs are named; 100 records daily supplies volume and frequency."
+            }
+          ],
+          "structure": {
+            "state": "standard",
+            "section_headings": [
+              "Summary",
+              "Experience",
+              "Skills"
+            ],
+            "evidence": "Explicit Summary, Experience and Skills labels; employer, title and dates are readable."
+          },
+          "chronology": {
+            "state": "clear",
+            "evidence": "One explicit role: Data Engineer | Example Data | Jan 2022 - Dec 2024; no contradictory role dates."
+          },
+          "requirements": [
+            {
+              "text": "SQL",
+              "supported": true,
+              "evidence": "Experience: \"Built SQL import jobs processing 100 records daily.\""
+            },
+            {
+              "text": "Python",
+              "supported": false,
+              "evidence": "Python appears only in \"Skills\"; no experience statement demonstrates its use."
+            }
+          ],
+          "privacy": {
+            "state": "safe",
+            "evidence": "Plain-text resume has a name but no photo or unnecessary sensitive personal data."
+          }
+        },
+        "missing_data_flags": [
+          "MISSING_TIMELINE_CONTEXT",
+          "MISSING_OUTCOME",
+          "MISSING_SCOPE"
+        ],
+        "system_flags": [
+          "TARGETING_WEAK"
+        ],
+        "top_fixes": [
+          "Support the claimed Python skill with a truthful project or experience example, or clarify its proficiency; do not invent use. (Skills lists need proof, not just nouns)",
+          "Clarify what happened after Dec 2024 through the 2026-10-20 fixture assessment date (approximately 21 full intervening months); if accurate, possible descriptions to adapt include career break, contract work, or full-time study. None is established by the resume. (Chronology should be easy to follow)",
+          "Supply the business outcome and additional scope of the SQL import jobs beyond the stated 100 records daily, if known. (Numbers, everywhere, or you get an interview with nobody)",
+          "Add ordinary contact details if intended for applications; the source supplies only a name, not email, phone, location or profile link. (common-patterns § Section order (for most mid-to-senior roles))"
+        ],
+        "rewritten_resume": null,
+        "notes": [
+          "Synthetic generic resume audit; no job description or external target was supplied. Scores evaluate document evidence, not hiring probabilities.",
+          "High-confidence extraction from the supplied plain-text resume; visual layout, actual page count and ATS parsing of a formatted file cannot be verified.",
+          "Recruiter skim: Data Engineer; SQL import jobs processing 100 records daily at Example Data, Jan 2022-Dec 2024. Python is claimed but not evidenced in experience.",
+          "No contradictory recorded dates were found. The period following Dec 2024 is unexplained, not a contradictory date range; timeline context is an unscored follow-up.",
+          "No rewrite, cover letter, interview handoff or external verification was requested."
+        ],
+        "principle_scores": [
+          {
+            "criterion_id": "positioning",
+            "principle": "Make the target role obvious in the top third",
+            "source_type": "library_principle",
+            "source_name": "Make the target role obvious in the top third",
+            "category": "Positioning and Narrative",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "Headline \"Data Engineer\" and summary \"Data Engineer building SQL import jobs processing 100 records daily.\"",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "specificity",
+            "principle": "Every bullet must name the thing",
+            "source_type": "library_principle",
+            "source_name": "Every bullet must name the thing",
+            "category": "Evidence and Bullet Strength",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "1/1 experience statements meet specificity; see scoring_evidence.experience_statements",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "measurements",
+            "principle": "Numbers, everywhere, or you get an interview with nobody",
+            "source_type": "library_principle",
+            "source_name": "Numbers, everywhere, or you get an interview with nobody",
+            "category": "Evidence and Bullet Strength",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "1/1 experience statements meet measurements; see scoring_evidence.experience_statements",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "structure",
+            "principle": "Standard section headings beat clever branding",
+            "source_type": "library_principle",
+            "source_name": "Standard section headings beat clever branding",
+            "category": "ATS and Structural Reliability",
+            "score": 3,
+            "weight": 1.25,
+            "severity": "INFO",
+            "reason": "Explicit Summary, Experience and Skills labels; employer, title and dates are readable.",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "chronology",
+            "principle": "Chronology should be easy to follow",
+            "source_type": "library_principle",
+            "source_name": "Chronology should be easy to follow",
+            "category": "ATS and Structural Reliability",
+            "score": 3,
+            "weight": 1.25,
+            "severity": "INFO",
+            "reason": "One explicit role: Data Engineer | Example Data | Jan 2022 - Dec 2024; no contradictory role dates.",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "alignment",
+            "principle": "Skills keyword dumps",
+            "source_type": "common_pattern",
+            "source_name": "common-patterns § Skills keyword dumps",
+            "category": "Relevance and Targeting",
+            "score": 1,
+            "weight": 1.0,
+            "severity": "MAJOR",
+            "reason": "1/2 supplied requirements supported; see scoring_evidence.requirements",
+            "before": null,
+            "after": null,
+            "fix": "Review alignment using the supplied evidence; request missing facts without invention."
+          },
+          {
+            "criterion_id": "privacy",
+            "principle": "No photos, no headshots, no personal data",
+            "source_type": "common_pattern",
+            "source_name": "common-patterns § No photos, no headshots, no personal data",
+            "category": "Professionalism and Trust",
+            "score": 3,
+            "weight": 1.0,
+            "severity": "INFO",
+            "reason": "Plain-text resume has a name but no photo or unnecessary sensitive personal data.",
+            "before": null,
+            "after": null,
+            "fix": null
+          }
+        ],
+        "category_scores": {
+          "positioning_and_narrative": 100.0,
+          "evidence_and_bullet_strength": 100.0,
+          "ats_and_structural_reliability": 100.0,
+          "relevance_and_targeting": 33.3,
+          "professionalism_and_trust": 100.0
+        },
+        "final_score": 93.3,
+        "verdict": "Excellent",
+        "critical_issue_count": 0,
+        "major_issue_count": 1,
+        "minor_issue_count": 0
+      },
+      "status": "bounded_native_copy_json_pass",
+      "provider_execution_independently_verified": false,
+      "input": {
+        "id": "generic-final-retry",
+        "task": "rw Audit the fictional resume.txt. Return pure JSON only according to the supplied json-output-spec.md, with no fences or prose outside the object. Use the exact supplied score calculator in resources.zip and check the final delivered audit object with --check. If execution is unavailable, report that limitation rather than estimating scores. Preserve the supplied facts, identify missing or contradictory information and never guess corrections. No rewrite is requested. Do not browse, use connected apps, save/update the insight library, install dependencies or change real systems. This is synthetic document review, not a hiring decision. Fixture assessment date: 2026-10-20. Use generic review context. No job description or external target is supplied; assess the resume and its claimed skills.",
+        "uploads": [
+          "packet.txt",
+          "resources.zip",
+          "resume.txt"
+        ],
+        "input_sha256": {
+          "packet.txt": "ce31765dae1b5ad20dbcce574d721a4714fb2090367341e9920053cd6b536d8d",
+          "resources.zip": "2763d86ab88fd18447a56bde56c46a5b0b31c8f1dc48be07e676d8ab578c3fa3",
+          "resume.txt": "b8f5276aab3f0dd6caa92255f9ed5a8afbbdbc92aea4bc64bae9cb233d592f2c"
+        },
+        "retry_of": "generic-final",
+        "resources_sha256": {
+          "instructions.md": "819a9d65ffbb6fd6a9f0bd5948fe8886f8e8b889bee16adddd19b7621dc8fb20",
+          "capabilities.json": "181e12ff5e74fbc195b8e19b85aa227e75c935ced6eb803339c2019f680231d1",
+          "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
+          "references/common-patterns.md": "0297e324530fab920a6df563ab5aa46896d66a5910aa05449983dc7b0525439a",
+          "references/enhance-workflow.md": "4a3d7cd07eb701493ba0f72e35480917141eda0b7fcd89b5b4d0d615bbac1e20",
+          "references/scoring-workflow.md": "3646d2ea1abbb294d1f1f62a2db4a68034cedfee6655ed7487dfc0e572b211a1",
+          "scoring-model.md": "6bbcc6b226f551d94d3aa1a8cf9037c253e43e56b86716ecba80ae852470611c",
+          "json-output-spec.md": "584b9f6e8bcebf7f588e1ab78c503684b3cf027a8e7170a8ef3116eca86d6173",
+          "scripts/score_audit.py": "824600d0ff3564c4604993efaa2f01bd853f0cf9b87da259b5639c07a20f58f2"
+        },
+        "candidate_patch_sha256": "37e8a537a290b986d26b53fc7684a2b74ffd2c534391b9169c1aacd56c33404e"
+      },
+      "rendered_sha256": "5c35f6556e328bea72b06d0459a30b4a4453cbf187ea1797367e298e3000376a",
+      "rendered_matches_copied_json": true
+    },
+    {
+      "id": "mixed-headings-final-retry",
+      "task": "rw Audit the fictional resume.txt. Return pure JSON only according to the supplied json-output-spec.md, with no fences or prose outside the object. Use the exact supplied score calculator in resources.zip and check the final delivered audit object with --check. If execution is unavailable, report that limitation rather than estimating scores. Preserve the supplied facts, identify missing or contradictory information and never guess corrections. No rewrite is requested. Do not browse, use connected apps, save/update the insight library, install dependencies or change real systems. This is synthetic document review, not a hiring decision. Fixture assessment date: 2026-10-20. Use targeted review context against target.txt.",
+      "uploads": [
+        "packet.txt",
+        "resources.zip",
+        "resume.txt",
+        "target.txt"
+      ],
+      "input_sha256": {
+        "packet.txt": "0e4f09580918fdb4b000ec721ca469550a7c54b603eeedcd17e9178028d5ff6e",
+        "resources.zip": "2763d86ab88fd18447a56bde56c46a5b0b31c8f1dc48be07e676d8ab578c3fa3",
+        "resume.txt": "cc805d165d12ceab4e0d5063d217859c3aadda31d22d8975d2fa16f3907002c9",
+        "target.txt": "fa924a4ad006b592d6f38290eb0fa492dbe3a775ce68a6698bd5e56a8b88b627"
+      },
+      "retry_of": "mixed-headings-final",
+      "resources_sha256": {
+        "instructions.md": "819a9d65ffbb6fd6a9f0bd5948fe8886f8e8b889bee16adddd19b7621dc8fb20",
+        "capabilities.json": "181e12ff5e74fbc195b8e19b85aa227e75c935ced6eb803339c2019f680231d1",
+        "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
+        "references/common-patterns.md": "0297e324530fab920a6df563ab5aa46896d66a5910aa05449983dc7b0525439a",
+        "references/enhance-workflow.md": "4a3d7cd07eb701493ba0f72e35480917141eda0b7fcd89b5b4d0d615bbac1e20",
+        "references/scoring-workflow.md": "3646d2ea1abbb294d1f1f62a2db4a68034cedfee6655ed7487dfc0e572b211a1",
+        "scoring-model.md": "6bbcc6b226f551d94d3aa1a8cf9037c253e43e56b86716ecba80ae852470611c",
+        "json-output-spec.md": "584b9f6e8bcebf7f588e1ab78c503684b3cf027a8e7170a8ef3116eca86d6173",
+        "scripts/score_audit.py": "824600d0ff3564c4604993efaa2f01bd853f0cf9b87da259b5639c07a20f58f2"
+      },
+      "candidate_patch_sha256": "37e8a537a290b986d26b53fc7684a2b74ffd2c534391b9169c1aacd56c33404e",
+      "inputs_and_resources_preserved": true,
+      "ax_sha256": "9dcefbcc10b34383eee7a8f38540df73a7746499fe96404703b7f70aff77fa43",
+      "screenshot_sha256": "09b19d2d419dbdf2a189e4c2f4f13f9a84ed80132fd2b9c133ec28e70c6ea536",
+      "copied_sha256": "b2648ab679795dbb2f2bb750e246e76bc2f8f61d60088246307644c5a35d59b8",
+      "capture": {
+        "sentinel_changed": true,
+        "copy_confirmation_observed": true,
+        "characters": 7632
+      },
+      "copied_json_parses": true,
+      "checks": {
+        "full_ledger_and_source_mapping_match": true,
+        "independent_decimal_replay_matches": true,
+        "local_check_exit": 0,
+        "score": 96.7,
+        "severity_counts": {
+          "INFO": 6,
+          "MINOR": 1
+        }
+      },
+      "audit": {
+        "output_mode": "json",
+        "review_context": "targeted",
+        "rubric_version": "fixed-evidence-v2",
+        "confidence": "high",
+        "audit_mode": "condensed",
+        "scoring_evidence": {
+          "positioning": {
+            "state": "role_and_evidence",
+            "evidence": "Headline \"Data Engineer\" and summary \"Data Engineer building SQL import jobs processing 100 records daily.\""
+          },
+          "experience_statements": [
+            {
+              "text": "Built SQL import jobs processing 100 records daily.",
+              "names_specific_object": true,
+              "has_supplied_measure": true,
+              "evidence": "Names SQL import jobs and states 100 records daily."
+            }
+          ],
+          "structure": {
+            "state": "mixed",
+            "section_headings": [
+              "Summary",
+              "Where I Made Things Work",
+              "Skills"
+            ],
+            "evidence": "Summary and Skills are conventional, but \"Where I Made Things Work\" is an unconventional experience heading; role remains identifiable."
+          },
+          "chronology": {
+            "state": "clear",
+            "evidence": "Data Engineer | Example Data | Jan 2022 - Dec 2024 is an explicit, noncontradictory role range."
+          },
+          "requirements": [
+            {
+              "text": "Data Engineer",
+              "supported": true,
+              "evidence": "Headline and job title both state \"Data Engineer\"."
+            },
+            {
+              "text": "SQL",
+              "supported": true,
+              "evidence": "Summary, experience statement and Skills mention SQL."
+            }
+          ],
+          "privacy": {
+            "state": "safe",
+            "evidence": "Plain-text resume contains a name and professional information, with no photo or sensitive personal details."
+          }
+        },
+        "missing_data_flags": [
+          "MISSING_TIMELINE_CONTEXT"
+        ],
+        "system_flags": [],
+        "top_fixes": [
+          "Replace \"Where I Made Things Work\" with the conventional \"Experience\" heading (Standard section headings beat clever branding).",
+          "Clarify activity from Jan 2025 through the 2026-10-20 assessment date; the resume ends Dec 2024. Possible descriptions only if truthful: career transition period, independent project work, or career break. Do not insert an explanation without confirmation.",
+          "Add ordinary contact details if this is intended for applications; none are supplied in the resume (common-patterns § Section order (for most mid-to-senior roles)).",
+          "Keep the supported SQL import-job achievement prominent for the fictional Data Engineer target; clarify technology and impact only if additional verified facts exist."
+        ],
+        "rewritten_resume": null,
+        "notes": [
+          "Synthetic targeted condensed audit of resume.txt against target.txt, assessed 2026-10-20; no rewrite requested.",
+          "Recruiter skim: Data Engineer; SQL import jobs; 100 records processed daily at Example Data (Jan 2022-Dec 2024).",
+          "Employment gap: Jan 2025 through Oct 2026 (approximately 21 months and 20 days after Dec 2024), unexplained; no later role or contextual explanation is supplied. This is a missing-context flag, not a chronology score deduction.",
+          "The target supplies Data Engineer and SQL only; both appear in the resume. No additional target requirements are inferred.",
+          "No contradictory dates are present. Plain text does not establish page layout, font, or ATS parser behavior.",
+          "Document rubric scores are not calibrated hiring probabilities or a hiring decision."
+        ],
+        "hire_likelihood": "Document rubric only; not a calibrated interview probability.",
+        "principle_scores": [
+          {
+            "criterion_id": "positioning",
+            "principle": "Make the target role obvious in the top third",
+            "source_type": "library_principle",
+            "source_name": "Make the target role obvious in the top third",
+            "category": "Positioning and Narrative",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "Headline \"Data Engineer\" and summary \"Data Engineer building SQL import jobs processing 100 records daily.\"",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "specificity",
+            "principle": "Every bullet must name the thing",
+            "source_type": "library_principle",
+            "source_name": "Every bullet must name the thing",
+            "category": "Evidence and Bullet Strength",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "1/1 experience statements meet specificity; see scoring_evidence.experience_statements",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "measurements",
+            "principle": "Numbers, everywhere, or you get an interview with nobody",
+            "source_type": "library_principle",
+            "source_name": "Numbers, everywhere, or you get an interview with nobody",
+            "category": "Evidence and Bullet Strength",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "1/1 experience statements meet measurements; see scoring_evidence.experience_statements",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "structure",
+            "principle": "Standard section headings beat clever branding",
+            "source_type": "library_principle",
+            "source_name": "Standard section headings beat clever branding",
+            "category": "ATS and Structural Reliability",
+            "score": 2,
+            "weight": 1.25,
+            "severity": "MINOR",
+            "reason": "Summary and Skills are conventional, but \"Where I Made Things Work\" is an unconventional experience heading; role remains identifiable.",
+            "before": null,
+            "after": null,
+            "fix": "Review structure using the supplied evidence; request missing facts without invention."
+          },
+          {
+            "criterion_id": "chronology",
+            "principle": "Chronology should be easy to follow",
+            "source_type": "library_principle",
+            "source_name": "Chronology should be easy to follow",
+            "category": "ATS and Structural Reliability",
+            "score": 3,
+            "weight": 1.25,
+            "severity": "INFO",
+            "reason": "Data Engineer | Example Data | Jan 2022 - Dec 2024 is an explicit, noncontradictory role range.",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "alignment",
+            "principle": "Mirror the job description's language naturally",
+            "source_type": "library_principle",
+            "source_name": "Mirror the job description's language naturally",
+            "category": "Relevance and Targeting",
+            "score": 3,
+            "weight": 1.5,
+            "severity": "INFO",
+            "reason": "2/2 supplied requirements supported; see scoring_evidence.requirements",
+            "before": null,
+            "after": null,
+            "fix": null
+          },
+          {
+            "criterion_id": "privacy",
+            "principle": "No photos, no headshots, no personal data",
+            "source_type": "common_pattern",
+            "source_name": "common-patterns § No photos, no headshots, no personal data",
+            "category": "Professionalism and Trust",
+            "score": 3,
+            "weight": 1.0,
+            "severity": "INFO",
+            "reason": "Plain-text resume contains a name and professional information, with no photo or sensitive personal details.",
+            "before": null,
+            "after": null,
+            "fix": null
+          }
+        ],
+        "category_scores": {
+          "positioning_and_narrative": 100.0,
+          "evidence_and_bullet_strength": 100.0,
+          "ats_and_structural_reliability": 83.3,
+          "relevance_and_targeting": 100.0,
+          "professionalism_and_trust": 100.0
+        },
+        "final_score": 96.7,
+        "verdict": "Excellent",
+        "critical_issue_count": 0,
+        "major_issue_count": 0,
+        "minor_issue_count": 1
+      },
+      "status": "bounded_native_copy_json_pass",
+      "provider_execution_independently_verified": false,
+      "input": {
+        "id": "mixed-headings-final-retry",
+        "task": "rw Audit the fictional resume.txt. Return pure JSON only according to the supplied json-output-spec.md, with no fences or prose outside the object. Use the exact supplied score calculator in resources.zip and check the final delivered audit object with --check. If execution is unavailable, report that limitation rather than estimating scores. Preserve the supplied facts, identify missing or contradictory information and never guess corrections. No rewrite is requested. Do not browse, use connected apps, save/update the insight library, install dependencies or change real systems. This is synthetic document review, not a hiring decision. Fixture assessment date: 2026-10-20. Use targeted review context against target.txt.",
+        "uploads": [
+          "packet.txt",
+          "resources.zip",
+          "resume.txt",
+          "target.txt"
+        ],
+        "input_sha256": {
+          "packet.txt": "0e4f09580918fdb4b000ec721ca469550a7c54b603eeedcd17e9178028d5ff6e",
+          "resources.zip": "2763d86ab88fd18447a56bde56c46a5b0b31c8f1dc48be07e676d8ab578c3fa3",
+          "resume.txt": "cc805d165d12ceab4e0d5063d217859c3aadda31d22d8975d2fa16f3907002c9",
+          "target.txt": "fa924a4ad006b592d6f38290eb0fa492dbe3a775ce68a6698bd5e56a8b88b627"
+        },
+        "retry_of": "mixed-headings-final",
+        "resources_sha256": {
+          "instructions.md": "819a9d65ffbb6fd6a9f0bd5948fe8886f8e8b889bee16adddd19b7621dc8fb20",
+          "capabilities.json": "181e12ff5e74fbc195b8e19b85aa227e75c935ced6eb803339c2019f680231d1",
+          "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
+          "references/common-patterns.md": "0297e324530fab920a6df563ab5aa46896d66a5910aa05449983dc7b0525439a",
+          "references/enhance-workflow.md": "4a3d7cd07eb701493ba0f72e35480917141eda0b7fcd89b5b4d0d615bbac1e20",
+          "references/scoring-workflow.md": "3646d2ea1abbb294d1f1f62a2db4a68034cedfee6655ed7487dfc0e572b211a1",
+          "scoring-model.md": "6bbcc6b226f551d94d3aa1a8cf9037c253e43e56b86716ecba80ae852470611c",
+          "json-output-spec.md": "584b9f6e8bcebf7f588e1ab78c503684b3cf027a8e7170a8ef3116eca86d6173",
+          "scripts/score_audit.py": "824600d0ff3564c4604993efaa2f01bd853f0cf9b87da259b5639c07a20f58f2"
+        },
+        "candidate_patch_sha256": "37e8a537a290b986d26b53fc7684a2b74ffd2c534391b9169c1aacd56c33404e"
+      },
+      "rendered_sha256": "7392ea79744bbd4de3bd307ff53b8a244a250ebac972838045c81f56204dfd26",
+      "rendered_matches_copied_json": true
+    }
+  ],
+  "same_original_score_difference": 10.0,
+  "acceptance": "pending; no installation, merging or promotion",
+  "initial_candidate_patch_sha256": "137d410b2860b233884a4c2a9407987f2dfbd10e18c0e9bc4fcef4fa824320ea",
+  "criteria_not_uploaded": [
+    "Full original JSON response parses without normalization and matches exact final helper output.",
+    "Actual human ZIPs reconcile both ledgers and human displays; source facts preserved.",
+    "Both human original heading inventories contain only Experience and Education, without target/fixture context.",
+    "Generic, mixed-heading and missing-date anchors have single penalty ownership.",
+    "No changed calculator-owned reasons; preserve prior failures and host limits."
+  ]
+}

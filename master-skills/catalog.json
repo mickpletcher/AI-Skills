@@ -1,0 +1,642 @@
+{
+  "schema_version": 1,
+  "scope": "canonical candidates; excludes shipped catalog and does not certify host compatibility",
+  "skills": [
+    {
+      "name": "alpaca-trading",
+      "description": "Work safely in the Trading repository for Alpaca helpers, backtesting, journaling, scheduling, and related PowerShell modules. Prefer additive changes, preserve existing trading logic unless the user asks otherwise, and default to paper-trading-safe guidance.",
+      "source": "alpaca-trading/SKILL.md",
+      "origin": "claude/skills/alpaca-trading/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "skipped_targets": {},
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "astrophotography-processing",
+      "description": "Router for astrophotography processing, troubleshooting, and safe workflow guidance across deep-sky, narrowband, planetary/lunar/solar, Milky Way landscape, comet, and mosaic data.",
+      "source": "astrophotography-processing/SKILL.md",
+      "origin": "claude/skills/astrophotography-processing/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "blog-post",
+      "description": "Write or draft a blog post for Mick's IT blog at mickitblog.blogspot.com. Trigger when Mick asks for a blog post or wants to document a technical solution, project, or finding in post format. Match Mick's writing style with plain first-person prose, practical focus, honest status notes, code blocks where relevant, and GitHub links when applicable.",
+      "source": "blog-post/SKILL.md",
+      "origin": "claude/skills/blog-post/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "blog-to-social",
+      "description": "Convert a finished blog post into three ready-to-post social media versions in one pass for Facebook, X, and LinkedIn. Always trigger immediately when the user's message starts with \"bts\". Also trigger on \"blog to social\", \"social posts for this\", \"promote this post\", or when the user pastes or links a blog post and asks to share it, promote it, or turn it into social content.",
+      "source": "blog-to-social/SKILL.md",
+      "origin": "claude/skills/blog-to-social/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "container-home",
+      "description": "Answer questions, assist with planning, and help with design decisions for Mick's off-grid shipping container lake home project. Trigger when the user mentions the container home, lake home, Stewart County, LBL, the expansion, solar system, septic permitting, or retirement property.",
+      "source": "container-home/SKILL.md",
+      "origin": "claude/skills/container-home/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "crypto-listings",
+      "description": "Retrieve new cryptocurrency listings from the past 7 days and upcoming listings in the next 7 days across major exchanges. Always trigger immediately when the user's message starts with \"cl\" or says \"crypto listings\", \"new crypto\", \"new coins\", \"upcoming listings\", or asks what cryptos just launched or are launching soon. Always verify current listings data before responding; never answer from memory.",
+      "source": "crypto-listings/SKILL.md",
+      "origin": "claude/skills/crypto-listings/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "crypto-research",
+      "description": "Deep-dive research report on a specific cryptocurrency before trading or investing. Always trigger immediately when the user's message starts with \"cr\" followed by a coin name or ticker. Also trigger on \"research [coin]\", \"due diligence [coin]\", \"is [coin] worth buying\", or any request for a structured breakdown of a specific crypto asset. Always verify current market, team, tokenomics, and project facts before responding; never answer from memory.",
+      "source": "crypto-research/SKILL.md",
+      "origin": "claude/skills/crypto-research/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "example-skill",
+      "description": "Demonstrate a reusable cross-platform skill without accessing external systems.",
+      "source": "example-skill/SKILL.md",
+      "origin": "example",
+      "migration": "existing_foundation",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "skipped_targets": {},
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "facebook-post",
+      "description": "Write and polish Facebook posts on any topic. Trigger on requests to draft, rewrite, polish, improve a Facebook post, or create cross-platform Facebook, X, and LinkedIn bundles, especially when the user starts with `fbp`.",
+      "source": "facebook-post/SKILL.md",
+      "origin": "claude/skills/facebook-post/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "facebook-reply",
+      "description": "Write replies to Facebook comments on Mick's posts. Trigger on requests to reply to a Facebook comment, especially when the user starts with `fbr`.",
+      "source": "facebook-reply/SKILL.md",
+      "origin": "claude/skills/facebook-reply/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "fitness-log",
+      "description": "Track workouts, log fitness progress, adjust the training program, and generate Facebook posts from workout data. Trigger on workout logging, PR updates, program questions, and fitness progress summaries.",
+      "source": "fitness-log/SKILL.md",
+      "origin": "claude/skills/fitness-log/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "fitness-programming",
+      "description": "Build structured training plans, progression blocks, and goal-specific fitness programming for Mick. Trigger when the user wants a training program, block plan, race prep plan, hybrid season layout, exercise split, progression strategy, or asks how to train toward goals such as pull ups, cycling, triathlon, muscle gain, or fat loss.",
+      "source": "fitness-programming/SKILL.md",
+      "origin": "claude/skills/fitness-programming/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "food-analyzer",
+      "description": "Analyze food photos, nutrition labels, and ingredient lists. Trigger on food images, nutrition label scans, macro questions, glycemic questions, medication interaction checks, and similar food-analysis requests.\n",
+      "source": "food-analyzer/SKILL.md",
+      "origin": "claude/skills/food-analyzer/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Explicit user exclusion: food/photo/nutrition analysis is not their Cursor coding workflow.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "github-readme",
+      "description": "Write or repair an accurate, repository-specific README based on verified project files and requirements.",
+      "source": "github-readme/SKILL.md",
+      "origin": "claude/skills/github-readme/SKILL.md",
+      "migration": "existing_foundation",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "skipped_targets": {},
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "github-repo-architect",
+      "description": "Design a practical, testable Git repository architecture from a project idea, including documentation, CI, and starter files when appropriate.",
+      "source": "github-repo-architect/SKILL.md",
+      "origin": "claude/skills/github-repo-architect/SKILL.md",
+      "migration": "existing_foundation",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "skipped_targets": {},
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "github-social-preview",
+      "description": "Generates a professional GitHub repository social preview image sized 1280x640 pixels as a JPG under 1 MB. Always trigger immediately when the user's message starts with \"gsp\". Also trigger on \"generate github social preview\", \"create repo preview image\", or any request to generate a social preview or OG image for a GitHub repository.",
+      "source": "github-social-preview/SKILL.md",
+      "origin": "claude/skills/github-social-preview/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "skipped_targets": {},
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "idea-forge",
+      "description": "Run any raw idea through a multi-stage R&D pipeline that interprets, expands, scores, and converts it into an actionable engineering plan. Always trigger immediately when the user's message starts with \"idea\". Also trigger on \"ideaforge\", \"analyze this idea\", \"expand this concept\", \"assess this invention\", \"explore this thought\", \"develop this further\", \"turn this into a project\", \"evaluate feasibility\", \"forge this idea\", or any request to analyze, expand, score, or develop a rough concept or invention into a structured plan.",
+      "source": "idea-forge/SKILL.md",
+      "origin": "claude/skills/idea-forge/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "linkedin-post",
+      "description": "Write LinkedIn posts for Mick Pletcher's professional audience. Always trigger immediately when Mick says \"linkedin post\", \"lnp\", or asks to write something for LinkedIn. LinkedIn audience is professional IT, AI, and automation peers. Tone is more polished than Facebook but still first-person and direct. No emojis. Avoid em dashes in final LinkedIn post output. 2 to 3 hashtags max. Focus on home AI infrastructure, algorithmic trading, enterprise automation, career insights, and tech commentary.",
+      "source": "linkedin-post/SKILL.md",
+      "origin": "claude/skills/linkedin-post/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "market-brief",
+      "description": "Generate a current morning market brief for Mick's indices, commodities, currencies, macro, and expanded crypto watchlist. Trigger immediately when the user starts with \"mb\" or asks for a market brief, morning brief, market update, pre-market summary, market open summary, or asks what the market is doing. Always verify live prices, market session context, and news before answering. Never use memory for prices, levels, market status, or headlines.\n",
+      "source": "market-brief/SKILL.md",
+      "origin": "claude/skills/market-brief/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "n8n-workflow",
+      "description": "Design, build, or troubleshoot n8n automation workflows. Always trigger immediately when Mick mentions n8n, workflow nodes, automating a pipeline, or connecting services via n8n. Covers node selection, webhook patterns, Claude API integration, credential setup, Cloudflare Tunnel exposure, and Proxmox LXC deployment. Mick runs n8n on Proxmox CT 104 at 192.168.0.81:5678 with Cloudflare Tunnel for HTTPS.",
+      "source": "n8n-workflow/SKILL.md",
+      "origin": "claude/skills/n8n-workflow/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "skipped_targets": {},
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "obsidian-workout-export",
+      "description": "Export workout data to an Obsidian-formatted Markdown file. Always trigger immediately when the user types \"owd\". Also trigger on \"export workout\", \"obsidian workout\", \"save workout to obsidian\", or related requests to export workout data into Obsidian. Read the current conversation first before searching prior conversation history. Name the file after the date of the chat that contains the workout data.",
+      "source": "obsidian-workout-export/SKILL.md",
+      "origin": "claude/skills/obsidian-workout-export/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "patentforge-provisional",
+      "description": "Use this skill when the user wants to turn an invention idea into a structured invention disclosure, prior art search strategy, claim candidates, and provisional patent draft package. This skill is for patent drafting assistance only and must not provide legal advice or guarantee patentability.",
+      "source": "patentforge-provisional/SKILL.md",
+      "origin": "claude/skills/patentforge-provisional/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "photo-rename",
+      "description": "Rename photos using image analysis, GPS metadata, and web research to generate descriptive real-world filenames such as \"grand_canyon_phantom_ranch.jpg\" or \"eiffel_tower_paris.jpg\". Trigger immediately when the user's message starts with \"rp\", or when they upload photos and ask to rename, identify, or label them by location or content. Supports batch processing.",
+      "source": "photo-rename/SKILL.md",
+      "origin": "claude/skills/photo-rename/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "pihole-blocklist",
+      "description": "Evaluate, categorize, and document new Pi-hole blocklist sources for the curated blocklist repository. Always trigger immediately when the user asks about adding, evaluating, or researching a new Pi-hole blocklist source, or uses phrases like \"should I add this list\", \"evaluate this blocklist\", \"add to pihole\", \"new blocklist\", \"is this a good list\", or pastes a raw blocklist URL. Also trigger when the user wants to review existing sources, update the repo README, check for list overlap, or document a new category. Pre-loaded with the full category taxonomy and evaluation criteria so every new addition is consistent with the existing curation standard.",
+      "source": "pihole-blocklist/SKILL.md",
+      "origin": "claude/skills/pihole-blocklist/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "skipped_targets": {},
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "pihole-csv-analyzer",
+      "description": "Analyze CSV exports from Pi-hole such as query logs, top domains, top clients, or adlist exports and produce actionable recommendations. Trigger immediately when the user uploads or mentions a Pi-hole CSV file, types \"pihole\" or \"ph analyze\", or asks to analyze DNS query data, blocklist hits, or Pi-hole exports. Produce an in-chat analysis plus candidate blocklist and allowlist outputs for review.",
+      "source": "pihole-csv-analyzer/SKILL.md",
+      "origin": "claude/skills/pihole-csv-analyzer/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "skipped_targets": {},
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "powershell-refactor",
+      "description": "Refactor existing PowerShell scripts and modules while preserving observable behavior, interfaces, and safety controls.",
+      "source": "powershell-refactor/SKILL.md",
+      "origin": "claude/skills/powershell-refactor/SKILL.md",
+      "migration": "existing_foundation",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "skipped_targets": {},
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "proxmox-lxc",
+      "description": "Deploy and configure Proxmox LXC containers for self-hosted services. Always trigger immediately when Mick asks to deploy, set up, or configure a new service on Proxmox, mentions spinning up a container, or needs a systemd service, Cloudflare Tunnel entry, or UniFi static IP assignment. Generate the full stack including the pct create command, container config, apt setup, systemd unit file, and Cloudflare Tunnel config entry from a service name and IP.",
+      "source": "proxmox-lxc/SKILL.md",
+      "origin": "claude/skills/proxmox-lxc/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "skipped_targets": {},
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "resume-writer",
+      "description": "Rewrite and enhance resumes using a persistent library of principles harvested from real recruiters, hiring managers, and HR professionals. Always trigger immediately when the user's message starts with \"rw\". Also trigger on \"resume writer\", \"rewrite my resume\", \"enhance my resume\", \"fix my resume\", \"review my resume\", or any request to improve, audit, or critique a resume. Also trigger when the user pastes a recruiter or hiring manager post (LinkedIn, blog, Reddit) and says \"add to my library\", \"add insight\", \"rw add\", or indicates they want to capture it as a resume principle. Also trigger on \"two page\", \"two-page\", \"trim to two pages\", \"fit on two pages\", \"two page audit\", or \"page trim\" to run the two-page audit mode. Handles paste, .docx, .pdf, and screenshot inputs. Produces a full rewrite plus a condensed audit by default, with full forensic line by line audit only when requested. General-purpose skill that works for any user's resume, not just the skill owner.",
+      "source": "resume-writer/SKILL.md",
+      "origin": "claude/skills/resume-writer/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "spec-writer",
+      "description": "Generate numbered repo spec folders with clear requirements, implementation plans, and task lists for non-trivial project work.",
+      "source": "spec-writer/SKILL.md",
+      "origin": "claude/skills/spec-writer/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "skipped_targets": {},
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "travel-itinerary",
+      "description": "Plan, format, and export travel itineraries as Obsidian-formatted Markdown files. Always trigger immediately when the user's message starts with \"trip\" or \"itinerary\". Also trigger when the user says \"plan my trip\", \"build my itinerary\", \"travel plan\", \"export my trip\", \"format this itinerary\", or describes an upcoming trip and asks the assistant to organize it. Produces a day-by-day breakdown, logistics summary, packing list, and budget tracker in a single Obsidian-ready .md file.\n",
+      "source": "travel-itinerary/SKILL.md",
+      "origin": "claude/skills/travel-itinerary/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "travel-planning",
+      "description": "Plan trips, build itineraries, research destinations, estimate budgets, and organize logistics for Mick's travel. Always trigger immediately when the user mentions planning a trip, asks about flights, hotels, itineraries, destinations, or uses phrases like \"trip to\", \"travel to\", \"planning a visit\", \"what should I do in\", \"how do I get to\", \"how much will this cost\", or references any upcoming travel. Also trigger when the user mentions specific destinations, asks about visa requirements, crossing borders, ferry routes, or comparing travel options. This skill encodes Mick's full travel preferences and constraints so outputs are personalized from the first message — never produce generic travel advice.",
+      "source": "travel-planning/SKILL.md",
+      "origin": "claude/skills/travel-planning/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "travel-research",
+      "description": "Research and compare destinations with deeper scoring across budget, climate, logistics, activity fit, and seasonal tradeoffs before moving into full trip planning.",
+      "source": "travel-research/SKILL.md",
+      "origin": "claude/skills/travel-research/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "trip-email-html-itinerary",
+      "description": "Extract trip logistics from pasted travel emails, booking confirmations, forwarded messages, reservation notes, or raw itinerary text, research useful restaurant and activity suggestions for each destination, and generate one polished, self-contained offline HTML itinerary file for sharing with family or other travelers. Trigger when the user asks to turn trip emails into an HTML itinerary, travel handoff page, shareable trip page, family trip summary, booking-reference page, destination recommendation page, or offline travel document.\n",
+      "source": "trip-email-html-itinerary/SKILL.md",
+      "origin": "claude/skills/trip-email-html-itinerary/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "skipped_targets": {},
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "website-content",
+      "description": "Write or update content for Mick Pletcher's personal website. Trigger when Mick asks to write, rewrite, or update any section of his personal site including About, Projects, Skills, Blog integration, AI and homelab showcase, health and sports, contact copy, landing page sections, SEO descriptions, or project writeups. Tone is polished and professional, closer to LinkedIn than the blog, but still first-person and direct. Avoid corporate-speak. No emojis. Avoid em dashes in final website copy.",
+      "source": "website-content/SKILL.md",
+      "origin": "claude/skills/website-content/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "x-post",
+      "description": "Write posts for X on tech, PowerShell, IT automation, and fitness topics. Always trigger immediately when the user's message starts with \"xp\". Produce a single post within 280 characters, no emojis, avoid em dashes in final X post output, and use 2 to 3 hashtags maximum.",
+      "source": "x-post/SKILL.md",
+      "origin": "claude/skills/x-post/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    },
+    {
+      "name": "x-reply",
+      "description": "Write replies to replies on X. Always trigger immediately when the user's message starts with \"xr\". Take the original post and the reply being responded to, generate a single response within 280 characters, use no emojis, avoid em dashes in final X reply output, and only use hashtags when they fit naturally.",
+      "source": "x-reply/SKILL.md",
+      "origin": "claude/skills/x-reply/SKILL.md",
+      "migration": "this_batch",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved.",
+        "codex": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
+      },
+      "suitability_review": "proposed"
+    }
+  ]
+}

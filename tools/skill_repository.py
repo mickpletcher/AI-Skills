@@ -12,6 +12,7 @@ import zipfile
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 import yaml
+from ecosystem_paths import PLATFORM_PATHS
 
 ROOT = Path(__file__).resolve().parents[1]
 PLATFORMS = {p: ('SKILL.md' if p in ('claude', 'perplexity') else 'instructions.md')
@@ -83,7 +84,7 @@ def frontmatter(path, root=ROOT):
 
 def skills(root):
     return [(platform, d) for platform in PLATFORMS
-            for d in sorted((root / platform / 'skills').glob('*'))
+            for d in sorted((root / PLATFORM_PATHS[platform] / 'skills').glob('*'))
             if d.is_dir() and not d.name.startswith('.')]
 
 def exact_file(folder, name):

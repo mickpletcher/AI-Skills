@@ -38,6 +38,9 @@ class ReleaseTests(unittest.TestCase):
             extracted=base/'extracted'
             with zipfile.ZipFile(first/'ai-skills-v1.2.3.zip') as archive:
                 self.assertEqual(archive.read('LICENSE'), repo.canonical_bytes(repo.ROOT/'LICENSE'))
+                self.assertIn('openai/README.md', archive.namelist())
+                self.assertIn('openai/chatgpt/skills/food-analyzer/instructions.md', archive.namelist())
+                self.assertFalse(any(name.startswith(('chatgpt/', 'codex/', 'openai/codex/', 'generated/')) for name in archive.namelist()))
                 notice = 'claude/skills/patentforge-provisional/LICENSE'
                 self.assertEqual(archive.read(notice), repo.canonical_bytes(repo.ROOT/notice))
                 archive.extractall(extracted)  # our own deterministic fixture bundle
@@ -50,7 +53,8 @@ class ReleaseTests(unittest.TestCase):
         cases = [('LICENSE', False), ('README.md', False), ('catalog.json', False),
                  ('SHA256SUMS', False), ('.github/workflows/validate.yml', False),
                  ('.github', True), ('.github/workflows', True), ('docs', True),
-                 ('schemas', True), ('claude/skills/example', True),
+                 ('schemas', True), ('openai', True), ('openai/chatgpt', True),
+                 ('openai/chatgpt/skills/food-analyzer/instructions.md', False), ('claude/skills/example', True),
                  ('claude/skills/example/SKILL.md', False),
                  ('claude/skills/example/example.skill', False), ('extra.md', False)]
         for name, directory in cases:
@@ -114,10 +118,11 @@ class ReleaseTests(unittest.TestCase):
             with zipfile.ZipFile(output/'ai-skills-v1.2.3.zip') as archive:
                 self.assertEqual(archive.namelist(), sorted(archive.namelist()))
                 self.assertEqual(archive.read('docs/caf\u00e9.txt'), b'content\n')
+                self.assertEqual(archive.read('openai/README.md'), b'fixture\n')
             self.assertEqual((output/'SHA256SUMS').read_bytes(),
                              (hashlib.sha256(data).hexdigest()+'  ai-skills-v1.2.3.zip\n').encode('utf-8'))
             # Same fixture checksum is required on every CI operating system.
-            self.assertEqual(hashlib.sha256(data).hexdigest(), '98cdf0593c43ad3f42afb4787f8d9221bd4cde28cfceed51da3bb7c495c277ab')
+            self.assertEqual(hashlib.sha256(data).hexdigest(), '234f237ad9f697a4774c379555e450a5875eb57b95cb1ff02b7e0b5117c811a9')
 
     @unittest.skipUnless(sys.platform == 'win32', 'Windows junction semantics')
     def test_windows_junction_parent_is_rejected(self):

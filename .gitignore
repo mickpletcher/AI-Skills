@@ -3,7 +3,7 @@
 
 # Skill planning files (local only, not for repo)
 claude/skills/*/future-upgrades.md
-chatgpt/skills/*/future-upgrades.md
+openai/chatgpt/skills/*/future-upgrades.md
 future-skills.md
 future-projects.md
 

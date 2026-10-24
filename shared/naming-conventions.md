@@ -40,7 +40,7 @@ When one portable skill has platform variants, keep the base name identical and 
 Example:
 
 - `claude/skills/repo-readme-audit.md`
-- `chatgpt/skills/repo-readme-audit.md`
+- `openai/chatgpt/skills/repo-readme-audit.md`
 - `copilot/instructions/repo-readme-audit.md`
 
 ## Display Titles

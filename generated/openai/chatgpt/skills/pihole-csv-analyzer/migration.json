@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "skill": "pihole-csv-analyzer",
+  "source": "claude/skills/pihole-csv-analyzer/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "26231bc061ac1b59b6202499d338f46d12f38a1de62a512cfbe8c9d772a9760c",
+  "source_frontmatter": {
+    "name": "pihole-csv-analyzer",
+    "description": "Analyze CSV exports from Pi-hole such as query logs, top domains, top clients, or adlist exports and produce actionable recommendations. Trigger immediately when the user uploads or mentions a Pi-hole CSV file, types \"pihole\" or \"ph analyze\", or asks to analyze DNS query data, blocklist hits, or Pi-hole exports. Produce an in-chat analysis plus candidate blocklist and allowlist outputs for review.",
+    "version": "1.1.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {},
+  "supporting_files_sha256": {},
+  "retained_in_original_sha256": {
+    "README.md": "d06cbcbb0d2172178b7e0c4e50a3f615c68b3189a58a2baef7433d9b384297c6",
+    "completedchanges.md": "5fd38609c5d308fd48817480460a8388185676247bbad84fa20df7f304301ac6",
+    "pihole-csv-analyzer.skill": "4918e517baa1c537c8b270f53d56e359cc0ee1a13a28a56fb7c57477079477dc",
+    "upgrades.md": "cad4debddf606ecb83c09caf869bf8b049d65668427a652876c5db7feb0746b6"
+  }
+}

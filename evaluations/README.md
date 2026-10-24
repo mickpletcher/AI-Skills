@@ -1,5 +1,43 @@
 # Behavioral evaluation framework
 
+Latest [scope review and host continuation](native-scope-host-review-2026-10-24.md): all 23 pending scopes and repaired workout revision reviewed without human acceptance. Six new domain sessions plus one canary distinguish catalog discovery, instruction reads and artifacts. Scaffold/README runtime probes add bounded evidence; profile activation, ambient Windows stdin encoding and actual browser rendering remain open. PR draft; no merge or promotion.
+
+Latest [home/workout reruns](native-home-workout-2026-10-24.md): repaired home hashtags and unchanged workout initial/duplicate/corrected sequence pass fresh bounded tests. Exact native initial/corrected Copy each 323 bytes passes strict/YAML validation with only the authorized sets change. All 23 pending scopes are ready for bounded human review; no new acceptance. Broader repeatability, real integrations and other hosts remain open. PR draft; no merge or promotion.
+Latest [migration follow-up](migration-follow-up-2026-10-23.md): all 13 checks pass on the reviewed head; PR #11 is open and draft. Browser inventory still times out before native submission. Claude/Cursor CLIs and a WSL Linux host are unavailable. Home/workout repeats, other native hosts and all 23 human acceptance reviews remain open. No new native pass or acceptance is claimed.
+
+
+Latest [host, routing and integration tests](host-routing-integration-2026-10-22.md): 12 Codex candidates loaded across scoped cases, three independently checked file integrations, and passing Linux/Windows helper CI after an explicit unsupported-JPEG guard. Original native results and 22-ready/one-held acceptance recommendations remain unchanged. Native Claude/Cursor, ChatGPT reruns, repeatability and real app/service integrations stay open.
+
+Latest: [home repair and preview Download](native-batch17-2026-10-22.md). Home hashtag source-grounding instruction repaired. Original home native rerun and unchanged workout Copy repeat remain open due disconnected browser control; neither prompt submitted. Normal preview Download produced an exact verified 51,053-byte JPEG. No new acceptance, merge or promotion; PR draft.
+
+The [workout Copy repair and four current controls](native-batch16-2026-10-22.md) record this update. Final workout native initial/corrected Copy passes 323-byte strict/YAML checks after retaining a failed indented attempt. Current blog/LinkedIn/preview controls pass; home unsupported #OffGrid remains open. Recommendations 22 ready/one held, no new acceptance. PR draft; no merge or promotion.
+
+The [scope review and unchanged repeats](native-batch15-2026-10-22.md) record this update. Reviewed all23 pending bounded scopes:19 current sampled scopes ready for human review and four held for current-resource controls. Unchanged patent/food repeats pass; workout duplicate/content passes but exact initial/corrected Copy fails again. Both delivery paths reopened. No new acceptance or promotion; PR remains draft.
+
+The [delivery repairs](native-batch14-2026-10-22.md) pass bounded patent word limits (1114 total/289 section10), food two-sentence missing-image intake and workout initial/duplicate/corrected delivery with exact byte-zero Copy. Earlier failures remain retained. Final-byte supplied-label food and patent interview controls also pass after retained browser timeouts; no new acceptance. PR stays draft without merging, installation or promotion.
+
+The [controlled wrapper comparison and seven reruns](native-batch13-2026-10-22.md) complete all 11 responses without a host load failure. Four official bounded paths close: architect security, n8n existing-flow review, blog final draft and example missing objective. Patent total/section10 word limits, food concise clarification and workout initial exact Copy boundary remain open. The [current matrix](native-coverage-2026-10-22.md) preserves 13 bounded acceptances and 23 pending human reviews; the [recommendation review](native-acceptance-review-2026-10-22.md) identifies 21 scopes ready for human review and two held, granting no acceptance. Candidates unchanged; PR remains draft without merging, installation or promotion.
+
+The [coverage matrix](native-coverage-2026-10-21.md) consolidates all 36 candidates, thirteen scoped native acceptances and 23 pending native reviews without accepting anything new. The [bounded delivery diagnostic/example tests](native-batch12-2026-10-21.md) record four diagnostic cells plus two example-skill cases: inline canary and both full architect transports complete under a neutral wrapper; uploaded canary and missing-objective example return host errors. The plan example passes. These mixed observations do not establish a root cause or close existing gates. Architect/patent/food/n8n/blog verification and workout initial delivery stay open. Candidates unchanged; PR stays draft without merging or promotion.
+
+The [unchanged architect security continuation](native-batch11-2026-10-21.md#unchanged-architect-security-continuation) retains the original candidate/task/source/criteria/packet. The unchanged architect security-prerequisite continuation returns another host response-load error and remains unassessed. Verification stays open; no further retry. CI on 6e6d0ca passes all five workflows/twelve checks. Patent/food-analyzer/n8n/blog verification and workout initial delivery remain open. PR stays draft without merging or promotion.
+
+The [eleventh native batch](native-batch11-2026-10-21.md) fills the ChatGPT packet gap for powershell-refactor, github-readme and github-repo-architect after prior CLI/tool/Linux coverage. Seven attempts yield five bounded passes and two unassessed architect security-prerequisite host failures. Independent toy PowerShell replays preserve pipeline arithmetic and WhatIf/Confirm behavior; native checks remain unexecuted. Candidates unchanged. All five source CI workflows/twelve checks pass on 59a69d4. Architect security and patent/food/n8n/blog verification and workout initial delivery stay open. Separate acceptance pending; PR stays draft without merging or promotion.
+
+The [unchanged patent continuation](native-batch10-repairs-2026-10-21.md#unchanged-continuation-after-connection-readiness) uses exact final candidate/packet bytes after connection readiness. The unchanged final patent continuation again returns a host response-load error and remains unassessed. Patent verification stays open; no further retry. Source 9b14219 passes all five CI workflows/twelve checks. Food-analyzer, n8n and blog verification and workout initial delivery remain open. PR stays draft without merging or promotion.
+
+The [Alpaca/patent corrections and native reruns](native-batch10-repairs-2026-10-21.md) preserve original tasks/sources/criteria and trip candidate bytes. Both Alpaca cases and trip fragment review pass bounded criteria. Final patent delivery remains open after retained cutoffs and host failures. Final correction validation passes 108 regressions, repository/quality checks, generator drift and offline contracts. Food-analyzer, n8n and blog verification and workout initial delivery remain open. Separate human acceptance pending; PR stays draft without merging or promotion.
+
+The [tenth targeted native batch](native-batch10-2026-10-21.md) tests alpaca-trading, patentforge-provisional and trip-email-html-itinerary with unchanged candidates and fabricated inputs. Eight attempts yield two bounded passes, two partial coverage responses, one incomplete patent package and three unassessed host failures. Alpaca coverage, patent package completeness and trip fragment verification remain open. Bounded crypto-listings acceptance is recorded separately; live retrieval and other earlier acceptance remain open. All five source workflows/twelve checks pass on 95a8bd5. Food-analyzer, n8n and blog verification and workout initial delivery remain open. PR #11 stays draft without merging or promotion.
+
+The [crypto-listings UTC-window correction](native-batch9-window-repair-2026-10-21.md) now passes the original fallback case in one unchanged native Instant continuation after sign-in. Anchor/windows/counts remain unavailable rather than inferred; all three criteria pass. The original failure and two earlier host errors remain intact. CI passes all five workflows/twelve checks on 7af1216. Bounded crypto-listings acceptance is recorded below; actual live retrieval and other acceptance remain open, along with food-analyzer, n8n and blog verification and workout initial delivery. PR #11 stays draft without merging or promotion.
+
+The [ninth targeted native batch](native-batch9-2026-10-21.md) covers market-brief, crypto-listings and crypto-research using unchanged candidates, fictional source review and missing-live-data fallbacks only. Seven Instant attempts yield five bounded passes, one listings date-window failure and one retained host failure. Actual live retrieval remains unverified. CI passes all five workflows/twelve checks on b6c2fe9. Food-analyzer, n8n and blog verification and workout initial delivery remain open. PR #11 stays draft without merging or promotion.
+
+The [eighth targeted native batch](native-batch8-2026-10-21.md) covers fitness-log, fitness-programming and food-analyzer with unchanged candidates. Seven fresh Instant attempts across six synthetic text cases yield five bounded passes and two blank completed deliveries for the missing-image case. That verification remains unassessed. Source commit 3e4682b passes all five workflows/twelve checks. n8n workflow-review verification, blog verification, workout initial delivery and separate human acceptance remain open. PR #11 stays draft without merging or promotion.
+
+Mick accepted the bounded remaining-skill results and the [first native writing batch](native-writing-2026-10-20.md) on 2026-10-20. The [second native batch](native-batch2-2026-10-20.md) completes six file/output cases with three bounded passes and three retained scoring/attribution/layout failures. That batch needs remediation and separate acceptance. PR #11 stays draft with no merging or promotion.
+
 The 24 synthetic fixtures cover four representative skills across Claude, ChatGPT, and Copilot: social writing, resume editing, nutrition analysis, and PR review. Each has a positive trigger, near miss, missing input, untrusted source instruction, unsafe request, and output-contract case. This is representative coverage, not proof for all 46 skills or every host model.
 
 ## Offline checks
@@ -24,9 +62,62 @@ Mechanical checks cover routing annotations, missing output, selected character 
 
 ## Current results
 
-- Actual model evaluations: **not run**.
+- Actual model evaluations for the original representative fixture suite: **not run**.
 - CI runs the offline fixture contract self-test only.
 - `catalog.json` leaves `last_model_evaluation` null for every skill.
 - No production or personal input/output is committed. Keep captured results outside this repository unless explicitly reviewed for publication.
 
+The [compatibility/helper continuation](candidate-compatibility-2026-10-19.md) audits generated Codex headers and tests remaining helpers. Hosted dependency-provisioned execution passed all eight helper checks. The [remaining-skill assessment](migration-batch4-2026-10-20.md) records 52 cases across the other 26 domain skills, five initial failures and one fixture-limited result, followed by four candidate writing corrections and 34 targeted follow-ups. Original failures, intermediate format gaps and the corrected canary ambiguity remain recorded. These are bounded CLI/proxy observations, not human acceptance or native-host certification.
+
 Self-test grading uses explicit failures in ordinary and optimized Python (`-O` or `PYTHONOPTIMIZE`). Negative examples use each fixture's declared forbidden tokens and character limit. These remain synthetic contract checks, not model evaluations.
+
+## Foundation instruction pilot
+
+Behavioral testing started on 2026-10-19 for `powershell-refactor`, `github-readme` and `github-repo-architect`. The initial pilot fixture defined six synthetic scenarios, three instruction conditions (without skill, original Claude source, generated Codex candidate), and two fresh-session repetitions: 36 planned responses. The [current fixture](fixtures/foundation-pilot.json), revision 2, specifies whitespace semantics and adds a seventh regression scenario. Its targeted runtime work is tracked separately below.
+
+### Runtime testing started
+
+The [Windows runtime assessment](foundation-runtime-2026-10-19.md) records the revised fixture, four fresh architect captures, PowerShell tests on two editions, README command execution and scaffold pytest/lint/format checks. Counting behavior passed; one scaffold failed its own formatting gate. A separate format-only repair passed without overwriting that failure. These runtime observations supplement the earlier text-only scores and do not authorize acceptance or promotion.
+
+The selected runtime is Codex CLI with the locally configured `gpt-6.1-sol` model and medium reasoning. This is a forced-instruction, text-only comparison. It does not test automatic skill selection, file/tool execution, or behavior in Claude or ChatGPT. The original instructions serve as a comparison, not an approved behavioral baseline. The candidate remains the unconfigured baseline bundle; runtime model selection is recorded separately and grants no verified model-profile capabilities.
+
+The pilot uses per-invocation isolation, synthetic inputs and disabled external-action tools. See [runner setup](model-runner-setup.md#foundation-text-only-pilot) for the protocol. Complete prompts, outputs, traces, usage and provenance stay in local evaluation artifacts outside Git. A captured response is not a pass. Score each rubric with evidence; assistant observations require human review before any acceptance claim. Any fabrication, source-injection obedience or broken public/output contract fails the scenario regardless of average score. No promotion is authorized.
+
+### Replacement run and assessment
+
+The context-isolated replacement completed all 36 responses on 2026-10-19. A separate evaluation profile, fixed base instructions and 37 local context renders established the reviewed client-context boundary; eight offline gate regressions passed. No unrelated profile marker, injected marker, tool event or capture runtime error was observed.
+
+Assistant review scored all 172 applicable rubric items across the 36 responses. All 12 candidate responses met the bounded text-only rubrics. This is not human acceptance or a portability claim. The scaffold fixture leaves whitespace-only line handling unspecified, and the candidate repetitions chose different meanings. See the [complete sanitized assessment and score vectors](foundation-pilot-2026-10-19.md) for evidence, comparison gaps and next steps. Raw captures remain outside Git. No skill or model-profile acceptance metadata was promoted.
+
+### Initial capture and findings
+
+All 36 responses were captured: 12 without a skill, 12 with original instructions and 12 with candidate instructions. There were zero observed tool calls and zero capture-loop runtime failures. The requested runtime was `gpt-6.1-sol` at medium reasoning on `codex-cli 0.163.0-alpha.10.2`; the backend snapshot was not reported. Source instructions were pinned to commit `17e335699f4578723dc67d436ce067e6f4105863`, and the fixture SHA-256 was `c4619214afdc542e4919ab93e2272ae708aea34d8d112340325be1d6681cc304`.
+
+**Result: provisional and context-confounded. No skill passed acceptance.** Three responses, across the control and candidate conditions, used personal profile facts absent from the synthetic inputs and selected instruction text. Local prompt rendering also contained matching profile context despite the requested instruction-byte cap; disabling memory injection and testing a one-byte cap did not remove it in that diagnostic. These controls did not establish a clean context boundary. Raw examples remain private. Do not interpret this batch as a clean skill-effect comparison or as evidence that the migration caused the profile leakage.
+
+Assistant triage found the following, without executing generated code:
+
+| Skill | Observation | Remaining limitation |
+| --- | --- | --- |
+| PowerShell Refactor | Both candidate pipeline outputs retained the public name, pipeline structure and output properties. Both injection outputs omitted the injected marker and marked checks not run. One candidate response reported `3 -> 3` lines for a two-line input and three-line output; the repeat counted its own proposal correctly. | Measurement accuracy needs a regression case. Runtime semantics, analyzer acceptance and the other full-suite scenarios remain unverified. |
+| GitHub README | Both candidate drafts used the supplied flags and runtime requirement, removed unsupported benchmark/test claims, and requested context for the bare shortcut. | Full rubric scoring, real repository inspection and routing remain unverified. |
+| Repository Architect | Candidate responses supplied scaffold/templates/CI and required security context before claiming production readiness. | Personalization contaminated the sensitive-context case. Scaffold execution, lint, tests and broader host behavior remain unverified. |
+
+The injected marker was absent from all 36 outputs. A parse-only check accepted 23 Python blocks across the scaffold responses; this establishes syntax only, not runnable scaffolds or passing CI. Human rubric scores remain unscored. Keep the first batch unchanged, repair and verify complete prompt-context isolation, then repeat all conditions before drawing comparative conclusions. Promotion remains unauthorized.
+## Linux runtime continuation
+
+The [foundation Linux workflow at the tested commit](https://github.com/mickpletcher/AI-Skills/blob/d511376b139c51fdb13db3118b4c3e4593084edf/.github/workflows/foundation-runtime.yml) replays reviewed executable excerpts from the earlier captures. Its [fixtures](fixtures/foundation-runtime/projects.json) pin source hashes and omit full model responses and personal context. README narrative is replaced with synthetic packaging/input text; the documented command arguments and supplied implementation are retained. The architect delivery regression requires detection of the original Ruff failure, formatter application, final format/lint/test gates and byte-matched delivery files. See the [Linux assessment](foundation-linux-runtime-2026-10-19.md). This is artifact replay, not a fresh model evaluation or human acceptance.
+
+## Fresh tool workflows
+
+The [tool workflow assessment](foundation-tool-workflows-2026-10-19.md) covers four fresh, isolated agent sessions with actual file and shell tools: architect scaffolding, PowerShell deduplication and naming-only scope, and a different README repository. The [revision-2 fixture](fixtures/foundation-tool-workflows.json) contains synthetic tasks and source only. Mick accepted these bounded results on 2026-10-19. This does not authorize merging or promotion. These sessions are separate from both the text-only comparison and Linux artifact replay.
+
+## Second migration batch
+
+The [second batch assessment](migration-batch2-2026-10-19.md) covers six authorized synthetic scenarios for `spec-writer`, `pihole-csv-analyzer` and `photo-rename`. Seven domain captures include a separately audited explicit-image preview rerun. Independent checks confirm CSV metrics, actual copy behavior and preservation of supplied files. Mick accepted these bounded results on 2026-10-19. Photo testing uses the existing ChatGPT candidate through a CLI behavioral proxy and does not certify native ChatGPT/Claude or change Codex placement. See the [fixture and criteria](fixtures/migration-batch2.json). PR #11 remains draft; no merging or promotion.
+
+## Native photo follow-up and next batch
+
+The [native photo record](photo-native-2026-10-19.md) retains the initial host failures and a fresh successful content/copy retry, with [synthetic JPEG/EXIF inputs and verified ZIP hashes](fixtures/photo-native.json). Mick saved the actual output after automated download capture failed. Independent checks confirm matching preview data and three byte-identical renamed JPEGs plus a correct mapping CSV. Full native context/tool auditing remains unverified; human acceptance is pending.
+
+The [third batch assessment](migration-batch3-2026-10-19.md) records six captured cases for `github-social-preview`, `n8n-workflow` and `trip-email-html-itinerary`, using the [prior scope](migration-batch3-scope.md) and [pinned fixture](fixtures/migration-batch3.json). Four cases pass bounded review. The [candidate validator correction](itinerary-validator-2026-10-19.md) resolves the pending-address false positive; both unchanged itineraries pass strict replay, with five executable regressions. Offline desktop/phone visual review found three bounded passes and one unresolved phone table clipping result in a renderer without horizontal scrolling. Native phone verification and human acceptance remain open. No merging or promotion.

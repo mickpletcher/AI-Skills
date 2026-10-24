@@ -1,0 +1,22 @@
+{
+  "adapter": null,
+  "adapter_sha256": null,
+  "behavior_evaluation": "not_run",
+  "ecosystem": "codex",
+  "ecosystem_paths_sha256": "3e64da3c5763530f31b34f02256e4e218e89c233b55a0193ba68d4df0cb1fb15",
+  "frontmatter_policy": "codex-name-description-v1",
+  "generator_sha256": "43a95a6d7af5b7933684fb1d914bc879644c91082fa96eb7e8c7921ba3b77bed",
+  "master_revision": "c75f4d282581f2e3288242c6be714c4030f4380c36abfd4c58f5d196eac77138",
+  "master_revision_kind": "sha256-bundle",
+  "model_id": null,
+  "model_profile": "baseline",
+  "model_profile_sha256": "7b3a883a2e2a1b75c84cf2bc3052f05eeb2c5a7eb041ae81e3729973edb0e8c6",
+  "profile_loader_sha256": "8f2c6f4b80a18183a107b14f114a606c33274a335aa63857ad31e123493b3baf",
+  "promotion": "blocked_pending_review",
+  "provider": null,
+  "source_frontmatter": {
+    "description": "Analyze CSV exports from Pi-hole such as query logs, top domains, top clients, or adlist exports and produce actionable recommendations. Trigger immediately when the user uploads or mentions a Pi-hole CSV file, types \"pihole\" or \"ph analyze\", or asks to analyze DNS query data, blocklist hits, or Pi-hole exports. Produce an in-chat analysis plus candidate blocklist and allowlist outputs for review.",
+    "name": "pihole-csv-analyzer",
+    "version": "1.1.0"
+  }
+}

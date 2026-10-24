@@ -5,3 +5,8 @@
 *.png binary
 *.gif binary
 *.pdf binary
+
+# Canonical migration and generated bundles preserve source resource bytes.
+master-skills/** -text
+generated/** -text
+generated-models/** -text

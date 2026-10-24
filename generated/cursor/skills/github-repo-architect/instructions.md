@@ -66,3 +66,58 @@ Examples:
 - "Architect a PowerShell and Python automation repository with Pester and pytest."
 - "Design a GitHub repo for a FastAPI webhook service with authentication and CI."
 - "Scaffold a local Proxmox monitoring utility with safe configuration and tests."
+
+## Scaffold completeness
+When generating a full repository scaffold, include these real templates:
+- `.github/ISSUE_TEMPLATE/bug_report.md`: Problem; Steps to reproduce; Expected result; Actual result; Environment.
+- `.github/ISSUE_TEMPLATE/feature_request.md`: Use case; Proposed behavior; Inputs; Outputs; Notes.
+- `.github/pull_request_template.md`: Summary; Changes; Tests; Risk; Checklist.
+Check that each template appears in the annotated tree and generated files.
+
+## Documentation and project types
+Plan tracked documentation (README, changelog, completed-work logs and specs) separately from local-only backlogs, scratch assessments and personal notes. Follow the target repository's policy; explicitly name appropriate `.gitignore` entries and never include private notes in a public scaffold.
+For an MCP server, specify tool definitions, server entry point, configuration and tests. For a web app, cover components, environment variables and build commands. For data projects, cover schemas, reproducibility and outputs. For automation, cover secrets, logs and retries. For static sites, separate content from layout, document local preview, and add deployment only when the host is known. Do not add Docker, infrastructure tooling or release automation without a project need.
+The tailored README should cover overview, capabilities, annotated structure, prerequisites, setup, usage, testing, configuration, security and the actual license where applicable. Use tables for structured commands, modules and environment variables.
+
+## Development prompt set
+Provide repository-specific implementation, test and review prompts naming the actual files and tasks. Include a release prompt only when relevant. The review prompt covers bugs, missing documentation and security; release preparation covers tags, changelog and release notes without authorizing publication.
+
+## CI requirements
+Generate `.github/workflows/ci.yml` for the selected stack. Run on pull requests and pushes to the default branch; check out the repository, set up its runtime, install dependencies, run configured lint checks, and run tests. Name the exact test framework, lint tool and configuration file, and the first three concrete tests.
+- Python: console entry point in `pyproject.toml`, `src/<package>/`, pytest and ruff; install from the actual dependency manifest.
+- Node: set up Node, `npm ci`, `npm test`, and `npm run lint` when configured.
+- PowerShell: module manifest, Pester and `Invoke-ScriptAnalyzer` honoring `PSScriptAnalyzerSettings.psd1`, running on `pwsh`.
+- .NET: set up .NET, `dotnet restore`, and `dotnet test`.
+- Docker: `docker build` and compose validation when applicable.
+- AI skill: instruction checks and behavior-test fixtures; add package/archive checks only for formats supported by the chosen host adapter.
+For an unresolved stack, state the assumption and provide a working documentation check only when its tooling is known. Label remaining runtime/test decisions as unresolved; do not represent TODO placeholders as runnable application CI.
+
+## Help response
+Explain the capability, request the project idea, target stack and required components, show the examples below, and offer a short next prompt. Use direct prose, no emojis or motivational sign-offs, and first person only when the requested repository voice calls for it.
+
+## Delivery validation
+Before delivering created files, use available, authorized tools to apply the project's configured formatter, then run its formatting check, lint checks and tests against those exact files. For Python scaffolds using Ruff, run `python -m ruff format .`, `python -m ruff format --check .`, `python -m ruff check .` and `python -m pytest`. Keep CI formatting checks read-only.
+If a check fails, inspect the failure, correct the affected files and rerun the checks. Return or link the final formatted file contents, including changed tests; do not deliver stale pre-format code blocks. Report the commands and actual results. A failing gate blocks a verified-complete claim. When tools or execution are unavailable, deliver a clearly labeled unverified proposal with the validation commands instead of implying the checks passed.
+
+## Capability Contract
+
+Read `capabilities.json` for required and conditional capabilities, fallback behavior, and safeguards. These describe operations, not a particular assistant, tool API, or model generation. Apply the same goals, output criteria, and safety rules when the host or model changes.
+
+## Target model and capability overlay
+
+Profile: baseline; provider: unconfigured; model: unconfigured.
+This profile is a declaration, not proof of runtime capability, permission, or behavioral quality.
+
+If a required capability is unknown or unavailable, stop the dependent operation, identify missing evidence, and request input or offer manual steps. Do not claim completion.
+Capability declarations never grant authorization. Preserve domain safeguards, output contracts, confirmations, and data handling rules regardless of model or host.
+
+Required capabilities:
+- text_reasoning: unknown. Verify actual availability before the dependent operation.
+- Conditional web_retrieval: unknown. Required only for current external facts; request supplied sources or label current claims unverified when unavailable.
+- Conditional code_execution: unknown. Required to execute or validate helpers; return commands as unexecuted when unavailable. Runtime prerequisites remain in the source documentation.
+- Conditional file_access: unknown. Required for inspecting an existing local workspace or creating scaffold files. Not required for designing a blueprint and providing scaffold contents inline. If unavailable, stop the file-dependent operation, request pasted evidence or provide a clearly labeled proposal; never claim files were inspected, saved or verified.
+
+Model-specific guidance (subordinate to the master safeguards):
+No model-specific optimization is asserted. Verify capabilities in the selected host before use.
+
+Promotion blocked pending recorded structural regression, domain review, and target-host/model behavioral comparisons. No future model compatibility is inferred.

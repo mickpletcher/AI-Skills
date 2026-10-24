@@ -4,6 +4,119 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Re-review all 23 pending scopes and repaired workout revision; continue isolated native profile/nested routing and scaffold/README integrations. Preserve four activation-unverified cases, ambient stdin encoding boundaries and browser-policy block. Prior home/workout reruns pass bounded criteria; no human acceptance or promotion. See [assessment](evaluations/native-scope-host-review-2026-10-24.md).
+
+- Add Linux helper CI, guard Windows-only itinerary JPEG export before side effects, and record native routing/file integration evidence. All 12 existing Codex candidates load in scoped tests; no new acceptance or promotion. See [assessment](evaluations/host-routing-integration-2026-10-22.md).
+
+- Home hashtag source-grounding instruction repaired. Original home native rerun and unchanged workout Copy repeat remain open due disconnected browser control; neither prompt submitted. Normal preview Download produced an exact verified 51,053-byte JPEG. No new acceptance, merge or promotion; PR draft.
+
+- Final workout native initial/corrected Copy passes 323-byte strict/YAML checks after retaining a failed indented attempt. Current blog/LinkedIn/preview controls pass; home unsupported #OffGrid remains open. Recommendations 22 ready/one held, no new acceptance. PR draft; no merge or promotion.
+
+- Reviewed all23 pending bounded scopes:19 current sampled scopes ready for human review and four held for current-resource controls. Unchanged patent/food repeats pass; workout duplicate/content passes but exact initial/corrected Copy fails again. Both delivery paths reopened. No new acceptance or promotion; PR remains draft.
+
+- Repaired bounded patent word-limit, food intake verbosity and workout Copy formatting defects. Native package1114/289 words and exact290-byte initial/corrected notes pass; duplicate protection preserved. Retained intermediate failures; both final-byte controls pass. PR remains draft with no new acceptance, merge or promotion.
+
+- Recorded four controlled delivery diagnostics and seven native reruns. Four bounded verification paths close; patent word limits, food clarification scope and workout initial Copy boundary remain open. Reviewed all 23 pending scopes without new acceptance; candidates unchanged and PR draft.
+
+- Consolidated native coverage for all 36 candidates without new acceptance or promotion. Ran four bounded inline/upload delivery diagnostics and two example-skill cases: mixed diagnostic delivery, one bounded plan pass and one unassessed missing-objective host failure. Existing verification/delivery gates stay open; candidates unchanged and PR draft.
+
+- Recorded the unchanged architect security native continuation and green CI on 6e6d0ca. The unchanged architect security-prerequisite continuation returns another host response-load error and remains unassessed. Verification stays open; no further retry. Patent/food/n8n/blog verification and workout initial delivery remain open; PR stays draft without merging or promotion.
+
+- Recorded the eleventh native batch for the foundation trio after prior CLI/tool/Linux coverage: five bounded passes and two architect-security host errors. Independent toy PowerShell checks pass; candidates unchanged. Patent/food/n8n/blog verification and workout initial delivery stay open; PR remains draft without merging or promotion.
+
+- Recorded unchanged patent native continuation and green CI on 9b14219. The unchanged final patent continuation again returns a host response-load error and remains unassessed. Patent verification stays open; no further retry. Food/n8n/blog verification and workout initial delivery stay open; PR remains draft without merging or promotion.
+
+- Corrected Alpaca coverage and patent first-pass delivery; reran the original native cases and unchanged trip fragment review. Both Alpaca cases and trip fragment review pass bounded criteria. Final patent delivery remains open after retained cutoffs and host failures. Validation passes; food/n8n/blog verification and workout initial delivery stay open. PR remains draft without merging or promotion.
+
+- Recorded bounded crypto-listings acceptance and the tenth native batch for Alpaca, PatentForge and trip itinerary candidates. Two bounded passes, two partial responses, one incomplete package and three host failures retained. Candidate bytes unchanged; food/n8n/blog verification and workout initial delivery stay open. PR remains draft without merging or promotion.
+
+- Verified the unchanged crypto-listings UTC fallback in a fresh native Instant response after sign-in: all three original criteria pass, with anchor/windows/counts left unavailable. Preserve the original failure and two host errors. CI passes on 7af1216. Food-analyzer, n8n and blog verification and workout initial delivery remain open; PR stays draft without merging or promotion.
+
+- Tightened crypto-listings UTC-anchor fallback and aligned its checklist with exact source provenance. Regenerated existing Claude/ChatGPT review bundles; all 108 regressions pass. Two native reruns return host load failures, so verification remains open. Food-analyzer, n8n and blog verification and workout initial delivery stay open; PR remains draft without merging or promotion.
+
+- Recorded the ninth native batch for market-brief, crypto-listings and crypto-research using fictional offline inputs and missing-live-data fallbacks. Five bounded passes, one listings UTC-window failure and one retained host failure. Candidates unchanged; live retrieval unverified. Food/n8n/blog verification and workout initial delivery stay open; PR remains draft without merging or promotion.
+
+- Reran the unchanged food-analyzer missing-image native case. Retain another unassessed host response-load failure and keep verification open. All five workflows/twelve checks pass on e466a54. n8n and blog verification and workout initial delivery stay open; PR remains draft without merging or promotion.
+
+- Recorded the eighth native batch for fitness-log, fitness-programming and food-analyzer with unchanged candidates: five bounded passes and two unassessed blank completed deliveries. Verified actual export YAML and synthetic arithmetic. CI passes on 3e4682b. Keep missing-image, n8n and blog verification and workout initial delivery open; PR stays draft without merging or promotion.
+
+- Reran the remaining n8n workflow review against the unchanged candidate in a fresh native Instant chat. Retain another unassessed host response-load failure and keep verification open. All five workflows and twelve checks pass on e4cbe18. Blog verification and workout initial delivery remain open; PR stays draft without merging or promotion.
+
+- Corrected n8n retry-policy/test consistency and container-home fictional-project context isolation with exact candidate provenance. Native design and home reruns pass bounded review; retain four host failures and keep existing-workflow review verification open. All 108 regressions pass. Blog verification and workout initial delivery stay open; PR remains draft without merging or promotion.
+
+- Recorded Mick's bounded sixth-batch acceptance and six fresh native cases for n8n-workflow, pihole-blocklist and container-home. Three cases pass bounded review; retain two workflow policy/test inconsistencies and one fictional-project context leak. Candidate resources are unchanged. Blog verification, workout initial delivery and new corrections remain open; PR stays draft without merging or promotion.
+
+- Corrected Facebook standard paragraph counting/review scope and X final character measurement/preset rules with exact candidate provenance. Final native reruns pass two-paragraph/source checks and exact 234/136 character counts. Retain an intermediate Facebook scope failure and one host failure. Blog verification, workout initial delivery and acceptance stay open; PR remains draft without merging or promotion.
+
+- Corrected blog chronology grounding and LinkedIn technology hashtag selection with exact candidate provenance. The unchanged LinkedIn native rerun passes; retain an intermediate blog timing failure and three unassessed final-blog host failures. Final blog verification and workout initial delivery remain open. Both candidate revisions pass 108 regressions; PR stays draft without merging or promotion.
+
+- Recorded bounded travel acceptance and tested the next native writing/astronomy batch. Six completed responses yield four bounded passes and two grounding failures; one LinkedIn host failure is retained alongside its passing unchanged retry. Verified draft counts, supplied code, synthetic preview observations and actual FITS headers/hashes. Candidate fixes remain pending; workout initial delivery stays open. PR remains draft without merging or promotion.
+
+- Recorded Mick's bounded workout acceptance while preserving the open initial-delivery issue. Completed six fresh native travel research/planning/itinerary cases with six bounded passes and one explained display-precision caveat. Verified synthetic scores, budgets, date/traveler boundaries and missing-input behavior; travel acceptance remains pending. PR stays draft without candidate changes, merging or promotion.
+
+- Removed an unlogged program copied from the workout example template and recorded exact candidate transformations. Latest Medium native testing verifies an 895-byte combined ZIP and two 324-byte corrected/recovery downloads exactly equal to native Copy, plus duplicate confirmation. Retained earlier program/Copy failures and current initial-response load failures; recovery does not certify initial delivery. Consolidated bounded review with 108 passing regressions; no merge or promotion.
+
+- Resumed the final workout native tests after sign-in. Verified the actual 743-byte combined ZIP against unchanged pinned candidate/source data. Retained three duplicate primary/regeneration response load failures as unassessed; the duplicate/correction delivery sequence remains pending host recovery. Updated review/checklist without candidate, package, placement, merge or promotion changes.
+
+- Corrected workout combined-duration scope and added a read-only export validator with six regressions. Two native combined ZIPs and duplicate/correction content pass bounded review; three of four exact native Copy exports retain leading-newline failures. Required validated canonical file delivery on permitted file-capable exports and corrections, with its native rerun pending ChatGPT sign-in. Updated review/checklist; PR stays draft with no merging or promotion.
+
+- Recorded Mick's bounded resume v3 acceptance and completed the next native batch for spec-writer, idea-forge and obsidian-workout-export. Verified four actual ZIPs and safe helper replay; four cases pass bounded review. Retained workout combined-duration scope and copied-frontmatter delivery failures, with duplicate/correction behavior passing separately. Updated evidence/checklist without candidate changes; PR remains draft with no merging or promotion.
+
+- Consolidated native resume v3 review: four fresh JSON boundaries pass direct native Copy parsing, exact ledgers and independent arithmetic at 93.3/96.7/93.3/90.0 with the critical verdict cap. Replayed the four earlier human ledgers on identical resources. Updated evidence/checklist without candidate changes; acceptance remains pending and PR stays draft with no merging or promotion.
+
+- Fixed candidate resume experience grouping and fixture-note scoring with a versioned source-block/context-note contract. Two fresh native human runs agree at 76.7 for the same original and 85.0 for their rewrites; four actual ledgers and source partitions reconcile. Added two regression methods and retained the previous failure. PR stays draft; no merging or promotion.
+
+- Fixed candidate resume JSON delivery, immutable ledgers and fixture-heading exclusion. Three final native JSON copies pass at 93.3/96.7/93.3; all four human ledgers and original headings reconcile. Retained Copy/host failures and a new experience-inventory error causing a 10-point original-score spread. Added two regression methods; 100 tests pass. Acceptance remains pending; PR stays draft with no merging or promotion.
+
+- Consolidated unchanged-v2 resume testing: two human runs agree at 76.7/85.0 and the contradictory-date cap passes. Retained three invalid JSON boundary outputs, one host load failure and heading-inventory scope drift. Diagnostic quote repairs are not delivery passes. Updated evidence and checklist; PR stays draft with no candidate changes, merging or promotion.
+
+- Fixed candidate resume structure scoring for readable documents without section headings. Added a required heading inventory, missing_headings anchor and two regression methods. Preserved a native ledger-editing failure, clarified final ledger delivery and passed a fresh pure JSON rerun at 55.0. Updated provenance and checklist; PR stays draft with no installation, merging or promotion.
+
+- Fixed candidate resume principle coverage, category mappings and duplicate penalties with a seven-criterion evidence rubric. Two fresh human runs now agree at 76.7 for the original and 85.0 for their rewrites; all four downloaded ledgers reconcile. Strict JSON/injection checks pass, with sparse-document structure credit still unresolved. Updated regressions, provenance and checklist. PR stays draft; no installation, merging or promotion.
+
+- Tested native human numeric resume scoring in two fresh chats with unchanged candidates. Four downloaded ledgers reconcile with the displayed audits and exact calculator. Retained substantive consistency concerns: the identical original scores 54.5 versus 71.4 with changing principle coverage/category assignments. Updated evidence and follow-up checklist; no rubric acceptance, merging or promotion.
+
+- Corrected candidate resume score/severity reconciliation and library attribution, added a deterministic ledger calculator, and reserved social-preview language-badge space. Added eight scoring and three footer regressions. Replayed three failed native cases plus a fresh JSON format correction; three final bounded passes retain original/intermediate failures and the unexercised human numeric path. No installation, merging or promotion; PR remains draft.
+
+- Recorded acceptance of the bounded first native-writing batch. Completed six native file/output cases plus two delivery follow-ups with actual ZIP, Markdown and JPEG verification. Retained two resume scoring/attribution failures and one social-preview layout collision; three cases passed bounded review. Added remediation tasks without changing candidates or shipped skills. PR stays draft with no merging or promotion.
+
+- Recorded Mick's acceptance of bounded remaining-skill results. Ran seven native ChatGPT writing cases, retained count/attribution failures and corrected two candidate contracts with fresh passing observations. Native acceptance, routing and wider host coverage remain separate. PR stays draft with no merging or promotion.
+
+- Completed 52 isolated behavioral cases across the remaining 26 domain skills and 34 targeted follow-ups. Corrected four candidate writing masters for exact counts, evidence-scoped claims and default website length variants. Preserved initial failures, fixture limits and intermediate format gaps. All 35 domain masters now have bounded captures; native certification and human acceptance remain separate. PR stays draft with no promotion.
+
+- Adapted all generated Codex headers to name/description while retaining full source metadata in provenance. Tested remaining helpers with disposable inputs and mocked integrations; corrected image preview collisions/reprocessing, error statuses, resume YAML and scheduled-task replacement. Added a dependency-provisioned Windows helper job and scoped the remaining26 skills for isolated behavioral tests. PR stays draft; no promotion.
+
+- Fixed candidate Obsidian note overwrites and vault escapes with exclusive writes and containment regressions. Reworked the Proxmox candidate around confirmed infrastructure inputs, a dedicated application account, isolated Python dependencies and optional tunnel exposure. Corrected stale migration coverage/provenance docs. Shipped skills/packages stay unchanged; PR remains draft.
+
+- Corrected the candidate itinerary validator for explicitly pending addresses with five executable regressions and preserved source provenance. Both original itineraries pass strict replay. Offline visual review found three bounded passes and one unresolved phone table; native verification and acceptance remain pending. Shipped skills/packages are unchanged; PR stays draft.
+
+- Ran six isolated synthetic cases for github-social-preview, n8n-workflow and trip-email-html-itinerary. Recorded four bounded passes, outstanding itinerary visual gates and a strict-validator defect for unknown addresses. Retried native photo testing and independently verified the saved ZIP's exact JPEG bytes and mapping. Acceptance remains pending; PR stays draft with no merging or promotion.
+
+- Recorded Mick's bounded second-batch acceptance, selected the next three synthetic skill tests, and attempted native ChatGPT photo testing with verified JPEG/EXIF inputs. Attachments succeeded; three response-load failures left native preview and copy verification incomplete. PR remains draft with no merging or promotion.
+
+- Grouped ChatGPT and Codex under openai/ and mirrored the layout in generated candidates and model builds. Updated path routing, ownership/provenance, catalog, release selection, navigation and nested-path regressions. Target IDs, skill instructions, suitability rules and package hashes are preserved; no promotion or installation.
+
+- Evaluated six synthetic scenarios for spec-writer, pihole-csv-analyzer and photo-rename with isolated tool sessions, an audited image rerun and independent file/metric/copy checks. Recorded bounded assistant passes and host limits; human acceptance remains pending. PR stays draft with no merging or promotion.
+
+- Recorded Mick's acceptance of the bounded foundation tool-test results. Broader certification, merging and promotion remain unauthorized; the credential sync limitation remains unverified.
+
+- Completed four fresh isolated tool-enabled skill cases with independent runtime checks: architect feedback and final-file validation, PowerShell retry/scope/analyzer contracts, and a README repair with executed documented commands. Published the bounded assessment and prepared human review; acceptance, expansion, merging and promotion remain pending.
+
+- Require formatting and validation of the exact architect files delivered; regenerate review candidates without promotion. Add hash-pinned synthetic runtime fixtures, a formatter-feedback regression and Linux PowerShell/Python runtime jobs with network-disabled execution and retained evidence. Hosted execution is tracked in the migration checklist.
+
+- Pinned architect nonempty-line semantics and added a focused regression scenario with six runtime oracles. Started offline Windows runtime checks for all three foundational skills; PowerShell/README and counting tests passed, one original scaffold formatting failure was preserved, and a separate format-only repair was verified. Acceptance and promotion remain blocked.
+
+- Repaired the local foundation pilot's context isolation with a separate profile, fixed base instructions and per-call context audits. Captured 36 replacement responses and scored 172 applicable rubric items; all 12 candidate responses met the text-only pilot rubrics. Recorded scaffold whitespace ambiguity, original/control gaps and pending human/runtime acceptance. No skills were promoted.
+
+- Started the foundation behavioral pilot with six synthetic cases and 36 captured Codex CLI responses. Recorded a candidate line-count discrepancy and inherited-context contamination; results remain provisional, human scores unscored, and promotion unauthorized.
+
+- Completed focused migration review; added preflight rejection of linked parents/Windows junctions, destination type conflicts and portable filename collisions, with offline regressions. Candidates remain unpromoted and behavior evaluation remains not run.
+
+- Restored audited foundational master requirements (scaffold templates/CI, README formats, PowerShell analyzer gates) with pinned provenance and offline regressions; made seven file-access contracts operation-specific without changing ecosystem placements.
+
+- Added capability contracts, explicit ecosystem suitability maps and model-aware candidate generation with provenance and manual reassessment gates; no model calls or automatic promotion.
+- Added 32 canonical master candidates, completing coverage of 35 Claude skills plus the example; preserved original platform files and dependency bytes, added complete generated bundles and migration checks, and kept behavioral evaluation explicitly not run.
+
 - Selected the MIT License, copyright 2026 Mick Pletcher; retained existing notices and kept release publishing inactive.
 
 - Bound installer archive parsing, entry counts, expanded payloads, and root source text with configurable limits; retain transactional cleanup and update recovery.

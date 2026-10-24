@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "skill": "obsidian-workout-export",
+  "source": "claude/skills/obsidian-workout-export/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "76d67647fcb9649d6dda7ff4fc20f4fe05e8924f5fc98a264d3f374cb5ff8dcd",
+  "source_frontmatter": {
+    "name": "obsidian-workout-export",
+    "description": "Export workout data to an Obsidian-formatted Markdown file. Always trigger immediately when the user types \"owd\". Also trigger on \"export workout\", \"obsidian workout\", \"save workout to obsidian\", or related requests to export workout data into Obsidian. Read the current conversation first before searching prior conversation history. Name the file after the date of the chat that contains the workout data.",
+    "version": "1.1.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {
+    "duration: [minutes, if logged]": "duration: [whole-session minutes, only if explicitly logged]",
+    "Only include fields the log supports. Add a one-line progression note at the end of the file when the session data shows a clear change from the last comparable session, and skip it otherwise.": "Only include fields the log supports. Top-level duration always means the whole note's session duration. For a combined day, omit it unless the source explicitly supplies a whole-session total; do not copy one activity's duration or add an incomplete set of durations. Keep each known activity duration in its own section or clearly scoped activity field, such as ride_duration_minutes. Do not infer strength duration, rest time or a combined total. Add a one-line progression note at the end of the file when the session data shows a clear change from the last comparable session, and skip it otherwise.",
+    "Produce the Markdown content directly unless the user specifically asks for a file to be created in a local repo or folder.": "Produce the Markdown content directly unless the user specifically asks for a file to be created in a local repo or folder. Build one canonical UTF-8 note whose first bytes are `---` followed by a newline, with no BOM, leading blank line, heading, prose or Markdown fence inside the note. The closing YAML delimiter precedes the Markdown body. Do not strip a failed delivered copy and report the original as valid.\n\nWhen Python/file execution is available, validate the exact canonical note with [scripts/validate_export.py](scripts/validate_export.py) before delivery. Run `python scripts/validate_export.py note.md`. Only when the source explicitly logs a combined whole-session total may you include top-level duration and pass that source value with `--logged-total-minutes VALUE`; never pass a single activity duration as that total. This standard-library helper is read-only and checks the first-byte boundary, literal type/duration fields and combined-duration scope, not full YAML syntax or source truth. Parse the full YAML with an available YAML parser as a separate check; disclose if that parser is unavailable.\n\nFor chat-only delivery, start with a filename paragraph outside the note, then one fenced code block labelled `markdown`. The fence's first content line is the frontmatter delimiter `---`, with no empty line before it. Keep the entire canonical note in that block, not a rendered Markdown preview or an indented-code block. Keep filename, destination and validation commentary outside its content.\n\nWith permitted Python execution, run `python scripts/validate_export.py note.md --render-inline` and use its stdout as the complete fenced block without adding another wrapper or rebuilding its contents. The helper labels the block `markdown` and chooses a fence longer than every backtick run in the note, so embedded fences remain data. Pass an explicitly logged combined total with `--logged-total-minutes VALUE` when applicable. It refuses invalid canonical input or a missing terminal newline and never trims delivered content. Without execution, construct that same fenced block around the canonical note and disclose that validation did not run. On a correction, update and validate the canonical note, then serialize the complete replacement again.\n\nA validated canonical file or wrapper does not prove that native Copy preserves its bytes. If readback is available, validate the exact code Copy without stripping spaces, blank lines or fences; otherwise say its Copy boundary is unverified. Never call a failed or unverified Copy an Obsidian-ready file. Respect a chat-only request. Attach the validated canonical file only when file delivery is requested or allowed; its bytes exclude all display wrappers. Report any native Copy failure separately; do not normalize it and count the original delivery as a pass.",
+    "**Program:** 15 Percent Body Fat Project": "**Program:** [program name, only if explicitly logged]",
+    "Omit sections with no data. If there are no PRs, either omit the section or state `None this session`.": "Omit sections with no data. Template program names are placeholders, not session facts; omit the Program line unless the source explicitly names a program. If there are no PRs, either omit the section or state `None this session`."
+  },
+  "supporting_files_sha256": {},
+  "retained_in_original_sha256": {
+    "README.md": "73afb8065e232de5b00d734bd4efb5dbdc4b031034472498e67f1e76797a1d72",
+    "completedchanges.md": "e46b00ba5ae82c64bd4b0fcef2c12f58d5378252377d4b561d932a0f80268ac6",
+    "obsidian-workout-export.skill": "1978f1b5d2f57f25b9512d716c8890b1b0752772882e74488b8de6ab745fd648",
+    "upgrades.md": "16d02ee11b77bc5017f6eef3e6c082756143b3e930b47cd03f1dc9cc2b151dc1"
+  },
+  "added_supporting_files": {
+    "scripts/validate_export.py": {
+      "sha256": "a9db1d1515f8a6fa8bbcba5592949192f45133ab57d383c79789dfb3b39c3162",
+      "reason": "Candidate-only read-only frontmatter/duration validation and Markdown-labelled fence serialization that contains nested fences without adding leading payload whitespace."
+    }
+  }
+}

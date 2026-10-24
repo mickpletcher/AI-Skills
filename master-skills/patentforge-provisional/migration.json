@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "skill": "patentforge-provisional",
+  "source": "claude/skills/patentforge-provisional/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "0d9f0878469b0be5c970a4230f4db6fa729991813e6d73591e0b894ddaa19201",
+  "source_frontmatter": {
+    "name": "patentforge-provisional",
+    "description": "Use this skill when the user wants to turn an invention idea into a structured invention disclosure, prior art search strategy, claim candidates, and provisional patent draft package. This skill is for patent drafting assistance only and must not provide legal advice or guarantee patentability.",
+    "version": "1.1.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {
+    "Always return the final package in this structure:": "For full-package requests, deliver one complete concise first pass in plain Markdown headings, short paragraphs and bullets, without tables, diagrams, cards or interactive checklists. Unless the user requests a different length, the complete response must not exceed 1,200 whitespace-separated words, including headings and disclaimers; section 10, including its subheadings, must not exceed 300. Aim for about 900 total and 220 in section 10 to leave room for final checks. Plan the budget before writing: short paragraphs or lists for sections 2 through 8, a small supported claim set in section 9, and reserved space for sections 11 through 14. Explain the full mechanism once in section 10; cross-reference it elsewhere. Templates guide coverage, not verbatim duplication.\n\nStart with all five mandatory disclaimer points. Put each confidentiality flag and proposed replacement in section 1; preserve technical disclosure and leave replacement decisions to the user. Populate all 14 sections, including section 10's required manuscript subsections, figure list, manual filing checklist, attorney gaps and final disclaimer.\n\nUse a compact allocation before drafting: opening/disclaimers about 50 words; section 1 about 90; sections 2 through 8 together about 230; section 9 about 100; section 10 about 220; sections 11 through 14 together about 210. These allocations include headings and leave margin below the hard total limit. In sections 2 through 8, use one short sentence per section except compact component and search-term lists. In section 9, begin with one apparatus candidate, one method candidate and at most two supported dependent candidates; defer further variants to expansion. Prefer brief cross-references over repeating component roles or operating sequences already stated in section 10.\n\nSection 14 should be one short sentence referring to the opening disclaimers and stating that the working draft is not filing-ready. Do not repeat the five disclaimer points there; they must already be stated in full at the start. Put any necessary execution limitation in one clause in section 13. Do not add separate validation/completion reports or repeat lists of unknowns across sections.\n\nBefore delivery, check the exact complete draft, not a summary or earlier version. When Python execution is available and permitted, save that draft in the disposable working area and run `python scripts/validate_package.py package.md`. The read-only helper checks populated numbered sections, total words and section 10 words; it does not validate technical sufficiency, disclaimers or legal accuracy. If the user specifies different limits, pass them with `--max-words` and `--max-draft-words`. If execution is unavailable, count the same whitespace-separated words and disclose that no script ran. Shorten and recheck any over-limit draft before responding; do not deliver it merely because all sections exist. Preserve mechanism, boundaries and unknowns while removing repeated explanations and extra examples. Deliver the exact checked text, without an extra recap outside its word budget. If any required content is still missing, label the package incomplete and identify the gaps. Never claim filing readiness. Expand only after the complete first pass or when requested. Inventor interview mode still asks one question at a time; this package check does not apply to that intake.\n\nReturn the final package in this structure:"
+  },
+  "supporting_files_sha256": {
+    "LICENSE": "0a2353d05ec65d81e9076f475d3cdd4352dd5137a2efefb465bf2982463ddff8",
+    "docs/patent-center-upload-guide.md": "9360ba54cab4140d2dc73b89254ba7a1ec2ab73f18015652ab40fd34a1256506",
+    "docs/safety-rules.md": "b96a0d0d1f44868f61cec0608b5fac1c0ef63893348279c29c4ff7d9afe80714",
+    "docs/validation-checklist.md": "b31f463bf64bfcfb4fa68b05d43efe25e73890f20f42138706bb1cddfa08c137",
+    "docs/workflow.md": "4e1202b6ff3153e1af3efffb9f5844bbf417e8de4825e63abd61fc2dad9cf35b",
+    "examples/sample-idea.md": "412af8a816c92201c618118326efc615554d001b4d5fadbf085f13f3be159c2f",
+    "examples/sample-output.md": "655511babc0dc0e6415030f76059a1dea23dbb10c7de7d351571a22cffd81f95",
+    "schemas/claim-set.schema.json": "1d2d139e14be5fa9005f34a91862c839964c108ab5b3d224e821a89f4120a8ae",
+    "schemas/invention-disclosure.schema.json": "feda9971064b0d04d3aaa7c11715b5a4e30e364a1dc0b13b2549eb5e42327e59",
+    "schemas/prior-art-report.schema.json": "90dd509d3c4759633751c0faa7e7e7a1a47bb81d5f6d104db2d7a60f479c87eb",
+    "templates/attorney-review-notes.md": "7617491a0c6029d4cd6dab593022c2e52614235b062c3f8d386e625cde4eb778",
+    "templates/claim-candidates.md": "643db5dac5d53c5ed558a9df5538769f241bcd97811937851bca34d759caa0da",
+    "templates/filing-checklist.md": "57041230daab0587bcf32bb6308ae08fc6bde510cde90525a63b3fcd42231286",
+    "templates/invention-disclosure.md": "9d1aa2651d665719338ee90a998a61f6f476ddb20ff3758e835c485f43ecfa69",
+    "templates/prior-art-report.md": "4d8a07f5270c53b8af55c97600209c47b35864cd07f4b6ffccd615f18b7aae61",
+    "templates/provisional-application.md": "94f9896dff8080f2e88d4ffee7df9d6966b2ceafa37a4dadc7e3b90656592033"
+  },
+  "retained_in_original_sha256": {
+    "README.md": "cb8320ad511030b8b05512870bbe121fb691f3fcdfac4e25bafd2d7617ad0af0",
+    "completedchanges.md": "8bd36c1882e43f416af613d9fa52f6dfc13d171121bbca4bf98914b5f8930ff4",
+    "patentforge-provisional.skill": "ab983666cd07764b4569f47e1d724c6c153f0ae523c7eb677984d9f980342da1",
+    "upgrades.md": "956cd398a7c507ddffa85648241b79232f8b63be2b6ff062920d7de50599eedd"
+  },
+  "added_supporting_files": {
+    "scripts/validate_package.py": {
+      "sha256": "ee6993336d91b517a5e7dd815b5571e894e52cd49a3f3de9f60c9811b0459331",
+      "reason": "Candidate-only read-only validation of complete package word limits and numbered sections."
+    }
+  }
+}

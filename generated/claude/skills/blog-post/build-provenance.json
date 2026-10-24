@@ -1,0 +1,16 @@
+{
+  "adapter": null,
+  "adapter_sha256": null,
+  "behavior_evaluation": "not_run",
+  "ecosystem": "claude",
+  "ecosystem_paths_sha256": "3e64da3c5763530f31b34f02256e4e218e89c233b55a0193ba68d4df0cb1fb15",
+  "generator_sha256": "43a95a6d7af5b7933684fb1d914bc879644c91082fa96eb7e8c7921ba3b77bed",
+  "master_revision": "4b53317164e8962c2d60b0b0378099cff8a7974d7fcaa61e0f98d9da78d80781",
+  "master_revision_kind": "sha256-bundle",
+  "model_id": null,
+  "model_profile": "baseline",
+  "model_profile_sha256": "7b3a883a2e2a1b75c84cf2bc3052f05eeb2c5a7eb041ae81e3729973edb0e8c6",
+  "profile_loader_sha256": "8f2c6f4b80a18183a107b14f114a606c33274a335aa63857ad31e123493b3baf",
+  "promotion": "blocked_pending_review",
+  "provider": null
+}

@@ -1,0 +1,958 @@
+{
+  "schema_version": 1,
+  "source_commit": "1b55d20c5dc2ad5d183f1885fb5d00b0882c12a4",
+  "skill": "resume-writer",
+  "host": "native ChatGPT UI, fresh Temporary chats, explicit candidate packets",
+  "resources_sha256": {
+    "instructions.md": "3c3eac41133d6fcb049ff5af5862701d0806a8b01c8d952430641dbb229acbf3",
+    "capabilities.json": "181e12ff5e74fbc195b8e19b85aa227e75c935ced6eb803339c2019f680231d1",
+    "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
+    "references/common-patterns.md": "0297e324530fab920a6df563ab5aa46896d66a5910aa05449983dc7b0525439a",
+    "references/enhance-workflow.md": "a13934bb28d9bd510a7bb8ede4fa1fc715a2ef42f23a1de25d8c293650c52898",
+    "references/scoring-workflow.md": "c8a23b36dc206aa0565c6e28b308aab7ffd56a286566fb54caaf8643b5bff27c",
+    "scoring-model.md": "c82c88796b729539141b17ae2d82d2ef1a2e61d8f4a6b694a4e6eefe7af426ba",
+    "json-output-spec.md": "e6fab1a476da2b3e7eaa8399671179f2bd24913c903a641683d033d86648abbf",
+    "scripts/score_audit.py": "1f7f4d7ff8d89af5f29fa76fe3fea37e6b4ac50351d9cae2b7b9b9e1b5994b02"
+  },
+  "cases": [
+    {
+      "id": "human-numeric-1",
+      "task": "rw Enhance the fictional resume in resume.txt for the supplied Automation Engineer target. The applicant is Alex Example, not Mick. Use human output mode and the normal condensed audit, with numeric scoring for both the original resume and your rewrite. Use the supplied candidate instructions and exact score calculator from resources.zip in a disposable workspace. Run the calculator for each separate ledger and run --check on each final audit. Present the final score, verdict, all five category values and severity counts for both versions in the readable audit. Include missing-data notes and source-backed findings. Preserve employer, historical title, dates, education and supplied figures. Microsoft Graph is desired but experience is not established. Do not invent certifications, employment after May 2025, leadership, metrics or a gap explanation. Assessment date: 2026-10-20. Deliver one downloadable human_numeric_outputs.zip containing rewritten_resume.md, original_audit.json, rewritten_audit.json and execution_log.txt. The JSON files are supporting score ledgers, not a request to change the chat response to JSON mode. The execution log should contain the actual calculator commands, exit codes and captured output; label any unavailable trace honestly. Do not browse, use connected apps, submit applications, update a persistent library, install dependencies or change real systems. If Python/file execution is unavailable, state the exact limitation and that numeric scoring was not executed. Do not substitute estimated scores or count a qualitative fallback as completed numeric scoring.",
+      "repetition": 1,
+      "uploads": [
+        "packet.txt",
+        "resources.zip",
+        "resume.txt"
+      ],
+      "input_sha256": {
+        "packet.txt": "6074fbac3d3f72f7245f82494173bd819f0bee7575caab146aeecf89d8ed7ea7",
+        "resources.zip": "13d65b14ff1c45c91d71392ec34f239469679a88e98130f4db11c967c30dc312",
+        "resume.txt": "c7a588e66087f0b15d21c05018b54dda59a244c10c4ce0e082554b9801b2dd3a"
+      },
+      "status": "bounded_numeric_delivery_and_reconciliation_pass_scoring_consistency_unresolved",
+      "checks": {
+        "input_hashes_preserved": true,
+        "response_sha256": "f89bc4d2b0dc2fd7e8a2e76f45046eaa9e2b674c6bba4c0f7a5ec1403220165d",
+        "capture_sha256": "8dc8f72a18b18a29efb0feedb746658348889e61f9fd7cc978ea01185c4a2141",
+        "screenshot_sha256": "e14ba4f28c60747fa1e087eb2db31d247d3cd3e47bd7e4c55fcec2ea8172b4e0",
+        "artifact": {
+          "bytes": 6701,
+          "sha256": "8f1914bb6717ec9a53f7ca44d0d5b51ea46bb066c67ff422eef6d4680f660399",
+          "members_sha256": {
+            "rewritten_resume.md": "b3721b9110f438a889a17e18cbafe611c9ceea755c15c52fd0afdd9d002d2f7e",
+            "original_audit.json": "76099f4c0cd03e79e9ed7505a234ffbf45613b7b800066759d4f90535074f6bb",
+            "rewritten_audit.json": "10999ef49f2fa008d21640abd990e77f7c76692ea478658610f29a0527708ae2",
+            "execution_log.txt": "462b4ebd2dc4edb77bc27f1e422d45feb6752cd81d569985bd8046e81afe351f"
+          }
+        },
+        "audits": {
+          "original": {
+            "final_score": 54.5,
+            "category_scores": {
+              "positioning_and_narrative": 38.1,
+              "evidence_and_bullet_strength": 66.7,
+              "ats_and_structural_reliability": 83.3,
+              "relevance_and_targeting": 33.3,
+              "professionalism_and_trust": 33.3
+            },
+            "verdict": "High risk",
+            "severity_counts": {
+              "CRITICAL": 0,
+              "MAJOR": 5,
+              "MINOR": 3
+            },
+            "ledger_entries": 9,
+            "source_attribution_valid": true,
+            "independent_decimal_replay_matches": true,
+            "local_exact_calculator_check_exit": 0
+          },
+          "rewritten": {
+            "final_score": 77.6,
+            "category_scores": {
+              "positioning_and_narrative": 90.5,
+              "evidence_and_bullet_strength": 83.3,
+              "ats_and_structural_reliability": 83.3,
+              "relevance_and_targeting": 66.7,
+              "professionalism_and_trust": 33.3
+            },
+            "verdict": "Good but inconsistent",
+            "severity_counts": {
+              "CRITICAL": 0,
+              "MAJOR": 2,
+              "MINOR": 3
+            },
+            "ledger_entries": 9,
+            "source_attribution_valid": true,
+            "independent_decimal_replay_matches": true,
+            "local_exact_calculator_check_exit": 0
+          }
+        },
+        "human_display_matches_ledgers": true,
+        "rewrite_facts": {
+          "Alex Example": true,
+          "Example Labs": true,
+          "Automation Engineer": true,
+          "Jun 2022 - May 2025": true,
+          "400 Windows devices": true,
+          "3 hours": true,
+          "45 minutes": true,
+          "Associate of Science": true,
+          "Computer Information Systems": true,
+          "Example College": true,
+          "2020": true
+        },
+        "provider_log": {
+          "commands_recorded": 4,
+          "recorded_exit_codes": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "captured_outputs_match_ledgers": true,
+          "independent_native_tool_trace_available": false
+        }
+      },
+      "human_table_rows": [
+        [
+          "Category",
+          "Original",
+          "Rewritten"
+        ],
+        [
+          "Positioning and Narrative",
+          "38.1",
+          "90.5"
+        ],
+        [
+          "Evidence and Bullet Strength",
+          "66.7",
+          "83.3"
+        ],
+        [
+          "ATS and Structural Reliability",
+          "83.3",
+          "83.3"
+        ],
+        [
+          "Relevance and Targeting",
+          "33.3",
+          "66.7"
+        ],
+        [
+          "Professionalism and Trust",
+          "33.3",
+          "33.3"
+        ],
+        [
+          "Final score",
+          "54.5",
+          "77.6"
+        ],
+        [
+          "Severity",
+          "Original",
+          "Rewritten"
+        ],
+        [
+          "Critical",
+          "0",
+          "0"
+        ],
+        [
+          "Major",
+          "5",
+          "2"
+        ],
+        [
+          "Minor",
+          "3",
+          "3"
+        ]
+      ],
+      "scoring_ledgers": {
+        "original": {
+          "output_mode": "human",
+          "review_context": "targeted",
+          "confidence": "high",
+          "principle_scores": [
+            {
+              "principle": "Make the target role obvious in the top third",
+              "source_type": "library_principle",
+              "source_name": "Make the target role obvious in the top third",
+              "category": "Positioning and Narrative",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "Target stated, but no professional summary",
+              "before": null,
+              "after": null,
+              "fix": "Role-specific summary immediately under contact"
+            },
+            {
+              "principle": "The summary must be targeted, not decorative",
+              "source_type": "library_principle",
+              "source_name": "The summary must be targeted, not decorative",
+              "category": "Positioning and Narrative",
+              "score": 0,
+              "weight": 1,
+              "severity": "MAJOR",
+              "reason": "No summary in original",
+              "before": null,
+              "after": null,
+              "fix": "Summary ties PowerShell and Intune to Automation Engineer"
+            },
+            {
+              "principle": "Your technical resume needs a clear narrative",
+              "source_type": "library_principle",
+              "source_name": "Your technical resume needs a clear narrative",
+              "category": "Positioning and Narrative",
+              "score": 1,
+              "weight": 1,
+              "severity": "MAJOR",
+              "reason": "Tools and duties not connected into a narrative",
+              "before": null,
+              "after": null,
+              "fix": "Automation reporting and endpoint compliance narrative"
+            },
+            {
+              "principle": "Every bullet must name the thing",
+              "source_type": "library_principle",
+              "source_name": "Every bullet must name the thing",
+              "category": "Evidence and Bullet Strength",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "PowerShell and Intune named but second line includes meta commentary",
+              "before": null,
+              "after": null,
+              "fix": "Both bullets name concrete systems and actions"
+            },
+            {
+              "principle": "Numbers, everywhere, or you get an interview with nobody",
+              "source_type": "library_principle",
+              "source_name": "Numbers, everywhere, or you get an interview with nobody",
+              "category": "Evidence and Bullet Strength",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "One measured reporting outcome; no Intune improvement figure",
+              "before": null,
+              "after": null,
+              "fix": "Retains the measured outcome; Intune outcome still unknown"
+            },
+            {
+              "principle": "Standard section headings beat clever branding",
+              "source_type": "library_principle",
+              "source_name": "Standard section headings beat clever branding",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Standard Experience and Education headings",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "Chronology should be easy to follow",
+              "source_type": "library_principle",
+              "source_name": "Chronology should be easy to follow",
+              "category": "ATS and Structural Reliability",
+              "score": 2,
+              "weight": 1.25,
+              "severity": "MAJOR",
+              "reason": "Last employment ends May 2025, no later context",
+              "before": null,
+              "after": null,
+              "fix": "Dates preserved; gap still unexplained"
+            },
+            {
+              "principle": "Mirror the job description's language naturally",
+              "source_type": "library_principle",
+              "source_name": "Mirror the job description's language naturally",
+              "category": "Relevance and Targeting",
+              "score": 1,
+              "weight": 1.5,
+              "severity": "MAJOR",
+              "reason": "PowerShell and Intune in body; Graph unsupported",
+              "before": null,
+              "after": null,
+              "fix": "Supported target terms emphasized; Graph not claimed"
+            },
+            {
+              "principle": "Red flags recruiters look for",
+              "source_type": "common_pattern",
+              "source_name": "common-patterns \u00a7 Red flags recruiters look for",
+              "category": "Professionalism and Trust",
+              "score": 1,
+              "weight": 1,
+              "severity": "MAJOR",
+              "reason": "Employment ends May 2025; as of Oct 20 2026, roughly 17 months have no supplied timeline context. No explanation inferred.",
+              "before": null,
+              "after": null,
+              "fix": "Request verified timeline context; do not insert a fabricated explanation."
+            }
+          ],
+          "category_scores": {
+            "positioning_and_narrative": 38.1,
+            "evidence_and_bullet_strength": 66.7,
+            "ats_and_structural_reliability": 83.3,
+            "relevance_and_targeting": 33.3,
+            "professionalism_and_trust": 33.3
+          },
+          "final_score": 54.5,
+          "verdict": "High risk",
+          "critical_issue_count": 0,
+          "major_issue_count": 5,
+          "minor_issue_count": 3
+        },
+        "rewritten": {
+          "output_mode": "human",
+          "review_context": "targeted",
+          "confidence": "high",
+          "principle_scores": [
+            {
+              "principle": "Make the target role obvious in the top third",
+              "source_type": "library_principle",
+              "source_name": "Make the target role obvious in the top third",
+              "category": "Positioning and Narrative",
+              "score": 3,
+              "weight": 1.5,
+              "severity": "INFO",
+              "reason": "Role-specific summary immediately under contact",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "The summary must be targeted, not decorative",
+              "source_type": "library_principle",
+              "source_name": "The summary must be targeted, not decorative",
+              "category": "Positioning and Narrative",
+              "score": 3,
+              "weight": 1,
+              "severity": "INFO",
+              "reason": "Summary ties PowerShell and Intune to Automation Engineer",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "Your technical resume needs a clear narrative",
+              "source_type": "library_principle",
+              "source_name": "Your technical resume needs a clear narrative",
+              "category": "Positioning and Narrative",
+              "score": 2,
+              "weight": 1,
+              "severity": "MINOR",
+              "reason": "Automation reporting and endpoint compliance narrative",
+              "before": null,
+              "after": null,
+              "fix": "Automation reporting and endpoint compliance narrative"
+            },
+            {
+              "principle": "Every bullet must name the thing",
+              "source_type": "library_principle",
+              "source_name": "Every bullet must name the thing",
+              "category": "Evidence and Bullet Strength",
+              "score": 3,
+              "weight": 1.5,
+              "severity": "INFO",
+              "reason": "Both bullets name concrete systems and actions",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "Numbers, everywhere, or you get an interview with nobody",
+              "source_type": "library_principle",
+              "source_name": "Numbers, everywhere, or you get an interview with nobody",
+              "category": "Evidence and Bullet Strength",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "Retains the measured outcome; Intune outcome still unknown",
+              "before": null,
+              "after": null,
+              "fix": "Retains the measured outcome; Intune outcome still unknown"
+            },
+            {
+              "principle": "Standard section headings beat clever branding",
+              "source_type": "library_principle",
+              "source_name": "Standard section headings beat clever branding",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Standard headings plus Skills and Summary",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "Chronology should be easy to follow",
+              "source_type": "library_principle",
+              "source_name": "Chronology should be easy to follow",
+              "category": "ATS and Structural Reliability",
+              "score": 2,
+              "weight": 1.25,
+              "severity": "MAJOR",
+              "reason": "Dates preserved; gap still unexplained",
+              "before": null,
+              "after": null,
+              "fix": "Dates preserved; gap still unexplained"
+            },
+            {
+              "principle": "Mirror the job description's language naturally",
+              "source_type": "library_principle",
+              "source_name": "Mirror the job description's language naturally",
+              "category": "Relevance and Targeting",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "Supported target terms emphasized; Graph not claimed",
+              "before": null,
+              "after": null,
+              "fix": "Supported target terms emphasized; Graph not claimed"
+            },
+            {
+              "principle": "Red flags recruiters look for",
+              "source_type": "common_pattern",
+              "source_name": "common-patterns \u00a7 Red flags recruiters look for",
+              "category": "Professionalism and Trust",
+              "score": 1,
+              "weight": 1,
+              "severity": "MAJOR",
+              "reason": "Employment ends May 2025; as of Oct 20 2026, roughly 17 months have no supplied timeline context. No explanation inferred.",
+              "before": null,
+              "after": null,
+              "fix": "Request verified timeline context; do not insert a fabricated explanation."
+            }
+          ],
+          "category_scores": {
+            "positioning_and_narrative": 90.5,
+            "evidence_and_bullet_strength": 83.3,
+            "ats_and_structural_reliability": 83.3,
+            "relevance_and_targeting": 66.7,
+            "professionalism_and_trust": 33.3
+          },
+          "final_score": 77.6,
+          "verdict": "Good but inconsistent",
+          "critical_issue_count": 0,
+          "major_issue_count": 2,
+          "minor_issue_count": 3
+        }
+      }
+    },
+    {
+      "id": "human-numeric-2",
+      "task": "rw Enhance the fictional resume in resume.txt for the supplied Automation Engineer target. The applicant is Alex Example, not Mick. Use human output mode and the normal condensed audit, with numeric scoring for both the original resume and your rewrite. Use the supplied candidate instructions and exact score calculator from resources.zip in a disposable workspace. Run the calculator for each separate ledger and run --check on each final audit. Present the final score, verdict, all five category values and severity counts for both versions in the readable audit. Include missing-data notes and source-backed findings. Preserve employer, historical title, dates, education and supplied figures. Microsoft Graph is desired but experience is not established. Do not invent certifications, employment after May 2025, leadership, metrics or a gap explanation. Assessment date: 2026-10-20. Deliver one downloadable human_numeric_outputs.zip containing rewritten_resume.md, original_audit.json, rewritten_audit.json and execution_log.txt. The JSON files are supporting score ledgers, not a request to change the chat response to JSON mode. The execution log should contain the actual calculator commands, exit codes and captured output; label any unavailable trace honestly. Do not browse, use connected apps, submit applications, update a persistent library, install dependencies or change real systems. If Python/file execution is unavailable, state the exact limitation and that numeric scoring was not executed. Do not substitute estimated scores or count a qualitative fallback as completed numeric scoring.",
+      "repetition": 2,
+      "uploads": [
+        "packet.txt",
+        "resources.zip",
+        "resume.txt"
+      ],
+      "input_sha256": {
+        "packet.txt": "6074fbac3d3f72f7245f82494173bd819f0bee7575caab146aeecf89d8ed7ea7",
+        "resources.zip": "13d65b14ff1c45c91d71392ec34f239469679a88e98130f4db11c967c30dc312",
+        "resume.txt": "c7a588e66087f0b15d21c05018b54dda59a244c10c4ce0e082554b9801b2dd3a"
+      },
+      "status": "bounded_numeric_delivery_and_reconciliation_pass_scoring_consistency_unresolved",
+      "checks": {
+        "input_hashes_preserved": true,
+        "response_sha256": "50ecad82d7ca3813e0cbc6c6053a22f4fab727fcd84ae17ac6dc989daddd19c8",
+        "capture_sha256": "0ae905dd5380681dd7d4a1845dc48e7ea83198bd765e0ea4df45c559492b4595",
+        "screenshot_sha256": "1a34460ad1b326f04c25d9360f23802a651832d16a73e82e97f3d27626bfaebe",
+        "artifact": {
+          "bytes": 7188,
+          "sha256": "a53d3c8d6a0ea1d000777a61024b0d29e6bc0b97ba76b15070e9828b192be8a0",
+          "members_sha256": {
+            "rewritten_audit.json": "7621cc910683270e3b709fcc3d18323a1ea2d5bbec03234617cb59e6c3725792",
+            "execution_log.txt": "99041e80539622463e9e4a0c6bfbfa81224f2c788f2316d37ebba002a5e2e771",
+            "rewritten_resume.md": "ac85f382b2653df3411c3380239f096b052e9d82bb805a6a4573f3420faee420",
+            "original_audit.json": "3202abe801af4503019fb1d8fb452f52b3f40826f358db57d4d8dc7d5b36e8c7"
+          }
+        },
+        "audits": {
+          "original": {
+            "final_score": 71.4,
+            "category_scores": {
+              "positioning_and_narrative": 45.6,
+              "evidence_and_bullet_strength": 83.3,
+              "ats_and_structural_reliability": 83.3,
+              "relevance_and_targeting": 66.7,
+              "professionalism_and_trust": 83.3
+            },
+            "verdict": "Good but inconsistent",
+            "severity_counts": {
+              "CRITICAL": 0,
+              "MAJOR": 4,
+              "MINOR": 4
+            },
+            "ledger_entries": 11,
+            "source_attribution_valid": true,
+            "independent_decimal_replay_matches": true,
+            "local_exact_calculator_check_exit": 0
+          },
+          "rewritten": {
+            "final_score": 84.9,
+            "category_scores": {
+              "positioning_and_narrative": 93.0,
+              "evidence_and_bullet_strength": 83.3,
+              "ats_and_structural_reliability": 83.3,
+              "relevance_and_targeting": 66.7,
+              "professionalism_and_trust": 100.0
+            },
+            "verdict": "Strong",
+            "severity_counts": {
+              "CRITICAL": 0,
+              "MAJOR": 2,
+              "MINOR": 2
+            },
+            "ledger_entries": 11,
+            "source_attribution_valid": true,
+            "independent_decimal_replay_matches": true,
+            "local_exact_calculator_check_exit": 0
+          }
+        },
+        "human_display_matches_ledgers": true,
+        "rewrite_facts": {
+          "Alex Example": true,
+          "Example Labs": true,
+          "Automation Engineer": true,
+          "Jun 2022 - May 2025": true,
+          "400 Windows devices": true,
+          "3 hours": true,
+          "45 minutes": true,
+          "Associate of Science": true,
+          "Computer Information Systems": true,
+          "Example College": true,
+          "2020": true
+        },
+        "provider_log": {
+          "commands_recorded": 4,
+          "recorded_exit_codes": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "captured_outputs_match_ledgers": true,
+          "independent_native_tool_trace_available": false
+        }
+      },
+      "human_table_rows": [
+        [
+          "Category",
+          "Original",
+          "Rewritten"
+        ],
+        [
+          "Positioning and Narrative",
+          "45.6",
+          "93.0"
+        ],
+        [
+          "Evidence and Bullet Strength",
+          "83.3",
+          "83.3"
+        ],
+        [
+          "ATS and Structural Reliability",
+          "83.3",
+          "83.3"
+        ],
+        [
+          "Relevance and Targeting",
+          "66.7",
+          "66.7"
+        ],
+        [
+          "Professionalism and Trust",
+          "83.3",
+          "100.0"
+        ],
+        [
+          "Severity",
+          "Original",
+          "Rewritten"
+        ],
+        [
+          "CRITICAL",
+          "0",
+          "0"
+        ],
+        [
+          "MAJOR",
+          "4",
+          "2"
+        ],
+        [
+          "MINOR",
+          "4",
+          "2"
+        ]
+      ],
+      "scoring_ledgers": {
+        "original": {
+          "output_mode": "human",
+          "review_context": "targeted",
+          "confidence": "high",
+          "principle_scores": [
+            {
+              "principle": "Make the target role obvious in the top third",
+              "source_type": "library_principle",
+              "source_name": "Make the target role obvious in the top third",
+              "category": "Positioning and Narrative",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "Target appears, but only as a bare target line; rewritten headline gives supported specialization.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "The summary must be targeted, not decorative",
+              "source_type": "library_principle",
+              "source_name": "The summary must be targeted, not decorative",
+              "category": "Positioning and Narrative",
+              "score": 0,
+              "weight": 1,
+              "severity": "MAJOR",
+              "reason": "Original has no summary; rewrite connects PowerShell and Intune evidence to target.",
+              "before": null,
+              "after": null,
+              "fix": "Clarify missing evidence without inventing facts."
+            },
+            {
+              "principle": "A resume is a sales document, not a job history",
+              "source_type": "library_principle",
+              "source_name": "A resume is a sales document, not a job history",
+              "category": "Positioning and Narrative",
+              "score": 2,
+              "weight": 1.25,
+              "severity": "MINOR",
+              "reason": "Original provides a measurable win but does not foreground it; rewrite leads with it.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "Your technical resume needs a clear narrative",
+              "source_type": "library_principle",
+              "source_name": "Your technical resume needs a clear narrative",
+              "category": "Positioning and Narrative",
+              "score": 1,
+              "weight": 1,
+              "severity": "MAJOR",
+              "reason": "Original lists two tasks without a unified profile; rewrite links automation reporting and endpoint compliance.",
+              "before": null,
+              "after": null,
+              "fix": "Clarify missing evidence without inventing facts."
+            },
+            {
+              "principle": "Every bullet must name the thing",
+              "source_type": "library_principle",
+              "source_name": "Every bullet must name the thing",
+              "category": "Evidence and Bullet Strength",
+              "score": 3,
+              "weight": 1.5,
+              "severity": "INFO",
+              "reason": "PowerShell reporting, 400 Windows devices and Microsoft Intune checks are specifically identified.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "Numbers, everywhere, or you get an interview with nobody",
+              "source_type": "library_principle",
+              "source_name": "Numbers, everywhere, or you get an interview with nobody",
+              "category": "Evidence and Bullet Strength",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "Reporting has supplied before/after timing; Intune compliance has no measured outcome.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "Standard section headings beat clever branding",
+              "source_type": "library_principle",
+              "source_name": "Standard section headings beat clever branding",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Conventional Experience and Education headings; rewrite adds Summary and Technical Skills.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "Chronology should be easy to follow",
+              "source_type": "library_principle",
+              "source_name": "Chronology should be easy to follow",
+              "category": "ATS and Structural Reliability",
+              "score": 2,
+              "weight": 1.25,
+              "severity": "MAJOR",
+              "reason": "Last recorded employment ends May 2025; no subsequent history or context through assessment date.",
+              "before": null,
+              "after": null,
+              "fix": "Clarify missing evidence without inventing facts."
+            },
+            {
+              "principle": "Mirror the job description's language naturally",
+              "source_type": "library_principle",
+              "source_name": "Mirror the job description's language naturally",
+              "category": "Relevance and Targeting",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MAJOR",
+              "reason": "PowerShell and Microsoft Intune supported; Microsoft Graph is required but not evidenced and is not claimed.",
+              "before": null,
+              "after": null,
+              "fix": "Clarify missing evidence without inventing facts."
+            },
+            {
+              "principle": "common-patterns \u00a7 No photos, no headshots, no personal data",
+              "source_type": "common_pattern",
+              "source_name": "common-patterns \u00a7 No photos, no headshots, no personal data",
+              "category": "Professionalism and Trust",
+              "score": 3,
+              "weight": 1,
+              "severity": "INFO",
+              "reason": "No sensitive personal details or photograph; supplied email retained.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "common-patterns \u00a7 Action verb, object, outcome",
+              "source_type": "common_pattern",
+              "source_name": "common-patterns \u00a7 Action verb, object, outcome",
+              "category": "Professionalism and Trust",
+              "score": 2,
+              "weight": 1,
+              "severity": "MINOR",
+              "reason": "First bullet gives a clear action and outcome; rewrite sharpens verb-object-result presentation without adding facts.",
+              "before": null,
+              "after": null,
+              "fix": null
+            }
+          ],
+          "category_scores": {
+            "positioning_and_narrative": 45.6,
+            "evidence_and_bullet_strength": 83.3,
+            "ats_and_structural_reliability": 83.3,
+            "relevance_and_targeting": 66.7,
+            "professionalism_and_trust": 83.3
+          },
+          "final_score": 71.4,
+          "verdict": "Good but inconsistent",
+          "critical_issue_count": 0,
+          "major_issue_count": 4,
+          "minor_issue_count": 4
+        },
+        "rewritten": {
+          "output_mode": "human",
+          "review_context": "targeted",
+          "confidence": "high",
+          "principle_scores": [
+            {
+              "principle": "Make the target role obvious in the top third",
+              "source_type": "library_principle",
+              "source_name": "Make the target role obvious in the top third",
+              "category": "Positioning and Narrative",
+              "score": 3,
+              "weight": 1.5,
+              "severity": "INFO",
+              "reason": "Target appears, but only as a bare target line; rewritten headline gives supported specialization.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "The summary must be targeted, not decorative",
+              "source_type": "library_principle",
+              "source_name": "The summary must be targeted, not decorative",
+              "category": "Positioning and Narrative",
+              "score": 3,
+              "weight": 1,
+              "severity": "INFO",
+              "reason": "Original has no summary; rewrite connects PowerShell and Intune evidence to target.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "A resume is a sales document, not a job history",
+              "source_type": "library_principle",
+              "source_name": "A resume is a sales document, not a job history",
+              "category": "Positioning and Narrative",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Original provides a measurable win but does not foreground it; rewrite leads with it.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "Your technical resume needs a clear narrative",
+              "source_type": "library_principle",
+              "source_name": "Your technical resume needs a clear narrative",
+              "category": "Positioning and Narrative",
+              "score": 2,
+              "weight": 1,
+              "severity": "MINOR",
+              "reason": "Original lists two tasks without a unified profile; rewrite links automation reporting and endpoint compliance.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "Every bullet must name the thing",
+              "source_type": "library_principle",
+              "source_name": "Every bullet must name the thing",
+              "category": "Evidence and Bullet Strength",
+              "score": 3,
+              "weight": 1.5,
+              "severity": "INFO",
+              "reason": "PowerShell reporting, 400 Windows devices and Microsoft Intune checks are specifically identified.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "Numbers, everywhere, or you get an interview with nobody",
+              "source_type": "library_principle",
+              "source_name": "Numbers, everywhere, or you get an interview with nobody",
+              "category": "Evidence and Bullet Strength",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "Reporting has supplied before/after timing; Intune compliance has no measured outcome.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "Standard section headings beat clever branding",
+              "source_type": "library_principle",
+              "source_name": "Standard section headings beat clever branding",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Conventional Experience and Education headings; rewrite adds Summary and Technical Skills.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "Chronology should be easy to follow",
+              "source_type": "library_principle",
+              "source_name": "Chronology should be easy to follow",
+              "category": "ATS and Structural Reliability",
+              "score": 2,
+              "weight": 1.25,
+              "severity": "MAJOR",
+              "reason": "Last recorded employment ends May 2025; no subsequent history or context through assessment date.",
+              "before": null,
+              "after": null,
+              "fix": "Clarify missing evidence without inventing facts."
+            },
+            {
+              "principle": "Mirror the job description's language naturally",
+              "source_type": "library_principle",
+              "source_name": "Mirror the job description's language naturally",
+              "category": "Relevance and Targeting",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MAJOR",
+              "reason": "PowerShell and Microsoft Intune supported; Microsoft Graph is required but not evidenced and is not claimed.",
+              "before": null,
+              "after": null,
+              "fix": "Clarify missing evidence without inventing facts."
+            },
+            {
+              "principle": "common-patterns \u00a7 No photos, no headshots, no personal data",
+              "source_type": "common_pattern",
+              "source_name": "common-patterns \u00a7 No photos, no headshots, no personal data",
+              "category": "Professionalism and Trust",
+              "score": 3,
+              "weight": 1,
+              "severity": "INFO",
+              "reason": "No sensitive personal details or photograph; supplied email retained.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "principle": "common-patterns \u00a7 Action verb, object, outcome",
+              "source_type": "common_pattern",
+              "source_name": "common-patterns \u00a7 Action verb, object, outcome",
+              "category": "Professionalism and Trust",
+              "score": 3,
+              "weight": 1,
+              "severity": "INFO",
+              "reason": "First bullet gives a clear action and outcome; rewrite sharpens verb-object-result presentation without adding facts.",
+              "before": null,
+              "after": null,
+              "fix": null
+            }
+          ],
+          "category_scores": {
+            "positioning_and_narrative": 93.0,
+            "evidence_and_bullet_strength": 83.3,
+            "ats_and_structural_reliability": 83.3,
+            "relevance_and_targeting": 66.7,
+            "professionalism_and_trust": 100.0
+          },
+          "final_score": 84.9,
+          "verdict": "Strong",
+          "critical_issue_count": 0,
+          "major_issue_count": 2,
+          "minor_issue_count": 2
+        }
+      }
+    }
+  ],
+  "criteria_not_uploaded": [
+    "Readable human audit includes original and rewrite numeric totals, all five category values, verdicts and severity counts.",
+    "Actual downloaded archive has separate source-backed original/rewrite ledgers and factual Markdown rewrite.",
+    "Recompute both ledgers independently, validate actual library/pattern citations and compare all six computed fields to both JSON and visible human output.",
+    "Preserve supplied source facts and reject invented Graph experience, certifications, subsequent employment, leadership and gap history.",
+    "If execution or artifacts are unavailable, retain limitation and mark numeric path unexercised rather than passing fallback."
+  ],
+  "acceptance": "pending; no merging, promotion or installation",
+  "type": "native_human_numeric_explicit_candidate_packets",
+  "repetitions": 2,
+  "original_source_fixture": "native-batch2.json",
+  "synthetic_resume": "Alex Example\nalex@example.invalid\nTarget: Automation Engineer\n\nExperience\nAutomation Engineer | Example Labs | Jun 2022 - May 2025\nBuilt PowerShell reporting across 400 Windows devices. Weekly report preparation fell from 3 hours to 45 minutes.\nMaintained Microsoft Intune compliance checks. No measured compliance gain is supplied.\n\nEducation\nAssociate of Science, Computer Information Systems | Example College | 2020\n\nTarget requirements\nPowerShell, Microsoft Intune and Microsoft Graph. Graph experience is not established in the resume.\nNo certifications are supplied. No post-May2025 employment or gap context is supplied.\n",
+  "canary": {
+    "result": "NO",
+    "capture_sha256": "a312922a6c9b4bda84bf97736acc5845e7b755cdbaff11c80cefcbc7d9fea014"
+  },
+  "assessment": {
+    "numeric_delivery_reconciliation_passes": 2,
+    "independent_ledger_replays": 4,
+    "native_human_numeric_path": "exercised within explicit-packet and artifact bounds",
+    "overall_scoring_rubric": "unresolved; not accepted",
+    "same_original_difference_points": 16.9,
+    "different_rewrites_difference_points": 7.3,
+    "concerns": [
+      "Different assessed principle sets: nine versus eleven entries.",
+      "Free common-pattern category assignment; action/object/outcome placed in Professionalism and Trust in run 2.",
+      "Same missing timeline context counted across two categories in run 1.",
+      "Same-source scoring judgments vary across executions."
+    ],
+    "candidate_changes": false,
+    "provider_execution_trace_independently_verified": false
+  }
+}

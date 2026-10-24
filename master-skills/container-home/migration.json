@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "skill": "container-home",
+  "source": "claude/skills/container-home/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "c2ad438f45cb7494c661b00c082ffcf0f11ebfa7c07895a52b0f17995734e1d8",
+  "source_frontmatter": {
+    "name": "container-home",
+    "description": "Answer questions, assist with planning, and help with design decisions for Mick's off-grid shipping container lake home project. Trigger when the user mentions the container home, lake home, Stewart County, LBL, the expansion, solar system, septic permitting, or retirement property.",
+    "version": "1.1.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {
+    "Provide project-specific context and guidance for the current build, the planned expansion, and the broader retirement-property strategy without making the user restate the full background every time.": "Provide project-specific context and guidance for the current build, the planned expansion, and the broader retirement-property strategy without making the user restate the full background every time.\n\nEstablish which project the user is asking about before applying the background below. Current supplied facts take precedence. Use Mick's historical project context only for requests about that real project, without treating it as verified current status. For a fictional, synthetic or different project, use only the supplied project facts; do not import the historical location, ownership, retirement purpose, construction history or additional planned structures. Keep missing facts unknown. General sequencing and safety principles still apply when relevant.",
+    "- Do not rewrite the project facts into a vague generic container-home answer": "- Preserve the supplied facts for the project in scope rather than replacing them with generic prose or historical facts about a different project.",
+    "- Do not lose the off-grid and retirement-planning context": "- Preserve off-grid and retirement-planning context only when established for the project in scope; do not infer it for a fictional or different project.",
+    "- [ ] Uses the actual current build and expansion facts": "- [ ] Uses the supplied build and expansion facts for the project in scope, with historical background kept separate from verified current status.",
+    "- [ ] Preserves the off-grid and retirement-planning context": "- [ ] Preserves off-grid and retirement-planning context when established for the project in scope, without importing unrelated historical details.",
+    "- use 2 to 3 relevant hashtags such as `#ContainerHome`, `#OffGrid`, `#EarlyRetirement`, `#SolarPower`, `#StewartCountyTN`, `#DIY`, `#Welding`, `#GeographicArbitrage`, or `#FinancialFreedom`": "- Use 2 to 3 hashtags grounded in the supplied facts for the project in scope. Examples are conditional, not project facts: use `#OffGrid` only for an explicitly off-grid project, `#EarlyRetirement` only for an established retirement goal, and location tags only for a supplied location. A planned solar upgrade alone does not establish off-grid operation. Apply the same source-grounding rule to hashtags as to the post body."
+  },
+  "supporting_files_sha256": {},
+  "retained_in_original_sha256": {
+    "README.md": "4cf9985956ff32c6912f129e42342b2fe8c7819b5360368f413c73873b8b4e11",
+    "completedchanges.md": "28ab14c16182791bbb6d3e7a4b726235482c28e629a2b2ce982d672d1b40e888",
+    "container-home.skill": "983e5ffd13cddb54b84e21465e002f1c057fbe7bc2d3128ff3343b33446c79e8",
+    "upgrades.md": "a7b12aff8bd9f6342f94b2b0f6836a32132a66052baa80618e9d26283809c6b2"
+  }
+}

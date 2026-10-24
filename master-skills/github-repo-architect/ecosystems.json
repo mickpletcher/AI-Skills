@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "allowed": {
+    "claude": "Conversational domain workflow, subject to declared capabilities.",
+    "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+    "cursor": "Repository scaffolding, architecture, CI and implementation plans.",
+    "codex": "Repository scaffolding, architecture, CI and implementation plans."
+  },
+  "skipped": {},
+  "review_status": "proposed",
+  "adaptation_review": "Verify intended host capabilities and behavior before promotion."
+}

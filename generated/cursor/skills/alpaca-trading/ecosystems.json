@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "allowed": {
+    "claude": "Conversational domain workflow, subject to declared capabilities.",
+    "chatgpt": "Conversational domain workflow, subject to declared capabilities.",
+    "cursor": "Trading repository maintenance, PowerShell modules and tests; paper-trading safeguards remain mandatory.",
+    "codex": "Trading repository maintenance, PowerShell modules and tests; paper-trading safeguards remain mandatory."
+  },
+  "skipped": {},
+  "review_status": "proposed",
+  "adaptation_review": "Verify intended host capabilities and behavior before promotion."
+}

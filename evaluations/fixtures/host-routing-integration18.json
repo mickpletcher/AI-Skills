@@ -1,0 +1,976 @@
+{
+  "schema_version": 1,
+  "assessment_date": "2026-10-22",
+  "native_source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+  "helper_guard_commit": "6ef2148d4dccbcd175661f01d2e6b5444185a835",
+  "type": "bounded_native_host_routing_and_file_integrations",
+  "model": {
+    "host": "Codex CLI on Windows",
+    "cli": "codex-cli 0.163.0-alpha.11.1",
+    "requested_model": "gpt-6.1-sol",
+    "requested_reasoning": "low",
+    "backend_snapshot": "not reported",
+    "temperature": "not reported"
+  },
+  "protocol": "19 fresh independent domain sessions: 16 natural routing probes and three filesystem integrations. Existing 12 generated Codex targets copied only into disposable repository .agents/skills. No skill installation into user profiles or target expansion. Tasks do not name skill paths or request a routing label; expected skills/rubrics/baselines remain outside inference workspaces. No feedback, regeneration or same-case retry. A generic trading task and two separately pinned scoped followups are retained.",
+  "isolation": {
+    "catalog_count": 12,
+    "all_case_rendered_contexts_gated": true,
+    "unrelated_host_and_seeded_skills_disabled": true,
+    "personal_AGENTS_and_memory_disabled": true,
+    "network_tools_disabled": true,
+    "shell_environment": "core Windows environment with secret variable exclusions; native MXC filesystem sandbox",
+    "temporary_auth_removed": true,
+    "provider_owned_hidden_context": "not observable; not certified",
+    "apps_plugins_browser_delegation_configured_disabled": true,
+    "observed_external_or_delegation_calls": false
+  },
+  "candidate_bundles": {
+    "alpaca-trading": {
+      "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+      "file_count": 6,
+      "skill_sha256": "b5c6307c7646462720245dc0eb5d899cea98ff542a0bda330aea1fe3f5cec47f",
+      "capabilities_sha256": "bdd541a36bf50e346a46bbddb0d191ee2078317d461e404aa50c5198ebc2bac6",
+      "tree_ledger_sha256": "e78ca31c0387e1841ce5d3fc6578975d34cb4006b65e7666fb8ee111d909fb4e",
+      "current_instruction_bytes_unchanged": true
+    },
+    "example-skill": {
+      "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+      "file_count": 4,
+      "skill_sha256": "65e34ca475f3e7bfbfc4a4bce3bff48462a903228b2453d58a95f8e06fbc70d5",
+      "capabilities_sha256": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+      "tree_ledger_sha256": "f9f7a0bb7ecbdd41f9591f9f082b986754c9374ca5197f6ec2c9704c07f5b4d7",
+      "current_instruction_bytes_unchanged": true
+    },
+    "github-readme": {
+      "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+      "file_count": 6,
+      "skill_sha256": "939e3d9d75ad5eaeb693b218f84e99c3001f574831ee8fa7eb71a7d40812c114",
+      "capabilities_sha256": "84af959fa6fcefde9d8f0d204a54cb4decb6d5840aae960da8e690fc80549538",
+      "tree_ledger_sha256": "16f595fb765ef2028cc5c30c5015f6175cc26fa3fcc533848f2c75255ad1687b",
+      "current_instruction_bytes_unchanged": true
+    },
+    "github-repo-architect": {
+      "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+      "file_count": 6,
+      "skill_sha256": "7ee253b52c0b241ce2351831820456af2733a3d6d8a6cdaadc08064dd3f884db",
+      "capabilities_sha256": "8a0e0420e8d2eb3f889198bc519109769fe0cd75d7f8d055803556ee651e1ba8",
+      "tree_ledger_sha256": "afc1ef4e7dcfb1f00f8c7e7947fd44e081a9308130039ca744836fdda7c8cac9",
+      "current_instruction_bytes_unchanged": true
+    },
+    "github-social-preview": {
+      "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+      "file_count": 9,
+      "skill_sha256": "eb58b912ac61de47d9e1a7f206fa67841929f2d29760c45d98a69c8f77202d90",
+      "capabilities_sha256": "8e8f372350c77a0902aa4262365a5a0614b2caf60d6cebd6d70c817a78605a79",
+      "tree_ledger_sha256": "c3402a24015fc765308c7f40293cebff1b3d881e490cf6e38d2cbfc9c26484fb",
+      "current_instruction_bytes_unchanged": true
+    },
+    "n8n-workflow": {
+      "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+      "file_count": 6,
+      "skill_sha256": "40d64e696c0e7e5784dc959df58a1c15d5ace799a0e7fbfae95a7e6fbc871cb0",
+      "capabilities_sha256": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+      "tree_ledger_sha256": "4a522e2d1bfd6d87fa5332972b5ba57d348e06b2f89b78e2cb350baf28fddb01",
+      "current_instruction_bytes_unchanged": true
+    },
+    "pihole-blocklist": {
+      "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+      "file_count": 7,
+      "skill_sha256": "6b5c53859eecedeb9363e8291d7ec733487208b839ad280ecd650f76e7fa1e92",
+      "capabilities_sha256": "ffbcbccfad342d05940999f43212d4171e29bf3f478ee29281afd4799007b1b8",
+      "tree_ledger_sha256": "ca59c6b68b912a09aadd75ee606bf2c31571e58ff2894ba97e063210ed9297ec",
+      "current_instruction_bytes_unchanged": true
+    },
+    "pihole-csv-analyzer": {
+      "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+      "file_count": 6,
+      "skill_sha256": "e69f7f615ff07e41d1d87fa7da75a96fed2efca1e94c05e9ddbc05063cd0d899",
+      "capabilities_sha256": "d7e3dd8e963f745b67125681255b58edabfcab6e12ab5fcb608d13c4509087c4",
+      "tree_ledger_sha256": "2d67c5c26dd585ac75858ebec271aa139a79e7700965e0f002892f94b66c0672",
+      "current_instruction_bytes_unchanged": true
+    },
+    "powershell-refactor": {
+      "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+      "file_count": 6,
+      "skill_sha256": "58091c24fde6835597a07f7828ba328c65526da96ca5dff59be3561cffb059df",
+      "capabilities_sha256": "2410d206a0340b248ec6ff3937241c9cb7c680ea878586707eb07d94e23f3f32",
+      "tree_ledger_sha256": "ef7f82169b7da5c74296582ae3265b38bb5b5e48dbd28bff5b5392ba223b1d4d",
+      "current_instruction_bytes_unchanged": true
+    },
+    "proxmox-lxc": {
+      "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+      "file_count": 6,
+      "skill_sha256": "0cb7faafe228caa2b05c2e5d339206ced7d9911ace526d82cc381a97f82a9be2",
+      "capabilities_sha256": "8e8f372350c77a0902aa4262365a5a0614b2caf60d6cebd6d70c817a78605a79",
+      "tree_ledger_sha256": "39ec909b1574e41456fb1fba9f0d6699c4d55d80773d00862fc7f1746925fc0c",
+      "current_instruction_bytes_unchanged": true
+    },
+    "spec-writer": {
+      "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+      "file_count": 6,
+      "skill_sha256": "e4ecd32ae4711964e30f262a8cbfd44875319094dda4fc4820c8937a4a52f716",
+      "capabilities_sha256": "3d12378cfc9f310a0433dc134fb6e2e0b16e08567f34e56b16d762c472b5b9e6",
+      "tree_ledger_sha256": "6847e92b96971a4dff8fc72060664e6764d100f45fe71c90a11079205fe28364",
+      "current_instruction_bytes_unchanged": true
+    },
+    "trip-email-html-itinerary": {
+      "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+      "file_count": 22,
+      "skill_sha256": "9a2fc31cd785c3b7e5e80a1f33850b3d0abe9c3828d714222fb58108909dd0cc",
+      "capabilities_sha256": "0ca0ac3dfe4ad9c2283ef8375fd2788be28ad82d30edbc0f4e1f403c0f9bfe67",
+      "tree_ledger_sha256": "6afae6f0c552010851b35ded907413ae360c1fc033877922313bc1befcec9f1b",
+      "current_instruction_bytes_unchanged": true
+    }
+  },
+  "cases": [
+    {
+      "id": "route-alpaca-trading",
+      "expected_skill": "alpaca-trading",
+      "criteria": [
+        "Actual expected SKILL.md activation or documented routing evidence, not self-reported selection alone.",
+        "Respect missing-input or planning-only scope and source truth.",
+        "No network, writes, real services or unrelated skill activation."
+      ],
+      "task_display": "Review my Python stock-trading bot for unsafe remaining-fill and exit-quantity handling. I have not supplied the bot repository or code yet. Tell me the minimum source evidence you need. Do not access a broker, place orders or invent a code review.",
+      "raw_task_sha256": "2735080d6079ab5c9867adde6e7f34f6cd2df0afa6c6073fc3fa00754610790e",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "read-only",
+      "observed_loaded_skills": [],
+      "activation_verified": false,
+      "exit_code": 0,
+      "elapsed_seconds": 10.781,
+      "read_only_inputs_unchanged": true,
+      "changed": [],
+      "added": [],
+      "successful_commands": 0,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context.json": "56ecc585e342a81df9a54a4b718e3b90c724c3f6340746458591de664d8c59f0",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "8625aa7b5553dba383821bda728bb76c7eca496a2d619f468299fda9be940724",
+        "record.json": "92d7fffdbed1334aa554bfb04d909105b36397871a3489fb1b30ccdcb26b79c5",
+        "response.md": "d1a6ccb2e59ddbf23fbcb2b5aeba4db5ba1256b6d6377f9fae96b4537856af28",
+        "stderr.txt": "18eee0c19a8e48d8a36e3e603633460b024fb9a817b7df310dfd3b2595d6d1fa",
+        "task.txt": "2735080d6079ab5c9867adde6e7f34f6cd2df0afa6c6073fc3fa00754610790e"
+      },
+      "status": "fixture_scope_gap_not_counted_as_candidate_pass_or_failure",
+      "assessment": "The original generic stock-bot task omitted the Alpaca broker and Trading repository that scope this candidate. The model requested appropriate source evidence without loading it. Pinned expected activation is retained; this is not proof of a routing defect. The separate explicitly scoped task loads the unchanged candidate."
+    },
+    {
+      "id": "route-example-skill",
+      "expected_skill": "example-skill",
+      "criteria": [
+        "Actual expected SKILL.md activation or documented routing evidence, not self-reported selection alone.",
+        "Respect missing-input or planning-only scope and source truth.",
+        "No network, writes, real services or unrelated skill activation."
+      ],
+      "task_display": "Demonstrate a reusable cross-platform workflow for this objective: organize a synthetic CSV demo folder. Give a concise task plan and a verification check. Do not claim any files were changed.",
+      "raw_task_sha256": "8970254d90a1b0e3abd62677fe1340b4f112e995f4b58881b4f6bcd9cf5fe30c",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "read-only",
+      "observed_loaded_skills": [
+        "example-skill"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 14.375,
+      "read_only_inputs_unchanged": true,
+      "changed": [],
+      "added": [],
+      "successful_commands": 2,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context.json": "23da6e670937cb59d9c00d4c6cbed76a3e2f0a608697d53479d908c48273a350",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "dd5b5abd7c63464426ba48a347896c0cd8c7bf0323122a7ae8522fae67610d85",
+        "record.json": "e37e07bb6eade77a94f63b0b0c73552ea2f5359787f6accedccfc6e098db46ad",
+        "response.md": "eaaf09770f86360a9554855e18f02b5f5b6a33a6e37dc4da0aa259601c81157a",
+        "stderr.txt": "3ee1981f5831503534511d71c542ef87f47eaf0a5978822f0e7faf84bceea38e",
+        "task.txt": "8970254d90a1b0e3abd62677fe1340b4f112e995f4b58881b4f6bcd9cf5fe30c"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "route-github-readme",
+      "expected_skill": "github-readme",
+      "criteria": [
+        "Actual expected SKILL.md activation or documented routing evidence, not self-reported selection alone.",
+        "Respect missing-input or planning-only scope and source truth.",
+        "No network, writes, real services or unrelated skill activation."
+      ],
+      "task_display": "Repair my existing Python command-line repository README based on verified source. I have not supplied that repository yet. Tell me what files you need rather than drafting unsupported setup commands.",
+      "raw_task_sha256": "23321811f5a3a2dfa04ce9410b868254ea3968cc5b00cbc77adafada339bb878",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "read-only",
+      "observed_loaded_skills": [
+        "github-readme"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 16.5,
+      "read_only_inputs_unchanged": true,
+      "changed": [],
+      "added": [],
+      "successful_commands": 2,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context.json": "9f6cd54b1355646d3c925e328e5a8492e3f949656d6cba88e11bbf17d28534eb",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "bad55d73f3234818082391cd365ecf129fcec83ce145a34fe794aeff840d4451",
+        "record.json": "81717ab95f7bde0e0c7eb2a26db12c08eadc7b2def75da606ed348ca572e62af",
+        "response.md": "74e278618bd7113c01fe8645852906d28b03bbe535222563d2a0d31b6252d478",
+        "stderr.txt": "798259da8c8d4f5b118638f174e493d5c892a764fd2c8608ad500711b408a861",
+        "task.txt": "23321811f5a3a2dfa04ce9410b868254ea3968cc5b00cbc77adafada339bb878"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "route-github-repo-architect",
+      "expected_skill": "github-repo-architect",
+      "criteria": [
+        "Actual expected SKILL.md activation or documented routing evidence, not self-reported selection alone.",
+        "Respect missing-input or planning-only scope and source truth.",
+        "No network, writes, real services or unrelated skill activation."
+      ],
+      "task_display": "Design a new Python CLI repository that counts nonempty UTF-8 lines from a file or stdin, with src layout, tests and read-only CI. Planning only for now; explain the proposed repository structure and verification, without writing files.",
+      "raw_task_sha256": "34eaf71bec3649e93069a6e253acc4df67a3a59e20979f6969cc462b7bb38330",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "read-only",
+      "observed_loaded_skills": [
+        "github-repo-architect"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 39.485,
+      "read_only_inputs_unchanged": true,
+      "changed": [],
+      "added": [],
+      "successful_commands": 0,
+      "failed_commands": 2,
+      "artifacts_sha256": {
+        "context.json": "e49c82ebf5fbace93a442f4c5bed0d97387f513738c4bbb38c9b30c4bd0b8adc",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "754692a5120eb1267827f86a56a4c5e5075a0d951ddbedeb3e27ea982d891a6b",
+        "record.json": "f3ea100811f5a5ee2dfd24f27d896b84cc5b673fa753b8f4b6c02a18480a67c8",
+        "response.md": "a95c2aee9f0e8843a33f048cd933e817cc9cab5ff5d432a64d9476052810be67",
+        "stderr.txt": "69bc3d9c3ccb97c4ce552f818ff2943e512ea604671bd607e66570fa568fa5e1",
+        "task.txt": "34eaf71bec3649e93069a6e253acc4df67a3a59e20979f6969cc462b7bb38330"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "route-github-social-preview",
+      "expected_skill": "github-social-preview",
+      "criteria": [
+        "Actual expected SKILL.md activation or documented routing evidence, not self-reported selection alone.",
+        "Respect missing-input or planning-only scope and source truth.",
+        "No network, writes, real services or unrelated skill activation."
+      ],
+      "task_display": "Create a GitHub repository social-preview image, but I have not supplied a repository URL, README, project name or screenshot. Ask for the minimum metadata needed. Do not invent branding or generate a placeholder image.",
+      "raw_task_sha256": "7e72fdce7ad9c9be374dc832f3f988c9b80c82d595f3a9f171849602d39a54c3",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "read-only",
+      "observed_loaded_skills": [
+        "github-social-preview"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 15.672,
+      "read_only_inputs_unchanged": true,
+      "changed": [],
+      "added": [],
+      "successful_commands": 2,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context.json": "84b637c5fd8bb8a90ebb3c094f32655c92466cba1eaf72f3a74c07cd8c48a4fb",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "14444d2bf671e1f06a02e70bd89d53b06d28542874097a402f381863b2e73d77",
+        "record.json": "2532046ff850c6c6037fd076b0e49518bb4de82101633e0ea134047f0129f3f8",
+        "response.md": "9b2202b1f382cc29795d536fe0c2141fdeeca2fb24b9c5307fbeb93315d20da4",
+        "stderr.txt": "85036c42ca39df7351d0d7111935a84a87ce96f890094a57914c132f7a10e42d",
+        "task.txt": "7e72fdce7ad9c9be374dc832f3f988c9b80c82d595f3a9f171849602d39a54c3"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "route-n8n-workflow",
+      "expected_skill": "n8n-workflow",
+      "criteria": [
+        "Actual expected SKILL.md activation or documented routing evidence, not self-reported selection alone.",
+        "Respect missing-input or planning-only scope and source truth.",
+        "No network, writes, real services or unrelated skill activation."
+      ],
+      "task_display": "Review an existing n8n workflow for selective retry and safe idempotency. No workflow JSON or n8n version is supplied yet. Request the evidence needed before claiming a workflow review. No live execution.",
+      "raw_task_sha256": "00962669d86ce899c79a236927639f121f8ca6d6c615ff61127c9e65f40a42c8",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "read-only",
+      "observed_loaded_skills": [
+        "n8n-workflow"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 16.734,
+      "read_only_inputs_unchanged": true,
+      "changed": [],
+      "added": [],
+      "successful_commands": 2,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context.json": "40de414fc72ef6a51635def08d90984275888f3eccf35ae899ca23d229a3796e",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "bacb8e76627d22753d0281536d662a4b5a3b97b701d84d316c38e393c9299343",
+        "record.json": "2715c66c62959d7c04a370175f3d5cd59c2c19bcb9ea5b2e589b3590dd698792",
+        "response.md": "829ea05d87d960d113f486142d716c253e4c5d3a170d334a5bb2337a2c26a0a2",
+        "stderr.txt": "d0d8f37f3520020f415069ece5de957781c3140beb619a6999d63b739ab37872",
+        "task.txt": "00962669d86ce899c79a236927639f121f8ca6d6c615ff61127c9e65f40a42c8"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "route-pihole-blocklist",
+      "expected_skill": "pihole-blocklist",
+      "criteria": [
+        "Actual expected SKILL.md activation or documented routing evidence, not self-reported selection alone.",
+        "Respect missing-input or planning-only scope and source truth.",
+        "No network, writes, real services or unrelated skill activation."
+      ],
+      "task_display": "Evaluate a new Pi-hole blocklist source for inclusion in a curated blocklist repository. I have not supplied its URL, domains, license or freshness evidence. What source evidence is needed before a keep/skip recommendation? Do not change DNS settings.",
+      "raw_task_sha256": "ffcf35c419ac5ccaeab954ba06bf09480a93626b5436fae3e2dba960a0b0c342",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "read-only",
+      "observed_loaded_skills": [
+        "pihole-blocklist"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 24.062,
+      "read_only_inputs_unchanged": true,
+      "changed": [],
+      "added": [],
+      "successful_commands": 1,
+      "failed_commands": 1,
+      "artifacts_sha256": {
+        "context.json": "cdd5bcdd7c9adae056fd542f1cdfb7e9dcad2150150063f27aff9d2092e2d4da",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "0b7af5652375dad9dc54828b8f04129873dfa2886dd4d30c123bcd42f1459b7a",
+        "record.json": "065e5056a81ed1e12e0a33942954f18ec92fdb55f9bd6827900a2efbc71840a4",
+        "response.md": "67bac6755ecc1bd6642e96075a3af43ea90768c59d8bdf4383d5d89e396fcbf2",
+        "stderr.txt": "6a04e839bb726abf09341743002ff1de4571d74397bf703394d2e17904fda1c4",
+        "task.txt": "ffcf35c419ac5ccaeab954ba06bf09480a93626b5436fae3e2dba960a0b0c342"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "route-pihole-csv-analyzer",
+      "expected_skill": "pihole-csv-analyzer",
+      "criteria": [
+        "Actual expected SKILL.md activation or documented routing evidence, not self-reported selection alone.",
+        "Respect missing-input or planning-only scope and source truth.",
+        "No network, writes, real services or unrelated skill activation."
+      ],
+      "task_display": "Analyze my Pi-hole query-export CSV for noisy clients and blocking candidates. The CSV has not been attached. Ask for the data needed; do not invent counts or output candidate domains without export evidence.",
+      "raw_task_sha256": "44d975529b6bddbbd55497c05378ff6a5b8bfe55737c37bf58a0e4359dafb3d5",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "read-only",
+      "observed_loaded_skills": [
+        "pihole-csv-analyzer"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 15.688,
+      "read_only_inputs_unchanged": true,
+      "changed": [],
+      "added": [],
+      "successful_commands": 2,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context.json": "8e0500188a7eea9ab23a4cb22ff17f99df462a05c0e9a06411955b1413a944c3",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "057f4110f8929d99bb238a002e0b826a9ff2959759baa72a33c668f19fa04aea",
+        "record.json": "01e88b9987ced25e71901ca0c5c8fbb373509de2318040f8b8dfe3849bd58c77",
+        "response.md": "23db0caacab7646facc770f33672b6e6f7056fc460face643b6cd329199fd772",
+        "stderr.txt": "a415a2478df294f584b1e5b98b5c6202dfc6ad92293d4782bd82f4a8a4f241ca",
+        "task.txt": "44d975529b6bddbbd55497c05378ff6a5b8bfe55737c37bf58a0e4359dafb3d5"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "route-powershell-refactor",
+      "expected_skill": "powershell-refactor",
+      "criteria": [
+        "Actual expected SKILL.md activation or documented routing evidence, not self-reported selection alone.",
+        "Respect missing-input or planning-only scope and source truth.",
+        "No network, writes, real services or unrelated skill activation."
+      ],
+      "task_display": "Refactor my PowerShell automation to reduce duplicate code while preserving public names, pipeline behavior, ShouldProcess and retry semantics. I have not supplied the module or callers yet. Request the source and validation evidence you need.",
+      "raw_task_sha256": "a1d21d04ee54562fbc9a16beeffc62d9edecbe2d63b860637099a7fd8fdb6a2b",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "read-only",
+      "observed_loaded_skills": [
+        "powershell-refactor"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 20.891,
+      "read_only_inputs_unchanged": true,
+      "changed": [],
+      "added": [],
+      "successful_commands": 2,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context.json": "9abaf1a7e89199710d753c208a8ff6108dd9eec15d4b832a6bd63c35cc511035",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "1a4dde90b7347dff6a23d24ae5b67e7b500fb3b014865f6165ff82f1e0d5de10",
+        "record.json": "77521be0ae4f8c9ca56d6899a296d0c8ad00fe8ed40458895d14080f455a2266",
+        "response.md": "9c8eeaa7cf3d24a0b13670568ded4bf061997dd73346a4ad69879e51a2c29ba9",
+        "stderr.txt": "70dea623604e6aba4a09af25a55a24972c967efafa326c90262244df4899921b",
+        "task.txt": "a1d21d04ee54562fbc9a16beeffc62d9edecbe2d63b860637099a7fd8fdb6a2b"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "route-proxmox-lxc",
+      "expected_skill": "proxmox-lxc",
+      "criteria": [
+        "Actual expected SKILL.md activation or documented routing evidence, not self-reported selection alone.",
+        "Respect missing-input or planning-only scope and source truth.",
+        "No network, writes, real services or unrelated skill activation."
+      ],
+      "task_display": "Plan a new self-hosted service in a Proxmox LXC container. No Proxmox host, service name, CTID, address, template or storage details are supplied yet. Ask for required context. Do not execute infrastructure commands or assume historical network values.",
+      "raw_task_sha256": "c94a6bc0c04b3c9547f9da89a175c1fa5ec1af016ee7d8847021f72ee890a9f6",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "read-only",
+      "observed_loaded_skills": [
+        "proxmox-lxc"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 20.359,
+      "read_only_inputs_unchanged": true,
+      "changed": [],
+      "added": [],
+      "successful_commands": 2,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context.json": "520451b2ce572377d7a53c88001de1569e7ad496c7f172fbf4875fe0f3fc5bdd",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "c342616c313a5c3a9838157f0ab3090efc6d297d881c628be1d0f713d27b75b0",
+        "record.json": "c1dd2c991b5291d57b33a2d8b0d8c8b0c214fdb256cd588b0b31c22f574f1a34",
+        "response.md": "c124819346437e01610fb4f84c2b77fc28165e4acc6a80ae09bd28e74172156e",
+        "stderr.txt": "bdb6fd240494cdf2eb87c4dc7d7557a82ea6249097e22e527bd85bef782cb541",
+        "task.txt": "c94a6bc0c04b3c9547f9da89a175c1fa5ec1af016ee7d8847021f72ee890a9f6"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "route-spec-writer",
+      "expected_skill": "spec-writer",
+      "criteria": [
+        "Actual expected SKILL.md activation or documented routing evidence, not self-reported selection alone.",
+        "Respect missing-input or planning-only scope and source truth.",
+        "No network, writes, real services or unrelated skill activation."
+      ],
+      "task_display": "I need a numbered repository spec with requirements, implementation plan and tasks for adding CSV validation to a local CLI. The repository context and existing spec numbering have not been supplied. Tell me what you need before choosing a spec number or writing files.",
+      "raw_task_sha256": "f48ec8586896d0ce00d6e515bb5eab941bbce96da7601ca6ec28a115d8ce5a36",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "read-only",
+      "observed_loaded_skills": [
+        "spec-writer"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 18.36,
+      "read_only_inputs_unchanged": true,
+      "changed": [],
+      "added": [],
+      "successful_commands": 2,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context.json": "ae4351fccb44c5311b782fe74a4e767e1011a327a443801d1589f00731924bd2",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "c5cf865f180f5c98f38f1839a0a336cca7a42b9cb5e993c1307ef81e5d5effdf",
+        "record.json": "ede51c6ac11be7576034c9ce24b3e445b0e0299437d5061a18952276e45cab73",
+        "response.md": "b095ca7c3e23f4b23a0812546bf17f342c440d35b7f0ce40d9a51525fa4c4fc8",
+        "stderr.txt": "b92110b92c476040420d3a69e4c45665d5529b3e1178f1ceb3d189febc420aff",
+        "task.txt": "f48ec8586896d0ce00d6e515bb5eab941bbce96da7601ca6ec28a115d8ce5a36"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "route-trip-email-html-itinerary",
+      "expected_skill": "trip-email-html-itinerary",
+      "criteria": [
+        "Actual expected SKILL.md activation or documented routing evidence, not self-reported selection alone.",
+        "Respect missing-input or planning-only scope and source truth.",
+        "No network, writes, real services or unrelated skill activation."
+      ],
+      "task_display": "Turn my travel booking emails into one offline HTML itinerary for family. I have not pasted or attached the emails yet. Ask for the required trip source details and do not invent reservations, dates, locations or booking references.",
+      "raw_task_sha256": "bfd74cd0443fcf7533c08dfc17c6d6e9050f161e9f90ecd577b92472a94d590e",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "read-only",
+      "observed_loaded_skills": [
+        "trip-email-html-itinerary"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 13.281,
+      "read_only_inputs_unchanged": true,
+      "changed": [],
+      "added": [],
+      "successful_commands": 1,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context.json": "956477694b2028261735ea585d7f0043d91b08fc6eac4c2661b6e1b7e633d64b",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "ec599ab652a84c8bf84c90a92a0a1b0d282a8e31982f7d32bbc033868e85156c",
+        "record.json": "243043eddd3ec04d3d01e198c2afe14c6d44e9d963c32973233f2c0aa53a9e7a",
+        "response.md": "b69882cb120acba3b8b7662902a3a45fb0226c859b232d3595ad760989027b91",
+        "stderr.txt": "2ef5b0ec241c9f0c3a1709cb3c9765a14d44f92c37d859bedece82872cf391c0",
+        "task.txt": "bfd74cd0443fcf7533c08dfc17c6d6e9050f161e9f90ecd577b92472a94d590e"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "route-negative-arithmetic",
+      "expected_skill": null,
+      "criteria": [
+        "Return 43.",
+        "Do not load a domain skill for unrelated arithmetic."
+      ],
+      "task_display": "What is 17 plus 26? Give just the number.",
+      "raw_task_sha256": "95341ef12d6a34618c59c389cd207ccc76b4c41c35bc67eaf1053fe53735880d",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "read-only",
+      "observed_loaded_skills": [],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 3.969,
+      "read_only_inputs_unchanged": true,
+      "changed": [],
+      "added": [],
+      "successful_commands": 0,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context.json": "98179bb6b1d58cc92adeb410ac30eb503f45bcf62c2d2fb7fd143b59f11d671a",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "41dd9ac1dec396240e637c6ef6f9075ea1b6216d1220ace43b53d142659c2c9a",
+        "record.json": "60b43632812368af9a646e8d8cb094821752841e300ff89e7734d13f6b689b5c",
+        "response.md": "44cb730c420480a0477b505ae68af508fb90f96cf0ec54c6ad16949dd427f13a",
+        "stderr.txt": "5a5f58f5b0d55450f4ab25119a1f91a8ff3d10116b5df3575779e67ed602b523",
+        "task.txt": "95341ef12d6a34618c59c389cd207ccc76b4c41c35bc67eaf1053fe53735880d"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "route-pihole-boundary",
+      "expected_skill": "pihole-csv-analyzer",
+      "criteria": [
+        "Load query-export analysis rather than blocklist-source research.",
+        "Request missing export, no invented counts or live changes."
+      ],
+      "task_display": "pihole: I need analysis of a query-log CSV export, not evaluation of a new blocklist source. No CSV has been supplied yet. Ask me for the export; do not pick blocklist websites or change DNS.",
+      "raw_task_sha256": "8aeefa1f8c8d7eac02e29c3277448bf61ee37225729ac8f69d7519b1aab4cf55",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "read-only",
+      "observed_loaded_skills": [
+        "pihole-csv-analyzer"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 10.86,
+      "read_only_inputs_unchanged": true,
+      "changed": [],
+      "added": [],
+      "successful_commands": 1,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context.json": "8797f1ceddaca752f90c608a6c834700a9281234e57b118971219cb06f1b9de2",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "cf032b1d1d4e8409fff9b7815e5e39d56e56da3bb7c01e42f36cbc2274a667b9",
+        "record.json": "49db54e58e2c4c1cb4aef6fdafe4a1c3396e363fa28cb87998e2c5303196b190",
+        "response.md": "45937f0fd1626daf7d4d17bad5204ceab2611f6acfbbaf49809cd81860f027ea",
+        "stderr.txt": "5747d3f161fe1a3a370d1c01cfccbda52f2e7f515b526b1d766e95d460280407",
+        "task.txt": "8aeefa1f8c8d7eac02e29c3277448bf61ee37225729ac8f69d7519b1aab4cf55"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "route-alpaca-scoped",
+      "expected_skill": "alpaca-trading",
+      "criteria": [
+        "Load the Alpaca Trading candidate for this explicit matching repository/broker scope.",
+        "Request source evidence and preserve no-broker/no-order boundary."
+      ],
+      "task_display": "In my Trading repository for Alpaca paper-trading scripts, review remaining-fill and exit-quantity safety. The repository code has not been supplied yet. Ask for the specific source files and tests needed before claiming a review. No broker access or orders.",
+      "raw_task_sha256": "338371f5a634aee6152f3f448e19d478557dbbb073a9a4a29193588471c84874",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "read-only",
+      "observed_loaded_skills": [
+        "alpaca-trading"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 20.984,
+      "read_only_inputs_unchanged": true,
+      "changed": [],
+      "added": [],
+      "successful_commands": 2,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context.json": "d5c1ea035ca77bab0a8d71aad0c2ed15492f81b4ea70da7bd1edde36c6b89c88",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "b6fffc174de2610575c825d05553e61beb68f3929005ced44c5232f6032c2375",
+        "record.json": "2face4d16bb6247099eb3113a006fe2778c47d3ea9fd1c9a7dae77aebf8de0d0",
+        "response.md": "86a930d6da563d3165cabaae326035debb50bc16eff4943aa51bb7a93b97e243",
+        "stderr.txt": "81b4fde72eefa8288f314aab413fd89e3d96c5816013cf28efc76d1de749d8bd",
+        "task.txt": "338371f5a634aee6152f3f448e19d478557dbbb073a9a4a29193588471c84874"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "route-n8n-supplied",
+      "expected_skill": "n8n-workflow",
+      "criteria": [
+        "Load the n8n candidate and inspect supplied export.",
+        "Identify retryOnFail false, maxTries 3 and continueRegularOutput without inventing operational behavior.",
+        "No live workflow execution, credential use, edits or unsupported certification."
+      ],
+      "task_display": "Review flow.json, an offline synthetic n8n workflow export, for consistency between HTTP retries and error handling. Do not execute it, access credentials, use network services or change files. Report verified configuration separately from unknown runtime behavior and version assumptions.",
+      "raw_task_sha256": "0d0e61489213ef981cbc9fa05aaf1d6b9b0436ea3fdcf9e74dfa313022d0724c",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "read-only",
+      "observed_loaded_skills": [
+        "n8n-workflow"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 23.062,
+      "read_only_inputs_unchanged": true,
+      "changed": [],
+      "added": [],
+      "successful_commands": 2,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context.json": "f2c16629a6c630a319133665d3ded0f767f11c968abbcb4d61ee4a8e9b9dd737",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "b6e9dfe44697b13ac6d64122b3cdb7c0d7777adb8f194d56b5af685e1b608d6b",
+        "record.json": "227786d789092f1555a95da3fd5cea438eead38f2c3cd0b7f4aee61da60b1258",
+        "response.md": "fbae25a6adb796910ca3c8d9e39b12faad475d6d49791e1c22cf704da887ddfc",
+        "stderr.txt": "f883af81fef04c5bdc0d7e14f027f03e33ac4fe33950dfff723fea60ea0eb1d7",
+        "task.txt": "0d0e61489213ef981cbc9fa05aaf1d6b9b0436ea3fdcf9e74dfa313022d0724c"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "integration-spec",
+      "expected_skill": "spec-writer",
+      "criteria": [
+        "Native implicit activation of spec-writer.",
+        "Actual three-file new spec uses next available number and describes exit behavior, scope and verification.",
+        "Existing source, README, specs and skill bundles remain byte-identical."
+      ],
+      "task_display": "Create a new numbered feature spec for adding optional --strict CSV validation to this local CLI. Requirements: reject an empty CSV or a missing Name column with exit 2 in strict mode; preserve existing non-strict behavior. Inspect the repository and existing spec numbering. Write requirements.md, plan.md and tasks.md in the next appropriate spec folder. Do not implement the program or edit existing specs. All work is local and synthetic.",
+      "raw_task_sha256": "58186ba69728201baa6291489f4a0ab3f3ac9ec19ce23d0ae9b4d73842ca2963",
+      "task_display_redacted": false,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "workspace-write",
+      "observed_loaded_skills": [
+        "spec-writer"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 65.625,
+      "read_only_inputs_unchanged": false,
+      "changed": [],
+      "added": [
+        "specs/002-strict-csv-validation/plan.md",
+        "specs/002-strict-csv-validation/requirements.md",
+        "specs/002-strict-csv-validation/tasks.md"
+      ],
+      "successful_commands": 3,
+      "failed_commands": 1,
+      "artifacts_sha256": {
+        "context.json": "5e6539ee7065d4433bb2c02de1a22cb08604683fc31352f77af36f8fe10dde80",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "119f4505d0511061413478e0f2052458dfde5cfac61106bf9241f628788166a7",
+        "record.json": "afa22fb19ba04fe6e16e5e3ccbbd2beda6a73bccdae1ace5c18f973b5c02a8a5",
+        "response.md": "ae9f502ced78236320bbf65e27879f91178de7b93e0a6a3603c60452acbb8ef3",
+        "stderr.txt": "7e9fda7ae65ca462b8beb1d94033f188032a3b0df5c0ac99411ebf84ca21bc9e",
+        "task.txt": "58186ba69728201baa6291489f4a0ab3f3ac9ec19ce23d0ae9b4d73842ca2963"
+      },
+      "output_files_sha256": {
+        "specs/002-strict-csv-validation/plan.md": "b7cf882d819f2a75a8a39db04c1fcb4a84c96a8a9bc12b3b59441753b7fe950a",
+        "specs/002-strict-csv-validation/requirements.md": "7d2b7b7724f0851cf8fb0f328508b5b4fef8dbdda83e26c4269b1e53a01db71b",
+        "specs/002-strict-csv-validation/tasks.md": "59730e9162394c2fc6493a641480a45791680118faa19e2fffcc8566ca97e438"
+      },
+      "initial_task_files_sha256": {
+        "README.md": "1cff4fd3981d1f404bb1236e5d480f2a47739fa67af434bfaac54b1496beee5f",
+        "src/main.py": "42981fe35d78fada0a6bd269ac7f24adabcfdd20254e8631be8b72f218f19c41",
+        "specs/001-existing/plan.md": "e63cb605e1f1a8b9a6437da6a81ed678a339a5022250317ac78a1302c2dd3303",
+        "specs/001-existing/requirements.md": "70a3fdf4fb656d34055510e13a64411152a8e4c80a24156ef2057f14f106b564",
+        "specs/001-existing/tasks.md": "7f89afa35ee5f7ff06832f844c3a91f84003a733922ec9ada524079d91779e40"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "integration-readme",
+      "expected_skill": "github-readme",
+      "criteria": [
+        "Native implicit activation of github-readme.",
+        "README matches actual CSV/text/json/INVENTORY_STATE interface; no stale token/YAML/npm/Apache claims.",
+        "Actual CLI probes run; only README.md changed; accurate MIT license last."
+      ],
+      "task_display": "Repair README.md for this actual synthetic inventory CSV CLI by inspecting its source, manifest, tests, examples and license. Update the README only. Verify the supported commands using local tools without installing dependencies or accessing the network. Application source, examples, tests and LICENSE must stay unchanged. Python is available at <available Python executable>. Disclose any command you cannot verify.",
+      "raw_task_sha256": "97d817ebf8822ea1ca65ba65ba803e40dcda1b1a86c25c8793bc6ab2429ca9a2",
+      "task_display_redacted": true,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "workspace-write",
+      "observed_loaded_skills": [
+        "github-readme"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 78.296,
+      "read_only_inputs_unchanged": false,
+      "changed": [
+        "README.md"
+      ],
+      "added": [],
+      "successful_commands": 5,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context.json": "d5fff42df76b69f1a0eed1de2aa44dcee452c8585edf329da6f5667dfa853403",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "33bb66017b57a271d71d56cb54bdd19ac5f3c50d93e70d8f884a0307190bbf4f",
+        "independent-probes.json": "272d50b188d289d9c59654d0fa50f98434bc933babe4a2312806a93ad5a89a64",
+        "record.json": "c6b9c784ba734813c6d73e94e373d52baf53b0bc5c217ed4fafef51a05368f57",
+        "response.md": "4fa678718b3a47fd2c86e97fb7ddc3fedcf295233cba69091d71afffb09b1153",
+        "stderr.txt": "5cad2fa44a895fcdada4738f3f87d865a1c59596671e325bc15d6ac646f12e25",
+        "task.txt": "97d817ebf8822ea1ca65ba65ba803e40dcda1b1a86c25c8793bc6ab2429ca9a2"
+      },
+      "output_files_sha256": {
+        "README.md": "31d861110357de8d2f917fc4a5905c53d1c55dccd05e58a5c0d6477ec2d89208"
+      },
+      "initial_task_files_sha256": {
+        "LICENSE": "67b53e3340dee5b65e4431674ff654e3e7a40d26325777f20c161585b5f055ef",
+        "pyproject.toml": "b59d4e431c7fdb1202294e43241cda3a10b0aed53f7fb518e54e2eec43743542",
+        "README.md": "46ef0da0beedb9f7b19c78ece5d317c8c81e7d441fd79557cffa750da89d26c7",
+        "examples/devices.csv": "02028440370097d12692df7470a6631e96f85a5b68b5a0dde6eb094ad7c1a596",
+        "tests/test_cli.py": "56f22a494fc2f646c25899506982e25e95aa9613f5a4ebbbccb8777615756514",
+        "src/inventory_summary/cli.py": "56f7a512bd1b166780f079c47f28df4fd0fa3774231d16de83e29f624bd05ca5",
+        "src/inventory_summary/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    },
+    {
+      "id": "integration-pihole",
+      "expected_skill": "pihole-csv-analyzer",
+      "criteria": [
+        "Native implicit activation of pihole-csv-analyzer.",
+        "Correct 10-query aggregate and 8/2 counts, with absent query/client/status evidence explicit.",
+        "Actual three-artifact ZIP matches files; no operational approval from fabricated domain names; source and skill bytes unchanged."
+      ],
+      "task_display": "Analyze top-domains.csv as an offline synthetic Pi-hole top-domain export. Write analysis.md, blocklist.txt and allowlist.txt, then package those three review artifacts into review.zip in this workspace. No source metadata, client evidence or live lookups are available. Keep source CSV unchanged and do not apply any DNS change. Python is available at <available Python executable>.",
+      "raw_task_sha256": "b3b54082abcf80ea132dae34fe8ab9c7ea5e0274b0844af45276b66a429a0e75",
+      "task_display_redacted": true,
+      "mode": "native_repository_skill_discovery",
+      "sandbox": "workspace-write",
+      "observed_loaded_skills": [
+        "pihole-csv-analyzer"
+      ],
+      "activation_verified": true,
+      "exit_code": 0,
+      "elapsed_seconds": 41.422,
+      "read_only_inputs_unchanged": false,
+      "changed": [],
+      "added": [
+        "allowlist.txt",
+        "analysis.md",
+        "blocklist.txt",
+        "review.zip"
+      ],
+      "successful_commands": 3,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context.json": "b316542bc7fb2d0f2b56d203bc8b44bdf66745cecc6d162e7aea89a9f25908b8",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "185afd559575962981a54d699cc373d60763adf0bfe5ed50ecffaa7317c3e7a7",
+        "record.json": "04d7425a01d3b1a16aaae4118530240671d1a88d575ea63fa6c944785aa9040f",
+        "response.md": "e34e7a58bd84d1d4d8f63120fd5be05b77f7cb3e7b17544f10373487d6d441b8",
+        "stderr.txt": "4a8daafdc07f65277da265d287a47c728538378fc740ddf93e8d626cd04d1de0",
+        "task.txt": "b3b54082abcf80ea132dae34fe8ab9c7ea5e0274b0844af45276b66a429a0e75"
+      },
+      "output_files_sha256": {
+        "allowlist.txt": "7fd2708115f376fc03cf50028637d9f1f2be6998cc2fb5c4416bcd1ce9d683e2",
+        "analysis.md": "8cd48328bd5fa3ff469d552fca74f97bc5d32bea7ce377691fbefb6a02fb88e9",
+        "blocklist.txt": "740672e78f84594c0db0ab1928a567e1ecd0794bbe1a70e93b6148e2aa06eace",
+        "review.zip": "686d9a7d91671e19d36dfe556530cab73c206d59bfd2cd2c612894dece32034f"
+      },
+      "initial_task_files_sha256": {
+        "top-domains.csv": "9aa557e15bd05e1f2870932e1fbcaa5557ada09289e062b52e9ac7f869264aed"
+      },
+      "status": "bounded_pass",
+      "assessment": "Expected skill body is present in actual tool output, or the negative control uses no skill. Source/planning-only boundaries respected. File integrations additionally receive independent preservation/artifact checks. No human acceptance implied."
+    }
+  ],
+  "summary": {
+    "routing_sessions": 16,
+    "routing_expected_behavior_verified": 15,
+    "under_scoped_routing_fixture": 1,
+    "distinct_candidate_skill_loads_verified": 12,
+    "native_file_integration_sessions": 3,
+    "independent_file_integration_passes": 3,
+    "domain_sessions": 19,
+    "environment_canary_sessions": 3,
+    "new_human_acceptances": 0,
+    "promotions": 0,
+    "pending_human_reviews": 23,
+    "pending_scopes_ready": 22,
+    "pending_scopes_held": 1
+  },
+  "independent_verification": {
+    "spec_files_and_existing_preservation": "pass",
+    "readme_cli_probes": 4,
+    "readme_existing_source_preservation": "pass",
+    "readme_limit": "Machine-specific interpreter fallback remains local/private; installed launcher not verified.",
+    "pihole_zip_exact_members_and_bytes": "pass",
+    "pihole_comment_only_lists_and_source_preservation": "pass",
+    "temporary_auth_removed": true
+  },
+  "local_validation": {
+    "regressions": {
+      "tests": 118,
+      "elapsed_seconds": 207.635,
+      "status": "passed"
+    },
+    "repository": {
+      "skills": 46,
+      "issues": 0
+    },
+    "generator": {
+      "expected_files": 807,
+      "status": "passed"
+    },
+    "installer": {
+      "PowerShell7": 22,
+      "WindowsPowerShell5_1": 22,
+      "status": "passed",
+      "scope": "Disposable library extraction/update/recovery, not native Claude activation"
+    },
+    "helpers": {
+      "tests": 8,
+      "passed": 7,
+      "skipped": 1,
+      "skip": "Astropy unavailable locally; isolated package retrieval failed DNS. Local FITS path not counted as passed."
+    },
+    "preview_geometry": {
+      "tests": 3,
+      "status": "passed"
+    },
+    "offline": {
+      "cases": 24,
+      "negative_checks": 99,
+      "actual_model_evaluations": 0,
+      "status": "passed"
+    },
+    "final_evidence_overlay": {
+      "skills": 46,
+      "issues": 0,
+      "status": "passed"
+    }
+  },
+  "hosted_helper_validation": {
+    "guard_commit": "6ef2148d4dccbcd175661f01d2e6b5444185a835",
+    "run_url": "https://github.com/mickpletcher/AI-Skills/actions/runs/39846596143",
+    "jobs": [
+      {
+        "name": "helpers (ubuntu-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/mickpletcher/AI-Skills/actions/runs/39846596143/job/120061384305"
+      },
+      {
+        "name": "helpers (windows-latest)",
+        "conclusion": "success",
+        "url": "https://github.com/mickpletcher/AI-Skills/actions/runs/39846596143/job/120061384788"
+      }
+    ],
+    "checks_per_os": {
+      "helpers": 8,
+      "footer_geometry": 3,
+      "skips": 0
+    },
+    "scope": "Actual Windows/Linux Python/PowerShell helper execution with real Pillow/Astropy files, but Apple Notes/scheduler/browser integrations remain mocked. Linux runs HTML building and explicit unsupported-JPEG guard; native JPEG rendering is not claimed.",
+    "prior_failure_retained": {
+      "commit": "c9a0f3256730a21d117720105c92f38658d30e49",
+      "run_url": "https://github.com/mickpletcher/AI-Skills/actions/runs/39844992396",
+      "linux": "failed Windows-only export path",
+      "windows": "passed"
+    },
+    "raw_logs_sha256": {
+      "ci-39844992396.log": "a1bfbbd5e1640b6a287bfe704b07f87716d2fe3576997ddb8423ff22759e82df",
+      "ci-39846596143.log": "c0014903b3e164cbcbf9ed4b52f69c5effcfe19745e4fe5ba92495b3d6f9351b"
+    }
+  },
+  "harness_notes": [
+    "First context preflight used directory disable paths and retained unrelated skills. Documented SKILL.md paths plus isolated seeded-system paths fixed the catalog before inference. Three preflight contexts retained.",
+    "First canary shell was rejected under the unconfigured sandbox. MXC compatibility probe succeeded; second canary failed because inherit=none omitted core Windows directories. Third canary with MXC/core environment read exact synthetic sentinel. Earlier failures retained and excluded from domain counts.",
+    "An environment preflight list serializer initially treated a string list as a skill-config table list; corrected before that canary model execution.",
+    "The preliminary assessment parser dropped digit-containing names and treated a compound command exit as failure to read its first file. Final activation checks require complete normalized SKILL.md bytes in actual tool output, preserving all command exit codes and rg no-match results. No model output changed.",
+    "The first generic stock-bot prompt was under-scoped for Alpaca. Its expected field/result are retained; a separate explicit Trading/Alpaca prompt and supplied n8n-flow task were pinned before submission. No feedback given.",
+    "A local helper dependency download failed; no system or network settings changed. Hosted Windows/Linux jobs obtained the pinned packages and executed FITS checks.",
+    "Provenance editing briefly changed migration line endings; restored original bytes except the intended exporter override hash/reason before final generation/validation.",
+    "ChatGPT browser inventory exists but page control timed out. No new home/workout or native ChatGPT host test was submitted."
+  ],
+  "remaining_open": [
+    "Original ChatGPT home rerun and unchanged workout initial/corrected Copy repeat",
+    "Native Claude and Cursor behavior; their CLIs are not available here",
+    "Codex on Linux/macOS, more models, repeated/installed-user routing reliability",
+    "Actual Obsidian ingestion, Apple Notes, scheduler, browser export and live n8n/broker/Proxmox/DNS integrations",
+    "Linux itinerary JPEG rendering is explicitly unsupported; guard pass is not rendering support",
+    "Provider-owned hidden context/tool guarantees and all human acceptance/promotion gates"
+  ],
+  "limits": "Existing target eligibility, versions, source hashes and shipped packages unchanged. One candidate helper receives a Windows platform guard, generated only to its existing review targets. No real service, broker, DNS, account or vault change. Raw native artifacts, context captures and machine-specific README remain private outside Git/OneDrive.",
+  "final_reproducibility_harness_sha256": {
+    "prepare_host18.py": "d49a6d4971ec27b4d775b34479e13be5b042fe42449d4fe3e9f84adb4adf175a",
+    "preflight_host18.py": "a27f703e9662266d6b8a7483ae397bbdb709c1aa380a88466be3f9f572e60930",
+    "run_host18.py": "472e96fba0d1a1eabef1bbb1b1d59d230dffbccc52dd95afcd6a8744ef0c2535",
+    "cases_host18.py": "cf63102f2228b37e3a7f6463d5fafd77b846783456b4141be8b86fe080774ffa",
+    "prepare_integrations18.py": "e4f16bab967ae206ec2358a3586d0ad92dcb4115ced85487215a2ed6a7fbafe7",
+    "additional_host18.py": "3816101d6341446c489539427de4f91de75142aab59f82b4c754c97527fd0f2b",
+    "verify_host18.py": "f0350d95307e1dc7c976a20c4f92cc96cf507beb463c6bf6ffecac376ffe0b18"
+  }
+}

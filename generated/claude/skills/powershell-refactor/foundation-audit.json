@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "source": "claude/skills/powershell-refactor/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "0fe54f6fd1202bb1b9a26d5b5d7fabea01628291d8da5f50b06ceeea2a26fc7c",
+  "prior_master_commit": "ac0cc251ca3af459c7640d9124f2c3fadb4ab0f9",
+  "prior_master_sha256": "335c8257d0c616c8ebae6de73209af45ddd2cff1029767bd8b3a475380b95603",
+  "audited_source_sections": [
+    "Intent",
+    "Use When",
+    "Do Not Use When",
+    "Workflow",
+    "Scope Presets",
+    "PSScriptAnalyzer Alignment",
+    "Change Summary",
+    "Constraints",
+    "References",
+    "Help And Examples",
+    "Validation Checklist"
+  ],
+  "restored_sections": [
+    "Analyzer acceptance gate",
+    "Refactoring discipline",
+    "Refactor Summary",
+    "Help response"
+  ],
+  "restored_text": "## Analyzer acceptance gate\nRun `Invoke-ScriptAnalyzer` before and after with the same repository settings, including `PSScriptAnalyzerSettings.psd1` when present. Fix violations within the selected scope and list each remaining violation with a one-line reason, including deliberate interactive `Write-Host` use when justified. Never introduce new analyzer violations. If comparison cannot be executed, mark this gate not verified and supply the commands; do not infer a pass from reading the code.\n\n## Refactoring discipline\nPrefer editing existing files. Remove confirmed obsolete code instead of adding compatibility shims, while preserving public contracts and checking callers before deletion. Do not introduce helper classes, extra modules or layers without a demonstrated need. Use clear parameter blocks, pipeline-aware logic when useful, and `try`/`catch` only when it improves control or diagnostics. Add comments only where the logic would otherwise be unclear. Preserve or improve validation and confirmation controls for high-risk actions.\nFollow the target project's authoring and naming conventions when available, including its shared skill standard and naming-conventions documents if present. Do not assume those repository-specific files exist in every host.\n\n## Refactor Summary\nEnd with these fields:\n- Behavior preserved: yes, or explicitly listed exceptions.\n- Lines: measured before -> after, or not measured.\n- Changes: one line per behavior-preserving change.\n- Analyzer: violations fixed and count remaining, with reasons listed; or not run with the limitation.\n- Tests: commands and pass/fail/not run evidence.\n- Out of scope findings: observations left untouched.\n- Delivery: files edited, committed, or proposed only, as verified.\n\n## Help response\nRequest the script or module (pasted source is sufficient for a proposed refactor), behavior to preserve, and style constraints such as keeping a single file. Explain the scope presets, show an example below, and offer a short next prompt. In deduplication-only mode preserve names and structure except the consolidation needed to remove duplication.\n\n",
+  "review": "Portable requirement audit; not a verbatim migration or behavioral evaluation. Existing master retained; requirements inserted before Capability Contract.",
+  "intentional_adaptations": [
+    "Personal author identity is replaced by the requested user voice.",
+    "Assistant names and packaging assumptions are replaced by host capabilities and adapters.",
+    "Missing tools or evidence must be reported, never treated as successful execution.",
+    "Repository-specific conventions are followed when available, not assumed to be bundled.",
+    "Safety, authorization and public compatibility controls in the prior master remain in force."
+  ],
+  "behavior_evaluation": "not_run"
+}

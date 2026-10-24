@@ -1318,5 +1318,18 @@
     "held": 0,
     "new_human_acceptances": 0,
     "promotions": 0
+  },
+  "scope_host20": {
+    "scope_review": "evaluations/fixtures/native-scope-review20.json",
+    "scope_review_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38",
+    "host_evidence": "evaluations/fixtures/host-routing-integration20.json",
+    "host_evidence_sha256": "25bdf60517fa097759b2ffe07acf66e039c0d984e7bfddfff708988f7ecac858",
+    "native_cli": "codex-cli 0.163.0-alpha.11.2",
+    "domain_sessions": 6,
+    "canaries": 1,
+    "positive_full_skill_read_sessions": 1,
+    "activation_unverified_cases": 4,
+    "architect_boundary": "Ambient UTF-8 stdin bytes under configured Windows encoding remain open; explicit UTF-8 controls pass.",
+    "human_acceptance": "All 23 pending scopes plus repaired workout revision remain pending; no promotion."
   }
 }

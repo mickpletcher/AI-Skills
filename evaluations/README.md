@@ -1,5 +1,7 @@
 # Behavioral evaluation framework
 
+Latest [scope review and host continuation](native-scope-host-review-2026-10-24.md): all 23 pending scopes and repaired workout revision reviewed without human acceptance. Six new domain sessions plus one canary distinguish catalog discovery, instruction reads and artifacts. Scaffold/README runtime probes add bounded evidence; profile activation, ambient Windows stdin encoding and actual browser rendering remain open. PR draft; no merge or promotion.
+
 Latest [home/workout reruns](native-home-workout-2026-10-24.md): repaired home hashtags and unchanged workout initial/duplicate/corrected sequence pass fresh bounded tests. Exact native initial/corrected Copy each 323 bytes passes strict/YAML validation with only the authorized sets change. All 23 pending scopes are ready for bounded human review; no new acceptance. Broader repeatability, real integrations and other hosts remain open. PR draft; no merge or promotion.
 Latest [migration follow-up](migration-follow-up-2026-10-23.md): all 13 checks pass on the reviewed head; PR #11 is open and draft. Browser inventory still times out before native submission. Claude/Cursor CLIs and a WSL Linux host are unavailable. Home/workout repeats, other native hosts and all 23 human acceptance reviews remain open. No new native pass or acceptance is claimed.
 

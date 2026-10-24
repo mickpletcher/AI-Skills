@@ -1,7 +1,7 @@
 {
-  "assessment_date": "2026-10-22",
-  "basis_commit": "6ef2148d4dccbcd175661f01d2e6b5444185a835",
-  "review_method": "Following batch15 scope review, batch16 runs four original current-version controls. Blog/LinkedIn/preview pass; home unsupported off-grid hashtag remains open. Final workout Copy passes one bounded case; human acceptance remains pending.",
+  "assessment_date": "2026-10-24",
+  "basis_commit": "bcbf83dd725920c9073441d569212ee9bcf58298",
+  "review_method": "Assistant re-review of all 23 pending scopes and 84 referenced case entries, including explicit links from prepared cases to recorded attempts; current instruction/evidence hashes and historical resource drift audited. Exact repaired workout Copy independently inspected. No human acceptance or broad native certification.",
   "summary": {
     "pending_native_reviews": 23,
     "ready_for_scoped_human_review": 23,
@@ -35,6 +35,11 @@
         "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
         "current_instruction_unchanged": true,
         "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
       }
     },
     {
@@ -52,7 +57,12 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Recorded preview diagnosis separates observation from hypotheses; FITS headers and three hashes support exposure/gain mismatch findings. No full calibration pipeline."
+      "assistant_review": "Recorded preview diagnosis separates observation from hypotheses; FITS headers and three hashes support exposure/gain mismatch findings. No full calibration pipeline.",
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      }
     },
     {
       "skill": "blog-post",
@@ -70,13 +80,18 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Corrected current attribution case passes. Earlier how-to pass predates the grounding instruction change; do not infer a current-byte how-to pass. Current-version control in batch16 passes.",
+      "assistant_review": "Corrected attribution and later current-resource original how-to control pass their recorded criteria. Historical grounding failures and prepared/unassessed entries remain distinct from completed executions. No publication or general grounding reliability.",
       "closed_current_candidate_control": {
         "case_id": "blog",
         "changed_resource": "instructions.md",
         "next_action": "Rerun original how-to against current grounding instructions.",
         "status": "CLOSED_BOUNDED",
         "evidence": "evaluations/fixtures/native-batch16.json"
+      },
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
       }
     },
     {
@@ -114,6 +129,11 @@
         "next_action": "Explicit human review; keep general repeatability and real integrations open.",
         "status": "CLOSED_BOUNDED",
         "evidence": "evaluations/fixtures/native-home-workout19.json"
+      },
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
       }
     },
     {
@@ -131,7 +151,12 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Both supplied-source comparison and identity clarification pass after retained host failure. No live retrieval or clean-risk finding follows from unknown fields."
+      "assistant_review": "Both supplied-source comparison and identity clarification pass after retained host failure. No live retrieval or clean-risk finding follows from unknown fields.",
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      }
     },
     {
       "skill": "example-skill",
@@ -158,6 +183,11 @@
         "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
         "current_instruction_unchanged": true,
         "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
       }
     },
     {
@@ -175,7 +205,12 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Recorded3/4 sessions,105minutes,27 strict reps and separate assisted benchmark reconcile. No tracker persistence or real athlete certification."
+      "assistant_review": "Recorded3/4 sessions,105minutes,27 strict reps and separate assisted benchmark reconcile. No tracker persistence or real athlete certification.",
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      }
     },
     {
       "skill": "fitness-programming",
@@ -192,7 +227,12 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Recorded two-day equipment-limited plan and single-variable adjustment meet synthetic constraints. No medical or training-outcome validation."
+      "assistant_review": "Recorded two-day equipment-limited plan and single-variable adjustment meet synthetic constraints. No medical or training-outcome validation.",
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      }
     },
     {
       "skill": "food-analyzer",
@@ -212,7 +252,12 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Final missing-image clarification and final supplied-label scaling pass. Review this explicit text/intake scope; actual image recognition remains open."
+      "assistant_review": "Final missing-image clarification and final supplied-label scaling pass. Review this explicit text/intake scope; actual image recognition remains open.",
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      }
     },
     {
       "skill": "github-readme",
@@ -241,6 +286,11 @@
         "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
         "current_instruction_unchanged": true,
         "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
       }
     },
     {
@@ -271,6 +321,11 @@
         "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
         "current_instruction_unchanged": true,
         "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
       }
     },
     {
@@ -311,6 +366,11 @@
         "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
         "current_instruction_unchanged": true,
         "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
       }
     },
     {
@@ -328,7 +388,12 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Recorded52.5/100 arithmetic and inspected disposable save/collision/traversal behavior support bounded review. General calibration and real vault excluded."
+      "assistant_review": "Recorded52.5/100 arithmetic and inspected disposable save/collision/traversal behavior support bounded review. General calibration and real vault excluded.",
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      }
     },
     {
       "skill": "linkedin-post",
@@ -347,13 +412,18 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Corrected lesson passes; audience variants passed before later grounding instructions. Current-byte variants remain open; no publication. Current-version control in batch16 passes.",
+      "assistant_review": "Corrected source-grounded lesson and later current-resource audience variants pass their recorded criteria. Unsupported technology tag and older prepared/unassessed entries remain retained. No publication or general grounding reliability.",
       "closed_current_candidate_control": {
         "case_id": "linkedin",
         "changed_resource": "instructions.md",
         "next_action": "Rerun original audience variants against current grounding instructions.",
         "status": "CLOSED_BOUNDED",
         "evidence": "evaluations/fixtures/native-batch16.json"
+      },
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
       }
     },
     {
@@ -371,7 +441,12 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Synthetic conflict/change calculations and unavailable-live-data fallback pass. No current quotes or retrieval verified."
+      "assistant_review": "Synthetic conflict/change calculations and unavailable-live-data fallback pass. No current quotes or retrieval verified.",
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      }
     },
     {
       "skill": "n8n-workflow",
@@ -402,6 +477,11 @@
         "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
         "current_instruction_unchanged": true,
         "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
       }
     },
     {
@@ -423,7 +503,12 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Final14-section package and one-question interview pass recorded content and delivery contracts. No legal sufficiency, actual search or filing readiness."
+      "assistant_review": "Final14-section package and one-question interview pass recorded content and delivery contracts. No legal sufficiency, actual search or filing readiness.",
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      }
     },
     {
       "skill": "photo-rename",
@@ -441,7 +526,12 @@
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Retained actual saved ZIP verifies three byte-identical renamed JPEGs plus mapping. Automated download failed; human-assisted delivery is part of the bounded scope."
+      "assistant_review": "Retained actual saved ZIP verifies three byte-identical renamed JPEGs plus mapping. Automated download failed; human-assisted delivery is part of the bounded scope.",
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      }
     },
     {
       "skill": "pihole-blocklist",
@@ -469,6 +559,11 @@
         "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
         "current_instruction_unchanged": true,
         "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
       }
     },
     {
@@ -499,6 +594,11 @@
         "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
         "current_instruction_unchanged": true,
         "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
       }
     },
     {
@@ -527,6 +627,11 @@
         "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
         "current_instruction_unchanged": true,
         "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
       }
     },
     {
@@ -556,6 +661,11 @@
         "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
         "current_instruction_unchanged": true,
         "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
       }
     },
     {
@@ -585,6 +695,11 @@
         "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
         "current_instruction_unchanged": true,
         "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "scope_review20": {
+        "status": "Assistant review complete; human acceptance pending",
+        "evidence": "evaluations/fixtures/native-scope-review20.json",
+        "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
       }
     }
   ],
@@ -614,6 +729,14 @@
     "pending_human_reviews": 23,
     "ready": 23,
     "held": 0,
+    "new_human_acceptances": 0,
+    "promotions": 0
+  },
+  "scope_host20": {
+    "scope_review": "evaluations/fixtures/native-scope-review20.json",
+    "scope_review_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38",
+    "host_evidence": "evaluations/fixtures/host-routing-integration20.json",
+    "host_evidence_sha256": "25bdf60517fa097759b2ffe07acf66e039c0d984e7bfddfff708988f7ecac858",
     "new_human_acceptances": 0,
     "promotions": 0
   }

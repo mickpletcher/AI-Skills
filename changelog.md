@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Re-review all 23 pending scopes and repaired workout revision; continue isolated native profile/nested routing and scaffold/README integrations. Preserve four activation-unverified cases, ambient stdin encoding boundaries and browser-policy block. Prior home/workout reruns pass bounded criteria; no human acceptance or promotion. See [assessment](evaluations/native-scope-host-review-2026-10-24.md).
+
 - Add Linux helper CI, guard Windows-only itinerary JPEG export before side effects, and record native routing/file integration evidence. All 12 existing Codex candidates load in scoped tests; no new acceptance or promotion. See [assessment](evaluations/host-routing-integration-2026-10-22.md).
 
 - Home hashtag source-grounding instruction repaired. Original home native rerun and unchanged workout Copy repeat remain open due disconnected browser control; neither prompt submitted. Normal preview Download produced an exact verified 51,053-byte JPEG. No new acceptance, merge or promotion; PR draft.

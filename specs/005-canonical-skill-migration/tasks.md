@@ -397,3 +397,14 @@
 - [x] Refresh CI on f5ab3b4: all 13 checks pass and PR #11 remains open and draft. Preserve historical failures and acceptances; no candidate changes.
 - [ ] Obtain human acceptance of all 23 ready bounded scopes and separate repaired workout revision. Keep broader repeatability, real integrations, other hosts/models/routing and provider guarantees open. No merge or promotion.
 - [x] Validate the final tracked evidence overlay: 46 skills/zero issues, offline 24 cases/99 negative checks/zero model calls, exact resource/input/output pins, unchanged human acceptance decisions and added-text privacy/whitespace checks.
+
+
+## Pending-scope review and host continuation on 2026-10-24
+
+- [x] Assistant-review all 23 pending bounded scopes, 84 referenced case entries, current resource/evidence pins and separate repaired workout Copy. Keep prepared/error cases and 28 historical resource drifts distinct; no human acceptance. See the [assessment](../../evaluations/native-scope-host-review-2026-10-24.md).
+- [x] Run one canary and six fresh native domain sessions with exact-12 context gates and disposable profiles/repositories. Preserve catalog-only cases; four lack full instruction-read evidence, including explicit invocation. No global installation or model feedback.
+- [x] Independently inspect actual scaffold and README artifacts: eight scaffold probe passes, two ambient stdin encoding mismatches, four README CLI probes and source preservation. Keep the encoding boundary open; native outputs unchanged.
+- [x] Validate original fictional public-demo HTML generation phase with zero errors/warnings. Retain browser-policy rejection of local file rendering; no workaround and no full exporter/browser integration claim.
+- [ ] Obtain explicit human acceptance of all 23 ready scopes and the separate repaired workout revision. No acceptance is inferred from assistant review.
+- [ ] Resolve profile instruction activation, ambient stdin encoding, actual browser/Obsidian/app/service integration and other host/model/routing limits when supported hosts are available. Keep PR draft; no merge, installation or promotion.
+- [x] Validate final ten-file tracked overlay: repository 46/zero issues; offline 24 cases/99 negative checks/zero model calls; resource/task/output pins, immutable human acceptance/promotion decisions and added-text privacy/whitespace checks pass. Delivery CI separate.

@@ -1,5 +1,7 @@
 # Current native coverage and acceptance matrix
 
+Latest [scope review and host continuation](native-scope-host-review-2026-10-24.md): all 23 pending scopes and repaired workout revision reviewed without human acceptance. Six new domain sessions plus one canary distinguish catalog discovery, instruction reads and artifacts. Scaffold/README runtime probes add bounded evidence; profile activation, ambient Windows stdin encoding and actual browser rendering remain open. PR draft; no merge or promotion.
+
 Date: 2026-10-24. Candidate head `f5ab3b4`. PR #11 remains draft. No merge, installation or promotion.
 
 The [home/workout reruns](native-home-workout-2026-10-24.md) pass their original bounded criteria with unchanged resources. Repaired home hashtags follow supplied facts. Workout initial/corrected native Copy each contains exactly 323 bytes with frontmatter at byte zero; strict/YAML checks pass and the sole correction changes row sets from 3 to 4. Duplicate protection asks Skip or Overwrite.

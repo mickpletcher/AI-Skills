@@ -23,5 +23,11 @@
     "completedchanges.md": "5cc09278a4591e2053c0e0397d891d052def73873be8a52cbe0c39183aed03f4",
     "travel-research.skill": "d14a5bd48d11b214978b81c839d64390d7f2359e1a0b949c3128215ac3a6e2d2",
     "upgrades.md": "39bd943258c762cbc20b0209ec5f07e01d0bdd2d24d3ff1474613d6b53b08dd4"
+  },
+  "added_supporting_files": {
+    "shared/skill-standard.md": {
+      "sha256": "3d71908c6f2f5c9fc0385bf0dd92d2d2b224cad4ebac9a4a16f0bb838f3a722c",
+      "reason": "Bundle the repository authoring standard referenced by the unchanged skill so standalone generated candidates can resolve shared/skill-standard.md without reading outside their bundle."
+    }
   }
 }

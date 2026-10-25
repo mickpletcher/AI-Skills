@@ -43,6 +43,23 @@ class MasterSkillTests(unittest.TestCase):
                     with self.assertRaisesRegex(ValueError, 'Invalid generated resource manifest'):
                         generator.generate()
 
+    def test_shared_standard_references_are_self_contained(self):
+        standard = (ROOT/'shared/skill-standard.md').read_text()
+        referencing = [p for p in (ROOT/'master-skills').glob('*/SKILL.md')
+                       if '`shared/skill-standard.md`' in p.read_text()]
+        self.assertTrue(referencing)
+        for source in referencing:
+            with self.subTest(skill=source.parent.name):
+                # The root document is text-normalized by Git; candidate resources preserve bytes.
+                resource = source.parent/'shared/skill-standard.md'
+                self.assertEqual(resource.read_text(), standard)
+                placement = json.loads((source.parent/'ecosystems.json').read_text())
+                for target in placement['allowed']:
+                    bundle = ROOT/'generated'/generator.PLATFORM_PATHS[target]/'skills'/source.parent.name
+                    self.assertIn('`shared/skill-standard.md`',
+                                  (bundle/generator.TARGETS[target]).read_text())
+                    self.assertEqual((bundle/'shared/skill-standard.md').read_bytes(), resource.read_bytes())
+
     def test_committed_candidates_match_without_writing(self):
         with patch.object(Path, 'write_text', side_effect=AssertionError('Check must not write')), \
              patch.object(Path, 'write_bytes', side_effect=AssertionError('Check must not write')):

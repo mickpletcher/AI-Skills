@@ -20,5 +20,11 @@
     "completedchanges.md": "7c22d953d0bbcf692286db0b591789e1e516207cd742e35d8cd9e64585caa800",
     "spec-writer.skill": "95bd390ac51a382ac22ba73f99467ac5d03de8fa47c9b1604151bf7d55ebf1fa",
     "upgrades.md": "ee9417ea43f01b0555a68c532af9d176907b5f92f529ce1ec773ecd2c80c77c7"
+  },
+  "added_supporting_files": {
+    "shared/skill-standard.md": {
+      "sha256": "3d71908c6f2f5c9fc0385bf0dd92d2d2b224cad4ebac9a4a16f0bb838f3a722c",
+      "reason": "Bundle the repository authoring standard referenced by the unchanged skill so standalone generated candidates can resolve shared/skill-standard.md without reading outside their bundle."
+    }
   }
 }

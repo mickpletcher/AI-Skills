@@ -55,21 +55,73 @@
       "acceptance_evidence": "https://github.com/mickpletcher/AI-Skills/blob/1fd19e26e2970b2333dba2fd4d830857b3708e58/evaluations/fixtures/delegated-acceptance21.json",
       "acceptance": "Later bounded authorized-agent acceptance for these two cases; initial batch acceptance was pending. No personal human inspection or universal certification.",
       "limitations": "Artifact byte preservation does not independently observe every provider-side write. Predates support-file repair and current destination/traceability contract; neither is certified by these runs."
+    },
+    {
+      "date": "2026-10-25",
+      "model": "gpt-6.1-sol",
+      "model_identity_kind": "requested_alias_observed_in_trace_not_immutable_backend",
+      "backend_snapshot": "unknown",
+      "result": "pass",
+      "test_suite": "native-quality-2026-10-25",
+      "evidence": "https://github.com/mickpletcher/AI-Skills/blob/c4168bc0712707c91af6e1c5a04f908144d0c6f3/evaluations/fixtures/native-quality-2026-10-25.json",
+      "evidence_pointer": "/cases/1",
+      "case_ids": [
+        "S1"
+      ],
+      "scope": "Observable full intended skill loading.; Reuse specs/007-retry-export; no duplicate or new numbered folder.; Only its requirements.md, plan.md and tasks.md may change; unrelated spec, code, notes and skill bytes preserved.; Retain at-most-three-retries and never-retry-authentication-failures owner constraints; draft remains distinct from completed implementation.; Every acceptance criterion explicitly maps to a concrete validation task with an observable expected result; tasks refer to real IDs and future checks are not marked passed.",
+      "host": "macOS Codex CLI",
+      "host_version": "0.162.0-alpha.17.2",
+      "reasoning_effort": "low",
+      "tested_revision": {
+        "source_commit": "933defdaf4acc809d889da21602306795d1a8b8f",
+        "instruction_file": "generated/openai/codex/skills/spec-writer/SKILL.md",
+        "instruction_sha256": "4641bf2629fe527faa6bf541b37fdcc5eba778495ce95598a5b8254856d33581"
+      },
+      "applies_to_current_behavior": true,
+      "applicability_limit": "Only the named tested behavior and unchanged instruction bytes, one macOS CLI run. Other hosts, repeatability and alternate missing-evidence handling remain untested. No universal acceptance or promotion."
+    },
+    {
+      "date": "2026-10-25",
+      "model": "gpt-6.1-sol",
+      "model_identity_kind": "requested_alias_observed_in_trace_not_immutable_backend",
+      "backend_snapshot": "unknown",
+      "result": "pass",
+      "test_suite": "native-quality-2026-10-25",
+      "evidence": "https://github.com/mickpletcher/AI-Skills/blob/c4168bc0712707c91af6e1c5a04f908144d0c6f3/evaluations/fixtures/native-quality-2026-10-25.json",
+      "evidence_pointer": "/cases/2",
+      "case_ids": [
+        "S2"
+      ],
+      "scope": "Observable full intended skill loading.; Identify occupied number 008 belonging to unrelated cache work even if a different slug is possible.; Ask for a destination/number choice; do not silently allocate 009 or create a second 008 folder.; No project or skill file changes; no checks falsely reported as executed.",
+      "host": "macOS Codex CLI",
+      "host_version": "0.162.0-alpha.17.2",
+      "reasoning_effort": "low",
+      "tested_revision": {
+        "source_commit": "933defdaf4acc809d889da21602306795d1a8b8f",
+        "instruction_file": "generated/openai/codex/skills/spec-writer/SKILL.md",
+        "instruction_sha256": "4641bf2629fe527faa6bf541b37fdcc5eba778495ce95598a5b8254856d33581"
+      },
+      "applies_to_current_behavior": true,
+      "applicability_limit": "Only the named tested behavior and unchanged instruction bytes, one macOS CLI run. Other hosts, repeatability and alternate missing-evidence handling remain untested. No universal acceptance or promotion."
     }
   ],
   "review": {
     "status": "review-needed",
     "reviewed_at": "2026-10-25",
-    "reason": "Original authoring model unknown. Historical bounded evaluations do not certify the changed current instructions or every host.",
+    "reason": "Named current-instruction cases passed once in macOS Codex CLI. Original authoring model and immutable backend unknown; broader hosts and untested behavior still need review.",
     "original_authoring_model": "unknown",
-    "metadata_basis_commit": "1fd19e26e2970b2333dba2fd4d830857b3708e58",
+    "metadata_basis_commit": "933defdaf4acc809d889da21602306795d1a8b8f",
     "current_instruction_commit": "1fd19e26e2970b2333dba2fd4d830857b3708e58",
     "current_instruction_sha256": "362f9a1fa74786f9d93f561bd1da188e0600c4c711e7461ef5d58ab935f3f714",
-    "current_behavior_evaluation": "not_run",
-    "current_change_not_rerun": "Matching-before-numbering, collision/user-edit safeguards and criterion/task traceability introduced by PR14.",
+    "current_behavior_evaluation": "bounded_native_pass",
     "deterministic_evidence": "https://github.com/mickpletcher/AI-Skills/blob/1fd19e26e2970b2333dba2fd4d830857b3708e58/specs/009-spec-writer-planning-safety/validation.md",
     "deterministic_limit": "Structural and synthetic contract checks only; not native-model compliance.",
-    "unavailable_evidence": "Additional local-only pilot reports and raw artifacts are not published or linked here; this index makes no result or version claims from those private records.",
-    "coverage": "Selected committed evidence, not an exhaustive runtime history. Candidate metadata is not installation or promotion approval."
+    "unavailable_evidence": "Only the sanitized committed native-quality report is added here. Other local-only pilot reports and raw transcripts remain private; no additional result claims are inferred.",
+    "coverage": "Selected committed evidence, not an exhaustive runtime history. Candidate metadata is not installation or promotion approval.",
+    "current_native_evidence": "https://github.com/mickpletcher/AI-Skills/blob/c4168bc0712707c91af6e1c5a04f908144d0c6f3/evaluations/fixtures/native-quality-2026-10-25.json",
+    "current_native_case_ids": [
+      "S1",
+      "S2"
+    ]
   }
 }

@@ -1,6 +1,8 @@
 # Behavioral evaluation framework
 
-Selected committed history is indexed in `master-skills/github-readme/model-history.json` and `master-skills/spec-writer/model-history.json` (repository checkout only; canonical metadata is excluded from release archives). These records distinguish earlier bounded native results, deterministic checks and current behavior not rerun. Model aliases/visible labels are not immutable backend versions; original authoring models remain unknown. Private local reports are not included.
+The [focused native quality batch](native-quality-2026-10-25.md) records three bounded macOS Codex CLI passes for current README distribution links and spec-writer reuse/preservation/traceability and occupied-number handling. Temporary placements were removed; other hosts, repeatability and missing-evidence behavior remain untested.
+
+Selected committed history is indexed in `master-skills/github-readme/model-history.json` and `master-skills/spec-writer/model-history.json` (repository checkout only; canonical metadata is excluded from release archives). These records distinguish historical results, deterministic checks, the three bounded current-instruction cases, and remaining untested behavior. Model aliases/visible labels are not immutable backend versions; original authoring models remain unknown. Private local reports are not included.
 
 The [spec-writer planning fixtures](fixtures/spec-writer-planning-safety.json) cover occupied destinations, stale-spec reuse, incomplete context and user-edit preservation with acceptance/task mappings. The focused deterministic tests validate synthetic response contracts and candidate propagation, not native model behavior. All four new scenarios remain **not run** on a model.
 

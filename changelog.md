@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Record three bounded native Codex CLI quality passes with sanitized synthetic evidence and verified temporary-placement cleanup; update README/spec-writer history without changing instruction or support bytes.
+
 - Index committed README and spec-writer evaluation history with tested revisions, observed/requested model identity limits, bounded acceptance and explicit current-behavior-not-rerun status; preserve instruction bytes and private evidence.
 
 - Improve the spec-writer candidate: inspect matching specs before numbering, protect occupied destinations and user edits, and map acceptance criteria to concrete validation tasks. Regenerate four candidates; new native behavior remains untested.

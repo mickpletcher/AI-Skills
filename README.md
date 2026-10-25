@@ -5,7 +5,7 @@
 [![Master skill generation validation](https://github.com/mickpletcher/AI-Skills/actions/workflows/master-skills-validation.yml/badge.svg?branch=main&event=push)](https://github.com/mickpletcher/AI-Skills/actions/workflows/master-skills-validation.yml?query=branch%3Amain)
 [![License](https://img.shields.io/github/license/mickpletcher/AI-Skills)](./LICENSE)
 
-A shared home for AI skills organized by platform. Skills live under the platform they are written for. Shared docs cover conventions and repo guidance only.
+A shared home for AI skills organized by platform. Shipped skills live under their platform folders; `master-skills/` and `generated/` hold separate canonical review sources and generated review candidates. Shared docs cover conventions and repo guidance only.
 
 See [completed-projects.md](./completed-projects.md) for completed repo additions.
 See [completed-upgrades.md](./completed-upgrades.md) for completed repo upgrades.
@@ -20,7 +20,7 @@ Current repo social preview asset:
 
 Use this repo in this order:
 
-1. Pick the platform you want to use first.
+1. Pick a shipped skill for your platform from the [skill catalog](CATALOG.md).
 2. Open that platform's skill folder.
 3. Read the skill `README.md` before anything else.
 4. Open the main source file for that skill.
@@ -39,6 +39,8 @@ If you are not sure which file is the source of truth:
 ## How To Implement A Skill In Each Ecosystem
 
 These steps are written for a first time user.
+
+Repository placement and candidate generation do not install or activate skills. Use the [platform installation guide](docs/installation.md) for host-specific placement and checks; available instruction/import surfaces vary by host and version.
 
 ### Claude
 
@@ -115,9 +117,11 @@ What to expect:
 
 The existing example scaffold lives under `openai/codex/skills/example-skill/`. It is not a shipped catalog entry. Review candidates live under `generated/openai/codex/skills/`; their generation does not install or promote them.
 
-### GitHub Copilot
+### Microsoft
 
 Microsoft targets share the [microsoft/](microsoft/README.md) parent: GitHub Copilot and Copilot Studio remain separate. Copilot Studio is reserved and has no generation/deployment support yet.
+
+#### GitHub Copilot
 
 Copilot skills in this repo live under `microsoft/copilot/skills/<skill-name>/`.
 
@@ -199,7 +203,7 @@ What to expect:
 
 ### Cursor
 
-Cursor skills in this repo will live under `cursor/skills/<skill-name>/`.
+Cursor skills in this repo live under `cursor/skills/<skill-name>/`.
 
 What to open:
 
@@ -262,7 +266,7 @@ See [platform installation](docs/installation.md), [dependencies](docs/dependenc
 ## Working Model
 
 1. Pick the target platform first.
-2. Write the skill in that platform's folder as the source of truth.
+2. Maintain shipped skills in their platform folders as the shipped source of truth. For canonical review candidates, edit `master-skills/` and `adapters/`, then regenerate; see the [migration guide](https://github.com/mickpletcher/AI-Skills/blob/main/master-skills/README.md). Generation does not promote or install candidates.
 3. Use `shared/` for naming, structure, and repo-level guidance only.
 4. Record checks with [templates/test-template.md](./templates/test-template.md).
 

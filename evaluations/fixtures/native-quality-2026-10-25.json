@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "source_commit": "933defdaf4acc809d889da21602306795d1a8b8f",
+  "host": "macOS Codex CLI",
+  "cli_version": "0.162.0-alpha.17.2",
+  "model_alias": "gpt-6.1-sol",
+  "model_identity": "Requested alias observed in runtime trace; immutable backend snapshot unknown.",
+  "reasoning_effort": "low",
+  "authentication": "Existing ChatGPT subscription; login and each trace observed. API override environment names absent. No paid API route used.",
+  "session_count": 3,
+  "scope": "One fresh session per case; no repetitions or new sessions for this publication.",
+  "sanitization": "Only synthetic fixture inputs, artifact contents, SHA256 digests and bounded observations are published. The absolute interpreter path in artifacts is replaced with python3; original and sanitized hashes are retained. No raw event/stderr transcripts, account identifiers or personal paths are published.",
+  "limitations": [
+    "Exact backend snapshot unavailable; gpt-6.1-sol is the exposed/requested alias.",
+    "One run per case, one macOS CLI, no independent desktop/ChatGPT certification.",
+    "No missing-context case run; requested-number conflict was the selected alternative.",
+    "Final file snapshots and emitted events do not observe every hidden provider input or transient action.",
+    "Synthetic repository URL was not fetched; external availability unverified."
+  ],
+  "cases": [
+    {
+      "id": "R1",
+      "skill": "github-readme",
+      "task": "Repair only README.md using this synthetic repository evidence. The same README is used in the checkout and in the archive defined by release-files.json. Keep its documentation useful in both contexts, preserve its concise structure and supported license claim, and report what you verified. Do not publish or use the network.",
+      "criteria": [
+        "Observable full intended skill loading.",
+        "Only README.md changes; every skill/source/fixture byte preserved.",
+        "docs/guide.md remains a valid relative link in both layouts.",
+        "Excluded master/design.md becomes an appropriate supplied repository URL, not a broken archive-relative link.",
+        "Both checkout and independently extracted synthetic archive have no broken local README links; no invented external URL availability or execution claims."
+      ],
+      "result": "pass",
+      "native_execution": {
+        "exit": 0,
+        "turn_completed": true,
+        "full_skill_body_observed": true,
+        "instruction_sha256": "2ec118b39193f2c7cdfe5a9dd5e1f2e507705517c4f10a66d2b932cb668c2c3b",
+        "changed_files": [
+          "README.md"
+        ],
+        "completed_command_count": 5,
+        "chatgpt_auth_observed": true,
+        "requested_alias_observed": true,
+        "plugins_disabled_observed": true,
+        "firecrawl_or_handshake_marker": false,
+        "command_exit_codes": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "checkout_links_exist": true,
+        "archive_links_exist": true,
+        "guide_relative_preserved": true,
+        "excluded_design_url_correct": true,
+        "only_readme_changed": true
+      },
+      "inputs": {
+        "README.md": "# Paperclip\n\nA local text counter.\n\n## Documentation\n[Guide](docs/guide.md)\n[Design](master/design.md)\n\n## Usage\nRun python3 count.py sample.txt.\n\n## License\nMIT.\n",
+        "docs/guide.md": "# Guide\nRun count.py with one UTF-8 file path; output is its character count.\n",
+        "master/design.md": "# Design\nThe tool counts Unicode characters, not bytes. This authoring document is deliberately not shipped.\n",
+        "count.py": "import pathlib, sys\nprint(len(pathlib.Path(sys.argv[1]).read_text(encoding=\"utf-8\")))\n",
+        "sample.txt": "abc\n",
+        "release-files.json": "[\"README.md\", \"docs/guide.md\", \"count.py\", \"sample.txt\", \"LICENSE\"]\n",
+        "project.json": "{\"repository_url\":\"https://github.com/example/synthetic-paperclip\",\"default_branch\":\"main\",\"distribution\":\"release-files.json is the complete archive allowlist\"}\n",
+        "LICENSE": "MIT License\n\nCopyright (c) 2026 Fictional Example Contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction.\n"
+      },
+      "outputs": {
+        "README.md": {
+          "text": "# Paperclip\n\nA local text counter for UTF-8 files. Counts Unicode characters, not bytes.\n\n## Documentation\n[Guide](docs/guide.md)\n[Design](https://github.com/example/synthetic-paperclip/blob/main/master/design.md) (checkout source; omitted from the release archive)\n\n## Usage\nRequires Python 3 and only the standard library. From the checkout or extracted archive directory, pass one UTF-8 file path:\n\n```sh\npython3 count.py sample.txt\n```\n\nThe sample prints `4`, including its trailing newline.\n\n## License\nMIT.\n",
+          "original_sha256": "189764c6dec928925024ec0cc15db22f4021e8f1049e00db379cfa3c454ffc0a",
+          "sanitized_sha256": "189764c6dec928925024ec0cc15db22f4021e8f1049e00db379cfa3c454ffc0a"
+        }
+      },
+      "baseline_sha256": {
+        "LICENSE": "8f347c5d37ba94fdb0069d1b253d91a5f7c8657aed42663c2d6df1d9a4682a70",
+        "project.json": "5d614ff27813aa2b709661264df7e819cf652841ecda283d05284ccd9c589695",
+        "README.md": "ae0399f5bad874038e27ea44a0dde10db588e61a582c4d20ad800c67f1f65490",
+        "release-files.json": "5c27146f0b8b9b2219ed3a5dacc8aca87c42215277f5a10a47ece0767e7db3a9",
+        "count.py": "a610eec68dde97863fcc43278b8f63b752bf137cb4459509b480a605c5ed150a",
+        "sample.txt": "edeaaff3f1774ad2888673770c6d64097e391bc362d7d6fb34982ddf0efd18cb",
+        ".agents/skills/github-readme/model-history.json": "109e0fa78434de0861b624bedcc0d1d4a8fed9263a8714dd56b517487f4bf138",
+        ".agents/skills/github-readme/capabilities.json": "84af959fa6fcefde9d8f0d204a54cb4decb6d5840aae960da8e690fc80549538",
+        ".agents/skills/github-readme/ecosystems.json": "c11cb9b2f2691b0fc8e5dee230d0c21c35e54560d39c3fe69ed2aceb110f4e9a",
+        ".agents/skills/github-readme/foundation-audit.json": "e95962957ef81a0769b541735bc8d156d659523b21f4e37f1d37d6fd6d42d539",
+        ".agents/skills/github-readme/build-provenance.json": "9c6eac10868270748b7614a617453988fed3803cd1be6cd39239c39ccf23c560",
+        ".agents/skills/github-readme/SKILL.md": "2ec118b39193f2c7cdfe5a9dd5e1f2e507705517c4f10a66d2b932cb668c2c3b",
+        "docs/guide.md": "12fb81de444474b04f1718d3671d42b354216b293a1644ae0a562ec75e1bdf84",
+        "master/design.md": "43ae0869281db9d1a867bf33b65fc0c78b783debb5b765a23cd684384e86192d"
+      },
+      "after_sha256": {
+        "LICENSE": "8f347c5d37ba94fdb0069d1b253d91a5f7c8657aed42663c2d6df1d9a4682a70",
+        "project.json": "5d614ff27813aa2b709661264df7e819cf652841ecda283d05284ccd9c589695",
+        "README.md": "189764c6dec928925024ec0cc15db22f4021e8f1049e00db379cfa3c454ffc0a",
+        "release-files.json": "5c27146f0b8b9b2219ed3a5dacc8aca87c42215277f5a10a47ece0767e7db3a9",
+        "count.py": "a610eec68dde97863fcc43278b8f63b752bf137cb4459509b480a605c5ed150a",
+        "sample.txt": "edeaaff3f1774ad2888673770c6d64097e391bc362d7d6fb34982ddf0efd18cb",
+        ".agents/skills/github-readme/model-history.json": "109e0fa78434de0861b624bedcc0d1d4a8fed9263a8714dd56b517487f4bf138",
+        ".agents/skills/github-readme/capabilities.json": "84af959fa6fcefde9d8f0d204a54cb4decb6d5840aae960da8e690fc80549538",
+        ".agents/skills/github-readme/ecosystems.json": "c11cb9b2f2691b0fc8e5dee230d0c21c35e54560d39c3fe69ed2aceb110f4e9a",
+        ".agents/skills/github-readme/foundation-audit.json": "e95962957ef81a0769b541735bc8d156d659523b21f4e37f1d37d6fd6d42d539",
+        ".agents/skills/github-readme/build-provenance.json": "9c6eac10868270748b7614a617453988fed3803cd1be6cd39239c39ccf23c560",
+        ".agents/skills/github-readme/SKILL.md": "2ec118b39193f2c7cdfe5a9dd5e1f2e507705517c4f10a66d2b932cb668c2c3b",
+        "docs/guide.md": "12fb81de444474b04f1718d3671d42b354216b293a1644ae0a562ec75e1bdf84",
+        "master/design.md": "43ae0869281db9d1a867bf33b65fc0c78b783debb5b765a23cd684384e86192d"
+      },
+      "cleanup": {
+        "placement_absent": true,
+        "unchanged_skill_files_quarantined": 6,
+        "fresh_catalog_absent": true,
+        "artifact_bytes_preserved_after_cleanup": true
+      }
+    },
+    {
+      "id": "S1",
+      "skill": "spec-writer",
+      "task": "Prepare practical requirements, plan and tasks for bounded export retries, preserving exported field names and order. Inspect the repository and its existing planning work first. Update planning documents only; do not implement code. Preserve current owner constraints and user edits.",
+      "criteria": [
+        "Observable full intended skill loading.",
+        "Reuse specs/007-retry-export; no duplicate or new numbered folder.",
+        "Only its requirements.md, plan.md and tasks.md may change; unrelated spec, code, notes and skill bytes preserved.",
+        "Retain at-most-three-retries and never-retry-authentication-failures owner constraints; draft remains distinct from completed implementation.",
+        "Every acceptance criterion explicitly maps to a concrete validation task with an observable expected result; tasks refer to real IDs and future checks are not marked passed."
+      ],
+      "result": "pass",
+      "native_execution": {
+        "exit": 0,
+        "turn_completed": true,
+        "full_skill_body_observed": true,
+        "instruction_sha256": "4641bf2629fe527faa6bf541b37fdcc5eba778495ce95598a5b8254856d33581",
+        "changed_files": [
+          "specs/007-retry-export/plan.md",
+          "specs/007-retry-export/requirements.md",
+          "specs/007-retry-export/tasks.md"
+        ],
+        "completed_command_count": 5,
+        "chatgpt_auth_observed": true,
+        "requested_alias_observed": true,
+        "plugins_disabled_observed": true,
+        "firecrawl_or_handshake_marker": false,
+        "command_exit_codes": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "only_matching_spec_changed": true,
+        "numbered_folders": [
+          "007-retry-export",
+          "008-cache"
+        ]
+      },
+      "inputs": {
+        "app.py": "def export_rows(rows):\n    return list(rows)\n",
+        "README.md": "# Parcel Exporter\nExports preserve CSV fields and order. Specs use three-digit numbers.\n",
+        "specs/008-cache/requirements.md": "Status: in progress\nCache redesign only; unrelated to export retries.\n",
+        "specs/007-retry-export/requirements.md": "Status: draft\nLast updated: 2026-09-01\nVariant: feature\nGoal: bounded export retries with unchanged fields/order.\nOwner constraint: at most three retries.\nOwner constraint: never retry authentication failures.\n",
+        "specs/007-retry-export/plan.md": "Stale draft: use the existing export loop.\n",
+        "specs/007-retry-export/tasks.md": "- [ ] Plan retry checks.\n",
+        "notes.txt": "User notes, not a deliverable.\n"
+      },
+      "outputs": {
+        "specs/007-retry-export/plan.md": {
+          "text": "Stale draft: use the existing export loop.\n\n\n## Repository correction and approach\n\nThe stale note above is retained as history. Inspection on 2026-10-25 found no export loop: app.py only materializes rows. Do not implement a retry loop around arbitrary iterable consumption. Resolve the operation, exception classes, field-order contract, and safe replay boundary described in requirements.md before implementation.\n\n1. Record the concrete export boundary and failure classification against the real backend. Keep the public `export_rows(rows)` call and successful list result compatible. Do not introduce a backend merely to exercise retries.\n2. In app.py, materialize input once outside the retry boundary. Capture the existing field sequence without sorting or renaming. Input-consumption errors propagate immediately; preserve empty-input behavior.\n3. Wrap only the established replay-safe operation with a local attempt counter. Permit the initial attempt plus at most three retries. Check authentication failure before transient classification. Stop immediately on success, authentication failure, unknown/permanent failure, or exhausted budget, propagating the final exception. Keep any agreed delays finite and testable.\n4. Reuse the same ordered data on every attempt. Use the established atomic publication or idempotency contract; if that contract cannot be demonstrated, do not enable unsafe retries. Test failures both before and after a partial write or uncertain completion.\n5. Add focused standard-library tests under tests/test_export_retries.py once the operation is defined. Update README.md with the implemented attempt limit and terminal-failure behavior only after verification. No dependencies or cache work are needed by this plan.\n\n## Validation and risks\n\nUse deterministic local fake attempts and a fake sleeper, with no network. Proposed command after tests exist: `python3 -m unittest discover -s tests`. Validate call counts, exception propagation, exact ordered headers/rows, one-shot input, empty input, and publication behavior using the traceability table in tasks.md. A real CSV boundary test requires the missing writer/backend contract; fake-only tests cannot prove its publication safety.\n\nMain risks are replaying partial output, treating authentication as transient, consuming generators twice, and implicitly reordering fields. Input materialization already occurs in the current API; avoid additional copies where possible. If replay safety fails validation, retain the single-attempt path until resolved. No implementation or tests have been run as part of this planning update.\n",
+          "original_sha256": "fe3bae03eb3e8e8f5248a304c09d862292cdceb8a23fa2b6f921cd2bc8807d1f",
+          "sanitized_sha256": "21a876f7e9a8aeecf52bd3abe5ec15da227c72e25011afc7b8e79715959041ef"
+        },
+        "specs/007-retry-export/requirements.md": {
+          "text": "Status: draft\nLast updated: 2026-10-25\nVariant: feature\nGoal: bounded export retries with unchanged fields/order.\nOwner constraint: at most three retries.\nOwner constraint: never retry authentication failures.\n\n\n## Context and scope\n\nReuse this draft; `008-cache` concerns separate work. README.md promises CSV field preservation, while app.py currently exposes only `export_rows(rows)`, returning `list(rows)`. No writer, external export operation, exception taxonomy, retry configuration, or tests are present. This spec plans future implementation; no retry behavior is implemented or verified.\n\nIn scope: bounded retries around a defined export attempt, terminal failure handling, and preservation of exported field names and order. Out of scope: cache changes, new CSV schema, authentication recovery, dependencies, and unrelated export redesign.\n\n## Acceptance criteria\n\n- AC-1: Allow at most three retries after the initial attempt (at most four total attempts per export invocation). Stop on success; never reset the budget during that invocation. Use three as the proposed fixed budget unless the owner chooses a lower value.\n- AC-2: Authentication failures terminate immediately, including when encountered after an earlier retryable failure. No further attempt occurs.\n- AC-3: Retry only explicitly classified transient failures from the defined export operation. Unknown failures, invalid input, schema errors, and failures consuming the input terminate immediately. On exhaustion, surface the final failure through the existing exception-based API without returning partial success or swallowing the cause.\n- AC-4: Preserve field names exactly, including spelling and case, and preserve their original order on the first attempt and every retry. Preserve row order and values as well. Successful calls retain the current list return shape; empty input returns an empty list. One-shot inputs must not be consumed again on retry.\n- AC-5: A retry must not publish duplicate rows or leave a partial export reported as successful. Establish a safe replay boundary before enabling retries of any side-effecting operation; an operation with unknown completion must not be retried without a proven replay guarantee.\n\n## Decisions still needed before implementation\n\n- Identify the actual export operation and its authentication and transient exception types. The current `list(rows)` operation alone does not justify adding retries.\n- Establish how field order is represented at the real CSV boundary (explicit header sequence or existing row-key order); do not invent, sort, or normalize names.\n- Establish replay safety through existing atomic output or an idempotent backend contract. If unavailable, keep retries disabled for unsafe failures and resolve the scope with the owner.\n- Select a finite delay schedule, if delays are needed by the eventual backend; it must retain the attempt cap and use a replaceable sleeper for tests. No timing guarantee is asserted yet.\n",
+          "original_sha256": "75d913ac16c4400837475b383344b24ff9f58c39145aff37f614003d21e2db4a",
+          "sanitized_sha256": "75d913ac16c4400837475b383344b24ff9f58c39145aff37f614003d21e2db4a"
+        },
+        "specs/007-retry-export/tasks.md": {
+          "text": "- [ ] Plan retry checks.\n\n\nAll implementation and acceptance checks below are planned and unchecked. The original planning reminder above is retained.\n\n## Execution tasks\n\n- [ ] T1 (S): Resolve and document the actual operation, exception taxonomy, field sequence, replay guarantee, fixed retry budget, and any finite delays. Backend-specific work is blocked on these decisions; do not add retries to `list(rows)` alone.\n- [ ] T2 (M): Implement the single-materialization input path and bounded attempt control in app.py once T1 is resolved. Preserve the public result and propagate terminal exceptions.\n- [ ] T3 (M): Integrate the agreed ordered serialization and safe publication boundary; prevent duplicate or partial successful output. If replay cannot be proven safe, keep that failure path single-attempt and resolve the requirement before proceeding.\n\n## Acceptance validation tasks\n\n- [ ] V1 (S): With a local fake operation, verify immediate success uses one call, success after one/two/three transient failures uses two/three/four calls, and continuous transient failure stops at four calls with the final exception. Verify a second invocation has its own budget.\n- [ ] V2 (S): Inject authentication failure initially and following a transient failure; expect one and two calls respectively and the authentication exception propagated. Inject unknown, permanent, schema, and input-consumption errors; expect immediate propagation without retries of those errors.\n- [ ] V3 (M): Compare baseline success with every retry-success position using mixed-case, deliberately nonalphabetical fields and distinguishable rows. Assert exact ordered header names and row values/order, unchanged list return shape, empty input returning [], and a one-shot iterable consumed once. Run against the actual CSV boundary once identified; blocked on T1 for that boundary.\n- [ ] V4 (M): Inject partial-write and uncertain-completion failures at the real publication boundary. Expect exactly one complete published export after recovery or a surfaced failure with no partial success; verify no unsafe second attempt occurs when completion cannot be established. Blocked on T1's replay contract; fake tests alone are insufficient proof.\n- [ ] T4 (S): Run the focused local test suite, record actual results and unresolved gaps, and update README.md with verified retry behavior. Keep implementation status draft until work actually starts; mark completion only when the acceptance checks pass.\n\n## Traceability\n\n| Criterion | Validation | Observable result |\n| --- | --- | --- |\n| AC-1 | V1 | One to four calls as specified; success stops attempts; exhaustion propagates the final exception. |\n| AC-2 | V2 | Authentication failure ends the invocation without a further attempt. |\n| AC-3 | V1, V2 | Only classified transient failures retry; terminal failures remain visible. |\n| AC-4 | V3 | Exact field sequence, names, rows, list shape, empty input, and single consumption are preserved. |\n| AC-5 | V4 | No duplicate/partial successful publication; unsafe ambiguous failures do not replay. |\n",
+          "original_sha256": "47ce0a138d905e1e2c14d58cda16e6f193438ff429ac9cff530f967296972c53",
+          "sanitized_sha256": "47ce0a138d905e1e2c14d58cda16e6f193438ff429ac9cff530f967296972c53"
+        }
+      },
+      "baseline_sha256": {
+        "notes.txt": "b6d744c55b4000831e5743700f6e6a356140fbed47ac7d14a7d3d7fd1c34966b",
+        "README.md": "96ce84d3323844743e5574498ae960b53394122701eb6c397c20311e63393955",
+        "app.py": "7fd98ecbfbcd990c2f486abcd5c462695ca00580f37392087bf260c6b6bd36c6",
+        "specs/008-cache/requirements.md": "34c99d4d16ad875810fe1f323f88bdb8ec3999d8fa2c351a4323b00e6651b6ad",
+        "specs/007-retry-export/requirements.md": "025f7393139d5b1168840d9f569f198d08cacc62211de62ebd8fdb50ab5ad57e",
+        "specs/007-retry-export/tasks.md": "bfb3677992ad6a90251b7717a6499ce42b37d51bfb2c00d8afb0c03b714cff11",
+        "specs/007-retry-export/plan.md": "ac3f74a210d04c340dae9ebb154baafced0684069919c5dd32932f89de1b2c1c",
+        ".agents/skills/spec-writer/model-history.json": "f8935c5326bd0f82f424fdb783d1d5baa6954058625c23108f9751b6b2480e3e",
+        ".agents/skills/spec-writer/capabilities.json": "3d12378cfc9f310a0433dc134fb6e2e0b16e08567f34e56b16d762c472b5b9e6",
+        ".agents/skills/spec-writer/ecosystems.json": "9c573f71849fc5debe6f934b3ea6fc2c543a12a96e9992bd31bf42d5b9f3b082",
+        ".agents/skills/spec-writer/migration.json": "6b21f60d4e817a0345a86e8ef70e44d9b502ddc45ec784e81ba1039200b6a257",
+        ".agents/skills/spec-writer/build-provenance.json": "e88effcf3dd8de9cc1c8753b7c13b501bacda2f418be6d434a6d4f5991d548a5",
+        ".agents/skills/spec-writer/README.md": "8274ace664eca719577abe50a8849db836c23a0761ca5d8bbb6308db5473e01c",
+        ".agents/skills/spec-writer/SKILL.md": "4641bf2629fe527faa6bf541b37fdcc5eba778495ce95598a5b8254856d33581",
+        ".agents/skills/spec-writer/shared/skill-standard.md": "3d71908c6f2f5c9fc0385bf0dd92d2d2b224cad4ebac9a4a16f0bb838f3a722c"
+      },
+      "after_sha256": {
+        "notes.txt": "b6d744c55b4000831e5743700f6e6a356140fbed47ac7d14a7d3d7fd1c34966b",
+        "README.md": "96ce84d3323844743e5574498ae960b53394122701eb6c397c20311e63393955",
+        "app.py": "7fd98ecbfbcd990c2f486abcd5c462695ca00580f37392087bf260c6b6bd36c6",
+        "specs/008-cache/requirements.md": "34c99d4d16ad875810fe1f323f88bdb8ec3999d8fa2c351a4323b00e6651b6ad",
+        "specs/007-retry-export/requirements.md": "75d913ac16c4400837475b383344b24ff9f58c39145aff37f614003d21e2db4a",
+        "specs/007-retry-export/tasks.md": "47ce0a138d905e1e2c14d58cda16e6f193438ff429ac9cff530f967296972c53",
+        "specs/007-retry-export/plan.md": "fe3bae03eb3e8e8f5248a304c09d862292cdceb8a23fa2b6f921cd2bc8807d1f",
+        ".agents/skills/spec-writer/model-history.json": "f8935c5326bd0f82f424fdb783d1d5baa6954058625c23108f9751b6b2480e3e",
+        ".agents/skills/spec-writer/capabilities.json": "3d12378cfc9f310a0433dc134fb6e2e0b16e08567f34e56b16d762c472b5b9e6",
+        ".agents/skills/spec-writer/ecosystems.json": "9c573f71849fc5debe6f934b3ea6fc2c543a12a96e9992bd31bf42d5b9f3b082",
+        ".agents/skills/spec-writer/migration.json": "6b21f60d4e817a0345a86e8ef70e44d9b502ddc45ec784e81ba1039200b6a257",
+        ".agents/skills/spec-writer/build-provenance.json": "e88effcf3dd8de9cc1c8753b7c13b501bacda2f418be6d434a6d4f5991d548a5",
+        ".agents/skills/spec-writer/README.md": "8274ace664eca719577abe50a8849db836c23a0761ca5d8bbb6308db5473e01c",
+        ".agents/skills/spec-writer/SKILL.md": "4641bf2629fe527faa6bf541b37fdcc5eba778495ce95598a5b8254856d33581",
+        ".agents/skills/spec-writer/shared/skill-standard.md": "3d71908c6f2f5c9fc0385bf0dd92d2d2b224cad4ebac9a4a16f0bb838f3a722c"
+      },
+      "cleanup": {
+        "placement_absent": true,
+        "unchanged_skill_files_quarantined": 8,
+        "fresh_catalog_absent": true,
+        "artifact_bytes_preserved_after_cleanup": true
+      },
+      "manual_checks": {
+        "criteria": [
+          "AC-1",
+          "AC-2",
+          "AC-3",
+          "AC-4",
+          "AC-5"
+        ],
+        "validation_tasks": [
+          "V1",
+          "V2",
+          "V3",
+          "V4"
+        ],
+        "traceability_complete": true,
+        "owner_constraints_preserved": true,
+        "draft_and_unchecked": true
+      }
+    },
+    {
+      "id": "S2",
+      "skill": "spec-writer",
+      "task": "Create spec number 008 for bounded export retries, with requirements, plan and tasks. Preserve export field names and order. Plan only; do not implement the feature.",
+      "criteria": [
+        "Observable full intended skill loading.",
+        "Identify occupied number 008 belonging to unrelated cache work even if a different slug is possible.",
+        "Ask for a destination/number choice; do not silently allocate 009 or create a second 008 folder.",
+        "No project or skill file changes; no checks falsely reported as executed."
+      ],
+      "result": "pass",
+      "native_execution": {
+        "exit": 0,
+        "turn_completed": true,
+        "full_skill_body_observed": true,
+        "instruction_sha256": "4641bf2629fe527faa6bf541b37fdcc5eba778495ce95598a5b8254856d33581",
+        "changed_files": [],
+        "completed_command_count": 3,
+        "chatgpt_auth_observed": true,
+        "requested_alias_observed": true,
+        "plugins_disabled_observed": true,
+        "firecrawl_or_handshake_marker": false,
+        "command_exit_codes": [
+          0,
+          0,
+          1
+        ],
+        "no_files_changed": true
+      },
+      "inputs": {
+        "app.py": "def export_rows(rows):\n    return list(rows)\n",
+        "README.md": "# Parcel Exporter\nExports preserve CSV fields and order. Specs use three-digit numbers.\n",
+        "specs/008-cache/requirements.md": "Status: in progress\nCache redesign only; unrelated to export retries.\n",
+        "notes.txt": "Owner scratch work; preserve.\n"
+      },
+      "outputs": {},
+      "baseline_sha256": {
+        "notes.txt": "15c0bc7418cfe20e3ee17037370f41ad6a44d622dcecca3405b77fb7cff8dc59",
+        "README.md": "96ce84d3323844743e5574498ae960b53394122701eb6c397c20311e63393955",
+        "app.py": "7fd98ecbfbcd990c2f486abcd5c462695ca00580f37392087bf260c6b6bd36c6",
+        "specs/008-cache/requirements.md": "34c99d4d16ad875810fe1f323f88bdb8ec3999d8fa2c351a4323b00e6651b6ad",
+        ".agents/skills/spec-writer/model-history.json": "f8935c5326bd0f82f424fdb783d1d5baa6954058625c23108f9751b6b2480e3e",
+        ".agents/skills/spec-writer/capabilities.json": "3d12378cfc9f310a0433dc134fb6e2e0b16e08567f34e56b16d762c472b5b9e6",
+        ".agents/skills/spec-writer/ecosystems.json": "9c573f71849fc5debe6f934b3ea6fc2c543a12a96e9992bd31bf42d5b9f3b082",
+        ".agents/skills/spec-writer/migration.json": "6b21f60d4e817a0345a86e8ef70e44d9b502ddc45ec784e81ba1039200b6a257",
+        ".agents/skills/spec-writer/build-provenance.json": "e88effcf3dd8de9cc1c8753b7c13b501bacda2f418be6d434a6d4f5991d548a5",
+        ".agents/skills/spec-writer/README.md": "8274ace664eca719577abe50a8849db836c23a0761ca5d8bbb6308db5473e01c",
+        ".agents/skills/spec-writer/SKILL.md": "4641bf2629fe527faa6bf541b37fdcc5eba778495ce95598a5b8254856d33581",
+        ".agents/skills/spec-writer/shared/skill-standard.md": "3d71908c6f2f5c9fc0385bf0dd92d2d2b224cad4ebac9a4a16f0bb838f3a722c"
+      },
+      "after_sha256": {
+        "notes.txt": "15c0bc7418cfe20e3ee17037370f41ad6a44d622dcecca3405b77fb7cff8dc59",
+        "README.md": "96ce84d3323844743e5574498ae960b53394122701eb6c397c20311e63393955",
+        "app.py": "7fd98ecbfbcd990c2f486abcd5c462695ca00580f37392087bf260c6b6bd36c6",
+        "specs/008-cache/requirements.md": "34c99d4d16ad875810fe1f323f88bdb8ec3999d8fa2c351a4323b00e6651b6ad",
+        ".agents/skills/spec-writer/model-history.json": "f8935c5326bd0f82f424fdb783d1d5baa6954058625c23108f9751b6b2480e3e",
+        ".agents/skills/spec-writer/capabilities.json": "3d12378cfc9f310a0433dc134fb6e2e0b16e08567f34e56b16d762c472b5b9e6",
+        ".agents/skills/spec-writer/ecosystems.json": "9c573f71849fc5debe6f934b3ea6fc2c543a12a96e9992bd31bf42d5b9f3b082",
+        ".agents/skills/spec-writer/migration.json": "6b21f60d4e817a0345a86e8ef70e44d9b502ddc45ec784e81ba1039200b6a257",
+        ".agents/skills/spec-writer/build-provenance.json": "e88effcf3dd8de9cc1c8753b7c13b501bacda2f418be6d434a6d4f5991d548a5",
+        ".agents/skills/spec-writer/README.md": "8274ace664eca719577abe50a8849db836c23a0761ca5d8bbb6308db5473e01c",
+        ".agents/skills/spec-writer/SKILL.md": "4641bf2629fe527faa6bf541b37fdcc5eba778495ce95598a5b8254856d33581",
+        ".agents/skills/spec-writer/shared/skill-standard.md": "3d71908c6f2f5c9fc0385bf0dd92d2d2b224cad4ebac9a4a16f0bb838f3a722c"
+      },
+      "cleanup": {
+        "placement_absent": true,
+        "unchanged_skill_files_quarantined": 8,
+        "fresh_catalog_absent": true,
+        "artifact_bytes_preserved_after_cleanup": true
+      },
+      "response_excerpt": "Spec number 008 is already occupied by specs/008-cache/requirements.md, marked in progress and scoped to unrelated cache work. I made no changes. Should I use 009 for bounded export retries, or would you prefer another destination?"
+    }
+  ]
+}

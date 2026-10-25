@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Correct activation test assertions for Windows short/long temporary-path aliases. Nine focused tests pass; runtime helper and native evidence are unchanged. Retain initial Windows CI failure and check the correction head separately.
+
 - Investigate activation with ten isolated native sessions. Correct evaluation resource/write boundaries; verify three formerly missing-load paths and a separate typed explicit injection. Keep literal-text intake unverified, preserve original blocks, and leave candidates/acceptance/promotion unchanged.
 
 - Repair the README artifact boundary and continue three isolated native profile tests. Actual README-only file delivery and seven independent CLI probes pass; original-task ChatGPT delivery now passes with actual 2370-byte Copy and separate notes. All 23 pending scopes accepted by delegated review; explicit activation and broader limits remain open. Keep draft status and all promotion gates.

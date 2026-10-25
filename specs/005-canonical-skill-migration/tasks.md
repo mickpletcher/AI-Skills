@@ -436,3 +436,9 @@
 - [ ] Keep literal-text intake observability, broad repeatability, other hosts/models/global routing, Unicode, browser/Obsidian/app/live integrations and provider guarantees open. Keep PR draft; no merge or promotion.
 
 - [x] Validate final tracked activation overlay: 46 skills/zero issues, 24 offline cases/99 negative checks/zero model calls, eight focused regressions, exact native pins/21 independent probes and unchanged source/acceptance/promotion fields. Final-head delivery CI remains a separate gate until verified.
+
+## Activation Windows CI correction on 2026-10-25
+
+- [x] Retain the failed Windows 132-test job and 12 passing sibling checks on 18fe3da. Fix only two test expectations that compared 8.3/long path spelling; helper canonicalization was correct.
+- [x] Compare filesystem identity and exact allowed-root count; add alias/parent-escape regression. Nine focused tests pass. Preserve native input/output/candidate/helper bytes and acceptance/promotion fields. See the [correction ledger](../../evaluations/fixtures/activation24.json).
+Final-head delivery CI is reported with its exact commit in PR #11. PR remains draft; no merge or promotion. Literal-text intake and broader limits remain open.

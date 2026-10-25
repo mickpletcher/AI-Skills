@@ -17,8 +17,10 @@ class ActivationProbeTests(unittest.TestCase):
             skill.parent.mkdir(parents=True)
             skill.write_text('name: github-readme')
             boundary = resource_boundary(work, [skill])
-            self.assertIn('- ' + skill.parent.as_posix(), boundary)
-            self.assertNotIn('- ' + (root / 'profile').as_posix() + '\n', boundary)
+            allowed = [Path(line[2:]) for line in boundary.splitlines() if line.startswith('- ')]
+            self.assertEqual(len(allowed), 1)
+            self.assertTrue(allowed[0].samefile(skill.parent))
+            self.assertFalse(allowed[0].samefile(root / 'profile'))
             self.assertNotIn('auth.json', boundary)
             self.assertIn('does not extend to parent profiles', boundary)
 
@@ -85,8 +87,22 @@ class ActivationProbeTests(unittest.TestCase):
             work = root / 'repository'
             child = work / 'component'
             child.mkdir(parents=True)
-            self.assertEqual(nested_write_roots(work, child, True), [work.as_posix()])
+            allowed = nested_write_roots(work, child, True)
+            self.assertEqual(len(allowed), 1)
+            self.assertTrue(Path(allowed[0]).samefile(work))
             self.assertEqual(nested_write_roots(work, child, False), [])
             self.assertEqual(nested_write_roots(work, work, True), [])
             with self.assertRaises(ValueError):
                 nested_write_roots(work, root, True)
+
+    def test_path_aliases_preserve_identity_without_expanding_write_scope(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            work = root / 'repository'
+            child = work / 'component'
+            child.mkdir(parents=True)
+            allowed = nested_write_roots(work / '..' / 'repository', child / '..' / 'component', True)
+            self.assertEqual(len(allowed), 1)
+            self.assertTrue(Path(allowed[0]).samefile(work))
+            with self.assertRaises(ValueError):
+                nested_write_roots(work, child / '..' / '..', True)

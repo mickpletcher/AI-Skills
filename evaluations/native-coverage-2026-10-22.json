@@ -1587,5 +1587,11 @@
     "remaining_literal_text_intake_load_gap": 1,
     "broader_host_routing_repeatability_limits": "open",
     "acceptance_changes": false
+  },
+  "activation24": {
+    "evidence": "evaluations/fixtures/activation24.json",
+    "evidence_sha256": "44aff536462a333720fed7050392f2e64d4143d8fc273e4ececad6e2c3d43ddf",
+    "status": "nine corrected focused tests pass; final-head CI separate",
+    "native_evidence_changed": false
   }
 }

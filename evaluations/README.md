@@ -127,3 +127,5 @@ The [third batch assessment](migration-batch3-2026-10-19.md) records six capture
 - [README delivery repair and native profile continuation](readme-delivery-2026-10-25.md): six focused boundary regressions, original-task ChatGPT delivery and current-profile README integration with seven independent probes. All 23 pending bounded scopes accepted by delegated review; explicit activation and broader limits remain open.
 
 - [Activation reliability](activation-reliability-2026-10-25.md): ten isolated native sessions, exact-body tool/input evidence, corrected resource/writable-root fixture boundaries, three README integrations and 21 independent probes. Literal-text intake remains unverified; candidates and acceptance decisions unchanged.
+
+- [Activation CI correction ledger](fixtures/activation24.json): Windows short/long temp paths refer to the same objects. Corrected identity assertions and a ninth alias/escape regression; native activation evidence and runtime helper unchanged. Initial Windows failure retained.

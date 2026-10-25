@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "basis_commit": "18fe3da878dc590fbbf1028caa2c6e7b7caa43ae",
+  "scope": "Windows CI test-fixture path identity correction only; native evidence and runtime helper unchanged.",
+  "failed_delivery": {
+    "commit": "18fe3da878dc590fbbf1028caa2c6e7b7caa43ae",
+    "job": "Validate (windows-latest)",
+    "url": "https://github.com/mickpletcher/AI-Skills/actions/runs/40169930905/job/121098530499",
+    "tests": 132,
+    "failures": 2,
+    "failed_tests": [
+      "test_nested_write_scope_stays_inside_the_named_repository",
+      "test_profile_resources_are_allowed_without_allowing_the_parent_profile"
+    ],
+    "other_checks_passed": 12,
+    "private_log_sha256": "d553134e928c7035b245d549c6ecb0efcc3605eefb53e2c3c4af0359ef9e3def"
+  },
+  "cause": "The Windows runner supplies its temporary directory using an 8.3 short alias. The helper correctly returns resolved long paths. Two tests incorrectly demanded identical spelling instead of the same filesystem object.",
+  "fix": "Compare Path.samefile identities and exact allowed-root count. Preserve the parent-profile exclusion. Add a lexical alias test that accepts the same repository and rejects parent traversal outside it.",
+  "evidence_preservation": {
+    "native_activation_fixture": "evaluations/fixtures/activation23.json",
+    "native_activation_fixture_sha256": "b2afb6be7b52c44a050e593126247c629c1cb7890637478177dfef84c5a2d13e",
+    "runtime_helper": "tools/activation_probe.py",
+    "runtime_helper_unchanged_sha256": "d904227c00451dbb5b42c7da6bc3564a7647c2eee774e8747d8bb873b921ff05",
+    "previous_test_sha256": "1bf38904683b5e0e73241addbbb859ec220e166eddd3274c2c694341e9ba38e4",
+    "corrected_test_sha256": "9e8fde6d4d3fba9bece53c1f6e30319a93149c01a69d1811820158b8f67f782e",
+    "native_outputs_unchanged": true,
+    "candidate_changes": false,
+    "acceptance_or_promotion_changes": false
+  },
+  "validation": {
+    "focused_tests": 9,
+    "focused_status": "passed",
+    "repository_links": {
+      "skills": 46,
+      "issues": 0,
+      "status": "passed"
+    },
+    "delivery_ci": "Verify separately on final correction head; initial failed job retained.",
+    "privacy_whitespace": "passed"
+  },
+  "limits": "No native rerun needed: task/candidate/runtime helper bytes did not change. The literal-text intake full-load gap and broader host/integration limits remain open. PR stays draft; no merge, promotion or real-profile installation."
+}

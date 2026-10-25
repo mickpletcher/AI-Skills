@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Improve the spec-writer candidate: inspect matching specs before numbering, protect occupied destinations and user edits, and map acceptance criteria to concrete validation tasks. Regenerate four candidates; new native behavior remains untested.
+
 - Add distribution-aware README link guidance and clarify evidence, missing-context and write boundaries for Cursor repository assessment and Copilot cleanup auditing. Add synthetic regression cases; new native behavior remains untested.
 
 - Clarified reserved ecosystem directories, Codex candidate installation boundaries, and intentional source/generated/package copies after the final organization review.

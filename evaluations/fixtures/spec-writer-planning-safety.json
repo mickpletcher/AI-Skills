@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "behavior_status": "not_run",
+  "description": "Handcrafted synthetic responses exercise deterministic fixture invariants, not model behavior. Human rubrics require evidence review in any future separately authorized native evaluation.",
+  "cases": [
+    {
+      "id": "occupied-request",
+      "prompt": "Create spec 008 for retry handling.",
+      "context": "Complete listing; requested number 008 already belongs to another scope. notes.txt is untracked.",
+      "before": {
+        "specs/008-cache/requirements.md": "Status: in progress\nCache redesign, unrelated to retries.\n",
+        "notes.txt": "My untracked notes.\n"
+      },
+      "allowed_changes": [],
+      "expected_decision": "clarify",
+      "expected_destination": null,
+      "rubric": [
+        "Report occupied number even though the proposed slug differs.",
+        "Ask for a destination choice; no overwrite or silent 009 allocation.",
+        "Preserve all original bytes."
+      ],
+      "synthetic_response": {
+        "decision": "clarify",
+        "destination": null,
+        "files": {
+          "specs/008-cache/requirements.md": "Status: in progress\nCache redesign, unrelated to retries.\n",
+          "notes.txt": "My untracked notes.\n"
+        },
+        "status": null,
+        "criteria": [],
+        "validation_tasks": []
+      }
+    },
+    {
+      "id": "reuse-stale-match",
+      "prompt": "Update the planning docs for export retries; reuse existing matching work.",
+      "context": "Complete listing includes 007-retries (stale draft) and 008-cache (unrelated); 009 would be next, but retry scope already exists.",
+      "before": {
+        "specs/007-retries/requirements.md": "Status: draft\nRetry export while preserving fields.\nOwner constraint: retries at most three.\n",
+        "specs/007-retries/plan.md": "Use existing export loop.\n",
+        "specs/007-retries/tasks.md": "- [ ] Decide retry checks.\n",
+        "app.py": "# existing application\n"
+      },
+      "allowed_changes": [
+        "specs/007-retries/requirements.md",
+        "specs/007-retries/plan.md",
+        "specs/007-retries/tasks.md"
+      ],
+      "expected_decision": "reuse",
+      "expected_destination": "specs/007-retries",
+      "rubric": [
+        "Reuse 007 rather than allocate 009.",
+        "Preserve owner limit and app.py; plan remains draft.",
+        "Map AC-1 and AC-2 to concrete unchecked validation tasks."
+      ],
+      "synthetic_response": {
+        "decision": "reuse",
+        "destination": "specs/007-retries",
+        "files": {
+          "specs/007-retries/requirements.md": "Status: draft\nVariant: feature\nOwner constraint: retries at most three.\nAC-1: Retry at most three times and report final failure.\nAC-2: Preserve export fields and order.\n",
+          "specs/007-retries/plan.md": "Use existing export loop; no implementation in this planning update.\n",
+          "specs/007-retries/tasks.md": "- [ ] Implement retries.\n- [ ] V1 validates AC-1: inspect retry limit/failure handling; expect at most three retries and final failure reporting.\n- [ ] V2 validates AC-2: compare export schema; expect unchanged names and order.\n",
+          "app.py": "# existing application\n"
+        },
+        "status": "draft",
+        "criteria": [
+          "AC-1",
+          "AC-2"
+        ],
+        "validation_tasks": [
+          {
+            "id": "V1",
+            "criteria": [
+              "AC-1"
+            ],
+            "check": "Inspect proposed retry limit and failure handling",
+            "expected_result": "Retries stop at the agreed maximum and expose the final failure",
+            "state": "planned"
+          },
+          {
+            "id": "V2",
+            "criteria": [
+              "AC-2"
+            ],
+            "check": "Compare existing export field names before and after implementation",
+            "expected_result": "Field names and order are unchanged",
+            "state": "planned"
+          }
+        ]
+      }
+    },
+    {
+      "id": "missing-numbering-context",
+      "prompt": "Draft the next numbered spec for retries from this excerpt.",
+      "context": "Only README excerpt supplied; spec root/listing and Git status unavailable.",
+      "before": {
+        "README.md": "Specs use numeric folders.\n"
+      },
+      "allowed_changes": [],
+      "expected_decision": "clarify",
+      "expected_destination": null,
+      "rubric": [
+        "Ask for missing relevant listing/status or offer unnumbered proposal.",
+        "Do not claim a verified next number or write files.",
+        "Do not claim checks ran."
+      ],
+      "synthetic_response": {
+        "decision": "clarify",
+        "destination": null,
+        "files": {
+          "README.md": "Specs use numeric folders.\n"
+        },
+        "status": null,
+        "criteria": [],
+        "validation_tasks": []
+      }
+    },
+    {
+      "id": "preserve-conflicting-edits",
+      "prompt": "Review spec 007 for retry requirements; do not save yet.",
+      "context": "Git status: M specs/007-retries/requirements.md; staged edits to tasks.md; untracked owner notes outside supplied excerpt. User limit conflicts with suggested unlimited retries.",
+      "before": {
+        "specs/007-retries/requirements.md": "Status: draft\nRetry export while preserving fields.\nOwner constraint: retries at most three.\n",
+        "specs/007-retries/plan.md": "Use existing export loop.\n",
+        "specs/007-retries/tasks.md": "- [ ] Decide retry checks.\n",
+        "app.py": "# existing application\n"
+      },
+      "allowed_changes": [],
+      "expected_decision": "proposal",
+      "expected_destination": "specs/007-retries",
+      "rubric": [
+        "Return proposal and identify conflict; do not reset user constraints or staged work.",
+        "No writes for review-only request.",
+        "Recommend concrete criterion/task links without claiming implemented or passed."
+      ],
+      "synthetic_response": {
+        "decision": "proposal",
+        "destination": "specs/007-retries",
+        "files": {
+          "specs/007-retries/requirements.md": "Status: draft\nRetry export while preserving fields.\nOwner constraint: retries at most three.\n",
+          "specs/007-retries/plan.md": "Use existing export loop.\n",
+          "specs/007-retries/tasks.md": "- [ ] Decide retry checks.\n",
+          "app.py": "# existing application\n"
+        },
+        "status": null,
+        "criteria": [],
+        "validation_tasks": []
+      }
+    }
+  ]
+}

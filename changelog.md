@@ -4,6 +4,11 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Repair the README artifact boundary and continue three isolated native profile tests. Actual README-only file delivery and seven independent CLI probes pass; original-task ChatGPT delivery now passes with actual 2370-byte Copy and separate notes. All 23 pending scopes accepted by delegated review; explicit activation and broader limits remain open. Keep draft status and all promotion gates.
+
+- Initial review: record Mick-authorized delegated acceptance of 22 pending bounded scopes and the repaired workout revision; withhold github-readme license-last delivery. Preserve personal-human-review distinction, historical failures/drift and all host/integration blockers. PR draft; no repair, merge or promotion. See [assessment](evaluations/delegated-acceptance-2026-10-25.md).
+
+
 - Re-review all 23 pending scopes and repaired workout revision; continue isolated native profile/nested routing and scaffold/README integrations. Preserve four activation-unverified cases, ambient stdin encoding boundaries and browser-policy block. Prior home/workout reruns pass bounded criteria; no human acceptance or promotion. See [assessment](evaluations/native-scope-host-review-2026-10-24.md).
 
 - Add Linux helper CI, guard Windows-only itinerary JPEG export before side effects, and record native routing/file integration evidence. All 12 existing Codex candidates load in scoped tests; no new acceptance or promotion. See [assessment](evaluations/host-routing-integration-2026-10-22.md).

@@ -408,3 +408,21 @@
 - [ ] Obtain explicit human acceptance of all 23 ready scopes and the separate repaired workout revision. No acceptance is inferred from assistant review.
 - [ ] Resolve profile instruction activation, ambient stdin encoding, actual browser/Obsidian/app/service integration and other host/model/routing limits when supported hosts are available. Keep PR draft; no merge, installation or promotion.
 - [x] Validate final ten-file tracked overlay: repository 46/zero issues; offline 24 cases/99 negative checks/zero model calls; resource/task/output pins, immutable human acceptance/promotion decisions and added-text privacy/whitespace checks pass. Delivery CI separate.
+
+
+## Delegated bounded acceptance on 2026-10-25
+
+- [x] Verify Mick's direct spoken request to perform acceptance review on his behalf. Record agent delegation explicitly; do not claim personal human inspection.
+- [x] Review actual retained outputs, structured exports, ZIP contents/source preservation and images against original criteria and current rules. Accept 22 of 23 pending scopes and the repaired workout revision separately. Preserve 13 historical acceptances, failures, drift and all exclusions. See the [assessment](../../evaluations/delegated-acceptance-2026-10-25.md).
+- [x] Resolve github-readme clean license-last delivery before accepting its complete bounded scope. Actual draft has post-License Changes and validation notes without a clear README boundary; passing factual/intake subsets remain recorded. Initial review held the scope; subsequent repair is authorized and tracked below.
+- [ ] Keep activation, Windows stdin encoding, browser policy, other hosts/models/global routing, real integrations and provider guarantees open. The initial acceptance phase performs no repairs or new native runs; separate continuation follows. PR stays draft; no merge, promotion or real-profile installation.
+
+## README delivery repair and host continuation on 2026-10-25
+
+- [x] Preserve the failed README output and fix the complete artifact/review-note boundary. Regenerate existing four review targets and retain foundation insertion provenance. No shipped-source or placement changes.
+- [x] Run six focused boundary regressions, including old failure shape, nested examples and actual untagged-fence/leading-LF transport.
+- [x] Run three isolated current-profile native tests: supplied README repair loads full instructions and preserves non-README files; seven independent CLI probes pass. Explicit intake remains activation-unverified. Arithmetic negative returns 71 without writes. See the [assessment](../../evaluations/readme-delivery-2026-10-25.md).
+- [x] Recover supported Chrome control and run the original ChatGPT complete-draft case once against the repaired candidate in fresh Unpersonalized Temporary chat/Instant mode. Inspect actual 2370-byte code Copy and external notes. Accept only the bounded supplied-draft/intake scope; preserve failures and one-trailing-LF transport difference. All 23 pending scopes now accepted under delegated authority; workout revision separately accepted.
+- [ ] Keep remaining activation, encoding, browser-policy, unavailable-host/model, actual-integration and provider gaps open. Keep PR draft. No merge, promotion or real-profile installation.
+
+- [x] Validate 123 full regressions before the optional-fence assessor correction, then six final focused regressions; 46 skills/zero repository issues, 24 offline cases/99 negatives/zero model calls, generator/frontmatter/evidence/privacy checks. Delivery CI is a separate final gate.

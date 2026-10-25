@@ -64,6 +64,11 @@ Avoid em dashes and motivational sign-offs in README prose, as well as the promo
 Default to complete README content in the response unless a repository edit is requested or authorized. For repairs, return corrected sections with placement notes or the full file, whichever creates less churn. Recommend a full rewrite only when roughly half or more is stale, and explain why. Briefly confirm the repository name, chosen type, and major included or omitted sections.
 If the user needs help, explain the workflow, request a path, pasted repository summary or specific README problem, show a relevant example, and offer a short next prompt. With supplied text only, distinguish a draft from a README verified against current repository files.
 
+## README delivery boundary
+For a complete README delivered in chat, put the entire README in one fenced Markdown block. Use an outer fence longer than every fence inside the README so command examples cannot close the artifact. The README body must end with the License section and its supported license content. Do not put change summaries, validation notes, execution claims or sign-offs inside or after the License section of the README.
+Put any repository/type confirmation, placement explanation, change summary or validation status outside that block, explicitly labeled `Review notes (not part of README)`. For an authorized file edit, keep those notes in the response only; never append them to README.md. For a partial repair, clearly label the replacement sections and give placement notes outside their fences; preserve targeted repair mode rather than forcing a full rewrite.
+Before delivery, inspect the actual README body independently of the surrounding response: its final heading is License, nested example fences remain intact, and all review notes are outside the artifact.
+
 ## Capability Contract
 
 Read `capabilities.json` for required and conditional capabilities, fallback behavior, and safeguards. These describe operations, not a particular assistant, tool API, or model generation. Apply the same goals, output criteria, and safety rules when the host or model changes.

@@ -1,19 +1,23 @@
 {
-  "assessment_date": "2026-10-24",
-  "basis_commit": "bcbf83dd725920c9073441d569212ee9bcf58298",
-  "review_method": "Assistant re-review of all 23 pending scopes and 84 referenced case entries, including explicit links from prepared cases to recorded attempts; current instruction/evidence hashes and historical resource drift audited. Exact repaired workout Copy independently inspected. No human acceptance or broad native certification.",
+  "assessment_date": "2026-10-25",
+  "basis_commit": "8481d2f464a593e31c513e0aa0b047ca2e6aaccd",
+  "review_method": "Direct review of retained output texts, structured clipboard exports, actual ZIP members/source preservation and visible image files against recorded criteria and current instruction rules. Mechanical validators supplement review; existing pass labels alone do not decide acceptance.",
   "summary": {
-    "pending_native_reviews": 23,
-    "ready_for_scoped_human_review": 23,
+    "pending_native_reviews": 0,
+    "ready_for_scoped_human_review": 0,
     "hold_complete_sampled_scope": 0,
     "new_human_acceptances": 0,
     "promotions": 0,
-    "historical_recorded_subsets_reviewable": 23
+    "historical_recorded_subsets_reviewable": 23,
+    "delegated_bounded_scopes_accepted": 23,
+    "delegated_bounded_scopes_withheld": 0,
+    "repaired_workout_revision_accepted": 1,
+    "new_personal_human_inspections": 0
   },
   "rows": [
     {
       "skill": "alpaca-trading",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Synthetic repository review and missing-repository intake, including remaining-fill accounting and Spec-context requests. No live broker or runtime certification.",
       "recorded_outcome": "Two affected native cases pass after coverage correction",
       "open_limits": [],
@@ -40,11 +44,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Synthetic repository review and missing-repository intake, including remaining-fill accounting and Spec-context requests. No live broker or runtime certification.",
+        "rationale": "Actual static review preserves paper/live confirmation and AI-advisory boundaries, reconciles requested 10/filled 4/unfilled 6 with exit exposure no greater than 4, and requests missing source/Spec context. All tests remain proposals, not broker execution."
       }
     },
     {
       "skill": "astrophotography-processing",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Supplied preview diagnosis and fabricated FITS metadata/source review. No full processing or real capture validation.",
       "recorded_outcome": "Preview diagnosis and supplied FITS metadata/source cases pass",
       "open_limits": [
@@ -62,11 +76,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Supplied preview diagnosis and fabricated FITS metadata/source review. No full processing or real capture validation.",
+        "rationale": "Viewed supplied preview: broad gradient and seven compact points support the cautious diagnosis. Actual FITS bytes confirm exposures 120/60/2 and gains 100/100/200 with matching original hashes. Calibration, processing and scientific validity are excluded."
       }
     },
     {
       "skill": "blog-post",
-      "recommendation": "Ready for human review of bounded recorded scope",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Source-faithful how-to and final corrected attribution draft including title/opening variants. No publication or broader grounding reliability.",
       "recorded_outcome": "Main draft fits the requested range after Markdown markers are excluded, including 429 prose words. Two title/first-sentence alternatives preserve teammate implementation/testing and reviewer-only attribution, no unsupported review/test ordering, exact two fixtures and production untouched.",
       "open_limits": [],
@@ -92,11 +116,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Source-faithful how-to and final corrected attribution draft including title/opening variants. No publication or broader grounding reliability.",
+        "rationale": "Actual attribution draft preserves teammate implementation/testing versus reviewer role, exact two fixtures and untouched production. Current how-to reproduces supplied two-line code and 4/2 counts, with two grounded title/opening variants. Accept drafting only, not execution or publication."
       }
     },
     {
       "skill": "container-home",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Source-faithful draft and corrected fictional planning isolation. No structural sizing, permit or construction approval.",
       "recorded_outcome": "Original home update against repaired guidance passes one fresh Instant rerun; prior unsupported #OffGrid output retained.",
       "open_limits": [
@@ -134,11 +168,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Source-faithful draft and corrected fictional planning isolation. No structural sizing, permit or construction approval.",
+        "rationale": "Actual current update preserves two dry-fit cedar pieces, friend measurement, two current versus two planned containers and pending septic/solar; all three tags are grounded. Planning output retains structural/moisture/septic/load gates and 12-2=10 inventory. No construction approval or complete current-byte planning rerun is inferred."
       }
     },
     {
       "skill": "crypto-research",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Supplied-source comparison and ambiguous-token/missing-live-data clarification. No live financial verification.",
       "recorded_outcome": "Bounded supplied-source and unavailable-live-data cases pass",
       "open_limits": [
@@ -156,11 +200,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Supplied-source comparison and ambiguous-token/missing-live-data clarification. No live financial verification.",
+        "rationale": "Actual supplied-source comparison keeps 20%/90% float and 75% hypothetical cliff arithmetic distinct from verified market facts, leaves unknown risk checks unresolved, and requests token identity in the ambiguous case. Accept fictional/offline source reasoning only."
       }
     },
     {
       "skill": "example-skill",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Synthetic three-step plan/verification and short missing-objective clarification. No execution or installed routing.",
       "recorded_outcome": "Short clarification asks the objective before any plan, avoids private/history assumptions and makes no task-completion or external-action claim.",
       "open_limits": [],
@@ -188,11 +242,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Synthetic three-step plan/verification and short missing-objective clarification. No execution or installed routing.",
+        "rationale": "Actual plan has three actionable CSV-review steps and one verification check, with missing source/results explicit. Later response asks the objective instead of inventing a plan or history. No execution or routing acceptance."
       }
     },
     {
       "skill": "fitness-log",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Synthetic weekly arithmetic and separate assisted/strict benchmark interpretation. No persistent tracker or real athlete assessment.",
       "recorded_outcome": "Bounded synthetic text cases pass",
       "open_limits": [
@@ -210,11 +274,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Synthetic weekly arithmetic and separate assisted/strict benchmark interpretation. No persistent tracker or real athlete assessment.",
+        "rationale": "Actual dashboard/YAML reconciles 3/4 sessions, 105 minutes and 27 strict reps. Benchmark output separates strict 4 from assisted 8 at 40 lb and treats growth from zero as undefined. No persistent tracker, personal-athlete or clinical acceptance."
       }
     },
     {
       "skill": "fitness-programming",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Synthetic schedule/equipment-constrained plan and single-variable adjustment. No training outcome or medical validation.",
       "recorded_outcome": "Bounded synthetic text cases pass",
       "open_limits": [
@@ -232,11 +306,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Synthetic schedule/equipment-constrained plan and single-variable adjustment. No training outcome or medical validation.",
+        "rationale": "Actual fictional plan respects two home sessions and equipment/restrictions. Adjustment changes pull-up sets 6 to 5 while frequency, loads, row sets and exercises remain fixed; monitoring and limited recovery interpretation are explicit. No training-outcome or medical certification."
       }
     },
     {
       "skill": "food-analyzer",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Concise missing-image intake and supplied-label scaling. No image-recognition, medication or real nutrition-safety certification.",
       "recorded_outcome": "Final two-sentence missing-image clarification and final-byte supplied-label control pass without invented nutrition or unnecessary image request.",
       "open_limits": [
@@ -257,24 +341,35 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Concise missing-image intake and supplied-label scaling. No image-recognition, medication or real nutrition-safety certification.",
+        "rationale": "Actual two-sentence missing-image response requests evidence without estimates. Supplied-label output and separate YAML agree on 50 g/200 kcal per container, macro/sodium scaling and DV rounding; peanuts are flagged without clearance. Image recognition and clinical safety remain excluded."
       }
     },
     {
       "skill": "github-readme",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Supplied-source README draft and missing-context intake. No installation or execution certification.",
-      "recorded_outcome": "Repair and missing-context native cases pass",
+      "recorded_outcome": "Repaired original-task native README delivery and historical missing-context intake accepted within bounds; prior failure retained.",
       "open_limits": [
         "Actual README installation/execution not certified"
       ],
-      "current_instruction_sha256": "1d1dfdc705bec8cce3c68c28d221beb92fb9674b9d7502a15edf9986e3d72fdb",
+      "current_instruction_sha256": "89865699dfa631c45cf425fdae221d08171e5ac7c244fd3f1a9949bb1e287490",
       "evidence_sha256": {
         "evaluations/fixtures/native-batch11.json": "0dafa38f5708f642ca8b9c7e555469c86a6f8dfc0c97752ad132bc319fb8073d",
-        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37",
+        "evaluations/fixtures/readme-delivery22.json": "de8c32bbebdbc86106c320dba7f5f4af94076750141332dca43efb1e36cd14de"
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
-      "assistant_review": "Supplied-manifest draft preserves supported runtime/flags and final license; shortcut asks for repository evidence. No actual installation verified.",
+      "assistant_review": "Fresh original-task repaired README draft passes actual delivered-body/source/license checks; unchanged historical intake remains in scope. Code Copy 2370 bytes; whole-response Copy adds one trailing LF. No output edited. Separate current Codex file integration passes with full SKILL.md read and seven independent CLI probes.",
       "codex_host18": {
         "status": "BOUNDED_LOAD_OBSERVED",
         "cases": [
@@ -284,18 +379,49 @@
         "evidence": "evaluations/fixtures/host-routing-integration18.json",
         "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
         "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
-        "current_instruction_unchanged": true,
-        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification.",
+        "historical_current_instruction_unchanged": true,
+        "current_instruction_unchanged": false
       },
       "scope_review20": {
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/readme-delivery22.json",
+        "evidence_sha256": "de8c32bbebdbc86106c320dba7f5f4af94076750141332dca43efb1e36cd14de",
+        "scope": "Repaired supplied-source complete README draft plus unchanged historical missing-context intake. No installation/packaging, broader repository, whole-host or repeatability certification.",
+        "rationale": "Fresh original-task native draft meets source/command/license criteria; actual 2370-byte code Copy ends with supported BSD 3-Clause License and external review notes are clearly delimited. Initial failure and harmless trailing-LF copy-transport difference retained."
+      },
+      "reviewed_before_repair_instruction_sha256": "1d1dfdc705bec8cce3c68c28d221beb92fb9674b9d7502a15edf9986e3d72fdb",
+      "readme_delivery22": {
+        "evidence": "evaluations/fixtures/readme-delivery22.json",
+        "evidence_sha256": "de8c32bbebdbc86106c320dba7f5f4af94076750141332dca43efb1e36cd14de",
+        "original_chatgpt_rerun": "passed; actual code Copy and original criteria inspected",
+        "codex_file_integration": "passed with complete observed instruction read and seven independent CLI probes",
+        "explicit_invocation": "intake correct; activation unverified",
+        "acceptance": "accepted within recorded supplied-draft/intake scope"
+      },
+      "historical_assistant_review": "Supplied-manifest draft preserves supported runtime/flags and final license; shortcut asks for repository evidence. No actual installation verified.",
+      "initial_delegated_acceptance21": {
+        "status": "withheld",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": null,
+        "rationale": "Withhold the complete draft/intake scope. Source corrections, BSD 3-Clause identification and missing-context intake are supported, but the retained draft places a Changes and validation notes heading after License without a clearly bounded README ending. The license-last criterion cannot be accepted cleanly. No repair or substitute case performed."
       }
     },
     {
       "skill": "github-repo-architect",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Synthetic blueprint and original security-prerequisite clarification. No full scaffold/deployment security or repeatability certification.",
       "recorded_outcome": "Defers production architecture, asks system/identity/secret-storage/approval/deployment/recovery/audit questions and rejects sticky-note authorization. No actual secrets requested or production readiness claimed.",
       "open_limits": [
@@ -326,11 +452,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Synthetic blueprint and original security-prerequisite clarification. No full scaffold/deployment security or repeatability certification.",
+        "rationale": "Actual exploratory blueprint supplies ordered architecture descriptions and planned tests/CI without implementation claims; security case defers design pending credential/access/approval prerequisites. Accept planning/clarification only. Flattened copied tree presentation is not certified as a paste-ready scaffold; later stdin/activation findings remain outside acceptance."
       }
     },
     {
       "skill": "github-social-preview",
-      "recommendation": "Ready for human review of bounded recorded scope",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Current README fallback JPEG with exact viewer and normal Download file readback, plus repaired long-title JPEG layout. Original overlap retained; repeatability, other assets/layouts and provider traces unverified.",
       "recorded_outcome": "Supplied README preview and corrected overlap artifact pass",
       "open_limits": [
@@ -371,11 +507,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Current README fallback JPEG with exact viewer and normal Download file readback, plus repaired long-title JPEG layout. Original overlap retained; repeatability, other assets/layouts and provider traces unverified.",
+        "rationale": "Viewed both retained 1280x640 JPEGs. Current README fallback text and repaired long-title/label layout are readable without overlap; one normal Download matches exact inspected bytes. Accept these artifacts only, excluding broad layout and repeated delivery reliability."
       }
     },
     {
       "skill": "idea-forge",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Bounded scoring and inspected disposable artifact with collision refusal. No real vault or general scoring calibration.",
       "recorded_outcome": "Both targeted native cases pass, including inspected artifact bytes",
       "open_limits": [
@@ -393,11 +539,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Bounded scoring and inspected disposable artifact with collision refusal. No real vault or general scoring calibration.",
+        "rationale": "Actual scoring arithmetic is 52.5/100 for the provided ratings. Actual saved ZIP contains an 18-section 55/100 analysis, matching saved-note content and unchanged sentinel files; recorded collision/traversal refusal is consistent with the artifacts. No real Obsidian or full provider-execution claim accepted."
       }
     },
     {
       "skill": "linkedin-post",
-      "recommendation": "Ready for human review of bounded recorded scope",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Corrected source-grounded technical lesson and audience variants. Original unsupported technology hashtag retained; no publication.",
       "recorded_outcome": "Final grounded lesson and audience variants pass",
       "open_limits": [
@@ -424,11 +580,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Corrected source-grounded technical lesson and audience variants. Original unsupported technology hashtag retained; no publication.",
+        "rationale": "Actual corrected lesson preserves supplied 12-record/9-unchanged/2-new/1-removed facts and grounded tags. Current practitioner/leadership variants preserve teammate implementation/tests and author design-review attribution, with no invented impacts. No publication accepted."
       }
     },
     {
       "skill": "market-brief",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Supplied snapshot arithmetic and unavailable-live-data fallback. No current market accuracy or live retrieval.",
       "recorded_outcome": "Bounded supplied-source and unavailable-live-data cases pass",
       "open_limits": [
@@ -446,11 +612,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Supplied snapshot arithmetic and unavailable-live-data fallback. No current market accuracy or live retrieval.",
+        "rationale": "Actual offline brief retains conflicting BTC 104/106 and 4%/6%, Gold 1% and DXY 0.5% arithmetic without inventing a third headline. Missing-live-data case leaves quotes unavailable and requests timestamped evidence. No current market accuracy or live retrieval accepted."
       }
     },
     {
       "skill": "n8n-workflow",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Corrected new-workflow proposal and existing-flow static review, including selective retry consistency. No live n8n execution or version compatibility.",
       "recorded_outcome": "Prioritized seven findings and minimal fixes; only429/503 retries with three-total-attempt ceiling, lost response/transport error one uncertain attempt, explicit failure branch, no guaranteed Error Trigger or false201. No runtime/deployment/notification claim.",
       "open_limits": [
@@ -482,11 +658,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Corrected new-workflow proposal and existing-flow static review, including selective retry consistency. No live n8n execution or version compatibility.",
+        "rationale": "Actual design/review restrict retries to 429/503 and three total attempts, keep lost-response/transport outcome uncertain with no retry, require authentication/idempotency and explicit failure handling, and avoid guaranteed Error Trigger behavior. Conceptual/static scope only; no engine execution accepted."
       }
     },
     {
       "skill": "patentforge-provisional",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Fictional14-section package delivery within stated limits and one-question mechanism intake. No legal sufficiency, patentability or filing-readiness certification.",
       "recorded_outcome": "Final14-section package passes1114/1200 total and289/300 section10; final-byte one-question interview control also passes. Source mechanism, confidentiality flags and upfront boundaries preserved.",
       "open_limits": [
@@ -508,11 +694,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Fictional14-section package delivery within stated limits and one-question mechanism intake. No legal sufficiency, patentability or filing-readiness certification.",
+        "rationale": "Actual fictional package has 14 populated sections, 1140 total words and 290 in section 10. Mechanism and confidentiality flags are retained; interview asks one substantive mechanism question without inventing an implementation. Legal sufficiency, patentability and filing readiness excluded."
       }
     },
     {
       "skill": "photo-rename",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Preview/copy retry and actual downloaded three-JPEG ZIP hashes/EXIF/extensions/mapping. Phone and repeated delivery excluded.",
       "recorded_outcome": "Bounded native preview/copy retry and saved ZIP hashes pass",
       "open_limits": [
@@ -531,11 +727,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Preview/copy retry and actual downloaded three-JPEG ZIP hashes/EXIF/extensions/mapping. Phone and repeated delivery excluded.",
+        "rationale": "Viewed retained preview/copy content and the three actual downloaded JPEGs. Saved ZIP matches the recorded 17083-byte hash, contains exactly three unique case-preserved JPEGs plus mapping, and each member matches its original hash. DOM captures are first pinned at this review; capture-time provenance/full tool trace and remote input preservation remain unverified. Human-assisted saving is part of this narrow acceptance."
       }
     },
     {
       "skill": "pihole-blocklist",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Supplied subset Skip and offline rubric arithmetic. No live source approval, DNS behavior or policy change.",
       "recorded_outcome": "Bounded supplied subset/Skip and offline rubric cases pass",
       "open_limits": [
@@ -564,11 +770,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Supplied subset Skip and offline rubric arithmetic. No live source approval, DNS behavior or policy change.",
+        "rationale": "Actual strict-subset case correctly skips zero-unique coverage without a performance claim. Offline weighted rubric computes 3.55/5 and supplies a conditional alphabetic README row without operational approval. No DNS behavior or real source approval accepted."
       }
     },
     {
       "skill": "pihole-csv-analyzer",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Synthetic counts/malformed aggregates and inspected comment-only/empty review ZIPs. No production DNS or device identification.",
       "recorded_outcome": "Two native cases and actual review-only ZIP contents pass",
       "open_limits": [
@@ -599,11 +815,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Synthetic counts/malformed aggregates and inspected comment-only/empty review ZIPs. No production DNS or device identification.",
+        "rationale": "Actual captured analysis reconciles 10/6/3/1 and distinguishes unknown status/client identity. Malformed aggregate rejects negative/nonnumeric rows without inventing status percentages. Actual ZIPs contain only commented or empty review lists. No production policy or device identification accepted."
       }
     },
     {
       "skill": "powershell-refactor",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Native deduplication/naming proposals and separately identified local toy replay. No native Pester/analyzer certification.",
       "recorded_outcome": "Deduplication and naming-only native proposals pass with separate toy replay",
       "open_limits": [
@@ -632,11 +858,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Native deduplication/naming proposals and separately identified local toy replay. No native Pester/analyzer certification.",
+        "rationale": "Actual complete proposals preserve public interfaces, pipeline process/order, integer cases and PSCustomObject property order; naming proposal retains ShouldProcess/WhatIf/Confirm. Analyzer/Pester are explicitly unrun. Accept bounded proposals and separately recorded toy checks, not native analyzer certification."
       }
     },
     {
       "skill": "spec-writer",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Two inspected disposable planning artifact cases with existing-file preservation/reuse. No broader implementation or repository certification.",
       "recorded_outcome": "Both targeted native cases pass, including inspected artifact bytes",
       "open_limits": [
@@ -666,11 +902,21 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Two inspected disposable planning artifact cases with existing-file preservation/reuse. No broader implementation or repository certification.",
+        "rationale": "Inspected both actual ZIPs and compared original input bytes. New spec selects 008; stale checkpoint spec reuses 007. Only authorized spec files differ, requirements are draft/migration, and future tasks remain unchecked with integrity/rehearsal/rollback decisions. No implementation or broad repository certification."
       }
     },
     {
       "skill": "trip-email-html-itinerary",
-      "recommendation": "Ready for bounded recorded-scope human review",
+      "recommendation": "Accepted within recorded bounded scope by Mick-authorized agent review",
       "proposed_scope": "Intake and static fragment review. Priority badge discrepancy retained; full HTML generation/rendering/mobile/print excluded.",
       "recorded_outcome": "Intake retry and unchanged static fragment review pass",
       "open_limits": [
@@ -700,6 +946,16 @@
         "status": "Assistant review complete; human acceptance pending",
         "evidence": "evaluations/fixtures/native-scope-review20.json",
         "evidence_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38"
+      },
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "scope": "Intake and static fragment review. Priority badge discrepancy retained; full HTML generation/rendering/mobile/print excluded.",
+        "rationale": "Actual ledger preserves canceled/superseded bookings, 18:30 return update, pending addresses and redactions. Static fragment review identifies seven substantive issues without claiming validation/rendering. Priority-badge discrepancy remains excluded from acceptance, along with full HTML/mobile/print and live travel verification."
       }
     }
   ],
@@ -738,6 +994,42 @@
     "host_evidence": "evaluations/fixtures/host-routing-integration20.json",
     "host_evidence_sha256": "25bdf60517fa097759b2ffe07acf66e039c0d984e7bfddfff708988f7ecac858",
     "new_human_acceptances": 0,
+    "promotions": 0
+  },
+  "acceptance_definitions": {
+    "delegated_acceptance": "Effective authorized-agent decision in delegated_acceptance, not a claim Mick personally inspected outputs.",
+    "human_acceptance": "Legacy personal-human-review status retained unchanged for historical truth; delegated decisions are separate.",
+    "historical_snapshots": "native19_summary, scope_review20 and earlier batch summaries retain their dated state; current summary/delegated_acceptance21 govern effective acceptance."
+  },
+  "delegated_acceptance21": {
+    "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+    "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+    "summary": {
+      "pending_scopes_reviewed": 23,
+      "delegated_scopes_accepted": 22,
+      "delegated_scopes_withheld": 1,
+      "repaired_workout_revision_accepted": 1,
+      "new_personal_human_inspections": 0,
+      "new_human_acceptances": 0,
+      "historical_bounded_acceptances_unchanged": 13,
+      "effective_recorded_bounded_scopes_accepted": 35,
+      "effective_recorded_bounded_scopes_pending": 1,
+      "promotions": 0
+    },
+    "repaired_workout_revision": "accepted"
+  },
+  "readme_delivery22": {
+    "evidence": "evaluations/fixtures/readme-delivery22.json",
+    "evidence_sha256": "de8c32bbebdbc86106c320dba7f5f4af94076750141332dca43efb1e36cd14de",
+    "acceptance": "bounded README scope accepted; initial withheld decision preserved"
+  },
+  "delegated_acceptance22": {
+    "evidence": "evaluations/fixtures/readme-delivery22.json",
+    "evidence_sha256": "de8c32bbebdbc86106c320dba7f5f4af94076750141332dca43efb1e36cd14de",
+    "current_review_scopes_accepted": 23,
+    "historical_bounded_scopes_unchanged": 13,
+    "effective_bounded_scopes_accepted": 36,
+    "personal_human_inspections": 0,
     "promotions": 0
   }
 }

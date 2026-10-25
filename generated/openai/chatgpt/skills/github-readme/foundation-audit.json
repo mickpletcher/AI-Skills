@@ -44,6 +44,11 @@
       "text": "- Scope prerequisites and input/schema requirements to their verified command mode or branch. Trace alternate paths before making a requirement universal: a field needed by a filtered mode may be unnecessary for an all-records mode. Document the distinction rather than imposing the stricter schema on every mode.\n",
       "prior_master_sha256": "997b3f88daabce0ec708efbddb11983d8348fab74e4d19d08ed6b3589a5a67be",
       "reason": "A fresh comparison-model source review overgeneralized a filtered-mode field requirement. Independent original-source probes confirm all-records mode accepts that field being absent. Preserve the original native output; require branch-scoped documentation."
+    },
+    {
+      "text": "## Distribution-aware links\nWhen the README also ships in a release archive or package, inspect the packaging inclusion/exclusion rules and distinguish the checkout layout from each supported distribution layout. A path that exists in the checkout may be absent from the release archive. Preserve appropriate repository URLs for excluded source files rather than converting every link to a relative path; use relative links for files present at that location in every intended delivery context.\nUse the project's existing packaging and link validators, including extracted-archive checks when available and authorized. Do not publish a release to validate links. If a distribution layout or check is unavailable, identify the unverified context explicitly. Offline path checks do not establish external URL availability.\n\n",
+      "prior_master_sha256": "cb971c988ffa1df2a95f85749ba88cfd08302fa5a060bb78cb486e8923376681",
+      "reason": "The real-repository README pilot converted excluded canonical-source URLs to relative links, breaking extracted-release validation. Preserve distribution-aware links without claiming new native evaluation."
     }
   ]
 }

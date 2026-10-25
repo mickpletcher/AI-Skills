@@ -41,6 +41,14 @@ Use this skill to assess an active repository and produce a durable handoff docu
 5. Identify the highest value next step.
 6. Write the assessment in a reusable, actionable form.
 
+## Evidence and authorization boundaries
+
+- Check git status before assessing the current tree. Distinguish committed content from staged, unstaged and untracked work; preserve user edits and do not reset, clean, move or delete files during an assessment.
+- If the repository is inaccessible or the supplied tree/status is incomplete, request the minimum missing path, files or Git evidence. Offer only a provisional assessment of supplied material; do not imply a complete scan or invent findings.
+- Cite concrete paths and line numbers or inspected configuration entries for material findings. Separate confirmed findings, hypotheses and open questions, and explain the evidence behind the single highest-value next step.
+- Report checks as passed or failed only when actually executed with a recorded result. Label proposed, unavailable and unrun checks explicitly; reading a test or workflow does not mean it passed.
+- Return the assessment in the conversation by default. Save or update a handoff file only when writing that file is authorized by the user's request; tool access or a request to assess alone does not grant write authorization. Report the actual destination and changes if saved. Do not implement recommendations as part of the assessment.
+
 ## Output Format
 
 ```text
@@ -51,6 +59,10 @@ Project Summary
 Current State
 
 - ...
+
+Evidence and Limitations
+
+- Inspected paths, Git state, missing context, and checks actually run versus proposed or unrun.
 
 Risks
 

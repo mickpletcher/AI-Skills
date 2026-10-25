@@ -1,5 +1,7 @@
 # Behavioral evaluation framework
 
+The [first post-migration quality fixtures](fixtures/first-quality-improvements.json) cover README checkout/archive links and the two shipped audit workflows. They retain synthetic inputs and human success criteria. `test_quality_improvements.py` checks local link behavior, evidence consistency and contract propagation only; all new model cases remain **not run**. No existing host acceptance is extended by these tests.
+
 Latest [delegated acceptance](delegated-acceptance-2026-10-25.md): Mick-authorized agent review accepts 22 of 23 pending bounded scopes and the repaired workout revision separately. github-readme is withheld because post-License notes leave the required delivery boundary unresolved. No personal human inspection, repair, merge or promotion. Activation/encoding/browser/other-host and real-integration gaps remain open.
 
 Latest [scope review and host continuation](native-scope-host-review-2026-10-24.md): all 23 pending scopes and repaired workout revision reviewed without human acceptance. Six new domain sessions plus one canary distinguish catalog discovery, instruction reads and artifacts. Scaffold/README runtime probes add bounded evidence; profile activation, ambient Windows stdin encoding and actual browser rendering remain open. PR draft; no merge or promotion.

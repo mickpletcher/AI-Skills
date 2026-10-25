@@ -62,6 +62,12 @@ Use these categories:
    - delete only after owner confirmation
    - update docs to point to the source of truth
 
+## Evidence before disposal
+
+Before recommending removal, inspect packaging inclusion/exclusion rules and release manifests, dynamic discovery or glob-based loading, and tests, fixtures and examples. A missing literal reference is not proof that a file is unused. A reproducible generated artifact may still be intentionally shipped or required by consumers; distinguish its origin from permission to remove it. Keep required artifacts and explain the dependency with concrete paths. If a consumer or generation path cannot be verified, mark the file `Needs owner review` rather than a delete candidate.
+
+When Git status, tracked/untracked state or repository context is missing, request the minimum missing evidence and label the supplied-file inventory provisional. Do not claim a complete cleanup audit or safe deletion based on a partial tree. Preserve staged, unstaged and untracked user work. These checks do not authorize generation, cleanup, installation or release actions; retain the separate owner-confirmation requirement below.
+
 ## What To Check
 
 - Does README mention a file that no longer exists

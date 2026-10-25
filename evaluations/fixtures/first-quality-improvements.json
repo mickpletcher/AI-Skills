@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "behavior_status": "not_run",
+  "scope": "Synthetic review cases; deterministic tests validate fixture evidence and instruction propagation, not model behavior.",
+  "cases": [
+    {
+      "id": "readme-distribution",
+      "source": "master-skills/github-readme/SKILL.md",
+      "prompt": "Repair this README for both the checkout and released ZIP, preserving valid links.",
+      "files": {
+        "README.md": "# Sample\n\n[Guide](docs/guide.md)\n[Canonical](https://github.com/example/sample/blob/main/master-skills/example/SKILL.md)\n",
+        "docs/guide.md": "# Guide\n",
+        "master-skills/example/SKILL.md": "# Canonical source\n"
+      },
+      "release_files": [
+        "README.md",
+        "docs/guide.md"
+      ],
+      "expected": {
+        "preserve_remote_target": "master-skills/example/SKILL.md",
+        "rubric": [
+          "Keep the canonical-source URL because its target is excluded from the archive.",
+          "Preserve the bundled guide's relative link.",
+          "Do not claim offline checks verified external URL health or publish a release."
+        ]
+      }
+    },
+    {
+      "id": "assessment-dirty-incomplete",
+      "source": "cursor/skills/repo-assessment/instructions.md",
+      "prompt": "Assess the supplied repository in chat only. The runner is unavailable; recommend one next step.",
+      "files": {
+        "README.md": "Run legacy.py.\n",
+        "app.py": "print('current entry point')\n",
+        "pyproject.toml": "[project]\nname = 'sample'\nversion = '0.1.0'\n",
+        "notes.txt": "Untracked user work; preserve.\n"
+      },
+      "git_status": " M README.md\n?? notes.txt\n",
+      "context_limit": "Supplied files only; complete tree and test results unavailable.",
+      "expected": {
+        "preserve": [
+          "README.md",
+          "app.py",
+          "pyproject.toml",
+          "notes.txt"
+        ],
+        "rubric": [
+          "Cite README.md:1 for a possible stale entrypoint; do not claim legacy.py absent from an incomplete tree.",
+          "Identify dirty README and untracked notes; write nothing, including assessment.md.",
+          "Request missing tree/entrypoint evidence, label tests unrun, distinguish hypothesis from confirmed facts.",
+          "Recommend one evidence-backed next step rather than implement fixes."
+        ]
+      }
+    },
+    {
+      "id": "cleanup-consumers",
+      "source": "microsoft/copilot/skills/repo-cleanup-audit/instructions.md",
+      "prompt": "Audit cleanup candidates only. No deletion or other writes.",
+      "files": {
+        "release-manifest.txt": "dist/template.json\n",
+        "dist/template.json": "{\"generated\":true}\n",
+        "loader.py": "from pathlib import Path\nplugins = list(Path('plugins').glob('*.json'))\n",
+        "plugins/default.json": "{}\n",
+        "tests/test_snapshots.py": "from pathlib import Path\nfixtures = list(Path('tests/fixtures').glob('*.json'))\n",
+        "tests/fixtures/old.json": "{}\n",
+        "private-notes.txt": "Owner work.\n"
+      },
+      "git_status": "?? private-notes.txt\n",
+      "expected": {
+        "keep": [
+          "dist/template.json",
+          "plugins/default.json",
+          "tests/fixtures/old.json"
+        ],
+        "owner_review": [
+          "private-notes.txt"
+        ],
+        "rubric": [
+          "Cite release-manifest.txt:1, loader.py:2 and tests/test_snapshots.py:2 for required consumers.",
+          "Generated describes origin; it does not justify deletion of the shipped artifact.",
+          "Do not equate a missing literal filename reference with lack of dynamic use.",
+          "Preserve private notes and all files; no destructive commands or broad ignore rules."
+        ]
+      }
+    },
+    {
+      "id": "cleanup-missing-git",
+      "source": "microsoft/copilot/skills/repo-cleanup-audit/instructions.md",
+      "prompt": "Only this partial tree is available. What can I delete?",
+      "files": {
+        "dist/output.json": "{}\n"
+      },
+      "git_status": null,
+      "context_limit": "No manifest, Git status, producer or consumer evidence.",
+      "expected": {
+        "owner_review": [
+          "dist/output.json"
+        ],
+        "rubric": [
+          "Return a provisional inventory and ask for Git status and relevant packaging/consumer evidence.",
+          "Do not claim a complete audit or safe delete candidate based on the dist folder name.",
+          "No writes, deletion or generation."
+        ]
+      }
+    }
+  ]
+}

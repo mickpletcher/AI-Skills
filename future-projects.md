@@ -257,66 +257,66 @@ Could convert raw notes into a clean sequence of work, dependencies, and next ac
 
 ## GitHub Skills
 
-This section is GitHub focused work that should likely live under `copilot/` based on the repo platform rules.
+This section is GitHub focused work that should likely live under `microsoft/copilot/` based on the repo platform rules.
 
 ### Tier 1
 
-1. `copilot/skills/workflow-debugger`
+1. `microsoft/copilot/skills/workflow-debugger`
 High value for GitHub Actions failures, local repro steps, and targeted fix guidance.
 
-2. `copilot/skills/issue-to-spec`
+2. `microsoft/copilot/skills/issue-to-spec`
 Useful for turning a GitHub issue into requirements, plan, tasks, and implementation scaffolding.
 
-3. `copilot/skills/release-notes`
+3. `microsoft/copilot/skills/release-notes`
 Good fit for changelog generation, release summaries, and version cut checklists.
 
-4. `copilot/skills/repo-bootstrap`
+4. `microsoft/copilot/skills/repo-bootstrap`
 A GitHub centered starter skill for initializing standards, labels, templates, and automation on a new repo.
 
-5. `copilot/skills/pr-checklist`
+5. `microsoft/copilot/skills/pr-checklist`
 Useful for generating a concise pre merge review checklist based on the files changed.
 
-6. `copilot/skills/test-failure-triage`
+6. `microsoft/copilot/skills/test-failure-triage`
 Strong fit for turning failing test output into probable causes and next fixes.
 
-7. `copilot/skills/changelog-writer`
+7. `microsoft/copilot/skills/changelog-writer`
 Useful for producing repo rooted change summaries in the style already used across your repos.
 
 ### Tier 2
 
-1. `copilot/skills/dependency-upgrade-review`
+1. `microsoft/copilot/skills/dependency-upgrade-review`
 Useful for evaluating dependency update pull requests and calling out real break risk.
 
-2. `copilot/skills/docs-audit`
+2. `microsoft/copilot/skills/docs-audit`
 Good fit for stale README detection, broken link review, and missing setup coverage.
 
-3. `copilot/skills/test-gap-review`
+3. `microsoft/copilot/skills/test-gap-review`
 A focused skill for checking changed files against missing or weak test coverage.
 
 ### Tier 3
 
-1. `copilot/skills/security-review`
+1. `microsoft/copilot/skills/security-review`
 Useful, but should follow after the more general PR and workflow skills are in place.
 
-2. `copilot/skills/label-triage`
+2. `microsoft/copilot/skills/label-triage`
 Could help normalize issue routing and repo hygiene for larger projects.
 
-3. `copilot/skills/discussion-summary`
+3. `microsoft/copilot/skills/discussion-summary`
 Useful for summarizing long issue or discussion threads into clear next actions.
 
-4. `copilot/skills/migration-checklist`
+4. `microsoft/copilot/skills/migration-checklist`
 A practical repo migration skill for renames, structure changes, and CI transitions.
 
-5. `copilot/skills/release-cutover`
+5. `microsoft/copilot/skills/release-cutover`
 Could guide tagging, packaging, branch checks, changelog review, and release verification.
 
-6. `copilot/skills/action-hardening`
+6. `microsoft/copilot/skills/action-hardening`
 Useful for GitHub Actions permission review, secret handling, and runner choice checks.
 
-7. `copilot/skills/issue-triage-summary`
+7. `microsoft/copilot/skills/issue-triage-summary`
 Could group open issues by risk, effort, and likely next milestone.
 
-8. `copilot/skills/docs-to-tests`
+8. `microsoft/copilot/skills/docs-to-tests`
 Interesting longer term skill for turning documented examples into test case candidates.
 
 ## Gemini Skills

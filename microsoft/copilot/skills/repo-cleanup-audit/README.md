@@ -65,7 +65,7 @@ Then check whether the response:
 ## File Structure
 
 ```text
-copilot/skills/repo-cleanup-audit/
+microsoft/copilot/skills/repo-cleanup-audit/
 |-- README.md
 `-- instructions.md
 ```

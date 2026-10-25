@@ -11,7 +11,7 @@ Reviewed every current skill folder under:
 
 - `claude/skills/`
 - `openai/chatgpt/skills/`
-- `copilot/skills/`
+- `microsoft/copilot/skills/`
 - `cursor/skills/`
 
 `gemini/` and `perplexity/` have platform README files only. They do not have live skill folders yet.

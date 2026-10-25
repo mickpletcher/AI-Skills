@@ -10,3 +10,6 @@
 master-skills/** -text
 generated/** -text
 generated-models/** -text
+
+# Relocated shipped Copilot instructions retain their original bytes.
+microsoft/copilot/skills/**/instructions.md -text

@@ -3,7 +3,7 @@
   "adapter_sha256": null,
   "behavior_evaluation": "not_run",
   "ecosystem": "claude",
-  "ecosystem_paths_sha256": "3e64da3c5763530f31b34f02256e4e218e89c233b55a0193ba68d4df0cb1fb15",
+  "ecosystem_paths_sha256": "035f7a1a71d84399e8453fd923d81b4cd9ac38f411d762ae364c2f87267492d9",
   "generator_sha256": "43a95a6d7af5b7933684fb1d914bc879644c91082fa96eb7e8c7921ba3b77bed",
   "master_revision": "ea8c919188dc7f80a0878ab3229fe3c488e32be3c00b9bf39116777c28afd635",
   "master_revision_kind": "sha256-bundle",

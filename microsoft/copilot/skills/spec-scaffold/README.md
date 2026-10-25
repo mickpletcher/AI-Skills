@@ -29,7 +29,7 @@ Use spec-scaffold to create a numbered spec folder for this repo feature.
 ## File Structure
 
 ```text
-copilot/skills/spec-scaffold/
+microsoft/copilot/skills/spec-scaffold/
 |-- README.md
 `-- instructions.md
 ```

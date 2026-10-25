@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Grouped existing GitHub Copilot and reserved Copilot Studio directories under `microsoft/`; retained the existing OpenAI grouping, stable catalog IDs and release boundaries.
+
 - Verify fresh-session instruction loading across two native interfaces and model aliases using actual retained input histories. Preserve and repair a mode-specific README input requirement error; ten current reruns follow 26 initial sessions. Correct stale acceptance guidance; keep draft/promotion gates and limited merge recommendation explicit.
 
 - Correct activation test assertions for Windows short/long temporary-path aliases. Nine focused tests pass; runtime helper and native evidence are unchanged. Retain initial Windows CI failure and check the correction head separately.

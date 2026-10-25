@@ -1,0 +1,20 @@
+# Tasks
+
+- [x] Inspect current head and instructions; isolate checkout without altering other work.
+- [x] Group Microsoft directories and update live consumers.
+- [x] Verify content preservation, catalog, generation, evaluation and release regressions.
+- [ ] Obtain publication approval; do not merge or promote.
+
+## Local validation
+
+- Base: bcd32a97aaf962405236a4a059d40c1a95c7d64e. Work isolated on codex/vendor-folder-consolidation; other checkouts unchanged.
+- Moved 13 tracked files: all six instruction bodies byte-identical; seven README files have explicit path updates. OpenAI source layout was already correct and remains unchanged.
+- All 46 catalog IDs and other metadata are preserved; only six Copilot entries have new physical source/README paths. Existing package checksums are byte-identical.
+- Generated 807 files; check passes. All candidate instructions/resources are unchanged. Only 96 build-provenance ecosystem_paths hashes and the ownership manifest change. Historical behavioral captures, acceptances and source pins are retained unchanged; this move grants no new behavioral acceptance.
+- 139 Python tests pass locally, with two Windows-only junction skips on macOS. Added nested Microsoft discovery/obsolete-root exclusion coverage and expanded release inclusion/exclusion and linked-parent checks.
+- Deterministic release fixture checksum updated to eb6b36765cb2ed74b41d2d6dd9f18959ce7814a0da997372b49435cf383df97e because the Microsoft guide is now included; ordering, encoding, deterministic output, content and reserved-target exclusions remain asserted. Initial old-checksum failure is retained in local test logs.
+- Repository and PowerShell quality: 46 skills, zero issues. Folder validator: 35 skills, zero issues. Folder invocation initially lacked the temporary Python PATH shim; rerun with the existing shim passed without installation.
+- Offline contract fixtures: 24 cases, 99 negative checks, zero model calls. Diff whitespace passes with existing CRLF/hard-break conventions allowed. Historical changelog paths and stable logical fixture IDs are intentionally retained.
+- No candidate source or helper logic changes require repeated native behavior tests. Current change has not been pushed; fresh Windows/Linux hosted checks remain pending publication approval. No merge, auto-merge, installation or promotion.
+
+- Staged-byte audit caught Git normalizing four CRLF sequences in the moved PR-review instruction file. Restored exact original bytes and added a narrowly scoped instruction-file attribute; all six committed source hashes now match the base.

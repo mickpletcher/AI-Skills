@@ -13,7 +13,7 @@ Examples:
 
 - Claude skills go under `claude/`
 - OpenAI targets share `openai/`: ChatGPT skills go under `openai/chatgpt/` and Codex skills under `openai/codex/`
-- GitHub Copilot skills go under `copilot/`
+- GitHub Copilot skills go under `microsoft/copilot/`
 - Gemini skills go under `gemini/`
 - Perplexity skills go under `perplexity/`
 - Cursor skills go under `cursor/`
@@ -60,9 +60,9 @@ claude/
         `-- skill-name.skill
 ```
 
-Apply the same idea to `openai/chatgpt/` and `copilot/`, using the file formats those platforms expect.
+Apply the same idea to `openai/chatgpt/` and `microsoft/copilot/`, using the file formats those platforms expect.
 
-OpenAI is an organizational parent. Logical target IDs remain `chatgpt` and `codex`; do not merge their instruction formats or suitability rules. Generated candidates mirror the grouping under `generated/openai/<target>/skills/`. Adapter lookup uses `adapters/openai/<target>/<skill>/append.md`. Other ecosystem paths are unchanged.
+OpenAI is an organizational parent. Logical target IDs remain `chatgpt` and `codex`; do not merge their instruction formats or suitability rules. Generated candidates mirror the grouping under `generated/openai/<target>/skills/`. Adapter lookup uses `adapters/openai/<target>/<skill>/append.md`. Microsoft similarly groups `microsoft/copilot/` and reserved `microsoft/copilot-studio/`. The logical `copilot` ID remains stable. Copilot Studio has no generator/deployment support; its future adapter location is `adapters/microsoft/copilot-studio/<skill>/`. Other ecosystem paths are unchanged.
 
 ## Beginner Implementation Rule
 
@@ -95,7 +95,7 @@ Use plain language. Do not assume the reader already knows where Claude, ChatGPT
 - Source file should be a clear instruction file in the skill folder
 - `README.md` should explain which Copilot instruction surface the content is meant for
 - If the repo does not yet have a live Copilot example, say that plainly instead of implying a finished workflow exists
-- This repo now includes `copilot/skills/pr-review/` as the first concrete Copilot example
+- This repo now includes `microsoft/copilot/skills/pr-review/` as the first concrete Copilot example
 
 ### Gemini
 

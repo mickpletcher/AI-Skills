@@ -30,7 +30,7 @@ Use readme-sync to check whether README.md matches the current repo.
 ## File Structure
 
 ```text
-copilot/skills/readme-sync/
+microsoft/copilot/skills/readme-sync/
 |-- README.md
 `-- instructions.md
 ```

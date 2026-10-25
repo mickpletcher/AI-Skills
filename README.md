@@ -117,7 +117,9 @@ The existing example scaffold lives under `openai/codex/skills/example-skill/`. 
 
 ### GitHub Copilot
 
-Copilot skills in this repo live under `copilot/skills/<skill-name>/`.
+Microsoft targets share the [microsoft/](microsoft/README.md) parent: GitHub Copilot and Copilot Studio remain separate. Copilot Studio is reserved and has no generation/deployment support yet.
+
+Copilot skills in this repo live under `microsoft/copilot/skills/<skill-name>/`.
 
 What to open:
 
@@ -144,7 +146,7 @@ What to expect:
 
 Current example:
 
-- [copilot/skills/pr-review](./copilot/skills/pr-review/)
+- [microsoft/copilot/skills/pr-review](./microsoft/copilot/skills/pr-review/)
 
 ### Gemini
 
@@ -231,7 +233,7 @@ Current examples:
 | ----- | ----- | ----- | ----- |
 | Claude | `claude/skills/<skill-name>/` | `SKILL.md` | Import or install the `.skill` package, then test in Claude |
 | ChatGPT | `openai/chatgpt/skills/<skill-name>/` | `instructions.md` | Paste into a custom GPT or ChatGPT Custom Instructions |
-| Copilot | `copilot/skills/<skill-name>/` | platform instruction file | Paste into the Copilot instruction surface used by that repo or workflow |
+| Copilot | `microsoft/copilot/skills/<skill-name>/` | platform instruction file | Paste into the Copilot instruction surface used by that repo or workflow |
 | Gemini | `gemini/skills/<skill-name>/` | `instructions.md` | Paste into a Gemini Gem or equivalent Gemini instruction surface |
 | Perplexity | `perplexity/skills/<skill-name>/` | `SKILL.md` | Paste Markdown directly or upload the skill file, depending on the skill README |
 | Cursor | `cursor/skills/<skill-name>/` | `instructions.md` | Paste into project rules, user rules, or chat context in Cursor |
@@ -250,7 +252,7 @@ See [platform installation](docs/installation.md), [dependencies](docs/dependenc
 - `templates/`: starter templates for new skills
 - `claude/`: Claude-specific skills, scripts, and metadata
 - `openai/`: OpenAI targets, with separate `chatgpt/` and `codex/` skill folders
-- `copilot/`: GitHub Copilot instructions and prompts
+- `microsoft/`: separate `copilot/` instructions and reserved `copilot-studio/` adaptations
 - `gemini/`: Gemini-specific instructions and Gem-ready skill content
 - `perplexity/`: Perplexity-specific skill files and setup notes
 - `cursor/`: Cursor-specific rules and coding assistant instructions

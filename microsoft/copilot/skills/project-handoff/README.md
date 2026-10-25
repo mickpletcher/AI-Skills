@@ -30,7 +30,7 @@ Use project-handoff to create a handoff.md for this repo.
 ## File Structure
 
 ```text
-copilot/skills/project-handoff/
+microsoft/copilot/skills/project-handoff/
 |-- README.md
 `-- instructions.md
 ```

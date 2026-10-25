@@ -36,3 +36,5 @@ Release ZIP members are ordered by relative POSIX path strings. The checksum sid
 The root [LICENSE](../LICENSE) contains the MIT License, copyright 2026 Mick Pletcher. Existing third-party licenses and attribution notices remain applicable and must be preserved. The repository bundle includes the root license; the existing skill-specific license is retained unchanged.
 
 The license choice satisfies the nonempty-license preparation gate. It does not activate the release workflow, create a tag, or authorize publishing a release. The workflow remains an inactive template requiring separate owner approval.
+
+Microsoft grouping preserves the six shipped GitHub Copilot skills under `microsoft/copilot/` and includes the Microsoft directory guide. Reserved `microsoft/copilot-studio/` is excluded; no generator target, installation or promotion is added.

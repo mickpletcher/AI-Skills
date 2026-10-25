@@ -28,7 +28,7 @@ Use commit-message-writer for these changed files and give me a ready to paste m
 ## File Structure
 
 ```text
-copilot/skills/commit-message-writer/
+microsoft/copilot/skills/commit-message-writer/
 |-- README.md
 `-- instructions.md
 ```

@@ -63,7 +63,7 @@ Then check whether the response:
 ## File Structure
 
 ```text
-copilot/skills/pr-review/
+microsoft/copilot/skills/pr-review/
 |-- README.md
 `-- instructions.md
 ```

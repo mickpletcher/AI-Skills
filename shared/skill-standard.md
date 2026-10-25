@@ -5,7 +5,7 @@ Canonical migration exception: `master-skills/` holds portable review candidates
 
 This document defines the minimum standard for writing a skill in this repository.
 
-Skills should be authored inside the platform folder they belong to. A Claude skill belongs in `claude/`, a ChatGPT skill belongs in `openai/chatgpt/`, and a Copilot skill belongs in `copilot/`.
+Skills should be authored inside the platform folder they belong to. A Claude skill belongs in `claude/`, a ChatGPT skill belongs in `openai/chatgpt/`, and a Copilot skill belongs in `microsoft/copilot/`.
 
 Additional supported platform areas in this repo include `gemini/`, `perplexity/`, and `cursor/`.
 

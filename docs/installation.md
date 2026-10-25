@@ -22,6 +22,8 @@ Read the skill's `instructions.md`. Copy it into a dedicated custom GPT's instru
 
 ## Copilot
 
+Repository sources live under `microsoft/copilot/skills/`. This organizational move does not alter the host installation surface or install anything. Copilot Studio remains a separate reserved target under `microsoft/copilot-studio/`.
+
 Read the skill's `instructions.md`, then merge applicable guidance into your repository's supported Copilot instruction or prompt surface. Preserve existing repository instructions. A direct chat paste is also possible for a single task. These source files are not executable plugins and do not grant repository write permission.
 
 ## Cursor

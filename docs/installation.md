@@ -20,6 +20,10 @@ Repository source lives under `openai/chatgpt/skills/`. The `openai/` grouping d
 
 Read the skill's `instructions.md`. Copy it into a dedicated custom GPT's instructions when that feature is available, or use a scoped conversation instruction. Custom Instructions affect broader conversations, so review the scope before using that surface. Upload supporting files only when needed and authorized. No API key is needed to read or copy the instructions.
 
+## Codex
+
+The existing `openai/codex/skills/example-skill/` is a scaffold, not a shipped catalog entry. Review candidates live under `generated/openai/codex/skills/` and are excluded from release bundles. Folder placement in this repository does not install them in a Codex host. Consult the candidate's instructions and recorded host/routing evidence before any separately authorized installation; copying a source or observing a catalog does not prove activation.
+
 ## Copilot
 
 Repository sources live under `microsoft/copilot/skills/`. This organizational move does not alter the host installation surface or install anything. Copilot Studio remains a separate reserved target under `microsoft/copilot-studio/`.
@@ -37,6 +41,10 @@ There are currently no shipped Gemini skills. When adding one, use a Gem or supp
 ## Perplexity
 
 There are currently no shipped Perplexity skills. Future skills must document the supported instruction/upload surface and the role of `SKILL.md`; the repository does not claim compatibility with any particular packaged import mechanism yet.
+
+## Reserved targets
+
+`amazon-q/`, `grok/`, and `microsoft/copilot-studio/` contain target guides only. They have no generated candidates or supported deployment workflow. Gemini and Perplexity likewise have no shipped skills or generated candidates. The generator currently supports only Claude, ChatGPT, Cursor and Codex; shipped GitHub Copilot instructions are maintained separately.
 
 ## Verify a setup
 

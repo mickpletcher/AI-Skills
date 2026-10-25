@@ -115,3 +115,11 @@ Use plain language. Do not assume the reader already knows where Claude, ChatGPT
 - `README.md` should explain whether the content is meant for project rules, user rules, or temporary chat context
 - If the repo does not yet have a live Cursor example, say that plainly
 - This repo now includes `cursor/skills/pr-review/`, `cursor/skills/workflow-debugger/`, `cursor/skills/repo-assessment/`, and `cursor/skills/spec-writer/` as concrete Cursor examples
+
+## Existing grouping and copy boundaries
+
+OpenAI and Microsoft use vendor parents because each contains distinct target areas. The other current product directories remain at the root; no vendor aliases or alternative installation paths are implied. Additional vendor regrouping is a separate decision, not a prerequisite to using the current layout.
+
+The reserved `amazon-q/`, `grok/` and `microsoft/copilot-studio/` guides do not establish generator support. Gemini and Perplexity have no shipped skills or generated candidates. Shipped GitHub Copilot instructions are independent of the four-target candidate generator.
+
+Do not deduplicate by deleting platform sources, canonical masters, generated bundles, package archives or pinned evidence. They preserve shipped behavior, editable candidates, host-specific formats, reproducible delivery and historical comparisons respectively. ChatGPT/Cursor canonical SKILL.md companions keep internal references valid; their rendered entry point remains instructions.md. Remove a copy only after an explicit source-of-truth or promotion decision and the corresponding ownership/link checks.

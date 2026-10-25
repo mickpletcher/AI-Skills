@@ -253,9 +253,11 @@ See [platform installation](docs/installation.md), [dependencies](docs/dependenc
 - `claude/`: Claude-specific skills, scripts, and metadata
 - `openai/`: OpenAI targets, with separate `chatgpt/` and `codex/` skill folders
 - `microsoft/`: separate `copilot/` instructions and reserved `copilot-studio/` adaptations
-- `gemini/`: Gemini-specific instructions and Gem-ready skill content
-- `perplexity/`: Perplexity-specific skill files and setup notes
+- `gemini/`: reserved Gemini area; no shipped skills or generated candidates
+- `perplexity/`: reserved Perplexity area; no shipped skills or generated candidates
 - `cursor/`: Cursor-specific rules and coding assistant instructions
+- `amazon-q/` and `grok/`: reserved target guides; generation and deployment are not supported
+- `master-skills/`, `adapters/`, and `generated/`: canonical review sources, host guidance, and reproducible candidate copies; distinct from shipped platform sources
 
 ## Working Model
 

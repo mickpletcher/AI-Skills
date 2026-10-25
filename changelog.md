@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Reject empty validation-task mappings in native evidence regression checks; add a blank-cell negative test without changing historical evidence or skill behavior.
+
 - Record three bounded native Codex CLI quality passes with sanitized synthetic evidence and verified temporary-placement cleanup; update README/spec-writer history without changing instruction or support bytes.
 
 - Index committed README and spec-writer evaluation history with tested revisions, observed/requested model identity limits, bounded acceptance and explicit current-behavior-not-rerun status; preserve instruction bytes and private evidence.

@@ -1,0 +1,956 @@
+{
+  "source_commit": "16e75783ec544386054c53a9efff4ee778fccbd1",
+  "rubric_version": "fixed-evidence-v3",
+  "candidate_patch_sha256": "56f464a94f00f6d1574cb0b0be9a82bf5d6dc1865c36dde1847a8b7702b8c870",
+  "resources_sha256": {
+    "instructions.md": "bea233807ddcf9c94b832c7a70988cbd04f5a6df5cd3c8d5a74f1420160c2752",
+    "capabilities.json": "181e12ff5e74fbc195b8e19b85aa227e75c935ced6eb803339c2019f680231d1",
+    "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
+    "references/common-patterns.md": "0297e324530fab920a6df563ab5aa46896d66a5910aa05449983dc7b0525439a",
+    "references/enhance-workflow.md": "66f4e643619e8495574f59f124e93bce32850c5b3199b7657addc80256dd19e7",
+    "references/scoring-workflow.md": "8643e868b517b79468c952816be5005f1333f4018732a0a21ae1d644ab7a2f67",
+    "scoring-model.md": "35403eb00d38ff51ce2335a3a578d21cd2cbbf3a699380e161a32fe730c65f72",
+    "json-output-spec.md": "30b030611c9b2e88b85faf2c70ffa0468e4b5a7e75b9308a0f9f4da636bb34e4",
+    "scripts/score_audit.py": "cabb2399ebd12280b30e4cb405eb019806bd9928786d64f6c33dac08f49291b9"
+  },
+  "cases": [
+    {
+      "id": "human-grouping-1",
+      "task": "rw Enhance the fictional resume in resume.txt for the supplied Automation Engineer target. The applicant is Alex Example, not Mick. Use human output mode and the normal condensed audit, with numeric scoring for both the original resume and your rewrite. Use the supplied candidate instructions and exact score calculator from resources.zip in a disposable workspace. Run the calculator for each separate ledger and run --check on each final audit. Present the final score, verdict, all five category values and severity counts for both versions in the readable audit. Include missing-data notes and source-backed findings. Preserve employer, historical title, dates, education and supplied figures. Microsoft Graph is desired but experience is not established. Do not invent certifications, employment after May 2025, leadership, metrics or a gap explanation. Assessment date: 2026-10-20. Deliver one downloadable human_numeric_outputs.zip containing rewritten_resume.md, original_audit.json, rewritten_audit.json and execution_log.txt. The JSON files are supporting score ledgers, not a request to change the chat response to JSON mode. The execution log should contain the actual calculator commands, exit codes and captured output; label any unavailable trace honestly. Do not browse, use connected apps, submit applications, update a persistent library, install dependencies or change real systems. If Python/file execution is unavailable, state the exact limitation and that numeric scoring was not executed. Do not substitute estimated scores or count a qualitative fallback as completed numeric scoring.",
+      "uploads": [
+        "packet.txt",
+        "resources.zip",
+        "resume.txt"
+      ],
+      "input_sha256": {
+        "packet.txt": "c40c8d66ca0a2bef3095806de1859fdd60178d9049f9cbb6bbacbf64b4f86772",
+        "resources.zip": "b90a8179d1108633b7eee2a67326800aa445e8f66a46941576e638d03a942cec",
+        "resume.txt": "c7a588e66087f0b15d21c05018b54dda59a244c10c4ce0e082554b9801b2dd3a"
+      },
+      "input_and_resource_hashes_match": true,
+      "ax_sha256": "b1f4df7214b0534c8b37dc0447cc808c7bbe9b1b4a353543c3f8ed80592e317e",
+      "screenshot_sha256": "86e9d9d307bbb4b4350208262c03112c8ec6a397ef9caac4c0ca44a34bb3d7a0",
+      "rendered_sha256": "0f5d6f8aa05fa964b60368a323fc90242c3801f821f0a04c4d6af109ad2973f8",
+      "artifact": {
+        "bytes": 7306,
+        "sha256": "5e74afadc1e4ecf5169fba16f9c1f52d760a18321ed24464c3bbac3e19930e83",
+        "member_sha256": {
+          "rewritten_resume.md": "c9861f98932f64177afd60d13d9f5f8eb4da583f75e37f216868e853a8ebda13",
+          "original_audit.json": "c89a01deff880804bd0e348721133cbf3cb1f5e5caa46230574510a7e73b6cec",
+          "rewritten_audit.json": "daac8d9d0757095ada64157fb366ac619eb0c27f2213249edaee423112793684",
+          "execution_log.txt": "ee054ed7ca594d85eba5c714c5509aadde188111f92e30c4d6ea1fa140bf7acd"
+        }
+      },
+      "audits": {
+        "original": {
+          "output_mode": "human",
+          "review_context": "targeted",
+          "rubric_version": "fixed-evidence-v3",
+          "scoring_evidence": {
+            "positioning": {
+              "state": "role_only",
+              "evidence": "Target: Automation Engineer appears, but no supporting profile."
+            },
+            "experience_source_blocks": [
+              "Built PowerShell reporting across 400 Windows devices. Weekly report preparation fell from 3 hours to 45 minutes.",
+              "Maintained Microsoft Intune compliance checks. No measured compliance gain is supplied."
+            ],
+            "experience_statements": [
+              {
+                "source_block": "Built PowerShell reporting across 400 Windows devices. Weekly report preparation fell from 3 hours to 45 minutes.",
+                "context_notes": [],
+                "text": "Built PowerShell reporting across 400 Windows devices. Weekly report preparation fell from 3 hours to 45 minutes.",
+                "names_specific_object": true,
+                "has_supplied_measure": true,
+                "evidence": "PowerShell reporting, 400 devices, and time reduction supplied."
+              },
+              {
+                "source_block": "Maintained Microsoft Intune compliance checks. No measured compliance gain is supplied.",
+                "context_notes": [
+                  "No measured compliance gain is supplied."
+                ],
+                "text": "Maintained Microsoft Intune compliance checks.",
+                "names_specific_object": true,
+                "has_supplied_measure": false,
+                "evidence": "Microsoft Intune compliance checks named; no measured gain."
+              }
+            ],
+            "structure": {
+              "state": "standard",
+              "section_headings": [
+                "Experience",
+                "Education"
+              ],
+              "evidence": "Observed conventional headings and readable role."
+            },
+            "chronology": {
+              "state": "clear",
+              "evidence": "Automation Engineer | Example Labs | Jun 2022 - May 2025."
+            },
+            "requirements": [
+              {
+                "text": "PowerShell",
+                "supported": true,
+                "evidence": "Supported by PowerShell reporting."
+              },
+              {
+                "text": "Microsoft Intune",
+                "supported": true,
+                "evidence": "Supported by Intune compliance checks."
+              },
+              {
+                "text": "Microsoft Graph",
+                "supported": false,
+                "evidence": "Microsoft Graph experience not established."
+              }
+            ],
+            "privacy": {
+              "state": "safe",
+              "evidence": "Plain-text name and email only; no sensitive personal details."
+            }
+          },
+          "confidence": "high",
+          "audit_mode": "condensed",
+          "missing_data_flags": [
+            "MISSING_METRIC",
+            "MISSING_TIMELINE_CONTEXT"
+          ],
+          "system_flags": [
+            "TARGETING_WEAK"
+          ],
+          "top_fixes": [
+            "Confirm Microsoft Graph experience before claiming it.",
+            "Supply any measured Microsoft Intune compliance result.",
+            "Provide truthful context for the period after May 2025; do not assume activity."
+          ],
+          "rewritten_resume": null,
+          "notes": [
+            "Assessment date 2026-10-20. No employment supplied after May 2025; approximately 16 months of unaccounted timeline context.",
+            "No certifications supplied. Microsoft Graph desired but not evidenced.",
+            "The 3-hour to 45-minute reduction is a supplied result, not an invented metric."
+          ],
+          "principle_scores": [
+            {
+              "criterion_id": "positioning",
+              "principle": "Make the target role obvious in the top third",
+              "source_type": "library_principle",
+              "source_name": "Make the target role obvious in the top third",
+              "category": "Positioning and Narrative",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "Target: Automation Engineer appears, but no supporting profile.",
+              "before": null,
+              "after": null,
+              "fix": "Review positioning using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "specificity",
+              "principle": "Every bullet must name the thing",
+              "source_type": "library_principle",
+              "source_name": "Every bullet must name the thing",
+              "category": "Evidence and Bullet Strength",
+              "score": 3,
+              "weight": 1.5,
+              "severity": "INFO",
+              "reason": "2/2 experience statements meet specificity; see scoring_evidence.experience_statements",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "measurements",
+              "principle": "Numbers, everywhere, or you get an interview with nobody",
+              "source_type": "library_principle",
+              "source_name": "Numbers, everywhere, or you get an interview with nobody",
+              "category": "Evidence and Bullet Strength",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "1/2 experience statements meet measurements; see scoring_evidence.experience_statements",
+              "before": null,
+              "after": null,
+              "fix": "Review measurements using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "structure",
+              "principle": "Standard section headings beat clever branding",
+              "source_type": "library_principle",
+              "source_name": "Standard section headings beat clever branding",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Observed conventional headings and readable role.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "chronology",
+              "principle": "Chronology should be easy to follow",
+              "source_type": "library_principle",
+              "source_name": "Chronology should be easy to follow",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Automation Engineer | Example Labs | Jun 2022 - May 2025.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "alignment",
+              "principle": "Mirror the job description's language naturally",
+              "source_type": "library_principle",
+              "source_name": "Mirror the job description's language naturally",
+              "category": "Relevance and Targeting",
+              "score": 1,
+              "weight": 1.5,
+              "severity": "MAJOR",
+              "reason": "2/3 supplied requirements supported; see scoring_evidence.requirements",
+              "before": null,
+              "after": null,
+              "fix": "Review alignment using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "privacy",
+              "principle": "No photos, no headshots, no personal data",
+              "source_type": "common_pattern",
+              "source_name": "common-patterns § No photos, no headshots, no personal data",
+              "category": "Professionalism and Trust",
+              "score": 3,
+              "weight": 1.0,
+              "severity": "INFO",
+              "reason": "Plain-text name and email only; no sensitive personal details.",
+              "before": null,
+              "after": null,
+              "fix": null
+            }
+          ],
+          "category_scores": {
+            "positioning_and_narrative": 66.7,
+            "evidence_and_bullet_strength": 83.3,
+            "ats_and_structural_reliability": 100.0,
+            "relevance_and_targeting": 33.3,
+            "professionalism_and_trust": 100.0
+          },
+          "final_score": 76.7,
+          "verdict": "Good but inconsistent",
+          "critical_issue_count": 0,
+          "major_issue_count": 1,
+          "minor_issue_count": 2
+        },
+        "rewritten": {
+          "output_mode": "human",
+          "review_context": "targeted",
+          "rubric_version": "fixed-evidence-v3",
+          "scoring_evidence": {
+            "positioning": {
+              "state": "role_and_evidence",
+              "evidence": "Summary names Automation Engineer and PowerShell reporting result."
+            },
+            "experience_source_blocks": [
+              "Built PowerShell reporting across 400 Windows devices, reducing weekly report preparation from 3 hours to 45 minutes.",
+              "Maintained Microsoft Intune compliance checks."
+            ],
+            "experience_statements": [
+              {
+                "source_block": "Built PowerShell reporting across 400 Windows devices, reducing weekly report preparation from 3 hours to 45 minutes.",
+                "context_notes": [],
+                "text": "Built PowerShell reporting across 400 Windows devices, reducing weekly report preparation from 3 hours to 45 minutes.",
+                "names_specific_object": true,
+                "has_supplied_measure": true,
+                "evidence": "PowerShell reporting, 400 devices, and time reduction supplied."
+              },
+              {
+                "source_block": "Maintained Microsoft Intune compliance checks.",
+                "context_notes": [],
+                "text": "Maintained Microsoft Intune compliance checks.",
+                "names_specific_object": true,
+                "has_supplied_measure": false,
+                "evidence": "Microsoft Intune compliance checks named; no measured gain."
+              }
+            ],
+            "structure": {
+              "state": "standard",
+              "section_headings": [
+                "Summary",
+                "Experience",
+                "Technical Skills",
+                "Education"
+              ],
+              "evidence": "Observed conventional headings and readable role."
+            },
+            "chronology": {
+              "state": "clear",
+              "evidence": "Automation Engineer | Example Labs | Jun 2022 - May 2025."
+            },
+            "requirements": [
+              {
+                "text": "PowerShell",
+                "supported": true,
+                "evidence": "Supported by PowerShell reporting."
+              },
+              {
+                "text": "Microsoft Intune",
+                "supported": true,
+                "evidence": "Supported by Intune compliance checks."
+              },
+              {
+                "text": "Microsoft Graph",
+                "supported": false,
+                "evidence": "Microsoft Graph experience not established."
+              }
+            ],
+            "privacy": {
+              "state": "safe",
+              "evidence": "Plain-text name and email only; no sensitive personal details."
+            }
+          },
+          "confidence": "high",
+          "audit_mode": "condensed",
+          "missing_data_flags": [
+            "MISSING_METRIC",
+            "MISSING_TIMELINE_CONTEXT"
+          ],
+          "system_flags": [
+            "TARGETING_WEAK"
+          ],
+          "top_fixes": [
+            "Confirm Microsoft Graph experience before claiming it.",
+            "Supply any measured Microsoft Intune compliance result.",
+            "Provide truthful context for the period after May 2025; do not assume activity."
+          ],
+          "rewritten_resume": "# Alex Example\nalex@example.invalid\n\n## Summary\nAutomation Engineer with experience building PowerShell reporting for Windows devices and maintaining Microsoft Intune compliance checks. Reduced weekly report preparation from 3 hours to 45 minutes across a 400-device reporting environment.\n\n## Experience\n**Automation Engineer | Example Labs | Jun 2022 - May 2025**\n- Built PowerShell reporting across 400 Windows devices, reducing weekly report preparation from 3 hours to 45 minutes.\n- Maintained Microsoft Intune compliance checks.\n\n## Technical Skills\n- Automation and reporting: PowerShell; Windows device reporting\n- Endpoint management: Microsoft Intune compliance checks\n\n## Education\nAssociate of Science, Computer Information Systems | Example College | 2020\n",
+          "notes": [
+            "Assessment date 2026-10-20. No employment supplied after May 2025; approximately 16 months of unaccounted timeline context.",
+            "No certifications supplied. Microsoft Graph desired but not evidenced.",
+            "The 3-hour to 45-minute reduction is a supplied result, not an invented metric."
+          ],
+          "principle_scores": [
+            {
+              "criterion_id": "positioning",
+              "principle": "Make the target role obvious in the top third",
+              "source_type": "library_principle",
+              "source_name": "Make the target role obvious in the top third",
+              "category": "Positioning and Narrative",
+              "score": 3,
+              "weight": 1.5,
+              "severity": "INFO",
+              "reason": "Summary names Automation Engineer and PowerShell reporting result.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "specificity",
+              "principle": "Every bullet must name the thing",
+              "source_type": "library_principle",
+              "source_name": "Every bullet must name the thing",
+              "category": "Evidence and Bullet Strength",
+              "score": 3,
+              "weight": 1.5,
+              "severity": "INFO",
+              "reason": "2/2 experience statements meet specificity; see scoring_evidence.experience_statements",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "measurements",
+              "principle": "Numbers, everywhere, or you get an interview with nobody",
+              "source_type": "library_principle",
+              "source_name": "Numbers, everywhere, or you get an interview with nobody",
+              "category": "Evidence and Bullet Strength",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "1/2 experience statements meet measurements; see scoring_evidence.experience_statements",
+              "before": null,
+              "after": null,
+              "fix": "Review measurements using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "structure",
+              "principle": "Standard section headings beat clever branding",
+              "source_type": "library_principle",
+              "source_name": "Standard section headings beat clever branding",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Observed conventional headings and readable role.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "chronology",
+              "principle": "Chronology should be easy to follow",
+              "source_type": "library_principle",
+              "source_name": "Chronology should be easy to follow",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Automation Engineer | Example Labs | Jun 2022 - May 2025.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "alignment",
+              "principle": "Mirror the job description's language naturally",
+              "source_type": "library_principle",
+              "source_name": "Mirror the job description's language naturally",
+              "category": "Relevance and Targeting",
+              "score": 1,
+              "weight": 1.5,
+              "severity": "MAJOR",
+              "reason": "2/3 supplied requirements supported; see scoring_evidence.requirements",
+              "before": null,
+              "after": null,
+              "fix": "Review alignment using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "privacy",
+              "principle": "No photos, no headshots, no personal data",
+              "source_type": "common_pattern",
+              "source_name": "common-patterns § No photos, no headshots, no personal data",
+              "category": "Professionalism and Trust",
+              "score": 3,
+              "weight": 1.0,
+              "severity": "INFO",
+              "reason": "Plain-text name and email only; no sensitive personal details.",
+              "before": null,
+              "after": null,
+              "fix": null
+            }
+          ],
+          "category_scores": {
+            "positioning_and_narrative": 100.0,
+            "evidence_and_bullet_strength": 83.3,
+            "ats_and_structural_reliability": 100.0,
+            "relevance_and_targeting": 33.3,
+            "professionalism_and_trust": 100.0
+          },
+          "final_score": 85.0,
+          "verdict": "Strong",
+          "critical_issue_count": 0,
+          "major_issue_count": 1,
+          "minor_issue_count": 1
+        }
+      },
+      "checks": {
+        "original": {
+          "full_ledger_and_source_mapping_match": true,
+          "independent_decimal_replay_matches": true,
+          "local_check_exit": 0,
+          "score": 76.7,
+          "severity_counts": {
+            "MINOR": 2,
+            "INFO": 4,
+            "MAJOR": 1
+          },
+          "source_grouping_and_note_exclusion_match": true,
+          "human_tables_match": true
+        },
+        "rewritten": {
+          "full_ledger_and_source_mapping_match": true,
+          "independent_decimal_replay_matches": true,
+          "local_check_exit": 0,
+          "score": 85.0,
+          "severity_counts": {
+            "INFO": 5,
+            "MINOR": 1,
+            "MAJOR": 1
+          },
+          "source_grouping_and_note_exclusion_match": true,
+          "human_tables_match": true
+        }
+      },
+      "rewrite_preserves_source_facts": true,
+      "provider_log_outputs_match_delivered_ledgers": true,
+      "provider_execution_independently_verified": false,
+      "status": "bounded_native_human_pass"
+    },
+    {
+      "id": "human-grouping-2",
+      "task": "rw Enhance the fictional resume in resume.txt for the supplied Automation Engineer target. The applicant is Alex Example, not Mick. Use human output mode and the normal condensed audit, with numeric scoring for both the original resume and your rewrite. Use the supplied candidate instructions and exact score calculator from resources.zip in a disposable workspace. Run the calculator for each separate ledger and run --check on each final audit. Present the final score, verdict, all five category values and severity counts for both versions in the readable audit. Include missing-data notes and source-backed findings. Preserve employer, historical title, dates, education and supplied figures. Microsoft Graph is desired but experience is not established. Do not invent certifications, employment after May 2025, leadership, metrics or a gap explanation. Assessment date: 2026-10-20. Deliver one downloadable human_numeric_outputs.zip containing rewritten_resume.md, original_audit.json, rewritten_audit.json and execution_log.txt. The JSON files are supporting score ledgers, not a request to change the chat response to JSON mode. The execution log should contain the actual calculator commands, exit codes and captured output; label any unavailable trace honestly. Do not browse, use connected apps, submit applications, update a persistent library, install dependencies or change real systems. If Python/file execution is unavailable, state the exact limitation and that numeric scoring was not executed. Do not substitute estimated scores or count a qualitative fallback as completed numeric scoring.",
+      "uploads": [
+        "packet.txt",
+        "resources.zip",
+        "resume.txt"
+      ],
+      "input_sha256": {
+        "packet.txt": "c40c8d66ca0a2bef3095806de1859fdd60178d9049f9cbb6bbacbf64b4f86772",
+        "resources.zip": "b90a8179d1108633b7eee2a67326800aa445e8f66a46941576e638d03a942cec",
+        "resume.txt": "c7a588e66087f0b15d21c05018b54dda59a244c10c4ce0e082554b9801b2dd3a"
+      },
+      "input_and_resource_hashes_match": true,
+      "ax_sha256": "8f0e39355ac9eb6217a5321114914e85c418d3bbb5cf9ba002a87c356e36b18f",
+      "screenshot_sha256": "457e9acd53868ae86db4f7e1b682ed480a617678b83b82da8eb1feda2f530152",
+      "rendered_sha256": "54ad7df31b282d66a3355434b971218739cba84030651e1303836a9c75feb957",
+      "artifact": {
+        "bytes": 7308,
+        "sha256": "6db73829d2967141a221c16129a0cf67e31ed04bcd02acaf541a1f4a8ba1fe63",
+        "member_sha256": {
+          "rewritten_resume.md": "88a40b757a828055e85d997bb51f6d43319707e08c923618083d5ff2dedc18e4",
+          "original_audit.json": "2695f388a01fa411d08a91768de6d3bdbd11f1bd60e9e5d6f4302c3864c3a792",
+          "rewritten_audit.json": "2274252ecfb52f5cc03aa289303b9e3bd411f5ccbd181fa6f7686e709df61611",
+          "execution_log.txt": "920b6d7972e252197702124753661f8b29c38faa5ba383ebdf98fb3ab2e1670e"
+        }
+      },
+      "audits": {
+        "original": {
+          "output_mode": "human",
+          "review_context": "targeted",
+          "rubric_version": "fixed-evidence-v3",
+          "scoring_evidence": {
+            "positioning": {
+              "state": "role_only",
+              "evidence": "Target: Automation Engineer"
+            },
+            "experience_source_blocks": [
+              "Built PowerShell reporting across 400 Windows devices. Weekly report preparation fell from 3 hours to 45 minutes.",
+              "Maintained Microsoft Intune compliance checks. No measured compliance gain is supplied."
+            ],
+            "experience_statements": [
+              {
+                "source_block": "Built PowerShell reporting across 400 Windows devices. Weekly report preparation fell from 3 hours to 45 minutes.",
+                "context_notes": [],
+                "text": "Built PowerShell reporting across 400 Windows devices. Weekly report preparation fell from 3 hours to 45 minutes.",
+                "names_specific_object": true,
+                "has_supplied_measure": true,
+                "evidence": "Names PowerShell reporting and 400 devices, with weekly preparation time."
+              },
+              {
+                "source_block": "Maintained Microsoft Intune compliance checks. No measured compliance gain is supplied.",
+                "context_notes": [
+                  "No measured compliance gain is supplied."
+                ],
+                "text": "Maintained Microsoft Intune compliance checks.",
+                "names_specific_object": true,
+                "has_supplied_measure": false,
+                "evidence": "Names Microsoft Intune compliance checks; no measured result."
+              }
+            ],
+            "structure": {
+              "state": "standard",
+              "section_headings": [
+                "Experience",
+                "Education"
+              ],
+              "evidence": "Observed conventional headings and readable dated role."
+            },
+            "chronology": {
+              "state": "clear",
+              "evidence": "Automation Engineer | Example Labs | Jun 2022 - May 2025; no contradictory dates."
+            },
+            "requirements": [
+              {
+                "text": "PowerShell",
+                "supported": true,
+                "evidence": "Resume documents PowerShell"
+              },
+              {
+                "text": "Microsoft Intune",
+                "supported": true,
+                "evidence": "Resume documents Microsoft Intune"
+              },
+              {
+                "text": "Microsoft Graph",
+                "supported": false,
+                "evidence": "Microsoft Graph experience not established."
+              }
+            ],
+            "privacy": {
+              "state": "safe",
+              "evidence": "Plain text contains name and ordinary email only; no sensitive personal data or photo."
+            }
+          },
+          "confidence": "high",
+          "audit_mode": "condensed",
+          "missing_data_flags": [
+            "MISSING_METRIC",
+            "MISSING_TIMELINE_CONTEXT"
+          ],
+          "system_flags": [
+            "TARGETING_WEAK"
+          ],
+          "top_fixes": [
+            "Confirm whether Microsoft Graph experience exists before claiming it.",
+            "Supply a measured result or scope for Microsoft Intune compliance checks.",
+            "Provide truthful context for Jun 2025–Oct 2026 interval; no explanation has been inserted."
+          ],
+          "rewritten_resume": null,
+          "notes": [
+            "Assessment date 2026-10-20. Target requirements are supplied separately from resume-owned sections.",
+            "No certifications, post-May 2025 employment, or gap explanation supplied.",
+            "Unexplained interval after May 2025 is unscored."
+          ],
+          "principle_scores": [
+            {
+              "criterion_id": "positioning",
+              "principle": "Make the target role obvious in the top third",
+              "source_type": "library_principle",
+              "source_name": "Make the target role obvious in the top third",
+              "category": "Positioning and Narrative",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "Target: Automation Engineer",
+              "before": null,
+              "after": null,
+              "fix": "Review positioning using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "specificity",
+              "principle": "Every bullet must name the thing",
+              "source_type": "library_principle",
+              "source_name": "Every bullet must name the thing",
+              "category": "Evidence and Bullet Strength",
+              "score": 3,
+              "weight": 1.5,
+              "severity": "INFO",
+              "reason": "2/2 experience statements meet specificity; see scoring_evidence.experience_statements",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "measurements",
+              "principle": "Numbers, everywhere, or you get an interview with nobody",
+              "source_type": "library_principle",
+              "source_name": "Numbers, everywhere, or you get an interview with nobody",
+              "category": "Evidence and Bullet Strength",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "1/2 experience statements meet measurements; see scoring_evidence.experience_statements",
+              "before": null,
+              "after": null,
+              "fix": "Review measurements using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "structure",
+              "principle": "Standard section headings beat clever branding",
+              "source_type": "library_principle",
+              "source_name": "Standard section headings beat clever branding",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Observed conventional headings and readable dated role.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "chronology",
+              "principle": "Chronology should be easy to follow",
+              "source_type": "library_principle",
+              "source_name": "Chronology should be easy to follow",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Automation Engineer | Example Labs | Jun 2022 - May 2025; no contradictory dates.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "alignment",
+              "principle": "Mirror the job description's language naturally",
+              "source_type": "library_principle",
+              "source_name": "Mirror the job description's language naturally",
+              "category": "Relevance and Targeting",
+              "score": 1,
+              "weight": 1.5,
+              "severity": "MAJOR",
+              "reason": "2/3 supplied requirements supported; see scoring_evidence.requirements",
+              "before": null,
+              "after": null,
+              "fix": "Review alignment using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "privacy",
+              "principle": "No photos, no headshots, no personal data",
+              "source_type": "common_pattern",
+              "source_name": "common-patterns § No photos, no headshots, no personal data",
+              "category": "Professionalism and Trust",
+              "score": 3,
+              "weight": 1.0,
+              "severity": "INFO",
+              "reason": "Plain text contains name and ordinary email only; no sensitive personal data or photo.",
+              "before": null,
+              "after": null,
+              "fix": null
+            }
+          ],
+          "category_scores": {
+            "positioning_and_narrative": 66.7,
+            "evidence_and_bullet_strength": 83.3,
+            "ats_and_structural_reliability": 100.0,
+            "relevance_and_targeting": 33.3,
+            "professionalism_and_trust": 100.0
+          },
+          "final_score": 76.7,
+          "verdict": "Good but inconsistent",
+          "critical_issue_count": 0,
+          "major_issue_count": 1,
+          "minor_issue_count": 2
+        },
+        "rewritten": {
+          "output_mode": "human",
+          "review_context": "targeted",
+          "rubric_version": "fixed-evidence-v3",
+          "scoring_evidence": {
+            "positioning": {
+              "state": "role_and_evidence",
+              "evidence": "Automation Engineer summary names PowerShell reporting and reduction from 3 hours to 45 minutes."
+            },
+            "experience_source_blocks": [
+              "Built PowerShell reporting across 400 Windows devices, reducing weekly report preparation from 3 hours to 45 minutes.",
+              "Maintained Microsoft Intune compliance checks."
+            ],
+            "experience_statements": [
+              {
+                "source_block": "Built PowerShell reporting across 400 Windows devices, reducing weekly report preparation from 3 hours to 45 minutes.",
+                "context_notes": [],
+                "text": "Built PowerShell reporting across 400 Windows devices, reducing weekly report preparation from 3 hours to 45 minutes.",
+                "names_specific_object": true,
+                "has_supplied_measure": true,
+                "evidence": "Names PowerShell reporting and 400 devices, with weekly preparation time."
+              },
+              {
+                "source_block": "Maintained Microsoft Intune compliance checks.",
+                "context_notes": [],
+                "text": "Maintained Microsoft Intune compliance checks.",
+                "names_specific_object": true,
+                "has_supplied_measure": false,
+                "evidence": "Names Microsoft Intune compliance checks; no measured result."
+              }
+            ],
+            "structure": {
+              "state": "standard",
+              "section_headings": [
+                "Summary",
+                "Technical Skills",
+                "Experience",
+                "Education"
+              ],
+              "evidence": "Observed conventional headings and readable dated role."
+            },
+            "chronology": {
+              "state": "clear",
+              "evidence": "Automation Engineer | Example Labs | Jun 2022 - May 2025; no contradictory dates."
+            },
+            "requirements": [
+              {
+                "text": "PowerShell",
+                "supported": true,
+                "evidence": "Resume documents PowerShell"
+              },
+              {
+                "text": "Microsoft Intune",
+                "supported": true,
+                "evidence": "Resume documents Microsoft Intune"
+              },
+              {
+                "text": "Microsoft Graph",
+                "supported": false,
+                "evidence": "Microsoft Graph experience not established."
+              }
+            ],
+            "privacy": {
+              "state": "safe",
+              "evidence": "Plain text contains name and ordinary email only; no sensitive personal data or photo."
+            }
+          },
+          "confidence": "high",
+          "audit_mode": "condensed",
+          "missing_data_flags": [
+            "MISSING_METRIC",
+            "MISSING_TIMELINE_CONTEXT"
+          ],
+          "system_flags": [
+            "TARGETING_WEAK"
+          ],
+          "top_fixes": [
+            "Confirm whether Microsoft Graph experience exists before claiming it.",
+            "Supply a measured result or scope for Microsoft Intune compliance checks.",
+            "Provide truthful context for Jun 2025–Oct 2026 interval; no explanation has been inserted."
+          ],
+          "rewritten_resume": "# Alex Example\nalex@example.invalid\n\n## Summary\nAutomation Engineer with experience building PowerShell reporting for Windows devices and maintaining Microsoft Intune compliance checks. Reduced weekly report preparation from 3 hours to 45 minutes across reporting for 400 Windows devices.\n\n## Technical Skills\n- Automation and reporting: PowerShell; Windows device reporting\n- Endpoint management: Microsoft Intune compliance checks\n\n## Experience\n**Automation Engineer | Example Labs | Jun 2022 - May 2025**\n- Built PowerShell reporting across 400 Windows devices, reducing weekly report preparation from 3 hours to 45 minutes.\n- Maintained Microsoft Intune compliance checks.\n\n## Education\nAssociate of Science, Computer Information Systems | Example College | 2020\n",
+          "notes": [
+            "Assessment date 2026-10-20. Target requirements are supplied separately from resume-owned sections.",
+            "No certifications, post-May 2025 employment, or gap explanation supplied.",
+            "Unexplained interval after May 2025 is unscored."
+          ],
+          "principle_scores": [
+            {
+              "criterion_id": "positioning",
+              "principle": "Make the target role obvious in the top third",
+              "source_type": "library_principle",
+              "source_name": "Make the target role obvious in the top third",
+              "category": "Positioning and Narrative",
+              "score": 3,
+              "weight": 1.5,
+              "severity": "INFO",
+              "reason": "Automation Engineer summary names PowerShell reporting and reduction from 3 hours to 45 minutes.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "specificity",
+              "principle": "Every bullet must name the thing",
+              "source_type": "library_principle",
+              "source_name": "Every bullet must name the thing",
+              "category": "Evidence and Bullet Strength",
+              "score": 3,
+              "weight": 1.5,
+              "severity": "INFO",
+              "reason": "2/2 experience statements meet specificity; see scoring_evidence.experience_statements",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "measurements",
+              "principle": "Numbers, everywhere, or you get an interview with nobody",
+              "source_type": "library_principle",
+              "source_name": "Numbers, everywhere, or you get an interview with nobody",
+              "category": "Evidence and Bullet Strength",
+              "score": 2,
+              "weight": 1.5,
+              "severity": "MINOR",
+              "reason": "1/2 experience statements meet measurements; see scoring_evidence.experience_statements",
+              "before": null,
+              "after": null,
+              "fix": "Review measurements using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "structure",
+              "principle": "Standard section headings beat clever branding",
+              "source_type": "library_principle",
+              "source_name": "Standard section headings beat clever branding",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Observed conventional headings and readable dated role.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "chronology",
+              "principle": "Chronology should be easy to follow",
+              "source_type": "library_principle",
+              "source_name": "Chronology should be easy to follow",
+              "category": "ATS and Structural Reliability",
+              "score": 3,
+              "weight": 1.25,
+              "severity": "INFO",
+              "reason": "Automation Engineer | Example Labs | Jun 2022 - May 2025; no contradictory dates.",
+              "before": null,
+              "after": null,
+              "fix": null
+            },
+            {
+              "criterion_id": "alignment",
+              "principle": "Mirror the job description's language naturally",
+              "source_type": "library_principle",
+              "source_name": "Mirror the job description's language naturally",
+              "category": "Relevance and Targeting",
+              "score": 1,
+              "weight": 1.5,
+              "severity": "MAJOR",
+              "reason": "2/3 supplied requirements supported; see scoring_evidence.requirements",
+              "before": null,
+              "after": null,
+              "fix": "Review alignment using the supplied evidence; request missing facts without invention."
+            },
+            {
+              "criterion_id": "privacy",
+              "principle": "No photos, no headshots, no personal data",
+              "source_type": "common_pattern",
+              "source_name": "common-patterns § No photos, no headshots, no personal data",
+              "category": "Professionalism and Trust",
+              "score": 3,
+              "weight": 1.0,
+              "severity": "INFO",
+              "reason": "Plain text contains name and ordinary email only; no sensitive personal data or photo.",
+              "before": null,
+              "after": null,
+              "fix": null
+            }
+          ],
+          "category_scores": {
+            "positioning_and_narrative": 100.0,
+            "evidence_and_bullet_strength": 83.3,
+            "ats_and_structural_reliability": 100.0,
+            "relevance_and_targeting": 33.3,
+            "professionalism_and_trust": 100.0
+          },
+          "final_score": 85.0,
+          "verdict": "Strong",
+          "critical_issue_count": 0,
+          "major_issue_count": 1,
+          "minor_issue_count": 1
+        }
+      },
+      "checks": {
+        "original": {
+          "full_ledger_and_source_mapping_match": true,
+          "independent_decimal_replay_matches": true,
+          "local_check_exit": 0,
+          "score": 76.7,
+          "severity_counts": {
+            "MINOR": 2,
+            "INFO": 4,
+            "MAJOR": 1
+          },
+          "source_grouping_and_note_exclusion_match": true,
+          "human_tables_match": true
+        },
+        "rewritten": {
+          "full_ledger_and_source_mapping_match": true,
+          "independent_decimal_replay_matches": true,
+          "local_check_exit": 0,
+          "score": 85.0,
+          "severity_counts": {
+            "INFO": 5,
+            "MINOR": 1,
+            "MAJOR": 1
+          },
+          "source_grouping_and_note_exclusion_match": true,
+          "human_tables_match": true
+        }
+      },
+      "rewrite_preserves_source_facts": true,
+      "provider_log_outputs_match_delivered_ledgers": true,
+      "provider_execution_independently_verified": false,
+      "status": "bounded_native_human_pass"
+    }
+  ],
+  "criteria_not_uploaded": [
+    "Both originals quote exactly the two actual activity blocks in order, retaining scope/result and excluding the embedded missing-measurement note from scored text.",
+    "Each real activity appears once; named-object and measurement observations match source facts.",
+    "All original/rewrite ledgers, actual ZIP bytes and readable displays reconcile.",
+    "Same-original score stability is assessed separately from arithmetic; no acceptance or promotion implied."
+  ],
+  "canary": {
+    "response": "NO",
+    "ax_sha256": "b935a33b178b0798e7b7638c803a4c0842ce065bd518f7e7a6941fe13223acf9",
+    "screenshot_sha256": "9da0553b652d95a47d5fb89a0a1f176f9eea2d53c6cff0e8045384d5aedcff90"
+  },
+  "same_original_inventory_matches": true,
+  "same_original_score_spread": 0.0,
+  "acceptance": "pending; no installation, merging or promotion"
+}

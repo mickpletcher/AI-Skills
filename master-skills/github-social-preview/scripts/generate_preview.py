@@ -1,0 +1,502 @@
+#!/usr/bin/env python3
+"""
+GitHub Social Preview Image Generator
+Produces a 1280x640 JPEG under 1 MB from repository metadata.
+
+Usage:
+    python generate_preview.py \
+        --title "My Project" \
+        --subtitle "A tool that does something useful" \
+        --tags "python,automation,cli" \
+        --language "Python" \
+        --output "github-social-preview.jpg"
+"""
+
+import argparse
+import json
+import os
+import sys
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
+
+try:
+    from PIL import Image, ImageDraw, ImageFont, ImageFilter
+except ImportError:
+    sys.exit("Pillow is required: pip install Pillow")
+
+CANVAS_W = 1280
+CANVAS_H = 640
+MAX_BYTES = 1_000_000  # 1 MB
+
+CONFIG_PATH = Path(__file__).parent.parent / "templates" / "design_config.json"
+SAFE_CONTENT_WIDTH_RATIO = 0.82
+SAFE_CONTENT_HEIGHT_RATIO = 0.72
+
+
+def load_config() -> Dict:
+    if CONFIG_PATH.exists():
+        with open(CONFIG_PATH) as f:
+            return json.load(f)
+    return {}
+
+
+def hex_to_rgb(hex_color: str) -> Tuple[int, int, int]:
+    h = hex_color.lstrip("#")
+    return (int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16))
+
+
+def relative_luminance(rgb: Tuple[int, int, int]) -> float:
+    def channel(v: int) -> float:
+        c = v / 255.0
+        return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+
+    r, g, b = rgb
+    return 0.2126 * channel(r) + 0.7152 * channel(g) + 0.0722 * channel(b)
+
+
+def contrast_ratio(a: Tuple[int, int, int], b: Tuple[int, int, int]) -> float:
+    l1 = relative_luminance(a)
+    l2 = relative_luminance(b)
+    lighter = max(l1, l2)
+    darker = min(l1, l2)
+    return (lighter + 0.05) / (darker + 0.05)
+
+
+def load_font(path: Optional[str], size: int):
+    if path and os.path.exists(path):
+        try:
+            return ImageFont.truetype(path, size)
+        except Exception:
+            pass
+
+    system_candidates = [
+        "/System/Library/Fonts/Helvetica.ttc",
+        "/System/Library/Fonts/SFNSDisplay.ttf",
+        "/System/Library/Fonts/SFCompact.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "C:/Windows/Fonts/segoeui.ttf",
+        "C:/Windows/Fonts/arial.ttf",
+    ]
+    for candidate in system_candidates:
+        if os.path.exists(candidate):
+            try:
+                return ImageFont.truetype(candidate, size)
+            except Exception:
+                continue
+
+    return ImageFont.load_default()
+
+
+def draw_rounded_rect(draw: ImageDraw.Draw, xy: Tuple, radius: int, fill: Tuple, outline: Optional[Tuple] = None, outline_width: int = 1):
+    x0, y0, x1, y1 = xy
+    draw.rounded_rectangle([x0, y0, x1, y1], radius=radius, fill=fill, outline=outline, width=outline_width)
+
+
+def measure_text(draw: ImageDraw.Draw, text: str, font) -> int:
+    bbox = draw.textbbox((0, 0), text, font=font)
+    return bbox[2] - bbox[0]
+
+
+def fit_text_to_width(text: str, font, max_width: int, draw: ImageDraw.Draw) -> str:
+    if measure_text(draw, text, font) <= max_width:
+        return text
+
+    trimmed = text.strip()
+    while len(trimmed) > 3 and measure_text(draw, trimmed + "...", font) > max_width:
+        trimmed = trimmed[:-1].rstrip(" ,:/-_")
+    return (trimmed + "...") if trimmed else "..."
+
+
+def wrap_text(text: str, font, max_width: int, draw: ImageDraw.Draw, max_lines: Optional[int] = None) -> List[str]:
+    words = text.split()
+    lines = []
+    current = ""
+    for index, word in enumerate(words):
+        test = f"{current} {word}".strip()
+        if measure_text(draw, test, font) <= max_width:
+            current = test
+        else:
+            if current:
+                lines.append(current)
+                if max_lines and len(lines) == max_lines - 1:
+                    remaining = " ".join(words[index:])
+                    lines.append(fit_text_to_width(remaining, font, max_width, draw))
+                    return lines[:max_lines]
+            current = word
+    if current:
+        lines.append(current)
+    if max_lines and len(lines) > max_lines:
+        kept = lines[: max_lines - 1]
+        kept.append(fit_text_to_width(lines[max_lines - 1], font, max_width, draw))
+        return kept
+    return lines
+
+
+def load_asset(path: Optional[str], size: Tuple[int, int], contain: bool = True) -> Optional[Image.Image]:
+    if not path:
+        return None
+
+    asset_path = Path(path)
+    if not asset_path.exists():
+        return None
+
+    try:
+        img = Image.open(asset_path).convert("RGBA")
+    except Exception:
+        return None
+
+    if contain:
+        img.thumbnail(size, Image.LANCZOS)
+        return img
+
+    return img.resize(size, Image.LANCZOS)
+
+
+def overlay_asset(base: Image.Image, asset: Image.Image, x: int, y: int, opacity: int = 255):
+    layer = asset.copy()
+    if opacity < 255:
+        alpha = layer.getchannel("A")
+        alpha = alpha.point(lambda a: int(a * (opacity / 255)))
+        layer.putalpha(alpha)
+    base.alpha_composite(layer, dest=(x, y))
+
+
+def pick_theme(config: Dict, preset_name: str, accent_override: Optional[str]) -> Dict:
+    presets = config.get("theme_presets", {})
+    selected = presets.get(preset_name) or presets.get("github-dark") or {}
+    colors = dict(config.get("colors", {}))
+    colors.update(selected.get("colors", {}))
+    if accent_override:
+        colors["accent"] = accent_override
+        colors["tag_text"] = accent_override
+    merged = dict(config)
+    merged["colors"] = colors
+    return merged
+
+
+def build_preview_checklist(config: Dict, file_size: int, image: Image.Image) -> List[Tuple[str, str]]:
+    colors = config.get("colors", {})
+    bg = hex_to_rgb(colors.get("bg_start", "#0d1117"))
+    text = hex_to_rgb(colors.get("text_primary", "#e6edf3"))
+    secondary = hex_to_rgb(colors.get("text_secondary", "#8b949e"))
+    title_ratio = contrast_ratio(bg, text)
+    subtitle_ratio = contrast_ratio(bg, secondary)
+    crop_width = int(CANVAS_W * SAFE_CONTENT_WIDTH_RATIO)
+    crop_height = int(CANVAS_H * SAFE_CONTENT_HEIGHT_RATIO)
+    checklist = []
+    checklist.append(("contrast_title", f"PASS ({title_ratio:.2f}:1)") if title_ratio >= 4.5 else ("contrast_title", f"WARN ({title_ratio:.2f}:1)"))
+    checklist.append(("contrast_subtitle", f"PASS ({subtitle_ratio:.2f}:1)") if subtitle_ratio >= 3.0 else ("contrast_subtitle", f"WARN ({subtitle_ratio:.2f}:1)"))
+    checklist.append(("crop_safety", f"REVIEW (safe zone {crop_width}x{crop_height}; inspect actual rendered content)"))
+    footer = image.info['footer_layout']
+    badge = footer['language']
+    separated = badge is None or all(box[2] < badge[0] for box in footer['tags'])
+    checklist.append(("tag_badge_separation", "PASS" if separated else "WARN (footer overlap)"))
+    checklist.append(("footer_tags", f"{len(footer['tags'])} of {footer['tags_requested']} rendered; language-badge space reserved"))
+    checklist.append(("file_size", f"PASS ({file_size / 1024:.1f} KB)") if file_size < MAX_BYTES else ("file_size", f"WARN ({file_size / 1024:.1f} KB)"))
+    return checklist
+
+
+def draw_github_mark(draw: ImageDraw.Draw, x: int, y: int, size: int, color: tuple):
+    """Draw a simplified GitHub Octocat-style circle mark as a stand-in logo."""
+    draw.ellipse([x, y, x + size, y + size], fill=color)
+    inner = size // 4
+    draw.ellipse(
+        [x + inner, y + inner, x + size - inner, y + size - inner],
+        fill=None,
+        outline=(13, 17, 23),
+        width=max(2, size // 16),
+    )
+    arm_w = max(2, size // 10)
+    cx = x + size // 2
+    cy = y + size // 2
+    draw.line([(cx - size // 4, cy + size // 8), (cx - size // 4, cy + size // 3)], fill=(13, 17, 23), width=arm_w)
+    draw.line([(cx + size // 4, cy + size // 8), (cx + size // 4, cy + size // 3)], fill=(13, 17, 23), width=arm_w)
+
+
+LANGUAGE_COLORS = {
+    "Python": "#3572A5",
+    "JavaScript": "#f1e05a",
+    "TypeScript": "#2b7489",
+    "Go": "#00ADD8",
+    "Rust": "#dea584",
+    "Ruby": "#701516",
+    "Java": "#b07219",
+    "C#": "#178600",
+    "C++": "#f34b7d",
+    "C": "#555555",
+    "Shell": "#89e051",
+    "PowerShell": "#012456",
+    "Kotlin": "#A97BFF",
+    "Swift": "#ffac45",
+    "PHP": "#4F5D95",
+    "HTML": "#e34c26",
+    "CSS": "#563d7c",
+    "Dart": "#00B4AB",
+    "Scala": "#c22d40",
+    "Haskell": "#5e5086",
+    "Elixir": "#6e4a7e",
+    "R": "#198CE7",
+}
+
+
+def generate_image(
+    title: str,
+    subtitle: str,
+    tags: List[str],
+    language: Optional[str],
+    config: Dict,
+    theme: str = "github-dark",
+    accent_override: Optional[str] = None,
+    logo_path: Optional[str] = None,
+    screenshot_path: Optional[str] = None,
+    background_art_path: Optional[str] = None,
+    width: int = CANVAS_W,
+    height: int = CANVAS_H,
+) -> Image.Image:
+    config = pick_theme(config, theme, accent_override)
+    colors = config.get("colors", {})
+    bg_start = hex_to_rgb(colors.get("bg_start", "#0d1117"))
+    bg_end = hex_to_rgb(colors.get("bg_end", "#161b22"))
+    text_primary = hex_to_rgb(colors.get("text_primary", "#e6edf3"))
+    text_secondary = hex_to_rgb(colors.get("text_secondary", "#8b949e"))
+    tag_bg = hex_to_rgb(colors.get("tag_bg", "#21262d"))
+    tag_border = hex_to_rgb(colors.get("tag_border", "#30363d"))
+    tag_text = hex_to_rgb(colors.get("tag_text", "#58a6ff"))
+    _mc = hex_to_rgb(colors.get("mark_color", "#30363d"))
+    mark_color = (_mc[0], _mc[1], _mc[2], 180)
+
+    img = Image.new("RGB", (width, height), bg_start)
+    draw = ImageDraw.Draw(img)
+
+    # Background gradient (horizontal, left to right)
+    for x in range(width):
+        r = int(bg_start[0] + (bg_end[0] - bg_start[0]) * x / width)
+        g = int(bg_start[1] + (bg_end[1] - bg_start[1]) * x / width)
+        b = int(bg_start[2] + (bg_end[2] - bg_start[2]) * x / width)
+        draw.line([(x, 0), (x, height)], fill=(r, g, b))
+
+    # Background art if available
+    bg_asset = load_asset(background_art_path, (width, height), contain=False)
+    if bg_asset:
+        bg_asset = bg_asset.copy()
+        bg_asset.putalpha(64)
+        img = img.convert("RGBA")
+        overlay_asset(img, bg_asset, 0, 0, opacity=64)
+        img = img.convert("RGB")
+        draw = ImageDraw.Draw(img)
+
+    # Subtle top accent line
+    accent_color = hex_to_rgb(colors.get("accent", "#58a6ff"))
+    draw.rectangle([0, 0, width, 4], fill=accent_color)
+
+    fonts_cfg = config.get("fonts", {})
+    title_size = int(fonts_cfg.get("title_size", 72) * (width / CANVAS_W))
+    subtitle_size = int(fonts_cfg.get("subtitle_size", 36) * (width / CANVAS_W))
+    tag_size = int(fonts_cfg.get("tag_size", 28) * (width / CANVAS_W))
+    font_path = fonts_cfg.get("font_path")
+
+    title_font = load_font(font_path, title_size)
+    subtitle_font = load_font(font_path, subtitle_size)
+    tag_font = load_font(font_path, tag_size)
+
+    padding = int(80 * (width / CANVAS_W))
+    mark_size = int(48 * (width / CANVAS_W))
+
+    # GitHub mark watermark top-left
+    mark_img = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    mark_draw = ImageDraw.Draw(mark_img)
+    draw_github_mark(mark_draw, padding, padding, mark_size, mark_color)
+    img = img.convert("RGBA")
+    img.alpha_composite(mark_img)
+
+    # Optional logo near top-right
+    logo_asset = load_asset(logo_path, (int(width * 0.14), int(height * 0.14)))
+    if logo_asset:
+        logo_x = width - padding - logo_asset.width
+        logo_y = padding
+        overlay_asset(img, logo_asset, logo_x, logo_y, opacity=235)
+
+    # Optional screenshot card
+    screenshot_asset = load_asset(screenshot_path, (int(width * 0.34), int(height * 0.42)))
+    screenshot_reserved_w = 0
+    if screenshot_asset:
+        screenshot_reserved_w = screenshot_asset.width + int(width * 0.05)
+        card_x = width - padding - screenshot_asset.width
+        card_y = int(height * 0.27)
+        card_pad = int(width * 0.008)
+        draw = ImageDraw.Draw(img)
+        draw_rounded_rect(
+            draw,
+            (card_x - card_pad, card_y - card_pad, card_x + screenshot_asset.width + card_pad, card_y + screenshot_asset.height + card_pad),
+            radius=int(24 * (width / CANVAS_W)),
+            fill=(22, 27, 34, 220),
+            outline=accent_color,
+            outline_width=2,
+        )
+        overlay_asset(img, screenshot_asset, card_x, card_y, opacity=250)
+
+    img = img.convert("RGB")
+    draw = ImageDraw.Draw(img)
+
+    # Content vertical layout
+    content_top = padding + mark_size + int(32 * (height / CANVAS_H))
+    content_left = padding
+    max_text_width = width - padding * 2 - screenshot_reserved_w
+
+    # Title
+    layout_cfg = config.get("layout", {})
+    max_title_lines = int(layout_cfg.get("max_title_lines", 2))
+    max_subtitle_lines = int(layout_cfg.get("max_subtitle_lines", 2))
+    max_tags = int(layout_cfg.get("max_tags", 5))
+
+    title_lines = wrap_text(title, title_font, max_text_width, draw, max_lines=max_title_lines)
+    title_line_height = title_size + int(8 * (height / CANVAS_H))
+    y = content_top
+    for line in title_lines[:max_title_lines]:
+        draw.text((content_left, y), line, font=title_font, fill=text_primary)
+        y += title_line_height
+
+    y += int(16 * (height / CANVAS_H))
+
+    # Subtitle
+    if subtitle:
+        sub_lines = wrap_text(subtitle, subtitle_font, max_text_width, draw, max_lines=max_subtitle_lines)
+        sub_line_height = subtitle_size + int(6 * (height / CANVAS_H))
+        for line in sub_lines[:max_subtitle_lines]:
+            draw.text((content_left, y), line, font=subtitle_font, fill=text_secondary)
+            y += sub_line_height
+
+    tag_gap = max(1, int(12 * (width / CANVAS_W)))
+    tag_right = width - padding
+    language_box = None
+    footer_boxes = []
+    if language:
+        lang_font = tag_font
+        dot_r = max(1, int(tag_size * 0.35))
+        dot_gap = int(8 * (width / CANVAS_W))
+        lang_label = fit_text_to_width(language, lang_font, width - padding * 2 - dot_r * 2 - dot_gap, draw)
+        lang_bbox = draw.textbbox((0, 0), lang_label, font=lang_font)
+        lang_text_w = lang_bbox[2] - lang_bbox[0]
+        lang_text_h = lang_bbox[3] - lang_bbox[1]
+        total_w = dot_r * 2 + dot_gap + lang_text_w
+        bx = width - padding - total_w
+        center_y = height - padding - (max(lang_text_h, dot_r * 2) + 1) // 2
+        text_y = center_y - lang_text_h // 2 - lang_bbox[1]
+        language_box = (bx, min(center_y - dot_r, text_y + lang_bbox[1]), width - padding, max(center_y + dot_r, text_y + lang_bbox[3]))
+        tag_right = bx - tag_gap
+
+    if tags:
+        tag_y = height - padding - int(tag_size * 1.8)
+        tag_x = content_left
+        tag_h = int(tag_size * 1.6)
+        tag_padding_x = int(tag_size * 0.6)
+        corner_r = int(tag_h * 0.35)
+        for tag in tags[:max_tags]:
+            fitted_tag = fit_text_to_width(tag, tag_font, int(width * 0.16), draw)
+            bbox = draw.textbbox((0, 0), fitted_tag, font=tag_font)
+            tag_w = (bbox[2] - bbox[0]) + tag_padding_x * 2
+            if tag_x + tag_w > tag_right:
+                break
+            box = (tag_x, tag_y, tag_x + tag_w, tag_y + tag_h)
+            draw_rounded_rect(draw, box, radius=corner_r, fill=tag_bg, outline=tag_border, outline_width=1)
+            text_y_tag = tag_y + (tag_h - (bbox[3] - bbox[1])) // 2 - bbox[1]
+            draw.text((tag_x + tag_padding_x - bbox[0], text_y_tag), fitted_tag, font=tag_font, fill=tag_text)
+            footer_boxes.append(box)
+            tag_x += tag_w + tag_gap
+
+    if language:
+        lang_color = hex_to_rgb(LANGUAGE_COLORS.get(language, "#8b949e"))
+        draw.ellipse([bx, center_y - dot_r, bx + dot_r * 2, center_y + dot_r], fill=lang_color)
+        draw.text((bx + dot_r * 2 + dot_gap - lang_bbox[0], text_y), lang_label, font=lang_font, fill=text_secondary)
+    img.info['footer_layout'] = {'tags': footer_boxes, 'language': language_box, 'tags_requested': min(len(tags), max_tags)}
+
+    return img
+
+
+def export_jpeg(img: Image.Image, output_path: str, quality: int = 92) -> int:
+    img.save(output_path, format="JPEG", quality=quality, optimize=True)
+    return os.path.getsize(output_path)
+
+
+def compress_to_limit(img: Image.Image, output_path: str) -> Tuple[int, int]:
+    """Try decreasing quality levels, then scale down if needed. Returns (file_size, quality_used)."""
+    quality_steps = [92, 85, 75, 65, 55]
+
+    for q in quality_steps:
+        size = export_jpeg(img, output_path, quality=q)
+        if size < MAX_BYTES:
+            return size, q
+
+    # Scale canvas down 10% and retry from q=92
+    w, h = img.size
+    scaled = img.resize((int(w * 0.9), int(h * 0.9)), Image.LANCZOS)
+    for q in quality_steps:
+        size = export_jpeg(scaled, output_path, quality=q)
+        if size < MAX_BYTES:
+            return size, q
+
+    # Last resort: save at lowest quality without checking
+    size = export_jpeg(scaled, output_path, quality=40)
+    return size, 40
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Generate a GitHub social preview image.")
+    parser.add_argument("--title", required=True, help="Repository name / display title")
+    parser.add_argument("--subtitle", default="", help="Repository description or short tagline")
+    parser.add_argument("--tags", default="", help="Comma-separated topic tags (up to 5)")
+    parser.add_argument("--language", default="", help="Primary programming language")
+    parser.add_argument("--theme", default="github-dark", help="Theme preset from design_config.json")
+    parser.add_argument("--accent", default="", help="Optional accent color override in hex")
+    parser.add_argument("--logo", default="", help="Optional logo asset path")
+    parser.add_argument("--screenshot", default="", help="Optional screenshot asset path")
+    parser.add_argument("--background-art", default="", help="Optional custom background art path")
+    parser.add_argument("--output", default="github-social-preview.jpg", help="Output file path")
+    args = parser.parse_args()
+
+    config = load_config()
+
+    tags = [t.strip() for t in args.tags.split(",") if t.strip()] if args.tags else []
+    language = args.language.strip() or None
+
+    print(f"Generating preview for: {args.title}")
+
+    img = generate_image(
+        title=args.title,
+        subtitle=args.subtitle,
+        tags=tags,
+        language=language,
+        config=config,
+        theme=args.theme,
+        accent_override=args.accent or None,
+        logo_path=args.logo or None,
+        screenshot_path=args.screenshot or None,
+        background_art_path=args.background_art or None,
+    )
+
+    output_path = args.output
+    initial_size = export_jpeg(img, output_path, quality=92)
+
+    if initial_size >= MAX_BYTES:
+        print(f"Initial size {initial_size:,} bytes exceeds 1 MB — recompressing...")
+        final_size, quality_used = compress_to_limit(img, output_path)
+    else:
+        final_size = initial_size
+        quality_used = 92
+
+    size_kb = final_size / 1024
+    print(f"Output: {output_path}")
+    print(f"Size:   {size_kb:.1f} KB (quality {quality_used})")
+    print(f"Dims:   {CANVAS_W}x{CANVAS_H}")
+    print("Preview checklist:")
+    for name, result in build_preview_checklist(pick_theme(config, args.theme, args.accent or None), final_size, img):
+        print(f"  {name}: {result}")
+
+    if final_size >= MAX_BYTES:
+        print(f"WARNING: Could not compress below 1 MB. Final size: {final_size:,} bytes.")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

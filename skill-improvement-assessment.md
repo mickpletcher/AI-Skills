@@ -10,8 +10,8 @@ Remediation status: completed 2026-05-22
 Reviewed every current skill folder under:
 
 - `claude/skills/`
-- `chatgpt/skills/`
-- `copilot/skills/`
+- `openai/chatgpt/skills/`
+- `microsoft/copilot/skills/`
 - `cursor/skills/`
 
 `gemini/` and `perplexity/` have platform README files only. They do not have live skill folders yet.
@@ -35,7 +35,7 @@ Completed fixes:
 
 1. Added `claude/scripts/Validate-SkillQuality.ps1` to check source section coverage and stale Claude packages.
 2. Added missing standard sections across Claude, ChatGPT, Copilot, and Cursor skills.
-3. Converted `chatgpt/skills/food-analyzer/instructions.md` into a standalone ChatGPT skill.
+3. Converted `openai/chatgpt/skills/food-analyzer/instructions.md` into a standalone ChatGPT skill.
 4. Rebuilt Claude `.skill` packages so packaged exports match current source files.
 5. Updated script documentation so both folder validation and quality validation are discoverable.
 

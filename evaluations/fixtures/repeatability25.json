@@ -1,0 +1,2668 @@
+{
+  "date": "2026-10-25",
+  "basis_commit": "57058048d0f64c0fa72ca44928fb4761dba0f7a9",
+  "authorization": {
+    "authorized_by": "Mick",
+    "verified_request": "Do it: clean-session repeatability, plain-text intake, available clients/models, fixes and merge-readiness review.",
+    "constraints": "Keep draft. No merge, promotion or real-profile installation."
+  },
+  "coverage_limits": [
+    "Focused domain is github-readme in an exact 12-candidate catalog; other eleven domain workflows were not repeated on both models in this batch.",
+    "CLI and app-server share one Windows native engine/build, not independent host coverage.",
+    "gpt-6.1-sol is established project baseline; gpt-6-sol is an available comparison target, not claimed as proven routine usage. Model aliases/backend snapshots and hidden provider behavior are not immutable or fully observable.",
+    "Chrome is available, but attached candidate packets do not certify installed native ChatGPT skills. No global candidate installation authorized.",
+    "Claude/Cursor CLIs unavailable on PATH. VSCode launcher exists; no independent controlled native extension/UI test surface established. No Linux/macOS native client available.",
+    "Actual app ingestion, live services, broad repeatability and promotion remain open."
+  ],
+  "official_sources": [
+    "https://learn.chatgpt.com/docs/app-server",
+    "https://learn.chatgpt.com/docs/build-skills"
+  ],
+  "readiness_scope": "Candidate migration only. Preserve unpromoted generated bundles and all shipped-source integrity. Broader host certification and distribution promotion are separate.",
+  "schema_version": 1,
+  "phase": "Pre-repair repeatability and additional source-control review",
+  "inventory": {
+    "basis_commit": "57058048d0f64c0fa72ca44928fb4761dba0f7a9",
+    "cli": "codex-cli 0.163.0-alpha.11.2",
+    "expected_skills": [
+      "alpaca-trading",
+      "example-skill",
+      "github-readme",
+      "github-repo-architect",
+      "github-social-preview",
+      "n8n-workflow",
+      "pihole-blocklist",
+      "pihole-csv-analyzer",
+      "powershell-refactor",
+      "proxmox-lxc",
+      "spec-writer",
+      "trip-email-html-itinerary"
+    ],
+    "candidate_bundles": {
+      "alpaca-trading": {
+        "build-provenance.json": "af34c884252769a736f123c30e3e7a54967b8770d777d230fab2604d28e5c009",
+        "capabilities.json": "bdd541a36bf50e346a46bbddb0d191ee2078317d461e404aa50c5198ebc2bac6",
+        "ecosystems.json": "71a16f92e53b93e50ed2447cc7ebc688c7bf0897f0487e981f81e04a4e63ca0a",
+        "migration.json": "67cfd6bc68c94b6f54399a0e2dba618222110e77ed260555a5667a8439d2a606",
+        "README.md": "41079efd8abe6c83fb3e9fa204298029ab9f06bb8424aa6ce4f3cc745c068d04",
+        "SKILL.md": "b5c6307c7646462720245dc0eb5d899cea98ff542a0bda330aea1fe3f5cec47f"
+      },
+      "example-skill": {
+        "build-provenance.json": "7996d70832bacc02acafe43337caf4da437567c99e4be2c66bd2f19667d38a22",
+        "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+        "ecosystems.json": "cd4195e891a8a29d60ad673b1cc790955eeb589386624a240edcacd139543100",
+        "SKILL.md": "65e34ca475f3e7bfbfc4a4bce3bff48462a903228b2453d58a95f8e06fbc70d5"
+      },
+      "github-readme": {
+        "build-provenance.json": "3ece20bd0f8ca6f6b4fa14aa4a083fd40cd47e5a952722aa9e2aa2aadfcc1164",
+        "capabilities.json": "84af959fa6fcefde9d8f0d204a54cb4decb6d5840aae960da8e690fc80549538",
+        "ecosystems.json": "c11cb9b2f2691b0fc8e5dee230d0c21c35e54560d39c3fe69ed2aceb110f4e9a",
+        "foundation-audit.json": "9b6588e612eca1259243eb83882248e6698e5e7a016f941c431d112330e6e315",
+        "model-history.json": "83bea6ff2866e8fa732333a3571af859b9e7d0e7f37008ae35c74ba6ed3725eb",
+        "SKILL.md": "6de16e74b7ff7ca37b77cff99ba90506e7e11afeea0f4a00827bd8176b2c6f56"
+      },
+      "github-repo-architect": {
+        "build-provenance.json": "eabda8ae6160edafae24f19b08db024f1b2dfe389b6f9a38f91f046886a5da49",
+        "capabilities.json": "8a0e0420e8d2eb3f889198bc519109769fe0cd75d7f8d055803556ee651e1ba8",
+        "ecosystems.json": "2d3556adf1adf379b51ac167868a170589fcc6210b85d7ee99b4057928224e53",
+        "foundation-audit.json": "765626956874331b37f3119b44a6824d3bd26a22363449ee50e11869c6c29da4",
+        "model-history.json": "58d5a37495904f8c54e29e463de52ca0e4fdb7170b5ea30b2cc655c73d68bd4f",
+        "SKILL.md": "7ee253b52c0b241ce2351831820456af2733a3d6d8a6cdaadc08064dd3f884db"
+      },
+      "github-social-preview": {
+        "build-provenance.json": "50129f11cd6ce252b867533934bdd0c9f1f6fffddbd1ee17a63a7eb94f9a9312",
+        "capabilities.json": "8e8f372350c77a0902aa4262365a5a0614b2caf60d6cebd6d70c817a78605a79",
+        "ecosystems.json": "26503c53eb0cc7f53b11ea185dcd2fd739cbafeda2a167aa742519f06617b737",
+        "migration.json": "472ada854f4098134e32dfc037196a4502f5c42cd8092d8b6ca15a1b8bbd06eb",
+        "README.md": "561f3baaa1c18fdeb09c66ca01e6d74c63826488d5218003ef38840225c32d6d",
+        "SKILL.md": "eb58b912ac61de47d9e1a7f206fa67841929f2d29760c45d98a69c8f77202d90",
+        "examples/example_usage.md": "7398d0b03eb6b3990ea4939232c4560d963d977d1221e2e740d2e17e59734fc3",
+        "scripts/generate_preview.py": "00ee376207573259f13eb34d99da303e83d44f718a5b3429aa7e162a56ec8f81",
+        "templates/design_config.json": "58572a0c9b1fa0d665405307ca600988453bdfdb0a9a2c03c710fe2f8963010a"
+      },
+      "n8n-workflow": {
+        "build-provenance.json": "b61b9e23a068478f15ad32721ef9f72eed43e78728ed2b41d2b7011cec364658",
+        "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+        "ecosystems.json": "e2aad2c4eda1de39ceba46baec2c671286a0c1c26271d80e3a8330177acd4441",
+        "migration.json": "9e636377b35b63e9f26063c75c4755e50aeb2a22839f7dd678cb850d6713e65e",
+        "README.md": "a252a02a99f93a50cf8c2a7284ea7fdcaa3fc46968e5c2ca799c83e0c5f60c33",
+        "SKILL.md": "40d64e696c0e7e5784dc959df58a1c15d5ace799a0e7fbfae95a7e6fbc871cb0"
+      },
+      "pihole-blocklist": {
+        "build-provenance.json": "486199059502b960bb4194aae219b8847f0b12df059ba9e8da27d44fe358c37e",
+        "capabilities.json": "ffbcbccfad342d05940999f43212d4171e29bf3f478ee29281afd4799007b1b8",
+        "ecosystems.json": "8a3da582671d2870833fa5b052956b0f90c6cebb879af8b2a35e1a132e6eeab0",
+        "migration.json": "ebcf17e491621c40d88c162adf49cfca9397d1f773d3226eb4d8db9d282d48c3",
+        "pihole-blocklist-sources.md": "dffbe68aa1d4bb169d36c5696c799a6be6ffd6ed1ab8e9e81a1e93b822d2f9fc",
+        "README.md": "20975ea70f939a98e5d97dd8702549d65c62098a864e09bed32111e31dc54cf2",
+        "SKILL.md": "6b5c53859eecedeb9363e8291d7ec733487208b839ad280ecd650f76e7fa1e92"
+      },
+      "pihole-csv-analyzer": {
+        "build-provenance.json": "d1072bbe93b2def20e4e6300c98236584314b0790772dadd941325b8b9fee400",
+        "capabilities.json": "d7e3dd8e963f745b67125681255b58edabfcab6e12ab5fcb608d13c4509087c4",
+        "ecosystems.json": "ca0943bfac3e8be2e302e46d1a6851ab1356db9c5642fb3a2f4751af4583a150",
+        "migration.json": "9ff0651a3d69fe5c4d46a05542f9b905723b3a5085a7dad203077509333e72ab",
+        "README.md": "6654c6289d987511724130cbdbb41873b062a1bdbe29fd18117e206c1d33a1cd",
+        "SKILL.md": "e69f7f615ff07e41d1d87fa7da75a96fed2efca1e94c05e9ddbc05063cd0d899"
+      },
+      "powershell-refactor": {
+        "build-provenance.json": "7c4f6c19377164ac1e98937914e4d170ad4cd5e391934347a55782a5d57f6821",
+        "capabilities.json": "2410d206a0340b248ec6ff3937241c9cb7c680ea878586707eb07d94e23f3f32",
+        "ecosystems.json": "4809eef4eb7ea46841116fd68c032265336174b0d1883ddd04d240cf87f26f17",
+        "foundation-audit.json": "6e925988e983c6c395767ec158b22b5ce56d27bc9f83c9b7f5a1446fd018467f",
+        "metadata.json": "4aace7e6d812eb02cfa5f798b88ad8c4f00f68ddd8317a4fd085c22e605d5eaa",
+        "SKILL.md": "58091c24fde6835597a07f7828ba328c65526da96ca5dff59be3561cffb059df"
+      },
+      "proxmox-lxc": {
+        "build-provenance.json": "6ef11a21b608dc602ec65ad226bd7804cf574d9b2ab0618b64147a115149eaab",
+        "capabilities.json": "8e8f372350c77a0902aa4262365a5a0614b2caf60d6cebd6d70c817a78605a79",
+        "ecosystems.json": "5fe466ecb93d9eaa35cbfd3b7decf501318da60a47b9a074ad6f612dddb60e58",
+        "migration.json": "e1116c850a5fafa7dd6da6209b965760657aa7f63b24412afa5325b26648e319",
+        "README.md": "ee2597d5c1df5f64987ad99594674da41c01db2fcc5d667550fe315727ba3928",
+        "SKILL.md": "0cb7faafe228caa2b05c2e5d339206ced7d9911ace526d82cc381a97f82a9be2"
+      },
+      "spec-writer": {
+        "build-provenance.json": "6acf741570c1c567062f9bbc0bc1da1aa7b714b5e8ddd3e9bcc82b907810818f",
+        "capabilities.json": "3d12378cfc9f310a0433dc134fb6e2e0b16e08567f34e56b16d762c472b5b9e6",
+        "ecosystems.json": "9c573f71849fc5debe6f934b3ea6fc2c543a12a96e9992bd31bf42d5b9f3b082",
+        "migration.json": "bd251e0fd8cb94685cabfff62dd7e824b8189e779f659f8f11ba0c27ab2de455",
+        "README.md": "8274ace664eca719577abe50a8849db836c23a0761ca5d8bbb6308db5473e01c",
+        "SKILL.md": "e4ecd32ae4711964e30f262a8cbfd44875319094dda4fc4820c8937a4a52f716"
+      },
+      "trip-email-html-itinerary": {
+        "build-provenance.json": "07e40d41607146f9c14051c90a8f64e7dc720304ec1d921d2c01c661d7b90c09",
+        "capabilities.json": "0ca0ac3dfe4ad9c2283ef8375fd2788be28ad82d30edbc0f4e1f403c0f9bfe67",
+        "ecosystems.json": "63bc398f9e5fdf1afb711438a6e314609cd7e2d18f649aa69fabebbcac3a95c0",
+        "migration.json": "bbf033ff74be1fbb2c78186a7d82a868d20bab40bb75f9292bbdcea324467ce3",
+        "README.md": "a95daf9a7302e67581a85ff6d0165f4543c51da03540738a993cf14f28fb5a5e",
+        "SKILL.md": "9a2fc31cd785c3b7e5e80a1f33850b3d0abe9c3828d714222fb58108909dd0cc",
+        "assets/emergency-contacts-template.txt": "26b3fc77b913f63fba10e0842deb4c08e314c44de486142b13ccefc366d6f01a",
+        "assets/itinerary-template.html": "0c7a96ee250a142683b27cb8d93d02bff2f161af5ac5d8445bf701d6e213afe7",
+        "references/design-system.md": "1c441d1e0f523d8e3e03fd98eecbbbd78d0ff8de28443924e5d9dc02846e82db",
+        "scripts/Export-PublicDemoJpegs.ps1": "ed4c51d364afff5db1af177ca2e979749af74c4231916852f7eac85c1bcf8028",
+        "scripts/New-PublicDemoItinerary.ps1": "fd161465fe15cf37915e3d43a4a36aee091382f72d52418688269d4772ebeedd",
+        "scripts/Test-ItineraryHtml.ps1": "23ad3c3c8483887d569908db61643b350758276d6b8b4bd0d62058301ec78353",
+        "examples/public-demo-social/01-cover.jpg": "97f9da80bded12787fed952c441c3dc77d5d5a9e62bf0e9d90746f0e9e59474a",
+        "examples/public-demo-social/02-trip-overview.jpg": "e3432dd8c34e4a091e183e64610ee563c9e79f3856e509434817deff7081f065",
+        "examples/public-demo-social/03-flights.jpg": "7031e63fbf922caf5003232900c7ae91f9880ccfb048ee3ab1681a64d1d1035d",
+        "examples/public-demo-social/04-hotels-and-transport.jpg": "f4e8d313742643dc36207a43a4f38bafcca8ac69f2b141743c3b4a3baf22d5f8",
+        "examples/public-demo-social/05-restaurants.jpg": "e0190facfbf69ebf7c88f19e7902d7c455daa06c949e4e251327815785e80912",
+        "examples/public-demo-social/06-activities.jpg": "947c58a28f7724d4d54ffaff335df8ac814133b4128e707662fbffe53d0a7228",
+        "examples/public-demo-social/07-day-plan.jpg": "0d8ee58a9b64d8a93b3bfc0a36aae29c3ac740ade6337a6aad5478fee22d2755",
+        "examples/public-demo-social/08-bookings.jpg": "e2b3e767dcc76291eecab7b08ba8c493b40d721443755827b0f1cd56a5372b53",
+        "examples/public-demo-social/09-travel-admin.jpg": "51b18ef07017c4021413e6734b1bfc7784adbc6ba1ec508d7c1b96692072387e",
+        "examples/public-demo-social/10-emergency-replacement.jpg": "7641534e7a08ceb8462fc771ce75b6c64f316244bf4c369c27dea945c983f8db"
+      }
+    },
+    "selected_models": [
+      "gpt-6.1-sol",
+      "gpt-6-sol"
+    ],
+    "model_selection": "gpt-6.1-sol is established project baseline; gpt-6-sol is an account-advertised prior-version Sol comparison, not claimed as proven routine usage. Both advertise low effort.",
+    "design": "24 fresh read-only sessions, one disposable profile/repository per case. Retain actual session inputs in private profiles instead of ephemeral-only JSONL. No feedback, forced-read prompt or candidate alteration. CLI and app-server share the same native engine; this is not independent host coverage.",
+    "added_nested_checks": "Two fresh same-task literal CLI cases from a child cwd to match the original missing-read launch condition. Original 24 cases preserved; these are additional location controls, not replacements or retries.",
+    "total_sessions": 26
+  },
+  "model_discovery_sha256": "62e4f153f62dcb58343a47c83b04625bc4eda17cb391a4e153359dad3349f373",
+  "model_discovery_no_inference": true,
+  "cases": [
+    {
+      "id": "sol61-cli-literal-r1",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-literal",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 15.812,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "4bac2625c7ae2d6ee3698864e2887f83db7efc720d1fc9c8b98fb1fcafc0d4f0",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "b2b13db7dff5821877d28e39f3172a1bdbdc176548ae0a0d3ea51139194953d6",
+        "history-inventory.json": "c1866adf26c2fe548cfd13f17cbbda45f69bb0ba2ea118b037916cb8ecb1f866",
+        "record.json": "98061d496cb423a376c3cf28448aeeb7770e2e4fc25d58be3516b20eeb208645",
+        "recorded-inputs.json": "61f7ff4662a17d5195276264015221c40d7949eebcaaa0d3be6cdaeab068fc02",
+        "response.md": "301d7d2a4a338415b129985572371815b9efa1acf6adbe2be4468960e1a30444",
+        "rollout.jsonl": "e23b610371f9328fd6db991d461f98dfa590363e6581797b492cd8773290a319",
+        "stderr.txt": "86dc49577f8cf679d1e1d70d27f8e051a72556e9c51dd946b5a584803b011d68",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712"
+      },
+      "settings_sha256": "d70d88b3aa889257532e92c0e960a4a8d542858a877b9608b11f760d2ac06312"
+    },
+    {
+      "id": "sol61-cli-literal-r2",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-literal",
+      "iteration": 2,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 17.078,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "8809c250b9dfb57921e6290d939d105d9109757dc8e760c04311ddf5c2ea084f",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "7d0605ed7b79b4d8f914a8015a869d764ef54eda302f8ad6c17d732c5d5c3fe4",
+        "history-inventory.json": "3ec6dd83d2e78365a5c136f3087c225680d4489703d8f61b9379a597d3c63860",
+        "record.json": "8b37ca1ced570e61997fb6cc48059f3b99e91288c518986eabb1625f25e42a33",
+        "recorded-inputs.json": "ea82a7ae0ad10eacd4b9cecc41135c89e61bcbedb1c6ac3ec8da43c8ba27b998",
+        "response.md": "05b2a94c5d9e0e3f27e63e3d3061ec2a3afc9d1d114d730ea7d71d333ee33eba",
+        "rollout.jsonl": "64328cf42866cb3d5c538db289f69f7fffc1124028809cee0ec6c62edba182d2",
+        "stderr.txt": "a8dd918fe4ea1108654f3096716a86bb6e89c0e94aec620fd983a960e1164c72",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712"
+      },
+      "settings_sha256": "69a23841d9f638cc4d35d328ca63b2030bb04a4f34a3781f14d2500f6dae5086"
+    },
+    {
+      "id": "sol61-cli-literal-r3",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-literal",
+      "iteration": 3,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 11.969,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "323e4f24e09a65692a949c02e7e77a76e4a941b39a5ee0f3048d4f4b0c4ff655",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "c6e7e27d06a5c8fcd52bb476336547577a49eb7f4cde85f160fb47d5d2efa689",
+        "history-inventory.json": "8ca9155873aa8245a6d85337be578e5f1588ce436f47124d0adb0ce078fe9b80",
+        "record.json": "897268794e940e9f73365977c8eaf524ae8c1a2b8b87e233c8e0d1a69251bd7f",
+        "recorded-inputs.json": "8ff9d31c4e54bdb4ac4c4f50c5f1d040427652b451693e933f96ea29796af53f",
+        "response.md": "b687c2de2a61bd188ad5444c46163c25b238438b39005f659b001893270a0d3a",
+        "rollout.jsonl": "63f72e6ef308f8c981fde1c915b419a21baee1e6001c97f298d5288a23ac1253",
+        "stderr.txt": "d4788c7ab64b5672ba78db6d39646a17b04cb9a23f4e95f32812b8865090a0c2",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712"
+      },
+      "settings_sha256": "895d5c155990d6bba4c2ac3c5bec92aef1ecf029a48f8cf20e84f728d4dd7ede"
+    },
+    {
+      "id": "sol61-cli-implicit-r1",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-implicit",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": true,
+          "input_injection": false,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 24.968,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "d43f0a9a2da750ae9150e3999990cf08a976f313e5d74015e024b688220c0fe0",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "66c17ad3495ca8c57d2e97d1d67fd9c72c0034833ffe509aeb004ace12fd7688",
+        "history-inventory.json": "0e9297e6921121008ff82b6edbcae0ee6cd17e0bc94f0f70b9e69dc34e8b4e8a",
+        "record.json": "73240b51fc0d358d17f63dd689922a2b58fa66a29095bd5bf9ce41d596a531a5",
+        "recorded-inputs.json": "43c575417efe10751c30a4608e13166a5ca8e9ea83ab14910d6d929fc5656c8d",
+        "response.md": "2f0d6ee41b518d00a11698be33a86f64220a5cb7c1fb8ad8b86e97d511155a90",
+        "rollout.jsonl": "8a8460027f50482111fabf52c7225fc1a59e630c482d10fc6d416bc5fe7ebd83",
+        "stderr.txt": "082c48399764618ecf3dc470978fa159a43f81b17b858c02fb55afee213fe876",
+        "task.txt": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322"
+      },
+      "settings_sha256": "97ca5da33330fbc29264c47c5a308a0ebc97ac48b2253ead5d094910de952f35"
+    },
+    {
+      "id": "sol61-cli-implicit-r2",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-implicit",
+      "iteration": 2,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": true,
+          "input_injection": false,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 25.391,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "7d61b3b5e633eda8ff51463f83940c8e3ec7ed3d55ae000742a99a9304756b27",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "774c55bc1c3fc8a5ab00ed7785b2eea0aaabaa982217fc1dd1a63e785e57815c",
+        "history-inventory.json": "426fcdac3c8c5bc40871fcc6794493d0965aa17454e4a10f8f81842c6e2b9f57",
+        "record.json": "c7869fab7d1f92ce67e7d88ee704e39c365442f9709678abaef432c12931dd73",
+        "recorded-inputs.json": "00929d17582cb1f5cd57d76633833d4d4c0378c9c7cdd5cf74159c4d2a6094f7",
+        "response.md": "33ebd80616bea71b129e1f463996dd5db4f71edf147032eb2ad08f36eed6b536",
+        "rollout.jsonl": "d16d9cc111ca95235d6a3ac7d11ee558d24abc8dd0b11bad68581651c02c6fdc",
+        "stderr.txt": "3ac75e00738ed6bf7567f0b3f3d108e2dc7edd9e0a80366ed8d4d2ba9191ecfa",
+        "task.txt": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322"
+      },
+      "settings_sha256": "c8d8a33b92fb8c95e2eb7327c9aaa15dbf3ea0671d96573290056f0e39828673"
+    },
+    {
+      "id": "sol61-cli-source-r1",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-source",
+      "iteration": 1,
+      "source_provided": true,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": true,
+          "input_injection": false,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "b8b112092f0b9b8f06f8f444307e717bcaa0f5a905abb6a176fbdd3ba0f68d16",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 46.39,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "3535c1a7baf39bbf4d26eda979e2ac2f46efe8bc16adf7004d9000f771f0d92f",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "9a1af5d6971df9b9a6574821d3493e7d4d8c443a9a483fb05bb8419bc92256c5",
+        "history-inventory.json": "48e9e88d62ae854d44dce81fe9665f87babe1f99d5aaaa002e8c163ceab23ccc",
+        "README-proposed.md": "f42f238dcf51d8ee31fb3a0b967797036c9d652d29aaa1ecac9f4e71e9e30c93",
+        "record.json": "0d580da89c272500eaf17b3fb9b366ed0cd32cecfab8d6b290b6d650e15b6fcd",
+        "recorded-inputs.json": "9d12cd67c591adee5e803aac44bf181f940f680144ba248db55053da69ab6aa1",
+        "response.md": "19e48f3613656e4c2554d114c27591775ea2f9080a3e81fe106cc195108de1ed",
+        "rollout.jsonl": "bacb7d60940aa35b411bdf4ecf3a8cc9d589d519e166413e449fcaa25ab86e08",
+        "stderr.txt": "a7ac3cbd69ce9f7a847287986da44468dc0f6925cde6529582f7fbaf755806f7",
+        "task.txt": "b8b112092f0b9b8f06f8f444307e717bcaa0f5a905abb6a176fbdd3ba0f68d16"
+      },
+      "settings_sha256": "d741453ddf2006b16f6d4b618f688e321e83ee0055ea90f437310159b1ce1893",
+      "proposal_sha256": "f42f238dcf51d8ee31fb3a0b967797036c9d652d29aaa1ecac9f4e71e9e30c93",
+      "license_last_and_external_notes": "passed",
+      "proposal_limit": "Source-inspected draft only; no application commands or installation executed.",
+      "source_accuracy_review": "passed bounded source/command/mode/license review",
+      "source_accuracy_is_separate_from_loading": true
+    },
+    {
+      "id": "sol61-cli-negative-r1",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-negative",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_negative_pass",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 13.547,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "815d62693bd4c7a40fa4184fb47d269877e23894a585980dfbdc75c36b9a5ac9",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "88773960a797f84172de0a7bba5b05717e1c9badb2de5466c73bf981f54acddc",
+        "history-inventory.json": "d649baa9daa3349e679d3fa834486541bf49705c5e75ea55a845a55f24be07d5",
+        "record.json": "5f7de0817ad181c3bd77e141877b881e737740002b70be791404e8eab438f084",
+        "recorded-inputs.json": "c0cc96b8cee906419c82f90d64eae03f4ca6cc39e23fc64906f8916a14c7b08f",
+        "response.md": "7f2253d7e228b22a08bda1f09c516f6fead81df6536eb02fa991a34bb38d9be8",
+        "rollout.jsonl": "5fe02f9eaff49f7de374b262f58023c919dcbe44e7b9c8fafd006fc1cc197821",
+        "stderr.txt": "9fb8fc1120503956ce03f72d1e3e5b9180a41c13ce4f8d7a71535186d9af63ef",
+        "task.txt": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253"
+      },
+      "settings_sha256": "d0d6b1151177dbe58cedfc11e98a5775c731b480a6473a9e6aa94006e2415c2f"
+    },
+    {
+      "id": "sol61-server-literal-r1",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "server",
+      "group": "server-literal",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 29.281,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "ae66b7202ab82d293522b0d18f45906f1b0988fa69e38cc2f3a20e3218ddb337",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "a5b471c8bc198185f86083fcc4f1809b37baa6f9370619616e39247a5f422c0f",
+        "input.json": "90a6c49a303cdd505fe95d9db04ea34558725af5a4ead0f904aead72830da9fa",
+        "record.json": "04abc9285d11aaf12d62e4b1df3cc25aae2b274faebfbb6ea09d26f5015990fc",
+        "recorded-inputs.json": "8d55fd498aedbd8781cd84bb5c0162d986efd6c55f2670ea1d9d73a60c7fd0ee",
+        "requests.jsonl": "1f7603305671ce0ad6b4896fa5c9b14a1611d92dd093fea2425411c95247a773",
+        "response.md": "1b39035cd4b27f0b9c7183fe62c1f03d08e33bcc5f97b67e738faca4e540dd23",
+        "rollout.jsonl": "53d75dfb5352c44bce34c74f155e39eab814d9d798aaf00dbf31a427005187f9",
+        "skills-list.json": "e3fec568a1b6ee73ddaefb55b5f088d4df008ced8a2e38cdfc71402e9314b0fa",
+        "stderr.txt": "7110e380b67638a5dcebd94b99a915c959fbb0d6a926468bcc8d0436e339749b",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+        "thread-read.json": "805f1b77311a77d4b028d8c64becb58a065ac743fbd20372ed6f7713d4330324",
+        "thread-start.json": "c5cfe6807f1209300454e825afe90193963365cdbdc607774060a1d042f6dbbf"
+      },
+      "settings_sha256": "aa4956a7b9690a79048deff86e0f93f9007292449532561e81065575ad92b1c0"
+    },
+    {
+      "id": "sol61-server-implicit-r1",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "server",
+      "group": "server-implicit",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": true,
+          "input_injection": false,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 21.484,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "91e8531af61b31cd29e9d0ba89a653db1e06f9df2f28a78b608259594554dece",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "25611ef318603a34b88c67c2338b3072b461866f9e27d1471f33a2c837bf4065",
+        "input.json": "44fe33bf12a63d1150d9ed53b5b60372c1621cf244b947f2d880db22477463ab",
+        "record.json": "03b6ad23d19d7bf4c7256840bee37bac8f56f951c0e933cab89f38681f7d48a4",
+        "recorded-inputs.json": "73b42706c6230c37d49ac14a9005c14e46fc8d08b57751515bbeddcc97bd5196",
+        "requests.jsonl": "dd6a30678c5a87f9aeec01de407b95142f896da71a42f798f8144f6f49316c68",
+        "response.md": "a0164d17a83c83d87a651e85da24869c39084cc590384e7de6d119df955da552",
+        "rollout.jsonl": "7ab063c3db2607018e67836994e9b0c6d236ee663a6b53a162d69c0992646284",
+        "skills-list.json": "3a66151b87c94f2257ff513df631424bea70ae48a69010096ee3f14711ebe17f",
+        "stderr.txt": "ea3777605c070b15b621d0d663b0540b0dc10fb4d3f6be6874c44eab768914a4",
+        "task.txt": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322",
+        "thread-read.json": "e8e0bc191602614799228c3509e5fe25aa4ecc4166349aca17ebd74dcd137964",
+        "thread-start.json": "c30f50c3638f9e321d810ff88b5adfe9e52eb3d469186ac7776670eb6fcf01d1"
+      },
+      "settings_sha256": "728cf72469e7bd53a97b2055b8e54de4afb5ff6ae42fdf5479264b15c144d132"
+    },
+    {
+      "id": "sol61-server-typed-r1",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "server",
+      "group": "server-typed",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": true,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 16.609,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "0247968e79d1e1de4bd54756ee1733d3ed48947daf45bb75d1c840eea5fa4c3e",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "0e34d38515ef59b38e25ecc991ad6aea670418fad8875949d0029fe9fa15b70f",
+        "input.json": "81baae4a7a53e88520358b38483829feb0d3c589b55f6ee3f414e7835bb4b5de",
+        "record.json": "aa55f04d115472af24c38e61de3831fdbd9e507d6b192537cdecfda3c39f1700",
+        "recorded-inputs.json": "dca229228e6622d4dec0e3919fc5bc5358d70150343f0d02b46eb487aaa011b4",
+        "requests.jsonl": "305c44993409785137ab4425b8af4badc16ee173f03564b5582dec6b052a5977",
+        "response.md": "bbe09ea2c2d4c37c057cc073e137f7acf0328d8a54ad4d742efdd675555cc8f6",
+        "rollout.jsonl": "a35831068752520af898dd3edfbba4015b7da1fd65c5505d0c0baa596e8f6e60",
+        "skills-list.json": "983957e49ea195900d6e51e1cb259f5cd1bf7d1bfe6997863457b8bd2cc92ae4",
+        "stderr.txt": "2af776cc3387f9b4203b50870f9383efe82635a793c2c138a62894fc1424f894",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+        "thread-read.json": "33bd02f667c976bf1938dea5b0b921899271fb06ae575a02a388d5010d606624",
+        "thread-start.json": "112eabd8da311c3a1b8e1d93975ec3840ecd3c4c1b8df9d28380e14d03198cf4"
+      },
+      "settings_sha256": "e9abc6df96d46f9887c36be1eb83faceb00c0a979285466eeb02fc2402e9150d"
+    },
+    {
+      "id": "sol61-server-typed-r2",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "server",
+      "group": "server-typed",
+      "iteration": 2,
+      "source_provided": false,
+      "typed_skill_input": true,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 15.672,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "7aab96afaa008e6d8e22a1eff764b9a4827a9d9b73c8b4a21bc2a21828b58241",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "381cd5715c629f0434e12d0b16869e138b5058959ed68b09faa0e38be650eabb",
+        "input.json": "9e70f778472a6f6b3e0499c38490bae030f31ef2f7432221e259db97d7c17046",
+        "record.json": "04c60d925962078557ecd11aba39218d96873b2b44f9248f0f0a24cd7e42b292",
+        "recorded-inputs.json": "a74e551bf7a569a792e4f2ad7e0f2e1b2daa681d6bb108d6fa313dece0db70b3",
+        "requests.jsonl": "53431fdb895aa14eb1fcb59463ef6fb36d2f54f6a37c8ed413ea49533e631bfb",
+        "response.md": "0bd74f2eb1b51eca2789aba1bef1181e54cdb4a17898b7fb7d67e4ed767fc775",
+        "rollout.jsonl": "95a0b9c39e7fc3ba6daf28de623afc7a7081968f1fe6c31b524f6c80dfcaa427",
+        "skills-list.json": "06f6b0741724f22fc63d78f7cd13e7dbcb0e6ddecf2337804c8e82873e506261",
+        "stderr.txt": "c9719792458a803f9d6c0c7c8a3524b85a12ad086a9e2ae03515bf01d487a47b",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+        "thread-read.json": "48f782cc3d26681be0a1c8a36041c33f6b2103c024152fd1c91b7dab711824e2",
+        "thread-start.json": "066e22cd7cd9c5aafe6fe24338c405daccb811cdf66aafd432b874bd84a41d2c"
+      },
+      "settings_sha256": "2c7768007c827f7813ec12c3ff777a039d1fb844cb1cc7329390208b879d1055"
+    },
+    {
+      "id": "sol61-server-negative-r1",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "server",
+      "group": "server-negative",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_negative_pass",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 6.985,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "efc9f83ded6f7d0cf3ad85cfe59faea143ca167d76410332c7baf56be60d9af7",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "5f3f570afd2a7d5daf573c92d10935c1d664d33772bfabb1b4dafe1068f9b9d1",
+        "input.json": "18d61852bd2c5e0b6e1bad7c813abb7047e9888fb3d1db0cb465fb07cbfb2797",
+        "record.json": "f4656302952671e7bbef5cc8d7ef3bb6f100a553bcc6f1847c511695b6c11f04",
+        "recorded-inputs.json": "2c59cd05010bdfc384d5a22855647da23ba0b8bc88d3b285b061ebcc52853c90",
+        "requests.jsonl": "ace60171da0a45f9b0cf291fb984bad9ba99552a391d4b6830c26cca496402fc",
+        "response.md": "7f2253d7e228b22a08bda1f09c516f6fead81df6536eb02fa991a34bb38d9be8",
+        "rollout.jsonl": "ebeb678110536cef3f4b8243a550b1bc31ddbf6724c9ede057bcde3f2035fa38",
+        "skills-list.json": "eb32258196b1013e1126a9d11f9e28b23bce0538b468e19d2961b1c062763fd4",
+        "stderr.txt": "a51239786267d07f6f13b8cb73f0d5627d41a1aaadf9ffe1113c684ebed308f4",
+        "task.txt": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253",
+        "thread-read.json": "170a317b7d4c946ac0ce2667d4fa5afe28b15e38e1838c3ac3e12ea0de0903a0",
+        "thread-start.json": "9666fcaee07fee8f895758a4ee9aba0fde91eb4b6d701797865bed7282ea2f57"
+      },
+      "settings_sha256": "e0ce494a14b532c97bbdf9980bbf577f742d5db831d1fb51cec7e1d6385469ef"
+    },
+    {
+      "id": "sol6-cli-literal-r1",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-literal",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 21.375,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "777fbf5b69019a24b6fe092670e47c22071297398999919cf236954040b662b0",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "2e0e625c647d1b6bd5622abd005a492a10592efceebb8d22e2893cc08a4984d0",
+        "history-inventory.json": "5caf51c2cd95702ee444a08c98118b60e11543993ac278f351340d33eaba4015",
+        "record.json": "2219a42a1ced2b3ac2592dd631fdc4438da64d98d04934a2b2a2d0a5391648b9",
+        "recorded-inputs.json": "0d9ffb1dba51bbdeac274760c0182e2ea18487e26204af65d181540bd3aa2738",
+        "response.md": "0f0c506bcf777e99f89336eb47f4f302b7a6700bcad739acfb2435c6b5e799be",
+        "rollout.jsonl": "75b6e35f3e02b55b70a25efa37840238a9126d5ee8bd7975b1fa45d930370ab7",
+        "stderr.txt": "f0960e81326c74b2f4d144ff97e3c351bbc0ae088220c3b8c28ee678176ea6eb",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712"
+      },
+      "settings_sha256": "9698ae0e658aa6453d15b0aadd45ee1d3c3db4e236e28bd78d66d643903a6da3"
+    },
+    {
+      "id": "sol6-cli-literal-r2",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-literal",
+      "iteration": 2,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 13.375,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "ceda2ec7c2a5348c4cc8094fddfa8198524ffc5792e4131b79eed8adb31e0b09",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "2dc747c512afd6e5839c054b5963deafcec7ead752edd12fbe5c6b6f902a1898",
+        "history-inventory.json": "4606e2e9198d694ba63afafe431cfa56b2d8f9598749ce91a538d3af3800f63a",
+        "record.json": "45c6b2a37e6d47faeaf3e1c70769c1d224ca01b6674b5af51458ecdca71ed789",
+        "recorded-inputs.json": "7260eb7b6c53de0ac399b52d33218800147014d686119b33303d984e2f5a8fb1",
+        "response.md": "c5c9ec03a84cac6a2b3e121d2cdb09837470fa29be577d77ab79132f3bfc43d1",
+        "rollout.jsonl": "763ee9a5829da939b661f921d7537d5b429c11c08cb5b8905e0174a3ceb73cec",
+        "stderr.txt": "928e7a49656b1785e32fe9bad7cf48752ed930e26eb4e878ed076b18fa882a6a",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712"
+      },
+      "settings_sha256": "c036a685dc709514dda6c7d099a75616dc0aff2802c391a5d04cd9259e986f44"
+    },
+    {
+      "id": "sol6-cli-literal-r3",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-literal",
+      "iteration": 3,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 13.406,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "3f9d4be1cac059b2d59813b4cc322dffdee79c2d86ed3c6825198a6c615438c4",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "503d4fce72bbf72d38d4a8d5d440efc02bda58c353ce9a414c6d996afea48e8a",
+        "history-inventory.json": "7b99a644919faed38b03b566dd2829e49ada359ed2f204aaaa188015fb19bd65",
+        "record.json": "030b3a02c1b47789964e63818915deb3d29349db6060f0aff3889f754646daa9",
+        "recorded-inputs.json": "3463bafd6d1db856cdb48da5496e4af755823e0650f873206c6503128323c41c",
+        "response.md": "75aedc347f015470a9dd85f0d8fc04befd00f904c98b1746eb9158811aaf7e4f",
+        "rollout.jsonl": "a1872e69a353b4747bb6f5337f74fbae015bf8be2ee7fc9b6dba15fd84c292c6",
+        "stderr.txt": "38bb3d5e3a636e6da3541524390548fe8982990c6b1b9c2e8a138a0f1bbd0eba",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712"
+      },
+      "settings_sha256": "6a725188d2b1b1159d3c3a759cbee7a0f80c2922ad1ef9fa712611d6c0974289"
+    },
+    {
+      "id": "sol6-cli-implicit-r1",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-implicit",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": true,
+          "input_injection": false,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 21.469,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "f823da656db4427f8f940d94916000401eba40254af91ef73b2a0d3b9473970e",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "00641fef3e0483297a75b8beca1e3d11353ec06770ecfbf98b23998eb67e40e7",
+        "history-inventory.json": "63456fdd39527a41786bf957dc9cbd8d92c6ee64ba4b562b85d4293fc1b5f1ba",
+        "record.json": "80e763b485d26a9dcdd61f2fc1e0691db73968384951af1982bbe0a4d8fc6a5d",
+        "recorded-inputs.json": "18b9e70c16ea6a48871c2ef6316951a9c287cedf0ae40e4e2e23cf3e40e9c378",
+        "response.md": "35f6959ddeb6a1f7aac43cc1d7f8637657d46293f501ec820f5b5987595e23f0",
+        "rollout.jsonl": "d7f86f39ac2f15d504e122177fc60fd593886409717a8b8064d574a11c974e21",
+        "stderr.txt": "cc5bcd02d7cc85e2e836df9861ddc4511a9a7fdd61c4f49aee4bd5db38265974",
+        "task.txt": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322"
+      },
+      "settings_sha256": "09b576f60ba4e0ff87761dafbd1d74af35a5fe8bfba709e896a2554be3d9a6fa"
+    },
+    {
+      "id": "sol6-cli-implicit-r2",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-implicit",
+      "iteration": 2,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": true,
+          "input_injection": false,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 23.937,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "8e09cfbfe19f11bfa5103bff613c6cd919ed8d803224119729e4f909bd1fd73d",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "f28233743282b0217c422fd86b1fdd1453e5c52acf79ca5a81de0ec7acb3cbb0",
+        "history-inventory.json": "995814618eaaac7e13cda91097a2fee0c8949cd83982f6bd4d30bf2daad94c23",
+        "record.json": "c3df19fd82d47c0afd93d592483c3a977f979b939c74f6b7465b09787aace23e",
+        "recorded-inputs.json": "f3b12326ee8cf9e0dce65ea2a7ce32638a79b4e8a2a44a9471691b6df579bc7b",
+        "response.md": "9f97c617b6af28b7f55ca58c8754b8af9b6c0d9626698d53e50d390cf6d33216",
+        "rollout.jsonl": "a22a8aa726e74070c6774172103e597d354c16ed6621757b275da3d33511729f",
+        "stderr.txt": "8495a62ae37270bda32d5da9403bb4803bb8dc2e5067f9753bc4b3cb0af81b1c",
+        "task.txt": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322"
+      },
+      "settings_sha256": "849aae64dbd9a7d22199e017dba42ad00bc60ac89dd70d971e62308db188c22a"
+    },
+    {
+      "id": "sol6-cli-source-r1",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-source",
+      "iteration": 1,
+      "source_provided": true,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": true,
+          "input_injection": false,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "b8b112092f0b9b8f06f8f444307e717bcaa0f5a905abb6a176fbdd3ba0f68d16",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 37.625,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "58887fbd059ac0dadf65bd482ba53fbf39cfa54b8e54bd1254eb07400b40c8de",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "bb4c3fe15a8ded7c98b7b9c4e5c0c2c74fba348b4332634c724357b6d22ff828",
+        "history-inventory.json": "02eb4e679f0bc36ffd65589c926db39b43a521674f0ee4eaa722198dfbcff97b",
+        "README-proposed.md": "a767426f8f7fc0f0d16af308e5b74868ff94a9ef180a7a1d747a7af99c03e605",
+        "record.json": "ca6893394cd2489ca5b46e58e5aa63b4f3f3b98b496cb26fc8f203d2c398f1f6",
+        "recorded-inputs.json": "6e76833af99b100a166bf51f022d6938b3de638b41dcaf03c670a43725606ff4",
+        "response.md": "0be145f034bbc72333d4e599e82c0cf67fa97d4ad2e406c8a3f36dc01320b770",
+        "rollout.jsonl": "efaf5fc13f3d2d0fa0d1cd29cff9717ba5c68689474acccc6a87f703eca8c105",
+        "stderr.txt": "1b9d2a1d841ecba0cfc62817fbb5d81b5a7b767ce7d70d640d900813c91cb886",
+        "task.txt": "b8b112092f0b9b8f06f8f444307e717bcaa0f5a905abb6a176fbdd3ba0f68d16"
+      },
+      "settings_sha256": "1735b8279dbd76fbb9c42820d473736a0a6da209647822d6005abd0fa154e4c2",
+      "proposal_sha256": "a767426f8f7fc0f0d16af308e5b74868ff94a9ef180a7a1d747a7af99c03e605",
+      "license_last_and_external_notes": "passed",
+      "proposal_limit": "Source-inspected draft only; no application commands or installation executed.",
+      "source_accuracy_review": "failed: State column incorrectly made universal; all-row mode accepts it being absent",
+      "source_accuracy_is_separate_from_loading": true
+    },
+    {
+      "id": "sol6-cli-negative-r1",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-negative",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_negative_pass",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 5.359,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "ffb06b07410fae9b845c1a0fb0e6c0e319a1a05af0a8315cf162d0c34de5b7ec",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "4cfbf148b0a5ea4028e0b09a0d6be026b8502b50f1391d6969a53a37605074e1",
+        "history-inventory.json": "ef1f123d1ba8eb4f2037c48c7490a431c7e926c84b27b6b87ae8b556f8e13b7f",
+        "record.json": "2debaaf40f637fb9549120d20b33a734d5b4f33af638c38a0f27c448b8169275",
+        "recorded-inputs.json": "46293ac36823a37cae2a4ccf2145d68d914bf2e591bd77942692dbb7edd025d5",
+        "response.md": "7f2253d7e228b22a08bda1f09c516f6fead81df6536eb02fa991a34bb38d9be8",
+        "rollout.jsonl": "da28b7820bf2cddf00625dad2bb4c47b125e37063bbf890d406d9131dacc1069",
+        "stderr.txt": "7ca8443f726d247d6a4b475f9bb21ff054e2fe1bfacd58e2fef57f3c0967effb",
+        "task.txt": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253"
+      },
+      "settings_sha256": "3e58d7ee9726bdc6ba3b6093aba5b6faaf3662c11afa2d77a088e1b2a769a0a0"
+    },
+    {
+      "id": "sol6-server-literal-r1",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "server",
+      "group": "server-literal",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 13.422,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "99b5e177ae4c02f01800e5c6099006e4ce5f7cf1d65b49fc4fe3305774cc6dda",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "bb862810109e6c73e4362be1149b32c0590ae678ec0c0c8f8462eb2d2998b849",
+        "input.json": "90a6c49a303cdd505fe95d9db04ea34558725af5a4ead0f904aead72830da9fa",
+        "record.json": "154c421a3c3cd26ad06e41c0ad230dbc716ae3bc7f09826d38ffd87a662ca62c",
+        "recorded-inputs.json": "49d4885b38dc456185e2b927ab487b6df5d85abe3ac75f5d9fd9a3b7a6ebc524",
+        "requests.jsonl": "fa37f1463a13f99c7c5b51f71babbd8d09bf0e25f21ba9cf575817e2cfc0e51e",
+        "response.md": "98ccd9da4385803d749178ff3ef3911743d1ef8eb9a4d9229f9f8fdac2853406",
+        "rollout.jsonl": "4d5181de35fd4332a9e603fbf111c9670212981ee5b1e35074aa8aa22d698bfb",
+        "skills-list.json": "8d873fd69755596bb2f06f9171fe65e5a9b7ef791bf434ddac343923037b1814",
+        "stderr.txt": "9d74f423fe11dd607b238228f38e5c3ac10a9f48c1c4cdfa0fb6214aecb6759f",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+        "thread-read.json": "36917cc641ea684db9b759b915273248999e056c486884fd0c2a1314f52bfda0",
+        "thread-start.json": "0dcff612672f14b77679b39caa1b7e9f92a96367652b871f02543be3b269e321"
+      },
+      "settings_sha256": "3a242794226f670bf261b8a917360815147380d14e053576d521a7617a2d0ee2"
+    },
+    {
+      "id": "sol6-server-implicit-r1",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "server",
+      "group": "server-implicit",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": true,
+          "input_injection": false,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 20.906,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "86b7c2895f28e1da7872740ead780f11d43e7bd2cc4ab951874606dfed499926",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "06d43238fe1737f8559788b0a3f0e613bf379a1db5164890b82de683d6bc895c",
+        "input.json": "44fe33bf12a63d1150d9ed53b5b60372c1621cf244b947f2d880db22477463ab",
+        "record.json": "9196297059e98526027a2f4a55c88c884e3d477b785236448deda0d7696d416e",
+        "recorded-inputs.json": "49b92eb242e06861b918fe15b848f968e6dd31ec1eb177c23ff1ef2985f50f9a",
+        "requests.jsonl": "c594be3206f70f315d3c9ad362da0aad1ee3449fc5fa799b3428d637179e53e8",
+        "response.md": "301c3c81baed1cd1daadf2265982bfe420b346b5fc96a768ee26d3dcb822559d",
+        "rollout.jsonl": "8d5ffb693b583d82c4ff52256a30750fd37917e07663a633dc8c24453108f7f7",
+        "skills-list.json": "1c0825caefbc44c0d989d1c8599fccbfa4d83deb140d87fb307bfca6abd3ec09",
+        "stderr.txt": "7802be8bf6318ed3c3ceff2941b8f43a4ae6202b771c18289974275697969638",
+        "task.txt": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322",
+        "thread-read.json": "4e1ac5d767b1da6ecd5b2b4c60c8b4187a1090cf57c0cd61cd8fd1634afc2f8a",
+        "thread-start.json": "b3da2c88e495af00071959c8b46cc8b615ae6dde3a12bb6b0d551a309c44d0ab"
+      },
+      "settings_sha256": "f6cc484ec50efd8448bcb46a91887cc6a5cd14b1f223662dcc787dd85f007803"
+    },
+    {
+      "id": "sol6-server-typed-r1",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "server",
+      "group": "server-typed",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": true,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 12.703,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "edf32c602149cd14759b9b592bcc2e8298ea38aa5d596dd358de4ad4e18bb167",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "9156becfcde6ec82d6a0ef32b2c61a0dbcbadaaf1b8b807bf789255c5befc6b0",
+        "input.json": "f4d77edf2323d43f33e5f4369f8292cff6143dc41f29e190c4b932753d74a68b",
+        "record.json": "f63f0f54f1484c5f7b464b8dcca45c018b5161fd1d7691b4a29a8dd8d7a33415",
+        "recorded-inputs.json": "db332ba478941aeb19fff7c0e3dd1e3cc7c2f41372f845610db8443cd5526594",
+        "requests.jsonl": "dea597c8ac580701cff404c8be41bf970cac08932c40cd40c5a63743392234d6",
+        "response.md": "8b7da60c4c90d4928c7650bc7b72fc0a557ca64a739760160c0e3a3df55f89fe",
+        "rollout.jsonl": "6616755079b2c1803b5fb296a9c6b9f767d38593f49a3787a81b160989748e47",
+        "skills-list.json": "43cd22cb1de7777a5b7ab05b7283c5a4d4406211f2eaeb03b3c553e728594211",
+        "stderr.txt": "fd99b947cf5836e8f4b77df91b0cd430246491f2f5494f339a71fbc46fe520cc",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+        "thread-read.json": "8d6636336069187fa97551b2797f7859b644f1724cbbce9d7cbca8df930cc4d4",
+        "thread-start.json": "fd81f62a54729663814d61fa729b0de27dcde41559188d1236fecbfcfd6fcb3a"
+      },
+      "settings_sha256": "0a82957d2a6517a2ad19146c96c60af1a74ea343acdb73aa6e93d05e4d97a3ef"
+    },
+    {
+      "id": "sol6-server-typed-r2",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "server",
+      "group": "server-typed",
+      "iteration": 2,
+      "source_provided": false,
+      "typed_skill_input": true,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 24.125,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "2af004faf13dda2cb103fc3bf8146eea45f84891d6b2ad7377cf6e382f0f523f",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "a953e47ae698401041ef5d542b841c9318df888dd635a8ddc7b44550906917db",
+        "input.json": "9378b19432bc6825a9aa75a270bdbc49cf57d1e1c57dd9fa81ec57ad9acebe06",
+        "record.json": "b9278fa5dcd2478ff910ec996e30e3fa60811f843362b9a44f9beda66beb45da",
+        "recorded-inputs.json": "a0a2fc0e92572552da86f3e2d1b5781ebbcf2b49b3822e5ebb43f54c8612232b",
+        "requests.jsonl": "189ab3f57decd3368b96043509ff31b47ff1bd06d8c3d987b3cad66a6d8dd333",
+        "response.md": "bf865752b3fe5e997c60afbf5b98f0c312156155d68e5b1780f5cea0c5b45480",
+        "rollout.jsonl": "e9c03f32446a56038cfe218847d1d4541c67ced555ab5ecb04b91b3fd94d3aa9",
+        "skills-list.json": "6752a091504d838002061a5f8763ee8d38204f416cafc0b8130cfc8002718a7b",
+        "stderr.txt": "cc6918fa29da290e4ddfce2dcf090f2317d8c713ac03485886ff07919b4410f2",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+        "thread-read.json": "46c272c2fb33b1ec9ea77d7c78d14f6c8ba7da8f8dfb51d25d523fe70944bc47",
+        "thread-start.json": "6c0f86d2d54a99acc39a165ef0943fc10fcaf6246174e3a461a4f0cde1328b5c"
+      },
+      "settings_sha256": "02461a5764836eec08c638c498026eb9e5ebd6a66208bfcd754bb993c4890c3e"
+    },
+    {
+      "id": "sol6-server-negative-r1",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "server",
+      "group": "server-negative",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_negative_pass",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 4.453,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "ad2d427c6dea1803a02e7448fc2c196f9775ee4c44cd088ccd5737af52a1050f",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "fe3d51e3f550d7da00e63f2625a7277c40a11e369b6c388289973235f89e10ce",
+        "input.json": "18d61852bd2c5e0b6e1bad7c813abb7047e9888fb3d1db0cb465fb07cbfb2797",
+        "record.json": "f69457c5099970658d1e6e9115e0f7a00b7631440ecfb143de89cfa976703f3a",
+        "recorded-inputs.json": "766050f2867dca5d03fb79a8239df6a9728b1b4a6f44a7f070f3fb346ee3ae6f",
+        "requests.jsonl": "275ac80998670509497a8a27f7d7c0bb42e9641f8bda18020f7bb0bf0be8430e",
+        "response.md": "7f2253d7e228b22a08bda1f09c516f6fead81df6536eb02fa991a34bb38d9be8",
+        "rollout.jsonl": "d3b08a218d2b8bd5ce649f59a90e0d9b2542499f2322f4fc289e84c2b0d11a3a",
+        "skills-list.json": "e9b618bd67515d59fb2f23a5feec9ee4deeff4ae2bb734cf1351d02c481e2c13",
+        "stderr.txt": "eac99aa604b2a5e96e7ee5d48dd84373bc2975e718b68fde94820aec14865291",
+        "task.txt": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253",
+        "thread-read.json": "594a2a83176d411a0cbcf45ccc8fe79e2ed0b339c7248bc13f6ffa8b35b7d9f0",
+        "thread-start.json": "72663f85ede03899918ceb75d12be7ae53273673f440c067c65dfae1692d58b9"
+      },
+      "settings_sha256": "3cdd874369aa1b4974e7df90256d0cec12100352f18faf589d51a0fee62b7a47"
+    },
+    {
+      "id": "sol61-cli-nested-literal-r1",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-nested-literal",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 18.5,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "d573ef3fec9908465467a38aadb88cd74d90e752f5d7b48385cb0761c5944031",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "12c1809fd456b5f64aa5861224f0f88c38a86936c77aca51422fe162468adf65",
+        "history-inventory.json": "d4747eeb02c49d9f9d843f2a8cbf51d7826f5c939e9eea33ffbdea1339809b2a",
+        "record.json": "8f26c268558ab26a7ab2efbaef58c29b82cb92a4cc290f61256e8ca12702eed6",
+        "recorded-inputs.json": "e93ca64c7a16b63a37f0fd08657941faaec0ce9a80df8b7c0ab32a0093740047",
+        "response.md": "7c00996b521a50bae6e342be48a2378f9c94dfb0d8dea8da04c78968e5d69756",
+        "rollout.jsonl": "dfea6b08b01f67c886d06849a82a286e92ebad60e2d3af49563a19edbcca81cc",
+        "stderr.txt": "c38f2aed59d4d7fdb370f2f3dadde75662e031700c60eee67d274ccbde9a5297",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712"
+      },
+      "settings_sha256": "b0d256a9c979e2e5e95852b0edfd6633a82becbc46226c609b475d774a619802"
+    },
+    {
+      "id": "sol6-cli-nested-literal-r1",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-nested-literal",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 24.703,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "6f1eddb7981fa8c7efcfd94ef56802627d41fd44379b7cffff9cb146e277fcff",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "7cba62c0e6c6b3c609a28d0af51660860593f6f19744904b7c773d2d5f484961",
+        "history-inventory.json": "4fca5a1cf0f943e70298363a742a28a1be55a284b37b2230433db5805eabfae8",
+        "record.json": "8a0411adbf944191d1c2c686904b614a50bee5006d09960e665764bcb0f6ed11",
+        "recorded-inputs.json": "2e8136c0aad6d199431a5276a5b9055868569e689becab8be1582dc857dcae41",
+        "response.md": "d57d17c24bdf563fef19b8772190cdb817633c4ac6f2d0f5e75e4f77a8584c30",
+        "rollout.jsonl": "b871f28daeaba54c068f243a11b4a47c1dc4f85e7c5c3d698fc5bcfa5c801b4c",
+        "stderr.txt": "a508abad8ae17fd1459559730472c30eed1eff7ae22349ac2c85cba6c8d95806",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712"
+      },
+      "settings_sha256": "54cbe59e062820a82f7a5ecca3bbce11a21bb5389a07e200b49538e9324dbe5e"
+    }
+  ],
+  "summary": {
+    "planned_sessions": 26,
+    "completed_sessions": 26,
+    "models": [
+      "gpt-6.1-sol",
+      "gpt-6-sol"
+    ],
+    "positive_loading_observed": 22,
+    "negative_controls_passed": 4,
+    "actual_input_injection_cases": 14,
+    "actual_tool_body_cases": 8,
+    "repository_changes": 0,
+    "candidate_changes": 0,
+    "real_profile_installations": 0,
+    "promotions": 0
+  },
+  "source_accuracy": {
+    "reviewed_proposals": 2,
+    "passed": 1,
+    "failed": 1,
+    "failure_case": "sol6-cli-source-r1",
+    "failure": "Unqualified State-column prerequisite is stricter than the inspected all-records branch. Loading still observed; do not count this as an all-criteria behavior pass.",
+    "preserved_response_sha256": "0be145f034bbc72333d4e599e82c0cf67fa97d4ad2e406c8a3f36dc01320b770"
+  },
+  "observation_fix": "Earlier ephemeral CLI tests retained shell events but not actual injected input. Fresh retained native histories show exact complete <skill> bodies for plain-text markers, including root and child cwd. No historical missing-input trace is relabeled.",
+  "initial_plan": "24 cases, plus two separately pinned same-task child-cwd controls matching the former unresolved launch condition. No completed case replaced or retried.",
+  "guardrails": "One fresh disposable profile/repository per session. Exact catalog and known-personal-marker gates. Read-only domain tasks. Temporary authentication removed. Actual input/body evidence, not answer plausibility.",
+  "validation": "All 26 completed, 22 positive full loads and four negatives. One separate source-accuracy failure preserved and repaired in readme-mode26; no broad whole-skill pass inferred."
+}

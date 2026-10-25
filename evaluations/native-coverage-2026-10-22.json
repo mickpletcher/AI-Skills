@@ -1,0 +1,1663 @@
+{
+  "assessment_date": "2026-10-25",
+  "basis_commit": "8481d2f464a593e31c513e0aa0b047ca2e6aaccd",
+  "scope": "Compiled historical native scopes with separate bounded host18 routing/file/helper evidence. Home/workout reruns and broader host/integration limits remain open; no new human acceptance.",
+  "definitions": {
+    "bounded_pass": "Only the recorded synthetic case and tested delivery path, not full skill/host/model compatibility.",
+    "unassessed": "No assessable domain response; not pass or a proven candidate defect.",
+    "hash_present": "Current instruction SHA appears in at least one selected evidence file. A provenance aid only, not proof every current resource/case passed.",
+    "not_found": "Current instruction SHA is not found in selected evidence; inspect provenance before relying on current-byte equivalence. No pass is invented.",
+    "acceptance": "Historical explicit acceptances and Mick-authorized delegated decisions apply only to their named bounded scopes; personal-human inspection and promotion remain separate.",
+    "promotion": "All candidates remain blocked; no merging, installation, suitability expansion or promotion authorized.",
+    "delegated_acceptance": "Mick-authorized agent review accepts only named bounded outputs; historical generation revisions and human inspection are separate. No promotion implied."
+  },
+  "summary": {
+    "canonical_candidates": 36,
+    "accepted_bounded_native_scopes": 36,
+    "pending_bounded_native_review": 0,
+    "candidate_promotions": 0,
+    "bounded_verification_paths_closed_this_round": 2,
+    "remaining_targeted_verification_paths": 0,
+    "new_human_acceptances": 0,
+    "remaining_targeted_paths_description": "Original home/workout and repaired README bounded delivery paths pass; all 23 pending scopes and repaired workout revision accepted by delegated agent review. Broader activation/encoding/host/integration/repeatability gaps remain open.",
+    "pending_scopes_ready_current_sampled": 0,
+    "pending_scopes_held_current_sampled": 0,
+    "delegated_agent_acceptances_this_review": 23,
+    "repaired_workout_revision_accepted_separately": 1
+  },
+  "rows": [
+    {
+      "skill": "alpaca-trading",
+      "native_outcome": "Two affected native cases pass after coverage correction",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch10-repairs.json"
+      ],
+      "open_verification": [],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "Original remaining-fill and Spec-context coverage omissions retained; corrected reruns pass.",
+      "current_chatgpt_instruction_sha256": "adc3d4a8f85daa53a5055ebe9058b654f6429821ad75823ac695119c050c82be",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch10-repairs.json": "50bfdb97ebc429ee52e6aa3ac13bedee250c0c79ac68bd07133ac8bdf2a4d56c"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-alpaca-scoped"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "astrophotography-processing",
+      "native_outcome": "Preview diagnosis and supplied FITS metadata/source cases pass",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch5.json"
+      ],
+      "open_verification": [
+        "Full processing and real capture data remain unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "94ec01c49490925be7d2c82c9280e7a4c490c56ee3c27e4b3f2e83cc429d453e",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch5.json": "d573584f138afb0fbde2112ff6f3946575f94125e9f200f313cd44ea5de5e43a"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "blog-post",
+      "native_outcome": "Main draft fits the requested range after Markdown markers are excluded, including 429 prose words. Two title/first-sentence alternatives preserve teammate implementation/testing and reviewer-only attribution, no unsupported review/test ordering, exact two fixtures and production untouched. Current-version original control passes in batch16.",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch5.json",
+        "evaluations/fixtures/native-batch5-grounding-repairs.json",
+        "evaluations/fixtures/native-batch13.json",
+        "evaluations/fixtures/native-batch16.json"
+      ],
+      "open_verification": [],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "Unsupported alternate-opener timing retained; final corrected verification still open.",
+      "current_chatgpt_instruction_sha256": "f1964a2fc5820d132d190d518c08c2a3ee4afeb672d6acf6635cb11bb6c9e9d8",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch5.json": "d573584f138afb0fbde2112ff6f3946575f94125e9f200f313cd44ea5de5e43a",
+        "evaluations/fixtures/native-batch5-grounding-repairs.json": "afc25aca0f59d623ddf89c7560859363cd545ea79313f9cf678984979fb25558",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab",
+        "evaluations/fixtures/native-batch16.json": "9f0907921ae9e30e1cb1c3fa63089da56a7c3730f8eef2f97ff12ebf0a56e665"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "latest_verification_result": "Closed only for this bounded observation",
+      "bounded_verification_closure": {
+        "assessment": "evaluations/native-batch13-2026-10-22.md",
+        "case": "blog",
+        "scope": "Only this recorded synthetic task/candidate/delivery observation, no human acceptance or reliability certification"
+      },
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "closed_current_candidate_control": {
+        "case_id": "blog",
+        "changed_resource": "instructions.md",
+        "next_action": "Rerun original how-to against current grounding instructions.",
+        "status": "CLOSED_BOUNDED",
+        "evidence": "evaluations/fixtures/native-batch16.json"
+      },
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "blog-to-social",
+      "native_outcome": "Bounded native-writing cases pass after retained corrections",
+      "bounded_native_acceptance": "Accepted only within recorded bounded scope",
+      "evidence": [
+        "evaluations/fixtures/native-writing.json"
+      ],
+      "open_verification": [],
+      "acceptance_evidence": "evaluations/fixtures/native-writing.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "83092ebce38a174d290624a746ef7095d2fd23713806d4c833f8f05c29b27f92",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-writing.json": "b453baa16fbbd0632bd413e4d98d8bdbec247e4d9cec66f642541279cf342f64"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true
+    },
+    {
+      "skill": "container-home",
+      "native_outcome": "Original repaired home update passes current native rerun: grounded hashtags, dry-fit progress, separate current/planned containers and pending septic/solar. Earlier unsupported tag retained.",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch7.json",
+        "evaluations/fixtures/native-batch7-repairs.json",
+        "evaluations/fixtures/native-batch16.json",
+        "evaluations/fixtures/native-batch17.json",
+        "evaluations/fixtures/native-home-workout19.json"
+      ],
+      "open_verification": [
+        "Historical context failure retained",
+        "no structural/construction execution verified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "Historical project-context import retained; corrected isolation rerun passes.",
+      "current_chatgpt_instruction_sha256": "9213b51688403a89de76f938863458802b77e14b2b463d58e7560cec6166cb3d",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch7.json": "44cbf258eb4de07595bb8589abb39c25ca4dd125b0c1a40c83f95cbd6d8b64f5",
+        "evaluations/fixtures/native-batch7-repairs.json": "99271828d4f076425f5f812a7bf3992d9d748e25df2d3b00341a298fd95d15b1",
+        "evaluations/fixtures/native-batch16.json": "9f0907921ae9e30e1cb1c3fa63089da56a7c3730f8eef2f97ff12ebf0a56e665",
+        "evaluations/fixtures/native-batch17.json": "a64a35459b3c153546d29ba9d90b5c9b364c2d4ed3a98aed4d421ec676381617"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Hold complete current sampled scope",
+      "open_current_candidate_control": {
+        "case_id": "home-update",
+        "changed_resource": "instructions.md",
+        "next_action": "Rerun the original home update against repaired hashtag guidance once native browser control reconnects.",
+        "status": "OPEN_NOT_EXECUTED"
+      },
+      "latest_verification_result": "Main facts pass; hashtag grounding gap OPEN",
+      "batch17_verification": "Instruction repaired; original native rerun not executed. Earlier unsupported hashtag retained; current correctness unverified.",
+      "native19": {
+        "status": "BOUNDED_PASS",
+        "evidence": "evaluations/fixtures/native-home-workout19.json",
+        "evidence_sha256": "3fa29aacf5877cee442e0f2381f248389f26544c1ced0a3010ae1f1a33f98d4a",
+        "new_human_acceptance": false,
+        "limits": "One additional observation; general repeatability, actual integrations, provider guarantees and human acceptance remain open."
+      },
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "crypto-listings",
+      "native_outcome": "Supplied-data boundaries and corrected missing-live-data fallback pass",
+      "bounded_native_acceptance": "Accepted only within recorded bounded scope",
+      "evidence": [
+        "evaluations/fixtures/native-batch9.json",
+        "evaluations/fixtures/native-batch9-window-repair.json"
+      ],
+      "open_verification": [
+        "Actual live retrieval unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/native-batch9-window-repair.json",
+      "retained_issue_history": "Missing-anchor UTC-window failure and host errors retained; corrected fallback accepted within bounds.",
+      "current_chatgpt_instruction_sha256": "6135d9d1995b1b221a0f578e34716860db172b2784073c7ccf9826a1b039e9bc",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch9.json": "15c753187d680509705a67c35ae4ec30794a6ef31af0623cfddd2c3c773a0bfa",
+        "evaluations/fixtures/native-batch9-window-repair.json": "8a36f40a3ff923891e468ae0a35df42897ee695baacbb8ca7480d25bb716ffb6"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true
+    },
+    {
+      "skill": "crypto-research",
+      "native_outcome": "Bounded supplied-source and unavailable-live-data cases pass",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch9.json"
+      ],
+      "open_verification": [
+        "Actual live retrieval and financial accuracy unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "04648eeb071bdde377b4302b8c4aa362d213595399be9be4fb5a3b3eb6f9a43b",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch9.json": "15c753187d680509705a67c35ae4ec30794a6ef31af0623cfddd2c3c773a0bfa"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "example-skill",
+      "native_outcome": "Short clarification asks the objective before any plan, avoids private/history assumptions and makes no task-completion or external-action claim.",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch12.json",
+        "evaluations/fixtures/native-batch13.json"
+      ],
+      "open_verification": [],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "27ab3f44b3655f391d38982e8fd1e3c9c8bafb83391484dd5bd0ba73d5abdd5f",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch12.json": "58d1cea6eb1dfad0e203c4d30f22aaece1835317b89219bd95e01ecec16e6b0f",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "latest_verification_result": "Closed only for this bounded observation",
+      "bounded_verification_closure": {
+        "assessment": "evaluations/native-batch13-2026-10-22.md",
+        "case": "example",
+        "scope": "Only this recorded synthetic task/candidate/delivery observation, no human acceptance or reliability certification"
+      },
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-example-skill"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "facebook-post",
+      "native_outcome": "Final formatting/count repairs pass with earlier failures retained",
+      "bounded_native_acceptance": "Accepted only within recorded bounded scope",
+      "evidence": [
+        "evaluations/fixtures/native-batch6.json",
+        "evaluations/fixtures/native-batch6-repairs.json"
+      ],
+      "open_verification": [
+        "Real publication and repeated counting reliability unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/native-batch6-repairs.json",
+      "retained_issue_history": "Paragraph/scope failures retained; final repair accepted within bounds.",
+      "current_chatgpt_instruction_sha256": "1e2e17b5bc03ef6969fac37eef5df8dbfc18c6208c0970d21a187bcf097a7686",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch6.json": "c14278bc7df46d64852e4d55a1500dff0d89b70c50db7d927e25196354986a01",
+        "evaluations/fixtures/native-batch6-repairs.json": "876f11c7856d3f24122cc0e0c30cc49ca40554c5e0aa51bc9c5bf2124ca81c8f"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true
+    },
+    {
+      "skill": "facebook-reply",
+      "native_outcome": "Bounded native-writing cases pass after retained corrections",
+      "bounded_native_acceptance": "Accepted only within recorded bounded scope",
+      "evidence": [
+        "evaluations/fixtures/native-writing.json"
+      ],
+      "open_verification": [],
+      "acceptance_evidence": "evaluations/fixtures/native-writing.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "289316fc84d81b488cb545d13ac5aa8fd0f84aa30e121a17d2b70cb5c934d6d2",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-writing.json": "b453baa16fbbd0632bd413e4d98d8bdbec247e4d9cec66f642541279cf342f64"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true
+    },
+    {
+      "skill": "fitness-log",
+      "native_outcome": "Bounded synthetic text cases pass",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch8.json"
+      ],
+      "open_verification": [
+        "Real personal data and broader reliability unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "dafab63fef651692fa7d65bb5eecfe009adb8079ad038cb8a597fd6ae9d1c317",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch8.json": "6cd6e3dc0216f186f3f24e1dbc70c64eb2ee5875e1e7a64999dac357cb88f8d3"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "fitness-programming",
+      "native_outcome": "Bounded synthetic text cases pass",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch8.json"
+      ],
+      "open_verification": [
+        "Real personal data and broader reliability unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "c21b94e6d0c8551a38e47979cf28db3c15633e72e24fbd4738418339c55e26b2",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch8.json": "6cd6e3dc0216f186f3f24e1dbc70c64eb2ee5875e1e7a64999dac357cb88f8d3"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "food-analyzer",
+      "native_outcome": "Unchanged missing-image repeat remains two concise sentences; supplied-label arithmetic/control repeats pass. Real image recognition and health safety remain unverified.",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch8.json",
+        "evaluations/fixtures/native-batch13.json",
+        "evaluations/fixtures/native-batch14.json",
+        "evaluations/fixtures/native-batch15.json"
+      ],
+      "open_verification": [
+        "Image recognition, medication interactions and real nutrition safety unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "Concise missing-image defect closed for final recorded case; original verbose reports and intermediate instruction gap retained.",
+      "current_chatgpt_instruction_sha256": "5f60e3baeddccb07259b05fbdf5c3877cd87873d29546d0b6983a89debd4f3bf",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch8.json": "6cd6e3dc0216f186f3f24e1dbc70c64eb2ee5875e1e7a64999dac357cb88f8d3",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab",
+        "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58",
+        "evaluations/fixtures/native-batch15.json": "bd800307d0af259fac99a3e3d0b924734a97440018b203013b10d2ff34bf2c06"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "latest_verification_result": "Reported defects and final controls bounded PASS; broader limits remain OPEN",
+      "current_revision_human_acceptance": "Pending; no new acceptance granted",
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "github-readme",
+      "native_outcome": "Fresh repaired original-task README draft passes; actual 2370-byte Copy ends with License and separate notes. Historical intake preserved; current Codex file integration passes separately.",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded supplied-draft/intake scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch11.json",
+        "evaluations/fixtures/readme-delivery22.json"
+      ],
+      "open_verification": [
+        "Actual README installation/execution not certified",
+        "One fresh native draft and one disposable Codex file repair only; broader README modes, packaging, installed launchers and repeatability remain unverified."
+      ],
+      "acceptance_evidence": "evaluations/fixtures/readme-delivery22.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "f7bde27ceffcf23124655676d8d9e8da47727c2f01d2ab1a4433a610acd754bf",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch11.json": "0dafa38f5708f642ca8b9c7e555469c86a6f8dfc0c97752ad132bc319fb8073d",
+        "evaluations/fixtures/readme-delivery22.json": "de8c32bbebdbc86106c320dba7f5f4af94076750141332dca43efb1e36cd14de",
+        "evaluations/fixtures/repeatability25.json": "ce49217f61db0877d5b70129608fab273015d419c8b1446e905760b90dda9a2d",
+        "evaluations/fixtures/readme-mode26.json": "b4c3e3a0adb3c5a5be1448a8651f0eba8583602a965ca223eaf1d7de7e37a763"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Accepted within recorded bounded scope under explicit delegated review authority",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-github-readme",
+          "integration-readme"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification.",
+        "historical_current_instruction_unchanged": true,
+        "current_instruction_unchanged": false
+      },
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "reviewer": "Codex agent authorized by Mick",
+        "personal_human_inspection": false,
+        "date": "2026-10-25",
+        "evidence": "evaluations/fixtures/readme-delivery22.json",
+        "evidence_sha256": "de8c32bbebdbc86106c320dba7f5f4af94076750141332dca43efb1e36cd14de",
+        "scope": "Repaired supplied-source complete README draft plus unchanged historical missing-context intake. No installation/packaging, broader repository, whole-host or repeatability certification.",
+        "rationale": "Fresh original-task native draft meets source/command/license criteria; actual 2370-byte code Copy ends with supported BSD 3-Clause License and external review notes are clearly delimited. Initial failure and harmless trailing-LF copy-transport difference retained."
+      },
+      "reviewed_before_repair_instruction_sha256": "1d1dfdc705bec8cce3c68c28d221beb92fb9674b9d7502a15edf9986e3d72fdb",
+      "readme_delivery22": {
+        "evidence": "evaluations/fixtures/readme-delivery22.json",
+        "evidence_sha256": "de8c32bbebdbc86106c320dba7f5f4af94076750141332dca43efb1e36cd14de",
+        "original_chatgpt_rerun": "passed; actual code Copy and original criteria inspected",
+        "codex_file_integration": "passed with complete observed instruction read and seven independent CLI probes",
+        "explicit_invocation": "intake correct; activation unverified",
+        "acceptance": "accepted within recorded supplied-draft/intake scope"
+      },
+      "initial_delegated_acceptance21": {
+        "status": "withheld",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      },
+      "activation23": {
+        "evidence": "evaluations/fixtures/activation23.json",
+        "evidence_sha256": "b2afb6be7b52c44a050e593126247c629c1cb7890637478177dfef84c5a2d13e",
+        "implicit_profile_and_nested_loads": "observed in full current tool output",
+        "source_backed_explicit_and_implicit_loads": "observed",
+        "native_typed_explicit": "full current skill body present in actual recorded input",
+        "literal_text_explicit_intake": "full load still unverified; no candidate failure inferred",
+        "nested_source_write": "original correct sandbox block preserved; corrected synthetic writable-root revision passes",
+        "acceptance_changes": false
+      },
+      "prior_to_mode26_instruction_sha256": "89865699dfa631c45cf425fdae221d08171e5ac7c244fd3f1a9949bb1e287490",
+      "repeatability25": {
+        "evidence": "evaluations/fixtures/repeatability25.json",
+        "evidence_sha256": "ce49217f61db0877d5b70129608fab273015d419c8b1446e905760b90dda9a2d",
+        "plain_text_intake": "current bounded loading observed through retained native input, not just shell reads",
+        "models": [
+          "gpt-6.1-sol",
+          "gpt-6-sol"
+        ],
+        "historical_missing_read_cases": "unchanged"
+      },
+      "readme_mode26": {
+        "evidence": "evaluations/fixtures/readme-mode26.json",
+        "evidence_sha256": "b4c3e3a0adb3c5a5be1448a8651f0eba8583602a965ca223eaf1d7de7e37a763",
+        "current_revision": "ten reruns, eight positive loads/two negatives; both source proposals corrected",
+        "prior_comparison_source_accuracy_failure": "preserved",
+        "acceptance_scope_expansion": false
+      }
+    },
+    {
+      "skill": "github-repo-architect",
+      "native_outcome": "Defers production architecture, asks system/identity/secret-storage/approval/deployment/recovery/audit questions and rejects sticky-note authorization. No actual secrets requested or production readiness claimed.",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch11.json",
+        "evaluations/fixtures/native-batch12.json",
+        "evaluations/fixtures/native-batch13.json"
+      ],
+      "open_verification": [
+        "Full scaffold and deployed security unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "diagnostic_observation": "Historical batch12 neutral-wrapper responses and four batch13 fixed-packet wrapper diagnostics completed. Only the separate batch13 official response supports bounded verification closure.",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "2b88aa12a9479c9183a1817b7d55453f344c9ac051736caca910d6259ea93f08",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch11.json": "0dafa38f5708f642ca8b9c7e555469c86a6f8dfc0c97752ad132bc319fb8073d",
+        "evaluations/fixtures/native-batch12.json": "58d1cea6eb1dfad0e203c4d30f22aaece1835317b89219bd95e01ecec16e6b0f",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "latest_verification_result": "Closed only for this bounded observation",
+      "bounded_verification_closure": {
+        "assessment": "evaluations/native-batch13-2026-10-22.md",
+        "case": "architect",
+        "scope": "Only this recorded synthetic task/candidate/delivery observation, no human acceptance or reliability certification"
+      },
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-github-repo-architect"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "github-social-preview",
+      "native_outcome": "Supplied README preview and corrected overlap artifact pass Current-version original control passes in batch16.",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch2.json",
+        "evaluations/fixtures/native-batch2-repairs.json",
+        "evaluations/fixtures/native-batch16.json",
+        "evaluations/fixtures/native-batch17.json"
+      ],
+      "open_verification": [
+        "Broader assets/languages/layouts and provider tool trace unverified",
+        "One retained JPEG normal Download verified in batch17; repeated fresh-generation/download reliability remains unverified."
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "Original label overlap retained; corrected artifact passes bounded checks.",
+      "current_chatgpt_instruction_sha256": "d9191b2630475265b9d8e75ce2652377f2644dd3e78818f31ef8cd76c65f5bce",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch2.json": "29d4e00d49ad514cd60eab42f6ba4fdda002f3c1def4cc19c1596a7123a34400",
+        "evaluations/fixtures/native-batch2-repairs.json": "920c943ae76b25235dfc2a21e27b2e196a7b8553ee082ba17b7f911082661fb1",
+        "evaluations/fixtures/native-batch16.json": "9f0907921ae9e30e1cb1c3fa63089da56a7c3730f8eef2f97ff12ebf0a56e665",
+        "evaluations/fixtures/native-batch17.json": "a64a35459b3c153546d29ba9d90b5c9b364c2d4ed3a98aed4d421ec676381617"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "closed_current_candidate_control": {
+        "case_id": "preview",
+        "changed_resource": "scripts/generate_preview.py",
+        "next_action": "Rerun original README fallback with current preview helper and inspect actual JPEG.",
+        "status": "CLOSED_BOUNDED",
+        "evidence": "evaluations/fixtures/native-batch16.json"
+      },
+      "batch17_verification": "Normal Download > JPG produced the exact 51053-byte previously verified JPEG; bounded file-delivery gap closed. Browser event wait timeout retained.",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-github-social-preview"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "idea-forge",
+      "native_outcome": "Both targeted native cases pass, including inspected artifact bytes",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch3.json"
+      ],
+      "open_verification": [
+        "Broader repositories and repeatability unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "2a5320526756a476efe687b8c1259dc7fca12dffaa54de383d20ed213a9a0608",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch3.json": "43cc402d4633e3d5c420dca7933713fa9ef51268f58ee9db690e213fb45b59f6"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "linkedin-post",
+      "native_outcome": "Final grounded lesson and audience variants pass Current-version original control passes in batch16.",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch5.json",
+        "evaluations/fixtures/native-batch5-grounding-repairs.json",
+        "evaluations/fixtures/native-batch16.json"
+      ],
+      "open_verification": [
+        "Real publication and broader grounding reliability unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "Unsupported technology hashtag retained; grounded rerun passes.",
+      "current_chatgpt_instruction_sha256": "c204c9587f8255cb83fc97973fbbfe2a5ad540632b423410b18e1b930854e917",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch5.json": "d573584f138afb0fbde2112ff6f3946575f94125e9f200f313cd44ea5de5e43a",
+        "evaluations/fixtures/native-batch5-grounding-repairs.json": "afc25aca0f59d623ddf89c7560859363cd545ea79313f9cf678984979fb25558",
+        "evaluations/fixtures/native-batch16.json": "9f0907921ae9e30e1cb1c3fa63089da56a7c3730f8eef2f97ff12ebf0a56e665"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "closed_current_candidate_control": {
+        "case_id": "linkedin",
+        "changed_resource": "instructions.md",
+        "next_action": "Rerun original audience variants against current grounding instructions.",
+        "status": "CLOSED_BOUNDED",
+        "evidence": "evaluations/fixtures/native-batch16.json"
+      },
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "market-brief",
+      "native_outcome": "Bounded supplied-source and unavailable-live-data cases pass",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch9.json"
+      ],
+      "open_verification": [
+        "Actual live retrieval and financial accuracy unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "3b1786c48aa639157fb5c7662b2513d0121ef4ffadcedc076ff1bce58911fe01",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch9.json": "15c753187d680509705a67c35ae4ec30794a6ef31af0623cfddd2c3c773a0bfa"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "n8n-workflow",
+      "native_outcome": "Prioritized seven findings and minimal fixes; only429/503 retries with three-total-attempt ceiling, lost response/transport error one uncertain attempt, explicit failure branch, no guaranteed Error Trigger or false201. No runtime/deployment/notification claim.",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch7.json",
+        "evaluations/fixtures/native-batch7-repairs.json",
+        "evaluations/fixtures/native-batch13.json"
+      ],
+      "open_verification": [
+        "Actual n8n execution unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "Retry-policy inconsistencies retained; new-workflow correction passes and review verification remains open.",
+      "current_chatgpt_instruction_sha256": "e530a0ca20676492339385fe40f8b1f80acb56e3a3cabcf6c629a2557de6909a",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch7.json": "44cbf258eb4de07595bb8589abb39c25ca4dd125b0c1a40c83f95cbd6d8b64f5",
+        "evaluations/fixtures/native-batch7-repairs.json": "99271828d4f076425f5f812a7bf3992d9d748e25df2d3b00341a298fd95d15b1",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "latest_verification_result": "Closed only for this bounded observation",
+      "bounded_verification_closure": {
+        "assessment": "evaluations/native-batch13-2026-10-22.md",
+        "case": "n8n",
+        "scope": "Only this recorded synthetic task/candidate/delivery observation, no human acceptance or reliability certification"
+      },
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-n8n-workflow",
+          "route-n8n-supplied"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "obsidian-workout-export",
+      "native_outcome": "Unchanged fresh initial/duplicate/corrected repeat passes; exact initial/corrected native Copy each 323 bytes, strict/YAML checks pass, only sets 3 to 4 changes. Previous failures retained.",
+      "bounded_native_acceptance": "Accepted only within recorded bounded scope",
+      "evidence": [
+        "evaluations/fixtures/native-workout-repairs.json",
+        "evaluations/fixtures/native-batch13.json",
+        "evaluations/fixtures/native-batch14.json",
+        "evaluations/fixtures/native-batch15.json",
+        "evaluations/fixtures/native-batch16.json",
+        "evaluations/fixtures/native-batch17.json",
+        "evaluations/fixtures/native-home-workout19.json"
+      ],
+      "open_verification": [
+        "One additional repeat passes; broader Copy reliability remains unverified",
+        "Actual Obsidian ingestion and other host/routing compatibility unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/native-workout-repairs.json",
+      "retained_issue_history": "Previous leading-newline failures, earlier290-byte passes, batch15 repeated failures and failed indented revision retained. Final323-byte Copy passes only bounded observation.",
+      "current_chatgpt_instruction_sha256": "2a91d68e1b2b7fdef3589c41c97f9828cedc6d9e3d41b54a83797d98052842af",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-workout-repairs.json": "059d1adb80020bf2251605bbfd7de209fd32e694da87890a40e78751ca8e36a7",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab",
+        "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58",
+        "evaluations/fixtures/native-batch15.json": "bd800307d0af259fac99a3e3d0b924734a97440018b203013b10d2ff34bf2c06",
+        "evaluations/fixtures/native-batch16.json": "9f0907921ae9e30e1cb1c3fa63089da56a7c3730f8eef2f97ff12ebf0a56e665",
+        "evaluations/fixtures/native-batch17.json": "a64a35459b3c153546d29ba9d90b5c9b364c2d4ed3a98aed4d421ec676381617"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "latest_verification_result": "Initial/corrected Copy and duplicate protection bounded PASS; broader limits OPEN",
+      "current_revision_human_acceptance": "Pending; no new acceptance granted",
+      "batch17_verification": "Unchanged initial/duplicate/corrected workflow repeat pinned but not executed. Batch16 pass retained; repeated reliability open.",
+      "native19": {
+        "status": "BOUNDED_PASS",
+        "evidence": "evaluations/fixtures/native-home-workout19.json",
+        "evidence_sha256": "3fa29aacf5877cee442e0f2381f248389f26544c1ced0a3010ae1f1a33f98d4a",
+        "new_human_acceptance": false,
+        "limits": "One additional observation; general repeatability, actual integrations, provider guarantees and human acceptance remain open."
+      },
+      "delegated_revision_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "patentforge-provisional",
+      "native_outcome": "Unchanged package repeat passes1140/1200 total and290/300 section10 with all14 sections; one-question interview control repeats pass.",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch10.json",
+        "evaluations/fixtures/native-batch10-repairs.json",
+        "evaluations/fixtures/native-batch13.json",
+        "evaluations/fixtures/native-batch14.json",
+        "evaluations/fixtures/native-batch15.json"
+      ],
+      "open_verification": [
+        "Legal accuracy and filing readiness not certified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "Earlier cutoffs, host errors and1272/1252-word failures retained. Final bounded word-limit delivery passes.",
+      "current_chatgpt_instruction_sha256": "e021e42b094bcd927920db4d3a48763a79e0f7c10b347b66008a38383dd8f5ad",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch10.json": "66dcc76e7c321bc9956032c2e355b0a19931faf86d6fb64fe4c1134b29bc5757",
+        "evaluations/fixtures/native-batch10-repairs.json": "50bfdb97ebc429ee52e6aa3ac13bedee250c0c79ac68bd07133ac8bdf2a4d56c",
+        "evaluations/fixtures/native-batch13.json": "93195ff8773ecaa0f61ab25c551e608105a32458b7b37346d21df9e3bbccddab",
+        "evaluations/fixtures/native-batch14.json": "8f01d8170de6d084cd68effe3eca0ba7cd6b12fe6fe54edf029b7cefad574d58",
+        "evaluations/fixtures/native-batch15.json": "bd800307d0af259fac99a3e3d0b924734a97440018b203013b10d2ff34bf2c06"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "latest_verification_result": "Reported defects and final controls bounded PASS; broader limits remain OPEN",
+      "current_revision_human_acceptance": "Pending; no new acceptance granted",
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "photo-rename",
+      "native_outcome": "Bounded native preview/copy retry and saved ZIP hashes pass",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/photo-native.json"
+      ],
+      "open_verification": [
+        "Phone/integration checks deferred",
+        "Broader EXIF handling/provider trace and repeated download delivery unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "ce117b397aa78d03f5e9930495bb3e7b341679e15fe9c115962ab57e17dbb321",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/photo-native.json": "4fdc246850c440b047c6f1f16a66116847e337fbf5600d289348776e578c344d"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "pihole-blocklist",
+      "native_outcome": "Bounded supplied subset/Skip and offline rubric cases pass",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch7.json"
+      ],
+      "open_verification": [
+        "Actual DNS/policy behavior unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "ead3bf088c1982a5d8ca5c67576ae767ebc5cbdff645861c4c75ff4cf80ad3e4",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch7.json": "44cbf258eb4de07595bb8589abb39c25ca4dd125b0c1a40c83f95cbd6d8b64f5"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-pihole-blocklist"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "pihole-csv-analyzer",
+      "native_outcome": "Two native cases and actual review-only ZIP contents pass",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch2.json"
+      ],
+      "open_verification": [
+        "Real DNS data, device identification and policy changes unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "ad56f3f906a604d2a65ed143c16abd69e43f0f202de90216efcb90d441450d08",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch2.json": "29d4e00d49ad514cd60eab42f6ba4fdda002f3c1def4cc19c1596a7123a34400"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-pihole-csv-analyzer",
+          "route-pihole-boundary",
+          "integration-pihole"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "powershell-refactor",
+      "native_outcome": "Deduplication and naming-only native proposals pass with separate toy replay",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch11.json"
+      ],
+      "open_verification": [
+        "Native Pester/analyzer execution and broader repository behavior unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "01d368ee5bdcfb9ebf6ba96829bcb8bccc650a0973e747ea81d166fe441f86cb",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch11.json": "0dafa38f5708f642ca8b9c7e555469c86a6f8dfc0c97752ad132bc319fb8073d"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-powershell-refactor"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "proxmox-lxc",
+      "native_outcome": "Both native proposal/config boundary cases pass",
+      "bounded_native_acceptance": "Accepted only within recorded bounded scope",
+      "evidence": [
+        "evaluations/fixtures/native-batch6.json"
+      ],
+      "open_verification": [
+        "Actual infrastructure deployment and runtime unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/native-batch6-repairs.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "81a1004c3770683fed5a8d1eda6ecddcb64696bdaa3e6724265de040c24b1122",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch6.json": "c14278bc7df46d64852e4d55a1500dff0d89b70c50db7d927e25196354986a01"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-proxmox-lxc"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      }
+    },
+    {
+      "skill": "resume-writer",
+      "native_outcome": "Consolidated bounded v3 human/JSON observations accepted; historical failures retained",
+      "bounded_native_acceptance": "Accepted only within recorded bounded scope",
+      "evidence": [
+        "evaluations/fixtures/native-resume-v3-boundaries.json",
+        "evaluations/fixtures/native-resume-grouping.json",
+        "evaluations/fixtures/native-batch3.json"
+      ],
+      "open_verification": [
+        "Broader experience extraction/scoring reliability and hiring calibration unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/native-batch3.json: resume_v3_acceptance",
+      "retained_issue_history": "Scoring, attribution, JSON, heading and grouping failures retained; only consolidated bounded v3 scope accepted.",
+      "current_chatgpt_instruction_sha256": "bea233807ddcf9c94b832c7a70988cbd04f5a6df5cd3c8d5a74f1420160c2752",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-resume-v3-boundaries.json": "23be041a91e687462e40784a07cb9f14a96957eb3fd8baf916152703f9342058",
+        "evaluations/fixtures/native-resume-grouping.json": "22603efb6879b43104350b3c4e7b0b41b83ae667dd9fddb0e0fe6beb80854395",
+        "evaluations/fixtures/native-batch3.json": "43cc402d4633e3d5c420dca7933713fa9ef51268f58ee9db690e213fb45b59f6"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true
+    },
+    {
+      "skill": "spec-writer",
+      "native_outcome": "Both targeted native cases pass, including inspected artifact bytes",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch3.json"
+      ],
+      "open_verification": [
+        "Broader repositories and repeatability unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "53746b69a96ea2eb856250f47c8c793fc419cdbb536fe643e15ff6567271f7ef",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch3.json": "43cc402d4633e3d5c420dca7933713fa9ef51268f58ee9db690e213fb45b59f6"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-spec-writer",
+          "integration-spec"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "travel-itinerary",
+      "native_outcome": "All six bounded travel cases pass with retained precision caveat",
+      "bounded_native_acceptance": "Accepted only within recorded bounded scope",
+      "evidence": [
+        "evaluations/fixtures/native-batch4.json"
+      ],
+      "open_verification": [
+        "Live research/booking and standalone file/mobile/print integrations unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/native-batch4.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "d42220c9fd3305a65930a544a7697f278d559d805ed9256a1d84ea502f68f227",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch4.json": "252595021bec6c37ec0dd35998c814265fedd719d76e4eaccdbc32f53878b07f"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true
+    },
+    {
+      "skill": "travel-planning",
+      "native_outcome": "All six bounded travel cases pass with retained precision caveat",
+      "bounded_native_acceptance": "Accepted only within recorded bounded scope",
+      "evidence": [
+        "evaluations/fixtures/native-batch4.json"
+      ],
+      "open_verification": [
+        "Live research/booking and standalone file/mobile/print integrations unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/native-batch4.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "c4e0e7566d819aae9608368cbe78fff03f67b40db8a8d8f3f9c075a83560ed1d",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch4.json": "252595021bec6c37ec0dd35998c814265fedd719d76e4eaccdbc32f53878b07f"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true
+    },
+    {
+      "skill": "travel-research",
+      "native_outcome": "All six bounded travel cases pass with retained precision caveat",
+      "bounded_native_acceptance": "Accepted only within recorded bounded scope",
+      "evidence": [
+        "evaluations/fixtures/native-batch4.json"
+      ],
+      "open_verification": [
+        "Live research/booking and standalone file/mobile/print integrations unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/native-batch4.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "8bf8f8cddb0694d0d6f783b0f728ce7f1483832694eab3543082d7365958b7ea",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch4.json": "252595021bec6c37ec0dd35998c814265fedd719d76e4eaccdbc32f53878b07f"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true
+    },
+    {
+      "skill": "trip-email-html-itinerary",
+      "native_outcome": "Intake retry and unchanged static fragment review pass",
+      "bounded_native_acceptance": "Accepted by Mick-authorized agent within recorded bounded scope; no personal human inspection",
+      "evidence": [
+        "evaluations/fixtures/native-batch10.json",
+        "evaluations/fixtures/native-batch10-repairs.json"
+      ],
+      "open_verification": [
+        "Full HTML generation/rendering/mobile/print and real travel sources unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/delegated-acceptance21.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "f85733b6353c38844a9283667110082b4908443928176563c9ebd77036d3083b",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt",
+        "cursor",
+        "codex"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch10.json": "66dcc76e7c321bc9956032c2e355b0a19931faf86d6fb64fe4c1134b29bc5757",
+        "evaluations/fixtures/native-batch10-repairs.json": "50bfdb97ebc429ee52e6aa3ac13bedee250c0c79ac68bd07133ac8bdf2a4d56c"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true,
+      "scope_review_evidence": {
+        "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37"
+      },
+      "scope_review_recommendation": "Ready for bounded recorded-scope human review",
+      "codex_host18": {
+        "status": "BOUNDED_LOAD_OBSERVED",
+        "cases": [
+          "route-trip-email-html-itinerary"
+        ],
+        "evidence": "evaluations/fixtures/host-routing-integration18.json",
+        "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+        "source_commit": "39b7bf08ea3d4d148697fac9ac94ed2b5d45fdff",
+        "current_instruction_unchanged": true,
+        "limits": "One isolated repository catalog/model; no global routing, full behavior or human acceptance certification."
+      },
+      "prior_bounded_native_acceptance": "Pending separate bounded native review",
+      "delegated_acceptance": {
+        "status": "accepted",
+        "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+        "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+        "personal_human_inspection": false
+      }
+    },
+    {
+      "skill": "website-content",
+      "native_outcome": "Bounded native-writing cases pass after retained corrections",
+      "bounded_native_acceptance": "Accepted only within recorded bounded scope",
+      "evidence": [
+        "evaluations/fixtures/native-writing.json"
+      ],
+      "open_verification": [],
+      "acceptance_evidence": "evaluations/fixtures/native-writing.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "5d6582091c4d070e40017b9c472de13a88c48af49455cbc789381fd9dbc75b82",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-writing.json": "b453baa16fbbd0632bd413e4d98d8bdbec247e4d9cec66f642541279cf342f64"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true
+    },
+    {
+      "skill": "x-post",
+      "native_outcome": "Final formatting/count repairs pass with earlier failures retained",
+      "bounded_native_acceptance": "Accepted only within recorded bounded scope",
+      "evidence": [
+        "evaluations/fixtures/native-batch6.json",
+        "evaluations/fixtures/native-batch6-repairs.json"
+      ],
+      "open_verification": [
+        "Real publication and repeated counting reliability unverified"
+      ],
+      "acceptance_evidence": "evaluations/fixtures/native-batch6-repairs.json",
+      "retained_issue_history": "Character-count/preset failures retained; final repair accepted within bounds.",
+      "current_chatgpt_instruction_sha256": "f8a048557648b73dd081ed2dc7e33152e5051570f310ad37a44adf5783350f65",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-batch6.json": "c14278bc7df46d64852e4d55a1500dff0d89b70c50db7d927e25196354986a01",
+        "evaluations/fixtures/native-batch6-repairs.json": "876f11c7856d3f24122cc0e0c30cc49ca40554c5e0aa51bc9c5bf2124ca81c8f"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true
+    },
+    {
+      "skill": "x-reply",
+      "native_outcome": "Bounded native-writing cases pass after retained corrections",
+      "bounded_native_acceptance": "Accepted only within recorded bounded scope",
+      "evidence": [
+        "evaluations/fixtures/native-writing.json"
+      ],
+      "open_verification": [],
+      "acceptance_evidence": "evaluations/fixtures/native-writing.json",
+      "retained_issue_history": "See original linked attempts; no exhaustive failure-history claim.",
+      "current_chatgpt_instruction_sha256": "4b66b8c72d5bc64d66b1320b6f543fe6c7a411cb96caf3fe5dfbd7f2acf72b83",
+      "allowed_review_targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "candidate_status": "candidate",
+      "promotion": "Blocked; not authorized",
+      "evidence_sha256": {
+        "evaluations/fixtures/native-writing.json": "b453baa16fbbd0632bd413e4d98d8bdbec247e4d9cec66f642541279cf342f64"
+      },
+      "current_instruction_hash_present_in_selected_evidence": true
+    }
+  ],
+  "prior_matrix": "evaluations/native-coverage-2026-10-21.json",
+  "open_targeted_verification": [
+    "Patent total/section10 word limits",
+    "Food concise missing-image clarification",
+    "Workout initial native Copy frontmatter boundary"
+  ],
+  "closed_bounded_verification_this_round": [
+    "Architect security boundary",
+    "n8n existing-workflow review",
+    "Blog final corrected draft",
+    "Example missing objective"
+  ],
+  "batch17_summary": "Home hashtag instruction repaired; original native home rerun and unchanged workout repeat not executed due browser control. Normal preview Download actual JPEG verified. Human acceptance unchanged.",
+  "broader_host_testing": {
+    "evidence": "evaluations/fixtures/host-routing-integration18.json",
+    "evidence_sha256": "a179f58767079ee8368fba3084311887bc75ca1f005e03cea5d79478236eea9e",
+    "native_candidates_loaded": 12,
+    "routing_sessions": 16,
+    "native_file_integrations": 3,
+    "human_acceptance": "No new acceptance; original 23 reviews remain pending",
+    "remaining_open": [
+      "Original ChatGPT home rerun and unchanged workout initial/corrected Copy repeat",
+      "Native Claude and Cursor behavior; their CLIs are not available here",
+      "Codex on Linux/macOS, more models, repeated/installed-user routing reliability",
+      "Actual Obsidian ingestion, Apple Notes, scheduler, browser export and live n8n/broker/Proxmox/DNS integrations",
+      "Linux itinerary JPEG rendering is explicitly unsupported; guard pass is not rendering support",
+      "Provider-owned hidden context/tool guarantees and all human acceptance/promotion gates"
+    ],
+    "helper_ci": "https://github.com/mickpletcher/AI-Skills/actions/runs/39846596143"
+  },
+  "native19_summary": {
+    "evidence": "evaluations/fixtures/native-home-workout19.json",
+    "evidence_sha256": "3fa29aacf5877cee442e0f2381f248389f26544c1ced0a3010ae1f1a33f98d4a",
+    "home": "BOUNDED_PASS",
+    "workout": "BOUNDED_PASS",
+    "pending_human_reviews": 23,
+    "ready": 23,
+    "held": 0,
+    "new_human_acceptances": 0,
+    "promotions": 0
+  },
+  "scope_host20": {
+    "scope_review": "evaluations/fixtures/native-scope-review20.json",
+    "scope_review_sha256": "a8e7074e8c88e1cf8e8493cfda45eb0e826f5a88fe65c938a5a2977b21411c38",
+    "host_evidence": "evaluations/fixtures/host-routing-integration20.json",
+    "host_evidence_sha256": "25bdf60517fa097759b2ffe07acf66e039c0d984e7bfddfff708988f7ecac858",
+    "native_cli": "codex-cli 0.163.0-alpha.11.2",
+    "domain_sessions": 6,
+    "canaries": 1,
+    "positive_full_skill_read_sessions": 1,
+    "activation_unverified_cases": 4,
+    "architect_boundary": "Ambient UTF-8 stdin bytes under configured Windows encoding remain open; explicit UTF-8 controls pass.",
+    "human_acceptance": "All 23 pending scopes plus repaired workout revision remain pending; no promotion."
+  },
+  "delegated_acceptance21": {
+    "evidence": "evaluations/fixtures/delegated-acceptance21.json",
+    "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
+    "summary": {
+      "pending_scopes_reviewed": 23,
+      "delegated_scopes_accepted": 22,
+      "delegated_scopes_withheld": 1,
+      "repaired_workout_revision_accepted": 1,
+      "new_personal_human_inspections": 0,
+      "new_human_acceptances": 0,
+      "historical_bounded_acceptances_unchanged": 13,
+      "effective_recorded_bounded_scopes_accepted": 35,
+      "effective_recorded_bounded_scopes_pending": 1,
+      "promotions": 0
+    }
+  },
+  "readme_delivery22": {
+    "evidence": "evaluations/fixtures/readme-delivery22.json",
+    "evidence_sha256": "de8c32bbebdbc86106c320dba7f5f4af94076750141332dca43efb1e36cd14de",
+    "acceptance": "bounded README scope accepted; initial withheld decision preserved"
+  },
+  "delegated_acceptance22": {
+    "evidence": "evaluations/fixtures/readme-delivery22.json",
+    "evidence_sha256": "de8c32bbebdbc86106c320dba7f5f4af94076750141332dca43efb1e36cd14de",
+    "current_review_scopes_accepted": 23,
+    "historical_bounded_scopes_unchanged": 13,
+    "effective_bounded_scopes_accepted": 36,
+    "personal_human_inspections": 0,
+    "promotions": 0
+  },
+  "activation23": {
+    "evidence": "evaluations/fixtures/activation23.json",
+    "evidence_sha256": "b2afb6be7b52c44a050e593126247c629c1cb7890637478177dfef84c5a2d13e",
+    "summary": {
+      "sessions": 10,
+      "cli_sessions": 9,
+      "appserver_sessions": 1,
+      "positive_sessions": 8,
+      "negative_controls": 2,
+      "positive_full_skill_tool_reads": 6,
+      "typed_full_input_injections": 1,
+      "positive_full_load_unverified": 1,
+      "initial_nested_write_blocks_retained": 1,
+      "corrected_nested_write_passes": 1,
+      "successful_readme_file_integrations": 3,
+      "independent_cli_probe_passes": 21,
+      "candidate_changes": 0,
+      "real_profile_installations": 0,
+      "promotions": 0
+    },
+    "remaining_literal_text_intake_load_gap": 1,
+    "broader_host_routing_repeatability_limits": "open",
+    "acceptance_changes": false
+  },
+  "activation24": {
+    "evidence": "evaluations/fixtures/activation24.json",
+    "evidence_sha256": "44aff536462a333720fed7050392f2e64d4143d8fc273e4ececad6e2c3d43ddf",
+    "status": "nine corrected focused tests pass; final-head CI separate",
+    "native_evidence_changed": false
+  },
+  "repeatability25": {
+    "evidence": "evaluations/fixtures/repeatability25.json",
+    "evidence_sha256": "ce49217f61db0877d5b70129608fab273015d419c8b1446e905760b90dda9a2d",
+    "summary": {
+      "planned_sessions": 26,
+      "completed_sessions": 26,
+      "models": [
+        "gpt-6.1-sol",
+        "gpt-6-sol"
+      ],
+      "positive_loading_observed": 22,
+      "negative_controls_passed": 4,
+      "actual_input_injection_cases": 14,
+      "actual_tool_body_cases": 8,
+      "repository_changes": 0,
+      "candidate_changes": 0,
+      "real_profile_installations": 0,
+      "promotions": 0
+    },
+    "former_plain_text_intake_gap": "closed only for tested versions/interfaces/profiles; original traces unchanged"
+  },
+  "readme_mode26": {
+    "evidence": "evaluations/fixtures/readme-mode26.json",
+    "evidence_sha256": "b4c3e3a0adb3c5a5be1448a8651f0eba8583602a965ca223eaf1d7de7e37a763",
+    "summary": {
+      "planned_sessions": 10,
+      "completed_sessions": 10,
+      "models": [
+        "gpt-6.1-sol",
+        "gpt-6-sol"
+      ],
+      "positive_loading_observed": 8,
+      "negative_controls_passed": 2,
+      "actual_input_injection_cases": 6,
+      "actual_tool_body_cases": 2,
+      "repository_changes": 0,
+      "candidate_changes": 0,
+      "real_profile_installations": 0,
+      "promotions": 0,
+      "candidate_revision_changed_before_execution": true,
+      "candidate_changes_during_execution": 0,
+      "source_proposals_reviewed": 2,
+      "source_proposals_passed": 2
+    },
+    "merge_recommendation": "Candidate-only after final CI and explicit approval; keep draft until authorized"
+  }
+}

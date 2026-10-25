@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "revision": 1,
+  "type": "forced_instruction_tool_workflow",
+  "repetitions": 1,
+  "source_commit": "9174be155d47b65fffc5ec004c9318ede55b2bd2",
+  "description": "Six isolated synthetic sessions; expected criteria stay outside agent workspaces. Photo fixtures are deterministic drawings, not real travel photos.",
+  "image_recipe": {
+    "size": [
+      480,
+      320
+    ],
+    "IMG_001.png": "White background, red mug rectangle and outlined red handle; no EXIF.",
+    "IMG_002.png": "Same drawing with slightly different red; no EXIF.",
+    "IMG_003.png": "Uniform gray image; no EXIF."
+  },
+  "cases": [
+    {
+      "id": "spec-new",
+      "skill": "spec-writer",
+      "prompt": "Create a spec package for a dry-run mode in the local queue processor. Dry-run must return planned operations without executing them; existing process(items) behavior stays unchanged. Inspect the repository conventions and existing spec numbers. Write the planning files only. Do not implement the feature. Treat this as a new feature and make unresolved API choices explicit.",
+      "files": {
+        "README.md": "# Queue Demo\n\nLocal Python queue processor. Planning lives in specs/NNN-short-name/. Each spec has requirements.md, plan.md and tasks.md. Never reuse an existing number.\n",
+        "src/queue_demo.py": "def process(items):\n    return list(items)\n",
+        "specs/001-bootstrap/requirements.md": "Status: done\nLast updated: 2026-09-01\n\nBootstrap the local processor.\n",
+        "specs/010-local-metrics/requirements.md": "Status: done\nLast updated: 2026-10-10\n\nAdd local counters. No remote telemetry.\n"
+      },
+      "criteria": [
+        "Next number is 011, not a reused gap.",
+        "Three planning files, draft state, date and feature variant.",
+        "Preserve existing source/specs; no implementation.",
+        "Requirements, plan and sized tasks align with dry-run behavior and validation."
+      ],
+      "candidate_target": "codex",
+      "candidate_sha256": "53746b69a96ea2eb856250f47c8c793fc419cdbb536fe643e15ff6567271f7ef",
+      "capabilities_sha256": "3d12378cfc9f310a0433dc134fb6e2e0b16e08567f34e56b16d762c472b5b9e6"
+    },
+    {
+      "id": "spec-existing",
+      "skill": "spec-writer",
+      "prompt": "Review and finish the retry-queue planning package for this repository. The previous status says done, but implementation has not begun. We want bounded retries for transient failures while preserving process(items), with no external services. Update the planning documents to reflect the actual state and ready the work for implementation. Do not implement it.",
+      "files": {
+        "README.md": "# Queue Demo\n\nLocal Python queue processor. Planning lives in specs/NNN-short-name/. Each spec has requirements.md, plan.md and tasks.md. Never reuse an existing number.\n",
+        "src/queue_demo.py": "def process(items):\n    return list(items)\n",
+        "specs/001-bootstrap/requirements.md": "Status: done\nLast updated: 2026-09-01\n\nBootstrap the local processor.\n",
+        "specs/010-local-metrics/requirements.md": "Status: done\nLast updated: 2026-10-10\n\nAdd local counters. No remote telemetry.\n",
+        "specs/007-retry-queue/requirements.md": "Status: done\nLast updated: 2026-09-15\nVariant: feature\n\nRetry failed items locally. Work has not started. Keep the public process(items) API. No external service.\n",
+        "specs/007-retry-queue/plan.md": "# Plan\n\nPending design.\n",
+        "specs/007-retry-queue/tasks.md": "# Tasks\n\n- [ ] Design retries.\n- [ ] Implement retries.\n"
+      },
+      "criteria": [
+        "Update existing 007 rather than duplicate.",
+        "Correct false done state and date.",
+        "Explicit bounded retry assumptions, preserved API and no external services.",
+        "Actionable consistent plan and sized unchecked tasks; unrelated files unchanged."
+      ],
+      "candidate_target": "codex",
+      "candidate_sha256": "53746b69a96ea2eb856250f47c8c793fc419cdbb536fe643e15ff6567271f7ef",
+      "capabilities_sha256": "3d12378cfc9f310a0433dc134fb6e2e0b16e08567f34e56b16d762c472b5b9e6"
+    },
+    {
+      "id": "csv-mixed",
+      "skill": "pihole-csv-analyzer",
+      "prompt": "Analyze queries.csv and write your analysis to analysis.md as well as a concise reply. Produce the candidate review files required by the skill. This is a synthetic export only. We have no reported application failures or device inventory. Use only these local inputs. Do not change any DNS settings or fetch external data.",
+      "files": {
+        "queries.csv": " Time , Type , Domain , Client , Status \n2026-10-01T00:00:00,A,portal.example,alpha,2\n2026-10-01T00:01:00,A,portal.example,alpha,2\n2026-10-01T00:02:00,A,updates.example,beta,3\n2026-10-01T00:03:00,AAAA,docs.example,2001:db8::1,17\n2026-10-01T00:04:00,A,ads.example,alpha,1\n2026-10-01T00:05:00,A,ads.example,alpha,1\n2026-10-01T00:06:00,A,cname.example,beta,9\n2026-10-01T00:07:00,A,tracker.example,beta,18\n2026-10-01T00:08:00,A,mystery.example,2001:db8::1,99\n2026-10-01T00:09:00,A,unclear.example,beta,\n2026-10-01T00:10:00,A,portal.example,alpha,forwarded\n2026-10-01T00:11:00,A,ads.example,alpha,blocked (gravity)\n"
+      },
+      "criteria": [
+        "12 rows: 5 allowed, 5 blocked, 2 unknown; percentages use explicit denominator.",
+        "Top allowed portal.example=3; top blocked ads.example=3.",
+        "Clients alpha=6, beta=4, IPv6=2; preserve unknown status99 and blank.",
+        "No unsupported device identification, breakage, maliciousness or live-action claims.",
+        "Both candidate files created, conservative review-only recommendations; input bytes unchanged."
+      ],
+      "candidate_target": "codex",
+      "candidate_sha256": "ad56f3f906a604d2a65ed143c16abd69e43f0f202de90216efcb90d441450d08",
+      "capabilities_sha256": "d7e3dd8e963f745b67125681255b58edabfcab6e12ab5fcb608d13c4509087c4"
+    },
+    {
+      "id": "csv-incomplete",
+      "skill": "pihole-csv-analyzer",
+      "prompt": "Analyze each export separately: missing-status.csv and top-domains.csv. Write analysis.md and candidate review files. Explain which conclusions these inputs support and which they do not. These are synthetic files; no live service or external lookup is available.",
+      "files": {
+        "missing-status.csv": "time,type,domain,client\n2026-10-01,A,portal.example,alpha\n2026-10-01,A,ads.example,beta\n",
+        "top-domains.csv": " Domain , Hits \nportal.example,5\nads.example,3\nbroken.example,oops\n"
+      },
+      "criteria": [
+        "Do not invent allowed/blocked split without status.",
+        "Rank valid top-domain counts5,3; flag nonnumeric oops and disclose partial total8.",
+        "Keep exports separate and do not invent frequency/volume from rows and counts interchangeably.",
+        "No unsupported policy changes; preserve source files."
+      ],
+      "candidate_target": "codex",
+      "candidate_sha256": "ad56f3f906a604d2a65ed143c16abd69e43f0f202de90216efcb90d441450d08",
+      "capabilities_sha256": "d7e3dd8e963f745b67125681255b58edabfcab6e12ab5fcb608d13c4509087c4"
+    },
+    {
+      "id": "photo-preview",
+      "skill": "photo-rename",
+      "prompt": "Propose names for every image in photos/. Inspect the actual images and metadata where available. These are synthetic test images, not real landmarks. There is no supplied location or event context and external lookup is unavailable. Produce rename-report.md with old/new names, confidence and reasons. This request is preview only. Do not rename, move or copy any image.",
+      "files": {},
+      "criteria": [
+        "Inspect all three images or explicitly report unavailable image understanding.",
+        "Two red mug images share consistent descriptive names with unique suffixes.",
+        "Blank image gets uncertain/generic fallback without invented subject/place/date.",
+        "No claimed EXIF date or location absent from files; report only and original hashes/paths unchanged."
+      ],
+      "candidate_target": "chatgpt",
+      "candidate_sha256": "ebf24f42f3b802e25e3df4fdbde73b18f21d973b45e08fd4014009afed6dac0d",
+      "capabilities_sha256": "19ee84e333f59b155fa3ada633b99f81fcc2248edc1e075e60464ea401696bb1"
+    },
+    {
+      "id": "photo-copy",
+      "skill": "photo-rename",
+      "prompt": "Create and run a local copy workflow for this approved mapping: photos/IMG_001.png and photos/IMG_002.png should use base name red_mug.png in renamed/. Skip photos/IMG_003.png. Resolve collisions with stable numeric suffixes. Keep every original and every existing destination file unchanged. Save the actual old-to-new mapping in rename-report.md. Do not touch any files outside this workspace. No web lookup is needed.",
+      "files": {
+        "renamed/red_mug.png": "EXISTING DESTINATION SENTINEL\n"
+      },
+      "criteria": [
+        "Two new copies with unique stable suffixes; never replace existing destination.",
+        "Original three image paths/bytes unchanged; skipped blank not copied.",
+        "Actual report paths match copies and each copied hash matches its mapped original.",
+        "No move/deletion/overwrite or external action."
+      ],
+      "candidate_target": "chatgpt",
+      "candidate_sha256": "ebf24f42f3b802e25e3df4fdbde73b18f21d973b45e08fd4014009afed6dac0d",
+      "capabilities_sha256": "19ee84e333f59b155fa3ada633b99f81fcc2248edc1e075e60464ea401696bb1"
+    }
+  ],
+  "transport": {
+    "runtime": "Codex CLI",
+    "model_requested": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "photo_limit": "ChatGPT candidate forced through CLI as a behavioral proxy; no native ChatGPT or Claude host certification and no Codex placement approval."
+  },
+  "additional_capture": {
+    "id": "photo-preview-attached",
+    "base_case": "photo-preview",
+    "prompt_changed": false,
+    "explicit_image_inputs": {
+      "IMG_001.png": "414a11fe1a4e8a6cdeef96c6f60edcd1bac14949d63f2ee29a27e8fe4229f2bb",
+      "IMG_002.png": "ab23a40a2cbf3e6f42ef30e7452f197acd8f48774c431558c8354e8341efe901",
+      "IMG_003.png": "c3b987289371519b5a8de3340192e714ab51e42af5395d7de83f1546097f1ddf"
+    },
+    "context_sha256": "03da2ba44899c7f54b389ff9533268167aa911ae399dd03fadcf7ffa65aaa81e",
+    "reason": "Initial preview trace does not establish image delivery; use this rerun for visual assessment.",
+    "gate": "Exact image path markers, decoded PNG bytes and task text required before inference; clean input accepted and five negative mutations rejected."
+  },
+  "capture_count": {
+    "domain": 7,
+    "canary": 1,
+    "assessed_scenarios": 6
+  }
+}

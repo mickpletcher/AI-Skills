@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "skill": "travel-itinerary",
+  "source": "claude/skills/travel-itinerary/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "400e7546435fd734420071c730727aa800d6dacc7662f00b4a604bbcf2727686",
+  "source_frontmatter": {
+    "name": "travel-itinerary",
+    "description": "Plan, format, and export travel itineraries as Obsidian-formatted Markdown files. Always trigger immediately when the user's message starts with \"trip\" or \"itinerary\". Also trigger when the user says \"plan my trip\", \"build my itinerary\", \"travel plan\", \"export my trip\", \"format this itinerary\", or describes an upcoming trip and asks Claude to organize it. Produces a day-by-day breakdown, logistics summary, packing list, and budget tracker in a single Obsidian-ready .md file.\n",
+    "version": "1.3.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {
+    "asks Claude to organize it": "asks the assistant to organize it"
+  },
+  "supporting_files_sha256": {},
+  "retained_in_original_sha256": {
+    "README.md": "170c0696690f9c7fc29012c9431128bfc39dd24b55b2646c9217974cfd6e1d33",
+    "completedchanges.md": "a7a5c8c77f7a3bcbcefc60e302796319c64949fa2d9cfc333eb136f542e4b762",
+    "travel-itinerary.skill": "f1a6b710b5d35ceefcc9b46c1f06bd1a0bbf03f189ae393ff8845aafe7c7e9b9",
+    "upgrades.md": "05ad1fa7142c0cdefa35f4caa799373a6e65d7855ab247c4b69b01fef7c6e85b"
+  }
+}

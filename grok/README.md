@@ -1,6 +1,6 @@
 # Grok skills
 
-This directory holds Grok-specific skill outputs and installation guidance.
+This directory is reserved for future Grok-specific skill adaptations. It currently contains no skill outputs. The generator does not yet support Grok, and no installation or deployment is provided.
 
 Canonical skill definitions live in `../master-skills/`. Platform-specific instructions belong in `../adapters/grok/<skill-name>/append.md`.
 

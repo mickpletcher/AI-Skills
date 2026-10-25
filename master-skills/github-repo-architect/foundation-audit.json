@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "source": "claude/skills/github-repo-architect/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "d4d5eaa888b4b38d15f9335759bb92255fa0d150386c3b60d1c6f984cbd52e83",
+  "prior_master_commit": "ac0cc251ca3af459c7640d9124f2c3fadb4ab0f9",
+  "prior_master_sha256": "272c0c52b584a124f27631c9676f2c659466205f740bc602d17d0b12e596f9ce",
+  "audited_source_sections": [
+    "Intent",
+    "Workflow",
+    "Constraints",
+    "Primary Triggers",
+    "Do Not Use When",
+    "Step 1 \u2014 Identify Project Type",
+    "Step 2 \u2014 Extract Requirements",
+    "Step 3 \u2014 Generate The Repository Blueprint",
+    "Stack Scaffolding Presets",
+    "Repo Documentation Plan",
+    "Folder Layout Rules",
+    "README Requirements",
+    "Development Prompts",
+    "GitHub Actions CI",
+    "Issue And PR Templates",
+    "Voice And Formatting Rules",
+    "Output Guardrails",
+    "Validation Checklist",
+    "Help And Examples"
+  ],
+  "restored_sections": [
+    "Scaffold completeness",
+    "Documentation and project types",
+    "Development prompt set",
+    "CI requirements",
+    "Help response"
+  ],
+  "restored_text": "## Scaffold completeness\nWhen generating a full repository scaffold, include these real templates:\n- `.github/ISSUE_TEMPLATE/bug_report.md`: Problem; Steps to reproduce; Expected result; Actual result; Environment.\n- `.github/ISSUE_TEMPLATE/feature_request.md`: Use case; Proposed behavior; Inputs; Outputs; Notes.\n- `.github/pull_request_template.md`: Summary; Changes; Tests; Risk; Checklist.\nCheck that each template appears in the annotated tree and generated files.\n\n## Documentation and project types\nPlan tracked documentation (README, changelog, completed-work logs and specs) separately from local-only backlogs, scratch assessments and personal notes. Follow the target repository's policy; explicitly name appropriate `.gitignore` entries and never include private notes in a public scaffold.\nFor an MCP server, specify tool definitions, server entry point, configuration and tests. For a web app, cover components, environment variables and build commands. For data projects, cover schemas, reproducibility and outputs. For automation, cover secrets, logs and retries. For static sites, separate content from layout, document local preview, and add deployment only when the host is known. Do not add Docker, infrastructure tooling or release automation without a project need.\nThe tailored README should cover overview, capabilities, annotated structure, prerequisites, setup, usage, testing, configuration, security and the actual license where applicable. Use tables for structured commands, modules and environment variables.\n\n## Development prompt set\nProvide repository-specific implementation, test and review prompts naming the actual files and tasks. Include a release prompt only when relevant. The review prompt covers bugs, missing documentation and security; release preparation covers tags, changelog and release notes without authorizing publication.\n\n## CI requirements\nGenerate `.github/workflows/ci.yml` for the selected stack. Run on pull requests and pushes to the default branch; check out the repository, set up its runtime, install dependencies, run configured lint checks, and run tests. Name the exact test framework, lint tool and configuration file, and the first three concrete tests.\n- Python: console entry point in `pyproject.toml`, `src/<package>/`, pytest and ruff; install from the actual dependency manifest.\n- Node: set up Node, `npm ci`, `npm test`, and `npm run lint` when configured.\n- PowerShell: module manifest, Pester and `Invoke-ScriptAnalyzer` honoring `PSScriptAnalyzerSettings.psd1`, running on `pwsh`.\n- .NET: set up .NET, `dotnet restore`, and `dotnet test`.\n- Docker: `docker build` and compose validation when applicable.\n- AI skill: instruction checks and behavior-test fixtures; add package/archive checks only for formats supported by the chosen host adapter.\nFor an unresolved stack, state the assumption and provide a working documentation check only when its tooling is known. Label remaining runtime/test decisions as unresolved; do not represent TODO placeholders as runnable application CI.\n\n## Help response\nExplain the capability, request the project idea, target stack and required components, show the examples below, and offer a short next prompt. Use direct prose, no emojis or motivational sign-offs, and first person only when the requested repository voice calls for it.\n\n",
+  "review": "Portable requirement audit; not a verbatim migration or behavioral evaluation. Existing master retained; requirements inserted before Capability Contract.",
+  "intentional_adaptations": [
+    "Personal author identity is replaced by the requested user voice.",
+    "Assistant names and packaging assumptions are replaced by host capabilities and adapters.",
+    "Missing tools or evidence must be reported, never treated as successful execution.",
+    "Repository-specific conventions are followed when available, not assumed to be bundled.",
+    "Safety, authorization and public compatibility controls in the prior master remain in force.",
+    "Unknown-stack TODO CI is not presented as runnable application CI; working documentation checks require known tooling."
+  ],
+  "behavior_evaluation": "not_run",
+  "subsequent_insertions": [
+    {
+      "reason": "Observed scaffold formatting failure; validate and deliver final formatted files without altering the historical restoration audit.",
+      "prior_master_commit": "62a7707f9252fa3aa2001f26e185999070777c6d",
+      "prior_master_sha256": "1bb65e4eeac64f7cef108be4e5e6da44160029acb510da34a5314ce328f5fb7d",
+      "text": "## Delivery validation\nBefore delivering created files, use available, authorized tools to apply the project's configured formatter, then run its formatting check, lint checks and tests against those exact files. For Python scaffolds using Ruff, run `python -m ruff format .`, `python -m ruff format --check .`, `python -m ruff check .` and `python -m pytest`. Keep CI formatting checks read-only.\nIf a check fails, inspect the failure, correct the affected files and rerun the checks. Return or link the final formatted file contents, including changed tests; do not deliver stale pre-format code blocks. Report the commands and actual results. A failing gate blocks a verified-complete claim. When tools or execution are unavailable, deliver a clearly labeled unverified proposal with the validation commands instead of implying the checks passed.\n\n"
+    }
+  ]
+}

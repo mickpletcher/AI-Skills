@@ -1,0 +1,793 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "basis_commit": "9422cc0da6ebe6d704bfd412c1d3ce76aad50600",
+  "authorization": {
+    "authorized_by": "Mick",
+    "verified_request": "Go with activation",
+    "verification": "Direct user request verified in originating task after delegated acceptance/README delivery.",
+    "constraints": "Draft PR; no merge, promotion, real-profile installation, unrelated Unicode fixes or live integrations."
+  },
+  "completed_prior_delivery": {
+    "commit": "9422cc0da6ebe6d704bfd412c1d3ce76aad50600",
+    "ci_checks_passed": 13,
+    "draft": true
+  },
+  "design": {
+    "cli": "codex-cli 0.163.0-alpha.11.2",
+    "model_requested": "gpt-6.1-sol",
+    "reasoning_effort": "low",
+    "sampling": "Eight initial fresh CLI cases, one unchanged-task nested writable-root correction and one typed native app-server explicit invocation. Ten separate disposable profiles/workspaces; no feedback or regeneration.",
+    "pair_controls": {
+      "profile_source": "Prompts differ only by explicit $github-readme prefix; initial repository file contents identical. Separate fresh profiles/workspaces.",
+      "profile_intake": "Original implicit and explicit missing-source tasks retained; no forced-read instruction.",
+      "nested_repo": "Original missing-source prompt retained; supplied-source task states repository root is parent to avoid ambiguous fixture placement.",
+      "boundary": "Developer instruction explicitly allows exact catalog skill directories outside task repository and excludes their parents/credentials; not a filesystem-security guarantee."
+    },
+    "catalog": "Exactly 12 pinned unchanged Codex candidates. Rendered catalog/personal-marker gates before every inference; structured invocation also checks native skills/list.",
+    "resource_boundary_fix": "Task data stays in the synthetic repository. Selected instruction/support files may be read beneath exact catalog skill directories, even when outside that repository. Parent profiles and credentials excluded. This prompt rule supplements the native sandbox; it is not a security-enforcement guarantee.",
+    "nested_write_fix": "The initial nested case correctly refused a parent README write outside the child cwd writable root. A separately pinned unchanged-task revision adds only its named disposable synthetic repository as sandbox_workspace_write.writable_roots.",
+    "explicit_transport": "Literal CLI text marker and native typed skill input are separate tests. Typed invocation is tied to skills/list path/hash and actual recorded full <skill> user-input injection; no self-report inference.",
+    "tool_read_rule": "Complete current body in completed native command output proves availability even if a later compound-command search returns 1. Execution status remains separate; failed reads lacking the body do not qualify.",
+    "candidate_changes": false,
+    "no_forced_read_prompt": true,
+    "temporary_auth_removed": true,
+    "provider_guarantees_unobservable": true
+  },
+  "official_sources": [
+    {
+      "url": "https://learn.chatgpt.com/docs/build-skills",
+      "supports": "Metadata discovery, progressive loading, explicit/implicit invocation and repository ancestor discovery."
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/app-server",
+      "supports": "Typed skill input injects full instructions; text-only marker relies on model name resolution. Native initialization and skills/list."
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+      "supports": "Additional writable roots within workspace-write; no broad sandbox bypass."
+    }
+  ],
+  "candidate_bundles": {
+    "alpaca-trading": {
+      "build-provenance.json": "af34c884252769a736f123c30e3e7a54967b8770d777d230fab2604d28e5c009",
+      "capabilities.json": "bdd541a36bf50e346a46bbddb0d191ee2078317d461e404aa50c5198ebc2bac6",
+      "ecosystems.json": "71a16f92e53b93e50ed2447cc7ebc688c7bf0897f0487e981f81e04a4e63ca0a",
+      "migration.json": "67cfd6bc68c94b6f54399a0e2dba618222110e77ed260555a5667a8439d2a606",
+      "README.md": "41079efd8abe6c83fb3e9fa204298029ab9f06bb8424aa6ce4f3cc745c068d04",
+      "SKILL.md": "b5c6307c7646462720245dc0eb5d899cea98ff542a0bda330aea1fe3f5cec47f"
+    },
+    "example-skill": {
+      "build-provenance.json": "7996d70832bacc02acafe43337caf4da437567c99e4be2c66bd2f19667d38a22",
+      "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+      "ecosystems.json": "cd4195e891a8a29d60ad673b1cc790955eeb589386624a240edcacd139543100",
+      "SKILL.md": "65e34ca475f3e7bfbfc4a4bce3bff48462a903228b2453d58a95f8e06fbc70d5"
+    },
+    "github-readme": {
+      "build-provenance.json": "3ece20bd0f8ca6f6b4fa14aa4a083fd40cd47e5a952722aa9e2aa2aadfcc1164",
+      "capabilities.json": "84af959fa6fcefde9d8f0d204a54cb4decb6d5840aae960da8e690fc80549538",
+      "ecosystems.json": "c11cb9b2f2691b0fc8e5dee230d0c21c35e54560d39c3fe69ed2aceb110f4e9a",
+      "foundation-audit.json": "9b6588e612eca1259243eb83882248e6698e5e7a016f941c431d112330e6e315",
+      "model-history.json": "83bea6ff2866e8fa732333a3571af859b9e7d0e7f37008ae35c74ba6ed3725eb",
+      "SKILL.md": "6de16e74b7ff7ca37b77cff99ba90506e7e11afeea0f4a00827bd8176b2c6f56"
+    },
+    "github-repo-architect": {
+      "build-provenance.json": "eabda8ae6160edafae24f19b08db024f1b2dfe389b6f9a38f91f046886a5da49",
+      "capabilities.json": "8a0e0420e8d2eb3f889198bc519109769fe0cd75d7f8d055803556ee651e1ba8",
+      "ecosystems.json": "2d3556adf1adf379b51ac167868a170589fcc6210b85d7ee99b4057928224e53",
+      "foundation-audit.json": "765626956874331b37f3119b44a6824d3bd26a22363449ee50e11869c6c29da4",
+      "model-history.json": "58d5a37495904f8c54e29e463de52ca0e4fdb7170b5ea30b2cc655c73d68bd4f",
+      "SKILL.md": "7ee253b52c0b241ce2351831820456af2733a3d6d8a6cdaadc08064dd3f884db"
+    },
+    "github-social-preview": {
+      "build-provenance.json": "50129f11cd6ce252b867533934bdd0c9f1f6fffddbd1ee17a63a7eb94f9a9312",
+      "capabilities.json": "8e8f372350c77a0902aa4262365a5a0614b2caf60d6cebd6d70c817a78605a79",
+      "ecosystems.json": "26503c53eb0cc7f53b11ea185dcd2fd739cbafeda2a167aa742519f06617b737",
+      "migration.json": "472ada854f4098134e32dfc037196a4502f5c42cd8092d8b6ca15a1b8bbd06eb",
+      "README.md": "561f3baaa1c18fdeb09c66ca01e6d74c63826488d5218003ef38840225c32d6d",
+      "SKILL.md": "eb58b912ac61de47d9e1a7f206fa67841929f2d29760c45d98a69c8f77202d90",
+      "examples/example_usage.md": "7398d0b03eb6b3990ea4939232c4560d963d977d1221e2e740d2e17e59734fc3",
+      "scripts/generate_preview.py": "00ee376207573259f13eb34d99da303e83d44f718a5b3429aa7e162a56ec8f81",
+      "templates/design_config.json": "58572a0c9b1fa0d665405307ca600988453bdfdb0a9a2c03c710fe2f8963010a"
+    },
+    "n8n-workflow": {
+      "build-provenance.json": "b61b9e23a068478f15ad32721ef9f72eed43e78728ed2b41d2b7011cec364658",
+      "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+      "ecosystems.json": "e2aad2c4eda1de39ceba46baec2c671286a0c1c26271d80e3a8330177acd4441",
+      "migration.json": "9e636377b35b63e9f26063c75c4755e50aeb2a22839f7dd678cb850d6713e65e",
+      "README.md": "a252a02a99f93a50cf8c2a7284ea7fdcaa3fc46968e5c2ca799c83e0c5f60c33",
+      "SKILL.md": "40d64e696c0e7e5784dc959df58a1c15d5ace799a0e7fbfae95a7e6fbc871cb0"
+    },
+    "pihole-blocklist": {
+      "build-provenance.json": "486199059502b960bb4194aae219b8847f0b12df059ba9e8da27d44fe358c37e",
+      "capabilities.json": "ffbcbccfad342d05940999f43212d4171e29bf3f478ee29281afd4799007b1b8",
+      "ecosystems.json": "8a3da582671d2870833fa5b052956b0f90c6cebb879af8b2a35e1a132e6eeab0",
+      "migration.json": "ebcf17e491621c40d88c162adf49cfca9397d1f773d3226eb4d8db9d282d48c3",
+      "pihole-blocklist-sources.md": "dffbe68aa1d4bb169d36c5696c799a6be6ffd6ed1ab8e9e81a1e93b822d2f9fc",
+      "README.md": "20975ea70f939a98e5d97dd8702549d65c62098a864e09bed32111e31dc54cf2",
+      "SKILL.md": "6b5c53859eecedeb9363e8291d7ec733487208b839ad280ecd650f76e7fa1e92"
+    },
+    "pihole-csv-analyzer": {
+      "build-provenance.json": "d1072bbe93b2def20e4e6300c98236584314b0790772dadd941325b8b9fee400",
+      "capabilities.json": "d7e3dd8e963f745b67125681255b58edabfcab6e12ab5fcb608d13c4509087c4",
+      "ecosystems.json": "ca0943bfac3e8be2e302e46d1a6851ab1356db9c5642fb3a2f4751af4583a150",
+      "migration.json": "9ff0651a3d69fe5c4d46a05542f9b905723b3a5085a7dad203077509333e72ab",
+      "README.md": "6654c6289d987511724130cbdbb41873b062a1bdbe29fd18117e206c1d33a1cd",
+      "SKILL.md": "e69f7f615ff07e41d1d87fa7da75a96fed2efca1e94c05e9ddbc05063cd0d899"
+    },
+    "powershell-refactor": {
+      "build-provenance.json": "7c4f6c19377164ac1e98937914e4d170ad4cd5e391934347a55782a5d57f6821",
+      "capabilities.json": "2410d206a0340b248ec6ff3937241c9cb7c680ea878586707eb07d94e23f3f32",
+      "ecosystems.json": "4809eef4eb7ea46841116fd68c032265336174b0d1883ddd04d240cf87f26f17",
+      "foundation-audit.json": "6e925988e983c6c395767ec158b22b5ce56d27bc9f83c9b7f5a1446fd018467f",
+      "metadata.json": "4aace7e6d812eb02cfa5f798b88ad8c4f00f68ddd8317a4fd085c22e605d5eaa",
+      "SKILL.md": "58091c24fde6835597a07f7828ba328c65526da96ca5dff59be3561cffb059df"
+    },
+    "proxmox-lxc": {
+      "build-provenance.json": "6ef11a21b608dc602ec65ad226bd7804cf574d9b2ab0618b64147a115149eaab",
+      "capabilities.json": "8e8f372350c77a0902aa4262365a5a0614b2caf60d6cebd6d70c817a78605a79",
+      "ecosystems.json": "5fe466ecb93d9eaa35cbfd3b7decf501318da60a47b9a074ad6f612dddb60e58",
+      "migration.json": "e1116c850a5fafa7dd6da6209b965760657aa7f63b24412afa5325b26648e319",
+      "README.md": "ee2597d5c1df5f64987ad99594674da41c01db2fcc5d667550fe315727ba3928",
+      "SKILL.md": "0cb7faafe228caa2b05c2e5d339206ced7d9911ace526d82cc381a97f82a9be2"
+    },
+    "spec-writer": {
+      "build-provenance.json": "6acf741570c1c567062f9bbc0bc1da1aa7b714b5e8ddd3e9bcc82b907810818f",
+      "capabilities.json": "3d12378cfc9f310a0433dc134fb6e2e0b16e08567f34e56b16d762c472b5b9e6",
+      "ecosystems.json": "9c573f71849fc5debe6f934b3ea6fc2c543a12a96e9992bd31bf42d5b9f3b082",
+      "migration.json": "bd251e0fd8cb94685cabfff62dd7e824b8189e779f659f8f11ba0c27ab2de455",
+      "README.md": "8274ace664eca719577abe50a8849db836c23a0761ca5d8bbb6308db5473e01c",
+      "SKILL.md": "e4ecd32ae4711964e30f262a8cbfd44875319094dda4fc4820c8937a4a52f716"
+    },
+    "trip-email-html-itinerary": {
+      "build-provenance.json": "07e40d41607146f9c14051c90a8f64e7dc720304ec1d921d2c01c661d7b90c09",
+      "capabilities.json": "0ca0ac3dfe4ad9c2283ef8375fd2788be28ad82d30edbc0f4e1f403c0f9bfe67",
+      "ecosystems.json": "63bc398f9e5fdf1afb711438a6e314609cd7e2d18f649aa69fabebbcac3a95c0",
+      "migration.json": "bbf033ff74be1fbb2c78186a7d82a868d20bab40bb75f9292bbdcea324467ce3",
+      "README.md": "a95daf9a7302e67581a85ff6d0165f4543c51da03540738a993cf14f28fb5a5e",
+      "SKILL.md": "9a2fc31cd785c3b7e5e80a1f33850b3d0abe9c3828d714222fb58108909dd0cc",
+      "assets/emergency-contacts-template.txt": "26b3fc77b913f63fba10e0842deb4c08e314c44de486142b13ccefc366d6f01a",
+      "assets/itinerary-template.html": "0c7a96ee250a142683b27cb8d93d02bff2f161af5ac5d8445bf701d6e213afe7",
+      "references/design-system.md": "1c441d1e0f523d8e3e03fd98eecbbbd78d0ff8de28443924e5d9dc02846e82db",
+      "scripts/Export-PublicDemoJpegs.ps1": "ed4c51d364afff5db1af177ca2e979749af74c4231916852f7eac85c1bcf8028",
+      "scripts/New-PublicDemoItinerary.ps1": "fd161465fe15cf37915e3d43a4a36aee091382f72d52418688269d4772ebeedd",
+      "scripts/Test-ItineraryHtml.ps1": "23ad3c3c8483887d569908db61643b350758276d6b8b4bd0d62058301ec78353",
+      "examples/public-demo-social/01-cover.jpg": "97f9da80bded12787fed952c441c3dc77d5d5a9e62bf0e9d90746f0e9e59474a",
+      "examples/public-demo-social/02-trip-overview.jpg": "e3432dd8c34e4a091e183e64610ee563c9e79f3856e509434817deff7081f065",
+      "examples/public-demo-social/03-flights.jpg": "7031e63fbf922caf5003232900c7ae91f9880ccfb048ee3ab1681a64d1d1035d",
+      "examples/public-demo-social/04-hotels-and-transport.jpg": "f4e8d313742643dc36207a43a4f38bafcca8ac69f2b141743c3b4a3baf22d5f8",
+      "examples/public-demo-social/05-restaurants.jpg": "e0190facfbf69ebf7c88f19e7902d7c455daa06c949e4e251327815785e80912",
+      "examples/public-demo-social/06-activities.jpg": "947c58a28f7724d4d54ffaff335df8ac814133b4128e707662fbffe53d0a7228",
+      "examples/public-demo-social/07-day-plan.jpg": "0d8ee58a9b64d8a93b3bfc0a36aae29c3ac740ade6337a6aad5478fee22d2755",
+      "examples/public-demo-social/08-bookings.jpg": "e2b3e767dcc76291eecab7b08ba8c493b40d721443755827b0f1cd56a5372b53",
+      "examples/public-demo-social/09-travel-admin.jpg": "51b18ef07017c4021413e6734b1bfc7784adbc6ba1ec508d7c1b96692072387e",
+      "examples/public-demo-social/10-emergency-replacement.jpg": "7641534e7a08ceb8462fc771ce75b6c64f316244bf4c369c27dea945c983f8db"
+    }
+  },
+  "harness_files_sha256": {
+    "tools/activation_probe.py": "d904227c00451dbb5b42c7da6bc3564a7647c2eee774e8747d8bb873b921ff05",
+    "tools/tests/test_activation_probe.py": "1bf38904683b5e0e73241addbbb859ec220e166eddd3274c2c694341e9ba38e4"
+  },
+  "summary": {
+    "sessions": 10,
+    "cli_sessions": 9,
+    "appserver_sessions": 1,
+    "positive_sessions": 8,
+    "negative_controls": 2,
+    "positive_full_skill_tool_reads": 6,
+    "typed_full_input_injections": 1,
+    "positive_full_load_unverified": 1,
+    "initial_nested_write_blocks_retained": 1,
+    "corrected_nested_write_passes": 1,
+    "successful_readme_file_integrations": 3,
+    "independent_cli_probe_passes": 21,
+    "candidate_changes": 0,
+    "real_profile_installations": 0,
+    "promotions": 0
+  },
+  "cases": [
+    {
+      "id": "profile-intake-explicit",
+      "placement": "profile",
+      "source_provided": false,
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "full_command_output_reads": {
+        "alpaca-trading": false,
+        "example-skill": false,
+        "github-readme": false,
+        "github-repo-architect": false,
+        "github-social-preview": false,
+        "n8n-workflow": false,
+        "pihole-blocklist": false,
+        "pihole-csv-analyzer": false,
+        "powershell-refactor": false,
+        "proxmox-lxc": false,
+        "spec-writer": false,
+        "trip-email-html-itinerary": false
+      },
+      "changed": [],
+      "context_exact_catalog": true,
+      "personal_context_absent": true,
+      "auth_removed": true,
+      "status": "correct_intake_full_load_unverified",
+      "artifact_sha256": {
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+        "context.json": "8836a00f9f100003df9927607882712b10a847ba8464ea2048b444c30aec8983",
+        "context-gate.json": "747235d097658a60bd2be755a064402f471cc81ea3d0b98a11f78a4910868719",
+        "events.jsonl": "2435c747f514f19f61052b3bdedf69ddcda43d9cf8f48746589d95340f35b0aa",
+        "record.json": "2e331d0cbdaa41c9c6c9de2b2b0cf70f19216531e043492f36611fae2a031264",
+        "response.md": "e5b59ba0da0c00e91b4bfe9720b27af5936f9a14f443f3cba82cfb6b32cf8d01",
+        "stderr.txt": "3f341269d478a6736aad80893142e0b1a4e3caa3c0fe32d881db8adde6d59aa9"
+      },
+      "settings_sha256": "9457c60fdc0af1e0e1ed422ea2c8ccad2026af5a8fbef4510a243793c780ca98",
+      "elapsed_seconds": 12.063
+    },
+    {
+      "id": "profile-intake-implicit",
+      "placement": "profile",
+      "source_provided": false,
+      "task_sha256": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322",
+      "full_command_output_reads": {
+        "alpaca-trading": false,
+        "example-skill": false,
+        "github-readme": true,
+        "github-repo-architect": false,
+        "github-social-preview": false,
+        "n8n-workflow": false,
+        "pihole-blocklist": false,
+        "pihole-csv-analyzer": false,
+        "powershell-refactor": false,
+        "proxmox-lxc": false,
+        "spec-writer": false,
+        "trip-email-html-itinerary": false
+      },
+      "changed": [],
+      "context_exact_catalog": true,
+      "personal_context_absent": true,
+      "auth_removed": true,
+      "status": "bounded_activation_and_intake_pass",
+      "artifact_sha256": {
+        "task.txt": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322",
+        "context.json": "3d580203475b40c66dee7946a9b3f1ce731c5659d05f2e1de8168c4b7dc54a0b",
+        "context-gate.json": "747235d097658a60bd2be755a064402f471cc81ea3d0b98a11f78a4910868719",
+        "events.jsonl": "418e959126958100c7f3c4d6e8273259eb218852ded8541ee10265bb3b018830",
+        "record.json": "012c22b25c089b96615ad523d150095aae1b5604410fe42b59bc5d7b0cb3119e",
+        "response.md": "fd432e2732c97aa80fee5de6b4fa245ca0d11b3d46c203ddf25d8dbf49e382b5",
+        "stderr.txt": "911d9efd71973c3dd6647caa47e4aded2b0390f41a1d47b17c142383b7770574"
+      },
+      "settings_sha256": "855ef244bfb035460ef595290484f2df8eca8e23d6124c057b1d1c86f2f2f910",
+      "elapsed_seconds": 24.406
+    },
+    {
+      "id": "repo-nested-intake",
+      "placement": "repo",
+      "source_provided": false,
+      "task_sha256": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322",
+      "full_command_output_reads": {
+        "alpaca-trading": false,
+        "example-skill": false,
+        "github-readme": true,
+        "github-repo-architect": false,
+        "github-social-preview": false,
+        "n8n-workflow": false,
+        "pihole-blocklist": false,
+        "pihole-csv-analyzer": false,
+        "powershell-refactor": false,
+        "proxmox-lxc": false,
+        "spec-writer": false,
+        "trip-email-html-itinerary": false
+      },
+      "changed": [],
+      "context_exact_catalog": true,
+      "personal_context_absent": true,
+      "auth_removed": true,
+      "status": "bounded_activation_and_intake_pass",
+      "artifact_sha256": {
+        "task.txt": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322",
+        "context.json": "70807266cace03727badcc88c3054851195fc610defeb6ddd1c1166d6f7f2b83",
+        "context-gate.json": "747235d097658a60bd2be755a064402f471cc81ea3d0b98a11f78a4910868719",
+        "events.jsonl": "2b98b967f8b96de873fb9bc212ab5f7340e8dae4c233454a43682e6aa317ba1e",
+        "record.json": "08860c72e4cda27b7eba09e4b7ee8588cf53401c004c2dcf3d920f0c16205fa5",
+        "response.md": "7f58c182b0d946db861423b87b426461c673ce83a4fa43d62c1b123f610a5306",
+        "stderr.txt": "d6864a86cdac6f2da4bd5c96fec5da820286105a41a7fd39a5220db2abd6296b"
+      },
+      "settings_sha256": "ef3acda52c46462b2d9f4ee8d680979170bac27d56223e9d0cc96675ccf66d91",
+      "elapsed_seconds": 18.312
+    },
+    {
+      "id": "profile-source-explicit",
+      "placement": "profile",
+      "source_provided": true,
+      "task_sha256": "55e0e8a692111ee90bbe85472b6a22e1e8fd6981e91dab4be40b4a963a487893",
+      "full_command_output_reads": {
+        "alpaca-trading": false,
+        "example-skill": false,
+        "github-readme": true,
+        "github-repo-architect": false,
+        "github-social-preview": false,
+        "n8n-workflow": false,
+        "pihole-blocklist": false,
+        "pihole-csv-analyzer": false,
+        "powershell-refactor": false,
+        "proxmox-lxc": false,
+        "spec-writer": false,
+        "trip-email-html-itinerary": false
+      },
+      "changed": [
+        "README.md"
+      ],
+      "context_exact_catalog": true,
+      "personal_context_absent": true,
+      "auth_removed": true,
+      "status": "bounded_activation_and_file_integration_pass",
+      "artifact_sha256": {
+        "task.txt": "55e0e8a692111ee90bbe85472b6a22e1e8fd6981e91dab4be40b4a963a487893",
+        "context.json": "c97be00e193a0a2def96d27ddd501e76b437d24cc205803c7e4d47f2b45a2f84",
+        "context-gate.json": "747235d097658a60bd2be755a064402f471cc81ea3d0b98a11f78a4910868719",
+        "events.jsonl": "af92dbd0f91f3807cd518897e2ff141c347ec9dffbe11de6a9e9e7b9a284d66a",
+        "record.json": "b4b26b5a04103ae57cb5c67c47eeedf21cd3b8d180d83d45d15675f172e9c221",
+        "response.md": "cf09e658ec287fd8f6649c64287bca0da74355d55cdc75e88d4927a653cfe22f",
+        "stderr.txt": "ac9ddeba0678f98dfae915cb28a08207247f3dc84cda75454a1d7e0550a27a32"
+      },
+      "settings_sha256": "0a4cd7b51db46b969c183217e3819cecd58aaa1be10ae41bf19c97ba90db1cec",
+      "elapsed_seconds": 65.437,
+      "readme_sha256": "3d7d2f0a47120c9af37eec48dc103e29a7e1161c23c2f91eb0bc7d8f7ca3406f",
+      "license_last": true,
+      "independent_cli_probes": [
+        {
+          "id": "default",
+          "passed": true,
+          "exit_code": 0,
+          "stdout": "Devices: 2\n",
+          "stderr": ""
+        },
+        {
+          "id": "all_json",
+          "passed": true,
+          "exit_code": 0,
+          "stdout": "{\"devices\": 3}\n",
+          "stderr": ""
+        },
+        {
+          "id": "environment_all",
+          "passed": true,
+          "exit_code": 0,
+          "stdout": "Devices: 3\n",
+          "stderr": ""
+        },
+        {
+          "id": "explicit_override",
+          "passed": true,
+          "exit_code": 0,
+          "stdout": "Devices: 2\n",
+          "stderr": ""
+        },
+        {
+          "id": "invalid_environment",
+          "passed": true,
+          "exit_code": 2,
+          "stdout": "",
+          "stderr": "usage: -c [-h] --input INPUT [--state {active,all}] [--format {text,json}]\n-c: error: INVENTORY_STATE must be active or all\n"
+        },
+        {
+          "id": "invalid_format",
+          "passed": true,
+          "exit_code": 2,
+          "stdout": "",
+          "stderr": "usage: -c [-h] --input INPUT [--state {active,all}] [--format {text,json}]\n-c: error: argument --format: invalid choice: 'yaml' (choose from text, json)\n"
+        },
+        {
+          "id": "missing_input",
+          "passed": true,
+          "exit_code": 2,
+          "stdout": "",
+          "stderr": "usage: -c [-h] --input INPUT [--state {active,all}] [--format {text,json}]\n-c: error: the following arguments are required: --input\n"
+        }
+      ]
+    },
+    {
+      "id": "profile-source-implicit",
+      "placement": "profile",
+      "source_provided": true,
+      "task_sha256": "3d7691d4b091d5a52796fe2fa240971373809aaf2966c3568f31cc604c57036b",
+      "full_command_output_reads": {
+        "alpaca-trading": false,
+        "example-skill": false,
+        "github-readme": true,
+        "github-repo-architect": false,
+        "github-social-preview": false,
+        "n8n-workflow": false,
+        "pihole-blocklist": false,
+        "pihole-csv-analyzer": false,
+        "powershell-refactor": false,
+        "proxmox-lxc": false,
+        "spec-writer": false,
+        "trip-email-html-itinerary": false
+      },
+      "changed": [
+        "README.md"
+      ],
+      "context_exact_catalog": true,
+      "personal_context_absent": true,
+      "auth_removed": true,
+      "status": "bounded_activation_and_file_integration_pass",
+      "artifact_sha256": {
+        "task.txt": "3d7691d4b091d5a52796fe2fa240971373809aaf2966c3568f31cc604c57036b",
+        "context.json": "65f64f6a7819ef49e0acd7d9f997556f97f10027f93296814b18ef58595a9dc6",
+        "context-gate.json": "747235d097658a60bd2be755a064402f471cc81ea3d0b98a11f78a4910868719",
+        "events.jsonl": "6cc2744552035ff441e8f4c52ed765b28163482d85e722802a038697d08600ae",
+        "record.json": "e1fe448374f556e8cf4bdc17a68331f3bc411c75e1da65ba280bacbfc57c32c6",
+        "response.md": "adf3f197e050e5adc1bcaa3b13bd2acd43b97eea22e57a6316781c9e28e9a8ff",
+        "stderr.txt": "6d415211aae091c761931019ed99125d9e57e5ca84110dfac6ad5c721b6b49be"
+      },
+      "settings_sha256": "0cf3ef2c6a85cf6077a552c53c868b281b8817dadd9e953b724f66c98e1fd2ff",
+      "elapsed_seconds": 83.156,
+      "readme_sha256": "10eff47ebab6276403c414761756a57da8e49266b18ab45889ef4b77aedd13ae",
+      "license_last": true,
+      "independent_cli_probes": [
+        {
+          "id": "default",
+          "passed": true,
+          "exit_code": 0,
+          "stdout": "Devices: 2\n",
+          "stderr": ""
+        },
+        {
+          "id": "all_json",
+          "passed": true,
+          "exit_code": 0,
+          "stdout": "{\"devices\": 3}\n",
+          "stderr": ""
+        },
+        {
+          "id": "environment_all",
+          "passed": true,
+          "exit_code": 0,
+          "stdout": "Devices: 3\n",
+          "stderr": ""
+        },
+        {
+          "id": "explicit_override",
+          "passed": true,
+          "exit_code": 0,
+          "stdout": "Devices: 2\n",
+          "stderr": ""
+        },
+        {
+          "id": "invalid_environment",
+          "passed": true,
+          "exit_code": 2,
+          "stdout": "",
+          "stderr": "usage: -c [-h] --input INPUT [--state {active,all}] [--format {text,json}]\n-c: error: INVENTORY_STATE must be active or all\n"
+        },
+        {
+          "id": "invalid_format",
+          "passed": true,
+          "exit_code": 2,
+          "stdout": "",
+          "stderr": "usage: -c [-h] --input INPUT [--state {active,all}] [--format {text,json}]\n-c: error: argument --format: invalid choice: 'yaml' (choose from text, json)\n"
+        },
+        {
+          "id": "missing_input",
+          "passed": true,
+          "exit_code": 2,
+          "stdout": "",
+          "stderr": "usage: -c [-h] --input INPUT [--state {active,all}] [--format {text,json}]\n-c: error: the following arguments are required: --input\n"
+        }
+      ]
+    },
+    {
+      "id": "repo-nested-source",
+      "placement": "repo",
+      "source_provided": true,
+      "task_sha256": "ab4d5fe219583907faa116dfaa8f7f13c279db437d01f727dc2285e483badeb5",
+      "full_command_output_reads": {
+        "alpaca-trading": false,
+        "example-skill": false,
+        "github-readme": true,
+        "github-repo-architect": false,
+        "github-social-preview": false,
+        "n8n-workflow": false,
+        "pihole-blocklist": false,
+        "pihole-csv-analyzer": false,
+        "powershell-refactor": false,
+        "proxmox-lxc": false,
+        "spec-writer": false,
+        "trip-email-html-itinerary": false
+      },
+      "changed": [],
+      "context_exact_catalog": true,
+      "personal_context_absent": true,
+      "auth_removed": true,
+      "status": "activation_observed_file_write_blocked_by_fixture_scope",
+      "artifact_sha256": {
+        "task.txt": "ab4d5fe219583907faa116dfaa8f7f13c279db437d01f727dc2285e483badeb5",
+        "context.json": "db84822e146cbcc58b3e284fd300c6013f4e628028c6f78f6a18acffca0dfb57",
+        "context-gate.json": "747235d097658a60bd2be755a064402f471cc81ea3d0b98a11f78a4910868719",
+        "events.jsonl": "b5980df2fda3aec9f8016fba970bd3ceb1379553a959bf38966f1dee8512a2d6",
+        "record.json": "5a0e96ee04c75931ebd43bb5516e38217fbbf408540094d2998d2281d2abf638",
+        "response.md": "21961df5ff71ee3475e1e5dcb8fdf47d045214a41871c4c7e720c883765bb826",
+        "stderr.txt": "e69bf8204d8f55b4cb71d0bba1865c9c4edb3fe964791eb45df01a714cf4439b"
+      },
+      "settings_sha256": "e9ed34ed8ad330b27c8a864e5c0e09ae71df4896198ffedcfff0ea125c24a163",
+      "elapsed_seconds": 64.032,
+      "finding": "Native refusal is correct: child cwd was writable but parent synthetic repository was not. Original artifact remains unchanged."
+    },
+    {
+      "id": "profile-negative",
+      "placement": "profile",
+      "source_provided": false,
+      "task_sha256": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253",
+      "full_command_output_reads": {
+        "alpaca-trading": false,
+        "example-skill": false,
+        "github-readme": false,
+        "github-repo-architect": false,
+        "github-social-preview": false,
+        "n8n-workflow": false,
+        "pihole-blocklist": false,
+        "pihole-csv-analyzer": false,
+        "powershell-refactor": false,
+        "proxmox-lxc": false,
+        "spec-writer": false,
+        "trip-email-html-itinerary": false
+      },
+      "changed": [],
+      "context_exact_catalog": true,
+      "personal_context_absent": true,
+      "auth_removed": true,
+      "status": "negative_control_pass",
+      "artifact_sha256": {
+        "task.txt": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253",
+        "context.json": "fbcc17b6f41ee0e06d6368934fabcfb31972a9cc484ed597a0c67fba8662eafd",
+        "context-gate.json": "747235d097658a60bd2be755a064402f471cc81ea3d0b98a11f78a4910868719",
+        "events.jsonl": "4be1ef44a502cc343fdb51ad639d0803853697ec0a4c10a9ff547b007c598e28",
+        "record.json": "c7b8ebe4a715d4f68de37714ceae6aa91dca87dc3fe37fe31a07e973a68163a8",
+        "response.md": "7f2253d7e228b22a08bda1f09c516f6fead81df6536eb02fa991a34bb38d9be8",
+        "stderr.txt": "5bbf80ed4f954715183b26ca8d8475716faf1b9cce00708d9e5689dffff453f4"
+      },
+      "settings_sha256": "2ea986fd7fccd6a9290dc7cb4497791fb354efc974c4dc6faea0f5e172cfbbf8",
+      "elapsed_seconds": 4.265
+    },
+    {
+      "id": "repo-nested-negative",
+      "placement": "repo",
+      "source_provided": false,
+      "task_sha256": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253",
+      "full_command_output_reads": {
+        "alpaca-trading": false,
+        "example-skill": false,
+        "github-readme": false,
+        "github-repo-architect": false,
+        "github-social-preview": false,
+        "n8n-workflow": false,
+        "pihole-blocklist": false,
+        "pihole-csv-analyzer": false,
+        "powershell-refactor": false,
+        "proxmox-lxc": false,
+        "spec-writer": false,
+        "trip-email-html-itinerary": false
+      },
+      "changed": [],
+      "context_exact_catalog": true,
+      "personal_context_absent": true,
+      "auth_removed": true,
+      "status": "negative_control_pass",
+      "artifact_sha256": {
+        "task.txt": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253",
+        "context.json": "98f3cdd2375ec189e9f358a04e397ad4759c6159413568c5ea9205c6d3aa6996",
+        "context-gate.json": "747235d097658a60bd2be755a064402f471cc81ea3d0b98a11f78a4910868719",
+        "events.jsonl": "e8ec4017d56e9a1bb2823345a4fb026687be3ebc72ce48f170dcb29d08a3d012",
+        "record.json": "06a0b3bb113f2c749ef2200180f4776440ad8e1f9260b6456c3113158e19eed5",
+        "response.md": "7f2253d7e228b22a08bda1f09c516f6fead81df6536eb02fa991a34bb38d9be8",
+        "stderr.txt": "ce3eae5513114b08fca8e2a48a9dcbe4849dd55631e5e95ed41461fcd5497b73"
+      },
+      "settings_sha256": "ece6908af496463f17999e8d3c81638f684f5beafb0b8889449cc93c3004a66b",
+      "elapsed_seconds": 4.297
+    },
+    {
+      "id": "repo-nested-source-writable-root",
+      "placement": "repo",
+      "source_provided": true,
+      "task_sha256": "ab4d5fe219583907faa116dfaa8f7f13c279db437d01f727dc2285e483badeb5",
+      "full_command_output_reads": {
+        "alpaca-trading": false,
+        "example-skill": false,
+        "github-readme": true,
+        "github-repo-architect": false,
+        "github-social-preview": false,
+        "n8n-workflow": false,
+        "pihole-blocklist": false,
+        "pihole-csv-analyzer": false,
+        "powershell-refactor": false,
+        "proxmox-lxc": false,
+        "spec-writer": false,
+        "trip-email-html-itinerary": false
+      },
+      "changed": [
+        "README.md"
+      ],
+      "context_exact_catalog": true,
+      "personal_context_absent": true,
+      "auth_removed": true,
+      "status": "bounded_activation_and_file_integration_pass",
+      "artifact_sha256": {
+        "task.txt": "ab4d5fe219583907faa116dfaa8f7f13c279db437d01f727dc2285e483badeb5",
+        "context.json": "1fd9a9827d080c6f6f9dd44b8d645d2bcd7f439adf4f33bce63fb5e89594efab",
+        "context-gate.json": "747235d097658a60bd2be755a064402f471cc81ea3d0b98a11f78a4910868719",
+        "events.jsonl": "df509fcd14206bb5a9fa1ebf58d187985a637b9496e15e3f63f96894d0c6122a",
+        "record.json": "a10842b7739037fb4ade0da5767a736b0557b44eb6cd6f4b2f125fab7cb3dad2",
+        "response.md": "8e9d72d734e4d09bd1f674dad15e526bc9e4529db98248c663795e562fae3623",
+        "stderr.txt": "2b52cf2cc71fe7791ca34f100430066b5f9cc9441d06cb720fa9f283a0117d8e"
+      },
+      "settings_sha256": "e881b5e414253d71def1450b7ab87ce3228b02b1afa11330ccf5d90a66373f31",
+      "elapsed_seconds": 74.219,
+      "readme_sha256": "6173260bc721bd5c008dc8231d8921b3fab550b0511e1200ae90992f155a3e98",
+      "license_last": true,
+      "independent_cli_probes": [
+        {
+          "id": "default",
+          "passed": true,
+          "exit_code": 0,
+          "stdout": "Devices: 2\n",
+          "stderr": ""
+        },
+        {
+          "id": "all_json",
+          "passed": true,
+          "exit_code": 0,
+          "stdout": "{\"devices\": 3}\n",
+          "stderr": ""
+        },
+        {
+          "id": "environment_all",
+          "passed": true,
+          "exit_code": 0,
+          "stdout": "Devices: 3\n",
+          "stderr": ""
+        },
+        {
+          "id": "explicit_override",
+          "passed": true,
+          "exit_code": 0,
+          "stdout": "Devices: 2\n",
+          "stderr": ""
+        },
+        {
+          "id": "invalid_environment",
+          "passed": true,
+          "exit_code": 2,
+          "stdout": "",
+          "stderr": "usage: -c [-h] --input INPUT [--state {active,all}] [--format {text,json}]\n-c: error: INVENTORY_STATE must be active or all\n"
+        },
+        {
+          "id": "invalid_format",
+          "passed": true,
+          "exit_code": 2,
+          "stdout": "",
+          "stderr": "usage: -c [-h] --input INPUT [--state {active,all}] [--format {text,json}]\n-c: error: argument --format: invalid choice: 'yaml' (choose from text, json)\n"
+        },
+        {
+          "id": "missing_input",
+          "passed": true,
+          "exit_code": 2,
+          "stdout": "",
+          "stderr": "usage: -c [-h] --input INPUT [--state {active,all}] [--format {text,json}]\n-c: error: the following arguments are required: --input\n"
+        }
+      ],
+      "revision_of": "repo-nested-source",
+      "correction": "Additional writable root is this disposable synthetic repository only; same task and unchanged candidates."
+    },
+    {
+      "id": "profile-structured-explicit",
+      "transport": "native app-server stdio with typed skill input",
+      "status": "bounded_explicit_injection_and_intake_pass",
+      "full_recorded_input_injection": true,
+      "injected_skill_sha256": "6de16e74b7ff7ca37b77cff99ba90506e7e11afeea0f4a00827bd8176b2c6f56",
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "task_matches_cli_plain_marker_case": true,
+      "source_provided": false,
+      "context_exact_catalog": true,
+      "auth_removed": true,
+      "changed": [],
+      "artifact_sha256": {
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+        "context.json": "2cfc78ab57c907ed309bf873b0b786878e8353676b84660aff08f02f6cec4f9c",
+        "input.json": "4d965d4d99802facba5deb315cd8a0f44a4ecb20c166b75e38d42d58f15c413f",
+        "requests.jsonl": "c350fe2ca11a54eaa2a6e703ec24453223a6b136c890ac9e9490f20c3d5a5f94",
+        "events.jsonl": "c52aee51c096d0cf6264c50dea1b456f1ef7f3033ab63ffbf97a1940e09929de",
+        "recorded-inputs.json": "4bb525c988a0507fe4a89d980021cb9beb892e9afb000beebcc8d82b680c7932",
+        "record.json": "c6f3489ad227b76e580d76f6bc97cbd92d522306205f0698329244214be36247",
+        "rollout.jsonl": "97ee75633f19065e5ce32873337ee98aa8d618640301c5a669b8deadd917c623",
+        "skills-list.json": "5e6c6072bf59d1d9c5e1b59525af562fc68541605927e90c70892a540da4de9b",
+        "thread-start.json": "a5891db642ed0d9589f70c707a56a4be6df5c21d8abd63339555477e58f01044",
+        "thread-read.json": "505a03367ff688e09450eac0e21cecd6517ab76ecaec91a833adfc4df46daebc",
+        "response.md": "0a5d05050c384f94d682868cd3545d2ae8dd47ef3340c8e6ff3497d8d59fbce9",
+        "settings.json": "24ed3b4e4ae97c8c3554e13bdd3cf442c284829082e75b521c9ddb1ce02ccb04",
+        "stderr.txt": "bf4f19af74afbc47501159609d8c6e45435872104fd5fe71db8243d83becad3a"
+      }
+    }
+  ],
+  "path_decisions": [
+    {
+      "prior_path": "nested repository implicit intake",
+      "current_evidence": [
+        "repo-nested-intake",
+        "repo-nested-source-writable-root"
+      ],
+      "decision": "Bounded current full load observed; original missing-read run retained."
+    },
+    {
+      "prior_path": "disposable profile implicit intake",
+      "current_evidence": [
+        "profile-intake-implicit"
+      ],
+      "decision": "Bounded current full load observed after clarifying allowed catalog resources; no causal attribution from one sample."
+    },
+    {
+      "prior_path": "disposable profile supplied README",
+      "current_evidence": [
+        "profile-source-implicit",
+        "profile-source-explicit"
+      ],
+      "decision": "Bounded current full loads and actual file integrations observed; original missing-read run retained."
+    },
+    {
+      "prior_path": "plain-text explicit missing-input invocation",
+      "current_evidence": [
+        "profile-intake-explicit"
+      ],
+      "decision": "Still no complete SKILL.md tool read. Correct intake and capabilities read do not prove full loading. Keep this literal-text path unverified."
+    },
+    {
+      "prior_path": "documented typed native explicit invocation",
+      "current_evidence": [
+        "profile-structured-explicit"
+      ],
+      "decision": "Full exact current SKILL.md present in recorded injected user input. Native explicit route verified separately from literal CLI text."
+    }
+  ],
+  "assessment": "No wrong-skill routing or candidate defect demonstrated. Fixes target evaluation boundaries and explicit invocation evidence. Preserve one literal-text observability gap and the initial correctly enforced nested write block; no whole-host/repeatability certification.",
+  "assessor_corrections": [
+    {
+      "issue": "Initial focused tests could not create nested files in the sandbox-owned temporary directory.",
+      "resolution": "Same tests pass with writable normal test temporary storage; no product change inferred."
+    },
+    {
+      "issue": "An initial assessor required aggregate command exit 0 for a complete skill read.",
+      "resolution": "Corrected to recognize exact full body in completed tool output. The nested correction read full SKILL.md successfully before a later no-match search made its compound command return 1. Native outputs unchanged; dedicated regression added. Command success is not inferred."
+    }
+  ],
+  "open_limits": [
+    "Literal-text explicit missing-input CLI case still lacks complete observed SKILL.md load; capabilities-only read and correct intake insufficient.",
+    "One configured Windows CLI/app-server build/model, small unseeded samples; boundary correction is not isolated causal or statistical reliability proof.",
+    "Original historical missing-read cases remain unchanged; new bounded evidence does not alter their traces.",
+    "Real installed/global routing, additional hosts/models, provider context and tool guarantees, broad repeatability remain unverified.",
+    "Windows Unicode stdin, browser rendering, Obsidian/app handoffs and live integrations unchanged/open."
+  ],
+  "acceptance_promotion": "All 36 prior recorded bounded skill acceptances and separate workout revision remain unchanged. No new acceptance scope or promotion.",
+  "validation": {
+    "focused_tests": 8,
+    "focused_status": "passed",
+    "independent_cli_probe_passes": 21,
+    "candidate_source_preservation": "passed",
+    "auth_cleanup": "passed",
+    "final_repository_checks": {
+      "skills": 46,
+      "issues": 0,
+      "status": "passed"
+    },
+    "delivery_ci": "Check final published head separately.",
+    "offline_contracts": {
+      "cases": 24,
+      "negative_checks": 99,
+      "actual_model_evaluations": 0,
+      "status": "passed"
+    },
+    "acceptance_preservation": "All prior acceptance/promotion fields and summary counts unchanged",
+    "privacy_and_whitespace": "passed",
+    "historical_fixtures": "No prior tracked fixture changed",
+    "source_and_generated": "No source/master/adapter/generated/model changes; current native bundle hashes match prior verified delivery",
+    "local_broad_suite": "Not repeated for documentation/evaluation-only continuation; eight affected harness regressions and actual native checks pass. Broad suite and 13 hosted checks passed on prior delivery 9422cc0; final hosted checks verified separately."
+  }
+}

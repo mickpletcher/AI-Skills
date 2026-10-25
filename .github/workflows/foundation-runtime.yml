@@ -1,0 +1,62 @@
+name: Foundation synthetic Linux runtime
+on:
+  pull_request:
+    paths:
+      - 'master-skills/github-repo-architect/**'
+      - 'evaluations/fixtures/foundation-runtime/**'
+      - 'evaluations/fixtures/foundation-pilot.json'
+      - 'tools/run_foundation_runtime.py'
+      - '.github/workflows/foundation-runtime.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.12', '3.13', '3.14']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Provision trusted test tools
+        run: python -m pip install pip==26.2.1 setuptools==84.0.0 wheel==0.48.0 pytest==8.4.2 ruff==0.16.6
+      - name: Replay reviewed artifacts without network access
+        run: sudo unshare --net -- runuser -u "$(id -un)" -- "$pythonLocation/bin/python" tools/run_foundation_runtime.py --output "$RUNNER_TEMP/python-runtime.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: foundation-python-${{ matrix.python }}
+          path: |
+            ${{ runner.temp }}/python-runtime.json
+            ${{ runner.temp }}/python-runtime/
+          if-no-files-found: error
+  powershell:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Provision trusted test modules
+        shell: pwsh
+        run: |
+          Save-Module Pester -RequiredVersion 5.7.1 -Path "$env:RUNNER_TEMP/foundation-modules" -Repository PSGallery -Force
+          Save-Module PSScriptAnalyzer -RequiredVersion 1.25.0 -Path "$env:RUNNER_TEMP/foundation-modules" -Repository PSGallery -Force
+      - name: Replay reviewed proposals without network access
+        shell: pwsh
+        run: |
+          sudo unshare --net -- runuser -u (whoami) -- pwsh -NoProfile -NonInteractive -File evaluations/fixtures/foundation-runtime/Run-Contracts.ps1 -ModuleRoot "$env:RUNNER_TEMP/foundation-modules" -OutputPath "$env:RUNNER_TEMP/powershell-runtime.json"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: foundation-powershell
+          path: ${{ runner.temp }}/powershell-runtime.json
+          if-no-files-found: error

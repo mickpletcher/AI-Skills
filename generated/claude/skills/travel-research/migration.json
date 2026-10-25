@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "skill": "travel-research",
+  "source": "claude/skills/travel-research/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "68566daa4e4dee12740eebe887b21a9caf14275269bbb302d7577ff18a26fe11",
+  "source_frontmatter": {
+    "name": "travel-research",
+    "description": "Research and compare destinations with deeper scoring across budget, climate, logistics, activity fit, and seasonal tradeoffs before moving into full trip planning.",
+    "version": "1.2.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {
+    "`claude/skills/travel-planning/SKILL.md`": "the `travel-planning` skill, if available in the current host",
+    "`claude/skills/travel-itinerary/SKILL.md`": "the `travel-itinerary` skill, if available in the current host"
+  },
+  "supporting_files_sha256": {},
+  "retained_in_original_sha256": {
+    "README.md": "193799719d9a7ec921ce04de9e4131fd19456cf69fb567db03d03a1bccca3389",
+    "completedchanges.md": "5cc09278a4591e2053c0e0397d891d052def73873be8a52cbe0c39183aed03f4",
+    "travel-research.skill": "d14a5bd48d11b214978b81c839d64390d7f2359e1a0b949c3128215ac3a6e2d2",
+    "upgrades.md": "39bd943258c762cbc20b0209ec5f07e01d0bdd2d24d3ff1474613d6b53b08dd4"
+  },
+  "added_supporting_files": {
+    "shared/skill-standard.md": {
+      "sha256": "3d71908c6f2f5c9fc0385bf0dd92d2d2b224cad4ebac9a4a16f0bb838f3a722c",
+      "reason": "Bundle the repository authoring standard referenced by the unchanged skill so standalone generated candidates can resolve shared/skill-standard.md without reading outside their bundle."
+    }
+  }
+}

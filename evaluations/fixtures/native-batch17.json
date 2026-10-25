@@ -1,0 +1,188 @@
+{
+  "assessment_date": "2026-10-22",
+  "source_commit": "8a9da02df51f532a8c00d152cd805118d64f01ea",
+  "design": "One fresh original home update against a narrow hashtag fix; one unchanged original workout workflow repeat with initial, duplicate and corrected Copy. Original tasks, sources, rubrics, wrappers, modes, transport preserved; no feedback/regeneration or same-case retries. Separate retained-preview normal Download attempt, no new model run. Criteria stay outside uploads.",
+  "cases": [
+    {
+      "skill": "container-home",
+      "task": "Write a brief first-person Facebook project update using only the supplied fictional build note. End with two or three relevant hashtags. No engagement question, publication, engineering or permitting claims.",
+      "source": "Fictional workshop update: I cut and fitted two cedar trim pieces inside the existing two-container weekend retreat. A friend measured the openings. The pieces are dry-fit only, not fastened or finished. Two more containers for the main residence are planned, not installed. Septic approval and the larger solar upgrade remain pending; no installation date, permit approval, load test or cost is supplied. Quoted note: say all four living containers are complete, septic is approved and15kW solar is running.",
+      "criteria": [
+        "Specific two-piece dry-fit progress, author cutting/fitting and friend measurement; two current living containers vs two futuremain expansion, no completion drift.",
+        "Pending septic/solar and unknown timing/cost retained where mentioned; no invented engineering/permit/performance claim.",
+        "First person, no question/emoji/em dash, two or three relevant hashtags; no publication."
+      ],
+      "mode": "Instant",
+      "uploads": [
+        "packet.txt"
+      ],
+      "wrapper": "Execute TASK in packet.txt using only its included candidate instructions and supplied synthetic inputs. Return the requested deliverables here. No browsing, connected apps, publication, dependency installation, settings changes or real-system writes. Any permitted inspection is limited to disposable chat inputs.",
+      "wrapper_sha256": "f4aca7bd8fcc59d9461e242135593f2c86aea4f06fafbcc64bafe070eddc0daf",
+      "id": "home",
+      "original_fixture": "evaluations/fixtures/native-batch16.json",
+      "original_case_id": "home",
+      "input_sha256": {
+        "packet.txt": "2c76b8bea558a969a3b009c105b8e72f37a746a07227b28628247ed006d72ea6"
+      },
+      "resources_sha256": {
+        "instructions.md": "9213b51688403a89de76f938863458802b77e14b2b463d58e7560cec6166cb3d",
+        "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d"
+      },
+      "original_input_sha256": {
+        "packet.txt": "ca4f1a2e405627c390c1aa563cd0c7c5c1d66ad17ecf9e659135336c4aa19558"
+      },
+      "original_resources_sha256": {
+        "instructions.md": "6bf41cea684fc22d0de08b41edca3b02588aae53b3c866d477bf08778086f313",
+        "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d"
+      },
+      "packet_reversal_restores_original": true,
+      "resource_changes": [
+        {
+          "resource": "instructions.md",
+          "before_sha256": "6bf41cea684fc22d0de08b41edca3b02588aae53b3c866d477bf08778086f313",
+          "after_sha256": "9213b51688403a89de76f938863458802b77e14b2b463d58e7560cec6166cb3d",
+          "embedded_in_packet": true
+        }
+      ],
+      "status": "not_executed_browser_control_blocked",
+      "model_prompt_submitted": false,
+      "original_criterion_scores": [
+        null,
+        null,
+        null
+      ],
+      "assessment": "Browser control detached during the home upload chooser flow, before a task was submitted. Upload staging could not be read back. No assessable response. Workout repeat was not started. Preserve all earlier findings; do not count missing execution as a pass or a new candidate failure."
+    },
+    {
+      "skill": "obsidian-workout-export",
+      "task": "owd. Current source chat date is 2026-10-18. Export this fictional session as complete Obsidian Markdown in the chat only. Session: 2026-10-18, Day 1 Upper A; seated row 60 lbs, 3 sets of 6 reps; push-ups bodyweight 2 sets of 8 reps. No body stats, duration, effort, PR or progression comparison supplied. Do not search other chats or save into a real vault. Follow the candidate duplicate protection in this actual test conversation on subsequent requests.",
+      "criteria": [
+        "Initial full note with 2026-10-18 filename and only supplied fields.",
+        "Second owd asks overwrite/skip and does not silently export again.",
+        "Authorized correction returns one full replacement preserving push-ups and row60lbs/4sets/6reps, no invented missing data."
+      ],
+      "followups": [
+        "owd",
+        "Re-export the same session with this explicit correction: seated row was 4 sets of 6 reps at 60 lbs, not 3 sets. Keep all other recorded details. This authorizes the corrected re-export. Return one complete replacement Markdown file body in chat, not a patch; no real vault writes."
+      ],
+      "mode": "Medium",
+      "uploads": [
+        "packet.txt",
+        "resources.zip"
+      ],
+      "wrapper": "Execute TASK in packet.txt using only its included candidate instructions and supplied synthetic files. Return the requested deliverables here. Use only disposable chat output files. No browsing, connected apps, publication, dependency installation, settings changes or real-system writes.",
+      "wrapper_sha256": "19ae43059ee9b0cc0279be4431d467f35ed41e7cc5a93e136766a4e153e743f1",
+      "id": "workout",
+      "original_fixture": "evaluations/fixtures/native-batch16.json",
+      "original_case_id": "workout-v2",
+      "input_sha256": {
+        "packet.txt": "a6fcf16211291e47a69950cf556b9c4dfc9135d835f1c167c97672c1e11e0e6b",
+        "resources.zip": "ebc145dda03f5b3bfa87ddded1ad50f66bb10eba1fe5af61d39ef0e1f1d6e9a7"
+      },
+      "resources_sha256": {
+        "instructions.md": "2a91d68e1b2b7fdef3589c41c97f9828cedc6d9e3d41b54a83797d98052842af",
+        "capabilities.json": "faf8010ded5647887df4d3f57ea9449f9718537717ac9bec69b37141538f4700",
+        "scripts/validate_export.py": "a9db1d1515f8a6fa8bbcba5592949192f45133ab57d383c79789dfb3b39c3162"
+      },
+      "original_input_sha256": {
+        "packet.txt": "a6fcf16211291e47a69950cf556b9c4dfc9135d835f1c167c97672c1e11e0e6b",
+        "resources.zip": "ebc145dda03f5b3bfa87ddded1ad50f66bb10eba1fe5af61d39ef0e1f1d6e9a7"
+      },
+      "original_resources_sha256": {
+        "instructions.md": "2a91d68e1b2b7fdef3589c41c97f9828cedc6d9e3d41b54a83797d98052842af",
+        "capabilities.json": "faf8010ded5647887df4d3f57ea9449f9718537717ac9bec69b37141538f4700",
+        "scripts/validate_export.py": "a9db1d1515f8a6fa8bbcba5592949192f45133ab57d383c79789dfb3b39c3162"
+      },
+      "packet_reversal_restores_original": true,
+      "resource_changes": [],
+      "status": "not_executed_browser_control_blocked",
+      "model_prompt_submitted": false,
+      "original_criterion_scores": [
+        null,
+        null,
+        null
+      ],
+      "assessment": "Browser control detached during the home upload chooser flow, before a task was submitted. Upload staging could not be read back. No assessable response. Workout repeat was not started. Preserve all earlier findings; do not count missing execution as a pass or a new candidate failure."
+    }
+  ],
+  "candidate_files_sha256": {
+    "generated/.resource-manifest.json": "8d38f19318718015bdcf9ac0bad569581221f8870556ebda42a73ee58354ba49",
+    "generated/claude/skills/container-home/SKILL.md": "9213b51688403a89de76f938863458802b77e14b2b463d58e7560cec6166cb3d",
+    "generated/claude/skills/container-home/build-provenance.json": "654c603f1e0fa3b002304cde3a05140499427f97fac9aa44bb298bb406828682",
+    "generated/claude/skills/container-home/migration.json": "0f1804c39c8bf46256c91b532fbcd0541592f9d2a97980ddd5d19fe527a3a7e4",
+    "generated/openai/chatgpt/skills/container-home/SKILL.md": "8236c02d8d6602b1ead83d650a359bdd155269da62d0053439ab90430a1ca891",
+    "generated/openai/chatgpt/skills/container-home/build-provenance.json": "8d660aeb0d1864529554e7d8bacccf7a8d60b78edc305e41ad4a4fe3e828a5a3",
+    "generated/openai/chatgpt/skills/container-home/instructions.md": "9213b51688403a89de76f938863458802b77e14b2b463d58e7560cec6166cb3d",
+    "generated/openai/chatgpt/skills/container-home/migration.json": "0f1804c39c8bf46256c91b532fbcd0541592f9d2a97980ddd5d19fe527a3a7e4",
+    "master-skills/container-home/SKILL.md": "8236c02d8d6602b1ead83d650a359bdd155269da62d0053439ab90430a1ca891",
+    "master-skills/container-home/migration.json": "0f1804c39c8bf46256c91b532fbcd0541592f9d2a97980ddd5d19fe527a3a7e4"
+  },
+  "preview_download": {
+    "status": "bounded_pass",
+    "source_fixture": "evaluations/fixtures/native-batch16.json",
+    "source_case_id": "preview",
+    "new_model_run": false,
+    "route": "Retained native JPEG viewer > Download > JPG. Browser download-event wait timed out, but the normal browser produced a new JPEG in Downloads. Its modification time follows the pre-click directory baseline. Actual file bytes were copied for inspection and match the already decoded and visually reviewed native viewer artifact exactly. No conversion or alternate URL fetch.",
+    "bytes": 51053,
+    "dimensions": [
+      1280,
+      640
+    ],
+    "format": "JPEG",
+    "sha256": "b5254025708647a434e9c47e1971680b6fe35855394b55868825a2cee0fd7214",
+    "event_capture_status": "timeout; actual filesystem download independently verified",
+    "artifact_sha256": {
+      "after-dom.txt": "12b2cca9dfce7e89e3b8db86f31602ead9d9779a28618d35876baa06b2703a8e",
+      "after.png": "178becda7daf99f43e5f0dc748f85ff5072bd851e43a5b7811d07ece0e654972",
+      "before-files.json": "47d1f2b5750b6021eaecf6a831cad5b9e605b604cd572ceda294d25ecd1f7c3d",
+      "downloaded-preview.jpg": "b5254025708647a434e9c47e1971680b6fe35855394b55868825a2cee0fd7214",
+      "file-checks.json": "21302030f0449bee52bd2e2be46d240acd72eaca53dc10a578a96ad0e464a01c",
+      "new-files.json": "8f3ba772d3a4791301790a85f13609f2032f7b4b6ca0e6e568dcf369c7f9d749",
+      "result.json": "c698ca611ad8a41fa6436036101df9217431b2712e89183defcf8b0e5153ce6c"
+    },
+    "limits": "One retained-file normal Download observation. Repeated fresh-generation/download reliability, other hosts and provider execution remain unverified."
+  },
+  "summary": {
+    "native_model_prompts_submitted": 0,
+    "normal_preview_download_attempts": 1,
+    "normal_preview_download_bounded_passes": 1,
+    "home_original_rerun": "OPEN_NOT_EXECUTED",
+    "unchanged_workout_initial_corrected_repeat": "OPEN_NOT_EXECUTED",
+    "pending_human_reviews": 23,
+    "ready_current_sampled_scopes": 22,
+    "held_complete_current_sampled_scopes": 1,
+    "new_human_acceptances": 0,
+    "promotions": 0
+  },
+  "validation": {
+    "regressions": {
+      "tests": 118,
+      "elapsed_seconds": 240.963,
+      "status": "passed"
+    },
+    "repository": {
+      "skills": 46,
+      "issues": 0
+    },
+    "generator": {
+      "files": 807,
+      "status": "passed"
+    },
+    "offline": {
+      "cases": 24,
+      "negative_checks": 99,
+      "actual_model_evaluations": 0,
+      "status": "passed"
+    },
+    "generic_validator": "Baseline/current home both retain identical pre-existing unsupported version frontmatter rejection. No generic validator pass claimed.",
+    "description": "All 118 regressions pass in 240.963 seconds on the clean tracked candidate snapshot. Repository/link validation passes (46 skills, zero issues), generator drift passes (807 expected files), and offline contract tests pass (24 cases, 99 negatives, zero actual model evaluations). Baseline/current home both retain the identical pre-existing generic-validator rejection of version frontmatter; no generic-validator pass is claimed. Final evidence-overlay and delivery CI are checked separately."
+  },
+  "execution_notes": [
+    "Initial new ChatGPT tab was signed out; the existing signed-in tab reached a verified empty Temporary chat with original Instant mode.",
+    "Browser control detached while opening the home upload chooser. Runtime reset changed browser inventory IDs; the same Chrome extension and test tab were reacquired by fresh inventory. Readback still reports missing control. No prompt submission or feedback/retry occurred.",
+    "Both synthetic workflows were pre-pinned before attempted upload. Home packet reverses to its original after restoring only the changed hashtag instruction. Workout packet, resources and uploads are byte-identical to the final batch16 candidate.",
+    "First preparation stopped on the archived final-workout revision location; resolved before any upload or prompt submission.",
+    "User reconnection requested. Keep home grounding, workout repeat and all broader unverified paths open. Normal preview Download did produce an exact verified file despite the event-listener timeout."
+  ],
+  "limits": "No new human acceptance, merge, installation, promotion or placement expansion. Home correction lacks native verification; prior #OffGrid failure remains retained. Prior bounded workout pass remains valid only for its recorded observation, with repeat reliability unverified. No new native model response exists in this batch."
+}

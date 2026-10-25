@@ -1,0 +1,22 @@
+{
+  "adapter": null,
+  "adapter_sha256": null,
+  "behavior_evaluation": "not_run",
+  "ecosystem": "codex",
+  "ecosystem_paths_sha256": "035f7a1a71d84399e8453fd923d81b4cd9ac38f411d762ae364c2f87267492d9",
+  "frontmatter_policy": "codex-name-description-v1",
+  "generator_sha256": "43a95a6d7af5b7933684fb1d914bc879644c91082fa96eb7e8c7921ba3b77bed",
+  "master_revision": "e2736dac08508c32e1145294f9ee14c025b1e9a7568986d05aa42096efffa79f",
+  "master_revision_kind": "sha256-bundle",
+  "model_id": null,
+  "model_profile": "baseline",
+  "model_profile_sha256": "7b3a883a2e2a1b75c84cf2bc3052f05eeb2c5a7eb041ae81e3729973edb0e8c6",
+  "profile_loader_sha256": "8f2c6f4b80a18183a107b14f114a606c33274a335aa63857ad31e123493b3baf",
+  "promotion": "blocked_pending_review",
+  "provider": null,
+  "source_frontmatter": {
+    "description": "Deploy and configure Proxmox LXC containers for self-hosted services. Always trigger immediately when Mick asks to deploy, set up, or configure a new service on Proxmox, mentions spinning up a container, or needs a systemd service, Cloudflare Tunnel entry, or UniFi static IP assignment. Generate the full stack including the pct create command, container config, apt setup, systemd unit file, and Cloudflare Tunnel config entry from a service name and IP.",
+    "name": "proxmox-lxc",
+    "version": "1.1.0"
+  }
+}

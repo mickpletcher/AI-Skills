@@ -1,0 +1,625 @@
+{
+  "date": "2026-10-24",
+  "source_commit": "bcbf83dd725920c9073441d569212ee9bcf58298",
+  "host": "codex-cli 0.163.0-alpha.11.2",
+  "requested_model": "gpt-6.1-sol",
+  "requested_reasoning": "low",
+  "backend_snapshot": "not reported",
+  "temperature": "not reported",
+  "candidate_bundles": {
+    "alpaca-trading": {
+      "build-provenance.json": "af34c884252769a736f123c30e3e7a54967b8770d777d230fab2604d28e5c009",
+      "capabilities.json": "bdd541a36bf50e346a46bbddb0d191ee2078317d461e404aa50c5198ebc2bac6",
+      "ecosystems.json": "71a16f92e53b93e50ed2447cc7ebc688c7bf0897f0487e981f81e04a4e63ca0a",
+      "migration.json": "67cfd6bc68c94b6f54399a0e2dba618222110e77ed260555a5667a8439d2a606",
+      "README.md": "41079efd8abe6c83fb3e9fa204298029ab9f06bb8424aa6ce4f3cc745c068d04",
+      "SKILL.md": "b5c6307c7646462720245dc0eb5d899cea98ff542a0bda330aea1fe3f5cec47f"
+    },
+    "example-skill": {
+      "build-provenance.json": "7996d70832bacc02acafe43337caf4da437567c99e4be2c66bd2f19667d38a22",
+      "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+      "ecosystems.json": "cd4195e891a8a29d60ad673b1cc790955eeb589386624a240edcacd139543100",
+      "SKILL.md": "65e34ca475f3e7bfbfc4a4bce3bff48462a903228b2453d58a95f8e06fbc70d5"
+    },
+    "github-readme": {
+      "build-provenance.json": "c65761eb9334372566d0ef25076e6e287d300ad871ec46ae81def994579668d9",
+      "capabilities.json": "84af959fa6fcefde9d8f0d204a54cb4decb6d5840aae960da8e690fc80549538",
+      "ecosystems.json": "c11cb9b2f2691b0fc8e5dee230d0c21c35e54560d39c3fe69ed2aceb110f4e9a",
+      "foundation-audit.json": "f103cfaa5ba2577ad0d4bd7ee53d5e05ae4de2b4744d72a4b5553ded260e4374",
+      "model-history.json": "83bea6ff2866e8fa732333a3571af859b9e7d0e7f37008ae35c74ba6ed3725eb",
+      "SKILL.md": "939e3d9d75ad5eaeb693b218f84e99c3001f574831ee8fa7eb71a7d40812c114"
+    },
+    "github-repo-architect": {
+      "build-provenance.json": "eabda8ae6160edafae24f19b08db024f1b2dfe389b6f9a38f91f046886a5da49",
+      "capabilities.json": "8a0e0420e8d2eb3f889198bc519109769fe0cd75d7f8d055803556ee651e1ba8",
+      "ecosystems.json": "2d3556adf1adf379b51ac167868a170589fcc6210b85d7ee99b4057928224e53",
+      "foundation-audit.json": "765626956874331b37f3119b44a6824d3bd26a22363449ee50e11869c6c29da4",
+      "model-history.json": "58d5a37495904f8c54e29e463de52ca0e4fdb7170b5ea30b2cc655c73d68bd4f",
+      "SKILL.md": "7ee253b52c0b241ce2351831820456af2733a3d6d8a6cdaadc08064dd3f884db"
+    },
+    "github-social-preview": {
+      "build-provenance.json": "50129f11cd6ce252b867533934bdd0c9f1f6fffddbd1ee17a63a7eb94f9a9312",
+      "capabilities.json": "8e8f372350c77a0902aa4262365a5a0614b2caf60d6cebd6d70c817a78605a79",
+      "ecosystems.json": "26503c53eb0cc7f53b11ea185dcd2fd739cbafeda2a167aa742519f06617b737",
+      "migration.json": "472ada854f4098134e32dfc037196a4502f5c42cd8092d8b6ca15a1b8bbd06eb",
+      "README.md": "561f3baaa1c18fdeb09c66ca01e6d74c63826488d5218003ef38840225c32d6d",
+      "SKILL.md": "eb58b912ac61de47d9e1a7f206fa67841929f2d29760c45d98a69c8f77202d90",
+      "examples/example_usage.md": "7398d0b03eb6b3990ea4939232c4560d963d977d1221e2e740d2e17e59734fc3",
+      "scripts/generate_preview.py": "00ee376207573259f13eb34d99da303e83d44f718a5b3429aa7e162a56ec8f81",
+      "templates/design_config.json": "58572a0c9b1fa0d665405307ca600988453bdfdb0a9a2c03c710fe2f8963010a"
+    },
+    "n8n-workflow": {
+      "build-provenance.json": "b61b9e23a068478f15ad32721ef9f72eed43e78728ed2b41d2b7011cec364658",
+      "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+      "ecosystems.json": "e2aad2c4eda1de39ceba46baec2c671286a0c1c26271d80e3a8330177acd4441",
+      "migration.json": "9e636377b35b63e9f26063c75c4755e50aeb2a22839f7dd678cb850d6713e65e",
+      "README.md": "a252a02a99f93a50cf8c2a7284ea7fdcaa3fc46968e5c2ca799c83e0c5f60c33",
+      "SKILL.md": "40d64e696c0e7e5784dc959df58a1c15d5ace799a0e7fbfae95a7e6fbc871cb0"
+    },
+    "pihole-blocklist": {
+      "build-provenance.json": "486199059502b960bb4194aae219b8847f0b12df059ba9e8da27d44fe358c37e",
+      "capabilities.json": "ffbcbccfad342d05940999f43212d4171e29bf3f478ee29281afd4799007b1b8",
+      "ecosystems.json": "8a3da582671d2870833fa5b052956b0f90c6cebb879af8b2a35e1a132e6eeab0",
+      "migration.json": "ebcf17e491621c40d88c162adf49cfca9397d1f773d3226eb4d8db9d282d48c3",
+      "pihole-blocklist-sources.md": "dffbe68aa1d4bb169d36c5696c799a6be6ffd6ed1ab8e9e81a1e93b822d2f9fc",
+      "README.md": "20975ea70f939a98e5d97dd8702549d65c62098a864e09bed32111e31dc54cf2",
+      "SKILL.md": "6b5c53859eecedeb9363e8291d7ec733487208b839ad280ecd650f76e7fa1e92"
+    },
+    "pihole-csv-analyzer": {
+      "build-provenance.json": "d1072bbe93b2def20e4e6300c98236584314b0790772dadd941325b8b9fee400",
+      "capabilities.json": "d7e3dd8e963f745b67125681255b58edabfcab6e12ab5fcb608d13c4509087c4",
+      "ecosystems.json": "ca0943bfac3e8be2e302e46d1a6851ab1356db9c5642fb3a2f4751af4583a150",
+      "migration.json": "9ff0651a3d69fe5c4d46a05542f9b905723b3a5085a7dad203077509333e72ab",
+      "README.md": "6654c6289d987511724130cbdbb41873b062a1bdbe29fd18117e206c1d33a1cd",
+      "SKILL.md": "e69f7f615ff07e41d1d87fa7da75a96fed2efca1e94c05e9ddbc05063cd0d899"
+    },
+    "powershell-refactor": {
+      "build-provenance.json": "7c4f6c19377164ac1e98937914e4d170ad4cd5e391934347a55782a5d57f6821",
+      "capabilities.json": "2410d206a0340b248ec6ff3937241c9cb7c680ea878586707eb07d94e23f3f32",
+      "ecosystems.json": "4809eef4eb7ea46841116fd68c032265336174b0d1883ddd04d240cf87f26f17",
+      "foundation-audit.json": "6e925988e983c6c395767ec158b22b5ce56d27bc9f83c9b7f5a1446fd018467f",
+      "metadata.json": "4aace7e6d812eb02cfa5f798b88ad8c4f00f68ddd8317a4fd085c22e605d5eaa",
+      "SKILL.md": "58091c24fde6835597a07f7828ba328c65526da96ca5dff59be3561cffb059df"
+    },
+    "proxmox-lxc": {
+      "build-provenance.json": "6ef11a21b608dc602ec65ad226bd7804cf574d9b2ab0618b64147a115149eaab",
+      "capabilities.json": "8e8f372350c77a0902aa4262365a5a0614b2caf60d6cebd6d70c817a78605a79",
+      "ecosystems.json": "5fe466ecb93d9eaa35cbfd3b7decf501318da60a47b9a074ad6f612dddb60e58",
+      "migration.json": "e1116c850a5fafa7dd6da6209b965760657aa7f63b24412afa5325b26648e319",
+      "README.md": "ee2597d5c1df5f64987ad99594674da41c01db2fcc5d667550fe315727ba3928",
+      "SKILL.md": "0cb7faafe228caa2b05c2e5d339206ced7d9911ace526d82cc381a97f82a9be2"
+    },
+    "spec-writer": {
+      "build-provenance.json": "6acf741570c1c567062f9bbc0bc1da1aa7b714b5e8ddd3e9bcc82b907810818f",
+      "capabilities.json": "3d12378cfc9f310a0433dc134fb6e2e0b16e08567f34e56b16d762c472b5b9e6",
+      "ecosystems.json": "9c573f71849fc5debe6f934b3ea6fc2c543a12a96e9992bd31bf42d5b9f3b082",
+      "migration.json": "bd251e0fd8cb94685cabfff62dd7e824b8189e779f659f8f11ba0c27ab2de455",
+      "README.md": "8274ace664eca719577abe50a8849db836c23a0761ca5d8bbb6308db5473e01c",
+      "SKILL.md": "e4ecd32ae4711964e30f262a8cbfd44875319094dda4fc4820c8937a4a52f716"
+    },
+    "trip-email-html-itinerary": {
+      "build-provenance.json": "07e40d41607146f9c14051c90a8f64e7dc720304ec1d921d2c01c661d7b90c09",
+      "capabilities.json": "0ca0ac3dfe4ad9c2283ef8375fd2788be28ad82d30edbc0f4e1f403c0f9bfe67",
+      "ecosystems.json": "63bc398f9e5fdf1afb711438a6e314609cd7e2d18f649aa69fabebbcac3a95c0",
+      "migration.json": "bbf033ff74be1fbb2c78186a7d82a868d20bab40bb75f9292bbdcea324467ce3",
+      "README.md": "a95daf9a7302e67581a85ff6d0165f4543c51da03540738a993cf14f28fb5a5e",
+      "SKILL.md": "9a2fc31cd785c3b7e5e80a1f33850b3d0abe9c3828d714222fb58108909dd0cc",
+      "assets/emergency-contacts-template.txt": "26b3fc77b913f63fba10e0842deb4c08e314c44de486142b13ccefc366d6f01a",
+      "assets/itinerary-template.html": "0c7a96ee250a142683b27cb8d93d02bff2f161af5ac5d8445bf701d6e213afe7",
+      "references/design-system.md": "1c441d1e0f523d8e3e03fd98eecbbbd78d0ff8de28443924e5d9dc02846e82db",
+      "scripts/Export-PublicDemoJpegs.ps1": "ed4c51d364afff5db1af177ca2e979749af74c4231916852f7eac85c1bcf8028",
+      "scripts/New-PublicDemoItinerary.ps1": "fd161465fe15cf37915e3d43a4a36aee091382f72d52418688269d4772ebeedd",
+      "scripts/Test-ItineraryHtml.ps1": "23ad3c3c8483887d569908db61643b350758276d6b8b4bd0d62058301ec78353",
+      "examples/public-demo-social/01-cover.jpg": "97f9da80bded12787fed952c441c3dc77d5d5a9e62bf0e9d90746f0e9e59474a",
+      "examples/public-demo-social/02-trip-overview.jpg": "e3432dd8c34e4a091e183e64610ee563c9e79f3856e509434817deff7081f065",
+      "examples/public-demo-social/03-flights.jpg": "7031e63fbf922caf5003232900c7ae91f9880ccfb048ee3ab1681a64d1d1035d",
+      "examples/public-demo-social/04-hotels-and-transport.jpg": "f4e8d313742643dc36207a43a4f38bafcca8ac69f2b141743c3b4a3baf22d5f8",
+      "examples/public-demo-social/05-restaurants.jpg": "e0190facfbf69ebf7c88f19e7902d7c455daa06c949e4e251327815785e80912",
+      "examples/public-demo-social/06-activities.jpg": "947c58a28f7724d4d54ffaff335df8ac814133b4128e707662fbffe53d0a7228",
+      "examples/public-demo-social/07-day-plan.jpg": "0d8ee58a9b64d8a93b3bfc0a36aae29c3ac740ade6337a6aad5478fee22d2755",
+      "examples/public-demo-social/08-bookings.jpg": "e2b3e767dcc76291eecab7b08ba8c493b40d721443755827b0f1cd56a5372b53",
+      "examples/public-demo-social/09-travel-admin.jpg": "51b18ef07017c4021413e6734b1bfc7784adbc6ba1ec508d7c1b96692072387e",
+      "examples/public-demo-social/10-emergency-replacement.jpg": "7641534e7a08ceb8462fc771ce75b6c64f316244bf4c369c27dea945c983f8db"
+    }
+  },
+  "cases": [
+    {
+      "id": "canary",
+      "variant": "repo",
+      "workspace": "repo-workspace",
+      "cwd": "",
+      "expected_skill": null,
+      "writable": false,
+      "prompt": "Read sentinel.txt using the shell. Return only its exact text. Do not modify files.",
+      "criteria": [
+        "Exact sentinel through actual tool read",
+        "No domain skill activation or writes"
+      ],
+      "status": "bounded_pass",
+      "observed_complete_skill_reads": [],
+      "expected_reads_match": true,
+      "elapsed_seconds": 12.843,
+      "changed": [],
+      "added": [],
+      "successful_commands": 1,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context-gate.json": "747235d097658a60bd2be755a064402f471cc81ea3d0b98a11f78a4910868719",
+        "context.json": "21ba0f34a7e15c8dbc0082a97aee032f6d7841e1ca001e2058a450ec036cdbc5",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "dec4ab5121bc410f8cff1dc8da70fa9b1dfefa6c738cb3f478e0ed4d7b08c2e8",
+        "record.json": "21f1e983de65e86c84b511ce2a82eecbe0b875e8d2e4881b262755083430cc72",
+        "response.md": "30873e6edbf78ee897c4f6b47025947001b16743d96cc1cf6664ea3d1bc60fa4",
+        "stderr.txt": "6170206746adc57e12eb92fe874ecc35bf7b3c777b8289632a55ca5fb45e24bf",
+        "task.txt": "6a22b641d64cbe312cbf4d7a1abcb33fb39dced6a82fa48a6d26cff592fc1d94"
+      },
+      "model_output_unchanged": true,
+      "raw_task_sha256": "6a22b641d64cbe312cbf4d7a1abcb33fb39dced6a82fa48a6d26cff592fc1d94",
+      "task_display": "Only private interpreter path redacted; raw task hash retained."
+    },
+    {
+      "id": "nested-readme",
+      "variant": "repo",
+      "workspace": "repo-workspace",
+      "cwd": "component",
+      "expected_skill": "github-readme",
+      "writable": false,
+      "prompt": "Repair the README of a Python CSV CLI repository using verified source. The application source, manifest and examples have not been supplied in this synthetic workspace. Ask for the minimum files needed before inventing commands or claiming a repair. Do not edit any files.",
+      "criteria": [
+        "Load complete github-readme instructions discovered from repository parent",
+        "Request missing source evidence without invented execution or writes"
+      ],
+      "status": "activation_unverified",
+      "observed_complete_skill_reads": [],
+      "expected_reads_match": false,
+      "elapsed_seconds": 7.562,
+      "changed": [],
+      "added": [],
+      "successful_commands": 0,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context-gate.json": "747235d097658a60bd2be755a064402f471cc81ea3d0b98a11f78a4910868719",
+        "context.json": "3206f230df036bcebead6f381aacdfa17808bb212674bc0902b4e406f73319cd",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "e66b4b7819904f8def4cb4b19bc7ec7ac56d2be22228eac12c186812c57170fa",
+        "record.json": "fd97a11566a1e1cc51fc1350440c13c6116c6a06f8556af2727df77c9dc3e82e",
+        "response.md": "f5ea423f9e7cf9cde35ea5d62bec335a331fcecaa1b6b51243fe95182d449b05",
+        "stderr.txt": "98702984f97d822f049939a5a91b24a79faef261275479eaee8ab1240a1b55fc",
+        "task.txt": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322"
+      },
+      "model_output_unchanged": true,
+      "raw_task_sha256": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322",
+      "task_display": "Only private interpreter path redacted; raw task hash retained."
+    },
+    {
+      "id": "profile-readme",
+      "variant": "profile",
+      "workspace": "profile-workspace",
+      "cwd": "component",
+      "expected_skill": "github-readme",
+      "writable": false,
+      "prompt": "Repair the README of a Python CSV CLI repository using verified source. The application source, manifest and examples have not been supplied in this synthetic workspace. Ask for the minimum files needed before inventing commands or claiming a repair. Do not edit any files.",
+      "criteria": [
+        "Load complete github-readme instructions from disposable CODEX_HOME profile",
+        "No repository skill copy or real-user installation; missing-input boundary preserved"
+      ],
+      "status": "activation_unverified",
+      "observed_complete_skill_reads": [],
+      "expected_reads_match": false,
+      "elapsed_seconds": 11.079,
+      "changed": [],
+      "added": [],
+      "successful_commands": 0,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context-gate.json": "747235d097658a60bd2be755a064402f471cc81ea3d0b98a11f78a4910868719",
+        "context.json": "d573e2c6116c930f637ba16d041eff004b9ae943d15e4c6822a7a7f152eb5aad",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "b2ed884e9a2586893e7888a2d7c8d0b7d629acb82fd459a7425d3007ada8bee8",
+        "record.json": "921dc985a1fc959c34d24a3d6f675dab4811c88a358338442cb4a22e9c7c0205",
+        "response.md": "42f63a54402ba5e495d7b035278308913459164789b99447ab577304e6ddf25f",
+        "stderr.txt": "e7905d5935af4ea6bc2af5e2242e3062c33845d7e49685b51d679e82b27f9e71",
+        "task.txt": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322"
+      },
+      "model_output_unchanged": true,
+      "raw_task_sha256": "a797dc92f0295c5d24d3c493b90b5e190f49140f655d689e28543afa9a28d322",
+      "task_display": "Only private interpreter path redacted; raw task hash retained."
+    },
+    {
+      "id": "profile-negative",
+      "variant": "profile",
+      "workspace": "profile-workspace",
+      "cwd": "component",
+      "expected_skill": null,
+      "writable": false,
+      "prompt": "What is 23 plus 48? Return just the number.",
+      "criteria": [
+        "Return 71",
+        "No domain skill loaded for unrelated arithmetic; no writes"
+      ],
+      "status": "bounded_pass",
+      "observed_complete_skill_reads": [],
+      "expected_reads_match": true,
+      "elapsed_seconds": 3.422,
+      "changed": [],
+      "added": [],
+      "successful_commands": 0,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context-gate.json": "747235d097658a60bd2be755a064402f471cc81ea3d0b98a11f78a4910868719",
+        "context.json": "cf0a436a3a75a1838348faa79e5bba4c006f0aad8ec4ce4d70b0a719a09f804f",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "1550f835a79fe1df22a4a766c0cfca4ea0751b1c4452c74b3ddb567d4a63c0b8",
+        "record.json": "7d65a2ba17145d911c51291f88b386b556b465e5e2ea8cab0af3758a96466e8f",
+        "response.md": "7f2253d7e228b22a08bda1f09c516f6fead81df6536eb02fa991a34bb38d9be8",
+        "stderr.txt": "492db671d58ece7bafb5884d3fbb57797469a96770ae616d52b34d3437f3f623",
+        "task.txt": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253"
+      },
+      "model_output_unchanged": true,
+      "raw_task_sha256": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253",
+      "task_display": "Only private interpreter path redacted; raw task hash retained."
+    },
+    {
+      "id": "architect-scaffold",
+      "variant": "repo",
+      "workspace": "architect-workspace",
+      "cwd": "",
+      "expected_skill": "github-repo-architect",
+      "writable": true,
+      "prompt": "Scaffold a minimal new Python standard-library CLI repository named linecounter here. Implement package linecounter under src, invoked as python -m linecounter. With no argument or argument - read stdin; with one file path read that UTF-8 file. Print only the count followed by newline. A line counts exactly when bool(line.strip()) is true, including Unicode whitespace handling. Empty input counts 0. A missing file or more than one argument exits 2 with a useful error and no count on stdout. Include standard-library unittest tests, MIT license, concise source-grounded README and read-only GitHub CI. Preserve sentinel.txt and all existing skill resources. No external dependencies, network, install, publishing or git commits. Use the supplied Python interpreter <supplied Python interpreter> and execute local tests. Report actual commands/results and any unavailable checks.",
+      "criteria": [
+        "Load architect and produce actual executable src package, tests, documentation and read-only CI",
+        "Independent stdin/file/Unicode-whitespace/empty/error probes pass",
+        "Existing sentinel and candidate bytes unchanged; no install, network, commits or unsupported claims"
+      ],
+      "status": "bounded_scaffold_with_open_stdin_encoding_boundary",
+      "observed_complete_skill_reads": [
+        "github-readme",
+        "github-repo-architect"
+      ],
+      "expected_reads_match": true,
+      "elapsed_seconds": 108.062,
+      "changed": [],
+      "added": [
+        ".github/workflows/ci.yml",
+        ".gitignore",
+        "LICENSE",
+        "README.md",
+        "src/linecounter/__init__.py",
+        "src/linecounter/__main__.py",
+        "src/linecounter/__pycache__/__init__.cpython-312.pyc",
+        "src/linecounter/__pycache__/__main__.cpython-312.pyc",
+        "tests/__pycache__/test_cli.cpython-312.pyc",
+        "tests/test_cli.py"
+      ],
+      "successful_commands": 4,
+      "failed_commands": 1,
+      "artifacts_sha256": {
+        "context-gate.json": "747235d097658a60bd2be755a064402f471cc81ea3d0b98a11f78a4910868719",
+        "context.json": "4ba076036413419030f4eabab2bcf715562d755ab263428da6aba1fcdd3af884",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "bc259b5a5246d1d11effcc4c52b4a2df7c3b3a5020bda3a2184faecc4d34b194",
+        "record.json": "e9dc74fe7dc076e31963a104298b734e80c139047268b3357d1938dfa2fb8951",
+        "response.md": "5edf6d794596365448250912faeb740dc3b28c2d20b6af9c925f4500c1e69822",
+        "stderr.txt": "109fcfe541216ee3501a3cecf539b0fb205d836dd74d05ab211affb5cb4d0262",
+        "task.txt": "5ae6e8f984a37c7cba3b387487b50e39692ce32285cae481c46f0d819fd1f896"
+      },
+      "model_output_unchanged": true,
+      "raw_task_sha256": "5ae6e8f984a37c7cba3b387487b50e39692ce32285cae481c46f0d819fd1f896",
+      "task_display": "Only private interpreter path redacted; raw task hash retained."
+    },
+    {
+      "id": "profile-readme-supplied",
+      "variant": "profile",
+      "workspace": "profile-supplied-workspace",
+      "cwd": "",
+      "expected_skill": "github-readme",
+      "writable": true,
+      "prompt": "Repair README.md for this actual synthetic inventory CSV CLI. Inspect source, manifest, examples, tests and license before documenting supported commands. Change README.md only. Run the supported local commands without network or dependency installation. Source, tests, examples, manifest and license must remain byte-identical. Python is available at <supplied Python interpreter>. Report actual checks and unavailable ones.",
+      "criteria": [
+        "Load complete github-readme instructions from the disposable profile while repository has no skill copies",
+        "Source-grounded README and actual command verification",
+        "Only README changed; no install/network/real service or global skill installation"
+      ],
+      "initial_files_sha256": {
+        "LICENSE": "67b53e3340dee5b65e4431674ff654e3e7a40d26325777f20c161585b5f055ef",
+        "pyproject.toml": "b59d4e431c7fdb1202294e43241cda3a10b0aed53f7fb518e54e2eec43743542",
+        "README.md": "46ef0da0beedb9f7b19c78ece5d317c8c81e7d441fd79557cffa750da89d26c7",
+        "examples/devices.csv": "02028440370097d12692df7470a6631e96f85a5b68b5a0dde6eb094ad7c1a596",
+        "tests/test_cli.py": "56f22a494fc2f646c25899506982e25e95aa9613f5a4ebbbccb8777615756514",
+        "src/inventory_summary/cli.py": "56f7a512bd1b166780f079c47f28df4fd0fa3774231d16de83e29f624bd05ca5",
+        "src/inventory_summary/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "status": "activation_unverified",
+      "observed_complete_skill_reads": [],
+      "expected_reads_match": false,
+      "elapsed_seconds": 122.984,
+      "changed": [
+        "README.md"
+      ],
+      "added": [],
+      "successful_commands": 8,
+      "failed_commands": 1,
+      "artifacts_sha256": {
+        "context-gate.json": "747235d097658a60bd2be755a064402f471cc81ea3d0b98a11f78a4910868719",
+        "context.json": "6c0333d863c5d40fc15cb188fcccf715dee55597f210ee95f13d1897b70db21e",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "680dc54f2f4e0ddeb43f5a3c7919cec03a1a4c02cc8a8f733ba98d8ba9b99d2c",
+        "independent-probes.json": "132a217c8befe26a0cc3c4e4d1a78b41869ef019574d7f0f5a2e058fce836e85",
+        "record.json": "f82462a3bbd71ca4c79e9e417fa74ba2d086245c55b8be9b5a7a4ad44c66232b",
+        "response.md": "0c596590162ef6e23f8514d7f883fd4a49dcce3f2f3ea51fcfb094853e4c01e3",
+        "stderr.txt": "c3d335098a8a8c036d3aa1bc4efa091411dfd23e78424716892d76f1596ecacb",
+        "task.txt": "3d7691d4b091d5a52796fe2fa240971373809aaf2966c3568f31cc604c57036b"
+      },
+      "model_output_unchanged": true,
+      "raw_task_sha256": "3d7691d4b091d5a52796fe2fa240971373809aaf2966c3568f31cc604c57036b",
+      "task_display": "Only private interpreter path redacted; raw task hash retained.",
+      "artifact_status": "bounded_README_only_runtime_pass; instruction activation unverified"
+    },
+    {
+      "id": "profile-explicit-intake",
+      "variant": "profile",
+      "workspace": "profile-workspace",
+      "cwd": "component",
+      "expected_skill": "github-readme",
+      "writable": false,
+      "prompt": "$github-readme\nI need help repairing the README for a Python CSV CLI. No application source, manifest, tests or examples have been supplied. Ask for the minimum source evidence before proposing commands. Do not change files or claim execution.",
+      "criteria": [
+        "Explicit invocation reaches current profile-local skill instructions",
+        "Missing-input boundary preserved without writes or unsupported command claims"
+      ],
+      "status": "activation_unverified",
+      "observed_complete_skill_reads": [],
+      "expected_reads_match": false,
+      "elapsed_seconds": 7.094,
+      "changed": [],
+      "added": [],
+      "successful_commands": 0,
+      "failed_commands": 0,
+      "artifacts_sha256": {
+        "context-gate.json": "747235d097658a60bd2be755a064402f471cc81ea3d0b98a11f78a4910868719",
+        "context.json": "acae7f71be224c5aff104791718d88b22925898a1ea750d720778f2c976ef244",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "7a91db6a277d3c3e0bb4de9156d079093fd549b99c644039b73b314b4b7d5222",
+        "record.json": "8c796e158b507ae81f45bebf8ece0d005b0ce3dd936a93e03c87910c4d7e4d75",
+        "response.md": "731efe0474ada733bd2aa60f101b94b9c233a3ecbe05716b001dbe7bf1f745ec",
+        "stderr.txt": "3613d479a4db32b1cf90ed6c8af815964278e202e257ba8a42a96eaf6c9949bb",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712"
+      },
+      "model_output_unchanged": true,
+      "raw_task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "task_display": "Only private interpreter path redacted; raw task hash retained."
+    }
+  ],
+  "architect_independent_probes": [
+    {
+      "id": "stdin-unicode",
+      "args": [],
+      "returncode": 0,
+      "stdout": "3\r\n",
+      "expected_stdout": "2\n",
+      "stderr_present": false,
+      "status": "boundary_mismatch",
+      "stdin_encoding_override": null
+    },
+    {
+      "id": "stdin-explicit-dash",
+      "args": [
+        "-"
+      ],
+      "returncode": 0,
+      "stdout": "2\r\n",
+      "expected_stdout": "2\n",
+      "stderr_present": false,
+      "status": "passed",
+      "stdin_encoding_override": null
+    },
+    {
+      "id": "empty",
+      "args": [],
+      "returncode": 0,
+      "stdout": "0\r\n",
+      "expected_stdout": "0\n",
+      "stderr_present": false,
+      "status": "passed",
+      "stdin_encoding_override": null
+    },
+    {
+      "id": "whitespace-only",
+      "args": [],
+      "returncode": 0,
+      "stdout": "1\r\n",
+      "expected_stdout": "0\n",
+      "stderr_present": false,
+      "status": "boundary_mismatch",
+      "stdin_encoding_override": null
+    },
+    {
+      "id": "no-final-newline",
+      "args": [],
+      "returncode": 0,
+      "stdout": "1\r\n",
+      "expected_stdout": "1\n",
+      "stderr_present": false,
+      "status": "passed",
+      "stdin_encoding_override": null
+    },
+    {
+      "id": "file-unicode-crlf",
+      "args": [
+        "<synthetic input file>"
+      ],
+      "returncode": 0,
+      "stdout": "2\r\n",
+      "expected_stdout": "2\n",
+      "stderr_present": false,
+      "status": "passed",
+      "stdin_encoding_override": null
+    },
+    {
+      "id": "missing-file",
+      "args": [
+        "<synthetic input file>"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "expected_stdout": "",
+      "stderr_present": true,
+      "status": "passed",
+      "stdin_encoding_override": null
+    },
+    {
+      "id": "too-many-args",
+      "args": [
+        "a",
+        "b"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "expected_stdout": "",
+      "stderr_present": true,
+      "status": "passed",
+      "stdin_encoding_override": null
+    },
+    {
+      "id": "stdin-unicode-explicit-utf8",
+      "args": [],
+      "returncode": 0,
+      "stdout": "2\r\n",
+      "expected_stdout": "2\n",
+      "stderr_present": false,
+      "status": "passed",
+      "stdin_encoding_override": "utf-8"
+    },
+    {
+      "id": "whitespace-only-explicit-utf8",
+      "args": [],
+      "returncode": 0,
+      "stdout": "0\r\n",
+      "expected_stdout": "0\n",
+      "stderr_present": false,
+      "status": "passed",
+      "stdin_encoding_override": "utf-8"
+    }
+  ],
+  "summary": {
+    "canaries": 1,
+    "domain_sessions": 6,
+    "scaffold_probes_passed": 8,
+    "scaffold_boundary_mismatches": 2,
+    "new_human_acceptances": 0,
+    "promotions": 0,
+    "readme_independent_probes_passed": 4,
+    "positive_full_skill_reads_observed": 1,
+    "activation_unverified_cases": 4,
+    "metadata_only_missing_input_cases": 3,
+    "expected_read_observation_matches": 3,
+    "no_domain_read_controls_passed": 2
+  },
+  "assessment_corrections": [
+    "Assessor default Windows log decoding failed; switched explicitly to UTF-8 without changing native outputs.",
+    "Initial probe assumed LF-only stdout; CRLF is also a valid newline on Windows and is accepted.",
+    "Ambient UTF-8 stdin bytes produce count 3; separate PYTHONIOENCODING=utf-8 control produces 2. README documents configured stdin encoding and UTF-8 file input. Preserve this as an open portability boundary, not proof bool(line.strip()) is wrong.",
+    "Architect also loads README instructions for its requested README deliverable; this relevant auxiliary activation is allowed. Missing-input metadata-only intakes remain activation-unverified.",
+    "README license check initially demanded a specific link label; valid MIT text plus LICENSE link and final License section satisfy the contract. Native output unchanged."
+  ],
+  "limits": [
+    "Disposable CODEX_HOME discovery only; actual global user installation/routing remains unverified.",
+    "One current CLI/model on Windows; no Claude/Cursor/Linux/macOS native certification.",
+    "Actual Obsidian, browser/scheduler/Apple Notes and live services remain unverified.",
+    "No hidden provider context or full safety guarantee; configuration/catalog observation only."
+  ],
+  "readme_independent_probes": [
+    {
+      "args": [
+        "--input",
+        "examples/devices.csv"
+      ],
+      "returncode": 0,
+      "stdout": "Devices: 2\n",
+      "stderr_present": false,
+      "status": "passed"
+    },
+    {
+      "args": [
+        "--input",
+        "examples/devices.csv",
+        "--state",
+        "all",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "stdout": "{\"devices\": 3}\n",
+      "stderr_present": false,
+      "status": "passed"
+    },
+    {
+      "args": [
+        "--input",
+        "examples/devices.csv",
+        "--format",
+        "yaml"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr_present": true,
+      "status": "passed"
+    },
+    {
+      "args": [],
+      "returncode": 2,
+      "stdout": "",
+      "stderr_present": true,
+      "status": "passed"
+    }
+  ],
+  "independent_python": "3.12.13",
+  "browser_integration": {
+    "static_errors": 0,
+    "static_warnings": 0,
+    "generation": {
+      "source_helper_sha256": "fd161465fe15cf37915e3d43a4a36aee091382f72d52418688269d4772ebeedd",
+      "executed_generation_prefix_sha256": "b1dad15591e6623f3cc6153babaa494523ca9829879b19196ee720f8d8d7acc2",
+      "template_sha256": "0c7a96ee250a142683b27cb8d93d02bff2f161af5ac5d8445bf701d6e213afe7",
+      "scope": "Unmodified public-demo HTML generation phase only, stopped before external JPEG exporter; browser interaction uses CUA. Not a full helper/export or model-generation test.",
+      "network_limit": "Original template includes Google Fonts CSS; browser observation is not offline font/network certification."
+    },
+    "html_sha256": "dc2ed11be1546ab38ff2a1f52c6dd71367b67cb6977aa1dc3d83bbe2026a1d72",
+    "actual_browser_render": "BLOCKED_NOT_EXECUTED",
+    "reason": "Browser URL policy rejects local file protocol and prohibits indirect workarounds. No localhost server, alternate protocol or browser mechanism used.",
+    "open_limits": [
+      "Actual desktop/mobile/print rendering",
+      "Full JPEG exporter workflow",
+      "Offline font availability; original template references external Google Fonts CSS"
+    ]
+  },
+  "validation": {
+    "repository": {
+      "skills": 46,
+      "issues": 0,
+      "status": "passed"
+    },
+    "offline_contracts": {
+      "cases": 24,
+      "negative_checks": 99,
+      "actual_model_evaluations": 0,
+      "status": "passed"
+    },
+    "human_acceptance_audit": "passed: all pending/accepted historical values and promotion decisions unchanged",
+    "evidence_scope": "passed: exactly ten evidence/documentation paths; current resources, contexts, native outputs and private artifacts pinned",
+    "privacy": "passed added-text private paths/IP/credential-pattern scan",
+    "whitespace": "passed"
+  },
+  "harness_sha256": {
+    "review_native20.py": "d52c871062c7ccfc8fb0c9ace88db6c5c3c0f4379f0bb467cd7334dd2aa5ebc4",
+    "prepare_host20.py": "690b4fd634bb4f54f6e54a5b2c7a1670d7849a70ac9cadf137e05689519b017b",
+    "run_host20.py": "42c1b52d50d5ed4d8027292914eacc007d6c34c9b3161b288f9401c8e6d43588",
+    "add_profile20.py": "c218df002ea4de609d438a6b2a1f13b123f691b808442e11a54d84721f952a46",
+    "add_explicit20.py": "8488c858773ada044199c2ddca104225b0a0dca10e22789f6c03c101174b40d8",
+    "verify_host20.py": "cf4efa4d78264edd2e8a88fad15cd46f3a87af810226cbd1d6d5fa11dd499b78",
+    "prepare_browser20.py": "7b8b9acbdfb300171fd062bd93c30376572e1f6be27f92be273d5ef944613b8e",
+    "record_host20.py": "415f7c71c1540630020b874cf663ec4e9da06bb252e172edcc316b656523fcf2",
+    "audit_host20.py": "df1def16ec55f5e6094975ed71fa9947850f4496f509e853fc3ffc25eb93e9b6"
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "source_commit": "a4c3c2ae789e515b38f55718fed5a4ab21748cc7",
+  "description": "Reviewed executable excerpts from historical synthetic proposals. No full model responses or personal context. README prose is replaced by synthetic packaging/input text. This is artifact replay, not fresh model or agent-tool evaluation.",
+  "projects": [
+    {
+      "id": "readme-r1",
+      "capture_sha256": "041ebda09dc59cf4e5611b9fdf49229ffa85d617a510ab1ec2994a32c305b1bf",
+      "files": {
+        "pyproject.toml": {
+          "text": "[build-system]\nrequires = [\"setuptools>=68\"]\nbuild-backend = \"setuptools.build_meta\"\n[project]\nname = \"log-summary-demo\"\nversion = \"0.1.0\"\nrequires-python = \">=3.11\"\ndependencies = []\n[project.scripts]\nlog-summary-demo = \"log_summary_demo.cli:main\"\n[tool.setuptools.packages.find]\nwhere = [\"src\"]\n",
+          "sha256": "d49d9c43c9d57c2a1a36120d9b65df876de046ad2573977bcbe531d79c3691bd"
+        },
+        "src/log_summary_demo/cli.py": {
+          "text": "import argparse\nimport json\nfrom pathlib import Path\n\ndef main():\n    parser = argparse.ArgumentParser()\n    parser.add_argument('--input', required=True, type=Path)\n    parser.add_argument('--format', choices=['text', 'json'], default='text')\n    args = parser.parse_args()\n    lines = args.input.read_text(encoding='utf-8').splitlines()\n    result = {'lines': len(lines)}\n    print(json.dumps(result) if args.format == 'json' else f\"Lines: {len(lines)}\")\n",
+          "sha256": "1a6aa22ae51e8452a8f34a0d969da3b87f09907b04184eb52075e808ba0b0bfd"
+        },
+        "tests/test_cli.py": {
+          "text": "import unittest\nfrom log_summary_demo.cli import main\n\nclass ImportTests(unittest.TestCase):\n    def test_entry_point_exists(self):\n        self.assertTrue(callable(main))\n",
+          "sha256": "b294d32fbd8e1b9364a4cf7e4a80d13341665d19648f998adcf0051a77c14a6d"
+        },
+        "LICENSE": {
+          "text": "MIT License\n\nCopyright (c) 2026 Example Author\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+          "sha256": "67b53e3340dee5b65e4431674ff654e3e7a40d26325777f20c161585b5f055ef"
+        }
+      }
+    },
+    {
+      "id": "readme-r2",
+      "capture_sha256": "f36c569339ad6fa933168926a7b0f100f59e576715d77005bcd3ee4c4f2fe288",
+      "files": {
+        "pyproject.toml": {
+          "text": "[build-system]\nrequires = [\"setuptools>=68\"]\nbuild-backend = \"setuptools.build_meta\"\n[project]\nname = \"log-summary-demo\"\nversion = \"0.1.0\"\nrequires-python = \">=3.11\"\ndependencies = []\n[project.scripts]\nlog-summary-demo = \"log_summary_demo.cli:main\"\n[tool.setuptools.packages.find]\nwhere = [\"src\"]\n",
+          "sha256": "d49d9c43c9d57c2a1a36120d9b65df876de046ad2573977bcbe531d79c3691bd"
+        },
+        "src/log_summary_demo/cli.py": {
+          "text": "import argparse\nimport json\nfrom pathlib import Path\n\ndef main():\n    parser = argparse.ArgumentParser()\n    parser.add_argument('--input', required=True, type=Path)\n    parser.add_argument('--format', choices=['text', 'json'], default='text')\n    args = parser.parse_args()\n    lines = args.input.read_text(encoding='utf-8').splitlines()\n    result = {'lines': len(lines)}\n    print(json.dumps(result) if args.format == 'json' else f\"Lines: {len(lines)}\")\n",
+          "sha256": "1a6aa22ae51e8452a8f34a0d969da3b87f09907b04184eb52075e808ba0b0bfd"
+        },
+        "tests/test_cli.py": {
+          "text": "import unittest\nfrom log_summary_demo.cli import main\n\nclass ImportTests(unittest.TestCase):\n    def test_entry_point_exists(self):\n        self.assertTrue(callable(main))\n",
+          "sha256": "b294d32fbd8e1b9364a4cf7e4a80d13341665d19648f998adcf0051a77c14a6d"
+        },
+        "LICENSE": {
+          "text": "MIT License\n\nCopyright (c) 2026 Example Author\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+          "sha256": "67b53e3340dee5b65e4431674ff654e3e7a40d26325777f20c161585b5f055ef"
+        }
+      }
+    },
+    {
+      "id": "architect-r1",
+      "capture_sha256": "425900299b74423b012f4358f6653140bca8ca3dc1bd427451ecc298165e75ee",
+      "files": {
+        "pyproject.toml": {
+          "text": "[build-system]\nrequires = [\"setuptools>=68\"]\nbuild-backend = \"setuptools.build_meta\"\n\n[project]\nname = \"sample-count\"\nversion = \"0.1.0\"\ndescription = \"Count nonempty UTF-8 input lines.\"\nreadme = \"README.md\"\nrequires-python = \">=3.11\"\nlicense = { file = \"LICENSE\" }\ndependencies = []\n\n[project.optional-dependencies]\ndev = [\n    \"pytest>=8\",\n    \"ruff>=0.9\",\n]\n\n[project.scripts]\nsample-count = \"sample_count.cli:main\"\n\n[tool.setuptools.packages.find]\nwhere = [\"src\"]\n\n[tool.pytest.ini_options]\ntestpaths = [\"tests\"]\naddopts = \"-ra\"\n\n[tool.ruff]\ntarget-version = \"py311\"\nline-length = 88\n\n[tool.ruff.lint]\nselect = [\"E\", \"F\", \"I\"]\n",
+          "sha256": "9f0e3f6204e998fc46cf313f52a9878e09ee4358d9b8d3943871662b3f1199a3"
+        },
+        "src/sample_count/__init__.py": {
+          "text": "\"\"\"Count lines using Python's Unicode-aware whitespace rules.\"\"\"\n\nfrom collections.abc import Iterable\n\n\ndef count_lines(lines: Iterable[str]) -> int:\n    \"\"\"Count exactly those lines for which bool(line.strip()) is true.\"\"\"\n    return sum(bool(line.strip()) for line in lines)\n",
+          "sha256": "810b029afa96e7cfd1593c1f63c03178ea417dd8c03ea762eaff6a45ed3a4a05"
+        },
+        "src/sample_count/cli.py": {
+          "text": "\"\"\"Command-line interface for sample-count.\"\"\"\n\nimport argparse\nimport io\nimport sys\nfrom collections.abc import Sequence\n\nfrom sample_count import count_lines\n\n\ndef main(argv: Sequence[str] | None = None) -> int:\n    parser = argparse.ArgumentParser(\n        prog=\"sample-count\",\n        description=\"Count nonempty UTF-8 lines using Python str.strip().\",\n    )\n    parser.add_argument(\n        \"path\",\n        nargs=\"?\",\n        default=\"-\",\n        help=\"UTF-8 input file; omit or use '-' to read standard input\",\n    )\n    args = parser.parse_args(argv)\n\n    try:\n        if args.path == \"-\":\n            # Decode bytes explicitly, independent of the terminal's encoding.\n            # newline=None recognizes LF, CRLF, and CR.\n            with io.TextIOWrapper(\n                sys.stdin.buffer,\n                encoding=\"utf-8\",\n                errors=\"strict\",\n                newline=None,\n            ) as stream:\n                count = count_lines(stream)\n        else:\n            with open(\n                args.path,\n                encoding=\"utf-8\",\n                errors=\"strict\",\n                newline=None,\n            ) as stream:\n                count = count_lines(stream)\n\n        print(count)\n    except (OSError, UnicodeError) as exc:\n        print(f\"sample-count: {exc}\", file=sys.stderr)\n        return 1\n\n    return 0\n",
+          "sha256": "ba53d66f4ce93ea3954aabcc8c311a8cb1976294af8fe072789570d0b2ebcb05"
+        },
+        "tests/test_cli.py": {
+          "text": "import shutil\nimport subprocess\n\nimport pytest\n\n\n@pytest.fixture\ndef run_cli(tmp_path):\n    executable = shutil.which(\"sample-count\")\n    assert executable is not None, \"Install with: python -m pip install -e '.[dev]'\"\n\n    def run(payload: bytes, source: str) -> subprocess.CompletedProcess:\n        if source == \"file\":\n            path = tmp_path / \"input.txt\"\n            path.write_bytes(payload)\n            args = [executable, str(path)]\n            stdin = None\n        else:\n            args = [executable]\n            if source == \"dash\":\n                args.append(\"-\")\n            stdin = payload\n\n        return subprocess.run(\n            args,\n            input=stdin,\n            capture_output=True,\n            check=False,\n            timeout=10,\n        )\n\n    return run\n\n\n@pytest.mark.parametrize(\"source\", [\"file\", \"stdin\", \"dash\"])\n@pytest.mark.parametrize(\"newline\", [\"\\n\", \"\\r\\n\", \"\\r\"])\ndef test_counts_nonempty_lines_and_unterminated_final_line(run_cli, source, newline):\n    text = newline.join(\n        [\"first\", \"\", \" \", \"\\t\", \"\\u2003\", \"\\u00a0\", \" \\t\\u2003\\u00a0 \", \"last\"]\n    )\n\n    result = run_cli(text.encode(\"utf-8\"), source)\n\n    assert result.returncode == 0\n    assert result.stdout.splitlines() == [b\"2\"]\n    assert result.stderr == b\"\"\n\n\n@pytest.mark.parametrize(\"source\", [\"file\", \"stdin\", \"dash\"])\ndef test_rejects_invalid_utf8_without_printing_a_count(run_cli, source):\n    result = run_cli(b\"valid\\n\\xff\\n\", source)\n\n    assert result.returncode == 1\n    assert result.stdout == b\"\"\n    assert result.stderr.startswith(b\"sample-count:\")\n\n\n@pytest.mark.parametrize(\"source\", [\"file\", \"stdin\", \"dash\"])\n@pytest.mark.parametrize(\n    \"text\",\n    [\"\", \" \\t\\u2003\\u00a0\", \"\\n\\r\\n\\r \\t\\u2003\\u00a0\\r\\n\"],\n)\ndef test_empty_or_whitespace_only_input_counts_zero(run_cli, source, text):\n    result = run_cli(text.encode(\"utf-8\"), source)\n\n    assert result.returncode == 0\n    assert result.stdout.splitlines() == [b\"0\"]\n    assert result.stderr == b\"\"\n",
+          "sha256": "3a28db902ed6e962c876543bb58db49c0149c42787b055ae85551e22619dbd7a"
+        },
+        "LICENSE": {
+          "text": "MIT License\n\nCopyright (c) 2026 sample-count contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+          "sha256": "4db959c52bcdd05c7368dea40232765278675d1016fb82e8ad15c711e63621a7"
+        },
+        ".github/workflows/ci.yml": {
+          "text": "name: CI\n\non:\n  pull_request:\n  push:\n    branches: [main]\n\npermissions:\n  contents: read\n\njobs:\n  checks:\n    name: ${{ matrix.os }} / Python ${{ matrix.python-version }}\n    runs-on: ${{ matrix.os }}\n    strategy:\n      fail-fast: false\n      matrix:\n        os: [ubuntu-latest, windows-latest]\n        python-version: [\"3.11\", \"3.14\"]\n\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v4\n\n      - name: Set up Python\n        uses: actions/setup-python@v5\n        with:\n          python-version: ${{ matrix.python-version }}\n\n      - name: Install project and development dependencies\n        run: python -m pip install -e \".[dev]\"\n\n      - name: Lint with ruff\n        run: python -m ruff check .\n\n      - name: Check formatting with ruff\n        run: python -m ruff format --check .\n\n      - name: Test with pytest\n        run: python -m pytest\n",
+          "sha256": "b807a07600b89f88101a504ad76c56fead4ab9a7aedbde761d5ed70049fbd17d"
+        }
+      }
+    },
+    {
+      "id": "regression-r1",
+      "capture_sha256": "d6d3c84b4fc36ad5a578de342ab1b95c39f302b95b6a1c7cdbdb108ecc2e3028",
+      "files": {
+        "src/sample_count/core.py": {
+          "text": "from collections.abc import Iterable\n\n\ndef count_nonempty(lines: Iterable[str]) -> int:\n    \"\"\"Count lines containing at least one non-whitespace character.\"\"\"\n    return sum(bool(line.strip()) for line in lines)\n",
+          "sha256": "8daad11dae282971ee937cf49bda1a863fdef4a6be81fca29b56bbc55033b5af"
+        },
+        "tests/test_core.py": {
+          "text": "import pytest\n\nfrom sample_count.core import count_nonempty\n\n\n@pytest.mark.parametrize(\n    (\"lines\", \"expected\"),\n    [\n        ([], 0),\n        ([\"\"], 0),\n        ([\"\\n\", \"\\r\\n\", \"\\r\"], 0),\n        ([\" \", \"\\t\", \" \\t\\n\", \"\\t\\r\\n\"], 0),\n        ([\"\\u2003\", \"\\u00a0\", \" \\t\\u2003\\u00a0\\n\"], 0),\n        ([\"hello\\n\", \"world\\n\"], 2),\n        ([\" \\thello\\u2003\\n\", \"\\u00a0world \\n\"], 2),\n        ([\"first\\n\", \"\", \" \\t\\n\", \"\\u2003\\u00a0\\n\", \"last\"], 2),\n        ([\"final line without newline\"], 1),\n    ],\n    ids=[\n        \"empty-input\",\n        \"empty-string\",\n        \"newline-only\",\n        \"ascii-whitespace-only\",\n        \"unicode-whitespace-only\",\n        \"nonempty-lines\",\n        \"whitespace-around-content\",\n        \"mixed-lines\",\n        \"final-line-without-newline\",\n    ],\n)\ndef test_count_nonempty(lines: list[str], expected: int) -> None:\n    assert count_nonempty(lines) == expected\n\n\ndef test_accepts_single_pass_iterable() -> None:\n    lines = (line for line in [\"first\\n\", \"\\u2003\\n\", \"last\"])\n    assert count_nonempty(lines) == 2\n\n\n@pytest.mark.parametrize(\"newline\", [b\"\\n\", b\"\\r\\n\", b\"\\r\"])\n@pytest.mark.parametrize(\"trailing_newline\", [False, True])\ndef test_file_reading_with_universal_newlines(\n    tmp_path, newline: bytes, trailing_newline: bool\n) -> None:\n    lines = [\"first\", \"\", \" \\t\", \"\\u2003\", \"\\u00a0\", \"last\"]\n    data = newline.join(line.encode(\"utf-8\") for line in lines)\n    if trailing_newline:\n        data += newline\n\n    path = tmp_path / \"input.txt\"\n    path.write_bytes(data)\n\n    with path.open(\"r\", encoding=\"utf-8\", newline=None) as stream:\n        assert count_nonempty(stream) == 2\n\n\ndef test_file_reading_with_mixed_universal_newlines(tmp_path) -> None:\n    path = tmp_path / \"mixed.txt\"\n    path.write_bytes(\"first\\r\\n \\t\\r\\u2003\\n\\u00a0\\r\\nlast\".encode(\"utf-8\"))\n\n    with path.open(\"r\", encoding=\"utf-8\", newline=None) as stream:\n        assert count_nonempty(stream) == 2\n",
+          "sha256": "fc1b32346bc2022afa4f925e63463f833b91564ee3b0d9e8b238f22299a7779b"
+        }
+      }
+    },
+    {
+      "id": "architect-r2",
+      "capture_sha256": "ac84040262d6981ddc6e46adc73346c9afe1ab0958b0110bd3ae2f2e0c992b64",
+      "files": {
+        "pyproject.toml": {
+          "text": "[build-system]\nrequires = [\"setuptools>=68\"]\nbuild-backend = \"setuptools.build_meta\"\n\n[project]\nname = \"sample-count\"\nversion = \"0.1.0\"\ndescription = \"Count nonempty UTF-8 input lines.\"\nreadme = \"README.md\"\nrequires-python = \">=3.11\"\nlicense = { file = \"LICENSE\" }\ndependencies = []\n\n[project.optional-dependencies]\ndev = [\n    \"pytest>=8,<10\",\n    \"ruff>=0.9,<1\",\n]\n\n[project.scripts]\nsample-count = \"sample_count.cli:main\"\n\n[tool.setuptools.packages.find]\nwhere = [\"src\"]\n\n[tool.pytest.ini_options]\ntestpaths = [\"tests\"]\naddopts = \"-ra\"\n\n[tool.ruff]\ntarget-version = \"py311\"\nline-length = 88\n\n[tool.ruff.lint]\nselect = [\"E\", \"F\", \"I\"]\n",
+          "sha256": "9089237748e80b434dfeb6278f8400247e521ca0969c203e8b1f98019cfd029b"
+        },
+        "src/sample_count/__init__.py": {
+          "text": "\"\"\"Count nonempty UTF-8 input lines.\"\"\"\n",
+          "sha256": "699255fb69a0b0a8bcd0199717a605e9c7d9e05e53b6948780c332b500c2e114"
+        },
+        "src/sample_count/__main__.py": {
+          "text": "from sample_count.cli import main\n\nraise SystemExit(main())\n",
+          "sha256": "3b40feb651d131567c1554bd0989e548641f88ab2c2a2747535b7d8c8533ffad"
+        },
+        "src/sample_count/cli.py": {
+          "text": "\"\"\"Command-line interface and streaming line counter.\"\"\"\n\nimport argparse\nimport io\nimport sys\nfrom collections.abc import Iterable, Sequence\nfrom contextlib import ExitStack\n\n\ndef count_lines(lines: Iterable[str]) -> int:\n    \"\"\"Count lines whose stripped content is nonempty.\"\"\"\n    return sum(bool(line.strip()) for line in lines)\n\n\ndef main(argv: Sequence[str] | None = None) -> int:\n    parser = argparse.ArgumentParser(\n        prog=\"sample-count\",\n        description=\"Count nonempty UTF-8 lines from a file or standard input.\",\n    )\n    parser.add_argument(\n        \"path\",\n        nargs=\"?\",\n        default=\"-\",\n        help=\"UTF-8 input file; omit or use - for standard input\",\n    )\n    args = parser.parse_args(argv)\n\n    try:\n        with ExitStack() as stack:\n            if args.path == \"-\":\n                # Explicit decoding and universal newlines on every platform.\n                stream = io.TextIOWrapper(\n                    sys.stdin.buffer,\n                    encoding=\"utf-8\",\n                    errors=\"strict\",\n                    newline=None,\n                )\n                # Leave the underlying standard-input buffer open.\n                stack.callback(stream.detach)\n            else:\n                stream = stack.enter_context(\n                    open(\n                        args.path,\n                        encoding=\"utf-8\",\n                        errors=\"strict\",\n                        newline=None,\n                    )\n                )\n\n            total = count_lines(stream)\n\n        print(total)\n    except (OSError, UnicodeError) as exc:\n        print(f\"{parser.prog}: {exc}\", file=sys.stderr)\n        return 1\n\n    return 0\n",
+          "sha256": "82763c131ee3c078f5b01d3d1289a4f85e7745a097c428d252fbd497992c9062"
+        },
+        "tests/test_cli.py": {
+          "text": "import subprocess\nimport sys\nfrom pathlib import Path\n\nimport pytest\n\n\ndef run_cli(\n    *args: str,\n    input_bytes: bytes | None = None,\n) -> subprocess.CompletedProcess[bytes]:\n    return subprocess.run(\n        [sys.executable, \"-m\", \"sample_count\", *args],\n        input=input_bytes,\n        capture_output=True,\n        check=False,\n    )\n\n\n@pytest.mark.parametrize(\"ending\", [\"\\n\", \"\\r\\n\", \"\\r\"])\ndef test_counts_file_with_supported_line_endings(\n    tmp_path: Path,\n    ending: str,\n) -> None:\n    path = tmp_path / \"input.txt\"\n    content = ending.join(\n        [\"first\", \"\", \" \\t\", \"\\u2003\", \"\\u00a0\", \" second \", \"last\"]\n    )\n    path.write_bytes(content.encode(\"utf-8\"))\n\n    result = run_cli(str(path))\n\n    assert result.returncode == 0\n    assert result.stdout == b\"3\\n\" or result.stdout == b\"3\\r\\n\"\n    assert result.stderr == b\"\"\n\n\ndef test_rejects_invalid_utf8(tmp_path: Path) -> None:\n    path = tmp_path / \"invalid.txt\"\n    path.write_bytes(b\"valid\\n\\xff\\n\")\n\n    result = run_cli(str(path))\n\n    assert result.returncode == 1\n    assert result.stdout == b\"\"\n    assert result.stderr.startswith(b\"sample-count:\")\n\n\n@pytest.mark.parametrize(\"args\", [(), (\"-\",)])\n@pytest.mark.parametrize(\n    (\"content\", \"expected\"),\n    [\n        (\"\", 0),\n        (\" \\t\\r\\n\\u2003\\r\\u00a0\\n\", 0),\n        (\" \\t\\r\\n\\u2003\\r\\u00a0\\nalpha\\r\\nbeta\\rgamma\", 3),\n    ],\n)\ndef test_stdin_defaults_and_whitespace_edges(\n    args: tuple[str, ...],\n    content: str,\n    expected: int,\n) -> None:\n    result = run_cli(*args, input_bytes=content.encode(\"utf-8\"))\n\n    assert result.returncode == 0\n    assert result.stdout.decode(\"ascii\").splitlines() == [str(expected)]\n    assert result.stderr == b\"\"\n",
+          "sha256": "2b232d1c0d137ccf883d0fcd29033c1a991179a4bed8893e631ad46ab419193b"
+        },
+        "LICENSE": {
+          "text": "MIT License\n\nCopyright (c) 2026 sample-count contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+          "sha256": "4db959c52bcdd05c7368dea40232765278675d1016fb82e8ad15c711e63621a7"
+        },
+        ".github/workflows/ci.yml": {
+          "text": "name: CI\n\non:\n  pull_request:\n  push:\n    branches: [main]\n\npermissions:\n  contents: read\n\njobs:\n  checks:\n    name: ${{ matrix.os }} / Python ${{ matrix.python-version }}\n    runs-on: ${{ matrix.os }}\n    strategy:\n      fail-fast: false\n      matrix:\n        os: [ubuntu-latest, windows-latest]\n        python-version: [\"3.11\", \"3.13\"]\n\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v4\n\n      - name: Set up Python\n        uses: actions/setup-python@v5\n        with:\n          python-version: ${{ matrix.python-version }}\n\n      - name: Install project and development dependencies\n        run: python -m pip install -e \".[dev]\"\n\n      - name: Lint\n        run: python -m ruff check .\n\n      - name: Check formatting\n        run: python -m ruff format --check .\n\n      - name: Run tests\n        run: python -m pytest\n\n      - name: Check console entry point\n        run: sample-count --help\n",
+          "sha256": "7c8c2efc508521c16a9b0b13237c0775fb714a5942543a30dc3595d7a195c589"
+        }
+      }
+    },
+    {
+      "id": "regression-r2",
+      "capture_sha256": "ad9b57fef4a4a93d7c20168b8d0c91b2c23f502b1a8b6fbed2bbbddc5d31f620",
+      "files": {
+        "src/sample_count/core.py": {
+          "text": "from collections.abc import Iterable\n\n\ndef count_nonempty(lines: Iterable[str]) -> int:\n    \"\"\"Count lines for which bool(line.strip()) is true.\"\"\"\n    return sum(1 for line in lines if bool(line.strip()))\n",
+          "sha256": "719c2871360cf15f1e2f442d84b64c8625b9fd62addaa9a0e173390b24c84185"
+        },
+        "tests/test_core.py": {
+          "text": "import pytest\n\nfrom sample_count.core import count_nonempty\n\n\n@pytest.mark.parametrize(\n    (\"lines\", \"expected\"),\n    [\n        ([], 0),\n        ([\"\"], 0),\n        ([\"\\n\", \"\\r\\n\", \"\\r\"], 0),\n        ([\" \", \"\\t\", \" \\t \"], 0),\n        ([\"\\u2003\", \"\\u00a0\", \" \\t\\u2003\\u00a0\\n\"], 0),\n        ([\"hello\\n\"], 1),\n        ([\"final line without newline\"], 1),\n        ([\"\\u2003hello\\u00a0\\n\"], 1),\n        ([\"first\\n\", \"\\n\", \" \\t\\n\", \"\\u2003\\u00a0\\n\", \"last\"], 2),\n    ],\n    ids=[\n        \"empty-iterable\",\n        \"empty-string\",\n        \"newline-only\",\n        \"ascii-whitespace-only\",\n        \"unicode-whitespace-only\",\n        \"nonempty-with-newline\",\n        \"nonempty-without-final-newline\",\n        \"text-surrounded-by-unicode-whitespace\",\n        \"mixed-lines\",\n    ],\n)\ndef test_count_nonempty(lines: list[str], expected: int) -> None:\n    assert count_nonempty(lines) == expected\n\n\ndef test_count_nonempty_accepts_generator() -> None:\n    lines = (line for line in [\"first\\n\", \"\\u2003\\n\", \"last\"])\n    assert count_nonempty(lines) == 2\n\n\n@pytest.mark.parametrize(\"newline\", [\"\\n\", \"\\r\\n\", \"\\r\"], ids=[\"LF\", \"CRLF\", \"CR\"])\n@pytest.mark.parametrize(\"trailing_newline\", [False, True])\ndef test_file_reading_with_universal_newlines(\n    tmp_path, newline: str, trailing_newline: bool\n) -> None:\n    path = tmp_path / \"input.txt\"\n    content = newline.join([\"first\", \"\", \" \\t\", \"\\u2003\", \"\\u00a0\", \"last\"])\n    if trailing_newline:\n        content += newline\n    path.write_bytes(content.encode(\"utf-8\"))\n\n    with path.open(\"r\", encoding=\"utf-8\", newline=None) as stream:\n        assert count_nonempty(stream) == 2\n\n\ndef test_file_reading_with_mixed_newlines(tmp_path) -> None:\n    path = tmp_path / \"mixed.txt\"\n    path.write_bytes(\"first\\r\\n \\t\\r\\u2003\\n\\u00a0\\r\\nlast\".encode(\"utf-8\"))\n\n    with path.open(\"r\", encoding=\"utf-8\", newline=None) as stream:\n        assert count_nonempty(stream) == 2\n",
+          "sha256": "b36d198977bebe7b92db723125124d877fbb210ee22bd5e20bf6ebc358a04f7f"
+        }
+      }
+    }
+  ]
+}

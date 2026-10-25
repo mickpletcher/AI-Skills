@@ -4,16 +4,26 @@ on:
     paths:
       - 'master-skills/**'
       - 'adapters/**'
+      - 'model-profiles/**'
+      - 'generated-models/**'
+      - 'tools/model_profiles.py'
+      - 'tools/tests/test_model_profiles.py'
       - 'generated/**'
       - 'tools/tests/test_master_skills.py'
+      - 'tools/tests/test_migration.py'
+      - 'tools/tests/test_foundation_audit.py'
+      - '.gitattributes'
       - 'tools/generate_master_skills.py'
       - 'tools/skill_repository.py'
+      - 'tools/ecosystem_paths.py'
       - 'schemas/skill-frontmatter.schema.json'
       - 'requirements-dev.txt'
       - '.github/workflows/master-skills-validation.yml'
   push:
     branches: [main]
   workflow_dispatch:
+permissions:
+  contents: read
 jobs:
   validate:
     runs-on: ubuntu-latest

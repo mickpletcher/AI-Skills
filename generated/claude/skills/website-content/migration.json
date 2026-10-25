@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "skill": "website-content",
+  "source": "claude/skills/website-content/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "d0fbf81f60bc59ff1117438a660a23420d3c88ab6c6bddb48fa9117ea31e1743",
+  "source_frontmatter": {
+    "name": "website-content",
+    "description": "Write or update content for Mick Pletcher's personal website. Trigger when Mick asks to write, rewrite, or update any section of his personal site including About, Projects, Skills, Blog integration, AI and homelab showcase, health and sports, contact copy, landing page sections, SEO descriptions, or project writeups. Tone is polished and professional, closer to LinkedIn than the blog, but still first-person and direct. Avoid corporate-speak. No emojis. Avoid em dashes in final website copy.",
+    "version": "1.1.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {
+    "- if a claim has no available proof, cut it or scope it down rather than leaving it vague": "- if a claim has no available proof, cut it or scope it down rather than leaving it vague\n- first-person copy must not invent the author's motives, private thoughts or personal experience; use supplied facts or neutral project framing\n- preserve who performed each action: building a project does not establish that its author personally conducted a test. If the source does not identify the tester, use neutral wording such as an internal test used 12 files instead of I tested it\n- do not turn an operation sequence into an unverified safety guarantee: a preview before a move does not establish that the preview leaves originals unchanged",
+    "When layout constraints are unknown or the user asks, provide the same section in two lengths: a `concise` version (1 to 2 sentences per block, suitable for cards and hero sections) and a `detailed` version (full paragraphs for dedicated pages). Both must carry the same facts; the concise version cuts context, not specifics.": "When layout constraints are unknown and the user has not requested a single length, return both labeled versions of each section: `Concise` (1 to 2 sentences per block) and `Detailed` (full paragraphs). Also provide both when the user asks for variants. A single unlabeled draft does not satisfy this default. If the user explicitly requests one length, honor that request. Both versions must carry the same facts; concise copy cuts context, not specifics."
+  },
+  "supporting_files_sha256": {
+    "reference/copy-library.md": "8b7962c53f4dc68969e37a9c334827073d135f97badb7cf57d306a42420796ef"
+  },
+  "retained_in_original_sha256": {
+    "README.md": "ac8ab306f7fe018807d3d023700ce7ccd5021329b6a3696632bc9f59b096a7b3",
+    "completedchanges.md": "8df60bd438c6106defa5ba4be2c811b66e5300be09bd7381f2cf814a85544368",
+    "upgrades.md": "28c2683404cba123c974f3fd19f5e54a2c5ba9aae306a9e022f9e40e03417cc0",
+    "website-content.skill": "e25ab0b5d526ca9292ecd0aa184fc25f2820ba0c180fd1124d4cc45c1ba37751"
+  }
+}

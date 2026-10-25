@@ -1,5 +1,8 @@
 # Platform Organization
 
+Canonical migration exception: `master-skills/` holds portable review candidates and their dependencies; `adapters/` holds host guidance and `generated/` holds reproducible candidate bundles. Existing platform trees remain the shipped source of truth until a separately reviewed promotion. See [the migration guide](https://github.com/mickpletcher/AI-Skills/blob/main/master-skills/README.md).
+
+
 Use this guide to decide where files belong in this repository.
 
 ## Main Rule
@@ -9,8 +12,8 @@ Put a skill under the platform that owns it.
 Examples:
 
 - Claude skills go under `claude/`
-- ChatGPT skills go under `chatgpt/`
-- GitHub Copilot skills go under `copilot/`
+- OpenAI targets share `openai/`: ChatGPT skills go under `openai/chatgpt/` and Codex skills under `openai/codex/`
+- GitHub Copilot skills go under `microsoft/copilot/`
 - Gemini skills go under `gemini/`
 - Perplexity skills go under `perplexity/`
 - Cursor skills go under `cursor/`
@@ -57,7 +60,9 @@ claude/
         `-- skill-name.skill
 ```
 
-Apply the same idea to `chatgpt/` and `copilot/`, using the file formats those platforms expect.
+Apply the same idea to `openai/chatgpt/` and `microsoft/copilot/`, using the file formats those platforms expect.
+
+OpenAI is an organizational parent. Logical target IDs remain `chatgpt` and `codex`; do not merge their instruction formats or suitability rules. Generated candidates mirror the grouping under `generated/openai/<target>/skills/`. Adapter lookup uses `adapters/openai/<target>/<skill>/append.md`. Microsoft similarly groups `microsoft/copilot/` and reserved `microsoft/copilot-studio/`. The logical `copilot` ID remains stable. Copilot Studio has no generator/deployment support; its future adapter location is `adapters/microsoft/copilot-studio/<skill>/`. Other ecosystem paths are unchanged.
 
 ## Beginner Implementation Rule
 
@@ -90,7 +95,7 @@ Use plain language. Do not assume the reader already knows where Claude, ChatGPT
 - Source file should be a clear instruction file in the skill folder
 - `README.md` should explain which Copilot instruction surface the content is meant for
 - If the repo does not yet have a live Copilot example, say that plainly instead of implying a finished workflow exists
-- This repo now includes `copilot/skills/pr-review/` as the first concrete Copilot example
+- This repo now includes `microsoft/copilot/skills/pr-review/` as the first concrete Copilot example
 
 ### Gemini
 
@@ -110,3 +115,11 @@ Use plain language. Do not assume the reader already knows where Claude, ChatGPT
 - `README.md` should explain whether the content is meant for project rules, user rules, or temporary chat context
 - If the repo does not yet have a live Cursor example, say that plainly
 - This repo now includes `cursor/skills/pr-review/`, `cursor/skills/workflow-debugger/`, `cursor/skills/repo-assessment/`, and `cursor/skills/spec-writer/` as concrete Cursor examples
+
+## Existing grouping and copy boundaries
+
+OpenAI and Microsoft use vendor parents because each contains distinct target areas. The other current product directories remain at the root; no vendor aliases or alternative installation paths are implied. Additional vendor regrouping is a separate decision, not a prerequisite to using the current layout.
+
+The reserved `amazon-q/`, `grok/` and `microsoft/copilot-studio/` guides do not establish generator support. Gemini and Perplexity have no shipped skills or generated candidates. Shipped GitHub Copilot instructions are independent of the four-target candidate generator.
+
+Do not deduplicate by deleting platform sources, canonical masters, generated bundles, package archives or pinned evidence. They preserve shipped behavior, editable candidates, host-specific formats, reproducible delivery and historical comparisons respectively. ChatGPT/Cursor canonical SKILL.md companions keep internal references valid; their rendered entry point remains instructions.md. Remove a copy only after an explicit source-of-truth or promotion decision and the corresponding ownership/link checks.

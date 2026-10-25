@@ -1,8 +1,11 @@
 # Skill Authoring Standard
 
+Canonical migration exception: `master-skills/` holds portable review candidates and their dependencies; `adapters/` holds host guidance and `generated/` holds reproducible candidate bundles. Existing platform trees remain the shipped source of truth until a separately reviewed promotion. See [the migration guide](https://github.com/mickpletcher/AI-Skills/blob/main/master-skills/README.md).
+
+
 This document defines the minimum standard for writing a skill in this repository.
 
-Skills should be authored inside the platform folder they belong to. A Claude skill belongs in `claude/`, a ChatGPT skill belongs in `chatgpt/`, and a Copilot skill belongs in `copilot/`.
+Skills should be authored inside the platform folder they belong to. A Claude skill belongs in `claude/`, a ChatGPT skill belongs in `openai/chatgpt/`, and a Copilot skill belongs in `microsoft/copilot/`.
 
 Additional supported platform areas in this repo include `gemini/`, `perplexity/`, and `cursor/`.
 

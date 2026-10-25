@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "skill": "powershell-refactor",
+  "source": "claude/skills/powershell-refactor/SKILL.md",
+  "original_model": null,
+  "original_model_status": "unknown",
+  "modernized_model": "GPT-6",
+  "modernized_at": "2026-10-13",
+  "last_behavior_evaluation": null,
+  "evaluation_status": "not_run",
+  "compatibility": {
+    "claude": "recommended",
+    "codex": "recommended",
+    "cursor": "recommended",
+    "chatgpt": "optional",
+    "github-copilot": "recommended",
+    "grok": "optional",
+    "perplexity": "not_applicable"
+  },
+  "notes": "Compatibility is proposed, not verified. Model attribution describes this modernization only; original authoring model is unknown."
+}

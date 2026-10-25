@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "skill": "blog-post",
+  "source": "claude/skills/blog-post/SKILL.md",
+  "source_commit": "1deaab97ec585b6451a7ed80bc2a4398a8428ecc",
+  "source_sha256": "a2434288e2bd24fb2220658549839462944ad9d9843d3c5a11b7cbbd3664382a",
+  "source_frontmatter": {
+    "name": "blog-post",
+    "description": "Write or draft a blog post for Mick's IT blog at mickitblog.blogspot.com. Trigger when Mick asks for a blog post or wants to document a technical solution, project, or finding in post format. Match Mick's writing style with plain first-person prose, practical focus, honest status notes, code blocks where relevant, and GitHub links when applicable.",
+    "version": "1.1.0"
+  },
+  "status": "candidate",
+  "original_authoring_model": null,
+  "behavior_evaluations": [],
+  "host_compatibility": "unverified",
+  "transformations": {
+    "After the draft, offer 2 to 3 title options and matching first sentences in Mick's voice: one plain and descriptive, one that leads with the result or number, and optionally one that leads with the problem. No clickbait. Keep the body unchanged; the user picks the opener.": "After the draft, offer 2 to 3 title options and matching first sentences in Mick's voice: one plain and descriptive, one that leads with the result or number, and optionally one that leads with the problem. No clickbait. Keep the body unchanged; the user picks the opener. Apply the same source-evidence limits to every title and opener as to the main draft. Preserve who performed each action and any established event order; omit before/after relationships when the source does not establish them.",
+    "- First-person voice as Mick": "- First-person voice as Mick\n- First-person voice does not supply missing chronology. When the source does not specify when the author acted relative to someone else, describe the author's action without placing it before or after that person's actions. Apply this to the main draft as well as every title and opener."
+  },
+  "supporting_files_sha256": {},
+  "retained_in_original_sha256": {
+    "README.md": "efde3a2c8538b0d9c565fb340fe72d082d83c3d9a654defe486700a2f4feb0bf",
+    "blog-post.skill": "eab1814f9c108d8d98759095b390c559ff4b9b114f43d3db93bbc4d2e95fee3b",
+    "completedchanges.md": "ba3c0bff7c137322a2c3986594bbc80e8737cd99d60acacd0d2d996872dd8b7d",
+    "upgrades.md": "8a8f8d9cf2b6817d9f35426f7b7f88bed263b5570888005c041687453eaf46fb"
+  }
+}

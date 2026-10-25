@@ -1,0 +1,709 @@
+{
+  "assessment_date": "2026-10-21",
+  "acceptance": "Mick explicitly accepted the bounded workout results on 2026-10-21 and authorized the next untested native batch. Acceptance covers observed source-faithful combined downloads, duplicate confirmation, corrected/recovered delivery and exact Copy bytes in Medium. Initial delivery, repeatability, Instant recovery, real Obsidian ingestion and broader compatibility remain open. Earlier failures remain failed. No merging, installation or promotion.",
+  "visible_model": "Instant; backend identity and effective context unavailable.",
+  "provider_execution_independently_verified": false,
+  "real_vault_or_obsidian_ingestion": false,
+  "phases": [
+    {
+      "source_commit": "9a5ff07bd8dd19dfde0604b92221ae6f244ecf00",
+      "candidate_patch_sha256": "53dc6ba215359d7f0be0bee60e6c9f3823efcf7b42ba44bbbec970eaaaab3423",
+      "resources_sha256": {
+        "instructions.md": "0914db6ab87b7119b761960998d4a89fd219dc14d1e3b32591b797736a63a0b8",
+        "capabilities.json": "faf8010ded5647887df4d3f57ea9449f9718537717ac9bec69b37141538f4700",
+        "scripts/validate_export.py": "54ace9166cf1d7fd9a404b62a7dbf0a774c76a73edce0d59994af28594dc23b6"
+      },
+      "cases": [
+        {
+          "id": "workout-combined",
+          "skill": "obsidian-workout-export",
+          "task": "owd. Export the supplied fictional session into a file under a disposable WorkoutData/ folder in this chat workspace, then deliver workout-combined_outputs.zip containing that folder. Source chat date is 2026-10-17. Use that chat date for naming according to the skill; preserve the separate logged workout date. Do not search other chats or connect to a real vault. Only logged data may populate the note; no program, exertion, new PR or progression estimate has been supplied. Make combined activity structure and YAML queryable, preserving activity order and ambiguous rep ranges. This is fabricated test data, not a real training record.",
+          "criteria": [
+            "Filename 2026-10-17.md, separate actual workout date 2026-10-16 retained; combined type and strength-before-ride order.",
+            "YAML parses; preserve 40/3/5-8, bodyweight pull-ups 2/4,180lbs,12mi/50min/200ft and missed exercise.",
+            "No invented program, PR, effort, speed/power/HR or progression; no real-vault claim."
+          ],
+          "uploads": [
+            "packet.txt",
+            "resources.zip",
+            "session.txt"
+          ],
+          "input_sha256": {
+            "packet.txt": "e485a91572906a12d9c8de0d2495a1c0b4b8448403b033ad4a913f6ec311eb24",
+            "resources.zip": "4d1d5190e5ae522378fad6078db6072b007fdc42d384913e12c2d9eb228a0983",
+            "session.txt": "e568d8005b5caf49f8f7ad940af979499fa4de04427b7a18928cfe677f53c28b"
+          },
+          "captures": {
+            "final": {
+              "-dom.txt": "c291902df916476948a5c508c6a156a618259b9eaa26b2e627553e8a5bb73d34",
+              "-conversation.txt": "89aba6ec338794100ca54edd82152954ce1f9992ceb43fc68eddad3fc5c552f8",
+              ".png": "ad56e43b020914856b0b35e00292ee0c7ce474f3b7dcb39a44edfe91d1533820"
+            }
+          },
+          "status": "bounded_native_pass",
+          "delivered_note": "---\ndate: 2026-10-16\ntype: combined\nfocus: Lower A plus ride\ntags: [workout, strength, cycling]\nprs: 0\nride_duration_minutes: 50\n---\n# Workout Log - Day 2: Lower A plus ride\n\n**Date:** 2026-10-16\n\n## Body Stats\n\n| Metric | Value |\n| --- | --- |\n| Bodyweight | 180 lbs |\n\n## Session - Day 2: Lower A (Strength)\n\n| Exercise | Weight | Sets | Reps | PR? |\n| --- | --- | --- | --- | --- |\n| Goblet squat | 40 lbs | 3 | 5-8 (range logged; individual set reps unrecorded) | no |\n| Pull-ups | bodyweight | 2 | 4 | no |\n\n## Ride - Riverside loop\n\n| Metric | Value |\n| --- | --- |\n| Distance | 12 miles |\n| Duration | 50 minutes |\n| Elevation | 200 ft |\n\n## Notes and Flags\n\n- Calf raises skipped.\n",
+          "artifact": {
+            "bytes": 744,
+            "sha256": "687d0b19d1a1c2d0d27bb72a8777f2967855eaf867afd75ee145b5101dacdbf4",
+            "member_sha256": {
+              "WorkoutData/2026-10-17.md": "5e77e84f5c27bb86f479e525afdd7ed0c615b06c8086fa70bd17ee8c93ff93a0"
+            }
+          },
+          "checks": [
+            "Exact actual ZIP member frontmatter starts at byte zero and parses as YAML.",
+            "Filename uses source chat date; metadata preserves actual workout date.",
+            "Unknown combined total omitted; ride duration scoped at 50 minutes.",
+            "Recorded facts, activity order and ambiguous rep range preserved; no invented missing metrics."
+          ]
+        },
+        {
+          "id": "workout-duplicate",
+          "skill": "obsidian-workout-export",
+          "task": "owd. Current source chat date is 2026-10-18. Export this fictional session as complete Obsidian Markdown in the chat only. Session: 2026-10-18, Day 1 Upper A; seated row 60 lbs, 3 sets of 6 reps; push-ups bodyweight 2 sets of 8 reps. No body stats, duration, effort, PR or progression comparison supplied. Do not search other chats or save into a real vault. Follow the candidate duplicate protection in this actual test conversation on subsequent requests.",
+          "criteria": [
+            "Initial full note with 2026-10-18 filename and only supplied fields.",
+            "Second owd asks overwrite/skip and does not silently export again.",
+            "Authorized correction returns one full replacement preserving push-ups and row60lbs/4sets/6reps, no invented missing data."
+          ],
+          "followups": [
+            "owd",
+            "Re-export the same session with this explicit correction: seated row was 4 sets of 6 reps at 60 lbs, not 3 sets. Keep all other recorded details. This authorizes the corrected re-export. Return one complete replacement Markdown file body in chat, not a patch; no real vault writes."
+          ],
+          "uploads": [
+            "packet.txt",
+            "resources.zip"
+          ],
+          "input_sha256": {
+            "packet.txt": "13c97681d847595db77f393b48fbdbc95555b957a2b884398f1943a52a00da14",
+            "resources.zip": "4d1d5190e5ae522378fad6078db6072b007fdc42d384913e12c2d9eb228a0983"
+          },
+          "captures": {
+            "initial": {
+              "-dom.txt": "760c3f17d7cb7ad9c04f6aadb3ee182e7b587a9b91f4825ca754889e2e240ff8",
+              "-conversation.txt": "c710e4f1f5a84f1b1f377260177c30daaa1d10fc61fdf048d8db23183312ba2a",
+              ".png": "0b8f37bc93c25e74fb9846fa01a0c922deacb1a9bba33ba5e0f796be29483e21"
+            },
+            "duplicate-check": {
+              "-dom.txt": "f4be5818813bf15b2dc97a5aaac81227e273587d4bfa900d7b8ad80d1cfed254",
+              "-conversation.txt": "654b44c462c4a37e10b6c80d39742e7f694a4627884bf232097a21335116dbba",
+              ".png": "7cbbd7109f3115577b094d9de573cf4ab95be2973c4b7d376ff1daadc01ec0ba"
+            },
+            "corrected-export": {
+              "-dom.txt": "e9b00c3e2f5af91db8b4d8f6656c20ecaa365f0c2469206345f11bf693b21934",
+              "-conversation.txt": "23f40bdf6f0f7034da063fcf5835e197c3e738ad77ad09c83d374fe66e19bf3a",
+              ".png": "345da10a4735943fcf0f4296e7ab89da9c4a057d2818bfe040d7376db57d6f6c"
+            }
+          },
+          "copied_notes": {
+            "initial": "---\ndate: 2026-10-18\ntype: strength\nfocus: Upper A\ntags: [workout, strength]\n---\n# Workout Log - Day 1 Upper A\n**Date:** 2026-10-18\n\n## Session - Day 1: Upper A\n\n| Exercise | Weight | Sets | Reps | PR? |\n| --- | --- | --- | --- | --- |\n| Seated row | 60 lbs | 3 | 6 | Unlogged |\n| Push-ups | Bodyweight | 2 | 8 | Unlogged |",
+            "corrected-export": "\n---\ndate: 2026-10-18\ntype: strength\nfocus: Upper A\ntags: [workout, strength]\n---\n# Workout Log - Day 1 Upper A\n**Date:** 2026-10-18\n\n## Session - Day 1: Upper A\n\n| Exercise | Weight | Sets | Reps | PR? |\n| --- | --- | --- | --- | --- |\n| Seated row | 60 lbs | 4 | 6 | Unlogged |\n| Push-ups | Bodyweight | 2 | 8 | Unlogged |\n"
+          },
+          "copy_metadata": {
+            "initial": {
+              "clipboard_changed": true,
+              "copy_confirmation_observed": true,
+              "first_bytes": [
+                45,
+                45,
+                45,
+                10,
+                100,
+                97,
+                116,
+                101
+              ],
+              "length": 323,
+              "sha256": "854e5af86048a091c46506fabbb336c24c630777312155011b33a006eeece2a2",
+              "validator_error": null
+            },
+            "corrected-export": {
+              "clipboard_changed": true,
+              "copy_confirmation_observed": true,
+              "first_bytes": [
+                10,
+                45,
+                45,
+                45,
+                10,
+                100,
+                97,
+                116
+              ],
+              "length": 325,
+              "sha256": "b2fc903240127dc70241f83eabfa2e54bb9ead3144b5aaa0e2091a7458ed85c3",
+              "validator_error": "Frontmatter delimiter must start at byte zero, without BOM, blank line or fence"
+            }
+          },
+          "checks": [
+            "Actual native Copy equals rendered code, including leading whitespace.",
+            "Duplicate asks Skip/Re-export; no second export before authorization.",
+            "Complete correction preserves all other source data. Diagnostic whitespace removal checks content only and is not a delivered-copy pass."
+          ],
+          "status": "native_copy_failure_with_correct_content_and_duplicate_behavior"
+        }
+      ],
+      "criteria_not_uploaded": [
+        "Combined total omitted when unknown, with exact ride duration retained per activity and all source facts preserved.",
+        "Downloaded and both native Copy-code note bodies start with --- at byte zero, parse as YAML/frontmatter and preserve exact source/corrected data.",
+        "Duplicate request asks before a full corrected re-export; original failures retained and no real vault/app claims."
+      ],
+      "retained_capture_sha256": {
+        "canary-dom.txt": "dc8e18943be8a731ce6288760568b6a7d9a2621e46074a34ae8d72a08fa2eb9f",
+        "probe-copied.txt": "1fd668fe577e80a8fdad79f0c1309e363c97d91a25e73c25fe94507fb8e138ad",
+        "probe-dom.txt": "23001f96b0de8e13b8993e49cbdaa87719aefd2ec9b38e94b7d815fec54ceae6",
+        "probe-host-failure-dom.txt": "4186ca2d941e23f6e1e27d336c4ebe12455f31d4490cb25bf3eff3e2572c950a",
+        "probe-host-failure.png": "3104dcda3bd1b910f5ccdf3b41663676547c7980473bbf92909e2be76b906bbe",
+        "probe.png": "e6d2a6c806ccbd42fe7d79e559676ded012f6dd351a9e98e6f5d6ac16e9d9298",
+        "workout-combined\\host-failure-dom.txt": "adbec6334916b83e3fbf14d4e6a40f5a1f0e7156bf8ad3e0458cb57554bc3d22",
+        "workout-combined\\host-failure.png": "c976e552fcd6ff160a32719d7c4d17d1422db136d8a66aece2f6f307082e8a79",
+        "workout-duplicate\\host-failure-dom.txt": "780d53f0baa653d8b9227253d3507b1f1ed7cb7a3cbb5c69278d2767783dcc34",
+        "workout-duplicate\\host-failure.png": "b1e5170088d3a082315ef623e3f5a24bbb81852eb635e64d3df566ae31a65e92"
+      }
+    },
+    {
+      "source_commit": "9a5ff07bd8dd19dfde0604b92221ae6f244ecf00",
+      "candidate_patch_sha256": "98803164d648f64a214ccfbdd54b25f20bc8953c999ec7ea313b90661265cc91",
+      "resources_sha256": {
+        "instructions.md": "e5478390330c0d213995d79dc7f2fff44e0e24fd9e10a3b1f8671909aa1a3fc8",
+        "capabilities.json": "faf8010ded5647887df4d3f57ea9449f9718537717ac9bec69b37141538f4700",
+        "scripts/validate_export.py": "54ace9166cf1d7fd9a404b62a7dbf0a774c76a73edce0d59994af28594dc23b6"
+      },
+      "cases": [
+        {
+          "id": "workout-combined",
+          "skill": "obsidian-workout-export",
+          "task": "owd. Export the supplied fictional session into a file under a disposable WorkoutData/ folder in this chat workspace, then deliver workout-combined_outputs.zip containing that folder. Source chat date is 2026-10-17. Use that chat date for naming according to the skill; preserve the separate logged workout date. Do not search other chats or connect to a real vault. Only logged data may populate the note; no program, exertion, new PR or progression estimate has been supplied. Make combined activity structure and YAML queryable, preserving activity order and ambiguous rep ranges. This is fabricated test data, not a real training record.",
+          "criteria": [
+            "Filename 2026-10-17.md, separate actual workout date 2026-10-16 retained; combined type and strength-before-ride order.",
+            "YAML parses; preserve 40/3/5-8, bodyweight pull-ups 2/4,180lbs,12mi/50min/200ft and missed exercise.",
+            "No invented program, PR, effort, speed/power/HR or progression; no real-vault claim."
+          ],
+          "uploads": [
+            "packet.txt",
+            "resources.zip",
+            "session.txt"
+          ],
+          "input_sha256": {
+            "packet.txt": "d984d0d6552c7552cb1807bc8b912036c5b06348da44a2089d9180e4e0163c37",
+            "resources.zip": "3e006ab92d2607ee2abf60c1fb60fed7b0642a18bccb237df0ba6fdc93cfd182",
+            "session.txt": "e568d8005b5caf49f8f7ad940af979499fa4de04427b7a18928cfe677f53c28b"
+          },
+          "captures": {
+            "final": {
+              "-dom.txt": "a2f33dd2ee36079a4ef0d1603211591b17d7e74d544efa501a8635ff3af9e925",
+              "-conversation.txt": "87a20e2e7d7992df7fb1c2126f24320987f2b73597672223e281804c9653005d",
+              ".png": "97882f4a42032edce556814c6eae91a51eb2f46c18d0a88b47c4ba19d3c1a20f"
+            }
+          },
+          "status": "bounded_native_pass",
+          "delivered_note": "---\ndate: 2026-10-16\ntype: combined\nfocus: Lower A plus ride\ntags: [workout, strength, cycling]\nprs: 0\nride_duration_minutes: 50\n---\n# Workout Log - Day 2: Lower A plus ride\n\n**Date:** 2026-10-16\n\n## Body Stats\n| Metric | Value |\n| --- | --- |\n| Bodyweight | 180 lbs |\n\n## Session - Day 2: Lower A (Strength)\n| Exercise | Weight | Sets | Reps | PR? |\n| --- | --- | --- | --- | --- |\n| Goblet squat | 40 lbs | 3 | 5-8 (individual set reps unlogged) | no |\n| Pull-ups | bodyweight | 2 | 4 | no |\n\n## Session - Ride\n| Route | Distance | Duration | Elevation |\n| --- | --- | --- | --- |\n| Riverside loop | 12 miles | 50 minutes | 200 ft |\n\n## Notes and Flags\n- Calf raises skipped.\n",
+          "artifact": {
+            "bytes": 737,
+            "sha256": "c340211aefbc2146f2940ef48a4a79aeba110cd3692d14475b11135f19185663",
+            "member_sha256": {
+              "WorkoutData/2026-10-17.md": "b6943d41df55dd4efcd13ab678b1c31a68660a175f90ac22c20ad02a16ff1fe8"
+            }
+          },
+          "checks": [
+            "Exact actual ZIP member frontmatter starts at byte zero and parses as YAML.",
+            "Filename uses source chat date; metadata preserves actual workout date.",
+            "Unknown combined total omitted; ride duration scoped at 50 minutes.",
+            "Recorded facts, activity order and ambiguous rep range preserved; no invented missing metrics."
+          ]
+        },
+        {
+          "id": "workout-duplicate",
+          "skill": "obsidian-workout-export",
+          "task": "owd. Current source chat date is 2026-10-18. Export this fictional session as complete Obsidian Markdown in the chat only. Session: 2026-10-18, Day 1 Upper A; seated row 60 lbs, 3 sets of 6 reps; push-ups bodyweight 2 sets of 8 reps. No body stats, duration, effort, PR or progression comparison supplied. Do not search other chats or save into a real vault. Follow the candidate duplicate protection in this actual test conversation on subsequent requests.",
+          "criteria": [
+            "Initial full note with 2026-10-18 filename and only supplied fields.",
+            "Second owd asks overwrite/skip and does not silently export again.",
+            "Authorized correction returns one full replacement preserving push-ups and row60lbs/4sets/6reps, no invented missing data."
+          ],
+          "followups": [
+            "owd",
+            "Re-export the same session with this explicit correction: seated row was 4 sets of 6 reps at 60 lbs, not 3 sets. Keep all other recorded details. This authorizes the corrected re-export. Return one complete replacement Markdown file body in chat, not a patch; no real vault writes."
+          ],
+          "uploads": [
+            "packet.txt",
+            "resources.zip"
+          ],
+          "input_sha256": {
+            "packet.txt": "d358a618e755ea03c7f071e869425e723801f2e07576aa34f6551347aab3115d",
+            "resources.zip": "3e006ab92d2607ee2abf60c1fb60fed7b0642a18bccb237df0ba6fdc93cfd182"
+          },
+          "captures": {
+            "initial": {
+              "-dom.txt": "7f03a57c7bb7b5549c8b5d06f997489a09271966fc60c3e81765a277fde7722d",
+              "-conversation.txt": "2c69c872aab387f78f413be09741484b8e019efe637ddc2910ec9373bbc344aa",
+              ".png": "454a5fdbf42edec8474f44a724162836bbe6851d0456451a08ecd47b4153b443"
+            },
+            "duplicate-check": {
+              "-dom.txt": "dee413902ad512a36dae1fed0a348c542bd2b47b81b8d719ebb7c5453bcb0a60",
+              "-conversation.txt": "c2aa892afb6918e2c9d34cf9a1ff41f4a1212d4663b028fe3964af7725a27f98",
+              ".png": "6c46f6c9b15114f990fad9fe3ebf653b5d49294cb487fa9a11a9ea9067132a7e"
+            },
+            "corrected-export": {
+              "-dom.txt": "86d04cf6b667b717ecf3acaef5536dad817cf26d8419b6009b3f3b5a427b6a52",
+              "-conversation.txt": "99a0b1ab9b79536ef991495b2725c3e3e1d7a2f58314075a3a1dd38eddded2f3",
+              ".png": "31192fc8416e18c1fe104515b12196aaa487dc9d42c52e5ed14a91b49c88663d"
+            }
+          },
+          "copied_notes": {
+            "initial": "\n---\ndate: 2026-10-18\ntype: strength\nfocus: Upper A\ntags: [workout, strength]\n---\n# Workout Log - Day 1 Upper A\n**Date:** 2026-10-18\n\n## Session - Day 1: Upper A\n\n| Exercise | Weight | Sets | Reps | PR? |\n| --- | --- | --- | --- | --- |\n| Seated row | 60 lbs | 3 | 6 | Unlogged |\n| Push-ups | Bodyweight | 2 | 8 | Unlogged |\n",
+            "corrected-export": "\n---\ndate: 2026-10-18\ntype: strength\nfocus: Upper A\ntags: [workout, strength]\n---\n# Workout Log - Day 1 Upper A\n**Date:** 2026-10-18\n\n## Session - Day 1: Upper A\n\n| Exercise | Weight | Sets | Reps | PR? |\n| --- | --- | --- | --- | --- |\n| Seated row | 60 lbs | 4 | 6 | Unlogged |\n| Push-ups | Bodyweight | 2 | 8 | Unlogged |\n"
+          },
+          "copy_metadata": {
+            "initial": {
+              "clipboard_changed": true,
+              "copy_confirmation_observed": true,
+              "first_bytes": [
+                10,
+                45,
+                45,
+                45,
+                10,
+                100,
+                97,
+                116
+              ],
+              "length": 325,
+              "sha256": "1b932d5ca96f37163a31fb71edd81f530d2b5d1450f0713c5b879cccdf01ca62",
+              "validator_error": "Frontmatter delimiter must start at byte zero, without BOM, blank line or fence"
+            },
+            "corrected-export": {
+              "clipboard_changed": true,
+              "copy_confirmation_observed": true,
+              "first_bytes": [
+                10,
+                45,
+                45,
+                45,
+                10,
+                100,
+                97,
+                116
+              ],
+              "length": 325,
+              "sha256": "b2fc903240127dc70241f83eabfa2e54bb9ead3144b5aaa0e2091a7458ed85c3",
+              "validator_error": "Frontmatter delimiter must start at byte zero, without BOM, blank line or fence"
+            }
+          },
+          "checks": [
+            "Actual native Copy equals rendered code, including leading whitespace.",
+            "Duplicate asks Skip/Re-export; no second export before authorization.",
+            "Complete correction preserves all other source data. Diagnostic whitespace removal checks content only and is not a delivered-copy pass."
+          ],
+          "status": "native_copy_failure_with_correct_content_and_duplicate_behavior"
+        }
+      ],
+      "criteria_not_uploaded": [
+        "Combined total omitted when unknown, with exact ride duration retained per activity and all source facts preserved.",
+        "Downloaded and both native Copy-code note bodies start with --- at byte zero, parse as YAML/frontmatter and preserve exact source/corrected data.",
+        "Duplicate request asks before a full corrected re-export; original failures retained and no real vault/app claims."
+      ],
+      "retained_capture_sha256": {
+        "signed-out-dom.txt": "162f6ca800e3d61d8c584d942ab8537d8cfd51bf200dddc96b4cf1a45a2fa41b",
+        "signed-out.png": "cb3983a07555d0246ad60eb79e87a40b04f6e7b97217d06500e486b6dcf1f07d"
+      }
+    }
+  ],
+  "final_delivery_revision": {
+    "source_commit": "9a5ff07bd8dd19dfde0604b92221ae6f244ecf00",
+    "candidate_patch_sha256": "e1aae3e4fd6f74f4fcdfda03b1c074914c03fe1d0b8e364c8b06833eadb3b872",
+    "resources_sha256": {
+      "instructions.md": "7711f95a36a9c0203a9c4f05b30c9044bc35a2fe83fbc97ddf6ef74949f6ddf7",
+      "capabilities.json": "faf8010ded5647887df4d3f57ea9449f9718537717ac9bec69b37141538f4700",
+      "scripts/validate_export.py": "54ace9166cf1d7fd9a404b62a7dbf0a774c76a73edce0d59994af28594dc23b6"
+    },
+    "cases": [
+      {
+        "id": "workout-combined",
+        "skill": "obsidian-workout-export",
+        "task": "owd. Export the supplied fictional session into a file under a disposable WorkoutData/ folder in this chat workspace, then deliver workout-combined_outputs.zip containing that folder. Source chat date is 2026-10-17. Use that chat date for naming according to the skill; preserve the separate logged workout date. Do not search other chats or connect to a real vault. Only logged data may populate the note; no program, exertion, new PR or progression estimate has been supplied. Make combined activity structure and YAML queryable, preserving activity order and ambiguous rep ranges. This is fabricated test data, not a real training record.",
+        "criteria": [
+          "Filename 2026-10-17.md, separate actual workout date 2026-10-16 retained; combined type and strength-before-ride order.",
+          "YAML parses; preserve 40/3/5-8, bodyweight pull-ups 2/4,180lbs,12mi/50min/200ft and missed exercise.",
+          "No invented program, PR, effort, speed/power/HR or progression; no real-vault claim."
+        ],
+        "uploads": [
+          "packet.txt",
+          "resources.zip",
+          "session.txt"
+        ],
+        "input_sha256": {
+          "packet.txt": "d3aafa2cd6f4c005b233f92c12144b486d144cfee8573da5a1d8554f52455042",
+          "resources.zip": "04a20821ec1771717f373f989b66bed637f9a8a3967ab968429eb9f8528e5704",
+          "session.txt": "e568d8005b5caf49f8f7ad940af979499fa4de04427b7a18928cfe677f53c28b"
+        },
+        "status": "bounded_native_download_pass",
+        "delivered_note": "---\ndate: 2026-10-16\ntype: combined\nfocus: Lower A\ntags: [workout, strength, cycling]\nprs: 0\nride_duration_minutes: 50\n---\n# Workout Log - Day 2: Lower A plus ride\n**Date:** 2026-10-16\n\n## Body Stats\n| Metric | Value |\n| --- | --- |\n| Bodyweight | 180 lbs |\n\n## Session - Day 2: Lower A\n\n### 1. Strength\n| Exercise | Weight | Sets | Reps | PR? |\n| --- | --- | --- | --- | --- |\n| Goblet squat | 40 lbs | 3 | 5-8 (individual set reps unlogged) | no |\n| Pull-ups | bodyweight | 2 | 4 | no |\n\n### 2. Ride\n| Metric | Value |\n| --- | --- |\n| Route | Riverside loop |\n| Distance | 12 miles |\n| Duration | 50 minutes |\n| Elevation | 200 ft |\n\n## Notes and Flags\n- Calf raises skipped.\n",
+        "artifact": {
+          "bytes": 743,
+          "sha256": "d2ef7facba7af31bbc1709cdf043b5b15ec4d2a9d55bce28050f199104cb4794",
+          "member_sha256": {
+            "WorkoutData/2026-10-17.md": "e3aeedc9faac9d937c26a3400ce11634fd2b0cddd6d3a46e6e84be68af267b49"
+          }
+        },
+        "captures": {
+          "-dom.txt": "7429f1bdc1fced19506ddf6c6db0af20f48a94bcd84f5e1fccb78539b16c303f",
+          "-conversation.txt": "0d6aff6878f0121a227adfa0433261c9ed787c08d4a67a0aed881a26bb84cf8f",
+          ".png": "047887f6a4ba10c5adf93a3f3e21010c0e5f50247df0a491d8f69b1ef908ebcd"
+        },
+        "checks": [
+          "Actual downloaded ZIP has exactly the intended note and folder.",
+          "Frontmatter starts at byte zero; helper replay and full YAML parsing pass.",
+          "Source chat filename and actual workout date preserved.",
+          "Unknown combined total omitted; ride duration scoped to 50 minutes.",
+          "Activity order, rep range, all logged values and skipped exercise preserved.",
+          "No real vault/app ingestion or provider command history verified."
+        ]
+      },
+      {
+        "id": "workout-duplicate",
+        "skill": "obsidian-workout-export",
+        "task": "owd. Current source chat date is 2026-10-18. Export this fictional session as complete Obsidian Markdown in the chat only. Session: 2026-10-18, Day 1 Upper A; seated row 60 lbs, 3 sets of 6 reps; push-ups bodyweight 2 sets of 8 reps. No body stats, duration, effort, PR or progression comparison supplied. Do not search other chats or save into a real vault. Follow the candidate duplicate protection in this actual test conversation on subsequent requests.",
+        "criteria": [
+          "Initial full note with 2026-10-18 filename and only supplied fields.",
+          "Second owd asks overwrite/skip and does not silently export again.",
+          "Authorized correction returns one full replacement preserving push-ups and row60lbs/4sets/6reps, no invented missing data."
+        ],
+        "followups": [
+          "owd",
+          "Re-export the same session with this explicit correction: seated row was 4 sets of 6 reps at 60 lbs, not 3 sets. Keep all other recorded details. This authorizes the corrected re-export. Return one complete replacement Markdown file body in chat, not a patch; no real vault writes."
+        ],
+        "uploads": [
+          "packet.txt",
+          "resources.zip"
+        ],
+        "input_sha256": {
+          "packet.txt": "43be715e3bb1e5af5bdb8bfe07f150589180a6e81114a074972107b34bbd39e4",
+          "resources.zip": "04a20821ec1771717f373f989b66bed637f9a8a3967ab968429eb9f8528e5704"
+        },
+        "status": "unassessed_host_response_load_failures",
+        "attempts": [
+          {
+            "attempt": 1,
+            "method": "Fresh Temporary chat; unchanged packet and wrapper.",
+            "outcome": "This response could not load."
+          },
+          {
+            "attempt": 2,
+            "method": "One fresh Temporary chat retry; unchanged packet and wrapper.",
+            "outcome": "This response could not load."
+          },
+          {
+            "attempt": 3,
+            "method": "Try again on Instant in the same failed retry chat; no prompt/model changes.",
+            "outcome": "This response could not load."
+          }
+        ],
+        "captures": {
+          "host-failure-dom.txt": "af01e9b481415162c079565e4a57f82b03b177e4c133847d3685499a359b5675",
+          "host-failure.png": "451c9f56ca3d39118d0dd19f8f60c9e46acce8b96f029545bf514577b15f4cc9",
+          "retry-host-failure-dom.txt": "7a93497ecdd6a4b8009ad9993e95c121992540b7e0b78a6abeca7bffc11c6a99",
+          "retry-host-failure.png": "a7ba09df95baaef72d615530f1ac6b9e46cf2e1dfa8e7e090e6e569faedf8dc0"
+        },
+        "followups_executed": false,
+        "initial_or_corrected_file_received": false,
+        "native_copy_received": false,
+        "limits": [
+          "No domain deliverable was available to assess in this revision.",
+          "Third failure observed in the live DOM; persistent screenshot unavailable after browser control reset and reported Debugger unattached. First two failure DOMs/screenshots retained.",
+          "No additional retry, model switch or candidate change was performed."
+        ]
+      }
+    ],
+    "criteria_not_uploaded": [
+      "Combined total omitted when unknown, with exact ride duration retained per activity and all source facts preserved.",
+      "Downloaded and both native Copy-code note bodies start with --- at byte zero, parse as YAML/frontmatter and preserve exact source/corrected data.",
+      "Duplicate request asks before a full corrected re-export; original failures retained and no real vault/app claims."
+    ],
+    "tested_commit": "458c5d0c3de65bb8ad26a18967dda5c2b7b162f4",
+    "native_status": "Partially assessed: combined download passes; duplicate/correction remains unassessed after three host response load failures.",
+    "provider_execution_independently_verified": false,
+    "real_obsidian_ingestion": false,
+    "authentication": "Sign-in confirmed before both primary tasks; current blocker is response loading, not sign-in."
+  },
+  "summary": {
+    "completed_primary_cases": 5,
+    "completed_domain_responses": 9,
+    "combined_download_bounded_passes": 3,
+    "native_copy_passes": 1,
+    "native_copy_failures": 3,
+    "unassessed_primary_host_load_failures": 4,
+    "format_probe_load_failures": 1,
+    "final_revision_native_pending": true,
+    "final_revision_completed_cases": 1,
+    "final_revision_unassessed_cases": 1,
+    "final_revision_unassessed_host_load_failures": 3,
+    "unassessed_regenerated_host_load_failures": 1,
+    "program_repair": {
+      "visible_mode": "GPT-6 Medium",
+      "combined_download_passes": 1,
+      "corrected_and_recovered_source_downloads_verified": 2,
+      "initial_native_delivery_unassessed": true,
+      "additional_original_source_recovery_turns": 1,
+      "human_acceptance_pending": false,
+      "copy_boundaries": {
+        "corrected-export": "boundary_pass",
+        "baseline-recovery": "boundary_pass"
+      }
+    }
+  },
+  "limits": [
+    "Original batch3 failures retained unchanged.",
+    "Two first-phase primary host failures retried once with identical packets.",
+    "Plain text format probe passed only after one unassessed host failure; it does not certify domain exports.",
+    "Actual provider execution logs were not requested; independent helper replay proves delivered file bytes only.",
+    "Raw chats/screenshots and fabricated files remain private outside Git and OneDrive.",
+    "No real Obsidian import, other host/model, installed discovery, whole-context isolation or complete network trace was verified."
+  ],
+  "retained_program_template_failure": {
+    "source_commit": "b6c882ebf5f5b211c191ebb549c1cd567c5a2323",
+    "resources_sha256": {
+      "instructions.md": "7711f95a36a9c0203a9c4f05b30c9044bc35a2fe83fbc97ddf6ef74949f6ddf7",
+      "capabilities.json": "faf8010ded5647887df4d3f57ea9449f9718537717ac9bec69b37141538f4700",
+      "scripts/validate_export.py": "54ace9166cf1d7fd9a404b62a7dbf0a774c76a73edce0d59994af28594dc23b6"
+    },
+    "case": {
+      "id": "workout-duplicate",
+      "skill": "obsidian-workout-export",
+      "task": "owd. Current source chat date is 2026-10-18. Export this fictional session as complete Obsidian Markdown in the chat only. Session: 2026-10-18, Day 1 Upper A; seated row 60 lbs, 3 sets of 6 reps; push-ups bodyweight 2 sets of 8 reps. No body stats, duration, effort, PR or progression comparison supplied. Do not search other chats or save into a real vault. Follow the candidate duplicate protection in this actual test conversation on subsequent requests.",
+      "criteria": [
+        "Initial full note with 2026-10-18 filename and only supplied fields.",
+        "Second owd asks overwrite/skip and does not silently export again.",
+        "Authorized correction returns one full replacement preserving push-ups and row60lbs/4sets/6reps, no invented missing data."
+      ],
+      "followups": [
+        "owd",
+        "Re-export the same session with this explicit correction: seated row was 4 sets of 6 reps at 60 lbs, not 3 sets. Keep all other recorded details. This authorizes the corrected re-export. Return one complete replacement Markdown file body in chat, not a patch; no real vault writes."
+      ],
+      "uploads": [
+        "packet.txt",
+        "resources.zip"
+      ],
+      "input_sha256": {
+        "packet.txt": "43be715e3bb1e5af5bdb8bfe07f150589180a6e81114a074972107b34bbd39e4",
+        "resources.zip": "04a20821ec1771717f373f989b66bed637f9a8a3967ab968429eb9f8528e5704"
+      }
+    },
+    "criteria_not_uploaded": [
+      "Combined total omitted when unknown, with exact ride duration retained per activity and all source facts preserved.",
+      "Downloaded and both native Copy-code note bodies start with --- at byte zero, parse as YAML/frontmatter and preserve exact source/corrected data.",
+      "Duplicate request asks before a full corrected re-export; original failures retained and no real vault/app claims."
+    ],
+    "acceptance": "Pending separate human acceptance; testing authorization is not acceptance.",
+    "status": "source_fidelity_failure",
+    "visible_mode": "GPT-6 Medium; distinct from Instant.",
+    "downloads": {
+      "initial": {
+        "bytes": 365,
+        "sha256": "d313671aa39c320127046855015c682186e5e9759d362c2b4750a5f044fed4df",
+        "note": "---\ndate: 2026-10-18\ntype: strength\nfocus: Upper A\ntags: [workout, strength]\n---\n# Workout Log - Day 1 Upper A\n**Date:** 2026-10-18\n**Program:** 15 Percent Body Fat Project\n\n## Session - Day 1: Upper A\n\n| Exercise | Weight | Sets | Reps | PR? |\n| --- | --- | --- | --- | --- |\n| Seated row | 60 lbs | 3 | 6 | Unlogged |\n| Push-ups | Bodyweight | 2 | 8 | Unlogged |\n",
+        "boundary_and_yaml_pass": true,
+        "source_fidelity_pass": false
+      },
+      "corrected-export": {
+        "bytes": 365,
+        "sha256": "70421f51dd09046798ae821b64ba378ae305e975bc8a5f10c9f0fb06798d91a8",
+        "note": "---\ndate: 2026-10-18\ntype: strength\nfocus: Upper A\ntags: [workout, strength]\n---\n# Workout Log - Day 1 Upper A\n**Date:** 2026-10-18\n**Program:** 15 Percent Body Fat Project\n\n## Session - Day 1: Upper A\n\n| Exercise | Weight | Sets | Reps | PR? |\n| --- | --- | --- | --- | --- |\n| Seated row | 60 lbs | 4 | 6 | Unlogged |\n| Push-ups | Bodyweight | 2 | 8 | Unlogged |\n",
+        "boundary_and_yaml_pass": true,
+        "source_fidelity_pass": false
+      }
+    },
+    "copy": {
+      "corrected": {
+        "bytes": 364,
+        "sha256": "ae96d10553770cf5144ae63d4ca5c40d30b931ea7bc2a5710a7c994f9e74a02c",
+        "note": "---\ndate: 2026-10-18\ntype: strength\nfocus: Upper A\ntags: [workout, strength]\n---\n# Workout Log - Day 1 Upper A\n**Date:** 2026-10-18\n**Program:** 15 Percent Body Fat Project\n\n## Session - Day 1: Upper A\n\n| Exercise | Weight | Sets | Reps | PR? |\n| --- | --- | --- | --- | --- |\n| Seated row | 60 lbs | 4 | 6 | Unlogged |\n| Push-ups | Bodyweight | 2 | 8 | Unlogged |",
+        "boundary_pass": true,
+        "source_fidelity_pass": false
+      }
+    },
+    "captures": {
+      "initial": {
+        "-dom.txt": "cc7d20714d95ae12307d21cd87affe07349f65b476d0206e5ab40cf015439c16",
+        "-conversation.txt": "d721fe97891ac06df12757066250bbca113f2309439abf4028244ec7ce3fcb49",
+        ".png": "a4c4910ffec0c7b6ce87ca51332362e3576a2c4ff4cdae8f33cbde2d98f27b83"
+      },
+      "duplicate-check": {
+        "-dom.txt": "b066ea5a5291ab21c4d3a6b03868a9f9919f92bdf01c62520ae355fd6cd08f3f",
+        "-conversation.txt": "954f6c476f7b43bafe1c1cce7b306de3b3bd82003ab1ecbb723bbcd0ed7d0c0c",
+        ".png": "11347c87b8884ebe067612bbf46fc7a9245477078cede8a02513864bf8c39bfc"
+      },
+      "corrected-export": {
+        "-dom.txt": "45feb7ef29a86e0290b5ebe00c28ea1ef5633ae736d849c1f81fc16d71d9f9b4",
+        "-conversation.txt": "10b5b4a37c0730f7b7992d006122761390692e874e92f8997f07ceb6c38f67f4",
+        ".png": "2aa1f6e4bc0d10471d0aed831af4feddf4ac6ffd8b121f4b3288a5c52547c099"
+      }
+    },
+    "initial_inline_body": "Unavailable due to native response load failure; attached file was downloaded.",
+    "instant_host_failure": {
+      "instant-host-failure-dom.txt": "f45ff2278b6c0ef62fd539777b873f984e247316dd2c8db3bb049db6a38eb19f",
+      "instant-host-failure.png": "40d27042c62c15500d55356f1c5a56f074c8fd26ee047856a1624efcbb246955"
+    },
+    "failure": "The 15 Percent Body Fat Project program was copied from the candidate example into both notes, although absent from the supplied session."
+  },
+  "program_template_repair_review": {
+    "source_commit": "b6c882ebf5f5b211c191ebb549c1cd567c5a2323",
+    "candidate_patch_sha256": "be8deab04f47ac9a8e8d7800bc7f836cf97c7772a2f04debb5373bec969127b8",
+    "resources_sha256": {
+      "instructions.md": "71e7330d7006ca34aa74f012b4aca065c1d7403664d7550f39f205436286acce",
+      "capabilities.json": "faf8010ded5647887df4d3f57ea9449f9718537717ac9bec69b37141538f4700",
+      "scripts/validate_export.py": "54ace9166cf1d7fd9a404b62a7dbf0a774c76a73edce0d59994af28594dc23b6"
+    },
+    "cases": [
+      {
+        "id": "workout-combined",
+        "skill": "obsidian-workout-export",
+        "task": "owd. Export the supplied fictional session into a file under a disposable WorkoutData/ folder in this chat workspace, then deliver workout-combined_outputs.zip containing that folder. Source chat date is 2026-10-17. Use that chat date for naming according to the skill; preserve the separate logged workout date. Do not search other chats or connect to a real vault. Only logged data may populate the note; no program, exertion, new PR or progression estimate has been supplied. Make combined activity structure and YAML queryable, preserving activity order and ambiguous rep ranges. This is fabricated test data, not a real training record.",
+        "criteria": [
+          "Filename 2026-10-17.md, separate actual workout date 2026-10-16 retained; combined type and strength-before-ride order.",
+          "YAML parses; preserve 40/3/5-8, bodyweight pull-ups 2/4,180lbs,12mi/50min/200ft and missed exercise.",
+          "No invented program, PR, effort, speed/power/HR or progression; no real-vault claim."
+        ],
+        "uploads": [
+          "packet.txt",
+          "resources.zip",
+          "session.txt"
+        ],
+        "input_sha256": {
+          "packet.txt": "21dd5cee87a915cadb77de3422e181aac0154569ea565cf6f2e0453798c07515",
+          "resources.zip": "8137e6af3ca3283aeb29417907f30e8761547dbf354c5b898c6a191dd473e736",
+          "session.txt": "e568d8005b5caf49f8f7ad940af979499fa4de04427b7a18928cfe677f53c28b"
+        },
+        "status": "bounded_native_download_pass",
+        "artifact": {
+          "bytes": 895,
+          "sha256": "86caa6f388ae19a1326765022ce18f09a4097b66030070429ffff934ddd44e7e",
+          "member_sha256": {
+            "WorkoutData/2026-10-17.md": "f6465f11fcc823048058465b556e5750f2783bd54a08e1a8f0cfa1e00c17009b"
+          }
+        },
+        "note": "---\ndate: 2026-10-16\nchat_date: 2026-10-17\ntype: combined\nfocus: \"Day 2: Lower A\"\ntags: [workout, strength, cycling]\nprs: 0\nride_duration_minutes: 50\nactivities:\n  - type: strength\n    focus: \"Lower A\"\n    exercises:\n      - name: \"Goblet squat\"\n        weight: \"40 lbs\"\n        sets: 3\n        reps: \"5-8\"\n      - name: \"Pull-ups\"\n        weight: bodyweight\n        sets: 2\n        reps: 4\n  - type: ride\n    route: \"Riverside loop\"\n    distance_miles: 12\n    duration_minutes: 50\n    elevation_ft: 200\n---\n# Workout Log - Day 2: Lower A plus ride\n\n**Date:** 2026-10-16\n\n## Body Stats\n\n| Metric | Value |\n| --- | --- |\n| Bodyweight | 180 lbs |\n\n## Session - Day 2: Lower A (Strength)\n\n| Exercise | Weight | Sets | Reps | PR? |\n| --- | --- | --- | --- | --- |\n| Goblet squat | 40 lbs | 3 | 5-8 | No PR flagged |\n| Pull-ups | bodyweight | 2 | 4 | No PR flagged |\n\n## Ride - Riverside loop\n\n| Route | Distance | Duration | Elevation |\n| --- | --- | --- | --- |\n| Riverside loop | 12 miles | 50 minutes | 200 ft |\n\n## Notes and Flags\n\n- Goblet squat reps logged as a range (5-8); individual set reps not recorded.\n- Calf raises skipped.\n",
+        "captures": {
+          "-dom.txt": "86a1b06757a738bb9bb608973358f6147e7dcfc4b81cc451ed830f87c01ea1c0",
+          "-conversation.txt": "469b4d5a1cec2189a8c48d7a211b8957e2d1786ee32af4b199330446985f4f62",
+          ".png": "0e7f22b61fe20a5a3264ff2622728385557c196dc439c7253be0d082dcc8e59b"
+        },
+        "checks": [
+          "Actual original ZIP/member bytes validate at byte zero and parse as full YAML.",
+          "Dates, activity order, ambiguous range and all supplied facts retained.",
+          "Only the ride has a duration; no unlogged program, total or missing metrics invented."
+        ]
+      },
+      {
+        "id": "workout-duplicate",
+        "skill": "obsidian-workout-export",
+        "task": "owd. Current source chat date is 2026-10-18. Export this fictional session as complete Obsidian Markdown in the chat only. Session: 2026-10-18, Day 1 Upper A; seated row 60 lbs, 3 sets of 6 reps; push-ups bodyweight 2 sets of 8 reps. No body stats, duration, effort, PR or progression comparison supplied. Do not search other chats or save into a real vault. Follow the candidate duplicate protection in this actual test conversation on subsequent requests.",
+        "criteria": [
+          "Initial full note with 2026-10-18 filename and only supplied fields.",
+          "Second owd asks overwrite/skip and does not silently export again.",
+          "Authorized correction returns one full replacement preserving push-ups and row60lbs/4sets/6reps, no invented missing data."
+        ],
+        "followups": [
+          "owd",
+          "Re-export the same session with this explicit correction: seated row was 4 sets of 6 reps at 60 lbs, not 3 sets. Keep all other recorded details. This authorizes the corrected re-export. Return one complete replacement Markdown file body in chat, not a patch; no real vault writes."
+        ],
+        "uploads": [
+          "packet.txt",
+          "resources.zip"
+        ],
+        "input_sha256": {
+          "packet.txt": "4f8820cbfce9b7a77e840b529f9c7244724497ff74d5d404f04c0919e7dac583",
+          "resources.zip": "8137e6af3ca3283aeb29417907f30e8761547dbf354c5b898c6a191dd473e736"
+        },
+        "initial_status": "Host response failed to load twice, including one unchanged regeneration.",
+        "initial_download_verified": false,
+        "initial_copy_verified": false,
+        "captures": {
+          "host-failure": {
+            "-dom.txt": "044d42fa62c4134ff2e752ba7dbbaabb6dfb1438fd9fc247bc72ae3e81673b8b",
+            "-conversation.txt": "c481c54a54f2933d0b60b3797b49f73f395946fa3f2c0934e6bf5b10d32327e2",
+            ".png": "37b39783a305ec53be460e123642ac8a3db95e3362580efa634a685abe70aab6"
+          },
+          "retry-host-failure": {
+            "-dom.txt": "4b30893144c75e58183f281524a364b0f345532d9a19ac5ce9e10b36a47932cc",
+            "-conversation.txt": "b07ad9cb4824778e3f5001efe76c0d35741853d9eff0ef88211dc709fd5f46eb",
+            ".png": "1ca94e2eec8c0703270cc8b626558a3ba9102508e657ea2f6e2ebe71247f5e8f"
+          },
+          "duplicate-check": {
+            "-dom.txt": "f293d1c7cbb3e4f12bc263462b709b05e686092fea13abc86d090236add906a3",
+            "-conversation.txt": "cf20436eb8f9d8425b955263fcd5b0a2fcd2953335b89bf1fc5b6f1507577647",
+            ".png": "b64d16df67355cffc78fd552127b96b70b64ffe878b67a65e578deb7986d18a4"
+          },
+          "corrected-export": {
+            "-dom.txt": "332724bb6d2745f63b05d529b6f95d6be5d03371c67e64c9af952e0a47076be3",
+            "-conversation.txt": "bb08458d325a2daefb30ec2f4492dfcfc28de6e4978e89f9a97d6f585ea73d11",
+            ".png": "bb243949c417200d3f77a2d72f53af8c68a3eb281329b982185f0c2757c2346b"
+          },
+          "baseline-recovery": {
+            "-dom.txt": "93a1b923f4c9c35a8296dfdc52da7b45bb2bdc6225f11b261f0ff6d4839cbd30",
+            "-conversation.txt": "e1a1e622d0667835fdb798f4b72bef4b3dfccae04e6995966d2ce3fe38732a9a",
+            ".png": "70e9f74a6356c09967e9a5d54c51ad7b323975595944a470ee7a6bc6ff76f458"
+          }
+        },
+        "downloads": {
+          "corrected-export": {
+            "bytes": 324,
+            "sha256": "77944012d535867dc21b90bd1c93760b8eea8c24db8395823384402d63422683",
+            "note": "---\ndate: 2026-10-18\ntype: strength\nfocus: Upper A\ntags: [workout, strength]\n---\n# Workout Log - Day 1 Upper A\n**Date:** 2026-10-18\n\n## Session - Day 1: Upper A\n\n| Exercise | Weight | Sets | Reps | PR? |\n| --- | --- | --- | --- | --- |\n| Seated row | 60 lbs | 4 | 6 | Unlogged |\n| Push-ups | Bodyweight | 2 | 8 | Unlogged |\n",
+            "boundary_and_full_yaml_pass": true,
+            "source_fidelity_pass": true
+          },
+          "baseline-recovery": {
+            "bytes": 324,
+            "sha256": "91f07769b7ff713c0d01fd59a46445d158567dee11c21828fee52edd899d0295",
+            "note": "---\ndate: 2026-10-18\ntype: strength\nfocus: Upper A\ntags: [workout, strength]\n---\n# Workout Log - Day 1 Upper A\n**Date:** 2026-10-18\n\n## Session - Day 1: Upper A\n\n| Exercise | Weight | Sets | Reps | PR? |\n| --- | --- | --- | --- | --- |\n| Seated row | 60 lbs | 3 | 6 | Unlogged |\n| Push-ups | Bodyweight | 2 | 8 | Unlogged |\n",
+            "boundary_and_full_yaml_pass": true,
+            "source_fidelity_pass": true
+          }
+        },
+        "copies": {
+          "corrected-export": {
+            "bytes": 324,
+            "sha256": "77944012d535867dc21b90bd1c93760b8eea8c24db8395823384402d63422683",
+            "note": "---\ndate: 2026-10-18\ntype: strength\nfocus: Upper A\ntags: [workout, strength]\n---\n# Workout Log - Day 1 Upper A\n**Date:** 2026-10-18\n\n## Session - Day 1: Upper A\n\n| Exercise | Weight | Sets | Reps | PR? |\n| --- | --- | --- | --- | --- |\n| Seated row | 60 lbs | 4 | 6 | Unlogged |\n| Push-ups | Bodyweight | 2 | 8 | Unlogged |\n",
+            "exact_download_and_visible_equality": true,
+            "validator_error": null,
+            "status": "boundary_pass"
+          },
+          "baseline-recovery": {
+            "bytes": 324,
+            "sha256": "91f07769b7ff713c0d01fd59a46445d158567dee11c21828fee52edd899d0295",
+            "note": "---\ndate: 2026-10-18\ntype: strength\nfocus: Upper A\ntags: [workout, strength]\n---\n# Workout Log - Day 1 Upper A\n**Date:** 2026-10-18\n\n## Session - Day 1: Upper A\n\n| Exercise | Weight | Sets | Reps | PR? |\n| --- | --- | --- | --- | --- |\n| Seated row | 60 lbs | 3 | 6 | Unlogged |\n| Push-ups | Bodyweight | 2 | 8 | Unlogged |\n",
+            "exact_download_and_visible_equality": true,
+            "validator_error": null,
+            "status": "boundary_pass"
+          }
+        },
+        "baseline_recovery_prompt": "Explicitly re-export the originally supplied session as a separate baseline recovery check: 2026-10-18, Day 1 Upper A; seated row 60 lbs, 3 sets of 6 reps; push-ups bodyweight, 2 sets of 8 reps. Use the same source chat date, 2026-10-18. No body stats, duration, effort, PR or progression comparison were supplied. Return one complete replacement note body in chat using the supplied candidate. This authorizes the re-export; no real vault writes.",
+        "status": "bounded_duplicate_and_reexport_delivery_pass_with_initial_host_failure",
+        "checks": [
+          "Duplicate asks Skip/Overwrite before exporting again; initial file state is unverified.",
+          "Exact original correction turn produces a complete 4-set source-faithful note.",
+          "One separately labelled recovery request re-exports the original 3-set source; it is not an initial-delivery pass.",
+          "Both actual downloads validate at byte zero and parse as YAML with no template program leak.",
+          "Exact native Copy outputs are checked separately; whitespace diagnostics are not Copy passes."
+        ]
+      }
+    ],
+    "criteria_not_uploaded": [
+      "Combined total omitted when unknown, with exact ride duration retained per activity and all source facts preserved.",
+      "Downloaded and both native Copy-code note bodies start with --- at byte zero, parse as YAML/frontmatter and preserve exact source/corrected data.",
+      "Duplicate request asks before a full corrected re-export; original failures retained and no real vault/app claims."
+    ],
+    "visible_mode": "GPT-6 Medium; regeneration menu calls it 6 Thinking. Exact backend and effective context unavailable.",
+    "acceptance": "Mick explicitly accepted the bounded workout results on 2026-10-21 and authorized the next untested native batch. Acceptance covers observed source-faithful combined downloads, duplicate confirmation, corrected/recovered delivery and exact Copy bytes in Medium. Initial delivery, repeatability, Instant recovery, real Obsidian ingestion and broader compatibility remain open. Earlier failures remain failed. No merging, installation or promotion.",
+    "provider_execution_history_verified": false,
+    "real_obsidian_ingestion_verified": false,
+    "download_transport_event": "Baseline Original file click timed out, but the actual new 324-byte local download was present and verified; the click was not resent."
+  },
+  "latest_review": "program_template_repair_review; earlier final_delivery_revision and flat counters describe the preserved pre-program-fix runs.",
+  "human_acceptance": {
+    "date": "2026-10-21",
+    "statement": "Mick explicitly accepted the bounded workout results on 2026-10-21 and authorized the next untested native batch. Acceptance covers observed source-faithful combined downloads, duplicate confirmation, corrected/recovered delivery and exact Copy bytes in Medium. Initial delivery, repeatability, Instant recovery, real Obsidian ingestion and broader compatibility remain open. Earlier failures remain failed. No merging, installation or promotion.",
+    "initial_delivery_issue_open": true
+  }
+}

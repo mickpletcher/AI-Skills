@@ -1,5 +1,7 @@
 # Behavioral evaluation framework
 
+Selected committed history is indexed in `master-skills/github-readme/model-history.json` and `master-skills/spec-writer/model-history.json` (repository checkout only; canonical metadata is excluded from release archives). These records distinguish earlier bounded native results, deterministic checks and current behavior not rerun. Model aliases/visible labels are not immutable backend versions; original authoring models remain unknown. Private local reports are not included.
+
 The [spec-writer planning fixtures](fixtures/spec-writer-planning-safety.json) cover occupied destinations, stale-spec reuse, incomplete context and user-edit preservation with acceptance/task mappings. The focused deterministic tests validate synthetic response contracts and candidate propagation, not native model behavior. All four new scenarios remain **not run** on a model.
 
 The [first post-migration quality fixtures](fixtures/first-quality-improvements.json) cover README checkout/archive links and the two shipped audit workflows. They retain synthetic inputs and human success criteria. `test_quality_improvements.py` checks local link behavior, evidence consistency and contract propagation only; all new model cases remain **not run**. No existing host acceptance is extended by these tests.

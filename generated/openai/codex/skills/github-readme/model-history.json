@@ -83,21 +83,48 @@
       "acceptance_evidence": "https://github.com/mickpletcher/AI-Skills/blob/1fd19e26e2970b2333dba2fd4d830857b3708e58/evaluations/fixtures/readme-delivery22.json#/acceptance",
       "acceptance": "Bounded authorized-agent review; not personal human inspection or universal certification.",
       "limitations": "Historical malformed delivery retained at /preserved_failure in the same evidence. No installed discovery or current distribution-link evaluation."
+    },
+    {
+      "date": "2026-10-25",
+      "model": "gpt-6.1-sol",
+      "model_identity_kind": "requested_alias_observed_in_trace_not_immutable_backend",
+      "backend_snapshot": "unknown",
+      "result": "pass",
+      "test_suite": "native-quality-2026-10-25",
+      "evidence": "https://github.com/mickpletcher/AI-Skills/blob/c4168bc0712707c91af6e1c5a04f908144d0c6f3/evaluations/fixtures/native-quality-2026-10-25.json",
+      "evidence_pointer": "/cases/0",
+      "case_ids": [
+        "R1"
+      ],
+      "scope": "Observable full intended skill loading.; Only README.md changes; every skill/source/fixture byte preserved.; docs/guide.md remains a valid relative link in both layouts.; Excluded master/design.md becomes an appropriate supplied repository URL, not a broken archive-relative link.; Both checkout and independently extracted synthetic archive have no broken local README links; no invented external URL availability or execution claims.",
+      "host": "macOS Codex CLI",
+      "host_version": "0.162.0-alpha.17.2",
+      "reasoning_effort": "low",
+      "tested_revision": {
+        "source_commit": "933defdaf4acc809d889da21602306795d1a8b8f",
+        "instruction_file": "generated/openai/codex/skills/github-readme/SKILL.md",
+        "instruction_sha256": "2ec118b39193f2c7cdfe5a9dd5e1f2e507705517c4f10a66d2b932cb668c2c3b"
+      },
+      "applies_to_current_behavior": true,
+      "applicability_limit": "Only the named tested behavior and unchanged instruction bytes, one macOS CLI run. Other hosts, repeatability and alternate missing-evidence handling remain untested. No universal acceptance or promotion."
     }
   ],
   "review": {
     "status": "review-needed",
     "reviewed_at": "2026-10-25",
-    "reason": "Original authoring model unknown. Historical bounded evaluations do not certify the changed current instructions or every host.",
+    "reason": "Named current-instruction cases passed once in macOS Codex CLI. Original authoring model and immutable backend unknown; broader hosts and untested behavior still need review.",
     "original_authoring_model": "unknown",
-    "metadata_basis_commit": "1fd19e26e2970b2333dba2fd4d830857b3708e58",
+    "metadata_basis_commit": "933defdaf4acc809d889da21602306795d1a8b8f",
     "current_instruction_commit": "834091d2d2ce1b7e23557f0bd259ec5202abea66",
     "current_instruction_sha256": "f5273a3a3388a89c53fc26d277a597046dc1cdacc3458402f1251597abc01732",
-    "current_behavior_evaluation": "not_run",
-    "current_change_not_rerun": "Distribution-aware checkout/archive link guidance introduced by PR13.",
+    "current_behavior_evaluation": "bounded_native_pass",
     "deterministic_evidence": "https://github.com/mickpletcher/AI-Skills/blob/1fd19e26e2970b2333dba2fd4d830857b3708e58/specs/008-first-quality-improvements/validation.md",
     "deterministic_limit": "Structural and synthetic contract checks only; not native-model compliance.",
-    "unavailable_evidence": "Additional local-only pilot reports and raw artifacts are not published or linked here; this index makes no result or version claims from those private records.",
-    "coverage": "Selected committed evidence, not an exhaustive runtime history. Candidate metadata is not installation or promotion approval."
+    "unavailable_evidence": "Only the sanitized committed native-quality report is added here. Other local-only pilot reports and raw transcripts remain private; no additional result claims are inferred.",
+    "coverage": "Selected committed evidence, not an exhaustive runtime history. Candidate metadata is not installation or promotion approval.",
+    "current_native_evidence": "https://github.com/mickpletcher/AI-Skills/blob/c4168bc0712707c91af6e1c5a04f908144d0c6f3/evaluations/fixtures/native-quality-2026-10-25.json",
+    "current_native_case_ids": [
+      "R1"
+    ]
   }
 }

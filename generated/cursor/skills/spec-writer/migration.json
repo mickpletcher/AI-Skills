@@ -34,7 +34,7 @@
       "reason": "Bundle the repository authoring standard referenced by the unchanged skill so standalone generated candidates can resolve shared/skill-standard.md without reading outside their bundle."
     },
     "model-history.json": {
-      "sha256": "f8935c5326bd0f82f424fdb783d1d5baa6954058625c23108f9751b6b2480e3e",
+      "sha256": "62ba5993f7e8c3138ee7383c20d7e54bc2a111cc5e95c1363a58a60bbb7b8a78",
       "reason": "Index committed historical evaluation evidence separately from current untested behavior; preserve unknown authorship and private-evidence limits."
     }
   }

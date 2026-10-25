@@ -87,7 +87,16 @@ class SelectedHistoryTests(unittest.TestCase):
                     if key in entry:
                         evidence_path(entry[key])
                 revision = entry['tested_revision']
-                if entry['test_suite'] == 'readme-mode26':
+                if entry['test_suite'] == 'native-quality-2026-10-25':
+                    case = fixture['cases'][int(entry['evidence_pointer'].split('/')[-1])]
+                    self.assertEqual(case['id'], entry['case_ids'][0])
+                    self.assertEqual(case['result'], entry['result'])
+                    self.assertEqual(revision['source_commit'], fixture['source_commit'])
+                    self.assertEqual(revision['instruction_sha256'], case['native_execution']['instruction_sha256'])
+                    self.assertEqual(entry['host_version'], fixture['cli_version'])
+                    self.assertEqual(entry['model'], fixture['model_alias'])
+                    self.assertTrue(entry['applies_to_current_behavior'])
+                elif entry['test_suite'] == 'readme-mode26':
                     self.assertEqual(revision['basis_commit'], fixture['basis_commit'])
                     self.assertTrue(revision['basis_is_pre_repair'])
                     self.assertEqual(revision['instruction_sha256'], fixture['current_resources_sha256']['SKILL.md'])
@@ -107,7 +116,7 @@ class SelectedHistoryTests(unittest.TestCase):
                     self.assertIn(node['status'], ('bounded_native_pass', 'bounded_native_delivery_pass'))
                     self.assertEqual(entry['model'], 'unknown')
                 self.assertEqual(entry['result'], 'pass')
-                self.assertFalse(entry['applies_to_current_behavior'])
+                self.assertEqual(entry['applies_to_current_behavior'], entry['test_suite'] == 'native-quality-2026-10-25')
                 self.assertEqual(entry['backend_snapshot'], 'unknown')
 
     def test_current_limits_and_metadata_propagate_without_instruction_edits(self):
@@ -115,7 +124,9 @@ class SelectedHistoryTests(unittest.TestCase):
             master = ROOT / 'master-skills' / name
             self.assertEqual(record['development_history'], [])
             self.assertEqual(record['review']['original_authoring_model'], 'unknown')
-            self.assertEqual(record['review']['current_behavior_evaluation'], 'not_run')
+            self.assertEqual(record['review']['current_behavior_evaluation'], 'bounded_native_pass')
+            self.assertEqual(record['review']['status'], 'review-needed')
+            evidence_path(record['review']['current_native_evidence'])
             self.assertEqual(hashlib.sha256((master / 'SKILL.md').read_bytes()).hexdigest(),
                              record['review']['current_instruction_sha256'])
             for host in json.loads((master / 'ecosystems.json').read_text())['allowed']:

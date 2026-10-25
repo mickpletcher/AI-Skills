@@ -1,0 +1,1203 @@
+{
+  "date": "2026-10-25",
+  "basis_commit": "57058048d0f64c0fa72ca44928fb4761dba0f7a9",
+  "authorization": {
+    "authorized_by": "Mick",
+    "verified_request": "Do it: clean-session repeatability, plain-text intake, available clients/models, fixes and merge-readiness review.",
+    "constraints": "Keep draft. No merge, promotion or real-profile installation."
+  },
+  "coverage_limits": [
+    "Focused domain is github-readme in an exact 12-candidate catalog; other eleven domain workflows were not repeated on both models in this batch.",
+    "CLI and app-server share one Windows native engine/build, not independent host coverage.",
+    "gpt-6.1-sol is established project baseline; gpt-6-sol is an available comparison target, not claimed as proven routine usage. Model aliases/backend snapshots and hidden provider behavior are not immutable or fully observable.",
+    "Chrome is available, but attached candidate packets do not certify installed native ChatGPT skills. No global candidate installation authorized.",
+    "Claude/Cursor CLIs unavailable on PATH. VSCode launcher exists; no independent controlled native extension/UI test surface established. No Linux/macOS native client available.",
+    "Actual app ingestion, live services, broad repeatability and promotion remain open."
+  ],
+  "official_sources": [
+    "https://learn.chatgpt.com/docs/app-server",
+    "https://learn.chatgpt.com/docs/build-skills"
+  ],
+  "readiness_scope": "Candidate migration only. Preserve unpromoted generated bundles and all shipped-source integrity. Broader host certification and distribution promotion are separate.",
+  "schema_version": 1,
+  "phase": "Narrow model-neutral input-mode repair and unchanged-task current-revision reruns",
+  "inventory": {
+    "basis_commit": "57058048d0f64c0fa72ca44928fb4761dba0f7a9",
+    "cli": "codex-cli 0.163.0-alpha.11.2",
+    "expected_skills": [
+      "alpaca-trading",
+      "example-skill",
+      "github-readme",
+      "github-repo-architect",
+      "github-social-preview",
+      "n8n-workflow",
+      "pihole-blocklist",
+      "pihole-csv-analyzer",
+      "powershell-refactor",
+      "proxmox-lxc",
+      "spec-writer",
+      "trip-email-html-itinerary"
+    ],
+    "selected_models": [
+      "gpt-6.1-sol",
+      "gpt-6-sol"
+    ],
+    "candidate_bundles": {
+      "alpaca-trading": {
+        "build-provenance.json": "af34c884252769a736f123c30e3e7a54967b8770d777d230fab2604d28e5c009",
+        "capabilities.json": "bdd541a36bf50e346a46bbddb0d191ee2078317d461e404aa50c5198ebc2bac6",
+        "ecosystems.json": "71a16f92e53b93e50ed2447cc7ebc688c7bf0897f0487e981f81e04a4e63ca0a",
+        "migration.json": "67cfd6bc68c94b6f54399a0e2dba618222110e77ed260555a5667a8439d2a606",
+        "README.md": "41079efd8abe6c83fb3e9fa204298029ab9f06bb8424aa6ce4f3cc745c068d04",
+        "SKILL.md": "b5c6307c7646462720245dc0eb5d899cea98ff542a0bda330aea1fe3f5cec47f"
+      },
+      "example-skill": {
+        "build-provenance.json": "7996d70832bacc02acafe43337caf4da437567c99e4be2c66bd2f19667d38a22",
+        "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+        "ecosystems.json": "cd4195e891a8a29d60ad673b1cc790955eeb589386624a240edcacd139543100",
+        "SKILL.md": "65e34ca475f3e7bfbfc4a4bce3bff48462a903228b2453d58a95f8e06fbc70d5"
+      },
+      "github-readme": {
+        "build-provenance.json": "59d70f90cc792163ab31c8c5f88d652ef7c44c80ffbc3758b7eb7709200b93f8",
+        "capabilities.json": "84af959fa6fcefde9d8f0d204a54cb4decb6d5840aae960da8e690fc80549538",
+        "ecosystems.json": "c11cb9b2f2691b0fc8e5dee230d0c21c35e54560d39c3fe69ed2aceb110f4e9a",
+        "foundation-audit.json": "be20c0e23bf74a48f2c62cf964a56b63544fff0e657e3d99479e5929426d85c8",
+        "model-history.json": "83bea6ff2866e8fa732333a3571af859b9e7d0e7f37008ae35c74ba6ed3725eb",
+        "SKILL.md": "3cf380f91a156a548915c62f9ceadec46bd7658b8398ab3a2af67914a7e55adc"
+      },
+      "github-repo-architect": {
+        "build-provenance.json": "eabda8ae6160edafae24f19b08db024f1b2dfe389b6f9a38f91f046886a5da49",
+        "capabilities.json": "8a0e0420e8d2eb3f889198bc519109769fe0cd75d7f8d055803556ee651e1ba8",
+        "ecosystems.json": "2d3556adf1adf379b51ac167868a170589fcc6210b85d7ee99b4057928224e53",
+        "foundation-audit.json": "765626956874331b37f3119b44a6824d3bd26a22363449ee50e11869c6c29da4",
+        "model-history.json": "58d5a37495904f8c54e29e463de52ca0e4fdb7170b5ea30b2cc655c73d68bd4f",
+        "SKILL.md": "7ee253b52c0b241ce2351831820456af2733a3d6d8a6cdaadc08064dd3f884db"
+      },
+      "github-social-preview": {
+        "build-provenance.json": "50129f11cd6ce252b867533934bdd0c9f1f6fffddbd1ee17a63a7eb94f9a9312",
+        "capabilities.json": "8e8f372350c77a0902aa4262365a5a0614b2caf60d6cebd6d70c817a78605a79",
+        "ecosystems.json": "26503c53eb0cc7f53b11ea185dcd2fd739cbafeda2a167aa742519f06617b737",
+        "migration.json": "472ada854f4098134e32dfc037196a4502f5c42cd8092d8b6ca15a1b8bbd06eb",
+        "README.md": "561f3baaa1c18fdeb09c66ca01e6d74c63826488d5218003ef38840225c32d6d",
+        "SKILL.md": "eb58b912ac61de47d9e1a7f206fa67841929f2d29760c45d98a69c8f77202d90",
+        "examples/example_usage.md": "7398d0b03eb6b3990ea4939232c4560d963d977d1221e2e740d2e17e59734fc3",
+        "scripts/generate_preview.py": "00ee376207573259f13eb34d99da303e83d44f718a5b3429aa7e162a56ec8f81",
+        "templates/design_config.json": "58572a0c9b1fa0d665405307ca600988453bdfdb0a9a2c03c710fe2f8963010a"
+      },
+      "n8n-workflow": {
+        "build-provenance.json": "b61b9e23a068478f15ad32721ef9f72eed43e78728ed2b41d2b7011cec364658",
+        "capabilities.json": "7b3b1589f832820cef5cb1ffe8b283d3c97143f7177960c71beb815631a3b02d",
+        "ecosystems.json": "e2aad2c4eda1de39ceba46baec2c671286a0c1c26271d80e3a8330177acd4441",
+        "migration.json": "9e636377b35b63e9f26063c75c4755e50aeb2a22839f7dd678cb850d6713e65e",
+        "README.md": "a252a02a99f93a50cf8c2a7284ea7fdcaa3fc46968e5c2ca799c83e0c5f60c33",
+        "SKILL.md": "40d64e696c0e7e5784dc959df58a1c15d5ace799a0e7fbfae95a7e6fbc871cb0"
+      },
+      "pihole-blocklist": {
+        "build-provenance.json": "486199059502b960bb4194aae219b8847f0b12df059ba9e8da27d44fe358c37e",
+        "capabilities.json": "ffbcbccfad342d05940999f43212d4171e29bf3f478ee29281afd4799007b1b8",
+        "ecosystems.json": "8a3da582671d2870833fa5b052956b0f90c6cebb879af8b2a35e1a132e6eeab0",
+        "migration.json": "ebcf17e491621c40d88c162adf49cfca9397d1f773d3226eb4d8db9d282d48c3",
+        "pihole-blocklist-sources.md": "dffbe68aa1d4bb169d36c5696c799a6be6ffd6ed1ab8e9e81a1e93b822d2f9fc",
+        "README.md": "20975ea70f939a98e5d97dd8702549d65c62098a864e09bed32111e31dc54cf2",
+        "SKILL.md": "6b5c53859eecedeb9363e8291d7ec733487208b839ad280ecd650f76e7fa1e92"
+      },
+      "pihole-csv-analyzer": {
+        "build-provenance.json": "d1072bbe93b2def20e4e6300c98236584314b0790772dadd941325b8b9fee400",
+        "capabilities.json": "d7e3dd8e963f745b67125681255b58edabfcab6e12ab5fcb608d13c4509087c4",
+        "ecosystems.json": "ca0943bfac3e8be2e302e46d1a6851ab1356db9c5642fb3a2f4751af4583a150",
+        "migration.json": "9ff0651a3d69fe5c4d46a05542f9b905723b3a5085a7dad203077509333e72ab",
+        "README.md": "6654c6289d987511724130cbdbb41873b062a1bdbe29fd18117e206c1d33a1cd",
+        "SKILL.md": "e69f7f615ff07e41d1d87fa7da75a96fed2efca1e94c05e9ddbc05063cd0d899"
+      },
+      "powershell-refactor": {
+        "build-provenance.json": "7c4f6c19377164ac1e98937914e4d170ad4cd5e391934347a55782a5d57f6821",
+        "capabilities.json": "2410d206a0340b248ec6ff3937241c9cb7c680ea878586707eb07d94e23f3f32",
+        "ecosystems.json": "4809eef4eb7ea46841116fd68c032265336174b0d1883ddd04d240cf87f26f17",
+        "foundation-audit.json": "6e925988e983c6c395767ec158b22b5ce56d27bc9f83c9b7f5a1446fd018467f",
+        "metadata.json": "4aace7e6d812eb02cfa5f798b88ad8c4f00f68ddd8317a4fd085c22e605d5eaa",
+        "SKILL.md": "58091c24fde6835597a07f7828ba328c65526da96ca5dff59be3561cffb059df"
+      },
+      "proxmox-lxc": {
+        "build-provenance.json": "6ef11a21b608dc602ec65ad226bd7804cf574d9b2ab0618b64147a115149eaab",
+        "capabilities.json": "8e8f372350c77a0902aa4262365a5a0614b2caf60d6cebd6d70c817a78605a79",
+        "ecosystems.json": "5fe466ecb93d9eaa35cbfd3b7decf501318da60a47b9a074ad6f612dddb60e58",
+        "migration.json": "e1116c850a5fafa7dd6da6209b965760657aa7f63b24412afa5325b26648e319",
+        "README.md": "ee2597d5c1df5f64987ad99594674da41c01db2fcc5d667550fe315727ba3928",
+        "SKILL.md": "0cb7faafe228caa2b05c2e5d339206ced7d9911ace526d82cc381a97f82a9be2"
+      },
+      "spec-writer": {
+        "build-provenance.json": "6acf741570c1c567062f9bbc0bc1da1aa7b714b5e8ddd3e9bcc82b907810818f",
+        "capabilities.json": "3d12378cfc9f310a0433dc134fb6e2e0b16e08567f34e56b16d762c472b5b9e6",
+        "ecosystems.json": "9c573f71849fc5debe6f934b3ea6fc2c543a12a96e9992bd31bf42d5b9f3b082",
+        "migration.json": "bd251e0fd8cb94685cabfff62dd7e824b8189e779f659f8f11ba0c27ab2de455",
+        "README.md": "8274ace664eca719577abe50a8849db836c23a0761ca5d8bbb6308db5473e01c",
+        "SKILL.md": "e4ecd32ae4711964e30f262a8cbfd44875319094dda4fc4820c8937a4a52f716"
+      },
+      "trip-email-html-itinerary": {
+        "build-provenance.json": "07e40d41607146f9c14051c90a8f64e7dc720304ec1d921d2c01c661d7b90c09",
+        "capabilities.json": "0ca0ac3dfe4ad9c2283ef8375fd2788be28ad82d30edbc0f4e1f403c0f9bfe67",
+        "ecosystems.json": "63bc398f9e5fdf1afb711438a6e314609cd7e2d18f649aa69fabebbcac3a95c0",
+        "migration.json": "bbf033ff74be1fbb2c78186a7d82a868d20bab40bb75f9292bbdcea324467ce3",
+        "README.md": "a95daf9a7302e67581a85ff6d0165f4543c51da03540738a993cf14f28fb5a5e",
+        "SKILL.md": "9a2fc31cd785c3b7e5e80a1f33850b3d0abe9c3828d714222fb58108909dd0cc",
+        "assets/emergency-contacts-template.txt": "26b3fc77b913f63fba10e0842deb4c08e314c44de486142b13ccefc366d6f01a",
+        "assets/itinerary-template.html": "0c7a96ee250a142683b27cb8d93d02bff2f161af5ac5d8445bf701d6e213afe7",
+        "references/design-system.md": "1c441d1e0f523d8e3e03fd98eecbbbd78d0ff8de28443924e5d9dc02846e82db",
+        "scripts/Export-PublicDemoJpegs.ps1": "ed4c51d364afff5db1af177ca2e979749af74c4231916852f7eac85c1bcf8028",
+        "scripts/New-PublicDemoItinerary.ps1": "fd161465fe15cf37915e3d43a4a36aee091382f72d52418688269d4772ebeedd",
+        "scripts/Test-ItineraryHtml.ps1": "23ad3c3c8483887d569908db61643b350758276d6b8b4bd0d62058301ec78353",
+        "examples/public-demo-social/01-cover.jpg": "97f9da80bded12787fed952c441c3dc77d5d5a9e62bf0e9d90746f0e9e59474a",
+        "examples/public-demo-social/02-trip-overview.jpg": "e3432dd8c34e4a091e183e64610ee563c9e79f3856e509434817deff7081f065",
+        "examples/public-demo-social/03-flights.jpg": "7031e63fbf922caf5003232900c7ae91f9880ccfb048ee3ab1681a64d1d1035d",
+        "examples/public-demo-social/04-hotels-and-transport.jpg": "f4e8d313742643dc36207a43a4f38bafcca8ac69f2b141743c3b4a3baf22d5f8",
+        "examples/public-demo-social/05-restaurants.jpg": "e0190facfbf69ebf7c88f19e7902d7c455daa06c949e4e251327815785e80912",
+        "examples/public-demo-social/06-activities.jpg": "947c58a28f7724d4d54ffaff335df8ac814133b4128e707662fbffe53d0a7228",
+        "examples/public-demo-social/07-day-plan.jpg": "0d8ee58a9b64d8a93b3bfc0a36aae29c3ac740ade6337a6aad5478fee22d2755",
+        "examples/public-demo-social/08-bookings.jpg": "e2b3e767dcc76291eecab7b08ba8c493b40d721443755827b0f1cd56a5372b53",
+        "examples/public-demo-social/09-travel-admin.jpg": "51b18ef07017c4021413e6734b1bfc7784adbc6ba1ec508d7c1b96692072387e",
+        "examples/public-demo-social/10-emergency-replacement.jpg": "7641534e7a08ceb8462fc771ce75b6c64f316244bf4c369c27dea945c983f8db"
+      }
+    },
+    "repair": "One model-neutral validation bullet scopes input/schema requirements to actual command branches; source and metadata unchanged.",
+    "design": "Ten fresh read-only cases: original source proposal, literal intake at root and child cwd, typed native explicit intake and arithmetic control on each model. Original task/criteria/source bytes retained; no feedback or completed-response regeneration. Previous 26 sessions and failing comparison proposal remain unchanged."
+  },
+  "repair": {
+    "skill": "github-readme",
+    "change": "One validation bullet scopes prerequisite/schema requirements to actual command branches. Preserve all prior safeguards, output boundary, frontmatter, eligibility and source hashes.",
+    "provenance": "Append exact insertion/prior normalized master hash to foundation-audit; regenerate only existing four review targets.",
+    "new_mode_oracle": "tools/tests/test_foundation_runtime.py verifies the original synthetic CLI accepts missing State in all-row mode (2 rows), active mode rejects it (KeyError), input bytes unchanged. This proves source ground truth, not model compliance.",
+    "probe_input_sha256": "9d6462fd703dca75a33b7389dd968d5d27706ee603d3659bbed2166d33497a45",
+    "private_probe_sha256": "d731a22df3c5c664417270ed30cba79ab31c9af7a954ffe06b91d8b9d51e972c",
+    "original_failure_untouched": true
+  },
+  "cases": [
+    {
+      "id": "sol61-cli-source-repaired",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-source",
+      "iteration": 1,
+      "source_provided": true,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": true,
+          "input_injection": false,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "b8b112092f0b9b8f06f8f444307e717bcaa0f5a905abb6a176fbdd3ba0f68d16",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 45.094,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "c9871b5d5e844aed3e78cf1ec1471ba7591f00da9c3b00372f636c5ce06ddad7",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "b4ae5be3f720d7a2c83ec96e917c30821937743c61b5947b8385ffe29a4acba4",
+        "history-inventory.json": "63a42fb877db2b074a3525e3c5b007e51214beb3d7139b22101db66a7e81aa5a",
+        "record.json": "cec564b0709021138b5af11c19901c466c3593d855f7fda0aa4aa3bab776c283",
+        "recorded-inputs.json": "e2e03e3e2193111b5b8049e79e75e83628334e99b97ba98345ac0df65315c2c6",
+        "response.md": "670a219a2719119e2fd0423675297dba67b743b780383ecacd447e2a3bef199e",
+        "rollout.jsonl": "606b655b55c55b6bdbf15647d4050a82d1710aba12b73d2c1b283002b92cbd4b",
+        "stderr.txt": "64e85c0d481ff0b6dadde0353b58dfbcf7c020a6784b2effd8bd1689f682e64b",
+        "task.txt": "b8b112092f0b9b8f06f8f444307e717bcaa0f5a905abb6a176fbdd3ba0f68d16"
+      },
+      "settings_sha256": "ad7bcbccca64200c9eb8ec9e9ba12bd287114f35a74cb87ca476702c4dedc108",
+      "proposal_sha256": "ed204797726d959039886312f15e5007ad2759e1d50042c9f168f657eae7164a",
+      "license_last_and_external_notes": "passed",
+      "proposal_limit": "Source-inspected draft only; no application commands or installation executed.",
+      "source_accuracy_review": "passed: State is required for active filtering and explicitly unnecessary for all-row mode; commands source-grounded/unexecuted and License last"
+    },
+    {
+      "id": "sol61-cli-literal-repaired",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-literal",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 19.078,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "e383be495c53306289d35fb7cee805e0ed192ad682b516ea468bcf1b3fcf8684",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "c92b1fed684ab463a4afcc2ab8c2a7a9d4f1f851f4c1898534043b0d0bc54169",
+        "history-inventory.json": "87270df0b29c8bb141aece916128e0d752778feedd91b910859f6484a7a9b487",
+        "record.json": "dbc7c65322aeebe8d22188b846b44ce9a53d663ef156285ff3b01cca31fc164e",
+        "recorded-inputs.json": "8b8584373807872ba82849329e0938da007f51d83234c5aaa8607b49db40a6d8",
+        "response.md": "16ed2b87badbd20ceda4a61ce274632e4f83ff97e3b5d99d9046b9f7addf8dbc",
+        "rollout.jsonl": "e38733316e7bd77af0cba59cc8c90e71c1a3dfe48737ed071f3aff3948decfde",
+        "stderr.txt": "891a6b66f51c15646f1565b5d9207f7b1ab9eb3752b60dec5acf68c22d063003",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712"
+      },
+      "settings_sha256": "ebd7ca9c5e1d68a1eb5465a3f691dc97b97de7945f41af775c64b9786803c8c7"
+    },
+    {
+      "id": "sol61-cli-nested-literal-repaired",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-nested-literal",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 19.36,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "f0a64f413be79f04ff6032b205dcfc63f84990e35f76c3ebc537932f91856a46",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "a38f2159be781460c898f29077e99e5533d884201ee5be3d40ad243c62a4c492",
+        "history-inventory.json": "9ed45a237e36ba9b50212028fb19edc67f65da1c886a5eef65c9a6dae169da22",
+        "record.json": "bd0ebaacda6fee6c4de5e52926e3f42e0a99d06b9faf8a7dc782fd997704b42d",
+        "recorded-inputs.json": "482ad220edab7173ff7a327efa3fc1943b255eb51a30f7f4786e69a6eb9569cd",
+        "response.md": "2456a4febfc3650873e5f3c1aaf6b4fe1c93aa107b27ecb59dcd7899628a2883",
+        "rollout.jsonl": "ccf0ab0130f7ba0294f5f40f76246f1480536b806d7bdf76f0fccc0f10adf614",
+        "stderr.txt": "eebe349384e06cd9967131ef493e97efb9e7d2b1ce2e825d171986ac96c854b6",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712"
+      },
+      "settings_sha256": "6418d4b654f71a851d9143d6f902c0abc2c425782edb2de4f7f189a34142097c"
+    },
+    {
+      "id": "sol61-server-typed-repaired",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "server",
+      "group": "server-typed",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": true,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 15.156,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "ed05f037d6eccf9f3afcff5512f10766c2cd760222aa417bb40d1afc22385b3f",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "feb045ae72611d1ea376f8c87725cca59462ca8950fb8029dcb8e0cfd500781c",
+        "input.json": "ea2430e11ef86ff8c21782879acc77783031fa1fb02f9d84ba8a71a7dec2d9e2",
+        "record.json": "61924a3c9a007c5fee200428d32be0fbb3ab9497826f5efbeeb21fd9bc1188de",
+        "recorded-inputs.json": "a93576ea2ca941cf129d37c1656d244da48edd206cd74ebff5eeb1f7414e68b7",
+        "requests.jsonl": "98009b609ce4fea8b6d01a1675b698de219e2137759469f2d129a583a77fa9a4",
+        "response.md": "a0773fcf17870793c5d0d8a2642ee0eb76036df1d86dfc43de59fefc41bd7398",
+        "rollout.jsonl": "59f466afdc9a2d9438fa17a4419b14658177fadece869da55a311dacae67a2d9",
+        "skills-list.json": "ab6d05c4e17e58151699e3af451babceac24af83c70b8f8f96e06d0ac18ba098",
+        "stderr.txt": "366df350a873c9c4771f4271ad20631440f7cadfeded8e58875b9af13827eaa6",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+        "thread-read.json": "1a4149ed02fcdf0c5b7ea001e63679f88ccf8ff329e8143b27a06bb51ae2a0a8",
+        "thread-start.json": "7e79c02b2a8204329ae7d329fa30b3dbf206f4ca473a19439076bfc244446e6c"
+      },
+      "settings_sha256": "6cc8ddf3174087ea53612650811cd4b0514f782bc874752dda0562eb08f7852e"
+    },
+    {
+      "id": "sol61-cli-negative-repaired",
+      "model_requested": "gpt-6.1-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-negative",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_negative_pass",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 6.203,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "9fe05ca0adb4978a3af24d40d79dfc66d785c1ad6d527230f636964a04f94b32",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "66fa3af9880c83b1b6252b2a0c49a3feb5f469502c7f5721fd9b385515326873",
+        "history-inventory.json": "3f76021d514b4363d74589939a67a8f3f19fe961e856ebffe2dc4b8c4427291c",
+        "record.json": "a4c79430caf07034d4e70c57129e8a8db62eaf706344b30027e1665d75d75b10",
+        "recorded-inputs.json": "caab4408c2739d6ea25f2170fb23d5a58b4d06e5487ad8878c9e547c5c1d356d",
+        "response.md": "7f2253d7e228b22a08bda1f09c516f6fead81df6536eb02fa991a34bb38d9be8",
+        "rollout.jsonl": "3df336d832fb7cb31d775085fd00f1932c81e3e25743efcc3ef83b8f8ec95346",
+        "stderr.txt": "b1dec19054471c9f360891cd7fd23d7e38dfe8324d18fa367050323b4dc5b887",
+        "task.txt": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253"
+      },
+      "settings_sha256": "ecd42ed42f165413419df8c77d553bae9e5224b323bf146548868f4141e65d1a"
+    },
+    {
+      "id": "sol6-cli-source-repaired",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-source",
+      "iteration": 1,
+      "source_provided": true,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": true,
+          "input_injection": false,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "b8b112092f0b9b8f06f8f444307e717bcaa0f5a905abb6a176fbdd3ba0f68d16",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 36.063,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "31b640d592b3614643208cb741a9604788f8399d10b137f28acfe373c49555e6",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "996c44cf0b525eea83c9a00d09e4eb42729e669360925fd814d37de0bddf09b3",
+        "history-inventory.json": "1c3a4f2d569d5c3d35a153a413e0aaf8efe323df2f633b5d1cb19e39ca5cad48",
+        "record.json": "e5ebd407b36ecaea513fa21597571453844ef2451579c15bf2130c7a5efe6a74",
+        "recorded-inputs.json": "95424df21a52b0536b1633a6f10ff355f4242e8af111eafad747775dae273efd",
+        "response.md": "de8c4282b5d923f15ab3763f2bafcd48611bbbfaedf3383664b78b30374bf55f",
+        "rollout.jsonl": "d5cb7ca89e0e2da050e58dd8f5698eb6ed1279b144b3a6f478da4ef32a3ba58c",
+        "stderr.txt": "dd549d8bdaf023998708ca2a56787c0ab3e1241deb43f9ffb4ebad12ae10d792",
+        "task.txt": "b8b112092f0b9b8f06f8f444307e717bcaa0f5a905abb6a176fbdd3ba0f68d16"
+      },
+      "settings_sha256": "ba01e5fb0a8b532de4dee948a402262d9a941e57abd9187a3ec31bc783c6cc29",
+      "proposal_sha256": "96c558e20202f5d479fbc908ede6848afd9c80d154c15fb52557967827a83fb3",
+      "license_last_and_external_notes": "passed",
+      "proposal_limit": "Source-inspected draft only; no application commands or installation executed.",
+      "source_accuracy_review": "passed: State is required for active filtering and explicitly unnecessary for all-row mode; commands source-grounded/unexecuted and License last"
+    },
+    {
+      "id": "sol6-cli-literal-repaired",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-literal",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 12.625,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "b0b936c55e5d7565c276f701e46c37c58a4bc07d38dbd1732e2a8f933abf6f99",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "ebbdb9d8a0549ebdbafdb7f4388362205592280eaed1da2bd01ac3a18c81b405",
+        "history-inventory.json": "f818f81614b4f05538e132737a7ea343b7dc752db651a4e122a2595a680e1a26",
+        "record.json": "c25cc9931d1d951c01846c7f922c8dd8c653b56057f942828c340cbb002afced",
+        "recorded-inputs.json": "fc4a51024a304c6f8de08a76cd8fe7b996655116a5b1638412e7f3d46af7dde3",
+        "response.md": "53f485acd1858ed9cba26da243fd942ed3fa4ae72a308360d0c32eb71f4c6918",
+        "rollout.jsonl": "6d6cf08cb5a540d5bb768af48ffde8aa1cb2dca90f0322798b4572ff46919f4f",
+        "stderr.txt": "c19a845f55628d5020f530436225c0d5af6e15b1e17a9fbb4b79467d43c4466f",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712"
+      },
+      "settings_sha256": "98262ec63e461b89bc0c6302aa8bd3f97afe693abf1b2b013d3f170cd360f013"
+    },
+    {
+      "id": "sol6-cli-nested-literal-repaired",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-nested-literal",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 12.094,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "0a971da938fcd4ff0d5668bc3fe9bcb80e0613fd764818883c71321408eb0c21",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "8e787081280d7d5add21c553c9d0efdbaadfa53a9100aaa2d93be1944e58f1e9",
+        "history-inventory.json": "51f1be685b6ea130547bc7d8e9618a6520b8790ef40aedf9556681229153499d",
+        "record.json": "59eb064f8eca764a49611afac74428b824a1af47cce49aeca36f4c852103ac81",
+        "recorded-inputs.json": "93b6df4f29f055a237856f17c5684280ec95e7d0ec42d09e4e2292db982fe84b",
+        "response.md": "6a45fab4c36bf7dcd46e318ccf5f0e6f12e224b1fd0a4fc26981acc4b3480fa3",
+        "rollout.jsonl": "54df5bea7ae975224a59b288eef63f4cca25ddae8c2f5cd4aefb7df9e308f6a1",
+        "stderr.txt": "03d31c3f7d91112b6175a5e0ec5cbcc5d7ccbf8d6f4dac19ca5f842b75d82bb3",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712"
+      },
+      "settings_sha256": "170cd0f78a3cc4f9f7c0125c0ab66745ca5d2d9d9cb2519b9828db3aa8667ded"
+    },
+    {
+      "id": "sol6-server-typed-repaired",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "server",
+      "group": "server-typed",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": true,
+      "status": "bounded_loading_observed",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": true,
+          "loaded": true
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 11.703,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "6ac635da91a112736d9a19b5f0b98628d0f72b4cc54089d4de75b3e8e63c1fa4",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "ec9480e0606408753764c6f416e3b29eb4572459343772bd2eaa27c679245a24",
+        "input.json": "1c6c1837d7efa85c308f1f17e719cc9ca051c2db8e70211256fdc60ea7221e32",
+        "record.json": "c44f64302ee979b844e3f661fa3d0e7b33e0e3a96762497fb4ca672fd21bfc83",
+        "recorded-inputs.json": "d0fea88c4b48e31b020caee9b53f67fb38d39627ba70ad24c6f19ba9fb41025c",
+        "requests.jsonl": "65d6f461bac5fb3c40e03ec41da659fe15ff2619b01a06e7c8ba372a2a01b265",
+        "response.md": "8cb6d29ca55c5c70f250fcc5e15689b9d67c0b6acf846f8ef22b5112a0ce46de",
+        "rollout.jsonl": "c102b032d648773b642c6901d84a09dc77a018259d285cd8055ca7ed52db3a2a",
+        "skills-list.json": "752cd33ea6cc58aa08c2aab47fd41454f1e0edd6cc5889327c81dc7bfb715d63",
+        "stderr.txt": "e6b030751fbfae243f7e56fc85a52dc3b5e9106a211140e543493c63740ecbbd",
+        "task.txt": "f034d7c9eb21f441ba6e87968f81520b152b2b491221ab4cee954aa28bced712",
+        "thread-read.json": "5d3272100f20a15cd8a5cc906eabc2438171b8eca48ae17ffaf00ed349faed4e",
+        "thread-start.json": "1453e330236176699403b3863e2c6cec70d39b64903e14d2179386ef110a0bd4"
+      },
+      "settings_sha256": "2971421573da3ee2cb4719322b139bae696463d565fb49c3525a7037aad297b6"
+    },
+    {
+      "id": "sol6-cli-negative-repaired",
+      "model_requested": "gpt-6-sol",
+      "reasoning_effort": "low",
+      "transport": "cli",
+      "group": "cli-negative",
+      "iteration": 1,
+      "source_provided": false,
+      "typed_skill_input": false,
+      "status": "bounded_negative_pass",
+      "loading": {
+        "alpaca-trading": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "example-skill": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-readme": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-repo-architect": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "github-social-preview": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "n8n-workflow": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-blocklist": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "pihole-csv-analyzer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "powershell-refactor": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "proxmox-lxc": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "spec-writer": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        },
+        "trip-email-html-itinerary": {
+          "tool_output": false,
+          "input_injection": false,
+          "loaded": false
+        }
+      },
+      "task_sha256": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253",
+      "repository_unchanged": true,
+      "auth_removed": true,
+      "exact_catalog": true,
+      "personal_context_markers_absent": true,
+      "elapsed_seconds": 6.109,
+      "artifacts_sha256": {
+        "context-gate.json": "76f5b09a7787da1382dc363c3eb8b88770d778fa60c1bd1b8799132d624f533d",
+        "context.json": "fe0919aaad8b3772b1a5009c4cb94786dc4ef79dcdad8da4eaa6efa8f950216c",
+        "context.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "a16b2d75f675ca46c3b07514c0fd0f488f1fbf105f46542f8ea4003254236c22",
+        "history-inventory.json": "10740b85921b0b352d80790291a7ba87c976c72c2748abd0e22c074dcb28704a",
+        "record.json": "8617d459d98a1bbaf6d8cc5a8bc5a975874a284ad0733ce148a513cafa04fe90",
+        "recorded-inputs.json": "514b91526d7c3a53ef24faf3dfedb427998203966ec6bdbff92b44983e05bf73",
+        "response.md": "7f2253d7e228b22a08bda1f09c516f6fead81df6536eb02fa991a34bb38d9be8",
+        "rollout.jsonl": "b64ba1470a696784dfa112910ec7b1c288c85f6b8c83f8483c1213423591038e",
+        "stderr.txt": "e15de5940f34995a206f03642b5b010c7cea591bf37f8efa3abf858fc29cda57",
+        "task.txt": "533ae7f36a9238b9fbd232aaf028fb2be7d7e8b5657e159386da79a181670253"
+      },
+      "settings_sha256": "068b2b6c3cdc177a52ff88cdd7603aaf17c1af054c457e40d5b8d56868d54acc"
+    }
+  ],
+  "summary": {
+    "planned_sessions": 10,
+    "completed_sessions": 10,
+    "models": [
+      "gpt-6.1-sol",
+      "gpt-6-sol"
+    ],
+    "positive_loading_observed": 8,
+    "negative_controls_passed": 2,
+    "actual_input_injection_cases": 6,
+    "actual_tool_body_cases": 2,
+    "repository_changes": 0,
+    "candidate_changes": 0,
+    "real_profile_installations": 0,
+    "promotions": 0,
+    "candidate_revision_changed_before_execution": true,
+    "candidate_changes_during_execution": 0,
+    "source_proposals_reviewed": 2,
+    "source_proposals_passed": 2
+  },
+  "fidelity": "Ten reruns preserve original task, criteria, mode, source snapshots and wrapper. New per-case profile/workspace paths and the pinned README instruction revision differ. No feedback or regeneration.",
+  "harness_correction": {
+    "change": "Combine full recorded native input injection with full tool-output bodies; neither catalog metadata nor correct intake alone proves loading. Treat null command output as empty, not as proof or an assessor crash.",
+    "focused_tests": 13,
+    "new_tests": "Injection without shell read, metadata-only rejection, empty pinned-body rejection and null tool output."
+  },
+  "manual_review": {
+    "sol61-cli-source-repaired": "Active mode requires State; all mode counts records without it. Requirements do not universally require State. Source-grounded unexecuted commands and final MIT License.",
+    "sol6-cli-source-repaired": "Default active mode requires State; all mode explicitly does not inspect or require it. Original overgeneralization removed. Source-grounded unexecuted commands and final MIT License."
+  },
+  "current_resources_sha256": {
+    "SKILL.md": "3cf380f91a156a548915c62f9ceadec46bd7658b8398ab3a2af67914a7e55adc",
+    "instructions.md": "f7bde27ceffcf23124655676d8d9e8da47727c2f01d2ab1a4433a610acd754bf"
+  },
+  "changed_runtime_files_sha256": {
+    "generated/.resource-manifest.json": "87ca82288333627b0749492d7a4500482a2253105f784553b5ffb4ef297bbc78",
+    "generated/claude/skills/github-readme/SKILL.md": "08c76a57ae5af248d11e8657912341c0b492dfa78731794a48db2b88be0ab70d",
+    "generated/claude/skills/github-readme/build-provenance.json": "05eca1d1e4a7f6877dd85608b125781041f7e525413207163484044c6a8e258a",
+    "generated/claude/skills/github-readme/foundation-audit.json": "be20c0e23bf74a48f2c62cf964a56b63544fff0e657e3d99479e5929426d85c8",
+    "generated/cursor/skills/github-readme/SKILL.md": "cb971c988ffa1df2a95f85749ba88cfd08302fa5a060bb78cb486e8923376681",
+    "generated/cursor/skills/github-readme/build-provenance.json": "feef38aa57f243b14db0ace2b813a8d128e6eb61cb97f161b544be232296628c",
+    "generated/cursor/skills/github-readme/foundation-audit.json": "be20c0e23bf74a48f2c62cf964a56b63544fff0e657e3d99479e5929426d85c8",
+    "generated/cursor/skills/github-readme/instructions.md": "f7bde27ceffcf23124655676d8d9e8da47727c2f01d2ab1a4433a610acd754bf",
+    "generated/openai/chatgpt/skills/github-readme/SKILL.md": "cb971c988ffa1df2a95f85749ba88cfd08302fa5a060bb78cb486e8923376681",
+    "generated/openai/chatgpt/skills/github-readme/build-provenance.json": "d3b9aa4857a16ffc8d5181aa15e12d8113038e5b3aff48b3487eed67709f722e",
+    "generated/openai/chatgpt/skills/github-readme/foundation-audit.json": "be20c0e23bf74a48f2c62cf964a56b63544fff0e657e3d99479e5929426d85c8",
+    "generated/openai/chatgpt/skills/github-readme/instructions.md": "f7bde27ceffcf23124655676d8d9e8da47727c2f01d2ab1a4433a610acd754bf",
+    "generated/openai/codex/skills/github-readme/SKILL.md": "3cf380f91a156a548915c62f9ceadec46bd7658b8398ab3a2af67914a7e55adc",
+    "generated/openai/codex/skills/github-readme/build-provenance.json": "59d70f90cc792163ab31c8c5f88d652ef7c44c80ffbc3758b7eb7709200b93f8",
+    "generated/openai/codex/skills/github-readme/foundation-audit.json": "be20c0e23bf74a48f2c62cf964a56b63544fff0e657e3d99479e5929426d85c8",
+    "master-skills/github-readme/SKILL.md": "cb971c988ffa1df2a95f85749ba88cfd08302fa5a060bb78cb486e8923376681",
+    "master-skills/github-readme/foundation-audit.json": "be20c0e23bf74a48f2c62cf964a56b63544fff0e657e3d99479e5929426d85c8",
+    "tools/activation_probe.py": "0a0ef6427a67b3aa32e67ea4cbd35d7e62c3ed4399504f9840e1f266ffb13b74",
+    "tools/tests/test_activation_probe.py": "0fb5d4ff5dbeab4d26c163d78f4b1e7a3b5a8421562febf032ba6a45c13c02f9",
+    "tools/tests/test_foundation_runtime.py": "4c4b56bfc333d9c50e72358f3e47bb99a36298588ba9a427983df7e08444541b"
+  },
+  "validation": {
+    "activation_regressions": 13,
+    "foundation_runtime_regressions": 4,
+    "foundation_audit_regressions": 4,
+    "readme_delivery_regressions": 6,
+    "generator_check": "807 files match",
+    "skill_creator_frontmatter": "passed",
+    "repository_links": "Passed: 46 skills, 0 issues in clean tracked overlay",
+    "offline_contracts": "Passed: 24 cases, 99 negative controls, 0 model calls",
+    "delivery_ci": "Verify separately on final published head."
+  },
+  "merge_recommendation": {
+    "status": "Candidate-only merge can be recommended after final checks and explicit owner approval",
+    "basis": [
+      "Canonical migration/integrity checks and bounded acceptances complete",
+      "Previously missing current plain-text loading now observed across selected interfaces/models with retained native input",
+      "New source-accuracy defect repaired and original failure preserved",
+      "No active release publisher; generated layers remain unpromoted review candidates"
+    ],
+    "conditions": [
+      "Final exact-head CI must pass",
+      "Owner must explicitly approve merging; current authorization does not",
+      "Do not interpret merge as target-host certification, skill promotion or installation"
+    ],
+    "current_pr": "draft; no merge/promotion performed"
+  }
+}

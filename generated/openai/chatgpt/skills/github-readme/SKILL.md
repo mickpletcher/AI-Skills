@@ -40,6 +40,7 @@ Compare the current README to verified repository contents; identify stale secti
 - Security notes appear when credentials or sensitive data are involved.
 - The result has no placeholders disguised as finished documentation.
 - The README matches the repository's actual scope, not a generic template.
+- Scope prerequisites and input/schema requirements to their verified command mode or branch. Trace alternate paths before making a requirement universal: a field needed by a filtered mode may be unnecessary for an all-records mode. Document the distinction rather than imposing the stricter schema on every mode.
 
 ## Examples
 - "readme for this Python CLI, using the actual pyproject.toml and commands"

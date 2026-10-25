@@ -361,11 +361,13 @@
       "open_limits": [
         "Actual README installation/execution not certified"
       ],
-      "current_instruction_sha256": "89865699dfa631c45cf425fdae221d08171e5ac7c244fd3f1a9949bb1e287490",
+      "current_instruction_sha256": "f7bde27ceffcf23124655676d8d9e8da47727c2f01d2ab1a4433a610acd754bf",
       "evidence_sha256": {
         "evaluations/fixtures/native-batch11.json": "0dafa38f5708f642ca8b9c7e555469c86a6f8dfc0c97752ad132bc319fb8073d",
         "evaluations/fixtures/native-scope-review15.json": "7d89851feaa6870d48e4990b04c2fb77a8729d6f1b3e8e1577dd3bfe45ec5a37",
-        "evaluations/fixtures/readme-delivery22.json": "de8c32bbebdbc86106c320dba7f5f4af94076750141332dca43efb1e36cd14de"
+        "evaluations/fixtures/readme-delivery22.json": "de8c32bbebdbc86106c320dba7f5f4af94076750141332dca43efb1e36cd14de",
+        "evaluations/fixtures/repeatability25.json": "ce49217f61db0877d5b70129608fab273015d419c8b1446e905760b90dda9a2d",
+        "evaluations/fixtures/readme-mode26.json": "b4c3e3a0adb3c5a5be1448a8651f0eba8583602a965ca223eaf1d7de7e37a763"
       },
       "human_acceptance": "Pending; no new acceptance granted",
       "promotion": "Blocked",
@@ -427,6 +429,24 @@
         "literal_text_explicit_intake": "full load still unverified; no candidate failure inferred",
         "nested_source_write": "original correct sandbox block preserved; corrected synthetic writable-root revision passes",
         "acceptance_changes": false
+      },
+      "prior_to_mode26_instruction_sha256": "89865699dfa631c45cf425fdae221d08171e5ac7c244fd3f1a9949bb1e287490",
+      "repeatability25": {
+        "evidence": "evaluations/fixtures/repeatability25.json",
+        "evidence_sha256": "ce49217f61db0877d5b70129608fab273015d419c8b1446e905760b90dda9a2d",
+        "plain_text_intake": "current bounded loading observed through retained native input, not just shell reads",
+        "models": [
+          "gpt-6.1-sol",
+          "gpt-6-sol"
+        ],
+        "historical_missing_read_cases": "unchanged"
+      },
+      "readme_mode26": {
+        "evidence": "evaluations/fixtures/readme-mode26.json",
+        "evidence_sha256": "b4c3e3a0adb3c5a5be1448a8651f0eba8583602a965ca223eaf1d7de7e37a763",
+        "current_revision": "ten reruns, eight positive loads/two negatives; both source proposals corrected",
+        "prior_comparison_source_accuracy_failure": "preserved",
+        "acceptance_scope_expansion": false
       }
     },
     {
@@ -1065,5 +1085,51 @@
     "remaining_literal_text_intake_load_gap": 1,
     "broader_host_routing_repeatability_limits": "open",
     "acceptance_changes": false
+  },
+  "repeatability25": {
+    "evidence": "evaluations/fixtures/repeatability25.json",
+    "evidence_sha256": "ce49217f61db0877d5b70129608fab273015d419c8b1446e905760b90dda9a2d",
+    "summary": {
+      "planned_sessions": 26,
+      "completed_sessions": 26,
+      "models": [
+        "gpt-6.1-sol",
+        "gpt-6-sol"
+      ],
+      "positive_loading_observed": 22,
+      "negative_controls_passed": 4,
+      "actual_input_injection_cases": 14,
+      "actual_tool_body_cases": 8,
+      "repository_changes": 0,
+      "candidate_changes": 0,
+      "real_profile_installations": 0,
+      "promotions": 0
+    },
+    "former_plain_text_intake_gap": "closed only for tested versions/interfaces/profiles; original traces unchanged"
+  },
+  "readme_mode26": {
+    "evidence": "evaluations/fixtures/readme-mode26.json",
+    "evidence_sha256": "b4c3e3a0adb3c5a5be1448a8651f0eba8583602a965ca223eaf1d7de7e37a763",
+    "summary": {
+      "planned_sessions": 10,
+      "completed_sessions": 10,
+      "models": [
+        "gpt-6.1-sol",
+        "gpt-6-sol"
+      ],
+      "positive_loading_observed": 8,
+      "negative_controls_passed": 2,
+      "actual_input_injection_cases": 6,
+      "actual_tool_body_cases": 2,
+      "repository_changes": 0,
+      "candidate_changes": 0,
+      "real_profile_installations": 0,
+      "promotions": 0,
+      "candidate_revision_changed_before_execution": true,
+      "candidate_changes_during_execution": 0,
+      "source_proposals_reviewed": 2,
+      "source_proposals_passed": 2
+    },
+    "merge_recommendation": "Candidate-only after final CI and explicit approval; keep draft until authorized"
   }
 }

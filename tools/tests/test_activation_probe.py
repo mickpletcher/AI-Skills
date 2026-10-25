@@ -4,10 +4,37 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from activation_probe import nested_write_roots, observed_injections, observed_reads, resource_boundary
+from activation_probe import activation_evidence, nested_write_roots, observed_injections, observed_reads, resource_boundary
 
 
 class ActivationProbeTests(unittest.TestCase):
+    def test_completed_command_with_null_output_is_not_loading_evidence(self):
+        events = [{'type': 'item.completed', 'item': {'type': 'command_execution',
+                   'exit_code': 0, 'aggregated_output': None}}]
+        self.assertFalse(activation_evidence(events, [], {'github-readme': b'# Full body\n'})['github-readme']['loaded'])
+
+    def test_cli_input_injection_proves_loading_without_a_skill_shell_read(self):
+        body = b'# Complete workflow\nUse verified files.\n'
+        events = [{'type': 'item.completed', 'item': {'type': 'command_execution', 'exit_code': 0,
+                   'aggregated_output': '{"required": ["text_reasoning"]}'}}]
+        messages = [{'type': 'message', 'role': 'user', 'content': [{'type': 'input_text',
+                     'text': '<skill>\n<name>github-readme</name>\n' + body.decode() + '</skill>'}]}]
+        self.assertEqual(activation_evidence(events, messages, {'github-readme': body})['github-readme'],
+                         {'tool_output': False, 'input_injection': True, 'loaded': True})
+
+    def test_intake_and_catalog_metadata_alone_do_not_prove_loading(self):
+        events = [{'type': 'item.completed', 'item': {'type': 'agent_message',
+                   'text': 'Using github-readme. Please provide the repository.'}}]
+        messages = [{'type': 'message', 'role': 'user', 'content': [
+            {'type': 'input_text', 'text': '$github-readme'},
+            {'type': 'skill', 'name': 'github-readme', 'path': '/probe/SKILL.md'}]}]
+        self.assertFalse(activation_evidence(events, messages, {'github-readme': b'# Real body\n'})['github-readme']['loaded'])
+
+    def test_missing_pinned_bodies_cannot_create_vacuous_loading_proof(self):
+        for bodies in ({}, {'github-readme': b''}, {'github-readme': '# Workflow'}):
+            with self.subTest(bodies=bodies), self.assertRaises(ValueError):
+                activation_evidence([], [], bodies)
+
     def test_profile_resources_are_allowed_without_allowing_the_parent_profile(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

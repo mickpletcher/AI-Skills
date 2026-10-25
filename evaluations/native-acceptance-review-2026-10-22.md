@@ -38,3 +38,7 @@ The separately authorized [README repair and host continuation](readme-delivery-
 ## Current activation investigation
 
 The [targeted investigation](activation-reliability-2026-10-25.md) provides current full-load evidence for three earlier missing-read paths and a separate typed native explicit invocation. Literal-text explicit intake remains unverified. Original traces and all bounded acceptance decisions are unchanged; no promotion.
+
+## Fresh-session repeats and input-mode repair
+
+The [repeatability assessment](activation-repeatability-2026-10-25.md) records 26 initial sessions plus ten current-revision reruns across two requested model aliases and two native Windows interfaces. Current plain-text root/child intake loading is directly observed in retained native input. A comparison-model conditional-schema error is preserved, narrowly repaired and rerun. Prior acceptance decisions remain unchanged; other hosts/integrations and promotion remain open.

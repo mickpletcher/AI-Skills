@@ -31,7 +31,7 @@ def resource_boundary(workspace, skill_files):
 
 
 def observed_reads(events, skill_contents):
-    outputs = [event.get('item', {}).get('aggregated_output', '').replace('\r\n', '\n')
+    outputs = [(event.get('item', {}).get('aggregated_output') or '').replace('\r\n', '\n')
                for event in events
                if event.get('type') == 'item.completed'
                and event.get('item', {}).get('type') == 'command_execution'
@@ -47,6 +47,15 @@ def observed_injections(messages, skill_contents):
     return {name: any(text.startswith('<skill>\n') and '<name>' + name + '</name>' in text
                      and content.decode('utf-8').replace('\r\n', '\n') in text for text in texts)
             for name, content in skill_contents.items() if content}
+
+
+def activation_evidence(events, messages, skill_contents):
+    if not skill_contents or any(not isinstance(content, bytes) or not content for content in skill_contents.values()):
+        raise ValueError('Nonempty pinned skill bodies are required')
+    reads = observed_reads(events, skill_contents)
+    injections = observed_injections(messages, skill_contents)
+    return {name: {'tool_output': reads[name], 'input_injection': injections[name],
+                   'loaded': reads[name] or injections[name]} for name in skill_contents}
 
 
 def nested_write_roots(workspace, cwd, writable):

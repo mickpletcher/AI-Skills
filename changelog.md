@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Verify fresh-session instruction loading across two native interfaces and model aliases using actual retained input histories. Preserve and repair a mode-specific README input requirement error; ten current reruns follow 26 initial sessions. Correct stale acceptance guidance; keep draft/promotion gates and limited merge recommendation explicit.
+
 - Correct activation test assertions for Windows short/long temporary-path aliases. Nine focused tests pass; runtime helper and native evidence are unchanged. Retain initial Windows CI failure and check the correction head separately.
 
 - Investigate activation with ten isolated native sessions. Correct evaluation resource/write boundaries; verify three formerly missing-load paths and a separate typed explicit injection. Keep literal-text intake unverified, preserve original blocks, and leave candidates/acceptance/promotion unchanged.

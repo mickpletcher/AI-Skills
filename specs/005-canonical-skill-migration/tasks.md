@@ -442,3 +442,15 @@
 - [x] Retain the failed Windows 132-test job and 12 passing sibling checks on 18fe3da. Fix only two test expectations that compared 8.3/long path spelling; helper canonicalization was correct.
 - [x] Compare filesystem identity and exact allowed-root count; add alias/parent-escape regression. Nine focused tests pass. Preserve native input/output/candidate/helper bytes and acceptance/promotion fields. See the [correction ledger](../../evaluations/fixtures/activation24.json).
 Final-head delivery CI is reported with its exact commit in PR #11. PR remains draft; no merge or promotion. Literal-text intake and broader limits remain open.
+
+## Fresh-session repeatability and mode-scoping repair on 2026-10-25
+
+- [x] Verify Mick's direct authorization. Discover advertised models/current native interfaces; keep unavailable/untested clients explicit. No real-profile installation.
+- [x] Execute 26 fresh read-only repeats on gpt-6.1-sol and available comparison gpt-6-sol, retaining actual session inputs. Observe 22 positive full loads/four negatives, including same-original child-cwd intake. Preserve earlier ephemeral-only unverified traces.
+- [x] Fix assessor observability to combine actual instruction injection and tool bodies, rejecting metadata/self-reports/empty bodies and handling null tool output. Thirteen focused regressions pass.
+- [x] Preserve a separate comparison-model source-accuracy failure; independently verify missing State is accepted in all mode and rejected in active mode. Add one generic mode-scoping validation bullet with audit provenance; regenerate only existing targets.
+- [x] Run ten unchanged-task current-revision cases: eight positive full loads/two negatives; both source proposals now scope State requirements correctly. Repositories/source/candidate execution bytes preserved; authentication cleaned up.
+- [x] Correct the master guide's stale acceptance summary. Keep all prior bounded acceptance decisions/creation-time labels and promotion gates unchanged. See the [assessment](../../evaluations/activation-repeatability-2026-10-25.md).
+- [ ] Broad target-host/native UI/integration certification and promotion remain open. Candidate-only merge is recommended only after final checks and explicit owner approval. PR remains draft; this task does not merge or promote.
+
+Final exact-head CI is reported in PR #11. Current requested aliases/build and bounded case counts do not imply statistical, provider-owned or future-model guarantees.

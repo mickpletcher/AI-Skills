@@ -1,0 +1,75 @@
+{
+  "skill": "spec-writer",
+  "development_history": [],
+  "evaluations": [
+    {
+      "date": "2026-10-21",
+      "model": "unknown",
+      "result": "pass",
+      "test_suite": "native-batch3",
+      "evidence": "https://github.com/mickpletcher/AI-Skills/blob/1fd19e26e2970b2333dba2fd4d830857b3708e58/evaluations/fixtures/native-batch3.json",
+      "evidence_pointer": "/cases/0",
+      "scope": "Bounded disposable planning artifact: new 008 spec with all nine original files preserved.",
+      "tested_revision": {
+        "source_commit": "d35892619622f5804e8aea062d2c86df1f52bc9d",
+        "instruction_sha256": "53746b69a96ea2eb856250f47c8c793fc419cdbb536fe643e15ff6567271f7ef",
+        "instruction_file": "generated/openai/chatgpt/skills/spec-writer/instructions.md"
+      },
+      "host": "ChatGPT Temporary chat",
+      "host_version": null,
+      "backend_snapshot": "unknown",
+      "applies_to_current_behavior": false,
+      "case_ids": [
+        "spec-new"
+      ],
+      "visible_model_label": "Instant",
+      "model_identity_kind": "backend_unknown_visible_mode_only",
+      "host_evidence": "https://github.com/mickpletcher/AI-Skills/blob/1fd19e26e2970b2333dba2fd4d830857b3708e58/evaluations/native-batch3-2026-10-21.md",
+      "acceptance_evidence": "https://github.com/mickpletcher/AI-Skills/blob/1fd19e26e2970b2333dba2fd4d830857b3708e58/evaluations/fixtures/delegated-acceptance21.json",
+      "acceptance": "Later bounded authorized-agent acceptance for these two cases; initial batch acceptance was pending. No personal human inspection or universal certification.",
+      "limitations": "Artifact byte preservation does not independently observe every provider-side write. Predates support-file repair and current destination/traceability contract; neither is certified by these runs."
+    },
+    {
+      "date": "2026-10-21",
+      "model": "unknown",
+      "result": "pass",
+      "test_suite": "native-batch3",
+      "evidence": "https://github.com/mickpletcher/AI-Skills/blob/1fd19e26e2970b2333dba2fd4d830857b3708e58/evaluations/fixtures/native-batch3.json",
+      "evidence_pointer": "/cases/1",
+      "scope": "Bounded disposable planning artifact: reuse 007 matching stale spec; six other files preserved.",
+      "tested_revision": {
+        "source_commit": "d35892619622f5804e8aea062d2c86df1f52bc9d",
+        "instruction_sha256": "53746b69a96ea2eb856250f47c8c793fc419cdbb536fe643e15ff6567271f7ef",
+        "instruction_file": "generated/openai/chatgpt/skills/spec-writer/instructions.md"
+      },
+      "host": "ChatGPT Temporary chat",
+      "host_version": null,
+      "backend_snapshot": "unknown",
+      "applies_to_current_behavior": false,
+      "case_ids": [
+        "spec-reuse"
+      ],
+      "visible_model_label": "Instant",
+      "model_identity_kind": "backend_unknown_visible_mode_only",
+      "host_evidence": "https://github.com/mickpletcher/AI-Skills/blob/1fd19e26e2970b2333dba2fd4d830857b3708e58/evaluations/native-batch3-2026-10-21.md",
+      "acceptance_evidence": "https://github.com/mickpletcher/AI-Skills/blob/1fd19e26e2970b2333dba2fd4d830857b3708e58/evaluations/fixtures/delegated-acceptance21.json",
+      "acceptance": "Later bounded authorized-agent acceptance for these two cases; initial batch acceptance was pending. No personal human inspection or universal certification.",
+      "limitations": "Artifact byte preservation does not independently observe every provider-side write. Predates support-file repair and current destination/traceability contract; neither is certified by these runs."
+    }
+  ],
+  "review": {
+    "status": "review-needed",
+    "reviewed_at": "2026-10-25",
+    "reason": "Original authoring model unknown. Historical bounded evaluations do not certify the changed current instructions or every host.",
+    "original_authoring_model": "unknown",
+    "metadata_basis_commit": "1fd19e26e2970b2333dba2fd4d830857b3708e58",
+    "current_instruction_commit": "1fd19e26e2970b2333dba2fd4d830857b3708e58",
+    "current_instruction_sha256": "362f9a1fa74786f9d93f561bd1da188e0600c4c711e7461ef5d58ab935f3f714",
+    "current_behavior_evaluation": "not_run",
+    "current_change_not_rerun": "Matching-before-numbering, collision/user-edit safeguards and criterion/task traceability introduced by PR14.",
+    "deterministic_evidence": "https://github.com/mickpletcher/AI-Skills/blob/1fd19e26e2970b2333dba2fd4d830857b3708e58/specs/009-spec-writer-planning-safety/validation.md",
+    "deterministic_limit": "Structural and synthetic contract checks only; not native-model compliance.",
+    "unavailable_evidence": "Additional local-only pilot reports and raw artifacts are not published or linked here; this index makes no result or version claims from those private records.",
+    "coverage": "Selected committed evidence, not an exhaustive runtime history. Candidate metadata is not installation or promotion approval."
+  }
+}

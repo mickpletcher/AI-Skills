@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Index committed README and spec-writer evaluation history with tested revisions, observed/requested model identity limits, bounded acceptance and explicit current-behavior-not-rerun status; preserve instruction bytes and private evidence.
+
 - Improve the spec-writer candidate: inspect matching specs before numbering, protect occupied destinations and user edits, and map acceptance criteria to concrete validation tasks. Regenerate four candidates; new native behavior remains untested.
 
 - Add distribution-aware README link guidance and clarify evidence, missing-context and write boundaries for Cursor repository assessment and Copilot cleanup auditing. Add synthetic regression cases; new native behavior remains untested.

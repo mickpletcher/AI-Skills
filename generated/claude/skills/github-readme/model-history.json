@@ -1,9 +1,103 @@
 {
   "skill": "github-readme",
   "development_history": [],
-  "evaluations": [],
+  "evaluations": [
+    {
+      "date": "2026-10-25",
+      "model": "gpt-6.1-sol",
+      "result": "pass",
+      "test_suite": "readme-mode26",
+      "evidence": "https://github.com/mickpletcher/AI-Skills/blob/1fd19e26e2970b2333dba2fd4d830857b3708e58/evaluations/fixtures/readme-mode26.json",
+      "evidence_pointer": "/cases",
+      "scope": "Four positive loading cases and one negative control for this requested alias; supplied-source proposal reviewed. CLI and app-server share one Windows engine, not independent hosts.",
+      "tested_revision": {
+        "basis_commit": "57058048d0f64c0fa72ca44928fb4761dba0f7a9",
+        "basis_is_pre_repair": true,
+        "instruction_sha256": "3cf380f91a156a548915c62f9ceadec46bd7658b8398ab3a2af67914a7e55adc",
+        "instruction_file": "generated/openai/codex/skills/github-readme/SKILL.md"
+      },
+      "host": "Windows Codex CLI and app-server",
+      "host_version": "codex-cli 0.163.0-alpha.11.2",
+      "backend_snapshot": "unknown",
+      "applies_to_current_behavior": false,
+      "model_identity_kind": "requested_alias_not_immutable_backend",
+      "case_ids": [
+        "sol61-cli-source-repaired",
+        "sol61-cli-literal-repaired",
+        "sol61-cli-nested-literal-repaired",
+        "sol61-server-typed-repaired",
+        "sol61-cli-negative-repaired"
+      ],
+      "reasoning_effort": "low",
+      "limitations": "Earlier failed comparison proposal is retained in source evidence; these are the ten repaired-revision reruns only. No current distribution-link behavior, desktop or universal host certification."
+    },
+    {
+      "date": "2026-10-25",
+      "model": "gpt-6-sol",
+      "result": "pass",
+      "test_suite": "readme-mode26",
+      "evidence": "https://github.com/mickpletcher/AI-Skills/blob/1fd19e26e2970b2333dba2fd4d830857b3708e58/evaluations/fixtures/readme-mode26.json",
+      "evidence_pointer": "/cases",
+      "scope": "Four positive loading cases and one negative control for this requested alias; supplied-source proposal reviewed. CLI and app-server share one Windows engine, not independent hosts.",
+      "tested_revision": {
+        "basis_commit": "57058048d0f64c0fa72ca44928fb4761dba0f7a9",
+        "basis_is_pre_repair": true,
+        "instruction_sha256": "3cf380f91a156a548915c62f9ceadec46bd7658b8398ab3a2af67914a7e55adc",
+        "instruction_file": "generated/openai/codex/skills/github-readme/SKILL.md"
+      },
+      "host": "Windows Codex CLI and app-server",
+      "host_version": "codex-cli 0.163.0-alpha.11.2",
+      "backend_snapshot": "unknown",
+      "applies_to_current_behavior": false,
+      "model_identity_kind": "requested_alias_not_immutable_backend",
+      "case_ids": [
+        "sol6-cli-source-repaired",
+        "sol6-cli-literal-repaired",
+        "sol6-cli-nested-literal-repaired",
+        "sol6-server-typed-repaired",
+        "sol6-cli-negative-repaired"
+      ],
+      "reasoning_effort": "low",
+      "limitations": "Earlier failed comparison proposal is retained in source evidence; these are the ten repaired-revision reruns only. No current distribution-link behavior, desktop or universal host certification."
+    },
+    {
+      "date": "2026-10-25",
+      "model": "unknown",
+      "result": "pass",
+      "test_suite": "readme-delivery22",
+      "evidence": "https://github.com/mickpletcher/AI-Skills/blob/1fd19e26e2970b2333dba2fd4d830857b3708e58/evaluations/fixtures/readme-delivery22.json",
+      "evidence_pointer": "/original_chatgpt_case",
+      "scope": "Bounded supplied-source README delivery: actual Copy ends with supported License and separates review notes.",
+      "tested_revision": {
+        "basis_commit": "8481d2f464a593e31c513e0aa0b047ca2e6aaccd",
+        "basis_is_pre_repair": true,
+        "instruction_sha256": "89865699dfa631c45cf425fdae221d08171e5ac7c244fd3f1a9949bb1e287490",
+        "instruction_file": "generated/openai/chatgpt/skills/github-readme/instructions.md"
+      },
+      "host": "ChatGPT Temporary chat",
+      "host_version": null,
+      "backend_snapshot": "unknown",
+      "applies_to_current_behavior": false,
+      "visible_model_label": "Instant",
+      "model_identity_kind": "backend_unknown_visible_mode_only",
+      "acceptance_evidence": "https://github.com/mickpletcher/AI-Skills/blob/1fd19e26e2970b2333dba2fd4d830857b3708e58/evaluations/fixtures/readme-delivery22.json#/acceptance",
+      "acceptance": "Bounded authorized-agent review; not personal human inspection or universal certification.",
+      "limitations": "Historical malformed delivery retained at /preserved_failure in the same evidence. No installed discovery or current distribution-link evaluation."
+    }
+  ],
   "review": {
     "status": "review-needed",
-    "reason": "Original authoring model unknown; cross-platform behavioral tests pending."
+    "reviewed_at": "2026-10-25",
+    "reason": "Original authoring model unknown. Historical bounded evaluations do not certify the changed current instructions or every host.",
+    "original_authoring_model": "unknown",
+    "metadata_basis_commit": "1fd19e26e2970b2333dba2fd4d830857b3708e58",
+    "current_instruction_commit": "834091d2d2ce1b7e23557f0bd259ec5202abea66",
+    "current_instruction_sha256": "f5273a3a3388a89c53fc26d277a597046dc1cdacc3458402f1251597abc01732",
+    "current_behavior_evaluation": "not_run",
+    "current_change_not_rerun": "Distribution-aware checkout/archive link guidance introduced by PR13.",
+    "deterministic_evidence": "https://github.com/mickpletcher/AI-Skills/blob/1fd19e26e2970b2333dba2fd4d830857b3708e58/specs/008-first-quality-improvements/validation.md",
+    "deterministic_limit": "Structural and synthetic contract checks only; not native-model compliance.",
+    "unavailable_evidence": "Additional local-only pilot reports and raw artifacts are not published or linked here; this index makes no result or version claims from those private records.",
+    "coverage": "Selected committed evidence, not an exhaustive runtime history. Candidate metadata is not installation or promotion approval."
   }
 }

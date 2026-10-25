@@ -1,5 +1,7 @@
 # Behavioral evaluation framework
 
+The [spec-writer planning fixtures](fixtures/spec-writer-planning-safety.json) cover occupied destinations, stale-spec reuse, incomplete context and user-edit preservation with acceptance/task mappings. The focused deterministic tests validate synthetic response contracts and candidate propagation, not native model behavior. All four new scenarios remain **not run** on a model.
+
 The [first post-migration quality fixtures](fixtures/first-quality-improvements.json) cover README checkout/archive links and the two shipped audit workflows. They retain synthetic inputs and human success criteria. `test_quality_improvements.py` checks local link behavior, evidence consistency and contract propagation only; all new model cases remain **not run**. No existing host acceptance is extended by these tests.
 
 Latest [delegated acceptance](delegated-acceptance-2026-10-25.md): Mick-authorized agent review accepts 22 of 23 pending bounded scopes and the repaired workout revision separately. github-readme is withheld because post-License notes leave the required delivery boundary unresolved. No personal human inspection, repair, merge or promotion. Activation/encoding/browser/other-host and real-integration gaps remain open.

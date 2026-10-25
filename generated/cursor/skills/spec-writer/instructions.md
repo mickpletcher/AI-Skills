@@ -27,11 +27,11 @@ Use this skill to turn a rough repo change, feature idea, cleanup effort, or mig
 
 ## Workflow
 
-1. Read the repo context first.
-2. Confirm where specs live and how numbering works.
-3. Pick the next available spec number unless the user provided one.
-4. Create a short kebab case spec folder name tied to the actual work.
-5. Write the core documents:
+1. Read the repo context and Git status first; identify existing planning files and user edits.
+2. Inspect existing specs for work matching the user's goal before assigning a number. Compare scope and acceptance criteria, not just folder names. Reuse a matching stale spec when the requested update is authorized; do not create a duplicate merely because its status is old. If multiple specs match or reuse conflicts with the user's requested destination, ask which to use before writing.
+3. Confirm the spec root, numbering convention and complete relevant directory listing. With incomplete or inaccessible numbering evidence, request the missing context or provide an unnumbered proposal; do not claim the next number is verified.
+4. Only when no matching spec should be reused, use an available user-requested number or otherwise select the next unused number, then choose a short kebab case name. Check both the number across existing folders and the exact destination, including untracked files. If a requested number or destination is occupied by other work, report the conflict and ask for a destination choice; do not overwrite or silently renumber. Recheck immediately before writing; if the destination changed since inspection, stop the write and report the conflict.
+5. Write or update only the authorized planning documents:
    - `requirements.md`
    - `plan.md`
    - `tasks.md`
@@ -40,7 +40,7 @@ Use this skill to turn a rough repo change, feature idea, cleanup effort, or mig
    - plan explains the implementation approach, touched areas, risks, and validation path
    - tasks break the work into ordered, checkable execution steps
 7. Make assumptions explicit. Do not pretend unknown details are settled facts.
-8. Recheck that the spec matches the live repo, existing conventions, and the user's real goal.
+8. Recheck that the spec matches the live repo, existing conventions, and the user's real goal. Verify acceptance-to-validation traceability and preservation of files outside the authorized planning scope.
 
 ## Spec Status
 
@@ -51,7 +51,7 @@ Status: draft | in progress | done | abandoned
 Last updated: YYYY-MM-DD
 ```
 
-When asked to update or review specs, update the status line as part of the change. When creating a new spec, check whether an existing spec already covers the work and is merely stale; updating its status beats creating a duplicate.
+A new execution spec starts as `draft` with unchecked implementation tasks. Writing or reviewing a plan does not implement the feature or establish that checks passed. Change status only to reflect supported evidence and an authorized update; never mark implementation `done` because planning is complete. For a review-only request, recommend status corrections in the response instead of editing files. When reusing a stale spec, preserve completed-work evidence and explain any proposed status correction; do not reset its history automatically.
 
 ## Template Variants
 
@@ -93,7 +93,15 @@ Name the variant in `requirements.md` so the reader knows which lens the spec us
 - Use direct language and skip filler
 - Do not pad specs with generic boilerplate
 - Do not hide major assumptions or risks
-- If numbering or naming is ambiguous, choose the clearest consistent option
+- If numbering, matching scope or destination intent is ambiguous, ask for the minimum decision before writing; do not silently choose between conflicting user intentions.
+- Preserve staged, unstaged and untracked user edits. Read the current planning files before a targeted update; do not replace whole documents or alter unrelated files merely to fit a template. If proposed changes conflict with user work, present the conflict and wait for direction.
+- File access is not write authorization. Return a proposal when writing is not requested or authorized; do not create folders for a review-only task.
+
+## Acceptance-to-validation traceability
+
+Use stable acceptance-criterion identifiers (for example `AC-1`) in `requirements.md`, retaining existing identifiers when updating a spec. In `tasks.md`, map every criterion to at least one concrete validation task with the check or procedure and expected observable result. A table such as `Criterion | Validation task | Check | Expected result` is sufficient; follow an equivalent existing repository convention instead of duplicating it. Shared validation tasks may cover several criteria if each mapping is explicit.
+
+Before delivery, check for unmapped criteria, references to nonexistent criteria/tasks, and vague checks without an expected result. Mark unavailable validation as planned or blocked with its prerequisite; do not claim it ran or check it off. Keep implementation tasks separate from proof of acceptance. Summarize the chosen reuse/new-spec decision, destination, changed files, open decisions and checks actually performed.
 
 ## References
 
@@ -132,6 +140,10 @@ Write a numbered repo spec with requirements, plan, and tasks for a README audit
 - The requirements are specific enough to judge success
 - The plan matches the actual repo context
 - The tasks are ordered, practical, and executable
+- Matching specs were inspected before numbering; occupied or uncertain destinations remain untouched until resolved
+- Existing user edits and files outside the authorized planning scope are preserved
+- Every acceptance criterion maps to a validation task with an observable expected result; no dangling mappings remain
+- Planning status and task checkboxes distinguish proposed work from verified implementation
 
 ## Host Capabilities
 

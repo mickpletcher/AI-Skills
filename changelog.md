@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Add distribution-aware README link guidance and clarify evidence, missing-context and write boundaries for Cursor repository assessment and Copilot cleanup auditing. Add synthetic regression cases; new native behavior remains untested.
+
 - Clarified reserved ecosystem directories, Codex candidate installation boundaries, and intentional source/generated/package copies after the final organization review.
 
 - Grouped existing GitHub Copilot and reserved Copilot Studio directories under `microsoft/`; retained the existing OpenAI grouping, stable catalog IDs and release boundaries.

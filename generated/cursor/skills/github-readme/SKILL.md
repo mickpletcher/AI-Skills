@@ -70,6 +70,10 @@ For a complete README delivered in chat, put the entire README in one fenced Mar
 Put any repository/type confirmation, placement explanation, change summary or validation status outside that block, explicitly labeled `Review notes (not part of README)`. For an authorized file edit, keep those notes in the response only; never append them to README.md. For a partial repair, clearly label the replacement sections and give placement notes outside their fences; preserve targeted repair mode rather than forcing a full rewrite.
 Before delivery, inspect the actual README body independently of the surrounding response: its final heading is License, nested example fences remain intact, and all review notes are outside the artifact.
 
+## Distribution-aware links
+When the README also ships in a release archive or package, inspect the packaging inclusion/exclusion rules and distinguish the checkout layout from each supported distribution layout. A path that exists in the checkout may be absent from the release archive. Preserve appropriate repository URLs for excluded source files rather than converting every link to a relative path; use relative links for files present at that location in every intended delivery context.
+Use the project's existing packaging and link validators, including extracted-archive checks when available and authorized. Do not publish a release to validate links. If a distribution layout or check is unavailable, identify the unverified context explicitly. Offline path checks do not establish external URL availability.
+
 ## Capability Contract
 
 Read `capabilities.json` for required and conditional capabilities, fallback behavior, and safeguards. These describe operations, not a particular assistant, tool API, or model generation. Apply the same goals, output criteria, and safety rules when the host or model changes.

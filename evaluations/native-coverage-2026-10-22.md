@@ -60,3 +60,7 @@ See the [recommendations](native-acceptance-review-2026-10-22.md) and [machine-r
 | x-reply | Bounded native-writing cases pass after retained corrections | Accepted only within recorded bounded scope | Broader reliability/hosts/models/routing remain unverified | [native-writing](fixtures/native-writing.json) |
 
 This continuation repairs the README delivery boundary and regenerates its existing review bundles. The reviewed workout revision is unchanged. Placement/source packages unchanged. Hash presence is provenance, not proof every resource/behavior passed. No prior failed/unassessed output is relabelled.
+
+## Current activation investigation
+
+The [targeted investigation](activation-reliability-2026-10-25.md) provides current full-load evidence for three earlier missing-read paths and a separate typed native explicit invocation. Literal-text explicit intake remains unverified. Original traces and all bounded acceptance decisions are unchanged; no promotion.

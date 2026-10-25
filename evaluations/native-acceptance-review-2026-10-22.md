@@ -34,3 +34,7 @@ Date: 2026-10-25. Mick authorized agent acceptance review on his behalf. No pers
 The repaired obsidian-workout-export revision is separately accepted. Other hosts, actual integrations, provider guarantees and broad repeatability remain open. Legacy personal-human-review fields are not overwritten with agent inspection claims.
 
 The separately authorized [README repair and host continuation](readme-delivery-2026-10-25.md) closes only the original bounded README draft/intake scope after a fresh passing native delivery. Broader limits remain open.
+
+## Current activation investigation
+
+The [targeted investigation](activation-reliability-2026-10-25.md) provides current full-load evidence for three earlier missing-read paths and a separate typed native explicit invocation. Literal-text explicit intake remains unverified. Original traces and all bounded acceptance decisions are unchanged; no promotion.

@@ -426,3 +426,13 @@
 - [ ] Keep remaining activation, encoding, browser-policy, unavailable-host/model, actual-integration and provider gaps open. Keep PR draft. No merge, promotion or real-profile installation.
 
 - [x] Validate 123 full regressions before the optional-fence assessor correction, then six final focused regressions; 46 skills/zero repository issues, 24 offline cases/99 negatives/zero model calls, generator/frontmatter/evidence/privacy checks. Delivery CI is a separate final gate.
+
+## Activation reliability on 2026-10-25
+
+- [x] Publish the acceptance/README repair first and verify all 13 CI checks on 9422cc0 with PR open/draft.
+- [x] Inspect official discovery/explicit-input rules and actual prior traces. Remove the test-rule conflict between repository-only inputs and external profile skill resources without forcing reads.
+- [x] Run eight fresh CLI controls, one native typed explicit invocation and one unchanged-task nested writable-root correction. Six positive complete tool-body reads, one complete injected body and two negatives observed. Preserve literal-text explicit intake as unverified and the initial correct nested write refusal. See the [assessment](../../evaluations/activation-reliability-2026-10-25.md).
+- [x] Review three actual README-only repairs, preserved source/candidate bytes and 21 independent CLI probes. Eight focused harness regressions pass, including compound-command read evidence and narrow writable roots. No candidate change or acceptance expansion.
+- [ ] Keep literal-text intake observability, broad repeatability, other hosts/models/global routing, Unicode, browser/Obsidian/app/live integrations and provider guarantees open. Keep PR draft; no merge or promotion.
+
+- [x] Validate final tracked activation overlay: 46 skills/zero issues, 24 offline cases/99 negative checks/zero model calls, eight focused regressions, exact native pins/21 independent probes and unchanged source/acceptance/promotion fields. Final-head delivery CI remains a separate gate until verified.

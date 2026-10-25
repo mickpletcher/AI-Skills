@@ -585,6 +585,16 @@
         "evidence": "evaluations/fixtures/delegated-acceptance21.json",
         "evidence_sha256": "15459f72e8f3b2ca9842a9d3331dfc4257312aeb8bd800a4d3231ee08c2fccf9",
         "personal_human_inspection": false
+      },
+      "activation23": {
+        "evidence": "evaluations/fixtures/activation23.json",
+        "evidence_sha256": "b2afb6be7b52c44a050e593126247c629c1cb7890637478177dfef84c5a2d13e",
+        "implicit_profile_and_nested_loads": "observed in full current tool output",
+        "source_backed_explicit_and_implicit_loads": "observed",
+        "native_typed_explicit": "full current skill body present in actual recorded input",
+        "literal_text_explicit_intake": "full load still unverified; no candidate failure inferred",
+        "nested_source_write": "original correct sandbox block preserved; corrected synthetic writable-root revision passes",
+        "acceptance_changes": false
       }
     },
     {
@@ -1553,5 +1563,29 @@
     "effective_bounded_scopes_accepted": 36,
     "personal_human_inspections": 0,
     "promotions": 0
+  },
+  "activation23": {
+    "evidence": "evaluations/fixtures/activation23.json",
+    "evidence_sha256": "b2afb6be7b52c44a050e593126247c629c1cb7890637478177dfef84c5a2d13e",
+    "summary": {
+      "sessions": 10,
+      "cli_sessions": 9,
+      "appserver_sessions": 1,
+      "positive_sessions": 8,
+      "negative_controls": 2,
+      "positive_full_skill_tool_reads": 6,
+      "typed_full_input_injections": 1,
+      "positive_full_load_unverified": 1,
+      "initial_nested_write_blocks_retained": 1,
+      "corrected_nested_write_passes": 1,
+      "successful_readme_file_integrations": 3,
+      "independent_cli_probe_passes": 21,
+      "candidate_changes": 0,
+      "real_profile_installations": 0,
+      "promotions": 0
+    },
+    "remaining_literal_text_intake_load_gap": 1,
+    "broader_host_routing_repeatability_limits": "open",
+    "acceptance_changes": false
   }
 }

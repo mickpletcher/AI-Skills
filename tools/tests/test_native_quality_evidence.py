@@ -56,16 +56,33 @@ class NativeQualityEvidenceTests(unittest.TestCase):
         self.assertTrue(req.startswith('Status: draft\n'))
         for line in ('Owner constraint: at most three retries.', 'Owner constraint: never retry authentication failures.'):
             self.assertIn(line, req)
-        criteria = set(re.findall(r'^- (AC-\d+):', req, re.M))
-        rows = re.findall(r'^\| (AC-\d+) \| ([^|]+) \| ([^|]+) \|', tasks, re.M)
-        self.assertEqual(criteria, {row[0] for row in rows})
-        ids = set(re.findall(r'^- \[ \] (V\d+)', tasks, re.M))
-        self.assertTrue(all(set(re.findall(r'V\d+', row[1])) <= ids and row[2].strip() for row in rows))
+        self.assert_traceability(req, tasks)
         self.assertNotIn('- [x]', tasks)
         conflict = self.cases['S2']
         self.assertEqual(conflict['outputs'], {})
         self.assertIn('008-cache', conflict['response_excerpt'])
         self.assertIn('would you prefer another destination?', conflict['response_excerpt'])
+
+    def assert_traceability(self, req, tasks):
+        criteria = set(re.findall(r'^- (AC-\d+):', req, re.M))
+        rows = re.findall(r'^\| (AC-\d+) \| ([^|]+) \| ([^|]+) \|', tasks, re.M)
+        self.assertEqual(criteria, {row[0] for row in rows})
+        ids = set(re.findall(r'^- \[ \] (V\d+)', tasks, re.M))
+        for criterion, validation, expected in rows:
+            referenced_ids = set(re.findall(r'V\d+', validation))
+            self.assertTrue(referenced_ids, f'{criterion} has no validation-task IDs')
+            self.assertLessEqual(referenced_ids, ids)
+            self.assertTrue(expected.strip())
+
+    def test_blank_validation_cell_is_rejected(self):
+        outputs = self.cases['S1']['outputs']
+        req = outputs['specs/007-retry-export/requirements.md']['text']
+        tasks = outputs['specs/007-retry-export/tasks.md']['text']
+        mutated, count = re.subn(r'^(\| AC-1 \| )[^|]+( \|)', r'\1 \2', tasks, count=1, flags=re.M)
+        self.assertEqual(count, 1)
+        self.assert_traceability(req, tasks)
+        with self.assertRaises(AssertionError):
+            self.assert_traceability(req, mutated)
 
     def test_public_evidence_excludes_private_trace_and_paths(self):
         for marker in ('/Users/', '/home/', '/opt/homebrew/', 'auth.json', 'access_token', 'refresh_token', 'thread_id', 'events.jsonl', 'stderr.txt'):

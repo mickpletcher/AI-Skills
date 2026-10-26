@@ -79,6 +79,13 @@ When Git status, tracked/untracked state or repository context is missing, reque
 - Is the file a fixture or example that looks stale but is actually required
 - Is the file user-owned context that should not be deleted by an automated cleanup
 
+## Audit commands and snapshot provenance
+
+- Inspect proposed audit commands and their invoked scripts/configuration before running them. A command named `check` or `test` may rewrite files, install dependencies or contact services. An assessment or cleanup-audit request alone does not authorize those side effects. Use existing explicit authorization when it covers the effects; otherwise leave the command unrun, explain the effects and request only the needed authorization. Continue independent read-only inspection. If effects cannot be established, report that uncertainty rather than execute to discover them.
+- Record the assessed repository revision (commit SHA when available), relevant staged, unstaged and untracked changes, and inspected scope. If revision or status evidence is missing, label it unknown and keep conclusions provisional; do not invent a clean snapshot.
+- Tie each reported check result to its command/workflow, result and tested revision/local state when available. Distinguish supplied historical results from checks actually executed during this assessment. Passing CI for an older revision does not validate the current tree; unknown provenance is not a current pass.
+- Before finalizing, compare the available revision/status with the initial snapshot. If relevant files changed during inspection, mark affected findings stale and re-inspect them when possible; otherwise withhold the affected conclusion and state the missing evidence. Do not overwrite, reset or discard concurrent user changes.
+
 ## Output Format
 
 Use this structure:

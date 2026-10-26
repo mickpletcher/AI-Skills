@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Require content comparison for relevant audit evidence even when commit/status stay unchanged; add a synthetic same-status regression without changing prior evidence or claiming native host validation.
+
 - Clarify audit-command side-effect authorization and revision/test-result provenance for the separate shipped Cursor and Copilot auditors; add two behaviorally unrun synthetic cases.
 
 - Reject empty validation-task mappings in native evidence regression checks; add a blank-cell negative test without changing historical evidence or skill behavior.

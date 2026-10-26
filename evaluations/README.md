@@ -143,3 +143,5 @@ The [third batch assessment](migration-batch3-2026-10-19.md) records six capture
 ## Audit evidence boundary scenarios
 
 [Two synthetic cases](fixtures/audit-evidence-boundaries.json) cover audit-command side effects and stale snapshot/test provenance for the separate shipped Cursor and Copilot workflows. They are behaviorally not run; deterministic contract checks do not establish native host compliance.
+
+[Same-status content-change scenario](fixtures/audit-content-snapshot.json) extends audit snapshot coverage to further edits of modified/untracked files. It remains behaviorally unrun; fingerprints in deterministic tests do not prove native auditor compliance.

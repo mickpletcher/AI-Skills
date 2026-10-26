@@ -139,3 +139,7 @@ The [third batch assessment](migration-batch3-2026-10-19.md) records six capture
 - [Activation CI correction ledger](fixtures/activation24.json): Windows short/long temp paths refer to the same objects. Corrected identity assertions and a ninth alias/escape regression; native activation evidence and runtime helper unchanged. Initial Windows failure retained.
 
 - [Fresh-session repeatability, mode repair and merge readiness](activation-repeatability-2026-10-25.md): 36 completed sessions, 30 positive full loads/six negatives across two requested models and CLI/app-server. One comparison source-accuracy failure retained and repaired; current two source proposals pass. Candidate-only merge recommendation requires final CI and explicit approval; no promotion.
+
+## Audit evidence boundary scenarios
+
+[Two synthetic cases](fixtures/audit-evidence-boundaries.json) cover audit-command side effects and stale snapshot/test provenance for the separate shipped Cursor and Copilot workflows. They are behaviorally not run; deterministic contract checks do not establish native host compliance.

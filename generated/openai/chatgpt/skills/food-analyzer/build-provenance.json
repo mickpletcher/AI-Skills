@@ -5,7 +5,7 @@
   "ecosystem": "chatgpt",
   "ecosystem_paths_sha256": "035f7a1a71d84399e8453fd923d81b4cd9ac38f411d762ae364c2f87267492d9",
   "generator_sha256": "43a95a6d7af5b7933684fb1d914bc879644c91082fa96eb7e8c7921ba3b77bed",
-  "master_revision": "ea8c919188dc7f80a0878ab3229fe3c488e32be3c00b9bf39116777c28afd635",
+  "master_revision": "2c31f5feaa92742314f24731d02b81aa395bf1162fc6cf1c80f878ab8892d346",
   "master_revision_kind": "sha256-bundle",
   "model_id": null,
   "model_profile": "baseline",

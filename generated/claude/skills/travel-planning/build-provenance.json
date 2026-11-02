@@ -5,7 +5,7 @@
   "ecosystem": "claude",
   "ecosystem_paths_sha256": "035f7a1a71d84399e8453fd923d81b4cd9ac38f411d762ae364c2f87267492d9",
   "generator_sha256": "43a95a6d7af5b7933684fb1d914bc879644c91082fa96eb7e8c7921ba3b77bed",
-  "master_revision": "daa04adee3acfaf5288a473dbfc396430a72ab4a1772e09869ebf94b10d06de5",
+  "master_revision": "92dbad5930781a66c4da027d24fe257cc5ec4972bb9e9b5d1f67d1450d2beb8b",
   "master_revision_kind": "sha256-bundle",
   "model_id": null,
   "model_profile": "baseline",

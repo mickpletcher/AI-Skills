@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Harden Photo Rename candidates with reviewed, contained no-overwrite copies and retained-source hash checks; require rendered-artifact evidence for Resume Writer page-fit claims. Add synthetic regressions; shipped skills and promotion remain unchanged.
+
 - Require content comparison for relevant audit evidence even when commit/status stay unchanged; add a synthetic same-status regression without changing prior evidence or claiming native host validation.
 
 - Clarify audit-command side-effect authorization and revision/test-result provenance for the separate shipped Cursor and Copilot auditors; add two behaviorally unrun synthetic cases.

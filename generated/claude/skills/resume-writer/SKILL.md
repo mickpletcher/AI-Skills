@@ -109,7 +109,7 @@ Hard enforcement rules:
 
 ## Enhance Workflow
 
-Read before enhancing or auditing a resume; also read the scoring reference for score outputs. [Full workflow](references/enhance-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode.
+Read before enhancing or auditing a resume; also read the scoring reference for score outputs. [Full workflow](references/enhance-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode. Page-fit claims require a rendered count of the intended final artifact; estimates never confirm a two-page fit. State unavailable renderer/font/artifact limits and reverify after edits.
 
 ## Scoring Workflow
 

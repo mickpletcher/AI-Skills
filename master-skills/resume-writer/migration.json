@@ -14,7 +14,8 @@
   "behavior_evaluations": [],
   "host_compatibility": "unverified",
   "transformations": {
-    "Read whenever scoring a resume or producing machine-readable scores. [Full workflow](references/scoring-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode.": "Read whenever scoring a resume or producing machine-readable scores. [Full workflow](references/scoring-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode. Use [the score calculator](scripts/score_audit.py) when local Python execution is available. Report only totals reconciled to the supplied source ledger; do not substitute estimated editorial numbers. Mapping tables and examples are not attributed library entries. Numeric audits use the fixed-evidence-v3 inventory and seven calculator-generated criteria in scoring-model.md; do not choose a principle subset or duplicate a missing-data penalty."
+    "Read whenever scoring a resume or producing machine-readable scores. [Full workflow](references/scoring-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode.": "Read whenever scoring a resume or producing machine-readable scores. [Full workflow](references/scoring-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode. Use [the score calculator](scripts/score_audit.py) when local Python execution is available. Report only totals reconciled to the supplied source ledger; do not substitute estimated editorial numbers. Mapping tables and examples are not attributed library entries. Numeric audits use the fixed-evidence-v3 inventory and seven calculator-generated criteria in scoring-model.md; do not choose a principle subset or duplicate a missing-data penalty.",
+    "Read before enhancing or auditing a resume; also read the scoring reference for score outputs. [Full workflow](references/enhance-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode.": "Read before enhancing or auditing a resume; also read the scoring reference for score outputs. [Full workflow](references/enhance-workflow.md). Paths mentioned in that reference are relative to this skill directory. Its rules are required for the selected mode. Page-fit claims require a rendered count of the intended final artifact; estimates never confirm a two-page fit. State unavailable renderer/font/artifact limits and reverify after edits."
   },
   "supporting_files_sha256": {
     "insights/principles.md": "d9f5b121650e48b6ae2a4a6b38e10d49a2d7509a35979a28c5cce7c2acdb8cab",
@@ -62,14 +63,18 @@
       "reason": "Candidate-only v3 source-block grouping and explicit unscored context-note partition; original shipped hash retained."
     },
     "references/enhance-workflow.md": {
-      "sha256": "66f4e643619e8495574f59f124e93bce32850c5b3199b7657addc80256dd19e7",
-      "reason": "Candidate-only v3 source-block grouping and explicit unscored context-note partition; original shipped hash retained."
+      "sha256": "c6c817744041618346dd4d405bf167565d2d785b84ddf116339a83312865a069",
+      "reason": "Candidate-only two-page audit distinguishes estimates from final-artifact render evidence, handles missing fonts/renderers, and uses existing JSON notes; preserves prior v3 scoring correction and original shipped hash."
     }
   },
   "added_supporting_files": {
     "scripts/score_audit.py": {
       "sha256": "cabb2399ebd12280b30e4cb405eb019806bd9928786d64f6c33dac08f49291b9",
       "reason": "New candidate-only standard-library score/source-ledger calculator for deterministic native audit reconciliation."
+    },
+    "scripts/verify_pagination.py": {
+      "sha256": "c5b5bfb941a27f80fbaa617fa0958645ba3805ebd5e2a595cd1fa75c4b178268",
+      "reason": "Candidate-only optional Poppler-backed PDF render/count evidence helper; no DOCX conversion or visual-quality certification."
     }
   }
 }

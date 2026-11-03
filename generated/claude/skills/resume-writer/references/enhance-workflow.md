@@ -69,13 +69,15 @@ Role family presets should shift emphasis, skills ordering, and proof selection 
 
 Activate when the user says "two page", "two-page", "trim to two pages", "fit on two pages", "two page audit", or "page trim". Two-page mode runs inside Enhance mode — the full audit and rewrite still execute, but a strict trimming phase is added after the rewrite.
 
-**Estimate current length** before trimming. Use these proxies:
+**Estimation is not pagination evidence.** Before trimming, distinguish the supplied original from the rewritten deliverable. A page count for the original never verifies the rewrite.
 
-- Pasted text or Markdown: 55 lines per page, ~650 words per page
-- DOCX: use word count if available; otherwise estimate from line count
-- If the resume is already two pages or under, state that and skip trimming. Still run the full audit.
+- Pasted text or Markdown: 55 lines per page or ~650 words per page may be used only as rough planning estimates, with the proxy and layout assumptions stated. DOCX word count, cached document properties and extracted PDF text are also estimates, not rendered page counts. Screenshots may omit pages.
+- When document tools and the intended fonts are available, create the intended final artifact with its actual paper size, margins, fonts, font sizes, spacing, tables and explicit breaks. Render/export that exact version and count the resulting pages. For a delivered PDF, inspect/render that PDF; for DOCX, render that DOCX to PDF with the available document renderer, retain its identity and report the renderer/version and font substitutions. Never silently substitute a newly typeset PDF for evidence about a supplied DOCX.
+- If a renderer, font, source artifact or output capability is missing, say exactly which artifact could not be verified and why. Give an estimated length only if supportable, label actual pagination unverified, and offer export/render instructions. Do not install tools or fonts without authorization. A substituted-font render verifies only that fallback layout, not the intended layout.
+- With Python and Poppler available, `python scripts/verify_pagination.py final-resume.pdf` renders a temporary snapshot and returns a hash-bound PDF page count. It does not convert DOCX, verify font fidelity or inspect visual quality. Check its status and limitations; failure or renderer warnings leave pagination unverified. Other available renderers may be used with equivalent evidence.
+- Only skip trimming on a confirmed page-fit basis when the relevant rendered artifact is two pages or fewer. If an estimate suggests no trimming is needed, avoid unnecessary cuts but say "Estimated to fit within two pages; actual pagination is unverified." Still run the full audit and verify the final rewrite independently.
 
-**Section priority rules** — apply in order until the resume fits two pages:
+**Section priority rules** — apply in order toward the two-page target, preserving facts:
 
 Pass 1 — trim without removing content:
 - Cap the summary at 3 sentences. Cut the rest.
@@ -94,7 +96,7 @@ Pass 3 — cut low-value sections:
 - GPA: remove unless the user is early-career and GPA is 3.7 or higher.
 - High school education: remove if any post-secondary credential exists.
 
-**After each pass**, re-estimate length. Stop as soon as the resume fits. Do not over-trim.
+**After each pass**, update the estimate; when rendering is available, render the revised artifact and recount. Stop trimming once the intended rendered version has at most two pages. Without rendering, stop at a reasonable estimated target and explicitly leave page fit unverified; do not over-trim to manufacture certainty. Inspect the final rendered pages for clipping, overflow, unreadable compression and unexpected blank pages. Rerender and recount after any content or layout change.
 
 **Trimming report**: After trimming, output a brief itemized list of what was cut and which pass removed it. The user may override any individual cut — flag this explicitly.
 
@@ -388,11 +390,11 @@ Deliver the sections below in the standard order, plus the two-page report when 
    - In JSON output, map this content to `interview_prep_handoff`. Set to `null` if not generated.
 
 11. **Two-Page Trimming Report** (when two-page mode ran)
-   - State the estimated pre-trim length and post-trim length.
+   - Report pre-trim and final length separately: label each as estimated, rendered or unverified. For estimates, give the proxy and assumptions; for rendered counts, identify the exact artifact/version (hash when available), renderer, page count, layout/font limitations and visual inspection status. An original-file count is not a final-rewrite count.
    - List every item cut, which pass removed it, and the reason.
    - Explicitly note that any cut can be overridden — the user should reply with the item to restore.
-   - If no trimming was needed, state "Resume already fits two pages — no content removed."
-   - In JSON output, map this content to `two_page_trim_report`. Set to `null` if two-page mode was not active.
+   - If no trimming was needed, say "Rendered final artifact has N pages; no content removed" only with evidence for that final artifact. Otherwise say "No content removed based on the length estimate; actual pagination remains unverified" and state the missing renderer, font or artifact. Never claim a two-page fit from word/line counts alone.
+   - In JSON output, put this report in the existing `notes` string array from `json-output-spec.md`; do not add an undeclared `two_page_trim_report` field. Preserve the same evidence qualifiers in human and JSON output.
 
 If source is not pasted text, always state extraction confidence (High, Medium, or Low) and parsing limitations.
 

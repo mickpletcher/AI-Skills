@@ -91,3 +91,70 @@ class CompatibilityTests(unittest.TestCase):
         with patch.dict(maps.TARGETS, {'gemini': 'instructions.md'}):
             with self.assertRaisesRegex(ValueError, 'Generator targets changed'):
                 maps.render(ROOT, ROOT / 'master-skills/example-skill/SKILL.md')
+
+    def test_status_table_has_all_ecosystems_and_valid_enums(self):
+        self.assertEqual(len(maps.STATUS_ECOSYSTEMS), 12)
+        self.assertEqual(len(maps.LABELS), 7)
+        for source in (ROOT / 'master-skills').glob('*/COMPATIBILITY.md'):
+            text = source.read_text().split('## Ecosystem status at a glance')[1].split('### Scope of Yes ratings')[0]
+            rows = [line.split('|')[1:-1] for line in text.splitlines() if line.startswith('| ')][2:]
+            self.assertEqual([r[0].strip() for r in rows], list(maps.STATUS_ECOSYSTEMS.values()))
+            for _, compatibility, status in rows:
+                self.assertIn(compatibility.strip(), ('Yes', 'No', 'Unknown'))
+                self.assertIn(status.strip(), ('Implemented', 'Planned', 'Not targeted'))
+            for label in ('Microsoft Copilot (consumer)', 'Microsoft 365 Copilot', 'Microsoft Copilot Studio', 'Amazon Q Developer', 'Grok'):
+                self.assertIn(f'| {label} | Unknown | Not targeted |', text)
+
+    def test_implementation_status_does_not_imply_compatibility(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            placement = {'allowed': {'codex': 'Explicit intent'}, 'skipped': {}}
+            self.assertEqual(maps.implementation_status(root, 'demo', 'codex', placement), 'Planned')
+            self.assertEqual(maps.implementation_status(root, 'demo', 'gemini', placement), 'Not targeted')
+            p = root / 'generated/openai/codex/skills/demo/SKILL.md'
+            p.parent.mkdir(parents=True); p.write_text('unverified')
+            self.assertEqual(maps.implementation_status(root, 'demo', 'codex', placement), 'Implemented')
+            self.assertEqual(maps.verified_scopes(root, 'demo', None), {})
+
+    def test_yes_requires_retained_matching_evidence(self):
+        import copy
+        rows = json.loads((ROOT / maps.COVERAGE).read_text())['rows']
+        evidence = next(r for r in rows if r['skill'] == 'blog-to-social')
+        self.assertIn('chatgpt', maps.verified_scopes(ROOT, 'blog-to-social', evidence))
+        changed = copy.deepcopy(evidence)
+        changed['current_chatgpt_instruction_sha256'] = '0' * 64
+        self.assertNotIn('chatgpt', maps.verified_scopes(ROOT, 'blog-to-social', changed))
+        changed = copy.deepcopy(evidence)
+        changed['current_instruction_hash_present_in_selected_evidence'] = False
+        self.assertNotIn('chatgpt', maps.verified_scopes(ROOT, 'blog-to-social', changed))
+        changed = copy.deepcopy(evidence)
+        changed = next(r.copy() for r in rows if r['skill'] == 'github-repo-architect')
+        changed['codex_host18'] = {**changed['codex_host18'], 'status': 'UNASSESSED'}
+        self.assertNotIn('codex', maps.verified_scopes(ROOT, 'blog-to-social', changed))
+
+        changed = copy.deepcopy(evidence)
+        changed['bounded_native_acceptance'] = 'Not accepted'
+        self.assertNotIn('chatgpt', maps.verified_scopes(ROOT, 'blog-to-social', changed))
+
+    def test_product_mention_without_host_metadata_does_not_grant_yes(self):
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / 'native-batch9.json'
+            path.write_text(json.dumps({'prompt': 'ChatGPT native', 'hash': 'abc'}))
+            self.assertFalse(maps.native_chatgpt_evidence(path, 'abc', 'demo'))
+            record = {'host': 'ChatGPT native web UI', 'cases': [{'skill': 'demo', 'resources_sha256': {'instructions.md': 'abc'}, 'status': 'bounded_pass'}]}
+            path.write_text(json.dumps(record))
+            self.assertTrue(maps.native_chatgpt_evidence(path, 'abc', 'demo'))
+            self.assertFalse(maps.native_chatgpt_evidence(path, 'different', 'demo'))
+
+            record['cases'][0]['status'] = 'not_submitted'
+            path.write_text(json.dumps(record))
+            self.assertFalse(maps.native_chatgpt_evidence(path, 'abc', 'demo'))
+
+            photo = Path(temp) / 'photo-native.json'
+            record = {'candidate_target': 'chatgpt', 'candidate_sha256': 'abc',
+                      'native_retry': {'host': 'ChatGPT native Chrome UI', 'copy': {'status': 'passed'}}}
+            photo.write_text(json.dumps(record))
+            self.assertTrue(maps.native_chatgpt_evidence(photo, 'abc', 'photo-rename'))
+            record['native_retry']['copy']['status'] = 'not_submitted'
+            photo.write_text(json.dumps(record))
+            self.assertFalse(maps.native_chatgpt_evidence(photo, 'abc', 'photo-rename'))

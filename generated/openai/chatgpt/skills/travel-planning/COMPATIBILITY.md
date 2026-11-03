@@ -8,6 +8,33 @@ Allowed means an intended review candidate in `ecosystems.json`, not verified co
 
 Declarations: [`master-skills/travel-planning/ecosystems.json`](https://github.com/mickpletcher/AI-Skills/blob/main/master-skills/travel-planning/ecosystems.json); capabilities: [`master-skills/travel-planning/capabilities.json`](https://github.com/mickpletcher/AI-Skills/blob/main/master-skills/travel-planning/capabilities.json).
 
+## Ecosystem status at a glance
+
+| Ecosystem | Compatibility | Implementation status |
+| --- | --- | --- |
+| Claude | Unknown | Implemented |
+| OpenAI ChatGPT | Yes | Implemented |
+| OpenAI Codex | Unknown | Not targeted |
+| Cursor | Unknown | Not targeted |
+| GitHub Copilot | Unknown | Not targeted |
+| Gemini | Unknown | Not targeted |
+| Perplexity | Unknown | Not targeted |
+| Microsoft Copilot (consumer) | Unknown | Not targeted |
+| Microsoft 365 Copilot | Unknown | Not targeted |
+| Microsoft Copilot Studio | Unknown | Not targeted |
+| Amazon Q Developer | Unknown | Not targeted |
+| Grok | Unknown | Not targeted |
+
+### Scope of Yes ratings
+
+- **OpenAI ChatGPT:** Yes for the recorded passing bounded ChatGPT instruction-packet cases only, with explicit native-host metadata. Current instruction bytes match a recorded passing case for this skill; installed routing, full workflow coverage, all resources and broader models remain unverified. See per-skill evidence below.
+
+**Compatibility:** Yes requires actual evidence for an explicitly defined support scope; No requires a demonstrated incompatibility and a documented blocker. Unknown means affirmative scoped compatibility has not been established. A Yes applies only to its scope immediately above, never whole-skill or ecosystem-wide certification. Unknown also covers evidence needing additional host/case tracing; historical results remain below. Unknown does not mean incompatible, and skipped placement is not a technical blocker. No demonstrated host incompatibility is established here, so no No rating is assigned.
+
+**Implementation status:** Implemented means an existing same-name repository variant (candidate, shipped source or scaffold), not installed, activated or natively verified. The detailed paths below identify which kind. Planned means explicit intent for this master but no variant yet. Not targeted means no existing variant or per-master target intent. Reserved product folders alone do not make every skill Planned.
+
+The first seven rows are the existing repository target IDs. The additional five rows cover explicitly distinguished Microsoft products and reserved product guides, not new target approval or every AI product in existence. Amazon Q Developer is not Amazon Bedrock Agents; Grok consumer and Grok Build support are not assumed equivalent. Update the ecosystem list and evidence deliberately when repository targets change.
+
 ## Ecosystems and existing copies
 
 | Ecosystem | Intended placement / limits | Generated candidate entry point | Existing platform source (review separately) |

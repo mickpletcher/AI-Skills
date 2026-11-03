@@ -5,7 +5,7 @@
   "ecosystem": "cursor",
   "ecosystem_paths_sha256": "035f7a1a71d84399e8453fd923d81b4cd9ac38f411d762ae364c2f87267492d9",
   "generator_sha256": "43a95a6d7af5b7933684fb1d914bc879644c91082fa96eb7e8c7921ba3b77bed",
-  "master_revision": "b537043ceabc7fb2f55937e19c89fecc7175222a2cbe153ff220ddf19fc10425",
+  "master_revision": "d4a206ec848a6fe68f0868c9ba80b00770439d68cce08e15ebf23655657a70ea",
   "master_revision_kind": "sha256-bundle",
   "model_id": null,
   "model_profile": "baseline",

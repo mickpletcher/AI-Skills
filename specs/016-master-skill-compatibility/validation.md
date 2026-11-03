@@ -12,3 +12,11 @@ Base `ab0d902903b2b13eb582c88ca5ba6b5e66d6957c`; isolated compatibility branch. 
 No native app tests, installations, model calls, promotion, merge or release occurred. PowerShell folder/quality/installer scripts were not run locally because PowerShell is unavailable. Hosted checks are separate evidence. New resources necessarily update generated provenance and the resource manifest.
 
 Other Architect work is independent. Preserve both changelog entries and regenerate maps/candidates when combining capability changes; do not blindly select one manifest/provenance side.
+
+## Approved table-format revision — 2026-11-03
+
+All 36 maps now show the same twelve ecosystem rows with separate compatibility and implementation enums. The first seven are existing repository target IDs; the five additional rows distinguish Microsoft products and reserved guides without creating target approval. A Yes is limited to its immediately documented historical scope and matching current instruction hash: 15 ChatGPT bounded packet cases with explicit host metadata and a matching passing case and ten Codex loading observations. All other rows remain Unknown; skipped placement is not a demonstrated incompatibility. No No ratings or speculative per-master plans are invented.
+
+Eleven focused regressions check complete rows, enum values, implementation-vs-compatibility separation, missing/mismatched/unaccepted evidence and existing map integrity. Full suite: 175 tests, 168 passed and seven platform/runtime skips. Repository validation remains 46 skills, zero issues; map/candidate freshness and 24/99 offline contracts pass. No new model testing occurred. This revision updates the existing branch only; the prior draft PR denial remains respected.
+
+An independent read-only review traced all fifteen affirmative ChatGPT ratings to actual skill-specific passing native cases. Matching-hash preparation or offline fixture content alone cannot grant Yes; regressions cover absent host metadata and not-submitted outcomes. Codex Yes remains loading-only.

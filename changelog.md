@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Add consistent twelve-ecosystem compatibility/status tables to all 36 maps, with evidence-scoped Yes, Unknown for unestablished support, and implementation status separate from native verification.
+
 - Add reproducible COMPATIBILITY.md maps to all 36 masters and their 96 generated candidates, documenting intended ecosystems, exact variant paths, bounded evidence and update responsibilities without claiming universal native support.
 
 - Require content comparison for relevant audit evidence even when commit/status stay unchanged; add a synthetic same-status regression without changing prior evidence or claiming native host validation.

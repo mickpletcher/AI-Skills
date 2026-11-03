@@ -8,6 +8,33 @@ Allowed means an intended review candidate in `ecosystems.json`, not verified co
 
 Declarations: [`master-skills/powershell-refactor/ecosystems.json`](https://github.com/mickpletcher/AI-Skills/blob/main/master-skills/powershell-refactor/ecosystems.json); capabilities: [`master-skills/powershell-refactor/capabilities.json`](https://github.com/mickpletcher/AI-Skills/blob/main/master-skills/powershell-refactor/capabilities.json).
 
+## Ecosystem status at a glance
+
+| Ecosystem | Compatibility | Implementation status |
+| --- | --- | --- |
+| Claude | Unknown | Implemented |
+| OpenAI ChatGPT | Unknown | Implemented |
+| OpenAI Codex | Yes | Implemented |
+| Cursor | Unknown | Implemented |
+| GitHub Copilot | Unknown | Not targeted |
+| Gemini | Unknown | Not targeted |
+| Perplexity | Unknown | Not targeted |
+| Microsoft Copilot (consumer) | Unknown | Not targeted |
+| Microsoft 365 Copilot | Unknown | Not targeted |
+| Microsoft Copilot Studio | Unknown | Not targeted |
+| Amazon Q Developer | Unknown | Not targeted |
+| Grok | Unknown | Not targeted |
+
+### Scope of Yes ratings
+
+- **OpenAI Codex:** Yes for the recorded bounded Codex CLI loading observation only, not full task execution. Current instruction bytes match that fixture. One isolated repository catalog/model; no global routing, full behavior or human acceptance certification. Evidence: [`evaluations/fixtures/host-routing-integration18.json`](https://github.com/mickpletcher/AI-Skills/blob/main/evaluations/fixtures/host-routing-integration18.json).
+
+**Compatibility:** Yes requires actual evidence for an explicitly defined support scope; No requires a demonstrated incompatibility and a documented blocker. Unknown means affirmative scoped compatibility has not been established. A Yes applies only to its scope immediately above, never whole-skill or ecosystem-wide certification. Unknown also covers evidence needing additional host/case tracing; historical results remain below. Unknown does not mean incompatible, and skipped placement is not a technical blocker. No demonstrated host incompatibility is established here, so no No rating is assigned.
+
+**Implementation status:** Implemented means an existing same-name repository variant (candidate, shipped source or scaffold), not installed, activated or natively verified. The detailed paths below identify which kind. Planned means explicit intent for this master but no variant yet. Not targeted means no existing variant or per-master target intent. Reserved product folders alone do not make every skill Planned.
+
+The first seven rows are the existing repository target IDs. The additional five rows cover explicitly distinguished Microsoft products and reserved product guides, not new target approval or every AI product in existence. Amazon Q Developer is not Amazon Bedrock Agents; Grok consumer and Grok Build support are not assumed equivalent. Update the ecosystem list and evidence deliberately when repository targets change.
+
 ## Ecosystems and existing copies
 
 | Ecosystem | Intended placement / limits | Generated candidate entry point | Existing platform source (review separately) |

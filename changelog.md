@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Correct three unpromoted candidates: Food Analyzer added-sugars Daily Value, current-source Alpaca fractional-order guidance, and fixed-dimension social-preview compression with encoded-output checks. Preserve shipped skills; add offline contract and real JPEG regression checks, not native/model or broker certification.
+
 - Require content comparison for relevant audit evidence even when commit/status stay unchanged; add a synthetic same-status regression without changing prior evidence or claiming native host validation.
 
 - Clarify audit-command side-effect authorization and revision/test-result provenance for the separate shipped Cursor and Copilot auditors; add two behaviorally unrun synthetic cases.

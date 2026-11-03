@@ -98,7 +98,7 @@ Use the selected goal to change the emphasis:
 - Estimate visually only when label data is not available
 - State confidence clearly
 - Separate obvious observations from low confidence guesses when the image or label is incomplete
-- Use the FDA 2,000 kcal reference diet for percent daily values unless the user provides custom targets
+- Use the FDA 2,000 kcal reference diet for percent daily values; label user-provided custom targets as percent of custom target, not FDA %DV
 - Keep medication and supplement warnings factual and end that section with a pharmacist and physician disclaimer
 - Omit swap suggestions when the food scores well overall
 
@@ -151,12 +151,17 @@ Use these as defaults unless the user provides custom targets:
 - Sodium: 2,300mg
 - Total Carbohydrate: 275g
 - Dietary Fiber: 28g
-- Total Sugars: 50g
+- Total Sugars: no FDA Daily Value; report grams only
+- Added Sugars: 50g
 - Protein: 50g
 - Vitamin D: 20mcg
 - Calcium: 1,300mg
 - Iron: 18mg
 - Potassium: 4,700mg
+
+Sugar reference checked 2026-11-03: [FDA Added Sugars on the Nutrition Facts Label](https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label). Added sugars are included in total sugars, not an extra amount to add to them.
+
+Keep `total_sugars_g` and `added_sugars_g` separate. Calculate added-sugars %DV as `added_sugars_g / 50 * 100`. Never assign an FDA %DV to total sugars or infer added sugars from total sugars. If added sugars are not supplied, retain total sugar grams and report added sugars and their %DV as unknown, not zero.
 
 ## NOVA Guidance
 
@@ -245,6 +250,7 @@ End this section with the same pharmacist and physician disclaimer used for medi
 When the user asks for a different serving size, or the analysis is for meal prep:
 
 - scale calories and macros linearly for half, double, or N-serving batches and show the per-serving and total lines
+- scale supplied total and added sugar grams separately; recompute added-sugars %DV from the scaled grams, keep missing added sugars unknown, and keep total-sugars %DV not applicable
 - do not scale glycemic load advice linearly without comment; portion size changes the practical impact, so note when a doubled portion moves the meal into a different GI burden category
 - for meal prep batches, give the per-container numbers and a note on how many containers the batch yields
 
@@ -258,13 +264,15 @@ food_log:
   meal: [name]
   serving: [size]
   calories: [kcal]
-  protein_g: / carbs_g: / fat_g: / fiber_g: / sugar_g: / sodium_mg:
+  protein_g: / carbs_g: / fat_g: / fiber_g: / sodium_mg:
+  total_sugars_g: [grams or unknown]
+  added_sugars_g: [grams or unknown]
   nova: [1-4]
   goal_fit: [short line]
   confidence: [high/medium/low]
 ```
 
-Use Markdown bullets instead when the user mentions Obsidian or notes. Keep field names stable across exports so entries can be aggregated later.
+Use Markdown bullets instead when the user mentions Obsidian or notes. Keep field names stable across exports so entries can be aggregated later. If updating an existing log with the legacy `sugar_g` field, preserve it as an alias of `total_sugars_g`; never reinterpret it as added sugars.
 
 ## Restaurant Ordering Guidance
 
@@ -302,7 +310,8 @@ Use those preferences to refine later recommendations, but say when a conclusion
 - [ ] Quick summary appears before deeper sections
 - [ ] Confidence labels separate direct observations from weaker guesses
 - [ ] Goal mode changes the analysis emphasis appropriately
-- [ ] Percent daily values use the correct reference unless custom targets were provided
+- [ ] FDA %DV uses the correct reference; custom targets are labeled separately
+- [ ] Total sugar grams have no FDA %DV; added-sugars %DV uses 50g and missing added sugars stay unknown
 - [ ] Comparison mode highlights tradeoffs instead of forcing one winner
 - [ ] Meal timing guidance matches the likely use case
 - [ ] Ingredient flags are grouped cleanly

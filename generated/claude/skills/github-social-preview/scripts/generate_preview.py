@@ -13,6 +13,7 @@ Usage:
 """
 
 import argparse
+import io
 import json
 import os
 import sys
@@ -185,6 +186,7 @@ def build_preview_checklist(config: Dict, file_size: int, image: Image.Image) ->
     crop_width = int(CANVAS_W * SAFE_CONTENT_WIDTH_RATIO)
     crop_height = int(CANVAS_H * SAFE_CONTENT_HEIGHT_RATIO)
     checklist = []
+    checklist.append(("dimensions", "PASS" if image.size == (CANVAS_W, CANVAS_H) else f"FAIL ({image.width}x{image.height})"))
     checklist.append(("contrast_title", f"PASS ({title_ratio:.2f}:1)") if title_ratio >= 4.5 else ("contrast_title", f"WARN ({title_ratio:.2f}:1)"))
     checklist.append(("contrast_subtitle", f"PASS ({subtitle_ratio:.2f}:1)") if subtitle_ratio >= 3.0 else ("contrast_subtitle", f"WARN ({subtitle_ratio:.2f}:1)"))
     checklist.append(("crop_safety", f"REVIEW (safe zone {crop_width}x{crop_height}; inspect actual rendered content)"))
@@ -420,25 +422,24 @@ def export_jpeg(img: Image.Image, output_path: str, quality: int = 92) -> int:
 
 
 def compress_to_limit(img: Image.Image, output_path: str) -> Tuple[int, int]:
-    """Try decreasing quality levels, then scale down if needed. Returns (file_size, quality_used)."""
-    quality_steps = [92, 85, 75, 65, 55]
-
-    for q in quality_steps:
-        size = export_jpeg(img, output_path, quality=q)
-        if size < MAX_BYTES:
-            return size, q
-
-    # Scale canvas down 10% and retry from q=92
-    w, h = img.size
-    scaled = img.resize((int(w * 0.9), int(h * 0.9)), Image.LANCZOS)
-    for q in quality_steps:
-        size = export_jpeg(scaled, output_path, quality=q)
-        if size < MAX_BYTES:
-            return size, q
-
-    # Last resort: save at lowest quality without checking
-    size = export_jpeg(scaled, output_path, quality=40)
-    return size, 40
+    """Encode at fixed dimensions; leave the destination untouched on size failure."""
+    if img.size != (CANVAS_W, CANVAS_H):
+        raise ValueError(f"Expected {CANVAS_W}x{CANVAS_H}, got {img.width}x{img.height}")
+    for quality in (92, 85, 75, 65, 55, 40):
+        encoded = io.BytesIO()
+        img.save(encoded, format="JPEG", quality=quality, optimize=True)
+        payload = encoded.getvalue()
+        if len(payload) < MAX_BYTES:
+            with Image.open(io.BytesIO(payload)) as saved:
+                saved.load()
+                if saved.format != "JPEG" or saved.size != (CANVAS_W, CANVAS_H):
+                    raise ValueError("Encoded output is not a 1280x640 JPEG")
+            Path(output_path).write_bytes(payload)
+            return os.path.getsize(output_path), quality
+    raise ValueError(
+        f"Cannot encode {CANVAS_W}x{CANVAS_H} JPEG below {MAX_BYTES:,} bytes "
+        "at quality 40; simplify the artwork. Destination unchanged."
+    )
 
 
 def main():
@@ -476,25 +477,33 @@ def main():
     )
 
     output_path = args.output
-    initial_size = export_jpeg(img, output_path, quality=92)
-
-    if initial_size >= MAX_BYTES:
-        print(f"Initial size {initial_size:,} bytes exceeds 1 MB — recompressing...")
+    try:
         final_size, quality_used = compress_to_limit(img, output_path)
-    else:
-        final_size = initial_size
-        quality_used = 92
+        with Image.open(output_path) as saved:
+            saved.load()
+            actual_dims = saved.size
+            actual_format = saved.format
+            # Layout metadata is not serialized by JPEG. Retain it only for the
+            # layout checks; dimensions/format below come from decoded output.
+            saved.info['footer_layout'] = img.info['footer_layout']
+            final_size = os.path.getsize(output_path)
+            checklist = build_preview_checklist(
+                pick_theme(config, args.theme, args.accent or None), final_size, saved
+            )
+    except (ValueError, OSError) as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        sys.exit(1)
 
-    size_kb = final_size / 1024
     print(f"Output: {output_path}")
-    print(f"Size:   {size_kb:.1f} KB (quality {quality_used})")
-    print(f"Dims:   {CANVAS_W}x{CANVAS_H}")
+    print(f"Size:   {final_size:,} bytes ({final_size / 1024:.1f} KB; quality {quality_used})")
+    print(f"Dims:   {actual_dims[0]}x{actual_dims[1]}")
+    print(f"Format: {actual_format}")
     print("Preview checklist:")
-    for name, result in build_preview_checklist(pick_theme(config, args.theme, args.accent or None), final_size, img):
+    for name, result in checklist:
         print(f"  {name}: {result}")
 
-    if final_size >= MAX_BYTES:
-        print(f"WARNING: Could not compress below 1 MB. Final size: {final_size:,} bytes.")
+    if final_size >= MAX_BYTES or actual_dims != (CANVAS_W, CANVAS_H) or actual_format != "JPEG":
+        print("ERROR: Encoded output does not meet the size, dimensions or JPEG contract.", file=sys.stderr)
         sys.exit(1)
 
 

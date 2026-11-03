@@ -38,6 +38,14 @@ Run `python tools/generate_master_skills.py --check`, `python tools/skill_reposi
 
 Every master includes a host-neutral `capabilities.json` contract and retains task goals, domain workflows, output criteria and safeguards. Ecosystem names/tool mappings live in adapters; per-model declarations and guidance live in [model profiles](../model-profiles/README.md). The committed baseline has no configured model and no verified capabilities. Every generated bundle includes `build-provenance.json`; deterministic regeneration proves input consistency, not portability or model quality. See the [generic-master audit](GENERIC-AUDIT.md) for retained domain specifics and unresolved adaptations.
 
+
+## Per-skill compatibility and update maps
+
+Every master includes `COMPATIBILITY.md` with intended ecosystem decisions, exact existing candidate/platform sources, adapters, bounded historical evidence and capability limits. ChatGPT and Codex are separate, as are GitHub Copilot and Microsoft Copilot. Existing files do not prove native compatibility; shipped copies remain independently maintained.
+
+For every source, instruction, adapter or target change, run `python tools/generate_master_skills.py`, then `python tools/skill_compatibility.py`, then `python tools/generate_master_skills.py` again. The first generation makes evidence checks use current rendered instructions; the second copies the refreshed maps and provenance. Check with `python tools/skill_compatibility.py --check`; the standard Python suite also checks map freshness, valid paths, copied bytes and support boundaries. Edit declarations/evidence rather than generated prose. This adds no native testing, installation, review pipeline or ecosystem support.
+
+The opening status table lists twelve consistently distinguished ecosystems with `Compatibility` (`Yes`, `No`, `Unknown`) and `Implementation status` (`Implemented`, `Planned`, `Not targeted`). Yes is restricted to the evidence-backed scope printed immediately below the table, with matching instruction hashes; No requires a demonstrated blocker, not skipped placement. Existing variants are Implemented only in the repository, not necessarily installed or natively verified. Reserved product guides alone do not establish per-master plans. Detailed paths, capability contracts and historical limits remain below the summary.
 Generation has no blanket target default: every master must classify every ecosystem in `ecosystems.json` with an allowed or skipped reason. `generated/target-decisions.json` exposes all decisions. Food Analyzer explicitly excludes Cursor; model profiles never widen these allowlists. Current proposed coverage is 38 Claude, 38 ChatGPT, 14 Cursor and 14 Codex candidates, including the example and both standalone additions. Manually review ambiguous mode-specific placements in GENERIC-AUDIT.md before promotion.
 
 ## New n8n security-review candidate

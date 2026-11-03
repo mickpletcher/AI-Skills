@@ -4,6 +4,11 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Reconcile the compatibility rollout with all reviewed candidate changes: extend the original 36-master/96-copy rollout below to 38 master maps and 104 generated copies, retain Unknown for both new masters, and regenerate combined manifests/provenance without extending historical acceptance.
+
+- Add consistent twelve-ecosystem compatibility/status tables to all 36 maps, with evidence-scoped Yes, Unknown for unestablished support, and implementation status separate from native verification.
+
+- Add reproducible COMPATIBILITY.md maps to all 36 masters and their 96 generated candidates, documenting intended ecosystems, exact variant paths, bounded evidence and update responsibilities without claiming universal native support.
 - Add a standalone n8n security-review candidate with evidence-based guidance, a value-redacting offline export helper and bounded synthetic checks. Reconcile it with the n8n workflow expansion and independent synthetic-data candidate without promoting or publishing any skill.
 
 - Expand the unpromoted n8n-workflow candidate with version-aware core guidance, focused AI/testing references, synthetic scenarios and a read-only export graph helper. Preserve shipped skills and prior bounded evaluation evidence; no live n8n compatibility is claimed.

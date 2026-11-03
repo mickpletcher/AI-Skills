@@ -4,6 +4,12 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Add a standalone n8n security-review candidate with evidence-based guidance, a value-redacting offline export helper and bounded synthetic checks. Reconcile it with the n8n workflow expansion and independent synthetic-data candidate without promoting or publishing any skill.
+
+- Expand the unpromoted n8n-workflow candidate with version-aware core guidance, focused AI/testing references, synthetic scenarios and a read-only export graph helper. Preserve shipped skills and prior bounded evaluation evidence; no live n8n compatibility is claimed.
+
+- Add an independent Synthetic Test Data Generator canonical candidate with deterministic JSON/CSV fixtures, target-skill requirement tracing, explicit oracles, source-hash staleness detection and an offline Pi-hole pilot. Preserve three independent-review findings and verified repairs; no target execution, installation, promotion or publication.
+
 - Require content comparison for relevant audit evidence even when commit/status stay unchanged; add a synthetic same-status regression without changing prior evidence or claiming native host validation.
 
 - Clarify audit-command side-effect authorization and revision/test-result provenance for the separate shipped Cursor and Copilot auditors; add two behaviorally unrun synthetic cases.

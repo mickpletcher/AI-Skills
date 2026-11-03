@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "allowed": {
+    "claude": "Read-only reasoning over supplied n8n exports and configuration evidence, subject to capabilities.",
+    "chatgpt": "Read-only reasoning over supplied n8n exports and configuration evidence, subject to capabilities.",
+    "cursor": "Static review of local workflow JSON/configuration artifacts without runtime access.",
+    "codex": "Static review of local workflow JSON/configuration artifacts without runtime access."
+  },
+  "skipped": {},
+  "review_status": "proposed",
+  "adaptation_review": "New candidate; verify host routing, resource access and behavior separately before promotion."
+}

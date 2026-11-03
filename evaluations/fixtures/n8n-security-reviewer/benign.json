@@ -1,0 +1,9 @@
+{
+  "name": "Synthetic read-only schedule",
+  "nodes": [
+    {"name": "Schedule", "type": "n8n-nodes-base.scheduleTrigger", "parameters": {}},
+    {"name": "Fetch public status", "type": "n8n-nodes-base.httpRequest", "typeVersion": 4.2, "parameters": {"url": "https://example.invalid/status", "authentication": "genericCredentialType", "genericAuthType": "httpHeaderAuth", "options": {}}, "credentials": {"httpHeaderAuth": {"id": "synthetic-id", "name": "Read only by name, actual scopes unknown"}}}
+  ],
+  "connections": {"Schedule": {"main": [[{"node": "Fetch public status", "type": "main", "index": 0}]]}},
+  "settings": {"saveDataErrorExecution": "none", "saveDataSuccessExecution": "none"}
+}

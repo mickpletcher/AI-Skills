@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "seed": 42,
+  "tables": [
+    {
+      "name": "customers",
+      "rows": 3,
+      "fields": {
+        "id": {
+          "type": "id"
+        },
+        "email": {
+          "type": "email"
+        },
+        "age": {
+          "type": "integer",
+          "min": 0,
+          "max": 120
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "note": {
+          "type": "text",
+          "required": false,
+          "nullable": true,
+          "max_length": 80
+        },
+        "joined": {
+          "type": "date",
+          "min": "2024-02-28",
+          "max": "2024-03-01"
+        }
+      }
+    },
+    {
+      "name": "orders",
+      "rows": 4,
+      "fields": {
+        "id": {
+          "type": "id"
+        },
+        "customer_id": {
+          "type": "ref",
+          "table": "customers",
+          "field": "id"
+        },
+        "quantity": {
+          "type": "integer",
+          "min": 1,
+          "max": 20
+        },
+        "status": {
+          "type": "enum",
+          "values": [
+            "synthetic_pending",
+            "synthetic_complete"
+          ]
+        }
+      }
+    }
+  ],
+  "cases": [
+    {
+      "id": "age-lower-bound",
+      "category": "boundary",
+      "description": "Valid inclusive lower bound and false boolean",
+      "mutations": [
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "age",
+          "operation": "set",
+          "value": 0
+        },
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "active",
+          "operation": "set",
+          "value": false
+        }
+      ],
+      "expected_violations": []
+    },
+    {
+      "id": "age-upper-bound",
+      "category": "boundary",
+      "description": "Valid inclusive upper bound",
+      "mutations": [
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "age",
+          "operation": "set",
+          "value": 120
+        }
+      ],
+      "expected_violations": []
+    },
+    {
+      "id": "age-outside-bound",
+      "category": "boundary",
+      "description": "One above the maximum",
+      "mutations": [
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "age",
+          "operation": "set",
+          "value": 121
+        }
+      ],
+      "expected_violations": [
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "age",
+          "rule": "range"
+        }
+      ]
+    },
+    {
+      "id": "missing-email",
+      "category": "missing",
+      "description": "Required key omitted",
+      "mutations": [
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "email",
+          "operation": "omit"
+        }
+      ],
+      "expected_violations": [
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "email",
+          "rule": "required"
+        }
+      ]
+    },
+    {
+      "id": "null-email",
+      "category": "missing",
+      "description": "Explicit null is distinct from missing",
+      "mutations": [
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "email",
+          "operation": "set",
+          "value": null
+        }
+      ],
+      "expected_violations": [
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "email",
+          "rule": "null"
+        }
+      ]
+    },
+    {
+      "id": "empty-email",
+      "category": "malformed",
+      "description": "Empty string is invalid email syntax",
+      "mutations": [
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "email",
+          "operation": "set",
+          "value": ""
+        }
+      ],
+      "expected_violations": [
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "email",
+          "rule": "format"
+        }
+      ]
+    },
+    {
+      "id": "wrong-age-type",
+      "category": "malformed",
+      "description": "String age is not an integer",
+      "mutations": [
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "age",
+          "operation": "set",
+          "value": "120"
+        }
+      ],
+      "expected_violations": [
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "age",
+          "rule": "type"
+        }
+      ]
+    },
+    {
+      "id": "optional-note-missing",
+      "category": "missing",
+      "description": "Optional key may be absent",
+      "mutations": [
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "note",
+          "operation": "omit"
+        }
+      ],
+      "expected_violations": []
+    },
+    {
+      "id": "nullable-note",
+      "category": "missing",
+      "description": "Nullable note accepts null",
+      "mutations": [
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "note",
+          "operation": "set",
+          "value": null
+        }
+      ],
+      "expected_violations": []
+    },
+    {
+      "id": "empty-note",
+      "category": "boundary",
+      "description": "Empty note is a present string",
+      "mutations": [
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "note",
+          "operation": "set",
+          "value": ""
+        }
+      ],
+      "expected_violations": []
+    },
+    {
+      "id": "duplicate-order-id",
+      "category": "duplicate",
+      "description": "Duplicate identifier reports both affected rows",
+      "mutations": [
+        {
+          "table": "orders",
+          "row": 1,
+          "field": "id",
+          "operation": "set",
+          "value": "synthetic-orders-id-000001"
+        }
+      ],
+      "expected_violations": [
+        {
+          "table": "orders",
+          "row": 0,
+          "field": "id",
+          "rule": "unique"
+        },
+        {
+          "table": "orders",
+          "row": 1,
+          "field": "id",
+          "rule": "unique"
+        }
+      ]
+    },
+    {
+      "id": "orphan-order",
+      "category": "relationship",
+      "description": "Foreign key is absent from parent table",
+      "mutations": [
+        {
+          "table": "orders",
+          "row": 0,
+          "field": "customer_id",
+          "operation": "set",
+          "value": "synthetic-missing-parent"
+        }
+      ],
+      "expected_violations": [
+        {
+          "table": "orders",
+          "row": 0,
+          "field": "customer_id",
+          "rule": "reference"
+        }
+      ]
+    },
+    {
+      "id": "leap-day",
+      "category": "boundary",
+      "description": "Valid leap day within supplied bounds",
+      "mutations": [
+        {
+          "table": "customers",
+          "row": 0,
+          "field": "joined",
+          "operation": "set",
+          "value": "2024-02-29"
+        }
+      ],
+      "expected_violations": []
+    }
+  ],
+  "malformed_json": true
+}

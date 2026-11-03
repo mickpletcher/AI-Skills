@@ -36,6 +36,16 @@ class CompatibilityTests(unittest.TestCase):
                            'Do not overwrite shipped variants'):
                 self.assertIn(clause, source.read_text())
 
+    def test_new_masters_without_native_evidence_remain_unknown(self):
+        for name in ('n8n-security-reviewer', 'synthetic-test-data-generator'):
+            with self.subTest(skill=name):
+                source = ROOT / 'master-skills' / name / 'SKILL.md'
+                rendered = maps.render(ROOT, source)
+                self.assertIn('No bounded native evidence row is indexed', rendered)
+                self.assertIn('not whole-skill or cross-ecosystem certification', rendered)
+                self.assertNotRegex(rendered, r'\| (Yes|No) \|')
+                self.assertEqual(maps.verified_scopes(ROOT, name, None), {})
+
     def fixture(self, root):
         for path in ('master-skills/example-skill', 'catalog.json', maps.COVERAGE):
             dest = root / path

@@ -198,7 +198,7 @@ def render(root, source):
             lines += [f'Historical Codex host observation: `{host["status"]}`. {host["limits"]} '
                       f'Evidence: {link(host["evidence"])}.', '']
     else:
-        lines += ['No bounded native evidence row is indexed; support remains intended/unverified.', '']
+        lines += ['No bounded native evidence row is indexed; support remains intended/unverified. Repository implementation is not whole-skill or cross-ecosystem certification.', '']
     lines += [f'See {link(COVERAGE)} and {link("evaluations/native-coverage-2026-10-22.md")} for exact scopes, revisions '
               'and host/model limits. Historical results do not certify current bytes or every ecosystem row. '
               'Consult any master `model-history.json` for additional recorded runs. '

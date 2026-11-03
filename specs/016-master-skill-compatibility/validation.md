@@ -20,3 +20,16 @@ All 36 maps now show the same twelve ecosystem rows with separate compatibility 
 Eleven focused regressions check complete rows, enum values, implementation-vs-compatibility separation, missing/mismatched/unaccepted evidence and existing map integrity. Full suite: 175 tests, 168 passed and seven platform/runtime skips. Repository validation remains 46 skills, zero issues; map/candidate freshness and 24/99 offline contracts pass. No new model testing occurred. This revision updates the existing branch only; the prior draft PR denial remains respected.
 
 An independent read-only review traced all fifteen affirmative ChatGPT ratings to actual skill-specific passing native cases. Matching-hash preparation or offline fixture content alone cannot grant Yes; regressions cover absent host metadata and not-submitted outcomes. Codex Yes remains loading-only.
+
+## Combined integration validation — 2026-11-03
+
+Reconciled PRs #20, #22, #23 and #24 before this compatibility rollout. The original 36-master/96-copy counts above describe the earlier standalone review; combined coverage is 38 master maps and 104 generated copies. Both new masters have twelve Unknown compatibility ratings and no inherited acceptance. The no-indexed-evidence path now explicitly disclaims whole-skill or cross-ecosystem certification and has a focused regression.
+
+- Combined Python suite: 269 tests, passing with seven existing platform-dependent skips.
+- Compatibility tests under simulated Windows cp1252 defaults: 12 passing.
+- Repository structural validation: 46 shipped skills, zero issues.
+- Map and candidate freshness, package/catalog regeneration, preserved shipped trees and whitespace checks: passed.
+- Offline contracts: 24 cases, 99 negative checks; zero actual model evaluations.
+- Hosted CI and merge results are tracked on the exact remote PR heads, separately from this local record. No new native-host, live-service or compatibility evidence is asserted.
+
+Late #20/#22 review repairs are retained: exact Architect report-row manifest binding and bounded Poppler failure diagnostics, with focused negative regressions.

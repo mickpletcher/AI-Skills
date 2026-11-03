@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "allowed": {
+    "claude": "Schema and test-goal reasoning with optional local fixture generation when declared capabilities are available.",
+    "chatgpt": "Schema and test-goal reasoning with optional file generation and execution when actually available.",
+    "cursor": "Repository-local synthetic fixtures and deterministic generators for authorized software tests.",
+    "codex": "Repository-local synthetic fixtures and deterministic generators for authorized software tests."
+  },
+  "skipped": {},
+  "review_status": "proposed",
+  "adaptation_review": "All placements are proposed. Verify routing, resources, execution and behavior in each intended host before promotion; helper tests are not host certification."
+}

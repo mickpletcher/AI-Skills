@@ -6,7 +6,7 @@
   "ecosystem_paths_sha256": "035f7a1a71d84399e8453fd923d81b4cd9ac38f411d762ae364c2f87267492d9",
   "frontmatter_policy": "codex-name-description-v1",
   "generator_sha256": "43a95a6d7af5b7933684fb1d914bc879644c91082fa96eb7e8c7921ba3b77bed",
-  "master_revision": "a642dfb677f41b7887bf3e3431dbc300f4274e1361627180e607994456610e96",
+  "master_revision": "b08d00a8359dacdcf9f6ec7edac84c87002d0c1813f25979932dbd99633ef85f",
   "master_revision_kind": "sha256-bundle",
   "model_id": null,
   "model_profile": "baseline",
@@ -15,8 +15,8 @@
   "promotion": "blocked_pending_review",
   "provider": null,
   "source_frontmatter": {
-    "description": "Design, build, or troubleshoot n8n automation workflows. Always trigger immediately when Mick mentions n8n, workflow nodes, automating a pipeline, or connecting services via n8n. Covers node selection, webhook patterns, Claude API integration, credential setup, Cloudflare Tunnel exposure, and Proxmox LXC deployment. Mick runs n8n on Proxmox CT 104 at 192.168.0.81:5678 with Cloudflare Tunnel for HTTPS.",
+    "description": "Design, build, review, or debug n8n workflows from a goal, sanitized export, or execution evidence. Includes node/data contracts, AI-assisted workflows, and synthetic testing. Use for n8n-specific automation, not unrelated pipelines or infrastructure administration.",
     "name": "n8n-workflow",
-    "version": "1.1.0"
+    "version": "1.2.0"
   }
 }

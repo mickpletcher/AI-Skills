@@ -241,6 +241,18 @@
       "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
     }
   },
+  "n8n-security-reviewer": {
+    "adaptation_review": "New candidate; verify host routing, resource access and behavior separately before promotion.",
+    "allowed": {
+      "chatgpt": "Read-only reasoning over supplied n8n exports and configuration evidence, subject to capabilities.",
+      "claude": "Read-only reasoning over supplied n8n exports and configuration evidence, subject to capabilities.",
+      "codex": "Static review of local workflow JSON/configuration artifacts without runtime access.",
+      "cursor": "Static review of local workflow JSON/configuration artifacts without runtime access."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {}
+  },
   "n8n-workflow": {
     "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
     "allowed": {
@@ -360,6 +372,18 @@
       "claude": "Conversational domain workflow, subject to declared capabilities.",
       "codex": "Repository specifications, implementation plans and task files.",
       "cursor": "Repository specifications, implementation plans and task files."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {}
+  },
+  "synthetic-test-data-generator": {
+    "adaptation_review": "All placements are proposed. Verify routing, resources, execution and behavior in each intended host before promotion; helper tests are not host certification.",
+    "allowed": {
+      "chatgpt": "Schema and test-goal reasoning with optional file generation and execution when actually available.",
+      "claude": "Schema and test-goal reasoning with optional local fixture generation when declared capabilities are available.",
+      "codex": "Repository-local synthetic fixtures and deterministic generators for authorized software tests.",
+      "cursor": "Repository-local synthetic fixtures and deterministic generators for authorized software tests."
     },
     "review_status": "proposed",
     "schema_version": 1,

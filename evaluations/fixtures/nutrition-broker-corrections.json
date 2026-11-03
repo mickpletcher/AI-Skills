@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "behavior_status": "not_run",
+  "broker_status": "not_run",
+  "scope": "Fabricated supplied-label arithmetic and partial broker contract matrix only; not a production validator, model evaluation, or broker response. Required prices, precision, account and advanced order-class validation remain separate.",
+  "food_cases": [
+    {
+      "id": "natural-only",
+      "total_sugars_g": 12,
+      "added_sugars_g": 0,
+      "servings": 2,
+      "expected": {
+        "total_sugars_g": 24,
+        "added_sugars_g": 0,
+        "added_sugars_percent_dv": 0,
+        "total_sugars_percent_dv": null
+      }
+    },
+    {
+      "id": "mixed-sugars",
+      "total_sugars_g": 15,
+      "added_sugars_g": 7,
+      "servings": 2,
+      "expected": {
+        "total_sugars_g": 30,
+        "added_sugars_g": 14,
+        "added_sugars_percent_dv": 28,
+        "total_sugars_percent_dv": null
+      }
+    },
+    {
+      "id": "half-serving",
+      "total_sugars_g": 15,
+      "added_sugars_g": 7,
+      "servings": 0.5,
+      "expected": {
+        "total_sugars_g": 7.5,
+        "added_sugars_g": 3.5,
+        "added_sugars_percent_dv": 7,
+        "total_sugars_percent_dv": null
+      }
+    },
+    {
+      "id": "missing-added",
+      "total_sugars_g": 18,
+      "added_sugars_g": null,
+      "servings": 2,
+      "expected": {
+        "total_sugars_g": 36,
+        "added_sugars_g": null,
+        "added_sugars_percent_dv": null,
+        "total_sugars_percent_dv": null
+      }
+    }
+  ],
+  "broker_cases": [
+    {
+      "id": "fractional-limit",
+      "contract": {
+        "type": "limit",
+        "tif": "day",
+        "active": true,
+        "tradable": true,
+        "fractionable": true,
+        "short": false,
+        "qty_present": true,
+        "notional_present": false,
+        "extended": false,
+        "session_eligible": true,
+        "capability_evidence": true
+      },
+      "expected": "supported_by_supplied_contract"
+    },
+    {
+      "id": "fractional-market",
+      "contract": {
+        "type": "market",
+        "tif": "day",
+        "active": true,
+        "tradable": true,
+        "fractionable": true,
+        "short": false,
+        "qty_present": true,
+        "notional_present": false,
+        "extended": false,
+        "session_eligible": true,
+        "capability_evidence": true
+      },
+      "expected": "supported_by_supplied_contract"
+    },
+    {
+      "id": "fractional-stop",
+      "contract": {
+        "type": "stop",
+        "tif": "day",
+        "active": true,
+        "tradable": true,
+        "fractionable": true,
+        "short": false,
+        "qty_present": true,
+        "notional_present": false,
+        "extended": false,
+        "session_eligible": true,
+        "capability_evidence": true
+      },
+      "expected": "supported_by_supplied_contract"
+    },
+    {
+      "id": "fractional-stop-limit",
+      "contract": {
+        "type": "stop_limit",
+        "tif": "day",
+        "active": true,
+        "tradable": true,
+        "fractionable": true,
+        "short": false,
+        "qty_present": true,
+        "notional_present": false,
+        "extended": false,
+        "session_eligible": true,
+        "capability_evidence": true
+      },
+      "expected": "supported_by_supplied_contract"
+    },
+    {
+      "id": "notional-limit",
+      "contract": {
+        "type": "limit",
+        "tif": "day",
+        "active": true,
+        "tradable": true,
+        "fractionable": true,
+        "short": false,
+        "qty_present": false,
+        "notional_present": true,
+        "extended": false,
+        "session_eligible": true,
+        "capability_evidence": true
+      },
+      "expected": "supported_by_supplied_contract"
+    },
+    {
+      "id": "gtc-rejected",
+      "contract": {
+        "type": "limit",
+        "tif": "gtc",
+        "active": true,
+        "tradable": true,
+        "fractionable": true,
+        "short": false,
+        "qty_present": true,
+        "notional_present": false,
+        "extended": false,
+        "session_eligible": true,
+        "capability_evidence": true
+      },
+      "expected": "reject"
+    },
+    {
+      "id": "both-amounts",
+      "contract": {
+        "type": "limit",
+        "tif": "day",
+        "active": true,
+        "tradable": true,
+        "fractionable": true,
+        "short": false,
+        "qty_present": true,
+        "notional_present": true,
+        "extended": false,
+        "session_eligible": true,
+        "capability_evidence": true
+      },
+      "expected": "reject"
+    },
+    {
+      "id": "neither-amount",
+      "contract": {
+        "type": "limit",
+        "tif": "day",
+        "active": true,
+        "tradable": true,
+        "fractionable": true,
+        "short": false,
+        "qty_present": false,
+        "notional_present": false,
+        "extended": false,
+        "session_eligible": true,
+        "capability_evidence": true
+      },
+      "expected": "reject"
+    },
+    {
+      "id": "nonfractionable",
+      "contract": {
+        "type": "limit",
+        "tif": "day",
+        "active": true,
+        "tradable": true,
+        "fractionable": false,
+        "short": false,
+        "qty_present": true,
+        "notional_present": false,
+        "extended": false,
+        "session_eligible": true,
+        "capability_evidence": true
+      },
+      "expected": "reject"
+    },
+    {
+      "id": "inactive",
+      "contract": {
+        "type": "limit",
+        "tif": "day",
+        "active": false,
+        "tradable": true,
+        "fractionable": true,
+        "short": false,
+        "qty_present": true,
+        "notional_present": false,
+        "extended": false,
+        "session_eligible": true,
+        "capability_evidence": true
+      },
+      "expected": "reject"
+    },
+    {
+      "id": "nontradable",
+      "contract": {
+        "type": "limit",
+        "tif": "day",
+        "active": true,
+        "tradable": false,
+        "fractionable": true,
+        "short": false,
+        "qty_present": true,
+        "notional_present": false,
+        "extended": false,
+        "session_eligible": true,
+        "capability_evidence": true
+      },
+      "expected": "reject"
+    },
+    {
+      "id": "short",
+      "contract": {
+        "type": "limit",
+        "tif": "day",
+        "active": true,
+        "tradable": true,
+        "fractionable": true,
+        "short": true,
+        "qty_present": true,
+        "notional_present": false,
+        "extended": false,
+        "session_eligible": true,
+        "capability_evidence": true
+      },
+      "expected": "reject"
+    },
+    {
+      "id": "extended-limit",
+      "contract": {
+        "type": "limit",
+        "tif": "day",
+        "active": true,
+        "tradable": true,
+        "fractionable": true,
+        "short": false,
+        "qty_present": true,
+        "notional_present": false,
+        "extended": true,
+        "session_eligible": true,
+        "capability_evidence": true
+      },
+      "expected": "supported_by_supplied_contract"
+    },
+    {
+      "id": "extended-market",
+      "contract": {
+        "type": "market",
+        "tif": "day",
+        "active": true,
+        "tradable": true,
+        "fractionable": true,
+        "short": false,
+        "qty_present": true,
+        "notional_present": false,
+        "extended": true,
+        "session_eligible": true,
+        "capability_evidence": true
+      },
+      "expected": "reject"
+    },
+    {
+      "id": "session-ineligible",
+      "contract": {
+        "type": "limit",
+        "tif": "day",
+        "active": true,
+        "tradable": true,
+        "fractionable": true,
+        "short": false,
+        "qty_present": true,
+        "notional_present": false,
+        "extended": true,
+        "session_eligible": false,
+        "capability_evidence": true
+      },
+      "expected": "reject"
+    },
+    {
+      "id": "missing-evidence",
+      "contract": {
+        "type": "limit",
+        "tif": "day",
+        "active": true,
+        "tradable": true,
+        "fractionable": true,
+        "short": false,
+        "qty_present": true,
+        "notional_present": false,
+        "extended": false,
+        "session_eligible": true,
+        "capability_evidence": false
+      },
+      "expected": "unverified"
+    }
+  ]
+}

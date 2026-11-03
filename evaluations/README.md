@@ -1,12 +1,21 @@
 # Behavioral evaluation framework
 
+The [new n8n security-review candidate](n8n-security-reviewer-2026-11-03.md) has synthetic helper regression and one independent three-artifact forward review. This does not establish native-host routing, installation, live n8n security, or broader model acceptance.
+## Current evidence summary
+
+The [README delivery repair and acceptance record](readme-delivery-2026-10-25.md) supersedes the earlier withheld README decision: all **36 of 36 recorded bounded skill scopes** are accepted (13 earlier acceptances plus 23 Mick-authorized agent reviews), with the repaired workout revision separately accepted. This is not personal human inspection, whole-skill or host certification, or authorization to merge, install or promote.
+
 The [focused native quality batch](native-quality-2026-10-25.md) records three bounded macOS Codex CLI passes for current README distribution links and spec-writer reuse/preservation/traceability and occupied-number handling. Temporary placements were removed; other hosts, repeatability and missing-evidence behavior remain untested.
 
-Selected committed history is indexed in `master-skills/github-readme/model-history.json` and `master-skills/spec-writer/model-history.json` (repository checkout only; canonical metadata is excluded from release archives). These records distinguish historical results, deterministic checks, the three bounded current-instruction cases, and remaining untested behavior. Model aliases/visible labels are not immutable backend versions; original authoring models remain unknown. Private local reports are not included.
+Selected committed history is indexed in `master-skills/github-readme/model-history.json`, `master-skills/spec-writer/model-history.json` and `master-skills/github-repo-architect/model-history.json` (repository checkout only; canonical metadata is excluded from release archives). These records distinguish historical results, deterministic checks, the three bounded current-instruction cases, and remaining untested behavior. Model aliases/visible labels are not immutable backend versions; original authoring models remain unknown. Private local reports are not included.
 
-The [spec-writer planning fixtures](fixtures/spec-writer-planning-safety.json) cover occupied destinations, stale-spec reuse, incomplete context and user-edit preservation with acceptance/task mappings. The focused deterministic tests validate synthetic response contracts and candidate propagation, not native model behavior. All four new scenarios remain **not run** on a model.
+The [spec-writer planning fixtures](fixtures/spec-writer-planning-safety.json) cover occupied destinations, stale-spec reuse, incomplete context and user-edit preservation with acceptance/task mappings. The focused deterministic tests validate synthetic response contracts and candidate propagation, not native model behavior; the four handcrafted fixture cases remain marked `not_run`. Separately, the later [native quality evidence](native-quality-2026-10-25.md) records bounded passes for S1 (reuse, user-edit preservation and traceability) and S2 (occupied-number clarification) using their own predeclared inputs. These are not model runs of all four planning fixtures. Missing-numbering-context behavior and the distinct review-only conflicting-edits scenario remain untested on a model.
 
-The [first post-migration quality fixtures](fixtures/first-quality-improvements.json) cover README checkout/archive links and the two shipped audit workflows. They retain synthetic inputs and human success criteria. `test_quality_improvements.py` checks local link behavior, evidence consistency and contract propagation only; all new model cases remain **not run**. No existing host acceptance is extended by these tests.
+The [first post-migration quality fixtures](fixtures/first-quality-improvements.json) cover README checkout/archive links and the two shipped audit workflows. They retain synthetic inputs and human success criteria. `test_quality_improvements.py` checks local link behavior, evidence consistency and contract propagation only; those handcrafted fixtures remain marked `not_run`. The separate later native R1 case above supplies bounded README checkout/archive-link evidence, not native audit-workflow coverage. No existing host acceptance is extended by the deterministic tests.
+
+## Historical evaluation snapshots
+
+The entries below preserve their status at the time of each report. “Latest,” pending-review, open-PR and draft/no-merge statements are historical snapshots, not current repository or acceptance status; use the current evidence summary above and each later continuation for superseding results. Original failures, unknowns and host limitations remain retained.
 
 Latest [delegated acceptance](delegated-acceptance-2026-10-25.md): Mick-authorized agent review accepts 22 of 23 pending bounded scopes and the repaired workout revision separately. github-readme is withheld because post-License notes leave the required delivery boundary unresolved. No personal human inspection, repair, merge or promotion. Activation/encoding/browser/other-host and real-integration gaps remain open.
 
@@ -145,3 +154,13 @@ The [third batch assessment](migration-batch3-2026-10-19.md) records six capture
 [Two synthetic cases](fixtures/audit-evidence-boundaries.json) cover audit-command side effects and stale snapshot/test provenance for the separate shipped Cursor and Copilot workflows. They are behaviorally not run; deterministic contract checks do not establish native host compliance.
 
 [Same-status content-change scenario](fixtures/audit-content-snapshot.json) extends audit snapshot coverage to further edits of modified/untracked files. It remains behaviorally unrun; fingerprints in deterministic tests do not prove native auditor compliance.
+
+## n8n workflow module candidate
+
+The [2026-11-03 candidate report](n8n-workflow-modules-2026-11-03.md) separates offline helper/example checks and an internal supplied-instruction review from native-host, n8n import, runtime and live-provider validation. The synthetic scenarios at `master-skills/n8n-workflow/fixtures/scenarios.json` (repository checkout only) are human rubrics, not claimed execution results. Historical acceptance of the prior revision remains unchanged.
+
+- [Synthetic Test Data Generator](synthetic-test-data-generator-2026-11-03.md): independent canonical skill, offline fixture/helper validation and a source-traced Pi-hole pilot; native host/model routing and target qualitative behavior remain untested.
+
+## Combined local candidate integration
+
+The [2026-11-03 integration report](candidate-integration-2026-11-03.md) covers the combined n8n workflow expansion, standalone n8n security reviewer and independent Synthetic Test Data Generator. It records additive inventory reconciliation, offline tests and preservation checks; it does not establish installation, activation or live runtime compatibility.

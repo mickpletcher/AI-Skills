@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "required": ["text_reasoning"],
+  "conditional": {
+    "file_access": "Required to inspect schema files, save datasets or deliver artifacts. With pasted structure only, offer a clearly labeled inline draft or generator; do not claim files were read or saved.",
+    "code_execution": "Required to run generators, validators or byte-for-byte reproducibility checks. When unavailable, provide scoped code marked unrun and identify the remaining checks; a seed alone does not prove reproducibility."
+  },
+  "fallback": "Stop only the capability-dependent operation, state the missing evidence, and offer pasted-input or unrun-code alternatives. Do not claim generated files, executed tests or observed application outcomes without evidence.",
+  "safeguards": "Use fictional inputs by default, keep invalid cases labeled and isolated, and do not claim anonymization or statistical fidelity. Capability declarations do not authorize imports, external transmissions, live calls, publication or production changes."
+}

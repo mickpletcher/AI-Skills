@@ -13,7 +13,7 @@ Declarations: [`master-skills/photo-rename/ecosystems.json`](https://github.com/
 | Ecosystem | Compatibility | Implementation status |
 | --- | --- | --- |
 | Claude | Unknown | Implemented |
-| OpenAI ChatGPT | Yes | Implemented |
+| OpenAI ChatGPT | Unknown | Implemented |
 | OpenAI Codex | Unknown | Not targeted |
 | Cursor | Unknown | Not targeted |
 | GitHub Copilot | Unknown | Not targeted |
@@ -27,7 +27,7 @@ Declarations: [`master-skills/photo-rename/ecosystems.json`](https://github.com/
 
 ### Scope of Yes ratings
 
-- **OpenAI ChatGPT:** Yes for the recorded passing bounded ChatGPT instruction-packet cases only, with explicit native-host metadata. Current instruction bytes match a recorded passing case for this skill; installed routing, full workflow coverage, all resources and broader models remain unverified. See per-skill evidence below.
+No affirmative rating is established for this master.
 
 **Compatibility:** Yes requires actual evidence for an explicitly defined support scope; No requires a demonstrated incompatibility and a documented blocker. Unknown means affirmative scoped compatibility has not been established. A Yes applies only to its scope immediately above, never whole-skill or ecosystem-wide certification. Unknown also covers evidence needing additional host/case tracing; historical results remain below. Unknown does not mean incompatible, and skipped placement is not a technical blocker. No demonstrated host incompatibility is established here, so no No rating is assigned.
 

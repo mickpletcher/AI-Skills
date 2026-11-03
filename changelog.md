@@ -4,9 +4,21 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Reconcile the compatibility rollout with all reviewed candidate changes: extend the original 36-master/96-copy rollout below to 38 master maps and 104 generated copies, retain Unknown for both new masters, and regenerate combined manifests/provenance without extending historical acceptance.
+
 - Add consistent twelve-ecosystem compatibility/status tables to all 36 maps, with evidence-scoped Yes, Unknown for unestablished support, and implementation status separate from native verification.
 
 - Add reproducible COMPATIBILITY.md maps to all 36 masters and their 96 generated candidates, documenting intended ecosystems, exact variant paths, bounded evidence and update responsibilities without claiming universal native support.
+- Add a standalone n8n security-review candidate with evidence-based guidance, a value-redacting offline export helper and bounded synthetic checks. Reconcile it with the n8n workflow expansion and independent synthetic-data candidate without promoting or publishing any skill.
+
+- Expand the unpromoted n8n-workflow candidate with version-aware core guidance, focused AI/testing references, synthetic scenarios and a read-only export graph helper. Preserve shipped skills and prior bounded evaluation evidence; no live n8n compatibility is claimed.
+
+- Add an independent Synthetic Test Data Generator canonical candidate with deterministic JSON/CSV fixtures, target-skill requirement tracing, explicit oracles, source-hash staleness detection and an offline Pi-hole pilot. Preserve three independent-review findings and verified repairs; no target execution, installation, promotion or publication.
+- Repair late integration review findings: bind Architect session provenance to its exact report row and preserve bounded nonzero Poppler diagnostics without claiming pagination verification. Refresh candidate helper provenance and regression coverage.
+
+- Correct three unpromoted candidates: Food Analyzer added-sugars Daily Value, current-source Alpaca fractional-order guidance, and fixed-dimension social-preview compression with encoded-output checks. Preserve shipped skills; add offline contract and real JPEG regression checks, not native/model or broker certification.
+- Harden Photo Rename candidates with reviewed, contained no-overwrite copies and retained-source hash checks; require rendered-artifact evidence for Resume Writer page-fit claims. Add synthetic regressions; shipped skills and promotion remain unchanged.
+- Reconcile selected GitHub Repo Architect evaluation history with committed bounded evidence and explicit provenance limits; clarify current versus historical evaluation summaries without new model runs or instruction changes.
 
 - Require content comparison for relevant audit evidence even when commit/status stay unchanged; add a synthetic same-status regression without changing prior evidence or claiming native host validation.
 

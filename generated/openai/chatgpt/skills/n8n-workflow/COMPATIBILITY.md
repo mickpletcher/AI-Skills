@@ -14,7 +14,7 @@ Declarations: [`master-skills/n8n-workflow/ecosystems.json`](https://github.com/
 | --- | --- | --- |
 | Claude | Unknown | Implemented |
 | OpenAI ChatGPT | Unknown | Implemented |
-| OpenAI Codex | Yes | Implemented |
+| OpenAI Codex | Unknown | Implemented |
 | Cursor | Unknown | Implemented |
 | GitHub Copilot | Unknown | Not targeted |
 | Gemini | Unknown | Not targeted |
@@ -27,7 +27,7 @@ Declarations: [`master-skills/n8n-workflow/ecosystems.json`](https://github.com/
 
 ### Scope of Yes ratings
 
-- **OpenAI Codex:** Yes for the recorded bounded Codex CLI loading observation only, not full task execution. Current instruction bytes match that fixture. One isolated repository catalog/model; no global routing, full behavior or human acceptance certification. Evidence: [`evaluations/fixtures/host-routing-integration18.json`](https://github.com/mickpletcher/AI-Skills/blob/main/evaluations/fixtures/host-routing-integration18.json).
+No affirmative rating is established for this master.
 
 **Compatibility:** Yes requires actual evidence for an explicitly defined support scope; No requires a demonstrated incompatibility and a documented blocker. Unknown means affirmative scoped compatibility has not been established. A Yes applies only to its scope immediately above, never whole-skill or ecosystem-wide certification. Unknown also covers evidence needing additional host/case tracing; historical results remain below. Unknown does not mean incompatible, and skipped placement is not a technical blocker. No demonstrated host incompatibility is established here, so no No rating is assigned.
 
@@ -68,8 +68,9 @@ See [`evaluations/native-coverage-2026-10-22.json`](https://github.com/mickpletc
 ## Capability and runtime limitations
 
 - Required: `text_reasoning`.
-- Conditional `web_retrieval`: Required only for current external facts; request supplied sources or label current claims unverified when unavailable.
-- Conditional `file_access`: Required for inspecting supplied files; accept pasted content or state extraction limits when unavailable.
+- Conditional `web_retrieval`: Required for current n8n/provider version, feature or schema claims. Optional authorized n8n API/MCP tools must be inspected separately for exact permissions and effects; otherwise use supplied sanitized exports and conceptual plans, marking runtime support unverified.
+- Conditional `file_access`: Required for reading exports, writing requested artifacts and inspecting bundled references; accept pasted evidence if unavailable and disclose limits. Do not claim an exported artifact was saved without evidence.
+- Conditional `code_execution`: Optional for the Python 3.10+ standard-library offline graph helper and synthetic checks. Without it, inspect supplied evidence manually and mark local checks not run. Local Python/JavaScript is not n8n runtime verification.
 - Fallback: If a required capability is unknown or unavailable, stop the dependent operation, identify missing evidence, and request input or offer manual steps. Do not claim completion.
 - Safeguards: Capability declarations never grant authorization. Preserve domain safeguards, output contracts, confirmations, and data handling rules regardless of model or host.
 

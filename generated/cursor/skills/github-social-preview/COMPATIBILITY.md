@@ -13,8 +13,8 @@ Declarations: [`master-skills/github-social-preview/ecosystems.json`](https://gi
 | Ecosystem | Compatibility | Implementation status |
 | --- | --- | --- |
 | Claude | Unknown | Implemented |
-| OpenAI ChatGPT | Yes | Implemented |
-| OpenAI Codex | Yes | Implemented |
+| OpenAI ChatGPT | Unknown | Implemented |
+| OpenAI Codex | Unknown | Implemented |
 | Cursor | Unknown | Implemented |
 | GitHub Copilot | Unknown | Not targeted |
 | Gemini | Unknown | Not targeted |
@@ -27,8 +27,7 @@ Declarations: [`master-skills/github-social-preview/ecosystems.json`](https://gi
 
 ### Scope of Yes ratings
 
-- **OpenAI ChatGPT:** Yes for the recorded passing bounded ChatGPT instruction-packet cases only, with explicit native-host metadata. Current instruction bytes match a recorded passing case for this skill; installed routing, full workflow coverage, all resources and broader models remain unverified. See per-skill evidence below.
-- **OpenAI Codex:** Yes for the recorded bounded Codex CLI loading observation only, not full task execution. Current instruction bytes match that fixture. One isolated repository catalog/model; no global routing, full behavior or human acceptance certification. Evidence: [`evaluations/fixtures/host-routing-integration18.json`](https://github.com/mickpletcher/AI-Skills/blob/main/evaluations/fixtures/host-routing-integration18.json).
+No affirmative rating is established for this master.
 
 **Compatibility:** Yes requires actual evidence for an explicitly defined support scope; No requires a demonstrated incompatibility and a documented blocker. Unknown means affirmative scoped compatibility has not been established. A Yes applies only to its scope immediately above, never whole-skill or ecosystem-wide certification. Unknown also covers evidence needing additional host/case tracing; historical results remain below. Unknown does not mean incompatible, and skipped placement is not a technical blocker. No demonstrated host incompatibility is established here, so no No rating is assigned.
 

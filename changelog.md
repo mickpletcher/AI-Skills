@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Reconcile selected GitHub Repo Architect evaluation history with committed bounded evidence and explicit provenance limits; clarify current versus historical evaluation summaries without new model runs or instruction changes.
+
 - Require content comparison for relevant audit evidence even when commit/status stay unchanged; add a synthetic same-status regression without changing prior evidence or claiming native host validation.
 
 - Clarify audit-command side-effect authorization and revision/test-result provenance for the separate shipped Cursor and Copilot auditors; add two behaviorally unrun synthetic cases.

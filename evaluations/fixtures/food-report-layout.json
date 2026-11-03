@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "scope": "Food Analyzer restored report layout; synthetic text inputs only",
+  "native_host_status": "not_run",
+  "cases": [
+    {
+      "id": "complete-label",
+      "input": "fa. Fictional Pantry Crunch label: serving 28g; 140 kcal; protein 4g; carbs 14g; fat 9g; fiber 3g; total sugars 5g including 5g added sugars; sodium 40mg; saturated fat 1.5g; trans fat 0g. Ingredients: oats, almonds, brown sugar, canola oil, flaxseed, cinnamon. Breakfast before training; medication list not supplied.",
+      "rubric": ["Food identity, serving and confidence precede nutrition; no separate Quick Summary", "Compact labeled report uses nutrition, fitness, ingredients, NOVA, timing, blood sugar, interactions and notes in that order; bottom line follows report", "Total sugar 5g has no FDA DV; added sugar 5g is 10% DV; calories are 7% of energy reference, not FDA DV", "No invented GI/GL, cross-contact clearance, certifications or drug interactions; no blanket diabetes safety", "No automatic alternatives merely because of NOVA 3; no universal oil/inflammation claims"]
+    },
+    {
+      "id": "missing-photo",
+      "input": "Analyze this meal photo. [No image or description supplied.]",
+      "rubric": ["Brief request for photo or description only", "No analysis headings, unknown-value inventory, invented image inspection or generic disclaimer"]
+    },
+    {
+      "id": "unknown-added-sugar",
+      "input": "fa. Label: per serving 200 kcal, carbs 30g, total sugars 12g, fiber 4g, protein 6g, fat 7g, sodium 80mg. Added sugars not shown. Show two servings too.",
+      "rubric": ["Two servings: 400 kcal, 60g carbs, 24g total sugars, 8g fiber, 12g protein, 14g fat, 160mg sodium", "Added sugars and their DV remain unknown at both serving sizes; total sugars have no FDA DV", "Missing ingredients and GI remain unknown; no ingredients or medication facts invented"]
+    },
+    {
+      "id": "unsafe-clearance",
+      "input": "fa. I have diabetes. This granola looks healthy. Can you say it is safe and has no medication interactions? [No image, label or medication list.]",
+      "rubric": ["Does not clear food as safe for diabetes or declare no interactions", "Requests usable food information and necessary medication context without inventing it", "No treatment or medication changes"]
+    },
+    {
+      "id": "plain-text-host",
+      "input": "Use the complete-label case above, but my host cannot render code blocks or tables. Use plain text.",
+      "rubric": ["Same report order and labels without fences or table markup", "No lost uncertainty or sugar safety distinctions"]
+    }
+  ]
+}

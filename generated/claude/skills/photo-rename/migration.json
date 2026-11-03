@@ -13,12 +13,26 @@
   "original_authoring_model": null,
   "behavior_evaluations": [],
   "host_compatibility": "unverified",
-  "transformations": {},
+  "transformations": {
+    "- if two photos would receive the same name, append `_01`, `_02`, and so on\n- treat this as collision-safe rename behavior, not a failure\n- keep suffix numbering stable inside a batch so follow-up cleanup is not needed\n": "- Inventory every destination entry first (files, directories, and links), not just the selected photos. Compare Unicode-normalized, case-folded names even on a case-sensitive host.\n- Reserve all planned destinations in stable input order. If occupied, try `_01`, `_02`, and onward until free; never assume an existing numeric suffix is available. Treat case-only changes and names occupied by other source files as conflicts too.\n- Preserve the exact original extension. Accept only a plain filename, never an absolute path, drive path, separator, `..` traversal, or reserved device name. Keep resolved output paths inside the explicitly selected folder; reject linked folders and linked sources rather than following them.\n- These are planning checks, not proof that a later write is safe. Recheck immediately before execution and use exclusive/no-overwrite creation; never use overwriting rename, move, or copy operations.\n",
+    "### 5. Output a rename report\n": "### 5. File-operation safety gate\n\nReport-only is the default. A proposed filename is not an executed rename. Before any authorized file operation, read [the safe copy workflow](references/file-operation-safety.md). Preserve originals and their SHA-256 hashes; do not delete sources as implicit cleanup. The bundled helper implements reviewed copies only, not in-place renames. If the host cannot guarantee containment, no overwrite, and hash verification, provide the plan and state that execution is blocked.\n\n### 6. Output a rename report\n",
+    "Example format:\n": "Label the whole report `PROPOSED \u2014 no files changed` until execution is verified. `[PASS]` below describes naming confidence, not filesystem success. For execution, report exact source/destination, operation, hashes, and per-file status (copied and verified, failed/incomplete, or not attempted); never turn a partial failure into a batch success.\n\nExample format:\n"
+  },
   "supporting_files_sha256": {},
   "retained_in_original_sha256": {
     "README.md": "3bc50aa0c602d529338e20772234f8b5f6e0223c007fc4381a596b65e0c945db",
     "completedchanges.md": "e29067f5219d3fe82634eab9b1bf3e33be795b8ad6f037d515d1d2e63848aa39",
     "photo-rename.skill": "15515ad2ec11270d22fc3b80745c96c7a79ec50f1e5747390a100a4c01e58272",
     "upgrades.md": "95fd8d270b68375b8f595e45c7c85cd11c10541d1b15d02d9cb95112cee295d9"
+  },
+  "added_supporting_files": {
+    "references/file-operation-safety.md": {
+      "sha256": "d5417a804405596b33bf9b06b5da1714ef5bee459c122abf4c1f6a7c25fde518",
+      "reason": "Candidate-only reviewed no-overwrite copy workflow with source preservation; spec 020."
+    },
+    "scripts/safe_photo_copy.py": {
+      "sha256": "8ae3b9135b3e56bdbf602d971376ee23d3224a62be450a7a6000d236fbdf3c73",
+      "reason": "Candidate-only reviewed no-overwrite copy workflow with source preservation; spec 020."
+    }
   }
 }

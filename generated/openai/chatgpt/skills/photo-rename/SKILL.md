@@ -133,9 +133,10 @@ Fallback priority when confidence is low:
 
 Collision handling:
 
-- if two photos would receive the same name, append `_01`, `_02`, and so on
-- treat this as collision-safe rename behavior, not a failure
-- keep suffix numbering stable inside a batch so follow-up cleanup is not needed
+- Inventory every destination entry first (files, directories, and links), not just the selected photos. Compare Unicode-normalized, case-folded names even on a case-sensitive host.
+- Reserve all planned destinations in stable input order. If occupied, try `_01`, `_02`, and onward until free; never assume an existing numeric suffix is available. Treat case-only changes and names occupied by other source files as conflicts too.
+- Preserve the exact original extension. Accept only a plain filename, never an absolute path, drive path, separator, `..` traversal, or reserved device name. Keep resolved output paths inside the explicitly selected folder; reject linked folders and linked sources rather than following them.
+- These are planning checks, not proof that a later write is safe. Recheck immediately before execution and use exclusive/no-overwrite creation; never use overwriting rename, move, or copy operations.
 
 Confidence handling:
 
@@ -144,9 +145,15 @@ Confidence handling:
 - **Low**: only partial subject or place identification is possible
 - **None**: no defensible descriptive name is available
 
-### 5. Output a rename report
+### 5. File-operation safety gate
+
+Report-only is the default. A proposed filename is not an executed rename. Before any authorized file operation, read [the safe copy workflow](references/file-operation-safety.md). Preserve originals and their SHA-256 hashes; do not delete sources as implicit cleanup. The bundled helper implements reviewed copies only, not in-place renames. If the host cannot guarantee containment, no overwrite, and hash verification, provide the plan and state that execution is blocked.
+
+### 6. Output a rename report
 
 Produce a clear rename report rather than assuming the files can be renamed in place.
+
+Label the whole report `PROPOSED — no files changed` until execution is verified. `[PASS]` below describes naming confidence, not filesystem success. For execution, report exact source/destination, operation, hashes, and per-file status (copied and verified, failed/incomplete, or not attempted); never turn a partial failure into a batch success.
 
 Example format:
 

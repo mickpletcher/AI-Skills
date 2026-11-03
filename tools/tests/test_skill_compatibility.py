@@ -46,6 +46,31 @@ class CompatibilityTests(unittest.TestCase):
                 self.assertNotRegex(rendered, r'\| (Yes|No) \|')
                 self.assertEqual(maps.verified_scopes(ROOT, name, None), {})
 
+    def test_documented_refresh_withdraws_stale_yes_after_instruction_or_adapter_change(self):
+        import generate_master_skills as generator
+        for change in ('instruction', 'adapter'):
+            with self.subTest(change=change), tempfile.TemporaryDirectory() as temp:
+                root = Path(temp)
+                for folder in ('master-skills', 'generated', 'adapters', 'model-profiles', 'schemas', 'evaluations'):
+                    shutil.copytree(ROOT / folder, root / folder, ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
+                shutil.copyfile(ROOT / 'catalog.json', root / 'catalog.json')
+                source = root / 'master-skills/blog-to-social/COMPATIBILITY.md'
+                self.assertIn('| OpenAI ChatGPT | Yes |', source.read_text(encoding='utf-8'))
+                changed = (root / 'master-skills/blog-to-social/SKILL.md' if change == 'instruction'
+                           else root / 'adapters/openai/chatgpt/blog-to-social/append.md')
+                changed.parent.mkdir(parents=True, exist_ok=True)
+                prior = changed.read_text(encoding='utf-8') if changed.exists() else ''
+                changed.write_text(prior + '\nSynthetic changed instruction for freshness regression.\n', encoding='utf-8')
+                with patch.object(generator, 'ROOT', root):
+                    generator.generate()
+                    maps.generate(root)
+                    generator.generate()
+                    generator.generate(check=True)
+                maps.generate(root, check=True)
+                self.assertIn('| OpenAI ChatGPT | Unknown |', source.read_text(encoding='utf-8'))
+                generated = root / 'generated/openai/chatgpt/skills/blog-to-social/COMPATIBILITY.md'
+                self.assertEqual(source.read_bytes(), generated.read_bytes())
+
     def fixture(self, root):
         for path in ('master-skills/example-skill', 'catalog.json', maps.COVERAGE):
             dest = root / path

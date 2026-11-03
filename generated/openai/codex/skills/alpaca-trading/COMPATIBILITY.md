@@ -79,6 +79,6 @@ Helpers require actual dependencies, permissions and runtime access. See [`docs/
 ## When this master changes
 
 1. Review source, resources, capability/ecosystem declarations and adapters above. Do not widen support just because a model can read Markdown.
-2. Run `python tools/skill_compatibility.py`, then `python tools/generate_master_skills.py`. Synchronize all listed candidate entry points, supporting resources and provenance. For a newly allowed target, first generate its candidate, refresh this map, then regenerate candidates again.
+2. Run `python tools/generate_master_skills.py`, then `python tools/skill_compatibility.py`, then `python tools/generate_master_skills.py` again. Synchronize all listed candidate entry points, supporting resources and provenance. This order is required for instruction, source, adapter and target changes: evidence must be checked against current rendered instructions before refreshed maps are copied into candidates.
 3. Review each listed existing platform source for an explicitly approved equivalent change. Do not overwrite shipped variants or promote/rebuild their packages automatically from a master update. Review named-model builds separately; profiles cannot widen the allowlist.
 4. Run `python tools/skill_compatibility.py --check`, `python tools/generate_master_skills.py --check`, `python tools/skill_repository.py validate` and `python -m unittest discover -s tools/tests -v`. Record actual host/model tests separately before claiming runtime compatibility.

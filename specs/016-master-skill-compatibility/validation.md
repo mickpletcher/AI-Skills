@@ -25,7 +25,7 @@ An independent read-only review traced all fifteen affirmative ChatGPT ratings t
 
 Reconciled PRs #20, #22, #23 and #24 before this compatibility rollout. The original 36-master/96-copy counts above describe the earlier standalone review; combined coverage is 38 master maps and 104 generated copies. Both new masters have twelve Unknown compatibility ratings and no inherited acceptance. The no-indexed-evidence path now explicitly disclaims whole-skill or cross-ecosystem certification and has a focused regression.
 
-- Combined Python suite: 269 tests, passing with seven existing platform-dependent skips.
+- Combined Python suite: 270 tests, passing with seven existing platform-dependent skips.
 - Compatibility tests under simulated Windows cp1252 defaults: 12 passing.
 - Repository structural validation: 46 shipped skills, zero issues.
 - Map and candidate freshness, package/catalog regeneration, preserved shipped trees and whitespace checks: passed.
@@ -33,3 +33,5 @@ Reconciled PRs #20, #22, #23 and #24 before this compatibility rollout. The orig
 - Hosted CI and merge results are tracked on the exact remote PR heads, separately from this local record. No new native-host, live-service or compatibility evidence is asserted.
 
 Late #20/#22 review repairs are retained: exact Architect report-row manifest binding and bounded Poppler failure diagnostics, with focused negative regressions.
+
+The final review found that map-first maintenance could retain stale Yes ratings after instruction or adapter edits. Both the central README and every generated map now require candidate generation, map refresh, then candidate regeneration. A temporary-repository regression changes both instruction and adapter bytes and verifies Yes becomes Unknown, copied maps match, and both freshness checks pass.

@@ -9,6 +9,11 @@ Compiled from repo history and the current working tree.
 - Expand the unpromoted n8n-workflow candidate with version-aware core guidance, focused AI/testing references, synthetic scenarios and a read-only export graph helper. Preserve shipped skills and prior bounded evaluation evidence; no live n8n compatibility is claimed.
 
 - Add an independent Synthetic Test Data Generator canonical candidate with deterministic JSON/CSV fixtures, target-skill requirement tracing, explicit oracles, source-hash staleness detection and an offline Pi-hole pilot. Preserve three independent-review findings and verified repairs; no target execution, installation, promotion or publication.
+- Repair late integration review findings: bind Architect session provenance to its exact report row and preserve bounded nonzero Poppler diagnostics without claiming pagination verification. Refresh candidate helper provenance and regression coverage.
+
+- Correct three unpromoted candidates: Food Analyzer added-sugars Daily Value, current-source Alpaca fractional-order guidance, and fixed-dimension social-preview compression with encoded-output checks. Preserve shipped skills; add offline contract and real JPEG regression checks, not native/model or broker certification.
+- Harden Photo Rename candidates with reviewed, contained no-overwrite copies and retained-source hash checks; require rendered-artifact evidence for Resume Writer page-fit claims. Add synthetic regressions; shipped skills and promotion remain unchanged.
+- Reconcile selected GitHub Repo Architect evaluation history with committed bounded evidence and explicit provenance limits; clarify current versus historical evaluation summaries without new model runs or instruction changes.
 
 - Require content comparison for relevant audit evidence even when commit/status stay unchanged; add a synthetic same-status regression without changing prior evidence or claiming native host validation.
 

@@ -14,7 +14,10 @@
   "behavior_evaluations": [],
   "host_compatibility": "unverified",
   "transformations": {
-    "Use the `WebFetch` tool to read the GitHub repository page.": "Use an available, authorized web retrieval tool to read the GitHub repository page. If retrieval is unavailable, ask for the repository content; do not invent it."
+    "Use the `WebFetch` tool to read the GitHub repository page.": "Use an available, authorized web retrieval tool to read the GitHub repository page. If retrieval is unavailable, ask for the repository content; do not invent it.",
+    "(85, 75, 65, 55)": "(85, 75, 65, 55, 40)",
+    "- If still over 1 MB at quality 55: scale the canvas to 90% and retry from quality 92": "- Never resize for compression: preserve exactly 1280x640. If quality 40 still cannot produce fewer than 1,000,000 bytes, fail clearly and ask to simplify the artwork; do not deliver an oversized or resized image.\n- Decode the saved JPEG and report its actual dimensions, format and byte count, not the original canvas constants.",
+    "| Image over 1 MB after quality 55 | Scale canvas to 90% and retry |": "| Image at least 1,000,000 bytes after quality 40 | Fail without replacing the destination; simplify artwork, never resize |"
   },
   "supporting_files_sha256": {
     "examples/example_usage.md": "7398d0b03eb6b3990ea4939232c4560d963d977d1221e2e740d2e17e59734fc3",
@@ -29,8 +32,8 @@
   },
   "supporting_file_overrides": {
     "scripts/generate_preview.py": {
-      "sha256": "00ee376207573259f13eb34d99da303e83d44f718a5b3429aa7e162a56ec8f81",
-      "reason": "Candidate-only footer-space reservation and actual-layout checklist correction after native tag/badge overlap. Original helper hash retained."
+      "sha256": "c7f95c0d14950f9def18d3e0492ae070c0bdd53b48ce24ecbd02068b241477eb",
+      "reason": "Candidate-only footer-space reservation and actual-layout checklist correction after native tag/badge overlap. Original helper hash retained. Fixed-dimension JPEG compression now fails without replacing the destination when the byte ceiling is unattainable; CLI reports decoded dimensions/format and actual file bytes. Original helper hash retained."
     }
   }
 }

@@ -106,8 +106,9 @@ Run `scripts/generate_preview.py` with the derived content as arguments. The scr
 After generation, check the output file size.
 
 - If under 1 MB: done
-- If 1 MB or larger: re-run export at progressively lower JPEG quality (85, 75, 65, 55) until the file is under 1 MB
-- If still over 1 MB at quality 55: scale the canvas to 90% and retry from quality 92
+- If 1 MB or larger: re-run export at progressively lower JPEG quality (85, 75, 65, 55, 40) until the file is under 1 MB
+- Never resize for compression: preserve exactly 1280x640. If quality 40 still cannot produce fewer than 1,000,000 bytes, fail clearly and ask to simplify the artwork; do not deliver an oversized or resized image.
+- Decode the saved JPEG and report its actual dimensions, format and byte count, not the original canvas constants.
 
 ### Step 5 — Confirm output
 
@@ -195,7 +196,7 @@ When the user provides multiple repo URLs (`gsp url1 url2 ...` or a pasted list)
 | No topics | Extract top 3-5 keywords from README headings or repo name |
 | No language detected | Omit language badge entirely |
 | No metadata at all | Render title-only design with GitHub mark |
-| Image over 1 MB after quality 55 | Scale canvas to 90% and retry |
+| Image at least 1,000,000 bytes after quality 40 | Fail without replacing the destination; simplify artwork, never resize |
 | Long repo or tag text | Fit to width first, then truncate with ellipsis only if needed |
 | Logo or screenshot available | Add them only if they improve the layout without crowding the text |
 

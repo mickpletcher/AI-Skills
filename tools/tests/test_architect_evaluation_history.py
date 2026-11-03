@@ -2,6 +2,7 @@
 import copy
 import hashlib
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -34,7 +35,11 @@ def validate_history(record):
             fixture = evidence_path(entry['fixture'])
             if hashlib.sha256(fixture.read_bytes()).hexdigest() != entry['fixture_sha256']:
                 raise ValueError('fixture hash drift')
-            for pin in (revision['source_commit'], entry['session_manifest_sha256'],
+            manifests = re.findall(
+                r'^\| Architect \| `([0-9a-f]{64})` \|$', report, re.MULTILINE)
+            if manifests != [entry['session_manifest_sha256']]:
+                raise ValueError('Architect session manifest mismatch')
+            for pin in (revision['source_commit'],
                         entry['fixture_sha256'], entry['model'], entry['host_version']):
                 if pin not in report:
                     raise ValueError('tool workflow report mismatch')
@@ -99,4 +104,17 @@ class ArchitectHistoryTests(unittest.TestCase):
         record = copy.deepcopy(self.record)
         record['development_history'] = [{'date': '2026-10-19', 'model': 'invented', 'change': 'authored'}]
         with self.assertRaises(ValueError):
+            validate_history(record)
+
+    def test_reject_other_case_session_manifest(self):
+        record = copy.deepcopy(self.record)
+        entry = record['evaluations'][0]
+        report = evidence_path(entry['evidence']).read_text()
+        other_manifests = re.findall(
+            r'^\| PowerShell deduplication \| `([0-9a-f]{64})` \|$',
+            report, re.MULTILINE)
+        self.assertEqual(len(other_manifests), 1)
+        self.assertNotEqual(other_manifests[0], entry['session_manifest_sha256'])
+        entry['session_manifest_sha256'] = other_manifests[0]
+        with self.assertRaisesRegex(ValueError, 'Architect session manifest mismatch'):
             validate_history(record)

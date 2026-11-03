@@ -73,8 +73,8 @@
       "reason": "New candidate-only standard-library score/source-ledger calculator for deterministic native audit reconciliation."
     },
     "scripts/verify_pagination.py": {
-      "sha256": "c5b5bfb941a27f80fbaa617fa0958645ba3805ebd5e2a595cd1fa75c4b178268",
-      "reason": "Candidate-only optional Poppler-backed PDF render/count evidence helper; no DOCX conversion or visual-quality certification."
+      "sha256": "050c41a72d2ca42e7ab19339e9fde3a8fb2706c0c2d25504dc5c60b3eae4fcf1",
+      "reason": "Candidate-only optional Poppler-backed PDF render/count evidence helper; no DOCX conversion or visual-quality certification. Nonzero renderer exits retain bounded stderr diagnostics while remaining unverified."
     }
   }
 }

@@ -108,13 +108,14 @@ If AI analysis is added, keep it advisory:
 Tailor repo advice to how Alpaca actually behaves rather than generic broker assumptions:
 
 - Paper and live use the same API shape but different endpoints; paper fills are simulated and optimistic, so backtest and paper results overstate live fill quality, especially for market orders in thin symbols.
-- Fractional shares trade market-only and have order type restrictions; do not propose fractional limit logic.
-- Bracket and OCO orders are supported but legs cannot be amended freely; cancel and replace is the realistic pattern.
+- Fractional US-equity orders: the [fractional trading documentation](https://docs.alpaca.markets/us/docs/fractional-trading), checked 2026-11-03, lists `market`, `limit`, `stop`, and `stop_limit` with `time_in_force=day`. Use exactly one of `qty` or `notional`; both together are rejected. Verify the asset is active, tradable and `fractionable=true`, account eligibility, order class, session, precision and required prices. Fractional short sales are unsupported.
+- Extended-hours fractional orders require `limit`, `day`, `extended_hours=true` and session/asset eligibility; do not inherit the broader whole-share GTC allowance. Check overnight eligibility separately. The fractional page still contains a conflicting legacy market-only sentence: disclose this conflict and resolve any capability uncertainty before implementation; do not silently treat a listed example as a guaranteed executable order.
+- The [order documentation](https://docs.alpaca.markets/us/docs/orders-at-alpaca), checked 2026-11-03, allows bracket/OCO price replacements but prohibits replacing notional orders. Check the specific order type/class and state; cancel-and-resubmit is not a universal safe default.
 - Crypto trading has different fee, precision, and minimum rules than equities; do not reuse equity assumptions in `btc-signal-executor/`.
 - Equity market data on the free tier is IEX-only and delayed for some uses; flag when a strategy assumes SIP-quality data the account may not have.
 - PDT rules apply to margin equity accounts under $25k; day trading logic should check account status instead of assuming.
 
-When a proposal depends on an Alpaca behavior not listed here, verify it against current Alpaca docs instead of assuming.
+Verify every Alpaca capability a proposal depends on against current official documentation, including the examples listed here. Record the source and check date; distinguish broker support from narrower owner strategy rules. If sources conflict or account/API evidence is unavailable, state the uncertainty and do not claim runtime support. Documentation corrections do not authorize strategy changes or any paper/live order.
 
 ### Order Lifecycle Checklist
 
@@ -124,7 +125,7 @@ Before proposing or reviewing a change that touches order placement, walk the fu
 - **Open order**: what happens to unfilled limit orders at end of day; time-in-force is explicit, not defaulted silently
 - **Partial fills**: distinguish requested, cumulatively filled and remaining unfilled quantities explicitly. Reconcile their arithmetic from supplied order state; do not treat the unfilled remainder as exposure. Journal actual fills, size exits only for verified filled exposure after accounting for existing exits, and reconcile later fills, cancellations and restarts without duplicate orders.
 - **Exits**: stop and target exist before or at entry (bracket or managed); exit logic survives a restart with positions already open
-- **Cancel/replace**: replaces are atomic from the strategy's view; stale order IDs are not reused
+- **Cancel/replace**: do not assume atomic completion or resubmit after only a cancel acknowledgement. Reconcile pending states, actual fills and confirmed cancellation/replacement before sizing a new order; track replacement IDs and prevent duplicate exposure.
 - **Failure paths**: rejected orders, API errors, and timeouts are logged to the journal and do not leave untracked positions
 
 A change is incomplete if it improves one lifecycle stage and silently breaks another.
@@ -142,7 +143,7 @@ Map the kind of change to the test passes that must run before it ships:
 | `Scheduler/` | Dry-run the scheduled job manually and verify journal output |
 | `rsi_macd_bot/` or `btc-signal-executor/` | That bot's own tests plus a paper session observed end to end |
 
-If a needed test does not exist, write it as part of the change rather than noting it as a gap.
+If a needed test does not exist, write it as part of the change rather than noting it as a gap. Paper-endpoint calls and trade round trips still change broker state and require explicit authorization; when absent, run offline mocks and report the broker checks as not run.
 
 ## Constraints
 
@@ -165,6 +166,7 @@ If a needed test does not exist, write it as part of the change rather than noti
 - [ ] Secrets are sourced from environment variables or existing config flows
 - [ ] Changes preserve existing trading logic unless requested otherwise
 - [ ] Docs and tests are updated when behavior changes
+- [ ] Fractional limit availability and rejection cases cover TIF, asset eligibility, qty/notional exclusivity, session constraints and missing capability evidence
 
 ## Help And Examples
 

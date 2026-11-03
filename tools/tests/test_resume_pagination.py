@@ -68,6 +68,26 @@ class ResumePaginationTests(unittest.TestCase):
             self.assertEqual(result['status'], 'unverified')
             self.assertIsNone(result['rendered_pages'])
 
+    def test_nonzero_renderer_exit_retains_bounded_diagnostic(self):
+        for stage in ('pdfinfo', 'pdftoppm'):
+            for diagnostic in ('Incorrect password', 'x' * 2500, b'Invalid PDF bytes', None):
+                with self.subTest(stage=stage, diagnostic=str(diagnostic)[:30]), tempfile.TemporaryDirectory() as tmp:
+                    path = Path(tmp) / 'resume.pdf'
+                    original = make_pdf(path, 2)
+                    def run(args, **kwargs):
+                        if stage == 'pdftoppm' and '-png' not in args:
+                            return subprocess.CompletedProcess(args, 0, 'Pages: 2\n', '')
+                        raise subprocess.CalledProcessError(1, args, stderr=diagnostic)
+                    with patch.object(pagination.shutil, 'which', return_value='tool'), patch.object(pagination.subprocess, 'run', side_effect=run):
+                        result = pagination.verify(path)
+                    self.assertEqual(result['status'], 'unverified')
+                    self.assertIsNone(result['rendered_pages'])
+                    self.assertIsNone(result['within_two_pages'])
+                    expected = diagnostic.decode() if isinstance(diagnostic, bytes) else diagnostic
+                    self.assertIn((expected or 'No stderr diagnostic was captured.')[:2000], result['limitations'][0])
+                    self.assertLessEqual(len(result['limitations'][0]), 2035)
+                    self.assertEqual(path.read_bytes(), original)
+
     def test_renderer_warnings_and_missing_pages_stay_unverified(self):
         for warning, image_count in [('font substitution warning', 2), ('', 1)]:
             with self.subTest(warning=warning, image_count=image_count), tempfile.TemporaryDirectory() as tmp:

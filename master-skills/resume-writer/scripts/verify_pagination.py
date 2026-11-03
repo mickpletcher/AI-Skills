@@ -48,6 +48,14 @@ def verify(pdf):
                 raise ValueError('Renderer warnings require review before verification: ' + warnings[:2000])
             result.update(status='rendered', rendered_pages=count, within_two_pages=count <= 2)
             result['limitations'].append('Count applies only to this PDF snapshot; DOCX pagination, font fidelity, clipping, readability and visual layout are not certified. Inspect the final artifact visually; rerun after edits.')
+    except subprocess.CalledProcessError as exc:
+        diagnostic = exc.stderr or ''
+        if isinstance(diagnostic, bytes):
+            diagnostic = diagnostic.decode('utf-8', errors='replace')
+        diagnostic = diagnostic.strip()[:2000]
+        result['limitations'].append(
+            f'Renderer exited with status {exc.returncode}: ' +
+            (diagnostic or 'No stderr diagnostic was captured.'))
     except (OSError, ValueError, subprocess.SubprocessError) as exc:
         result['limitations'].append(str(exc))
     return result

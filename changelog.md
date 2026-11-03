@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Repair late integration review findings: bind Architect session provenance to its exact report row and preserve bounded nonzero Poppler diagnostics without claiming pagination verification. Refresh candidate helper provenance and regression coverage.
+
 - Correct three unpromoted candidates: Food Analyzer added-sugars Daily Value, current-source Alpaca fractional-order guidance, and fixed-dimension social-preview compression with encoded-output checks. Preserve shipped skills; add offline contract and real JPEG regression checks, not native/model or broker certification.
 - Harden Photo Rename candidates with reviewed, contained no-overwrite copies and retained-source hash checks; require rendered-artifact evidence for Resume Writer page-fit claims. Add synthetic regressions; shipped skills and promotion remain unchanged.
 - Reconcile selected GitHub Repo Architect evaluation history with committed bounded evidence and explicit provenance limits; clarify current versus historical evaluation summaries without new model runs or instruction changes.

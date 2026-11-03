@@ -28,12 +28,12 @@ class MasterSkillTests(unittest.TestCase):
             with patch.object(generator, 'ROOT', root), contextlib.redirect_stdout(io.StringIO()):
                 generator.generate()
                 generator.generate(check=True)
-            manifest = json.loads((root/'generated/.resource-manifest.json').read_text())
+            manifest = json.loads((root/'generated/.resource-manifest.json').read_text(encoding='utf-8'))
             for target in ('chatgpt', 'codex'):
                 path = root/'generated'/generator.PLATFORM_PATHS[target]/'skills/example-skill'/generator.TARGETS[target]
-                self.assertIn(f'Only the {target} adapter.', path.read_text())
+                self.assertIn(f'Only the {target} adapter.', path.read_text(encoding='utf-8'))
                 other = 'codex' if target == 'chatgpt' else 'chatgpt'
-                self.assertNotIn(f'Only the {other} adapter.', path.read_text())
+                self.assertNotIn(f'Only the {other} adapter.', path.read_text(encoding='utf-8'))
                 self.assertIn(path.relative_to(root/'generated').as_posix(), manifest)
                 self.assertFalse((root/'generated'/target).exists())
             for key in ('openai/unknown/skills/example-skill/SKILL.md', 'chatgpt/skills/example-skill/instructions.md', 'codex/skills/example-skill/SKILL.md'):
@@ -44,20 +44,20 @@ class MasterSkillTests(unittest.TestCase):
                         generator.generate()
 
     def test_shared_standard_references_are_self_contained(self):
-        standard = (ROOT/'shared/skill-standard.md').read_text()
+        standard = (ROOT/'shared/skill-standard.md').read_text(encoding='utf-8')
         referencing = [p for p in (ROOT/'master-skills').glob('*/SKILL.md')
-                       if '`shared/skill-standard.md`' in p.read_text()]
+                       if '`shared/skill-standard.md`' in p.read_text(encoding='utf-8')]
         self.assertTrue(referencing)
         for source in referencing:
             with self.subTest(skill=source.parent.name):
                 # The root document is text-normalized by Git; candidate resources preserve bytes.
                 resource = source.parent/'shared/skill-standard.md'
-                self.assertEqual(resource.read_text(), standard)
-                placement = json.loads((source.parent/'ecosystems.json').read_text())
+                self.assertEqual(resource.read_text(encoding='utf-8'), standard)
+                placement = json.loads((source.parent/'ecosystems.json').read_text(encoding='utf-8'))
                 for target in placement['allowed']:
                     bundle = ROOT/'generated'/generator.PLATFORM_PATHS[target]/'skills'/source.parent.name
                     self.assertIn('`shared/skill-standard.md`',
-                                  (bundle/generator.TARGETS[target]).read_text())
+                                  (bundle/generator.TARGETS[target]).read_text(encoding='utf-8'))
                     self.assertEqual((bundle/'shared/skill-standard.md').read_bytes(), resource.read_bytes())
 
     def test_committed_candidates_match_without_writing(self):
@@ -75,7 +75,7 @@ class MasterSkillTests(unittest.TestCase):
                 if mutation == 'missing':
                     target.unlink()
                 else:
-                    target.write_text(target.read_text() + '\nUNINTENDED DRIFT\n')
+                    target.write_text(target.read_text(encoding='utf-8') + '\nUNINTENDED DRIFT\n')
                 before = target.read_bytes() if target.exists() else None
                 with patch.object(generator, 'ROOT', root), contextlib.redirect_stdout(io.StringIO()):
                     with self.assertRaises(SystemExit) as failure:
@@ -84,7 +84,7 @@ class MasterSkillTests(unittest.TestCase):
                 self.assertEqual(target.read_bytes() if target.exists() else None, before)
 
     def test_ci_checks_pristine_checkout_and_triggers_on_generated_changes(self):
-        workflow = yaml.load((ROOT/'.github/workflows/master-skills-validation.yml').read_text(), Loader=yaml.BaseLoader)
+        workflow = yaml.load((ROOT/'.github/workflows/master-skills-validation.yml').read_text(encoding='utf-8'), Loader=yaml.BaseLoader)
         self.assertIn('generated/**', workflow['on']['pull_request']['paths'])
         self.assertIn('tools/ecosystem_paths.py', workflow['on']['pull_request']['paths'])
         self.assertIn('tools/tests/test_foundation_audit.py', workflow['on']['pull_request']['paths'])
@@ -100,7 +100,19 @@ class MasterSkillTests(unittest.TestCase):
             for target in (ROOT/'generated'/generator.PLATFORM_PATHS[platform]/'skills').glob('*/' + filename):
                 with self.subTest(target=target):
                     generator.frontmatter(target, ROOT)
-                    self.assertTrue(target.read_text().startswith('---\n'))
+                    self.assertTrue(target.read_text(encoding='utf-8').startswith('---\n'))
+
+    def test_candidate_checks_ignore_platform_default_encoding(self):
+        original_read_text = Path.read_text
+
+        def windows_default_read_text(path, encoding=None, errors=None):
+            return original_read_text(path, encoding=encoding or 'cp1252', errors=errors)
+
+        # Exercise real non-ASCII candidates with the Windows legacy default,
+        # even on Linux, without relaxing either content check.
+        with patch.object(Path, 'read_text', windows_default_read_text):
+            self.test_every_candidate_has_valid_frontmatter()
+            self.test_shared_standard_references_are_self_contained()
 
     def test_invalid_metadata_fails_before_writing(self):
         variants = ['name: [', 'description: valid', 'name: example-skill\ndescription: ""',
@@ -131,7 +143,7 @@ class MasterSkillTests(unittest.TestCase):
                     new = source.parent.with_name('renamed-skill')
                     source.parent.rename(new)
                     source = new/'SKILL.md'
-                    source.write_text(source.read_text().replace('name: example-skill', 'name: renamed-skill'))
+                    source.write_text(source.read_text(encoding='utf-8').replace('name: example-skill', 'name: renamed-skill'))
                 else:
                     source.unlink()
                 before = {p: p.read_bytes() for p in (root/'generated').rglob('*') if p.is_file()}
@@ -149,7 +161,7 @@ class MasterSkillTests(unittest.TestCase):
             for folder in ('master-skills', 'adapters', 'generated', 'schemas', 'model-profiles'):
                 shutil.copytree(ROOT/folder, root/folder)
             target = root/'generated/claude/skills/example-skill/SKILL.md'
-            text = target.read_text()
+            text = target.read_text(encoding='utf-8')
             target.write_text(generator.MARKER + '\n' + text.replace(generator.MARKER + '\n', ''))
             with patch.object(generator, 'ROOT', root), contextlib.redirect_stdout(io.StringIO()):
                 with self.assertRaises(RuntimeError):
@@ -158,4 +170,4 @@ class MasterSkillTests(unittest.TestCase):
                 target.write_text('User content\n' + generator.MARKER)
                 with self.assertRaises(RuntimeError):
                     generator.generate()
-                self.assertEqual(target.read_text(), 'User content\n' + generator.MARKER)
+                self.assertEqual(target.read_text(encoding='utf-8'), 'User content\n' + generator.MARKER)

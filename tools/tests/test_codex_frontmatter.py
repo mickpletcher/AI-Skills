@@ -17,7 +17,9 @@ from skill_repository import frontmatter
 class CodexFrontmatterTests(unittest.TestCase):
     def test_every_codex_entrypoint_has_portable_identity_and_preserved_metadata(self):
         targets = list((ROOT / 'generated/openai/codex/skills').glob('*/SKILL.md'))
-        self.assertEqual(len(targets), 12)
+        expected = {source.parent.name for source in (ROOT / 'master-skills').glob('*/SKILL.md')
+                    if 'codex' in json.loads((source.parent / 'ecosystems.json').read_text())['allowed']}
+        self.assertEqual({target.parent.name for target in targets}, expected)
         for target in targets:
             with self.subTest(skill=target.parent.name):
                 original = frontmatter(ROOT / 'master-skills' / target.parent.name / 'SKILL.md', ROOT)

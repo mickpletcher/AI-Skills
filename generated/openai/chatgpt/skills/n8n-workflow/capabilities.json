@@ -4,8 +4,9 @@
     "text_reasoning"
   ],
   "conditional": {
-    "web_retrieval": "Required only for current external facts; request supplied sources or label current claims unverified when unavailable.",
-    "file_access": "Required for inspecting supplied files; accept pasted content or state extraction limits when unavailable."
+    "web_retrieval": "Required for current n8n/provider version, feature or schema claims. Optional authorized n8n API/MCP tools must be inspected separately for exact permissions and effects; otherwise use supplied sanitized exports and conceptual plans, marking runtime support unverified.",
+    "file_access": "Required for reading exports, writing requested artifacts and inspecting bundled references; accept pasted evidence if unavailable and disclose limits. Do not claim an exported artifact was saved without evidence.",
+    "code_execution": "Optional for the Python 3.10+ standard-library offline graph helper and synthetic checks. Without it, inspect supplied evidence manually and mark local checks not run. Local Python/JavaScript is not n8n runtime verification."
   },
   "fallback": "If a required capability is unknown or unavailable, stop the dependent operation, identify missing evidence, and request input or offer manual steps. Do not claim completion.",
   "safeguards": "Capability declarations never grant authorization. Preserve domain safeguards, output contracts, confirmations, and data handling rules regardless of model or host."

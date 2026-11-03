@@ -1,0 +1,5 @@
+# Validation
+
+See [bounded validation record](../../evaluations/n8n-security-reviewer-2026-11-03.md). Seventeen focused tests and the 181-test repository suite pass (seven explicit platform/dependency skips); candidate drift, repository validation and offline contract self-test pass. One independent three-artifact forward review verified contextual distinctions and fixes to null config/ambiguous input handling. No native-host certification, live server audit, real credentials, paid API, install, publication or merge.
+
+Requirement 1: separate master and generated candidate bundles; builder/shipped sources unchanged. Requirement 2: checklist/report contract, risky/benign/config fixtures and independent reports. Requirement 3: read-only constraints, helper design and no-side-effect/value-redaction regressions. Requirement 4: dated authoritative source notes with version/edition/default conflicts. Requirement 5: focused/regression tests and independent forward exercise, with limitations retained.

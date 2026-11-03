@@ -1,5 +1,6 @@
 # Behavioral evaluation framework
 
+The [new n8n security-review candidate](n8n-security-reviewer-2026-11-03.md) has synthetic helper regression and one independent three-artifact forward review. This does not establish native-host routing, installation, live n8n security, or broader model acceptance.
 ## Current evidence summary
 
 The [README delivery repair and acceptance record](readme-delivery-2026-10-25.md) supersedes the earlier withheld README decision: all **36 of 36 recorded bounded skill scopes** are accepted (13 earlier acceptances plus 23 Mick-authorized agent reviews), with the repaired workout revision separately accepted. This is not personal human inspection, whole-skill or host certification, or authorization to merge, install or promote.
@@ -153,3 +154,13 @@ The [third batch assessment](migration-batch3-2026-10-19.md) records six capture
 [Two synthetic cases](fixtures/audit-evidence-boundaries.json) cover audit-command side effects and stale snapshot/test provenance for the separate shipped Cursor and Copilot workflows. They are behaviorally not run; deterministic contract checks do not establish native host compliance.
 
 [Same-status content-change scenario](fixtures/audit-content-snapshot.json) extends audit snapshot coverage to further edits of modified/untracked files. It remains behaviorally unrun; fingerprints in deterministic tests do not prove native auditor compliance.
+
+## n8n workflow module candidate
+
+The [2026-11-03 candidate report](n8n-workflow-modules-2026-11-03.md) separates offline helper/example checks and an internal supplied-instruction review from native-host, n8n import, runtime and live-provider validation. The synthetic scenarios at `master-skills/n8n-workflow/fixtures/scenarios.json` (repository checkout only) are human rubrics, not claimed execution results. Historical acceptance of the prior revision remains unchanged.
+
+- [Synthetic Test Data Generator](synthetic-test-data-generator-2026-11-03.md): independent canonical skill, offline fixture/helper validation and a source-traced Pi-hole pilot; native host/model routing and target qualitative behavior remain untested.
+
+## Combined local candidate integration
+
+The [2026-11-03 integration report](candidate-integration-2026-11-03.md) covers the combined n8n workflow expansion, standalone n8n security reviewer and independent Synthetic Test Data Generator. It records additive inventory reconciliation, offline tests and preservation checks; it does not establish installation, activation or live runtime compatibility.

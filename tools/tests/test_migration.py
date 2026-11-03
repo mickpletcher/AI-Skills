@@ -1,5 +1,6 @@
 import hashlib
 import json
+import re
 import sys
 import tempfile
 import unittest
@@ -128,9 +129,17 @@ class MigrationTests(unittest.TestCase):
     def test_all_shipped_claude_skills_have_masters_and_candidates(self):
         originals = {p.parent.name for p in (ROOT/'claude/skills').glob('*/SKILL.md')}
         masters = {p.parent.name for p in (ROOT/'master-skills').glob('*/SKILL.md')}
-        self.assertEqual(masters, originals | {'example-skill'})
+        # Keep an explicit allowlist for standalone additions to the migration inventory.
+        self.assertEqual(masters, originals | {'example-skill', 'n8n-security-reviewer',
+                                               'synthetic-test-data-generator'})
         catalog = json.loads((ROOT/'master-skills/catalog.json').read_text(encoding="utf-8"))
         self.assertEqual({entry['name'] for entry in catalog['skills']}, masters)
+        self.assertEqual(len(catalog['skills']), len(masters))
+        new_masters = masters - originals - {'example-skill'}
+        for entry in catalog['skills']:
+            if entry['name'] in new_masters:
+                self.assertEqual((entry['origin'], entry['migration']), ('new canonical candidate', 'new_candidate'))
+                self.assertFalse((ROOT/'master-skills'/entry['name']/'migration.json').exists())
         for entry in catalog['skills']:
             self.assertEqual(entry['description'], frontmatter(ROOT/'master-skills'/entry['name']/'SKILL.md', ROOT)['description'])
             self.assertEqual(set(entry['targets']), set(json.loads((ROOT/'master-skills'/entry['name']/'ecosystems.json').read_text(encoding='utf-8'))['allowed']))
@@ -144,6 +153,20 @@ class MigrationTests(unittest.TestCase):
                 frontmatter(target, ROOT)
         self.assertTrue(all(entry['status'] == 'candidate' and entry['behavior_evaluation'] == 'not_run'
                             for entry in catalog['skills']))
+
+    def test_candidate_catalog_lists_every_master_once_with_exact_targets(self):
+        catalog = json.loads((ROOT/'master-skills/catalog.json').read_text(encoding='utf-8'))
+        markdown = (ROOT/'master-skills/CATALOG.md').read_text(encoding='utf-8')
+        rows = re.findall(r'^\| \[([^]]+)\]\(([^)]+)\) \| ([^|]+) \| Not run \|$',
+                          markdown, re.MULTILINE)
+        self.assertEqual(len(rows), len(catalog['skills']))
+        entries = {entry['name']: entry for entry in catalog['skills']}
+        self.assertEqual({name for name, _, _ in rows}, set(entries))
+        for name, source, targets in rows:
+            with self.subTest(skill=name):
+                self.assertEqual(source, entries[name]['source'])
+                self.assertEqual([target.strip() for target in targets.split(',')],
+                                 entries[name]['targets'])
 
     def test_migration_preserves_source_metadata_and_every_dependency(self):
         records = list((ROOT/'master-skills').glob('*/migration.json'))

@@ -4,6 +4,11 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Add a standalone n8n security-review candidate with evidence-based guidance, a value-redacting offline export helper and bounded synthetic checks. Reconcile it with the n8n workflow expansion and independent synthetic-data candidate without promoting or publishing any skill.
+
+- Expand the unpromoted n8n-workflow candidate with version-aware core guidance, focused AI/testing references, synthetic scenarios and a read-only export graph helper. Preserve shipped skills and prior bounded evaluation evidence; no live n8n compatibility is claimed.
+
+- Add an independent Synthetic Test Data Generator canonical candidate with deterministic JSON/CSV fixtures, target-skill requirement tracing, explicit oracles, source-hash staleness detection and an offline Pi-hole pilot. Preserve three independent-review findings and verified repairs; no target execution, installation, promotion or publication.
 - Repair late integration review findings: bind Architect session provenance to its exact report row and preserve bounded nonzero Poppler diagnostics without claiming pagination verification. Refresh candidate helper provenance and regression coverage.
 
 - Correct three unpromoted candidates: Food Analyzer added-sugars Daily Value, current-source Alpaca fractional-order guidance, and fixed-dimension social-preview compression with encoded-output checks. Preserve shipped skills; add offline contract and real JPEG regression checks, not native/model or broker certification.

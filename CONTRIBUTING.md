@@ -1,5 +1,7 @@
 # Contributing
 
+Please follow the [code of conduct](CODE_OF_CONDUCT.md) and [accessibility guidance](ACCESSIBILITY.md). Use the [issue templates](https://github.com/mickpletcher/AI-Skills/issues/new/choose) for bugs, ideas, documentation, accessibility barriers, and questions. For suspected vulnerabilities, follow the private-reporting instructions in [SECURITY.md](SECURITY.md) rather than posting details publicly. See [SUPPORT.md](SUPPORT.md) for help and reporting routes.
+
 Read [shared conventions](shared/skill-standard.md), [platform organization](shared/platform-organization.md), and [installation guidance](docs/installation.md). For cross-skill or shared tooling work, add a numbered spec under `specs/` with requirements, design, plan, and tasks.
 
 1. Work on a focused branch. Keep credentials, local runtime data, and personal inputs outside this repository.

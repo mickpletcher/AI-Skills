@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+- name: Security reporting instructions
+  url: https://github.com/mickpletcher/AI-Skills/blob/main/SECURITY.md
+  about: Do not disclose vulnerabilities or secrets publicly. Read the private-reporting process first.
+- name: Support and reporting routes
+  url: https://github.com/mickpletcher/AI-Skills/blob/main/SUPPORT.md
+  about: Find installation help, documentation, and the appropriate way to raise a concern.

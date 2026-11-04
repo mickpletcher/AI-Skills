@@ -38,6 +38,12 @@ class ReleaseTests(unittest.TestCase):
             extracted=base/'extracted'
             with zipfile.ZipFile(first/'ai-skills-v1.2.3.zip') as archive:
                 self.assertEqual(archive.read('LICENSE'), repo.canonical_bytes(repo.ROOT/'LICENSE'))
+                for name in ('CODE_OF_CONDUCT.md', 'SECURITY.md', 'ACCESSIBILITY.md', 'SUPPORT.md',
+                             '.github/PULL_REQUEST_TEMPLATE.md', '.github/ISSUE_TEMPLATE/config.yml',
+                             '.github/ISSUE_TEMPLATE/bug_report.yml', '.github/ISSUE_TEMPLATE/feature_request.yml',
+                             '.github/ISSUE_TEMPLATE/documentation.yml', '.github/ISSUE_TEMPLATE/accessibility.yml',
+                             '.github/ISSUE_TEMPLATE/question.yml'):
+                    self.assertEqual(archive.read(name), repo.canonical_bytes(repo.ROOT/name))
                 self.assertIn('openai/README.md', archive.namelist())
                 self.assertIn('microsoft/README.md', archive.namelist())
                 self.assertIn('microsoft/copilot/skills/pr-review/instructions.md', archive.namelist())
@@ -57,6 +63,14 @@ class ReleaseTests(unittest.TestCase):
                  ('.github', True), ('.github/workflows', True), ('docs', True),
                  ('microsoft', True), ('microsoft/copilot', True),
                  ('microsoft/copilot/skills/pr-review/instructions.md', False),
+                 ('CODE_OF_CONDUCT.md', False), ('SECURITY.md', False), ('ACCESSIBILITY.md', False),
+                 ('SUPPORT.md', False), ('.github/PULL_REQUEST_TEMPLATE.md', False),
+                 ('.github/ISSUE_TEMPLATE', True), ('.github/ISSUE_TEMPLATE/config.yml', False),
+                 ('.github/ISSUE_TEMPLATE/bug_report.yml', False),
+                 ('.github/ISSUE_TEMPLATE/feature_request.yml', False),
+                 ('.github/ISSUE_TEMPLATE/documentation.yml', False),
+                 ('.github/ISSUE_TEMPLATE/accessibility.yml', False),
+                 ('.github/ISSUE_TEMPLATE/question.yml', False),
                  ('schemas', True), ('openai', True), ('openai/chatgpt', True),
                  ('openai/chatgpt/skills/food-analyzer/instructions.md', False), ('claude/skills/example', True),
                  ('claude/skills/example/SKILL.md', False),
@@ -127,7 +141,8 @@ class ReleaseTests(unittest.TestCase):
             self.assertEqual((output/'SHA256SUMS').read_bytes(),
                              (hashlib.sha256(data).hexdigest()+'  ai-skills-v1.2.3.zip\n').encode('utf-8'))
             # Same fixture checksum is required on every CI operating system.
-            self.assertEqual(hashlib.sha256(data).hexdigest(), 'eb6b36765cb2ed74b41d2d6dd9f18959ce7814a0da997372b49435cf383df97e')
+            # Updated only for the eleven explicitly added community-file entries.
+            self.assertEqual(hashlib.sha256(data).hexdigest(), '6a7b63eea6b00bdd5ee34b94581365497fb6e79de0a05b90222b80b948a81af3')
 
     @unittest.skipUnless(sys.platform == 'win32', 'Windows junction semantics')
     def test_windows_junction_parent_is_rejected(self):

@@ -1,0 +1,31 @@
+name: Question or help
+description: Ask about using the repository or a skill.
+title: '[Question]: '
+body:
+- type: markdown
+  attributes:
+    value: This issue will be public. Use synthetic or redacted examples; do not include credentials, private prompts, or personal data. For vulnerabilities, follow [SECURITY.md](https://github.com/mickpletcher/AI-Skills/blob/main/SECURITY.md) instead. Please follow our [code of conduct](https://github.com/mickpletcher/AI-Skills/blob/main/CODE_OF_CONDUCT.md).
+- type: markdown
+  attributes:
+    value: Check [SUPPORT.md](https://github.com/mickpletcher/AI-Skills/blob/main/SUPPORT.md) and existing issues first. Response times are not guaranteed.
+- type: textarea
+  id: question
+  attributes:
+    label: Question
+    description: What are you trying to do, and where are you stuck?
+  validations:
+    required: true
+- type: input
+  id: affected-path
+  attributes:
+    label: Skill, file, and platform
+    description: Include relevant paths and host/app versions if known.
+  validations:
+    required: false
+- type: textarea
+  id: attempted
+  attributes:
+    label: What you tried
+    description: Mention the instructions you followed and the result. Use only sanitized examples.
+  validations:
+    required: false

@@ -25,7 +25,7 @@
     },
     {
       "id": "plain-text-host",
-      "input": "Use the complete-label case above, but my host cannot render code blocks or tables. Use plain text.",
+      "input": "fa. Fictional Pantry Crunch label: serving 28g; 140 kcal; protein 4g; carbs 14g; fat 9g; fiber 3g; total sugars 5g including 5g added sugars; sodium 40mg; saturated fat 1.5g; trans fat 0g. Ingredients: oats, almonds, brown sugar, canola oil, flaxseed, cinnamon. Breakfast before training; medication list not supplied. My host cannot render code blocks or tables. Use plain text.",
       "rubric": ["Same report order and labels without fences or table markup", "No lost uncertainty or sugar safety distinctions"]
     }
   ]

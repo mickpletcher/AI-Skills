@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "required": [
+    "text_reasoning"
+  ],
+  "conditional": {
+    "file_access": "Required to read supplied media or exports. Ask for pasted content or an attributed description if unavailable; do not claim inspection.",
+    "image_understanding": "Required to inspect actual photo pixels or video frames. If unsupported, label media not reviewed and request a description or usable stills.",
+    "web_retrieval": "Required for checking current device-specific capabilities, platform policies or other external claims. Use primary sources and label current details unverified if unavailable."
+  },
+  "fallback": "Continue safe text guidance, stop only the unsupported review step, and state exactly which evidence was not inspected. Never invent sensor access or room coverage.",
+  "safeguards": "No active scanning, device connections, fixture interference, installation or clean-room certification. No media sharing without authorization. Observations, explanations and unknowns remain separate."
+}

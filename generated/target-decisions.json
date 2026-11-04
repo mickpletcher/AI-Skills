@@ -365,6 +365,19 @@
       "cursor": "Primary workflow is domain advice, personal content or non-code analysis; no coding-target placement approved."
     }
   },
+  "room-privacy-inspector": {
+    "adaptation_review": "Only conversational candidates. Offline structure checks and internal text reviews do not establish host installation, routing, visual accuracy or detection effectiveness.",
+    "allowed": {
+      "chatgpt": "Conversational guest walkthrough and supplied-evidence review, only with actually available media capabilities.",
+      "claude": "Conversational guest walkthrough and supplied-evidence review, only with actually available media capabilities."
+    },
+    "review_status": "proposed",
+    "schema_version": 1,
+    "skipped": {
+      "codex": "Guest privacy walkthrough is not a coding workflow; no coding-host candidate is justified.",
+      "cursor": "Guest privacy walkthrough is not a coding workflow; no coding-host candidate is justified."
+    }
+  },
   "spec-writer": {
     "adaptation_review": "Verify intended host capabilities and behavior before promotion.",
     "allowed": {

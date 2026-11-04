@@ -1,6 +1,6 @@
 # Canonical candidate catalog
 
-All 35 shipped Claude skill names have a master, plus one example and two standalone canonical-only skills: n8n security reviewer and Synthetic Test Data Generator. Explicit per-skill suitability mappings currently produce 104 target entry points: 38 each for Claude and ChatGPT, 14 each for Cursor and Codex (including the example and both new skills). These are proposed placements, not approved support. Candidates are not promoted, installed or packaged; acceptance history is recorded separately and does not extend to either new skill or the revised n8n-workflow candidate. Creation-time evaluation labels below remain unchanged; [partial pilot captures and limitations](../evaluations/README.md#foundation-instruction-pilot) are recorded separately and grant no verified support. The shipped catalog remains at [../CATALOG.md](../CATALOG.md).
+All 35 shipped Claude skill names have a master, plus one example and three standalone canonical-only skills: n8n security reviewer, Synthetic Test Data Generator and Room Privacy Inspector. Explicit per-skill suitability mappings currently produce 106 target entry points: 39 each for Claude and ChatGPT, 14 each for Cursor and Codex (including the example and both new skills). These are proposed placements, not approved support. Candidates are not promoted, installed or packaged; acceptance history is recorded separately and does not extend to these new skills or the revised n8n-workflow candidate. Creation-time evaluation labels below remain unchanged; [partial pilot captures and limitations](../evaluations/README.md#foundation-instruction-pilot) are recorded separately and grant no verified support. The shipped catalog remains at [../CATALOG.md](../CATALOG.md).
 
 | Skill | Proposed targets | Behavior evaluation |
 | --- | --- | --- |
@@ -33,6 +33,7 @@ All 35 shipped Claude skill names have a master, plus one example and two standa
 | [powershell-refactor](powershell-refactor/SKILL.md) | claude, chatgpt, cursor, codex | Not run |
 | [proxmox-lxc](proxmox-lxc/SKILL.md) | claude, chatgpt, cursor, codex | Not run |
 | [resume-writer](resume-writer/SKILL.md) | claude, chatgpt | Not run |
+| [room-privacy-inspector](room-privacy-inspector/SKILL.md) | claude, chatgpt | Not run |
 | [spec-writer](spec-writer/SKILL.md) | claude, chatgpt, cursor, codex | Not run |
 | [synthetic-test-data-generator](synthetic-test-data-generator/SKILL.md) | claude, chatgpt, cursor, codex | Not run |
 | [travel-itinerary](travel-itinerary/SKILL.md) | claude, chatgpt | Not run |

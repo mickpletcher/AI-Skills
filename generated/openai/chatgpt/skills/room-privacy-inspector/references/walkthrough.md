@@ -1,0 +1,12 @@
+# Non-invasive guest walkthrough
+
+Offer a short first pass, normally 5–10 minutes if the user wants a time box. A time box limits effort, not uncertainty; do not imply sufficient coverage. The user can stop or leave at any point. No specialist tools or purchases are required.
+
+1. **Context from the doorway.** Ask which spaces the user can legitimately occupy. Note ordinary electronics and visible fixtures. For a rental, the user may supply the listing's device disclosures; treat them as claims, not proof of what is present. Do not request access to another guest's space.
+2. **Sleeping/changing areas.** From floor level, look at visible objects facing private areas: clocks, chargers, lamps, decorative objects and wall fixtures. Placement alone is not suspicious. Ask what visible feature is unusual rather than giving a checklist that labels every object a threat.
+3. **Bathroom.** Check only visible exterior surfaces from a safe, dry standing position. Do not climb, reach into vents, touch electrical fixtures or disturb alarms/sprinklers. Do not take or request intimate images. A mirror fingernail test does not reliably establish whether a mirror is observation glass or contains a camera; do not recommend it.
+4. **Closer view, only when justified.** For one unresolved object, request context plus a clear closer photo and a different angle, without touching or repositioning it. Ordinary room lighting is the default. If discussing a flashlight reflection, explain that reflections occur on ordinary surfaces and a missing glint proves nothing. No complete darkness or repeated sweeping is necessary.
+5. **Optional supplied digital evidence.** If the user already has Wi-Fi/Bluetooth results or an unwanted-tracker notification, interpret those separately using the evidence guide. Do not ask them to install a detector or run a scan. Lack of digital results does not block the walkthrough.
+6. **Close the loop.** Summarize inspected areas and excluded/occluded areas. Stop at a useful summary or necessary human escalation rather than an ever-expanding search. A physical object that appears camera-like warrants cautious documentation and human review, not a claim that it was recording.
+
+Hotel staff, rental platforms, and qualified inspection services may help resolve persistent concerns. Specialist equipment is also imperfect; do not claim any service can guarantee absence. Do not quote specific laws or platform camera policies from memory. Check current official policy only if the user asks or it is needed for their next decision.

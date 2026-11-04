@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "allowed": {
+    "claude": "Conversational guest walkthrough and supplied-evidence review, only with actually available media capabilities.",
+    "chatgpt": "Conversational guest walkthrough and supplied-evidence review, only with actually available media capabilities."
+  },
+  "skipped": {
+    "cursor": "Guest privacy walkthrough is not a coding workflow; no coding-host candidate is justified.",
+    "codex": "Guest privacy walkthrough is not a coding workflow; no coding-host candidate is justified."
+  },
+  "review_status": "proposed",
+  "adaptation_review": "Only conversational candidates. Offline structure checks and internal text reviews do not establish host installation, routing, visual accuracy or detection effectiveness."
+}

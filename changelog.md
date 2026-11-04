@@ -357,3 +357,8 @@ Compiled from repo history and the current working tree.
 - Added the Claude Alpaca Trading skill
 - Defined the portable skill standard and starter templates
 - Completed the initial folder setup
+
+## 2026-11-04: Room Privacy Inspector candidate
+
+- Added a standalone canonical room privacy walkthrough, supplied-media/network interpretation and iPhone/Android equipment guidance with evidence limits.
+- Generated proposed Claude/ChatGPT bundles only; no installation, purchase, active scanning, publication or promotion. Added synthetic safety/false-positive cases and offline contract tests.

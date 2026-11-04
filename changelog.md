@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Extend the n8n security-review candidate with bounded one-layer JSON header/body triage, schema-v2 coverage unknowns, and redaction/resource-limit regressions. Expressions remain unevaluated; generated candidates stay unpromoted and native behavior remains unverified.
+
 - Reconcile the compatibility rollout with all reviewed candidate changes: extend the original 36-master/96-copy rollout below to 38 master maps and 104 generated copies, retain Unknown for both new masters, and regenerate combined manifests/provenance without extending historical acceptance.
 
 - Add consistent twelve-ecosystem compatibility/status tables to all 36 maps, with evidence-scoped Yes, Unknown for unestablished support, and implementation status separate from native verification.

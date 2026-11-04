@@ -6,7 +6,7 @@
   "ecosystem_paths_sha256": "035f7a1a71d84399e8453fd923d81b4cd9ac38f411d762ae364c2f87267492d9",
   "frontmatter_policy": "codex-name-description-v1",
   "generator_sha256": "43a95a6d7af5b7933684fb1d914bc879644c91082fa96eb7e8c7921ba3b77bed",
-  "master_revision": "dbef3ae7b06c443b26b9189e097808bf6d31db32cb5b1abc074acc0d66e1c8f4",
+  "master_revision": "a9f7fdbc6e5c451cd13e262bae88b206ab1493dca5aaf26d6a93593c50fb448f",
   "master_revision_kind": "sha256-bundle",
   "model_id": null,
   "model_profile": "baseline",
@@ -17,6 +17,6 @@
   "source_frontmatter": {
     "description": "Review supplied n8n workflow exports and redacted configuration evidence for security risks, producing prioritized, evidence-linked findings and explicit unknowns. Use for a requested n8n security review, not ordinary workflow building or a live penetration test.",
     "name": "n8n-security-reviewer",
-    "version": "0.1.0"
+    "version": "0.2.0"
   }
 }

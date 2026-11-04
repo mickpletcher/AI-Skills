@@ -14,6 +14,18 @@ MAX_BYTES = 10 * 1024 * 1024
 MAX_DEPTH = 80
 MAX_ITEMS = 100000
 MAX_NODES = 5000
+EMBEDDED_MAX_BYTES = 64 * 1024
+EMBEDDED_TOTAL_BYTES = 256 * 1024
+EMBEDDED_MAX_DEPTH = 32
+EMBEDDED_MAX_VALUES = 4096
+EMBEDDED_TOTAL_VALUES = 16384
+EMBEDDED_MAX_FIELDS = 128
+EMBEDDED_MAX_FINDINGS = 100
+EMBEDDED_MAX_COVERAGE = 100
+EMBEDDED_FIELDS = ('jsonHeaders', 'jsonBody')
+HTTP_TYPES = {'n8n-nodes-base.httpRequest', 'n8n-nodes-base.httpRequestTool'}
+AUTH_KEYS = {'authorization', 'proxy-authorization'}
+AUTH_SCHEME = re.compile(r'^(?:Bearer|Basic)\s+(.+)$', re.I | re.S)
 SECRET_KEY = re.compile(r'^(authorization|proxy-authorization|x-api-key|api[-_]?key|access[-_]?token|refresh[-_]?token|client[-_]?secret|password|secret|token|cookie|apca-api-secret-key)$', re.I)
 TOKEN = re.compile(r'(?:\b(?:sk-(?:ant-)?|ghp_|github_pat_)[A-Za-z0-9_-]{16,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----)')
 EXPRESSION = re.compile(r'\{\{|\$\{')
@@ -22,7 +34,9 @@ LIMITS = [
     'Static triage only; no workflow or expression was executed and no endpoint was contacted.',
     'Candidates are not validated vulnerabilities. Empty candidates do not mean secure.',
     'No dataflow, authentication effectiveness, published state, secret validity, or credential scopes are verified.',
-    'Only documented helper rules are checked; unknown/custom nodes, version schemas, encoded secrets, and obfuscated code need manual review.',
+    'Only documented helper rules are checked; one bounded JSON layer in selected HTTP fields is inspected, not arbitrary encoded secrets or code.',
+    'Expressions are never evaluated. Coverage unknowns, truncation, unknown/custom nodes and version schemas require contextual review.',
+    'Marker counts may overlap raw and decoded scans; they are not counts of distinct credentials.',
     'Deployment, network controls, runtime defaults, dependencies, access rights, and data retention require separate evidence.',
 ]
 
@@ -154,6 +168,215 @@ def secret_markers(parameters):
     return named, tokens
 
 
+class EmbeddedInputError(ValueError):
+    """A fixed reason code only, never a decoder exception or source excerpt."""
+
+
+def embedded_secret_value(value, auth=False):
+    """Classify literal markers without mistaking references for credentials."""
+    if not isinstance(value, str):
+        return 'none'
+    # Delimiters inside an angle-bracket wrapper still limit coverage. Do not
+    # let a placeholder-shaped string hide environment/credential references.
+    if EXPRESSION.search(value):
+        return 'dynamic'
+    clean = value.strip()
+    if auth:
+        match = AUTH_SCHEME.fullmatch(clean)
+        if match:
+            clean = match.group(1).strip()
+    if clean.casefold() in PLACEHOLDERS or re.fullmatch(r'<[^<>]+>|\*+', clean):
+        return 'none'
+    return 'literal'
+
+
+def has_secret_expression(parameters):
+    """At most one coverage notice per ordinary parameter scope."""
+    stack = [parameters]
+    while stack:
+        obj = stack.pop()
+        if isinstance(obj, dict):
+            for key, value in obj.items():
+                if (SECRET_KEY.fullmatch(key) and
+                        embedded_secret_value(value, key.casefold() in AUTH_KEYS) == 'dynamic'):
+                    return True
+                if isinstance(value, (dict, list)):
+                    stack.append(value)
+            name = obj.get('name')
+            if (isinstance(name, str) and SECRET_KEY.fullmatch(name) and
+                    embedded_secret_value(obj.get('value'), name.casefold() in AUTH_KEYS) == 'dynamic'):
+                return True
+        elif isinstance(obj, list):
+            stack.extend(obj)
+    return False
+
+
+def read_embedded_json(value, budget):
+    """Parse data once within per-field and shared limits; never evaluate code."""
+    # Bound before allocating a second UTF-8 representation or a decoded tree.
+    if len(value) > EMBEDDED_MAX_BYTES:
+        raise EmbeddedInputError('field_size_limit')
+    try:
+        size = len(value.encode('utf-8'))
+    except UnicodeError:
+        raise EmbeddedInputError('unsupported_unicode') from None
+    if size > EMBEDDED_MAX_BYTES:
+        raise EmbeddedInputError('field_size_limit')
+    if size > budget['bytes']:
+        raise EmbeddedInputError('total_parse_budget')
+    if budget['values'] <= 0:
+        raise EmbeddedInputError('total_value_budget')
+    if budget['fields'] <= 0:
+        raise EmbeddedInputError('total_field_budget')
+    # Failed parses also consume the attempt and byte budgets.
+    budget['bytes'] -= size
+    budget['fields'] -= 1
+    try:
+        data = json.loads(value, object_pairs_hook=unique_object, parse_constant=reject_constant)
+    except (ValueError, RecursionError):
+        raise EmbeddedInputError('not_strict_json') from None
+    stack = [(data, 0)]
+    seen = 0
+    while stack:
+        obj, depth = stack.pop()
+        seen += 1
+        if budget['values'] <= 0:
+            raise EmbeddedInputError('total_value_budget')
+        budget['values'] -= 1
+        if depth > EMBEDDED_MAX_DEPTH or seen > EMBEDDED_MAX_VALUES:
+            raise EmbeddedInputError('structure_limit')
+        if isinstance(obj, float) and not math.isfinite(obj):
+            raise EmbeddedInputError('nonfinite_number')
+        try:
+            if isinstance(obj, str):
+                obj.encode('utf-8')
+            elif isinstance(obj, dict):
+                for key in obj:
+                    key.encode('utf-8')
+        except UnicodeError:
+            raise EmbeddedInputError('unsupported_unicode') from None
+        if isinstance(obj, dict):
+            stack.extend((child, depth + 1) for child in obj.values())
+        elif isinstance(obj, list):
+            stack.extend((child, depth + 1) for child in obj)
+    return data
+
+
+def embedded_markers(data):
+    """Return counts; never expose decoded keys, values or secret fingerprints."""
+    named, tokens, dynamic = 0, 0, 0
+    stack = [data]
+    while stack:
+        obj = stack.pop()
+        if isinstance(obj, dict):
+            for key, value in obj.items():
+                if SECRET_KEY.fullmatch(key):
+                    named += embedded_secret_value(value, key.casefold() in AUTH_KEYS) == 'literal'
+                dynamic += bool(EXPRESSION.search(key))
+                if isinstance(value, (dict, list)):
+                    stack.append(value)
+                elif isinstance(value, str):
+                    tokens += bool(TOKEN.search(value))
+                    dynamic += bool(EXPRESSION.search(value))
+            name = obj.get('name')
+            if isinstance(name, str) and SECRET_KEY.fullmatch(name):
+                named += embedded_secret_value(obj.get('value'), name.casefold() in AUTH_KEYS) == 'literal'
+        elif isinstance(obj, list):
+            stack.extend(obj)
+        elif isinstance(obj, str):
+            tokens += bool(TOKEN.search(obj))
+            dynamic += bool(EXPRESSION.search(obj))
+    return named, tokens, dynamic
+
+
+def inspect_embedded(workflows):
+    """Supplement raw triage with bounded JSON and explicit coverage gaps."""
+    budget = {'bytes': EMBEDDED_TOTAL_BYTES, 'values': EMBEDDED_TOTAL_VALUES,
+              'fields': EMBEDDED_MAX_FIELDS}
+    findings, coverage = [], []
+    counts = dict(decoded_fields=0, literal_markers=0, known_token_markers=0,
+                  dynamic_scopes=0, unreviewed_scopes=0,
+                  suppressed_findings=0, suppressed_coverage=0)
+
+    def record(destination, item):
+        limit = EMBEDDED_MAX_FINDINGS if destination is findings else EMBEDDED_MAX_COVERAGE
+        if len(destination) < limit:
+            destination.append(item)
+        else:
+            key = 'suppressed_findings' if destination is findings else 'suppressed_coverage'
+            counts[key] += 1
+
+    def gap(location, reason):
+        counts['unreviewed_scopes'] += 1
+        record(coverage, dict(location=location, status='unknown', reason=reason,
+                              message='This scope needs contextual review; no expression was evaluated and no secret absence is established.'))
+
+    for wi, workflow in enumerate(workflows):
+        for ni, node in enumerate(workflow['nodes']):
+            location = f'workflows[{wi}].nodes[{ni}].parameters'
+            params = node.get('parameters', {})
+            if has_secret_expression(params):
+                counts['dynamic_scopes'] += 1
+                gap(location, 'expression_like_secret_value')
+            if node['type'] not in HTTP_TYPES:
+                continue
+            for field in EMBEDDED_FIELDS:
+                if field not in params:
+                    continue
+                loc = location + '.' + field  # Only fixed allowlisted names.
+                value = params[field]
+                if not isinstance(value, str):
+                    gap(loc, 'unsupported_field_shape')
+                    continue
+                stripped = value.lstrip()
+                if not stripped:
+                    continue
+                # These prefixes cannot begin strict JSON. Other strings are
+                # parsed first so literal siblings survive expression markers.
+                if stripped.startswith(('=', '{{')):
+                    counts['dynamic_scopes'] += 1
+                    gap(loc, 'unevaluated_expression')
+                    continue
+                try:
+                    decoded = read_embedded_json(value, budget)
+                except EmbeddedInputError as exc:
+                    reason = str(exc)
+                    if reason == 'not_strict_json' and EXPRESSION.search(value):
+                        reason = 'unevaluated_expression'
+                        counts['dynamic_scopes'] += 1
+                    gap(loc, reason)
+                    continue
+                if field == 'jsonHeaders' and not isinstance(decoded, dict):
+                    gap(loc, 'unsupported_header_shape')
+                    continue
+                counts['decoded_fields'] += 1
+                named, tokens, dynamic = embedded_markers(decoded)
+                counts['literal_markers'] += named
+                counts['known_token_markers'] += tokens
+                if named or tokens:
+                    priority = 'low' if field == 'jsonBody' and not tokens else 'medium'
+                    record(findings, candidate('NSR-EMBEDDED-SECRET', loc,
+                                              'Potential secret material in embedded JSON',
+                                              'Strict JSON contains secret-named literal fields or known token markers. Values withheld; validity and runtime use untested.',
+                                              priority, marker_count=named + tokens,
+                                              named_literal_marker_count=named, known_token_marker_count=tokens,
+                                              disabled=node.get('disabled') is True, reachability='not analyzed'))
+                if dynamic:
+                    counts['dynamic_scopes'] += 1
+                    gap(loc, 'dynamic_embedded_value')
+    truncated = bool(counts['suppressed_findings'] or counts['suppressed_coverage'])
+    metadata = {
+        'status': 'partial' if counts['unreviewed_scopes'] or truncated else 'completed_within_scope',
+        'scope': 'One strict JSON layer in allowlisted HTTP fields; expression-like secret-field coverage notices. Not complete secret detection.',
+        'counts': counts,
+        'budgets': {'bytes_consumed': EMBEDDED_TOTAL_BYTES - budget['bytes'],
+                    'values_consumed': EMBEDDED_TOTAL_VALUES - budget['values'],
+                    'fields_consumed': EMBEDDED_MAX_FIELDS - budget['fields']},
+        'output_truncated': truncated,
+    }
+    return findings, coverage, metadata
+
+
 def candidate(code, location, title, detail, priority='medium', **extra):
     return dict(rule=code, location=location, title=title, classification='conditional risk',
                 priority=priority, evidence=detail, **extra)
@@ -247,16 +470,20 @@ def review(data, config=None):
     validate_bounds(data)
     workflows = normalize_workflows(data)
     findings, credentials = inspect_workflows(workflows)
+    embedded_findings, coverage, embedded_review = inspect_embedded(workflows)
+    findings.extend(embedded_findings)
     if config is not None:
         validate_bounds(config)
         findings.extend(inspect_config(config))
     return {
-        'schema_version': 1,
+        'schema_version': 2,
         'review_kind': 'offline static triage; contextual review required',
         'workflow_count': len(workflows),
         'node_count': sum(len(w['nodes']) for w in workflows),
         'credential_reference_count': credentials,
         'candidates': findings,
+        'coverage': coverage,
+        'embedded_review': embedded_review,
         'limits': LIMITS,
     }
 

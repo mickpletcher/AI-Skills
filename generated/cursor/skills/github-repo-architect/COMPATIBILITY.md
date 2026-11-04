@@ -14,7 +14,7 @@ Declarations: [`master-skills/github-repo-architect/ecosystems.json`](https://gi
 | --- | --- | --- |
 | Claude | Unknown | Implemented |
 | OpenAI ChatGPT | Unknown | Implemented |
-| OpenAI Codex | Yes | Implemented |
+| OpenAI Codex | Unknown | Implemented |
 | Cursor | Unknown | Implemented |
 | GitHub Copilot | Unknown | Not targeted |
 | Gemini | Unknown | Not targeted |
@@ -27,7 +27,7 @@ Declarations: [`master-skills/github-repo-architect/ecosystems.json`](https://gi
 
 ### Scope of Yes ratings
 
-- **OpenAI Codex:** Yes for the recorded bounded Codex CLI loading observation only, not full task execution. Current instruction bytes match that fixture. One isolated repository catalog/model; no global routing, full behavior or human acceptance certification. Evidence: [`evaluations/fixtures/host-routing-integration18.json`](https://github.com/mickpletcher/AI-Skills/blob/main/evaluations/fixtures/host-routing-integration18.json).
+No affirmative rating is established for this master.
 
 **Compatibility:** Yes requires actual evidence for an explicitly defined support scope; No requires a demonstrated incompatibility and a documented blocker. Unknown means affirmative scoped compatibility has not been established. A Yes applies only to its scope immediately above, never whole-skill or ecosystem-wide certification. Unknown also covers evidence needing additional host/case tracing; historical results remain below. Unknown does not mean incompatible, and skipped placement is not a technical blocker. No demonstrated host incompatibility is established here, so no No rating is assigned.
 
@@ -68,11 +68,11 @@ See [`evaluations/native-coverage-2026-10-22.json`](https://github.com/mickpletc
 ## Capability and runtime limitations
 
 - Required: `text_reasoning`.
-- Conditional `web_retrieval`: Required only for current external facts; request supplied sources or label current claims unverified when unavailable.
+- Conditional `web_retrieval`: Required only for current external facts; request supplied sources or label current claims unverified when unavailable. GitHub inspection additionally requires an available authenticated interface with settings-read permission; public docs are not repository-state evidence.
 - Conditional `code_execution`: Required to execute or validate helpers; return commands as unexecuted when unavailable. Runtime prerequisites remain in the source documentation.
-- Conditional `file_access`: Required for inspecting an existing local workspace or creating scaffold files. Not required for designing a blueprint and providing scaffold contents inline. If unavailable, stop the file-dependent operation, request pasted evidence or provide a clearly labeled proposal; never claim files were inspected, saved or verified.
+- Conditional `file_access`: Required for inspecting an existing local workspace or creating scaffold files. Not required for designing a blueprint and providing scaffold contents inline. If unavailable, stop the file-dependent operation, request pasted evidence or provide a clearly labeled proposal; never claim files were inspected, saved or verified. Preview creation needs an available image generation/capture tool; report pending when unavailable.
 - Fallback: If a required capability is unknown or unavailable, stop the dependent operation, identify missing evidence, and request input or offer manual steps. Do not claim completion.
-- Safeguards: Capability declarations never grant authorization. Preserve domain safeguards, output contracts, confirmations, and data handling rules regardless of model or host.
+- Safeguards: Capability declarations never grant authorization. Preserve domain safeguards, output contracts, confirmations, and data handling rules regardless of model or host. GitHub state inspection/read-back requires an authenticated interface with appropriate read permission; settings mutation requires an available interface with settings-write permission and action-specific authorization. File-write permission does not imply settings permission. If either capability is missing, stop dependent operations and provide clearly unexecuted manual steps; never claim settings were applied.
 
 Helpers require actual dependencies, permissions and runtime access. See [`docs/installation.md`](https://github.com/mickpletcher/AI-Skills/blob/main/docs/installation.md) and [`docs/dependencies.md`](https://github.com/mickpletcher/AI-Skills/blob/main/docs/dependencies.md).
 

@@ -81,16 +81,17 @@
   ],
   "review": {
     "status": "review-needed",
-    "reviewed_at": "2026-11-02",
-    "reason": "Modernized candidate has committed bounded tool-workflow and native packet evidence. Original authoring model and immutable backend remain unknown; broader host behavior and current-revision reruns still need review.",
+    "reviewed_at": "2026-11-04",
+    "reason": "Repo Architect modes, settings and preview instructions were reconciled with current main. Retain the three historical bounded results without extending their acceptance to these changed instructions; current host behavior remains untested.",
     "original_authoring_model": "unknown",
     "metadata_basis_commit": "ab0d902903b2b13eb582c88ca5ba6b5e66d6957c",
-    "current_instruction_sha256": "7f7fd5f3b84c49cdd575558b628be27966f33aba16849388019a34ddb70ef0bc",
-    "current_behavior_evaluation": "not_rerun_in_this_metadata_cleanup",
+    "current_instruction_sha256": "ee5293c22a99ffc5ec33e329ce159225f37b1006f4a7d24ddddf832e2a749019",
+    "current_behavior_evaluation": "not_run_for_repo_architect_modes",
     "coverage": "Selected committed evidence, not an exhaustive evaluation history. The foundation tool-workflow instruction path predates the OpenAI directory regrouping; native packet paths follow it. Matching instruction bytes alone do not certify current host behavior.",
     "preserved_unassessed_evidence": "https://github.com/mickpletcher/AI-Skills/blob/ab0d902903b2b13eb582c88ca5ba6b5e66d6957c/evaluations/fixtures/native-batch11.json",
     "deterministic_evidence": "https://github.com/mickpletcher/AI-Skills/blob/ab0d902903b2b13eb582c88ca5ba6b5e66d6957c/evaluations/foundation-linux-runtime-2026-10-19.md",
     "deterministic_limit": "Linux artifact replay is separate from fresh model/tool evaluation and is not a new model pass.",
-    "unavailable_evidence": "Raw captures and private local reports remain outside Git. No invented authoring provenance, installation, promotion or new model evaluation."
+    "unavailable_evidence": "Raw captures and private local reports remain outside Git. No invented authoring provenance, installation, promotion or new model evaluation.",
+    "integration_basis_commit": "a83cd6f1b820ebe4ae6db28938efe2d3a6249e2e"
   }
 }

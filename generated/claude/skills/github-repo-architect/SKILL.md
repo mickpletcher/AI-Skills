@@ -1,6 +1,6 @@
 ---
 name: github-repo-architect
-description: Design a practical, testable Git repository architecture from a project idea, including documentation, CI, and starter files when appropriate.
+description: Design a practical, testable Git repository architecture from a project idea, including documentation, CI, starter files and previews; also guide scoped GitHub settings configuration with permission and verification boundaries.
 ---
 <!-- GENERATED CANDIDATE: edit master-skills or adapters, not this file -->
 # Git Repository Architect
@@ -9,13 +9,43 @@ description: Design a practical, testable Git repository architecture from a pro
 Turn a software or automation idea into an implementable repository blueprint. Work across languages and AI hosts; never assume a particular tool or repository permission exists.
 
 ## Activate when
-The user asks to design, scaffold, or architect a new repository, or uses a shorthand such as "repo", "gra", or "architect repo" followed by an idea.
+The user asks to configure GitHub repository settings, or to design, scaffold, or architect a new repository, or uses a shorthand such as "repo", "gra", or "architect repo" followed by an idea.
 
 ## Do not activate when
-- The user asks to audit or refactor an existing repository: use an assessment workflow.
+- The user asks to audit or refactor an existing repository: use an assessment workflow, except a scoped GitHub settings configuration request.
 - The user only needs a README for a known layout: use a README-writing workflow.
-- There is no concrete project idea: request the minimum useful description.
+- There is no concrete project idea for a new architecture: request the minimum useful description; settings-only requests need a repository target instead.
 - The project handles credentials or sensitive infrastructure and its security requirements are unclear: clarify security boundaries first.
+
+## Choose an execution mode
+
+State the selected mode before work. Honor an explicit choice; if the request is ambiguous, offer **blueprint-only**, **scaffold/generate files**, or **configure GitHub** and proceed only with a non-mutating blueprint until the scope is clear. Modes can be combined only when requested; none grants authority for the others.
+
+- **blueprint-only**: propose structure, file contents, commands and settings; do not write files or change GitHub. Mark everything proposed and checks not run.
+- **scaffold/generate files**: create only requested files at the agreed destination using available, authorized file tools. Inspect existing files and preserve user edits. Inline contents are not saved artifacts. Run applicable checks when permitted; this mode does not authorize remote publication or GitHub settings changes.
+- **configure GitHub**: inspect the named repository, recommend settings, obtain action-specific authorization as required by the host, apply only the requested and permitted changes, then read back the resulting state. It does not authorize scaffolding, publishing, merging, installation or release.
+
+For any GitHub settings advice or configuration, read [GitHub settings workflow](references/github-settings.md) before proceeding. A configuration-only request for an existing repository belongs here; an architecture audit still belongs in an assessment workflow. If no project idea is needed for that settings-only task, do not demand one.
+
+Tool access is not consent. These instructions never override host confirmation policy. Security, access and visibility changes require appropriate approval for the exact target and change, even when the user selected configure GitHub. A denied operation stops that operation; do not switch tools, identities or permission scopes to bypass it.
+
+## Project preview
+
+Automatically include a root-level project preview in the architecture: `preview.png` by default (`preview.jpg` is a photographic alternative; `preview.gif` is optional for a README motion demo). Read [Preview workflow](references/preview.md) for mode-aware creation, safety, image validation, README embedding and separately authorized GitHub Social preview setup. A blueprint plans this artifact without writing it; a requested scaffold includes it when supported tools are available, otherwise reports it pending. Never fabricate a functioning demo.
+
+## Final handoff
+
+Finish every mode with a short, evidence-based handoff:
+
+1. **Artifacts**: proposed versus actually created/changed files, with paths or links; identify unsaved inline content.
+2. **Checks**: exact commands, actual pass/fail/not-run results and the revision or final files checked; distinguish local checks from remote CI.
+3. **GitHub settings**: separate recommended, applied-and-verified, attempted-but-unverified, blocked and unchanged settings. If none were applied, explicitly say so. A generated workflow does not establish required checks or branch protection.
+4. **Preview**: report root image, README embed and GitHub Social preview upload as three independent states, each with verification or a pending reason.
+5. **Needs attention**: unresolved decisions, capability/permission gaps, failed checks and concrete manual follow-ups with the responsible owner where known. Never claim a setting is applied from a recommendation, script, successful write response alone, or unavailable read-back.
+
+## Repository name and metadata
+
+Automatically review the project/repository name, even when already chosen, for clarity, relevant search terms, brevity, spelling and misleading claims. Offer a better alternative with rationale when useful; never promise traffic or ranking and preserve the user's final choice. Verify namespace availability when access permits, otherwise mark it unknown. Derive a concise About description and relevant GitHub topics from actual purpose/language/technology. In blueprint/scaffold mode these are proposals; apply metadata only within authorized configure GitHub scope. Existing repository renames require explicit approval and integration-impact review. Topics are not release tags.
 
 ## Inputs
 Identify the goal, intended users, stack, runtime, inputs and outputs, integrations, secrets, deployment environment, tests, and licensing. Distinguish facts supplied by the user from assumptions. Ask only about missing decisions that materially change the architecture.
@@ -31,7 +61,9 @@ Identify the goal, intended users, stack, runtime, inputs and outputs, integrati
 8. If tools are available and authorized, use them to inspect or create files; otherwise provide an actionable blueprint and clearly label it as proposed, not implemented.
 
 ## Output contract
-Present, in order: proposed repository name; one-line purpose; verified requirements and assumptions; annotated directory tree; key files and their contents or descriptions; tailored README; development prompts; CI workflow; setup and test commands; security considerations; first three implementation tasks.
+For architecture and scaffold requests, present, in order: proposed repository name; one-line purpose; verified requirements and assumptions; annotated directory tree; key files and their contents or descriptions; tailored README; development prompts; CI workflow; setup and test commands; security considerations; first three implementation tasks.
+
+For configuration-only requests, deliver the settings workflow and final handoff rather than an unrelated architecture.
 
 When scaffolding is requested, include real file contents instead of placeholders. For exploratory ideas, keep the response at blueprint level.
 
@@ -63,6 +95,8 @@ When scaffolding is requested, include real file contents instead of placeholder
 ## Help and examples
 Minimum useful input: project goal, preferred language, and any non-negotiable requirements.
 Examples:
+- "Configure GitHub settings for owner/repo: inspect and recommend before applying approved changes."
+- "Blueprint-only: design a Python CLI and plan its root preview.png."
 - "Architect a PowerShell and Python automation repository with Pester and pytest."
 - "Design a GitHub repo for a FastAPI webhook service with authentication and CI."
 - "Scaffold a local Proxmox monitoring utility with safe configuration and tests."
@@ -112,13 +146,13 @@ Profile: baseline; provider: unconfigured; model: unconfigured.
 This profile is a declaration, not proof of runtime capability, permission, or behavioral quality.
 
 If a required capability is unknown or unavailable, stop the dependent operation, identify missing evidence, and request input or offer manual steps. Do not claim completion.
-Capability declarations never grant authorization. Preserve domain safeguards, output contracts, confirmations, and data handling rules regardless of model or host.
+Capability declarations never grant authorization. Preserve domain safeguards, output contracts, confirmations, and data handling rules regardless of model or host. GitHub state inspection/read-back requires an authenticated interface with appropriate read permission; settings mutation requires an available interface with settings-write permission and action-specific authorization. File-write permission does not imply settings permission. If either capability is missing, stop dependent operations and provide clearly unexecuted manual steps; never claim settings were applied.
 
 Required capabilities:
 - text_reasoning: unknown. Verify actual availability before the dependent operation.
-- Conditional web_retrieval: unknown. Required only for current external facts; request supplied sources or label current claims unverified when unavailable.
+- Conditional web_retrieval: unknown. Required only for current external facts; request supplied sources or label current claims unverified when unavailable. GitHub inspection additionally requires an available authenticated interface with settings-read permission; public docs are not repository-state evidence.
 - Conditional code_execution: unknown. Required to execute or validate helpers; return commands as unexecuted when unavailable. Runtime prerequisites remain in the source documentation.
-- Conditional file_access: unknown. Required for inspecting an existing local workspace or creating scaffold files. Not required for designing a blueprint and providing scaffold contents inline. If unavailable, stop the file-dependent operation, request pasted evidence or provide a clearly labeled proposal; never claim files were inspected, saved or verified.
+- Conditional file_access: unknown. Required for inspecting an existing local workspace or creating scaffold files. Not required for designing a blueprint and providing scaffold contents inline. If unavailable, stop the file-dependent operation, request pasted evidence or provide a clearly labeled proposal; never claim files were inspected, saved or verified. Preview creation needs an available image generation/capture tool; report pending when unavailable.
 
 Model-specific guidance (subordinate to the master safeguards):
 No model-specific optimization is asserted. Verify capabilities in the selected host before use.

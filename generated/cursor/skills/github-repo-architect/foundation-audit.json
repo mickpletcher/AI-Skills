@@ -51,5 +51,41 @@
       "prior_master_sha256": "1bb65e4eeac64f7cef108be4e5e6da44160029acb510da34a5314ce328f5fb7d",
       "text": "## Delivery validation\nBefore delivering created files, use available, authorized tools to apply the project's configured formatter, then run its formatting check, lint checks and tests against those exact files. For Python scaffolds using Ruff, run `python -m ruff format .`, `python -m ruff format --check .`, `python -m ruff check .` and `python -m pytest`. Keep CI formatting checks read-only.\nIf a check fails, inspect the failure, correct the affected files and rerun the checks. Return or link the final formatted file contents, including changed tests; do not deliver stale pre-format code blocks. Report the commands and actual results. A failing gate blocks a verified-complete claim. When tools or execution are unavailable, deliver a clearly labeled unverified proposal with the validation commands instead of implying the checks passed.\n\n"
     }
+  ],
+  "subsequent_revisions": [
+    {
+      "reason": "Spec 017 intentionally adds explicit modes, GitHub settings/preview workflow and handoff. Preserve and reconstruct the prior audited master; no historical behavior is re-evaluated.",
+      "prior_master_sha256": "7f7fd5f3b84c49cdd575558b628be27966f33aba16849388019a34ddb70ef0bc",
+      "edits": [
+        {
+          "before": "description: Design a practical, testable Git repository architecture from a project idea, including documentation, CI, and starter files when appropriate.\n",
+          "after": "description: Design a practical, testable Git repository architecture from a project idea, including documentation, CI, starter files and previews; also guide scoped GitHub settings configuration with permission and verification boundaries.\n"
+        },
+        {
+          "before": "The user asks to design, scaffold, or architect a new repository, or uses a shorthand such as \"repo\", \"gra\", or \"architect repo\" followed by an idea.\n",
+          "after": "The user asks to configure GitHub repository settings, or to design, scaffold, or architect a new repository, or uses a shorthand such as \"repo\", \"gra\", or \"architect repo\" followed by an idea.\n"
+        },
+        {
+          "before": "- The user asks to audit or refactor an existing repository: use an assessment workflow.\n",
+          "after": "- The user asks to audit or refactor an existing repository: use an assessment workflow, except a scoped GitHub settings configuration request.\n"
+        },
+        {
+          "before": "- There is no concrete project idea: request the minimum useful description.\n",
+          "after": "- There is no concrete project idea for a new architecture: request the minimum useful description; settings-only requests need a repository target instead.\n"
+        },
+        {
+          "before": "",
+          "after": "\n## Choose an execution mode\n\nState the selected mode before work. Honor an explicit choice; if the request is ambiguous, offer **blueprint-only**, **scaffold/generate files**, or **configure GitHub** and proceed only with a non-mutating blueprint until the scope is clear. Modes can be combined only when requested; none grants authority for the others.\n\n- **blueprint-only**: propose structure, file contents, commands and settings; do not write files or change GitHub. Mark everything proposed and checks not run.\n- **scaffold/generate files**: create only requested files at the agreed destination using available, authorized file tools. Inspect existing files and preserve user edits. Inline contents are not saved artifacts. Run applicable checks when permitted; this mode does not authorize remote publication or GitHub settings changes.\n- **configure GitHub**: inspect the named repository, recommend settings, obtain action-specific authorization as required by the host, apply only the requested and permitted changes, then read back the resulting state. It does not authorize scaffolding, publishing, merging, installation or release.\n\nFor any GitHub settings advice or configuration, read [GitHub settings workflow](references/github-settings.md) before proceeding. A configuration-only request for an existing repository belongs here; an architecture audit still belongs in an assessment workflow. If no project idea is needed for that settings-only task, do not demand one.\n\nTool access is not consent. These instructions never override host confirmation policy. Security, access and visibility changes require appropriate approval for the exact target and change, even when the user selected configure GitHub. A denied operation stops that operation; do not switch tools, identities or permission scopes to bypass it.\n\n## Project preview\n\nAutomatically include a root-level project preview in the architecture: `preview.png` by default (`preview.jpg` is a photographic alternative; `preview.gif` is optional for a README motion demo). Read [Preview workflow](references/preview.md) for mode-aware creation, safety, image validation, README embedding and separately authorized GitHub Social preview setup. A blueprint plans this artifact without writing it; a requested scaffold includes it when supported tools are available, otherwise reports it pending. Never fabricate a functioning demo.\n\n## Final handoff\n\nFinish every mode with a short, evidence-based handoff:\n\n1. **Artifacts**: proposed versus actually created/changed files, with paths or links; identify unsaved inline content.\n2. **Checks**: exact commands, actual pass/fail/not-run results and the revision or final files checked; distinguish local checks from remote CI.\n3. **GitHub settings**: separate recommended, applied-and-verified, attempted-but-unverified, blocked and unchanged settings. If none were applied, explicitly say so. A generated workflow does not establish required checks or branch protection.\n4. **Preview**: report root image, README embed and GitHub Social preview upload as three independent states, each with verification or a pending reason.\n5. **Needs attention**: unresolved decisions, capability/permission gaps, failed checks and concrete manual follow-ups with the responsible owner where known. Never claim a setting is applied from a recommendation, script, successful write response alone, or unavailable read-back.\n\n## Repository name and metadata\n\nAutomatically review the project/repository name, even when already chosen, for clarity, relevant search terms, brevity, spelling and misleading claims. Offer a better alternative with rationale when useful; never promise traffic or ranking and preserve the user's final choice. Verify namespace availability when access permits, otherwise mark it unknown. Derive a concise About description and relevant GitHub topics from actual purpose/language/technology. In blueprint/scaffold mode these are proposals; apply metadata only within authorized configure GitHub scope. Existing repository renames require explicit approval and integration-impact review. Topics are not release tags.\n"
+        },
+        {
+          "before": "Present, in order: proposed repository name; one-line purpose; verified requirements and assumptions; annotated directory tree; key files and their contents or descriptions; tailored README; development prompts; CI workflow; setup and test commands; security considerations; first three implementation tasks.\n",
+          "after": "For architecture and scaffold requests, present, in order: proposed repository name; one-line purpose; verified requirements and assumptions; annotated directory tree; key files and their contents or descriptions; tailored README; development prompts; CI workflow; setup and test commands; security considerations; first three implementation tasks.\n\nFor configuration-only requests, deliver the settings workflow and final handoff rather than an unrelated architecture.\n"
+        },
+        {
+          "before": "",
+          "after": "- \"Configure GitHub settings for owner/repo: inspect and recommend before applying approved changes.\"\n- \"Blueprint-only: design a Python CLI and plan its root preview.png.\"\n"
+        }
+      ]
+    }
   ]
 }

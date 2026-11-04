@@ -24,6 +24,14 @@ class FoundationAuditTests(unittest.TestCase):
             self.assertEqual(re.findall(r'^## (.+)$', source.read_text(encoding='utf-8'), re.M),
                              record['audited_source_sections'])
             master = (path.parent/'SKILL.md').read_text(encoding='utf-8')
+            for revision in reversed(record.get('subsequent_revisions', [])):
+                self.assertTrue(revision['reason'])
+                for edit in reversed(revision['edits']):
+                    self.assertTrue(edit['after'])
+                    self.assertEqual(master.count(edit['after']), 1)
+                    master = master.replace(edit['after'], edit['before'])
+                self.assertEqual(hashlib.sha256(master.encode()).hexdigest(),
+                                 revision['prior_master_sha256'])
             for insertion in reversed(record.get('subsequent_insertions', [])):
                 self.assertEqual(master.count(insertion['text']), 1)
                 master = master.replace(insertion['text'], '')

@@ -1,3 +1,4 @@
+import json
 import sys
 import unittest
 from pathlib import Path
@@ -5,6 +6,16 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import evaluate
 
 class EvaluationTests(unittest.TestCase):
+    def test_food_plain_text_fixture_is_self_contained(self):
+        fixture_path = Path(__file__).resolve().parents[2] / 'evaluations/fixtures/food-report-layout.json'
+        fixture = json.loads(fixture_path.read_text(encoding='utf-8'))
+        cases = {case['id']: case for case in fixture['cases']}
+        self.assertEqual(
+            cases['plain-text-host']['input'],
+            cases['complete-label']['input']
+            + ' My host cannot render code blocks or tables. Use plain text.',
+        )
+
     def test_fixture_contracts_and_mutations(self):
         cases=evaluate.load_cases()
         self.assertEqual(len(cases),24)

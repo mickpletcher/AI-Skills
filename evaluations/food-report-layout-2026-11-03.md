@@ -32,3 +32,7 @@ Checked 2026-11-03: FDA's [Nutrition Facts guide](https://www.fda.gov/food/nutri
 A separate assistant read the candidate and linked reference and produced four synthetic responses locally. Review found the full-label report in the intended order, correct sugar treatment and reference arithmetic, a one-sentence missing-photo request, correct doubled quantities with unknown added sugars preserved, and no blanket diabetes/medication clearance. Runtime presentation rules required plain text, so the monospace fence itself was not tested. A fifth explicit plain-text fallback artifact reused the first response; it is not an independent model sample.
 
 Full synthetic responses and method notes remain in local validation artifacts outside Git. This is a bounded supplied-instruction review, not automatic routing, native Claude/ChatGPT integration, repeated-sample testing or new human acceptance. No real medication screening, visual label extraction or clinical claim validation was performed.
+
+### Fixture correction, 2026-11-04
+
+The `plain-text-host` scenario now includes the complete synthetic label transcription, so it can run in a fresh session without relying on another case's prompt. A regression test requires that input to contain the same complete label plus the plain-text rendering constraint. The test fails against the original cross-case reference and passes with the standalone input. This correction does not add a model response or change the earlier evidence limits.

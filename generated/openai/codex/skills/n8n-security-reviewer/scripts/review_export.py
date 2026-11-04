@@ -176,6 +176,10 @@ def embedded_secret_value(value, auth=False):
     """Classify literal markers without mistaking references for credentials."""
     if not isinstance(value, str):
         return 'none'
+    # Delimiters inside an angle-bracket wrapper still limit coverage. Do not
+    # let a placeholder-shaped string hide environment/credential references.
+    if EXPRESSION.search(value):
+        return 'dynamic'
     clean = value.strip()
     if auth:
         match = AUTH_SCHEME.fullmatch(clean)
@@ -183,7 +187,7 @@ def embedded_secret_value(value, auth=False):
             clean = match.group(1).strip()
     if clean.casefold() in PLACEHOLDERS or re.fullmatch(r'<[^<>]+>|\*+', clean):
         return 'none'
-    return 'dynamic' if EXPRESSION.search(value) else 'literal'
+    return 'literal'
 
 
 def has_secret_expression(parameters):

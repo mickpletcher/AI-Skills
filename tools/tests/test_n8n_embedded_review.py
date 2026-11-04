@@ -127,6 +127,24 @@ class EmbeddedReviewTests(unittest.TestCase):
             self.assert_partial(report, 'dynamic_embedded_value')
             self.assertNotIn('SIBLING_CANARY', json.dumps(report))
 
+    def test_placeholder_wrappers_cannot_hide_direct_expression_coverage(self):
+        for expression in ('<{{ $env.KEY }}>', '<${runtime}>',
+                           'Bearer <{{ $credentials.apiKey }}>',
+                           'Basic <{{ $json.value }}>'):
+            for params in ({'apiKey': expression},
+                           {'headerParameters': {'parameters': [
+                               {'name': 'Authorization', 'value': expression}]}}):
+                with self.subTest(expression=expression, params=params):
+                    report = reviewer.review(workflow(**params))
+                    self.assertEqual(report['candidates'], [])
+                    self.assert_partial(report, 'expression_like_secret_value')
+                    self.assertNotIn(expression, json.dumps(report))
+        for value in ('<token>', 'Bearer <token>', 'Basic <redacted>'):
+            with self.subTest(placeholder=value):
+                report = reviewer.review(workflow(jsonHeaders=json.dumps({'Authorization': value})))
+                self.assertEqual(embedded(report), [])
+                self.assertEqual(report['coverage'], [])
+
     def test_nonsecret_dynamic_string_still_limits_coverage(self):
         report = reviewer.review(workflow(jsonBody='{"description":"{{ $json.text }}"}'))
         self.assertEqual(embedded(report), [])

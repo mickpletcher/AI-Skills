@@ -6,7 +6,7 @@
   "ecosystem_paths_sha256": "035f7a1a71d84399e8453fd923d81b4cd9ac38f411d762ae364c2f87267492d9",
   "frontmatter_policy": "codex-name-description-v1",
   "generator_sha256": "43a95a6d7af5b7933684fb1d914bc879644c91082fa96eb7e8c7921ba3b77bed",
-  "master_revision": "b22748c0eb67dbbd74c635fa31065bd4b84027c2a5d61de3747605fdda0c0c9a",
+  "master_revision": "a9f7fdbc6e5c451cd13e262bae88b206ab1493dca5aaf26d6a93593c50fb448f",
   "master_revision_kind": "sha256-bundle",
   "model_id": null,
   "model_profile": "baseline",

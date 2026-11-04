@@ -42,7 +42,7 @@ Existing top-level fields remain, with `schema_version` now 2. `candidates` incl
 
 Coverage reasons:
 
-- `expression_like_secret_value`: an ordinary secret-named field or header name/value pair contains expression markers. At most one notice per node parameter scope; reference-only expressions are not hardcoded-secret findings.
+- `expression_like_secret_value`: an ordinary secret-named field or header name/value pair contains expression markers. At most one notice per node parameter scope; reference-only expressions are not hardcoded-secret findings. Expression markers take precedence over placeholder suppression, including inside angle-bracket wrappers; plain `<token>` placeholders remain suppressed.
 - `unevaluated_expression`: a selected JSON field is expression-like rather than supported strict JSON. No JavaScript parsing, coercion or evaluation occurs.
 - `dynamic_embedded_value`: parsed JSON has expression-like keys or values. Literal siblings are still scanned. Markers can also occur in ordinary text, so runtime evaluation is not asserted.
 - `not_strict_json`: malformed/unsupported inner JSON, duplicate keys, nonfinite constants or parser recursion rejection. `nonfinite_number` covers numeric overflow discovered after decoding.

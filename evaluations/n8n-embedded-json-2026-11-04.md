@@ -31,3 +31,13 @@ Reviewed helper SHA-256: `1e01d3eeb03cc224bb98ac81e4ac524ffaa20cf4bac4bf0a884207
 ## Limits
 
 No real credentials, production workflows, workflow execution, endpoint calls, installations, settings changes, remote publication or merge occurred. Native host activation, real n8n import/runtime semantics, downstream schema-v2 consumers and hosted Windows/PowerShell CI remain unverified. A completed scan with no candidates is not a security pass; partial coverage and truncation must remain visible to consumers. Previous evaluation records remain historical and unchanged.
+
+## Hosted-review correction before merge
+
+The original published head `a238942` passed all eight Windows/Linux CI jobs and its Codex review. Copilot then identified a valid coverage-reporting edge case: angle-bracket placeholder matching suppressed wrapped expression references before ordinary parameter coverage could mark them unknown. Both reported parameter shapes were independently reproduced with empty coverage and `completed_within_scope`.
+
+Expression markers now take precedence over placeholder suppression. The narrow regression covers direct secret fields and Authorization name/value pairs, plus plain-placeholder controls. Independent read-only review verified the repair; restoring the old precedence in memory causes six regression failures. Wrapped references produce unknown coverage, not secret findings, and no execution authority was added. All four generated helper and contract copies match the corrected source.
+
+Correction validation: 31 new focused tests pass; the complete local suite passes **313 tests with seven platform/PowerShell skips** (306 executed passes). The 3,000-case bounded mutation run, repository validation, generation/compatibility checks, whitespace and synthetic evaluation self-test also pass. These results supersede the initial source/test fingerprints above for the corrected snapshot, without extending native-host or live n8n acceptance. Hosted checks on the correction must be verified separately before merge.
+
+Corrected helper SHA-256: `1e1db6d790689929ccab6540cd06e3cc277942c006be4f26d0999a875a9da55f`. Corrected new test SHA-256: `085bbd65b2ceb69a1662a32ae993612338d12dd21aec7b5f907a00673a221bbd`.

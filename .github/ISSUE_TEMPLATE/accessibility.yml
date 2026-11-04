@@ -1,0 +1,38 @@
+name: Accessibility barrier
+description: Report a barrier or request a more accessible alternative.
+title: '[Accessibility]: '
+body:
+- type: markdown
+  attributes:
+    value: This issue will be public. Use synthetic or redacted examples; do not include credentials, private prompts, or personal data. For vulnerabilities, follow [SECURITY.md](https://github.com/mickpletcher/AI-Skills/blob/main/SECURITY.md) instead. Please follow our [code of conduct](https://github.com/mickpletcher/AI-Skills/blob/main/CODE_OF_CONDUCT.md).
+- type: markdown
+  attributes:
+    value: A text-only report is enough. Do not share a diagnosis or medical information. If this form is difficult to use, open a [blank issue](https://github.com/mickpletcher/AI-Skills/issues/new). See [ACCESSIBILITY.md](https://github.com/mickpletcher/AI-Skills/blob/main/ACCESSIBILITY.md).
+- type: input
+  id: location
+  attributes:
+    label: Affected file, page, or output
+    description: Give a link or repository path if you can.
+  validations:
+    required: true
+- type: textarea
+  id: barrier
+  attributes:
+    label: Barrier and intended task
+    description: Describe what prevented you from completing the task.
+  validations:
+    required: true
+- type: textarea
+  id: alternative
+  attributes:
+    label: Expected experience or useful alternative
+    description: For example, a text version of a diagram or simpler installation steps.
+  validations:
+    required: false
+- type: textarea
+  id: environment
+  attributes:
+    label: Environment (optional)
+    description: Browser, operating system, host, assistive technology, or zoom level, only if useful and comfortable to share. No diagnosis is needed.
+  validations:
+    required: false

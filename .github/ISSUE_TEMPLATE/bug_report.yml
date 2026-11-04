@@ -1,0 +1,49 @@
+name: Bug report
+description: Report a reproducible problem with a skill, package, or repository tool.
+title: '[Bug]: '
+body:
+- type: markdown
+  attributes:
+    value: This issue will be public. Use synthetic or redacted examples; do not include credentials, private prompts, or personal data. For vulnerabilities, follow [SECURITY.md](https://github.com/mickpletcher/AI-Skills/blob/main/SECURITY.md) instead. Please follow our [code of conduct](https://github.com/mickpletcher/AI-Skills/blob/main/CODE_OF_CONDUCT.md).
+- type: input
+  id: affected-path
+  attributes:
+    label: Affected skill or file
+    description: Give the repository path and commit or package version, if known.
+  validations:
+    required: true
+- type: textarea
+  id: environment
+  attributes:
+    label: Environment
+    description: Host/app and version, OS, Python or PowerShell version if relevant. Unknown is fine.
+  validations:
+    required: false
+- type: textarea
+  id: reproduction
+  attributes:
+    label: Steps to reproduce
+    description: Describe what you did using a small sanitized example. Do not disclose a suspected vulnerability here.
+  validations:
+    required: true
+- type: textarea
+  id: expected
+  attributes:
+    label: Expected behavior
+    description: What should have happened?
+  validations:
+    required: true
+- type: textarea
+  id: actual
+  attributes:
+    label: Actual behavior
+    description: What happened instead? Include sanitized error text, if helpful.
+  validations:
+    required: true
+- type: textarea
+  id: checks
+  attributes:
+    label: Checks already tried
+    description: Mention documentation read, relevant existing issues, and any troubleshooting results.
+  validations:
+    required: false

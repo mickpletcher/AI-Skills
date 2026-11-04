@@ -1,0 +1,28 @@
+name: Documentation improvement
+description: Report unclear instructions, missing guidance, or a broken link.
+title: '[Docs]: '
+body:
+- type: markdown
+  attributes:
+    value: This issue will be public. Use synthetic or redacted examples; do not include credentials, private prompts, or personal data. For vulnerabilities, follow [SECURITY.md](https://github.com/mickpletcher/AI-Skills/blob/main/SECURITY.md) instead. Please follow our [code of conduct](https://github.com/mickpletcher/AI-Skills/blob/main/CODE_OF_CONDUCT.md).
+- type: input
+  id: location
+  attributes:
+    label: File, section, or link
+    description: Point to the affected documentation.
+  validations:
+    required: true
+- type: textarea
+  id: problem
+  attributes:
+    label: What is unclear or incorrect?
+    description: Describe the problem and what you were trying to learn.
+  validations:
+    required: true
+- type: textarea
+  id: suggestion
+  attributes:
+    label: Suggested correction
+    description: Include a text correction or a reliable source if you have one.
+  validations:
+    required: false

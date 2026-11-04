@@ -4,6 +4,8 @@ Compiled from repo history and the current working tree.
 
 ## Unreleased
 
+- Add project community standards: code of conduct, security policy, accessibility and support guidance, five issue forms, and a pull request template. Keep private-reporting settings and accessibility conformance explicitly unverified; preserve existing license, contributions, skills, and open work.
+
 - Extend the n8n security-review candidate with bounded one-layer JSON header/body triage, schema-v2 coverage unknowns, and redaction/resource-limit regressions. Expressions remain unevaluated; generated candidates stay unpromoted and native behavior remains unverified.
 
 - Reconcile the compatibility rollout with all reviewed candidate changes: extend the original 36-master/96-copy rollout below to 38 master maps and 104 generated copies, retain Unknown for both new masters, and regenerate combined manifests/provenance without extending historical acceptance.

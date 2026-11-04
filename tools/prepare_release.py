@@ -15,6 +15,14 @@ RELEASE_ROOTS = ['claude','openai/chatgpt','microsoft/copilot','cursor','gemini'
                  'docs','tools','evaluations','schemas','specs']
 RELEASE_FILES = ['LICENSE','README.md','openai/README.md','microsoft/README.md','CATALOG.md','catalog.json','SHA256SUMS','CONTRIBUTING.md','requirements-dev.txt','changelog.md','completed-projects.md',
                                   'completed-upgrades.md','skill-improvement-assessment.md',
+                                  'CODE_OF_CONDUCT.md','SECURITY.md','ACCESSIBILITY.md','SUPPORT.md',
+                                  '.github/PULL_REQUEST_TEMPLATE.md',
+                                  '.github/ISSUE_TEMPLATE/config.yml',
+                                  '.github/ISSUE_TEMPLATE/bug_report.yml',
+                                  '.github/ISSUE_TEMPLATE/feature_request.yml',
+                                  '.github/ISSUE_TEMPLATE/documentation.yml',
+                                  '.github/ISSUE_TEMPLATE/accessibility.yml',
+                                  '.github/ISSUE_TEMPLATE/question.yml',
                                   '.github/github-social-preview.jpg','.github/workflow-templates/release.yml',
                                   '.github/workflows/resume-writer-tips-refresh.yml','.github/workflows/validate.yml']
 

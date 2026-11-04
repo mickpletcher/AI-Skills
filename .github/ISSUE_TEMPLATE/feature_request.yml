@@ -1,0 +1,35 @@
+name: Feature or skill request
+description: Suggest a focused improvement or a new reusable skill.
+title: '[Feature]: '
+body:
+- type: markdown
+  attributes:
+    value: This issue will be public. Use synthetic or redacted examples; do not include credentials, private prompts, or personal data. For vulnerabilities, follow [SECURITY.md](https://github.com/mickpletcher/AI-Skills/blob/main/SECURITY.md) instead. Please follow our [code of conduct](https://github.com/mickpletcher/AI-Skills/blob/main/CODE_OF_CONDUCT.md).
+- type: textarea
+  id: need
+  attributes:
+    label: Problem or need
+    description: Who is blocked and what are they trying to accomplish?
+  validations:
+    required: true
+- type: textarea
+  id: proposal
+  attributes:
+    label: Proposed outcome
+    description: Describe the desired behavior and how success could be checked.
+  validations:
+    required: true
+- type: textarea
+  id: scope
+  attributes:
+    label: Affected skill and platform
+    description: Name relevant paths, host platforms, and whether this is a shipped skill or a review candidate.
+  validations:
+    required: false
+- type: textarea
+  id: alternatives
+  attributes:
+    label: Alternatives and constraints
+    description: Mention existing approaches, accessibility needs, permissions, privacy, and scope limits. Do not include private data.
+  validations:
+    required: false

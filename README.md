@@ -287,6 +287,14 @@ Skip it for small single-skill wording edits or minor doc cleanup.
 - [specs/001-skill-repo-workflow/](./specs/001-skill-repo-workflow/) for the repo-level spec baseline
 - [claude/scripts/Update-FutureUpgrades.ps1](./claude/scripts/Update-FutureUpgrades.ps1) to create or refresh skill `future-upgrades.md` files from `upgrades.md`
 
+## Community and Support
+
+- [Contributing](CONTRIBUTING.md) and [issue templates](https://github.com/mickpletcher/AI-Skills/issues/new/choose)
+- [Code of conduct](CODE_OF_CONDUCT.md)
+- [Security policy and private reporting guidance](SECURITY.md)
+- [Accessibility goals, limitations, and reporting](ACCESSIBILITY.md)
+- [Support resources](SUPPORT.md)
+
 ## License
 
 Licensed under the [MIT License](LICENSE), copyright 2026 Mick Pletcher. Existing third-party licenses and attribution notices remain applicable.

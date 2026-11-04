@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import sys
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'tools'))
@@ -55,7 +56,7 @@ def contract_errors(case, response):
 class RepoArchitectModesTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.data = json.loads((ROOT / 'evaluations/fixtures/repo-architect-modes.json').read_text())
+        cls.data = json.loads((ROOT / 'evaluations/fixtures/repo-architect-modes.json').read_text(encoding='utf-8'))
         cls.cases = {c['id']: c for c in cls.data['cases']}
 
     def test_synthetic_positive_contracts(self):
@@ -126,24 +127,36 @@ class RepoArchitectModesTests(unittest.TestCase):
             response['naming'][key] = value
             self.assertIn(error, contract_errors(case, response))
 
+    def test_source_reads_do_not_depend_on_windows_locale(self):
+        original_open = Path.open
+
+        def legacy_open(path, mode='r', buffering=-1, encoding=None, errors=None, newline=None):
+            if 'b' not in mode and encoding in (None, 'locale'):
+                encoding = 'cp1252'
+            return original_open(path, mode, buffering, encoding, errors, newline)
+
+        with patch.object(Path, 'open', legacy_open):
+            self.setUpClass()
+            self.test_sources_and_resources_propagate_without_behavior_claims()
+
     def test_sources_and_resources_propagate_without_behavior_claims(self):
         master = ROOT / 'master-skills/github-repo-architect'
         paths = [master / 'SKILL.md']
-        for host in json.loads((master / 'ecosystems.json').read_text())['allowed']:
+        for host in json.loads((master / 'ecosystems.json').read_text(encoding='utf-8'))['allowed']:
             bundle = ROOT / 'generated' / generator.PLATFORM_PATHS[host] / 'skills/github-repo-architect'
             paths.append(bundle / generator.TARGETS[host])
             for resource in ('references/github-settings.md', 'references/preview.md', 'capabilities.json'):
                 self.assertEqual((bundle / resource).read_bytes(), (master / resource).read_bytes())
-            provenance = json.loads((bundle / 'build-provenance.json').read_text())
+            provenance = json.loads((bundle / 'build-provenance.json').read_text(encoding='utf-8'))
             self.assertEqual(provenance['behavior_evaluation'], 'not_run')
             self.assertEqual(provenance['promotion'], 'blocked_pending_review')
         for path in paths:
-            source = path.read_text()
+            source = path.read_text(encoding='utf-8')
             for phrase in ('blueprint-only', 'scaffold/generate files', 'configure GitHub', 'never override host confirmation policy', 'references/github-settings.md', 'references/preview.md', 'attempted-but-unverified', 'preview.png'):
                 self.assertIn(phrase, source, str(path))
-        settings = (master / 'references/github-settings.md').read_text()
+        settings = (master / 'references/github-settings.md').read_text(encoding='utf-8')
         for phrase in ('403, 404', 'Re-read relevant state', 'Read back each setting', 'Required reviews', 'Required checks', 'Merge options', 'Actions permissions', 'Available security features', 'After denial, stop', 'not a settings executor', 'About description', 'no force pushes', 'solo-maintainer policy', 'merged working branches', 'existing plan', 'review even an explicit user-chosen name', 'availability unverified', 'rename requires explicit approval', 'Topics are not Git release tags'):
             self.assertIn(phrase, settings)
-        preview = (master / 'references/preview.md').read_text()
+        preview = (master / 'references/preview.md').read_text(encoding='utf-8')
         for phrase in ('1280 × 640', '640 × 320', '1,000,000 bytes', 'Decode the file', 'every animation frame', 'concept/mockup', 'alt text', 'Never make a repository public', 'do not assume a REST endpoint', 'attempted-but-unverified'):
             self.assertIn(phrase.lower(), preview.lower())

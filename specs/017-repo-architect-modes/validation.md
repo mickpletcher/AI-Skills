@@ -28,3 +28,7 @@ Locally reconciled feature `41de8a78ea9efdd2f3742092c17f88c41a9f7f55` with main 
 - Independent read-only review passed four history tests, eight mode tests, compatibility/generator freshness and whitespace; no material outstanding finding. The additional boolean read-back negative case passed after review.
 
 Limits: no hosted CI, Windows/PowerShell checks, fresh native-model evaluation, settings mutation, installation, publication or remote merge. The historical foundation runtime artifacts were not replayed in this environment because pytest/Ruff and PowerShell are unavailable; existing runtime regressions ran in the aggregate suite. Publication and exact-head hosted CI require separate user authorization.
+
+### Windows CI encoding correction
+
+The first published draft head (`705639d`) passed Linux validation and the generator, installer, helper and foundation-runtime workflows, but Windows validation failed while reading UTF-8 reference Markdown with the system CP1252 default. Explicit UTF-8 decoding now covers every text read in the modes test module. A legacy-locale regression passes with the correction and independently reproduces the original UnicodeDecodeError when implicit reads are restored in memory. The repaired local aggregate run passes 281 tests with seven expected skips; all nine focused mode tests pass. Skill instructions and generated bundles are unchanged by this test-only repair. Exact-head Windows CI must still verify the correction.

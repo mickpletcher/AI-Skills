@@ -62,18 +62,7 @@ If the request depends on an image that is not attached or usable, and the suppl
 
 ## Output Sections
 
-Include the sections that apply to the identified food:
-
-- Quick Summary
-- Nutrition Estimate
-- Fitness Alignment
-- Ingredient Flags
-- NOVA Ultra-Processed Food Score
-- Blood Sugar Impact
-- Meal Timing Assessment
-- Medication and Supplement Interactions
-- Notes
-- Healthier Alternatives when the food scores poorly
+For a complete single-food analysis, read [the report layout](references/report-layout.md) and follow its compact, labeled FOOD ANALYSIS format. Start with the food name, serving and confidence; put the practical bottom line after the report. Do not prepend a separate Quick Summary. Keep the missing-input early return above and adapt comparison/history requests to their own workflows.
 
 ## Goal Aware Modes
 
@@ -103,29 +92,7 @@ Use the selected goal to change the emphasis:
 
 ## Output Expectations
 
-The analysis should be structured, readable, and practical. It should cover:
-
-- calories, protein, carbs, fat, fiber, sugar, and sodium
-- percent daily values where applicable
-- additive and allergen flags when ingredients are visible
-- NOVA classification and the factors that drove it
-- glycemic index or load estimates when relevant
-- timing fit for pre-workout, post-workout, before bed, with medication, or general use
-- clinically significant medication or supplement interactions
-- practical supplement stacking cautions when the meal plus supplement combination could create issues
-- quantified healthier swaps when needed
-
-Start with a short quick summary that is easy to scan before the deeper analysis.
-
-Use a structure like:
-
-```text
-Quick Summary
-- Overall fit: [short line]
-- Best use case: [short line]
-- Biggest concern: [short line]
-- Confidence: [high, medium, low]
-```
+Use the report layout for the section order, field labels, spacing and conditional sections. Preserve the user's requested format and the host's rendering constraints; where a monospace report is unsuitable, use the same labels and order in plain text. Fill only supported fields, distinguishing label facts, estimates and unknowns. A screenshot of a prior assistant response is a layout reference, not a verified nutrition label or clinical source.
 
 ## Confidence Levels
 
@@ -171,7 +138,7 @@ Classify foods by processing level:
 - NOVA 3: processed foods
 - NOVA 4: ultra-processed foods
 
-When ingredients are visible, scan for marker additives such as emulsifiers, artificial sweeteners, artificial colors, preservatives, industrial thickeners, flavor compounds, and modified starches. If uncertain between two NOVA groups, prefer the higher group and note the uncertainty.
+When ingredients are visible, scan for marker additives such as emulsifiers, artificial sweeteners, artificial colors, preservatives, industrial thickeners, flavor compounds, and modified starches. If ingredients are incomplete, state a tentative classification or unknown with the reason; do not silently resolve uncertainty into a definitive score.
 
 ## Ingredient Risk Grouping
 
@@ -189,11 +156,11 @@ Use the grouping to make the ingredient section easier to scan instead of listin
 
 Use:
 
-- Low GI: under 55
+- Low GI: 55 or below
 - Medium GI: 56 to 69
 - High GI: 70 and above
 
-Estimate glycemic load as `(GI x net carbs per serving) / 100` and consider modifiers such as fiber, fat, protein, vinegar, cooking method, particle size, ripeness, and food form.
+Estimate glycemic load as `(GI x available carbohydrate grams per serving) / 100` only when a defensible GI estimate and available carbohydrate amount exist. Identify the source or assumption; do not invent a measured GI for a mixed food from its label or appearance. Consider modifiers such as fiber, fat, protein, cooking method, ripeness, and food form without promising an individual glucose response.
 
 ## Comparison Mode
 
@@ -306,7 +273,7 @@ Use those preferences to refine later recommendations, but say when a conclusion
 ## Validation Checklist
 
 - [ ] Label data takes precedence over estimates when visible
-- [ ] Quick summary appears before deeper sections
+- [ ] Food name, serving and confidence lead the report; the practical bottom line follows it
 - [ ] Confidence labels separate direct observations from weaker guesses
 - [ ] Goal mode changes the analysis emphasis appropriately
 - [ ] FDA %DV uses the correct reference; custom targets are labeled separately

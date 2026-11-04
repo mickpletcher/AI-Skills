@@ -164,3 +164,5 @@ The [2026-11-03 candidate report](n8n-workflow-modules-2026-11-03.md) separates 
 ## Combined local candidate integration
 
 The [2026-11-03 integration report](candidate-integration-2026-11-03.md) covers the combined n8n workflow expansion, standalone n8n security reviewer and independent Synthetic Test Data Generator. It records additive inventory reconciliation, offline tests and preservation checks; it does not establish installation, activation or live runtime compatibility.
+
+- [Food Analyzer report restoration](food-report-layout-2026-11-03.md): compact historical presentation restored in the candidate only; synthetic layout/safety scenarios and explicit evidence limits.

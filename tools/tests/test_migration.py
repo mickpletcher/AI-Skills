@@ -131,7 +131,7 @@ class MigrationTests(unittest.TestCase):
         masters = {p.parent.name for p in (ROOT/'master-skills').glob('*/SKILL.md')}
         # Keep an explicit allowlist for standalone additions to the migration inventory.
         self.assertEqual(masters, originals | {'example-skill', 'n8n-security-reviewer',
-                                               'synthetic-test-data-generator'})
+                                               'synthetic-test-data-generator', 'room-privacy-inspector'})
         catalog = json.loads((ROOT/'master-skills/catalog.json').read_text(encoding="utf-8"))
         self.assertEqual({entry['name'] for entry in catalog['skills']}, masters)
         self.assertEqual(len(catalog['skills']), len(masters))

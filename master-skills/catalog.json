@@ -514,6 +514,24 @@
       "suitability_review": "proposed"
     },
     {
+      "name": "room-privacy-inspector",
+      "description": "Guide a non-invasive hotel or rental-room privacy walkthrough, review user-supplied photos or video, and interpret supplied Wi-Fi or Bluetooth results with explicit uncertainty. Use for possible hidden-camera or recording-device concerns, not network scanning, device access, or certifying a room free of surveillance.",
+      "source": "room-privacy-inspector/SKILL.md",
+      "origin": "new canonical candidate",
+      "migration": "new_candidate",
+      "status": "candidate",
+      "behavior_evaluation": "not_run",
+      "targets": [
+        "claude",
+        "chatgpt"
+      ],
+      "skipped_targets": {
+        "cursor": "Guest privacy walkthrough is not a coding workflow; no coding-host candidate is justified.",
+        "codex": "Guest privacy walkthrough is not a coding workflow; no coding-host candidate is justified."
+      },
+      "suitability_review": "proposed"
+    },
+    {
       "name": "spec-writer",
       "description": "Generate numbered repo spec folders with clear requirements, implementation plans, and task lists for non-trivial project work.",
       "source": "spec-writer/SKILL.md",

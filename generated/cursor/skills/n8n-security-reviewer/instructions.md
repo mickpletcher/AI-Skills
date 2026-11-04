@@ -1,7 +1,7 @@
 ---
 name: n8n-security-reviewer
 description: Review supplied n8n workflow exports and redacted configuration evidence for security risks, producing prioritized, evidence-linked findings and explicit unknowns. Use for a requested n8n security review, not ordinary workflow building or a live penetration test.
-version: 0.1.0
+version: 0.2.0
 ---
 <!-- GENERATED CANDIDATE: edit master-skills or adapters, not this file -->
 
@@ -46,7 +46,7 @@ python scripts/review_export.py /local/workflow.json
 python scripts/review_export.py /local/workflow.json --config /local/redacted-config.json
 ```
 
-Python 3.10+ and the standard library suffice. The helper reads explicit regular JSON files only, prints value-free triage to stdout, and neither writes files nor uses the network. It rejects ambiguous/malformed input, duplicate keys, and oversized or overly nested documents. It does not evaluate expressions, resolve credentials, infer runtime defaults, trace dataflow, audit dependency advisories, or prove absence of secrets. Its candidates require the contextual review above. Exit 0 means the scan completed, not that the workflow passed security review; exit 2 means input could not be reviewed.
+Python 3.10+ and the standard library suffice. The helper reads explicit regular JSON files only, prints value-free triage to stdout, and neither writes files nor uses the network. It rejects ambiguous/malformed outer input, duplicate keys, and oversized or overly nested documents. It decodes one bounded JSON layer in selected HTTP header/body fields; it never evaluates expressions. Read the schema-v2 `coverage` and `embedded_review` fields as well as candidates: expressions, unsupported embedded input, resource limits, and truncation remain explicit unknowns. A body field named token is only a low-priority heuristic, not proof of a credential. It does not resolve credentials, infer runtime defaults, trace dataflow, audit dependencies, or prove absence of secrets. Its candidates require contextual review. Exit 0 means triage completed, possibly with partial coverage, not a security pass; exit 2 means outer input could not be reviewed.
 
 Supported input shapes and rule coverage are in [the helper contract](references/helper-contract.md). If helper execution is unavailable, inspect the supplied text manually and state the limit. Do not install software or replace this with live execution.
 

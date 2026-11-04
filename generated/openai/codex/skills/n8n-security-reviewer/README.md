@@ -8,4 +8,6 @@ Try: “Review this exported n8n workflow without running it. Separate findings 
 
 Optional helper: Python 3.10+, standard library only. Run `python scripts/review_export.py /local/workflow.json` from this folder. It reads existing local JSON and prints a value-free triage report; no files are changed. See [helper limits and config format](references/helper-contract.md). Human/contextual review is still required. No helper prerequisites need installation when Python is already available.
 
+The schema-v2 report adds bounded, one-layer JSON header/body scanning and separate coverage unknowns. Inspect `coverage` and `embedded_review`, not just the candidate list: expressions are not evaluated, unsupported fields stay unreviewed, and truncated output is explicit. A successful exit or no candidates does not mean secure. Existing consumers should explicitly support schema version 2 before using the revised report.
+
 The [source notes](references/version-and-sources.md) identify current official documentation and known version/default disagreements. Offline tests check helper behavior and safety invariants, not native host/model quality or a live n8n installation. New candidate acceptance is separate from any prior builder acceptance.

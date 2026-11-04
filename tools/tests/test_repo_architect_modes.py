@@ -82,6 +82,22 @@ class RepoArchitectModesTests(unittest.TestCase):
             response['settings'][0].update(status='applied-and-verified', readback=readback)
             self.assertIn('unverified applied claim', contract_errors(case, response))
 
+    def test_mode_and_settings_access_guards_are_independent(self):
+        approved = self.cases['configure-approved-verified']
+        for status in ('applied-and-verified', 'attempted-but-unverified'):
+            for key, value in (('mode', 'blueprint-only'),
+                               ('mode', 'scaffold/generate files'),
+                               ('settings_available', False)):
+                with self.subTest(status=status, key=key, value=value):
+                    case = copy.deepcopy(approved)
+                    response = copy.deepcopy(case['synthetic_response'])
+                    response['settings'][0]['status'] = status
+                    self.assertEqual(contract_errors(case, response), [])
+                    case[key] = value
+                    response['mode'] = case['mode']
+                    self.assertEqual(contract_errors(case, response),
+                                     ['unauthorized settings mutation'])
+
     def test_setting_authorization_binds_value_and_target(self):
         case = self.cases['configure-approved-verified']
         for key, value in (('desired', 0), ('desired', True), ('repository', 'other/repo'), ('branch', 'release')):

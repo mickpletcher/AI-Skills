@@ -59,11 +59,15 @@ def validate_history(record):
                 raise ValueError('native case/revision/result mismatch')
             if entry['model'] != 'unknown' or entry['visible_model_label'] != 'Instant':
                 raise ValueError('visible mode is not backend identity')
-        # The historical Codex payload and ChatGPT packets share these exact bytes.
-        # Historical path regrouping/header changes do not imply a fresh host rerun.
-        if revision['instruction_sha256'] != hashlib.sha256(
-                (ROOT / 'generated/openai/chatgpt/skills/github-repo-architect/instructions.md').read_bytes()).hexdigest():
-            raise ValueError('instruction pin drift: review historical applicability')
+        # The historical Codex payload and ChatGPT packets shared these bytes.
+        # Bind historical pins to the recorded case, not today's generated files:
+        # a reviewed source change must not rewrite old evidence or imply a rerun.
+        historical = json.loads((ROOT / 'evaluations/fixtures/native-batch11.json').read_text())
+        architect = [case for case in historical['cases']
+                     if case['id'] == 'architect-blueprint' and case['skill'] == 'github-repo-architect']
+        if (len(architect) != 1 or revision['instruction_sha256'] !=
+                architect[0]['resources_sha256']['instructions.md']):
+            raise ValueError('historical instruction pin drift')
 
 
 class ArchitectHistoryTests(unittest.TestCase):
@@ -118,3 +122,16 @@ class ArchitectHistoryTests(unittest.TestCase):
         entry['session_manifest_sha256'] = other_manifests[0]
         with self.assertRaisesRegex(ValueError, 'Architect session manifest mismatch'):
             validate_history(record)
+
+    def test_current_revision_does_not_replace_historical_instruction_pins(self):
+        current = hashlib.sha256((ROOT / 'generated/openai/chatgpt/skills/github-repo-architect/instructions.md').read_bytes()).hexdigest()
+        validate_history(self.record)
+        for index, entry in enumerate(self.record['evaluations']):
+            self.assertNotEqual(entry['tested_revision']['instruction_sha256'], current)
+            self.assertFalse(entry['applies_to_current_behavior'])
+            for invalid in (current, '0' * 64):
+                with self.subTest(case=entry['case_ids'], invalid=invalid):
+                    record = copy.deepcopy(self.record)
+                    record['evaluations'][index]['tested_revision']['instruction_sha256'] = invalid
+                    with self.assertRaises(ValueError):
+                        validate_history(record)

@@ -6,7 +6,7 @@
   "ecosystem_paths_sha256": "035f7a1a71d84399e8453fd923d81b4cd9ac38f411d762ae364c2f87267492d9",
   "frontmatter_policy": "codex-name-description-v1",
   "generator_sha256": "43a95a6d7af5b7933684fb1d914bc879644c91082fa96eb7e8c7921ba3b77bed",
-  "master_revision": "dfed40495a21dc4f548cd15d79c6285dc1e8701eb08146ef50916ea10bcacf42",
+  "master_revision": "97e08b307a171bebf15c87f2c781f0d12a2aaa487bdaca6b69e000717db305bb",
   "master_revision_kind": "sha256-bundle",
   "model_id": null,
   "model_profile": "baseline",
@@ -15,7 +15,7 @@
   "promotion": "blocked_pending_review",
   "provider": null,
   "source_frontmatter": {
-    "description": "Design a practical, testable Git repository architecture from a project idea, including documentation, CI, and starter files when appropriate.",
+    "description": "Design a practical, testable Git repository architecture from a project idea, including documentation, CI, starter files and previews; also guide scoped GitHub settings configuration with permission and verification boundaries.",
     "name": "github-repo-architect"
   }
 }

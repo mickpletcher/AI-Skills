@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "behavior_status": "not_run",
+  "description": "Handcrafted synthetic outcomes, not model executions, native compliance or real settings changes.",
+  "cases": [
+    {
+      "id": "blueprint-no-writes",
+      "mode": "blueprint-only",
+      "allow_files": false,
+      "authorized": [],
+      "settings_available": true,
+      "visibility": "public",
+      "prompt": "blueprint no writes",
+      "rubric": [
+        "Respect mode-specific write boundaries.",
+        "Separate proposed, applied and verified settings.",
+        "Report preview file, README and upload independently."
+      ],
+      "synthetic_response": {
+        "mode": "blueprint-only",
+        "files": [],
+        "settings": [],
+        "checks": "not_run",
+        "preview": {
+          "file": "planned",
+          "readme": "planned",
+          "upload": "pending"
+        }
+      }
+    },
+    {
+      "id": "scaffold-no-settings",
+      "mode": "scaffold/generate files",
+      "allow_files": true,
+      "authorized": [],
+      "settings_available": true,
+      "visibility": "public",
+      "prompt": "scaffold no settings",
+      "rubric": [
+        "Respect mode-specific write boundaries.",
+        "Separate proposed, applied and verified settings.",
+        "Report preview file, README and upload independently."
+      ],
+      "synthetic_response": {
+        "mode": "scaffold/generate files",
+        "files": [
+          "preview.png",
+          "README.md"
+        ],
+        "settings": [],
+        "checks": "not_run",
+        "preview": {
+          "file": "created",
+          "readme": "verified",
+          "upload": "pending",
+          "filename": "preview.png",
+          "readme_target": "preview.png"
+        }
+      }
+    },
+    {
+      "id": "configure-not-blanket-consent",
+      "mode": "configure GitHub",
+      "allow_files": false,
+      "authorized": [],
+      "settings_available": true,
+      "visibility": "public",
+      "prompt": "configure not blanket consent",
+      "rubric": [
+        "Respect mode-specific write boundaries.",
+        "Separate proposed, applied and verified settings.",
+        "Report preview file, README and upload independently."
+      ],
+      "synthetic_response": {
+        "mode": "configure GitHub",
+        "files": [],
+        "settings": [],
+        "checks": "not_run",
+        "preview": {
+          "file": "planned",
+          "readme": "planned",
+          "upload": "pending"
+        }
+      }
+    },
+    {
+      "id": "configure-approved-verified",
+      "mode": "configure GitHub",
+      "allow_files": false,
+      "authorized": [
+        {
+          "repository": "owner/repo",
+          "branch": "main",
+          "name": "reviews",
+          "desired": 1
+        }
+      ],
+      "settings_available": true,
+      "visibility": "public",
+      "prompt": "configure approved verified",
+      "rubric": [
+        "Respect mode-specific write boundaries.",
+        "Separate proposed, applied and verified settings.",
+        "Report preview file, README and upload independently."
+      ],
+      "synthetic_response": {
+        "mode": "configure GitHub",
+        "files": [],
+        "settings": [
+          {
+            "name": "reviews",
+            "desired": 1,
+            "status": "applied-and-verified",
+            "readback": 1,
+            "repository": "owner/repo",
+            "branch": "main"
+          }
+        ],
+        "checks": "not_run",
+        "preview": {
+          "file": "planned",
+          "readme": "planned",
+          "upload": "pending"
+        }
+      }
+    },
+    {
+      "id": "missing-settings-permission",
+      "mode": "configure GitHub",
+      "allow_files": false,
+      "authorized": [],
+      "settings_available": false,
+      "visibility": "public",
+      "prompt": "missing settings permission",
+      "rubric": [
+        "Respect mode-specific write boundaries.",
+        "Separate proposed, applied and verified settings.",
+        "Report preview file, README and upload independently."
+      ],
+      "synthetic_response": {
+        "mode": "configure GitHub",
+        "files": [],
+        "settings": [],
+        "checks": "not_run",
+        "preview": {
+          "file": "planned",
+          "readme": "planned",
+          "upload": "pending"
+        }
+      }
+    },
+    {
+      "id": "write-succeeded-readback-unavailable",
+      "mode": "configure GitHub",
+      "allow_files": false,
+      "authorized": [
+        {
+          "repository": "owner/repo",
+          "branch": "main",
+          "name": "reviews",
+          "desired": 1
+        }
+      ],
+      "settings_available": true,
+      "visibility": "public",
+      "prompt": "write succeeded readback unavailable",
+      "rubric": [
+        "Respect mode-specific write boundaries.",
+        "Separate proposed, applied and verified settings.",
+        "Report preview file, README and upload independently."
+      ],
+      "synthetic_response": {
+        "mode": "configure GitHub",
+        "files": [],
+        "settings": [
+          {
+            "name": "reviews",
+            "desired": 1,
+            "status": "attempted-but-unverified",
+            "readback": null,
+            "repository": "owner/repo",
+            "branch": "main"
+          }
+        ],
+        "checks": "not_run",
+        "preview": {
+          "file": "planned",
+          "readme": "planned",
+          "upload": "pending"
+        }
+      }
+    },
+    {
+      "id": "private-preview-no-visibility-change",
+      "mode": "configure GitHub",
+      "allow_files": false,
+      "authorized": [],
+      "settings_available": true,
+      "visibility": "private",
+      "prompt": "private preview no visibility change",
+      "rubric": [
+        "Respect mode-specific write boundaries.",
+        "Separate proposed, applied and verified settings.",
+        "Report preview file, README and upload independently."
+      ],
+      "synthetic_response": {
+        "mode": "configure GitHub",
+        "files": [],
+        "settings": [],
+        "checks": "not_run",
+        "preview": {
+          "file": "planned",
+          "readme": "planned",
+          "upload": "pending"
+        }
+      }
+    },
+    {
+      "id": "preserve-explicit-name",
+      "mode": "configure GitHub",
+      "allow_files": false,
+      "authorized": [],
+      "settings_available": true,
+      "visibility": "public",
+      "prompt": "I chose dns-checker. Automatically review its clarity and discoverability and suggest improvements, but do not silently rename it.",
+      "rubric": [
+        "Review even the chosen name for clarity, relevant terms, brevity, spelling and misleading claims; recommend an alternative with rationale while preserving the final user choice.",
+        "Name availability is verified only with evidence; no ranking guarantee.",
+        "Existing rename requires explicit approval and integration-impact review; topics never create release tags."
+      ],
+      "synthetic_response": {
+        "mode": "configure GitHub",
+        "files": [],
+        "settings": [],
+        "checks": "not_run",
+        "preview": {
+          "file": "planned",
+          "readme": "planned",
+          "upload": "pending"
+        },
+        "naming": {
+          "reviewed": true,
+          "selected": "dns-checker",
+          "availability": "unverified",
+          "guaranteed_traffic": false,
+          "topics": [
+            "python",
+            "dns"
+          ],
+          "release_tags_created": []
+        }
+      },
+      "chosen_name": "dns-checker"
+    },
+    {
+      "id": "existing-rename-needs-approval",
+      "mode": "configure GitHub",
+      "allow_files": false,
+      "authorized": [],
+      "settings_available": true,
+      "visibility": "public",
+      "prompt": "Make owner/old-name more searchable; inspect and recommend, do not silently rename.",
+      "rubric": [
+        "Preserve an explicit project name; otherwise propose a descriptive factual name.",
+        "Name availability is verified only with evidence; no ranking guarantee.",
+        "Existing rename requires explicit approval and integration-impact review; topics never create release tags."
+      ],
+      "synthetic_response": {
+        "mode": "configure GitHub",
+        "files": [],
+        "settings": [],
+        "checks": "not_run",
+        "preview": {
+          "file": "planned",
+          "readme": "planned",
+          "upload": "pending"
+        },
+        "naming": {
+          "reviewed": true,
+          "selected": "old-name",
+          "availability": "unverified",
+          "guaranteed_traffic": false,
+          "topics": [
+            "python",
+            "dns"
+          ],
+          "release_tags_created": []
+        }
+      },
+      "chosen_name": "old-name"
+    },
+    {
+      "id": "scaffold-jpeg-preview",
+      "mode": "scaffold/generate files",
+      "allow_files": true,
+      "authorized": [],
+      "settings_available": true,
+      "visibility": "public",
+      "prompt": "Scaffold with an allowed JPEG preview and verify its exact README link.",
+      "rubric": [
+        "Respect mode-specific write boundaries.",
+        "Separate proposed, applied and verified settings.",
+        "Report preview file, README and upload independently."
+      ],
+      "synthetic_response": {
+        "mode": "scaffold/generate files",
+        "files": [
+          "preview.jpg",
+          "README.md"
+        ],
+        "settings": [],
+        "checks": "not_run",
+        "preview": {
+          "file": "created",
+          "readme": "verified",
+          "upload": "pending",
+          "filename": "preview.jpg",
+          "readme_target": "preview.jpg"
+        }
+      }
+    },
+    {
+      "id": "scaffold-gif-preview",
+      "mode": "scaffold/generate files",
+      "allow_files": true,
+      "authorized": [],
+      "settings_available": true,
+      "visibility": "public",
+      "prompt": "Scaffold with an allowed GIF preview and verify its exact README link.",
+      "rubric": [
+        "Respect mode-specific write boundaries.",
+        "Separate proposed, applied and verified settings.",
+        "Report preview file, README and upload independently."
+      ],
+      "synthetic_response": {
+        "mode": "scaffold/generate files",
+        "files": [
+          "preview.gif",
+          "README.md"
+        ],
+        "settings": [],
+        "checks": "not_run",
+        "preview": {
+          "file": "created",
+          "readme": "verified",
+          "upload": "pending",
+          "filename": "preview.gif",
+          "readme_target": "preview.gif"
+        }
+      }
+    },
+    {
+      "id": "configure-existing-preview",
+      "mode": "configure GitHub",
+      "allow_files": false,
+      "authorized": [
+        {
+          "repository": "owner/repo",
+          "branch": null,
+          "name": "social-preview",
+          "desired": "preview.jpg"
+        }
+      ],
+      "settings_available": true,
+      "visibility": "public",
+      "prompt": "Configure owner/repo using its existing verified JPEG preview; do not generate or edit files.",
+      "rubric": [
+        "Respect mode-specific write boundaries.",
+        "Separate proposed, applied and verified settings.",
+        "Report preview file, README and upload independently."
+      ],
+      "synthetic_response": {
+        "mode": "configure GitHub",
+        "files": [],
+        "settings": [
+          {
+            "repository": "owner/repo",
+            "branch": null,
+            "name": "social-preview",
+            "desired": "preview.jpg",
+            "status": "applied-and-verified",
+            "readback": "preview.jpg"
+          }
+        ],
+        "checks": "not_run",
+        "preview": {
+          "file": "existing-verified",
+          "filename": "preview.jpg",
+          "readme": "verified",
+          "readme_target": "preview.jpg",
+          "upload": "verified"
+        }
+      },
+      "existing_files": [
+        "preview.jpg",
+        "README.md"
+      ]
+    }
+  ]
+}

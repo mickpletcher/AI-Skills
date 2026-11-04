@@ -253,7 +253,7 @@
     },
     {
       "name": "github-repo-architect",
-      "description": "Design a practical, testable Git repository architecture from a project idea, including documentation, CI, and starter files when appropriate.",
+      "description": "Design a practical, testable Git repository architecture from a project idea, including documentation, CI, starter files and previews; also guide scoped GitHub settings configuration with permission and verification boundaries.",
       "source": "github-repo-architect/SKILL.md",
       "origin": "claude/skills/github-repo-architect/SKILL.md",
       "migration": "existing_foundation",
